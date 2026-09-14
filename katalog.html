@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
     <!-- HEADER -->
@@ -31,7 +30,7 @@
         </a>
 
 
-        <!-- NOTICE UNTUK PENGUNJUNG & PEMILIK USAHA -->
+        <!-- NOTICE -->
         <div class="notice">
 
             🔗 DAFTAR INI AKAN TERHUBUNG KE LINK RESMI
@@ -52,123 +51,26 @@
             </h2>
 
             <p class="result-note">
-                Contoh tampilan prototype — nanti isinya akan berupa
-                daftar bisnis/tempat yang relevan dengan pilihanmu.
+                Daftar pilihan berdasarkan kebutuhan dan kota yang kamu pilih.
             </p>
 
 
-            <div class="cards">
+            <!--
+                KARTU AKAN DIBUAT OTOMATIS
+                OLEH script.js
+            -->
+            <div class="cards" id="catalogCards"></div>
 
 
-                <!-- KARTU 1 -->
-                <article class="card">
-
-                    <div class="photo">
-                        💐
-                    </div>
-
-                    <div class="card-body">
-
-                        <h3>
-                            Contoh Venue / Bisnis A
-                        </h3>
-
-                        <p>
-                            📍 Kota pilihan
-                        </p>
-
-                        <p>
-                            ✨ Informasi singkat bisnis
-                        </p>
-
-                        <a
-                            class="button"
-                            href="#"
-                            onclick="return false;"
-                        >
-                            Lihat Website Resmi
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- KARTU 2 -->
-                <article class="card">
-
-                    <div class="photo">
-                        💄
-                    </div>
-
-                    <div class="card-body">
-
-                        <h3>
-                            Contoh Bisnis B
-                        </h3>
-
-                        <p>
-                            📍 Kota pilihan
-                        </p>
-
-                        <p>
-                            ✨ Informasi singkat bisnis
-                        </p>
-
-                        <a
-                            class="button"
-                            href="#"
-                            onclick="return false;"
-                        >
-                            Lihat Website Resmi
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- KARTU 3 -->
-                <article class="card">
-
-                    <div class="photo">
-                        💕
-                    </div>
-
-                    <div class="card-body">
-
-                        <h3>
-                            Contoh Bisnis C
-                        </h3>
-
-                        <p>
-                            📍 Kota pilihan
-                        </p>
-
-                        <p>
-                            ✨ Informasi singkat bisnis
-                        </p>
-
-                        <a
-                            class="button"
-                            href="#"
-                            onclick="return false;"
-                        >
-                            Lihat Website Resmi
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-            </div>
+            <!-- Jika data tidak ditemukan -->
+            <p id="noData" style="display:none;">
+                Maaf, data untuk pilihan ini belum tersedia. ❤️
+            </p>
 
         </section>
 
 
-        <!-- SARAN
-             HANYA ADA DI HALAMAN KATALOG -->
+        <!-- SARAN -->
         <section class="feedback">
 
             <h2>
@@ -209,12 +111,8 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- SCRIPT UTAMA -->
     <script src="script.js"></script>
-
-    <script>
-        setupCatalog();
-    </script>
 
 </body>
 
