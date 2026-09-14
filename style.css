@@ -1,1 +1,384 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7fb;
+    color: #3a2630;
+}
+
+.container {
+    width: min(1100px, 94%);
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    text-align: center;
+    padding: 34px 15px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(34px, 7vw, 62px);
+    color: #d92f72;
+    letter-spacing: -2px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 19px;
+    color: #735763;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+    margin: 10px auto 28px;
+}
+
+.intro h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.intro p {
+    color: #866d78;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.category {
+    min-height: 190px;
+    border: 1px solid #f1d6e2;
+    border-radius: 24px;
+    background: #ffffff;
+    padding: 25px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 24px rgba(110, 50, 80, 0.08);
+
+    transition: 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(110, 50, 80, 0.13);
+}
+
+.category .icon {
+    font-size: 42px;
+}
+
+.category h3 {
+    margin: 10px 0 6px;
+    font-size: 23px;
+}
+
+.category p {
+    margin: 0;
+    color: #856d78;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   KOTA
+========================= */
+
+.city-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.city {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    border: 1px solid #e8b8cc;
+    background: #ffffff;
+    color: #a5225b;
+
+    padding: 16px;
+    border-radius: 18px;
+
+    font-weight: bold;
+}
+
+.city:hover {
+    background: #ffe3ef;
+}
+
+
+/* =========================
+   GENERAL CARD
+========================= */
+
+.page-card {
+    background: #ffffff;
+    border: 1px solid #f1d6e2;
+    border-radius: 24px;
+    padding: 25px;
+
+    box-shadow: 0 8px 24px rgba(110, 50, 80, 0.08);
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #a5225b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* =========================
+   NOTICE KATALOG
+========================= */
+
+.notice {
+    margin: 0 0 25px;
+    padding: 15px 18px;
+
+    border: 1px solid #e7a7bc;
+    border-radius: 14px;
+
+    background: #fff5f8;
+    color: #c51f5d;
+
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.notice small {
+    display: block;
+    color: #735763;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   HASIL KATALOG
+========================= */
+
+.results h2 {
+    margin-bottom: 5px;
+}
+
+.result-note {
+    color: #806873;
+    margin-top: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #f0dce5;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 7px 20px rgba(110, 50, 80, 0.07);
+}
+
+.photo {
+    height: 150px;
+
+    background: linear-gradient(
+        135deg,
+        #f8c9dc,
+        #ead7ef
+    );
+
+    display: grid;
+    place-items: center;
+
+    font-size: 42px;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card h3 {
+    margin: 0 0 7px;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #77626c;
+    font-size: 14px;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    background: #d92f72;
+    color: #ffffff;
+
+    padding: 10px 15px;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback {
+    margin: 45px auto 25px;
+
+    background: #fff0f6;
+    border: 1px solid #f3cede;
+    border-radius: 24px;
+
+    padding: 28px;
+
+    text-align: center;
+}
+
+.feedback h2 {
+    margin: 0 0 8px;
+}
+
+.feedback p {
+    color: #806873;
+}
+
+.feedback a {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #b51f5c;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-bottom: 1px dashed #b51f5c;
+}
+
+
+/* =========================
+   KOMENTAR / SARAN
+========================= */
+
+.comment-box {
+    max-width: 720px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    border: 1px solid #f1d6e2;
+    border-radius: 24px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 24px rgba(110, 50, 80, 0.08);
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+
+    border: 1px solid #e8b8cc;
+    border-radius: 16px;
+
+    padding: 15px;
+
+    font: inherit;
+    resize: vertical;
+}
+
+.send {
+    border: 0;
+
+    margin-top: 12px;
+
+    background: #d92f72;
+    color: #ffffff;
+
+    padding: 12px 22px;
+    border-radius: 999px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: #927985;
+
+    padding: 30px 15px 45px;
+
+    font-size: 13px;
+}
+
+footer a {
+    color: #927985;
+}
+
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .category-grid,
+    .cards,
+    .city-list {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        min-height: 150px;
+    }
+
+    .cards {
+        gap: 14px;
+    }
+
+}
