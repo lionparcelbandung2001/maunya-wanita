@@ -4,18 +4,22 @@
 // ==========================================
 
 
-// Menyimpan pilihan kategori
+// ==========================================
+// PILIH KATEGORI
+// ==========================================
+
 function chooseCategory(category) {
 
     localStorage.setItem("mw_category", category);
 
-    // Setelah memilih kategori,
-    // lanjut ke halaman pilihan kota
     window.location.href = "kota.html";
 }
 
 
-// Menyimpan pilihan kota
+// ==========================================
+// PILIH KOTA
+// ==========================================
+
 function chooseCity(city) {
 
     const category = localStorage.getItem("mw_category") || "";
@@ -23,41 +27,49 @@ function chooseCity(city) {
     localStorage.setItem("mw_category", category);
     localStorage.setItem("mw_city", city);
 
-    // Setelah memilih kota,
-    // lanjut ke halaman katalog
     window.location.href = "katalog.html";
 }
 
 
-// Mengambil pilihan yang sudah disimpan
+// ==========================================
+// AMBIL DATA PILIHAN
+// ==========================================
+
 function getChoice(key) {
 
     return localStorage.getItem(key) || "";
 }
 
 
-// Menyiapkan judul halaman kota
+// ==========================================
+// SETUP HALAMAN KOTA
+// ==========================================
+
 function setupCity() {
 
     const category = getChoice("mw_category");
-
     const title = document.getElementById("cityTitle");
 
-    if (title) {
+    if (!title) return;
 
-        if (category) {
-            title.textContent =
-                "📍 " + category + " — pilih kotamu";
-        } else {
-            title.textContent =
-                "📍 Pilih kotamu";
-        }
+    if (category) {
+
+        title.textContent =
+            "📍 " + category + " — pilih kotamu";
+
+    } else {
+
+        title.textContent =
+            "📍 Pilih kotamu";
 
     }
 }
 
 
-// Menyiapkan judul halaman katalog
+// ==========================================
+// SETUP KATALOG
+// ==========================================
+
 function setupCatalog() {
 
     const category = getChoice("mw_category");
@@ -65,36 +77,227 @@ function setupCatalog() {
 
     const title = document.getElementById("catalogTitle");
 
-    if (title) {
+    if (!title) return;
 
-        if (category && city) {
 
-            title.textContent =
-                category + " — " + city + " ❤️";
+    if (category && city) {
 
-        } else {
+        title.textContent =
+            category + " — " + city + " ❤️";
 
-            title.textContent =
-                "Pilihan untukmu ❤️";
+        loadCityData(city, category);
 
-        }
+    } else {
+
+        title.textContent =
+            "Pilihan untukmu ❤️";
 
     }
 }
 
 
 // ==========================================
-// FORM SARAN
+// LOAD DATA KOTA
+// ==========================================
+
+function loadCityData(city, category) {
+
+    const fileName =
+        city.toLowerCase().replace(/ /g, "-");
+
+    const script = document.createElement("script");
+
+    script.src = "data/" + fileName + ".js";
+
+
+    script.onload = function () {
+
+        const variableName =
+            city.toLowerCase().replace(/[^a-zA-Z0-9]/g, "") +
+            "Data";
+
+        const cityData =
+            window[variableName];
+
+        if (!cityData) {
+
+            showNoData();
+
+            return;
+        }
+
+
+        const filteredData =
+            cityData.filter(function(item) {
+
+                return item.kategori === category;
+
+            });
+
+
+        displayCatalog(filteredData);
+
+    };
+
+
+    script.onerror = function () {
+
+        showNoData();
+
+    };
+
+
+    document.body.appendChild(script);
+}
+
+
+// ==========================================
+// TAMPILKAN KATALOG
+// ==========================================
+
+function displayCatalog(data) {
+
+    const container =
+        document.getElementById("catalogCards");
+
+    const noData =
+        document.getElementById("noData");
+
+
+    if (!container) return;
+
+
+    container.innerHTML = "";
+
+
+    if (!data || data.length === 0) {
+
+        showNoData();
+
+        return;
+    }
+
+
+    if (noData) {
+
+        noData.style.display = "none";
+
+    }
+
+
+    data.forEach(function(item) {
+
+        const card =
+            document.createElement("article");
+
+        card.className = "card";
+
+
+        card.innerHTML = `
+
+            <div class="photo">
+                ✨
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    ${item.nama}
+                </h3>
+
+                <p>
+                    📍 ${item.jenis}
+                </p>
+
+                <p>
+                    ✨ ${item.deskripsi}
+                </p>
+
+                ${
+                    item.link && item.link !== "#"
+
+                    ?
+
+                    `
+                    <a
+                        class="button"
+                        href="${item.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Lihat Link Resmi →
+                    </a>
+                    `
+
+                    :
+
+                    `
+                    <span class="button" style="opacity:0.6;">
+                        Link resmi belum tersedia
+                    </span>
+                    `
+
+                }
+
+            </div>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+// ==========================================
+// JIKA DATA TIDAK DITEMUKAN
+// ==========================================
+
+function showNoData() {
+
+    const container =
+        document.getElementById("catalogCards");
+
+    const noData =
+        document.getElementById("noData");
+
+
+    if (container) {
+
+        container.innerHTML = "";
+
+    }
+
+
+    if (noData) {
+
+        noData.style.display = "block";
+
+        noData.textContent =
+            "Maaf, data untuk pilihan ini belum tersedia. ❤️";
+
+    }
+
+}
+
+
+// ==========================================
+// FORM SARAN / PROTOTYPE
 // ==========================================
 
 function demoComment() {
 
-    const box = document.getElementById("comment");
-    const status = document.getElementById("commentStatus");
+    const box =
+        document.getElementById("comment");
 
-    if (!box || !status) {
-        return;
-    }
+    const status =
+        document.getElementById("commentStatus");
+
+
+    if (!box || !status) return;
+
 
     if (!box.value.trim()) {
 
@@ -104,6 +307,8 @@ function demoComment() {
         return;
     }
 
+
     status.textContent =
         "Prototype: nanti komentar ini dikirim ke EchoThread untuk moderasi sebelum tampil.";
+
 }
