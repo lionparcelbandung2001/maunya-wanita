@@ -3,7 +3,7 @@
 // DATA KOTA BANDUNG
 // ==========================================
 
-const bandungData = [
+var bandungData = [
 
     // ======================================
     // 💄 PENGEN CANTIK
