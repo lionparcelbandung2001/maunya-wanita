@@ -26,7 +26,8 @@ function chooseCategory(category) {
 
 function chooseCity(city) {
 
-    const category = localStorage.getItem("mw_category") || "";
+    const category =
+        localStorage.getItem("mw_category") || "";
 
     localStorage.setItem("mw_category", category);
     localStorage.setItem("mw_city", city);
@@ -52,7 +53,8 @@ function getChoice(key) {
 
 function setupCity() {
 
-    const category = getChoice("mw_category");
+    const category =
+        getChoice("mw_category");
 
     const title =
         document.getElementById("cityTitle");
@@ -120,6 +122,7 @@ function loadCityData(city, category) {
     // Contoh:
     // Bandung → bandung.js
     // Jakarta → jakarta.js
+    // Surabaya → surabaya.js
 
     const fileName =
         city
@@ -187,7 +190,10 @@ function loadCityData(city, category) {
         // TAMPILKAN DATA
         // ==================================
 
-        displayCatalog(filteredData);
+        displayCatalog(
+            filteredData,
+            city
+        );
 
     };
 
@@ -218,7 +224,7 @@ function loadCityData(city, category) {
 // TAMPILKAN KATALOG
 // ==========================================
 
-function displayCatalog(data) {
+function displayCatalog(data, city) {
 
     const container =
         document.getElementById("catalogCards");
@@ -269,13 +275,40 @@ function displayCatalog(data) {
 
 
         // ==================================
+        // FOTO
+        // ==================================
+
+        let photoHTML = "";
+
+
+        if (item.foto && item.foto.trim() !== "") {
+
+            photoHTML = `
+                <img
+                    src="${item.foto}"
+                    alt="${item.nama}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty');"
+                >
+            `;
+
+        } else {
+
+            photoHTML = `
+                <span>✨</span>
+            `;
+
+        }
+
+
+        // ==================================
         // ISI CARD
         // ==================================
 
         card.innerHTML = `
 
             <div class="photo">
-                ✨
+                ${photoHTML}
             </div>
 
             <div class="card-body">
