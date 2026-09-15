@@ -222,7 +222,7 @@ var bandungData = [
         jenis: "Wisata Budaya",
         deskripsi: "Wisata seni dan budaya Sunda dengan pertunjukan angklung, tari, wayang, dan pengalaman interaktif.",
         link: "https://angklung-udjo.co.id/",
-        foto: "images/bandung/saung ujo.jpg"
+        foto: "saungujo.jpg"
     },
 
     {
@@ -231,7 +231,7 @@ var bandungData = [
         jenis: "Museum & Edukasi",
         deskripsi: "Museum yang cocok untuk wisata edukasi dan mengenal sejarah geologi Indonesia.",
         link: "#",
-         foto: "images/bandung/museumgeologi.jpg"
+         foto: "museumgeologi.jpg"
     },
 
     {
@@ -240,7 +240,7 @@ var bandungData = [
         jenis: "Wisata Religi",
         deskripsi: "Destinasi wisata religi dan arsitektur yang menjadi salah satu ikon Jawa Barat.",
         link: "#",
-         foto: "images/bandung/masjid aljabar.jpg"
+         foto: "masjidaljabar.jpg"
     },
 
     {
