@@ -230,7 +230,7 @@ var bandungData = [
         kategori: "Pengen Jalan-jalan / Healing",
         jenis: "Museum & Edukasi",
         deskripsi: "Museum yang cocok untuk wisata edukasi dan mengenal sejarah geologi Indonesia.",
-        link: "#"
+        link: "#",
          foto: "images/bandung/museumgeologi.jpg"
     },
 
@@ -239,7 +239,7 @@ var bandungData = [
         kategori: "Pengen Jalan-jalan / Healing",
         jenis: "Wisata Religi",
         deskripsi: "Destinasi wisata religi dan arsitektur yang menjadi salah satu ikon Jawa Barat.",
-        link: "#"
+        link: "#",
          foto: "images/bandung/masjid aljabar.jpg"
     },
 
