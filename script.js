@@ -282,10 +282,13 @@ function displayCatalog(data, city) {
 
 
         if (item.foto && item.foto.trim() !== "") {
+            
+            // Format nama kota untuk folder (misal: "Bandung" jadi "bandung")
+            const folderKota = city.toLowerCase().replace(/ /g, "-");
 
             photoHTML = `
                 <img
-                    src="${item.foto}"
+                    src="images/${folderKota}/${item.foto}"
                     alt="${item.nama}"
                     loading="lazy"
                     onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty');"
