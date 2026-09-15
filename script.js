@@ -12,8 +12,6 @@ function chooseCategory(category) {
 
     localStorage.setItem("mw_category", category);
 
-    // Hapus kota sebelumnya supaya pilihan baru
-    // tidak tercampur dengan pilihan sebelumnya
     localStorage.removeItem("mw_city");
 
     window.location.href = "kota.html";
@@ -119,11 +117,6 @@ function setupCatalog() {
 
 function loadCityData(city, category) {
 
-    // Contoh:
-    // Bandung → bandung.js
-    // Jakarta → jakarta.js
-    // Surabaya → surabaya.js
-
     const fileName =
         city
             .toLowerCase()
@@ -144,10 +137,6 @@ function loadCityData(city, category) {
 
     script.onload = function () {
 
-        // Contoh:
-        // Bandung → bandungData
-        // Jakarta → jakartaData
-
         const variableName =
             city
                 .toLowerCase()
@@ -159,7 +148,6 @@ function loadCityData(city, category) {
             window[variableName];
 
 
-        // Jika data kota tidak ditemukan
         if (!cityData) {
 
             console.error(
@@ -214,7 +202,6 @@ function loadCityData(city, category) {
     };
 
 
-    // Masukkan script data ke halaman
     document.body.appendChild(script);
 
 }
@@ -275,6 +262,15 @@ function displayCatalog(data, city) {
 
 
         // ==================================
+        // LINK RESMI
+        // ==================================
+
+        const hasOfficialLink =
+            item.link &&
+            item.link !== "#";
+
+
+        // ==================================
         // FOTO
         // ==================================
 
@@ -282,18 +278,92 @@ function displayCatalog(data, city) {
 
 
         if (item.foto && item.foto.trim() !== "") {
-            
-            // Format nama kota untuk folder (misal: "Bandung" jadi "bandung")
-            const folderKota = city.toLowerCase().replace(/ /g, "-");
 
-            photoHTML = `
+            const fotoNama =
+                item.foto.trim();
+
+
+            // Kalau foto ditulis:
+            // "amaya-salon.jpg"
+            // maka otomatis menjadi:
+            // images/bandung/amaya-salon.jpg
+
+            let fotoPath = "";
+
+
+            if (
+                fotoNama.startsWith("images/")
+            ) {
+
+                // Kalau suatu saat kamu sudah
+                // menulis path lengkap, tetap aman.
+                fotoPath = fotoNama;
+
+            } else {
+
+                const folderKota =
+                    city
+                        .toLowerCase()
+                        .replace(/ /g, "-");
+
+                fotoPath =
+                    "images/" +
+                    folderKota +
+                    "/" +
+                    fotoNama;
+
+            }
+
+
+            const imageHTML = `
                 <img
-                    src="images/${folderKota}/${item.foto}"
+                    src="${fotoPath}"
                     alt="${item.nama}"
                     loading="lazy"
-                    onerror="this.style.display='none'; this.parentElement.classList.add('photo-empty');"
+                    style="
+                        width:100%;
+                        height:180px;
+                        object-fit:cover;
+                        display:block;
+                    "
+                    onerror="
+                        this.style.display='none';
+                        this.parentElement.parentElement.classList.add('photo-empty');
+                    "
                 >
             `;
+
+
+            // ==================================
+            // FOTO BISA DIKLIK
+            // ==================================
+
+            if (hasOfficialLink) {
+
+                photoHTML = `
+                    <a
+                        href="${item.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="photo-link"
+                        style="
+                            display:block;
+                            width:100%;
+                            height:180px;
+                            overflow:hidden;
+                            text-decoration:none;
+                        "
+                    >
+                        ${imageHTML}
+                    </a>
+                `;
+
+            } else {
+
+                photoHTML = imageHTML;
+
+            }
+
 
         } else {
 
@@ -305,14 +375,63 @@ function displayCatalog(data, city) {
 
 
         // ==================================
+        // DESKRIPSI
+        // ==================================
+
+        let descriptionHTML = `
+            <p>
+                ✨ ${item.deskripsi}
+            </p>
+        `;
+
+
+        // Kalau ada link resmi,
+        // deskripsi juga bisa langsung diklik.
+
+        if (hasOfficialLink) {
+
+            descriptionHTML = `
+                <a
+                    href="${item.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="description-link"
+                    style="
+                        display:block;
+                        color:inherit;
+                        text-decoration:none;
+                        cursor:pointer;
+                    "
+                >
+                    <p>
+                        ✨ ${item.deskripsi}
+                    </p>
+                </a>
+            `;
+
+        }
+
+
+        // ==================================
         // ISI CARD
         // ==================================
 
         card.innerHTML = `
 
-            <div class="photo">
+            <div
+                class="photo"
+                style="
+                    width:100%;
+                    height:180px;
+                    overflow:hidden;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                "
+            >
                 ${photoHTML}
             </div>
+
 
             <div class="card-body">
 
@@ -320,17 +439,17 @@ function displayCatalog(data, city) {
                     ${item.nama}
                 </h3>
 
+
                 <p>
                     📍 ${item.jenis}
                 </p>
 
-                <p>
-                    ✨ ${item.deskripsi}
-                </p>
+
+                ${descriptionHTML}
+
 
                 ${
-                    item.link &&
-                    item.link !== "#"
+                    hasOfficialLink
 
                     ?
 
@@ -418,10 +537,6 @@ function demoComment() {
     if (!box || !status) return;
 
 
-    // ======================================
-    // CEK KOSONG
-    // ======================================
-
     if (!box.value.trim()) {
 
         status.textContent =
@@ -431,10 +546,6 @@ function demoComment() {
 
     }
 
-
-    // ======================================
-    // PESAN SEMENTARA
-    // ======================================
 
     status.textContent =
         "Prototype: nanti komentar ini dikirim ke EchoThread untuk moderasi sebelum tampil.";
