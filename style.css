@@ -1,670 +1,759 @@
 * {
-  box-sizing: border-box;
-  }
+    box-sizing: border-box;
+}
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-margin: 0;
+    margin: 0;
 
-font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
-/* BACKGROUND SOFT PINK */
-background:
-    linear-gradient(
-        180deg,
-        #fff0f6 0%,
-        #fff7fb 45%,
-        #fdeff6 100%
-    );
+    /* BACKGROUND SOFT PINK */
+    background:
+        linear-gradient(
+            180deg,
+            #fff0f6 0%,
+            #fff7fb 45%,
+            #fdeff6 100%
+        );
 
-color: #3a2630;
+    color: #3a2630;
 
-min-height: 100vh;
-
+    min-height: 100vh;
 }
 
+
 /* =========================
-CONTAINER
+   CONTAINER
 ========================= */
 
 .container {
-width: min(1100px, 94%);
-margin: auto;
+    width: min(1100px, 94%);
+    margin: auto;
 }
 
+
 /* =========================
-HEADER
+   HEADER
 ========================= */
 
 header {
-text-align: center;
-
-padding: 34px 15px 20px;
-
+    text-align: center;
+    padding: 30px 15px 16px;
 }
 
 header h1 {
-margin: 0;
+    margin: 0;
 
-font-size: clamp(34px, 7vw, 62px);
+    font-size: clamp(32px, 6vw, 58px);
 
-color: #c94f7d;
+    color: #c94f7d;
 
-letter-spacing: -2px;
+    letter-spacing: -2px;
 
-text-shadow:
-    0 2px 10px rgba(201, 79, 125, 0.08);
-
+    text-shadow:
+        0 2px 10px rgba(201, 79, 125, 0.08);
 }
 
 header p {
-margin: 8px 0 0;
+    margin: 7px 0 0;
 
-font-size: 19px;
+    font-size: 18px;
 
-color: #735763;
-
+    color: #735763;
 }
 
+
 /* =========================
-INTRO
+   INTRO
 ========================= */
 
 .intro {
-text-align: center;
+    text-align: center;
 
-margin: 10px auto 28px;
-
+    margin: 8px auto 22px;
 }
 
 .intro h2 {
-margin: 0;
+    margin: 0;
 
-font-size: 25px;
+    font-size: 24px;
 
-color: #4b303b;
-
+    color: #4b303b;
 }
 
 .intro p {
-color: #866d78;
+    color: #866d78;
 
-margin-top: 8px;
+    margin-top: 7px;
 
+    margin-bottom: 0;
 }
 
+
 /* =========================
-CATEGORY
+   CATEGORY
+   HOMEPAGE = 2 KOLOM
 ========================= */
 
 .category-grid {
-display: grid;
+    display: grid;
 
-grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-gap: 18px;
+    gap: 15px;
 
-margin-bottom: 30px;
-
+    margin-bottom: 25px;
 }
 
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
 .category {
-min-height: 190px;
+    min-height: 165px;
 
-border: 1px solid #efd1df;
+    border: 1px solid #efd1df;
 
-border-radius: 24px;
+    border-radius: 22px;
 
-background:
-    rgba(255, 255, 255, 0.84);
+    background:
+        rgba(255, 255, 255, 0.86);
 
-padding: 25px;
+    padding: 20px;
 
-cursor: pointer;
+    cursor: pointer;
 
-box-shadow:
-    0 8px 24px rgba(170, 80, 120, 0.08);
+    box-shadow:
+        0 7px 20px rgba(170, 80, 120, 0.07);
 
-transition: 0.25s ease;
+    transition: 0.25s ease;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .category:hover {
-transform: translateY(-4px);
+    transform: translateY(-3px);
 
-box-shadow:
-    0 13px 30px rgba(170, 80, 120, 0.13);
+    box-shadow:
+        0 11px 26px rgba(170, 80, 120, 0.12);
 
-border-color: #e5b4c9;
-
-}
-
-.category .icon {
-font-size: 42px;
-}
-
-.category h3 {
-margin: 10px 0 6px;
-
-font-size: 23px;
-
-color: #4b303b;
-
-}
-
-.category p {
-margin: 0;
-
-color: #856d78;
-
-line-height: 1.5;
-
-}
-
-/* =========================
-KOTA
-========================= */
-
-.city-list {
-display: grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap: 14px;
-
-margin-top: 25px;
-
-}
-
-.city {
-display: block;
-
-text-align: center;
-
-text-decoration: none;
-
-border: 1px solid #e6bfd0;
-
-background:
-    rgba(255, 255, 255, 0.84);
-
-color: #a5225b;
-
-padding: 16px;
-
-border-radius: 18px;
-
-font-weight: bold;
-
-box-shadow:
-    0 5px 16px rgba(170, 80, 120, 0.05);
-
-transition: 0.2s ease;
-
-}
-
-.city:hover {
-background: #ffe7f0;
-
-transform: translateY(-2px);
-
-box-shadow:
-    0 8px 20px rgba(170, 80, 120, 0.08);
-
-}
-
-/* =========================
-GENERAL CARD
-========================= */
-
-.page-card {
-background:
-rgba(255, 255, 255, 0.84);
-
-border: 1px solid #efd1df;
-
-border-radius: 24px;
-
-padding: 25px;
-
-box-shadow:
-    0 8px 24px rgba(170, 80, 120, 0.08);
-
-}
-
-/* =========================
-TOMBOL KEMBALI
-========================= */
-
-.back {
-display: inline-block;
-
-margin-bottom: 20px;
-
-color: #a5225b;
-
-text-decoration: none;
-
-font-weight: bold;
-
-}
-
-.back:hover {
-color: #c94f7d;
-}
-
-/* =========================
-NOTICE KATALOG
-========================= */
-
-.notice {
-margin: 0 0 25px;
-
-padding: 15px 18px;
-
-border: 1px solid #e8b6ca;
-
-border-radius: 14px;
-
-background:
-    rgba(255, 235, 244, 0.9);
-
-color: #b92b61;
-
-font-weight: bold;
-
-line-height: 1.5;
-
-box-shadow:
-    0 5px 15px rgba(170, 80, 120, 0.04);
-
-}
-
-.notice small {
-display: block;
-
-color: #735763;
-
-font-weight: normal;
-
-margin-top: 5px;
-
-}
-
-/* =========================
-HASIL KATALOG
-========================= */
-
-.results h2 {
-margin-bottom: 5px;
-
-color: #4b303b;
-
-}
-
-.result-note {
-color: #806873;
-
-margin-top: 0;
-
-}
-
-/* =========================
-GRID KARTU
-========================= */
-
-.cards {
-display: grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap: 16px;
-
-}
-
-/* =========================
-KARTU KATALOG
-========================= */
-
-.card {
-background:
-rgba(255, 255, 255, 0.88);
-
-border: 1px solid #efd5e0;
-
-border-radius: 20px;
-
-overflow: hidden;
-
-box-shadow:
-    0 7px 20px rgba(170, 80, 120, 0.07);
-
-transition: 0.2s ease;
-
-}
-
-.card:hover {
-transform: translateY(-3px);
-
-box-shadow:
-    0 11px 25px rgba(170, 80, 120, 0.11);
-
-}
-
-/* =========================
-FOTO / AREA ATAS KARTU
-========================= */
-
-.photo {
-height: 150px;
-
-background:
-    linear-gradient(
-        135deg,
-        #f6d5e3,
-        #eadced
-    );
-
-display: grid;
-
-place-items: center;
-
-font-size: 42px;
-
-}
-
-/* =========================
-ISI KARTU
-========================= */
-
-.card-body {
-padding: 16px;
-}
-
-.card h3 {
-margin: 0 0 7px;
-
-color: #4b303b;
-
-}
-
-.card p {
-margin: 5px 0;
-
-color: #77626c;
-
-font-size: 14px;
-
-line-height: 1.45;
-
-}
-
-/* =========================
-TOMBOL LINK RESMI
-========================= */
-
-.button {
-display: inline-block;
-
-margin-top: 10px;
-
-text-decoration: none;
-
-background: #c94f7d;
-
-color: #ffffff;
-
-padding: 10px 15px;
-
-border-radius: 999px;
-
-font-size: 14px;
-
-font-weight: bold;
-
-transition: 0.2s ease;
-
-}
-
-.button:hover {
-background: #b84270;
-
-transform: translateY(-1px);
-
-}
-
-/* =========================
-FEEDBACK
-========================= */
-
-.feedback {
-margin: 45px auto 25px;
-
-background:
-    rgba(255, 232, 242, 0.82);
-
-border: 1px solid #efcbd9;
-
-border-radius: 24px;
-
-padding: 28px;
-
-text-align: center;
-
-box-shadow:
-    0 6px 20px rgba(170, 80, 120, 0.05);
-
-}
-
-.feedback h2 {
-margin: 0 0 8px;
-
-color: #4b303b;
-
-}
-
-.feedback p {
-color: #806873;
-}
-
-.feedback a {
-display: inline-block;
-
-margin-top: 8px;
-
-color: #a5225b;
-
-font-weight: bold;
-
-text-decoration: none;
-
-border-bottom: 1px dashed #a5225b;
-
-}
-
-.feedback a:hover {
-color: #c94f7d;
-}
-
-/* =========================
-KOMENTAR / SARAN
-========================= */
-
-.comment-box {
-max-width: 720px;
-
-margin: 0 auto;
-
-background:
-    rgba(255, 255, 255, 0.86);
-
-border: 1px solid #efd1df;
-
-border-radius: 24px;
-
-padding: 25px;
-
-box-shadow:
-    0 8px 24px rgba(170, 80, 120, 0.08);
-
-}
-
-textarea {
-width: 100%;
-
-min-height: 150px;
-
-border: 1px solid #e6bfd0;
-
-border-radius: 16px;
-
-padding: 15px;
-
-font: inherit;
-
-resize: vertical;
-
-background: #fffafd;
-
-color: #3a2630;
-
-}
-
-textarea:focus {
-outline: none;
-
-border-color: #d98aaa;
-
-box-shadow:
-    0 0 0 3px rgba(217, 138, 170, 0.12);
-
-}
-
-/* =========================
-TOMBOL KIRIM
-========================= */
-
-.send {
-border: 0;
-
-margin-top: 12px;
-
-background: #c94f7d;
-
-color: #ffffff;
-
-padding: 12px 22px;
-
-border-radius: 999px;
-
-font-weight: bold;
-
-cursor: pointer;
-
-transition: 0.2s ease;
-
-}
-
-.send:hover {
-background: #b84270;
-
-transform: translateY(-1px);
-
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer {
-text-align: center;
-
-color: #927985;
-
-padding: 30px 15px 45px;
-
-font-size: 13px;
-
-}
-
-footer strong {
-color: #b45a7c;
-}
-
-footer a {
-color: #927985;
-}
-
-/* =========================
-TAMPILAN HP
-========================= */
-
-@media (max-width: 700px) {
-
-.category-grid,
-.cards,
-.city-list {
-    grid-template-columns: 1fr;
-}
-
-.category {
-    min-height: 150px;
-
-    padding: 22px;
+    border-color: #e5b4c9;
 }
 
 .category .icon {
     font-size: 38px;
+
+    line-height: 1;
 }
 
 .category h3 {
+    margin: 8px 0 5px;
+
     font-size: 21px;
+
+    color: #4b303b;
 }
 
-.cards {
-    gap: 14px;
+.category p {
+    margin: 0;
+
+    color: #856d78;
+
+    line-height: 1.4;
+
+    font-size: 14px;
 }
 
-.photo {
-    height: 135px;
-}
-
-header {
-    padding-top: 28px;
-}
-
-header h1 {
-    letter-spacing: -1px;
-}
-
-header p {
-    font-size: 17px;
-}
-
-.feedback {
-    padding: 24px 18px;
-}
-
-}
 
 /* =========================
-REDUCE MOTION
+   KOTA
+========================= */
+
+.city-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+.city {
+    display: block;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border: 1px solid #e6bfd0;
+
+    background:
+        rgba(255, 255, 255, 0.84);
+
+    color: #a5225b;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 16px rgba(170, 80, 120, 0.05);
+
+    transition: 0.2s ease;
+}
+
+.city:hover {
+    background: #ffe7f0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(170, 80, 120, 0.08);
+}
+
+
+/* =========================
+   GENERAL CARD
+========================= */
+
+.page-card {
+    background:
+        rgba(255, 255, 255, 0.84);
+
+    border: 1px solid #efd1df;
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 24px rgba(170, 80, 120, 0.08);
+}
+
+
+/* =========================
+   TOMBOL KEMBALI
+========================= */
+
+.back {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: #a5225b;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.back:hover {
+    color: #c94f7d;
+}
+
+
+/* =========================
+   NOTICE KATALOG
+========================= */
+
+.notice {
+    margin: 0 0 25px;
+
+    padding: 15px 18px;
+
+    border: 1px solid #e8b6ca;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 235, 244, 0.9);
+
+    color: #b92b61;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    box-shadow:
+        0 5px 15px rgba(170, 80, 120, 0.04);
+}
+
+.notice small {
+    display: block;
+
+    color: #735763;
+
+    font-weight: normal;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   HASIL KATALOG
+========================= */
+
+.results h2 {
+    margin-bottom: 5px;
+
+    color: #4b303b;
+}
+
+.result-note {
+    color: #806873;
+
+    margin-top: 0;
+}
+
+
+/* =========================
+   GRID KARTU KATALOG
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================
+   KARTU KATALOG
+========================= */
+
+.card {
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border: 1px solid #efd5e0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 20px rgba(170, 80, 120, 0.07);
+
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 11px 25px rgba(170, 80, 120, 0.11);
+}
+
+
+/* =========================
+   FOTO / AREA ATAS KARTU
+========================= */
+
+.photo {
+    height: 150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6d5e3,
+            #eadced
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 42px;
+}
+
+
+/* =========================
+   ISI KARTU
+========================= */
+
+.card-body {
+    padding: 16px;
+}
+
+.card h3 {
+    margin: 0 0 7px;
+
+    color: #4b303b;
+}
+
+.card p {
+    margin: 5px 0;
+
+    color: #77626c;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================
+   TOMBOL LINK RESMI
+========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    background: #c94f7d;
+
+    color: #ffffff;
+
+    padding: 10px 15px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background: #b84270;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback {
+    margin: 45px auto 25px;
+
+    background:
+        rgba(255, 232, 242, 0.82);
+
+    border: 1px solid #efcbd9;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 20px rgba(170, 80, 120, 0.05);
+}
+
+.feedback h2 {
+    margin: 0 0 8px;
+
+    color: #4b303b;
+}
+
+.feedback p {
+    color: #806873;
+}
+
+.feedback a {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #a5225b;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-bottom: 1px dashed #a5225b;
+}
+
+.feedback a:hover {
+    color: #c94f7d;
+}
+
+
+/* =========================
+   KOMENTAR / SARAN
+========================= */
+
+.comment-box {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    border: 1px solid #efd1df;
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 24px rgba(170, 80, 120, 0.08);
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 150px;
+
+    border: 1px solid #e6bfd0;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    font: inherit;
+
+    resize: vertical;
+
+    background: #fffafd;
+
+    color: #3a2630;
+}
+
+textarea:focus {
+    outline: none;
+
+    border-color: #d98aaa;
+
+    box-shadow:
+        0 0 0 3px rgba(217, 138, 170, 0.12);
+}
+
+
+/* =========================
+   TOMBOL KIRIM
+========================= */
+
+.send {
+    border: 0;
+
+    margin-top: 12px;
+
+    background: #c94f7d;
+
+    color: #ffffff;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.send:hover {
+    background: #b84270;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: #927985;
+
+    padding: 25px 15px 35px;
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: #b45a7c;
+}
+
+footer a {
+    color: #927985;
+}
+
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 700px) {
+
+    /*
+       HOMEPAGE TETAP 2 KOLOM
+       Jadi 4 kategori + 2 ruang
+       tampil 2 x 3.
+    */
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    /*
+       Kartu homepage dibuat lebih
+       ringkas supaya tidak terlalu tinggi.
+    */
+
+    .category {
+        min-height: 145px;
+
+        padding: 15px;
+
+        border-radius: 18px;
+    }
+
+    .category .icon {
+        font-size: 32px;
+    }
+
+    .category h3 {
+        font-size: 16px;
+
+        line-height: 1.2;
+
+        margin: 7px 0 5px;
+    }
+
+    .category p {
+        font-size: 12px;
+
+        line-height: 1.35;
+    }
+
+
+    /*
+       KOTA tetap 1 kolom di HP
+       agar tombol mudah ditekan.
+    */
+
+    .city-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+       KATALOG tetap 1 kolom di HP
+       supaya kartu bisnis nyaman dibaca.
+    */
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .photo {
+        height: 135px;
+    }
+
+
+    header {
+        padding-top: 24px;
+
+        padding-bottom: 12px;
+    }
+
+    header h1 {
+        letter-spacing: -1px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+
+    .intro {
+        margin-bottom: 18px;
+    }
+
+    .intro h2 {
+        font-size: 21px;
+    }
+
+    .intro p {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+
+    .feedback {
+        padding: 24px 18px;
+    }
+
+}
+
+
+/* =========================
+   HP SANGAT KECIL
+========================= */
+
+@media (max-width: 380px) {
+
+    .category-grid {
+        gap: 8px;
+    }
+
+    .category {
+        min-height: 138px;
+
+        padding: 12px;
+    }
+
+    .category .icon {
+        font-size: 28px;
+    }
+
+    .category h3 {
+        font-size: 14px;
+    }
+
+    .category p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================
+   REDUCE MOTION
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-html {
-    scroll-behavior: auto;
-}
+    html {
+        scroll-behavior: auto;
+    }
 
-*,
-*::before,
-*::after {
-    transition: none !important;
-    animation: none !important;
-}
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
 
 }
