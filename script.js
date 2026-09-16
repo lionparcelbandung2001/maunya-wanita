@@ -6,13 +6,16 @@
 
 // ==========================================
 // PILIH KATEGORI
+// HALAMAN 1 → HALAMAN 2
 // ==========================================
 
 function chooseCategory(category) {
 
     localStorage.setItem("mw_category", category);
 
+    // Pilihan lama harus dibersihkan
     localStorage.removeItem("mw_city");
+    localStorage.removeItem("mw_subcategory");
 
     window.location.href = "kota.html";
 }
@@ -20,6 +23,7 @@ function chooseCategory(category) {
 
 // ==========================================
 // PILIH KOTA
+// HALAMAN 2 → HALAMAN 3
 // ==========================================
 
 function chooseCity(city) {
@@ -30,6 +34,47 @@ function chooseCity(city) {
     localStorage.setItem("mw_category", category);
     localStorage.setItem("mw_city", city);
 
+    // Karena ganti kota, subkategori lama harus dibersihkan
+    localStorage.removeItem("mw_subcategory");
+
+    // SEKARANG TIDAK LANGSUNG KE KATALOG
+    window.location.href = "subkategori.html";
+}
+
+
+// ==========================================
+// PILIH SUBKATEGORI
+// HALAMAN 3 → HALAMAN 4
+// ==========================================
+
+function chooseSubcategory(subcategory) {
+
+    const category =
+        localStorage.getItem("mw_category") || "";
+
+    const city =
+        localStorage.getItem("mw_city") || "";
+
+
+    // Simpan pilihan subkategori
+    localStorage.setItem(
+        "mw_subcategory",
+        subcategory
+    );
+
+
+    // Pastikan kategori dan kota masih tersedia
+    if (!category || !city) {
+
+        // Kalau pilihan belum lengkap,
+        // kembali ke halaman awal
+        window.location.href = "index.html";
+
+        return;
+    }
+
+
+    // Masuk ke halaman katalog
     window.location.href = "katalog.html";
 }
 
@@ -57,6 +102,7 @@ function setupCity() {
     const title =
         document.getElementById("cityTitle");
 
+
     if (!title) return;
 
 
@@ -76,10 +122,10 @@ function setupCity() {
 
 
 // ==========================================
-// SETUP HALAMAN KATALOG
+// SETUP HALAMAN SUBKATEGORI
 // ==========================================
 
-function setupCatalog() {
+function setupSubcategory() {
 
     const category =
         getChoice("mw_category");
@@ -87,8 +133,9 @@ function setupCatalog() {
     const city =
         getChoice("mw_city");
 
+
     const title =
-        document.getElementById("catalogTitle");
+        document.getElementById("subcategoryTitle");
 
 
     if (!title) return;
@@ -99,7 +146,63 @@ function setupCatalog() {
         title.textContent =
             category + " — " + city + " ❤️";
 
-        loadCityData(city, category);
+    } else if (category) {
+
+        title.textContent =
+            category + " ❤️";
+
+    } else {
+
+        title.textContent =
+            "Pilih kebutuhanmu ❤️";
+
+    }
+
+}
+
+
+// ==========================================
+// SETUP HALAMAN KATALOG
+// HALAMAN 4
+// ==========================================
+
+function setupCatalog() {
+
+    const category =
+        getChoice("mw_category");
+
+    const city =
+        getChoice("mw_city");
+
+    const subcategory =
+        getChoice("mw_subcategory");
+
+
+    const title =
+        document.getElementById("catalogTitle");
+
+
+    if (!title) return;
+
+
+    if (
+        category &&
+        city &&
+        subcategory
+    ) {
+
+        title.textContent =
+            subcategory +
+            " — " +
+            city +
+            " ❤️";
+
+
+        loadCityData(
+            city,
+            category,
+            subcategory
+        );
 
     } else {
 
@@ -115,7 +218,11 @@ function setupCatalog() {
 // LOAD DATA KOTA
 // ==========================================
 
-function loadCityData(city, category) {
+function loadCityData(
+    city,
+    category,
+    subcategory
+) {
 
     const fileName =
         city
@@ -128,11 +235,13 @@ function loadCityData(city, category) {
 
 
     script.src =
-        "data/" + fileName + ".js";
+        "data/" +
+        fileName +
+        ".js";
 
 
     // ======================================
-    // JIKA FILE BERHASIL DIMUAT
+    // JIKA FILE DATA BERHASIL DIMUAT
     // ======================================
 
     script.onload = function () {
@@ -163,13 +272,18 @@ function loadCityData(city, category) {
 
 
         // ==================================
-        // FILTER BERDASARKAN KATEGORI
+        // FILTER:
+        // 1. KATEGORI
+        // 2. SUBKATEGORI
         // ==================================
 
         const filteredData =
             cityData.filter(function (item) {
 
-                return item.kategori === category;
+                return (
+                    item.kategori === category &&
+                    item.subkategori === subcategory
+                );
 
             });
 
@@ -187,7 +301,7 @@ function loadCityData(city, category) {
 
 
     // ======================================
-    // JIKA FILE GAGAL DIMUAT
+    // JIKA FILE DATA GAGAL DIMUAT
     // ======================================
 
     script.onerror = function () {
@@ -211,7 +325,10 @@ function loadCityData(city, category) {
 // TAMPILKAN KATALOG
 // ==========================================
 
-function displayCatalog(data, city) {
+function displayCatalog(
+    data,
+    city
+) {
 
     const container =
         document.getElementById("catalogCards");
@@ -277,27 +394,25 @@ function displayCatalog(data, city) {
         let photoHTML = "";
 
 
-        if (item.foto && item.foto.trim() !== "") {
+        if (
+            item.foto &&
+            item.foto.trim() !== ""
+        ) {
 
             const fotoNama =
                 item.foto.trim();
 
 
-            // Kalau foto ditulis:
-            // "amaya-salon.jpg"
-            // maka otomatis menjadi:
-            // images/bandung/amaya-salon.jpg
-
             let fotoPath = "";
 
 
+            // Kalau path sudah lengkap
             if (
                 fotoNama.startsWith("images/")
             ) {
 
-                // Kalau suatu saat kamu sudah
-                // menulis path lengkap, tetap aman.
-                fotoPath = fotoNama;
+                fotoPath =
+                    fotoNama;
 
             } else {
 
@@ -305,6 +420,7 @@ function displayCatalog(data, city) {
                     city
                         .toLowerCase()
                         .replace(/ /g, "-");
+
 
                 fotoPath =
                     "images/" +
@@ -360,7 +476,8 @@ function displayCatalog(data, city) {
 
             } else {
 
-                photoHTML = imageHTML;
+                photoHTML =
+                    imageHTML;
 
             }
 
@@ -386,8 +503,7 @@ function displayCatalog(data, city) {
 
 
         // Kalau ada link resmi,
-        // deskripsi juga bisa langsung diklik.
-
+        // deskripsi juga bisa diklik
         if (hasOfficialLink) {
 
             descriptionHTML = `
@@ -562,6 +678,8 @@ document.addEventListener(
     function () {
 
         setupCity();
+
+        setupSubcategory();
 
         setupCatalog();
 
