@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Pilih Kebutuhan — MAUNYA WANITA ❤️❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="container">
+
+        <h1>MAUNYA WANITA ❤️❤️</h1>
+
+        <p>Lagi pengen apa hari ini??</p>
+
+    </header>
+
+
+    <!-- KONTEN -->
+    <main class="container">
+
+        <!-- JUDUL -->
+        <section class="intro">
+
+            <h2 id="subcategoryTitle">
+                Pilih kebutuhanmu ❤️
+            </h2>
+
+            <p>
+                Tinggal pilih yang kamu cari.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             PENGEN CANTIK
+             ========================================= -->
+
+        <section
+            class="category-grid"
+            id="cantikSubcategories"
+            style="display:none;"
+        >
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Salon')"
+            >
+                <div class="icon">💇‍♀️</div>
+
+                <h3>SALON</h3>
+
+                <p>
+                    Salon, nail art, lash, brow,
+                    spa, body treatment, dan beauty clinic.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Skincare Store')"
+            >
+                <div class="icon">🧴</div>
+
+                <h3>SKINCARE STORE</h3>
+
+                <p>
+                    Tempat mencari skincare
+                    dan berbagai kebutuhan perawatan kulit.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Fashion')"
+            >
+                <div class="icon">👗</div>
+
+                <h3>FASHION</h3>
+
+                <p>
+                    Fashion wanita, hijab,
+                    pakaian, sepatu, dan aksesori.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Parfum')"
+            >
+                <div class="icon">🌸</div>
+
+                <h3>PARFUM</h3>
+
+                <p>
+                    Cari parfum dan berbagai
+                    kebutuhan wewangian.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PENGEN NIKAH
+             ========================================= -->
+
+        <section
+            class="category-grid"
+            id="nikahSubcategories"
+            style="display:none;"
+        >
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('WO')"
+            >
+                <div class="icon">💐</div>
+
+                <h3>WO</h3>
+
+                <p>
+                    Wedding Organizer dan berbagai
+                    kebutuhan pendukung acara pernikahan.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('MUA')"
+            >
+                <div class="icon">💄</div>
+
+                <h3>MUA</h3>
+
+                <p>
+                    Makeup artist, bridal makeup,
+                    dan kebutuhan makeup pengantin.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Toko Pengantin')"
+            >
+                <div class="icon">👰</div>
+
+                <h3>TOKO PENGANTIN</h3>
+
+                <p>
+                    Gaun, kebaya, jas, aksesori,
+                    serta kebutuhan pengantin lainnya.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PENGEN MAKAN & BELANJA
+             ========================================= -->
+
+        <section
+            class="category-grid"
+            id="makanBelanjaSubcategories"
+            style="display:none;"
+        >
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Restoran & Cafe')"
+            >
+                <div class="icon">🍽️</div>
+
+                <h3>RESTORAN & CAFE</h3>
+
+                <p>
+                    Cari tempat makan, nongkrong,
+                    ngopi, dan kuliner lainnya.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Toko & Mall')"
+            >
+                <div class="icon">🛍️</div>
+
+                <h3>TOKO & MALL</h3>
+
+                <p>
+                    Tempat belanja, toko,
+                    pusat perbelanjaan, dan mall.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PENGEN JALAN-JALAN / HEALING
+             ========================================= -->
+
+        <section
+            class="category-grid"
+            id="jalanSubcategories"
+            style="display:none;"
+        >
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Hotel & Penginapan')"
+            >
+                <div class="icon">🏨</div>
+
+                <h3>HOTEL & PENGINAPAN</h3>
+
+                <p>
+                    Hotel, villa, resort,
+                    guest house, dan penginapan lainnya.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Wisata')"
+            >
+                <div class="icon">🌴</div>
+
+                <h3>WISATA</h3>
+
+                <p>
+                    Tempat wisata, alam,
+                    taman, dan destinasi untuk jalan-jalan.
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="chooseSubcategory('Hiburan')"
+            >
+                <div class="icon">🎡</div>
+
+                <h3>HIBURAN</h3>
+
+                <p>
+                    Tempat hiburan, rekreasi,
+                    dan aktivitas seru lainnya.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             JIKA KATEGORI TIDAK DIKENALI
+             ========================================= -->
+
+        <section
+            id="wrongCategory"
+            class="intro"
+            style="display:none;"
+        >
+
+            <h2>Oops 😅</h2>
+
+            <p>
+                Pilihan kategori belum ditemukan.
+            </p>
+
+            <a
+                href="index.html"
+                class="button"
+            >
+                ← Kembali ke awal
+            </a>
+
+        </section>
+
+
+        <!-- KEMBALI -->
+        <div
+            style="
+                text-align:center;
+                margin-top:35px;
+            "
+        >
+
+            <a
+                href="index.html"
+                style="
+                    text-decoration:none;
+                    color:inherit;
+                "
+            >
+                ← Kembali ke halaman awal
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        MAUNYA WANITA ❤️❤️
+
+        <br>
+
+        Cari yang kamu mau. Tanpa ribet.
+
+    </footer>
+
+
+    <!-- SCRIPT UTAMA -->
+    <script src="script.js"></script>
+
+
+    <!-- =========================================
+         SCRIPT KHUSUS SUBKATEGORI
+         ========================================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const category =
+                    localStorage.getItem("mw_category");
+
+
+                const cantik =
+                    document.getElementById(
+                        "cantikSubcategories"
+                    );
+
+                const nikah =
+                    document.getElementById(
+                        "nikahSubcategories"
+                    );
+
+                const makanBelanja =
+                    document.getElementById(
+                        "makanBelanjaSubcategories"
+                    );
+
+                const jalan =
+                    document.getElementById(
+                        "jalanSubcategories"
+                    );
+
+                const wrong =
+                    document.getElementById(
+                        "wrongCategory"
+                    );
+
+
+                // ==================================
+                // TAMPILKAN SESUAI KATEGORI
+                // ==================================
+
+                if (
+                    category ===
+                    "Pengen Cantik"
+                ) {
+
+                    cantik.style.display =
+                        "grid";
+
+                }
+
+                else if (
+                    category ===
+                    "Pengen Nikah"
+                ) {
+
+                    nikah.style.display =
+                        "grid";
+
+                }
+
+                else if (
+                    category ===
+                    "Pengen Makan & Belanja"
+                ) {
+
+                    makanBelanja.style.display =
+                        "grid";
+
+                }
+
+                else if (
+                    category ===
+                    "Pengen Jalan-jalan / Healing"
+                ) {
+
+                    jalan.style.display =
+                        "grid";
+
+                }
+
+                else {
+
+                    wrong.style.display =
+                        "block";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
