@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Review Produk ⭐ | Ruang Cewek</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #3a2630;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 28px 15px 18px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #d92f72;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 7px 0 0;
+            color: #765967;
+            font-size: 14px;
+        }
+
+        /* BACK */
+        .back {
+            display: inline-block;
+            margin: 5px 0 15px;
+            color: #d92f72;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* FILTER */
+        .filter-title {
+            text-align: center;
+            font-size: 13px;
+            color: #765967;
+            margin-bottom: 8px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .category-button {
+            border: 1px solid #f0cfdd;
+            background: white;
+            color: #5d3d4b;
+            border-radius: 12px;
+            padding: 10px 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .category-button:hover,
+        .category-button.active {
+            background: #fde5ef;
+            color: #d92f72;
+            border-color: #e9a9c1;
+            font-weight: bold;
+        }
+
+        /* LIST */
+        .section-title {
+            color: #d92f72;
+            font-size: 19px;
+            margin: 0 0 12px;
+        }
+
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .review-card {
+            display: block;
+            background: white;
+            border: 1px solid #f2d9e4;
+            border-radius: 15px;
+            padding: 15px;
+            text-decoration: none;
+            color: #3a2630;
+            box-shadow: 0 3px 10px rgba(180, 100, 130, 0.06);
+            transition: 0.2s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 14px rgba(180, 100, 130, 0.1);
+        }
+
+        .review-title {
+            font-weight: bold;
+            color: #3a2630;
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .review-meta {
+            font-size: 11px;
+            color: #8a707b;
+        }
+
+        .review-preview {
+            font-size: 13px;
+            color: #765967;
+            line-height: 1.5;
+            margin-top: 7px;
+        }
+
+        .rating {
+            margin-top: 7px;
+            font-size: 13px;
+        }
+
+        /* FLOATING BUTTON */
+        .share-review {
+            position: fixed;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+
+            background: #d92f72;
+            color: white;
+            text-decoration: none;
+
+            padding: 12px 14px;
+            border-radius: 14px;
+
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+
+            box-shadow: 0 5px 15px rgba(150, 50, 90, 0.22);
+        }
+
+        .share-review span {
+            display: block;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+
+        .share-review:hover {
+            opacity: 0.9;
+        }
+
+        /* INFO */
+        .info-box {
+            background: #fff0f6;
+            border: 1px solid #f3d5e2;
+            border-radius: 14px;
+            padding: 13px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #765967;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px 10px 30px;
+            color: #8a707b;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .container {
+                width: 94%;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 6px;
+            }
+
+            .category-button {
+                padding: 9px 3px;
+                font-size: 11px;
+            }
+
+            .review-card {
+                padding: 13px;
+            }
+
+            .share-review {
+                right: 8px;
+                padding: 10px 11px;
+                border-radius: 12px;
+                font-size: 11px;
+            }
+
+            .share-review span {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .category-button {
+                font-size: 10px;
+                padding: 8px 2px;
+            }
+
+            .share-review {
+                right: 5px;
+                padding: 9px 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>⭐ REVIEW PRODUK</h1>
+        <p>Sudah pernah coba? Ceritakan pengalamanmu ❤️</p>
+    </header>
+
+    <!-- BACK -->
+    <a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
+
+
+    <!-- FILTER KATEGORI -->
+    <div class="filter-title">
+        Pilih kategori review
+    </div>
+
+    <div class="category-grid">
+
+        <button class="category-button active">
+            Semua
+        </button>
+
+        <button class="category-button">
+            Fashion
+        </button>
+
+        <button class="category-button">
+            Kosmetik
+        </button>
+
+        <button class="category-button">
+            Skincare
+        </button>
+
+        <button class="category-button">
+            Parfum
+        </button>
+
+        <button class="category-button">
+            Sepatu
+        </button>
+
+        <button class="category-button">
+            Tas & Aksesoris
+        </button>
+
+        <button class="category-button">
+            Makanan
+        </button>
+
+        <button class="category-button">
+            Lainnya
+        </button>
+
+    </div>
+
+
+    <!-- DAFTAR REVIEW -->
+    <h2 class="section-title">
+        ⭐ Review Terbaru
+    </h2>
+
+    <div class="review-list">
+
+        <a href="#" class="review-card">
+
+            <div class="review-title">
+                Serum ini ternyata cocok banget di kulitku
+            </div>
+
+            <div class="review-meta">
+                🧴 Skincare • 1 jam lalu • 💬 8 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="review-preview">
+                Sudah pakai sekitar dua minggu dan sejauh ini hasilnya...
+            </div>
+
+        </a>
+
+
+        <a href="#" class="review-card">
+
+            <div class="review-title">
+                Bahannya bagus, tapi ukurannya agak kecil
+            </div>
+
+            <div class="review-meta">
+                👗 Fashion • 3 jam lalu • 💬 5 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐☆
+            </div>
+
+            <div class="review-preview">
+                Aku beli karena tertarik modelnya. Setelah datang ternyata...
+            </div>
+
+        </a>
+
+
+        <a href="#" class="review-card">
+
+            <div class="review-title">
+                Wanginya soft dan nggak bikin pusing
+            </div>
+
+            <div class="review-meta">
+                🌸 Parfum • kemarin • 💬 7 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="review-preview">
+                Buat yang suka wangi lembut, menurutku parfum ini cukup...
+            </div>
+
+        </a>
+
+
+        <a href="#" class="review-card">
+
+            <div class="review-title">
+                Tasnya cantik, ternyata muat banyak
+            </div>
+
+            <div class="review-meta">
+                👜 Tas & Aksesoris • kemarin • 💬 10 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐☆
+            </div>
+
+            <div class="review-preview">
+                Awalnya kupikir cuma cocok buat jalan-jalan, ternyata...
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- INFO -->
+    <div class="info-box">
+        ⭐ Review yang dikirim akan melalui proses moderasi terlebih dahulu
+        sebelum ditampilkan di Ruang Cewek.
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © CewekPedia ❤️
+    </footer>
+
+</div>
+
+
+<!-- BAGIKAN REVIEW -->
+<a href="#" class="share-review">
+    ⭐ Bagikan
+    <span>Reviewmu</span>
+</a>
+
+
+</body>
+</html>
