@@ -521,10 +521,12 @@ footer a {
         border-radius: 18px;
     }
 
-    /* Item ke-5 dan ke-6 dibuat melebarkan diri setengah-setengah (50%-50%) */
+    /* Item ke-5 dan ke-6 (Ruang Cewek & Ruang Lawak) dibuat 2 kolom & rata tengah */
     .category:nth-child(5),
     .category:nth-child(6) {
         grid-column: span 2;
+        text-align: center;
+        align-items: center;
     }
 
     /* Ukuran gambar/svg ikon di PC */
