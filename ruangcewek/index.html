@@ -7,7 +7,6 @@
 <title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -25,11 +24,7 @@ body {
     padding: 12px;
 }
 
-
-/* =========================
-   TOP BAR
-========================= */
-
+/* TOP BAR */
 .topbar {
     display: flex;
     justify-content: center;
@@ -52,11 +47,7 @@ body {
     color: #d92f72;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 header {
     text-align: center;
     padding: 10px 5px 10px;
@@ -74,11 +65,7 @@ header p {
     font-size: 12px;
 }
 
-
-/* =========================
-   FITUR
-========================= */
-
+/* FITUR */
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -109,11 +96,7 @@ header p {
     font-size: 10px;
 }
 
-
-/* =========================
-   MUSIK SOUNDCLOUD
-========================= */
-
+/* SOUNDCLOUD */
 .music-section {
     margin-top: 9px;
 }
@@ -140,11 +123,7 @@ header p {
     border: none;
 }
 
-
-/* =========================
-   CHATROOM
-========================= */
-
+/* CHATROOM */
 .chatroom {
     background: white;
     border: 1px solid #f1d9e4;
@@ -171,11 +150,7 @@ header p {
     color: #348b57;
 }
 
-
-/* =========================
-   CATATAN
-========================= */
-
+/* CATATAN */
 .chat-notice {
     background: #fff7fb;
     border: 1px solid #f1d9e4;
@@ -187,11 +162,7 @@ header p {
     color: #765866;
 }
 
-
-/* =========================
-   NICKNAME
-========================= */
-
+/* NICKNAME */
 .nickname-box {
     background: #fff7fb;
     border-radius: 12px;
@@ -214,11 +185,7 @@ header p {
     flex: 1;
 }
 
-
-/* =========================
-   CHAT
-========================= */
-
+/* CHAT */
 .messages {
     height: 300px;
     overflow-y: auto;
@@ -254,11 +221,7 @@ header p {
     margin-top: 3px;
 }
 
-
-/* =========================
-   INPUT
-========================= */
-
+/* INPUT */
 .chat-input {
     display: flex;
     gap: 7px;
@@ -308,11 +271,21 @@ button:disabled {
     margin-top: 8px;
 }
 
+/* ERROR */
+.firebase-error {
+    display: none;
+    margin-top: 8px;
+    padding: 8px 10px;
+    background: #fff1f1;
+    border: 1px solid #f0caca;
+    border-radius: 10px;
+    color: #a33a3a;
+    font-size: 10px;
+    line-height: 1.5;
+    word-break: break-word;
+}
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer {
     text-align: center;
     padding: 25px 10px 10px;
@@ -320,11 +293,7 @@ footer {
     color: #8b737d;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media (max-width: 600px) {
 
     .container {
@@ -379,22 +348,15 @@ footer {
     .chat-notice {
         font-size: 10px;
     }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-
-<!-- =========================
-     TOP BAR
-========================= -->
-
+<!-- TOP BAR -->
 <nav class="topbar">
 
     <a href="../index.html">💄 Cantik</a>
@@ -412,10 +374,7 @@ footer {
 </nav>
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
+<!-- HEADER -->
 <header>
 
     <h1>💬 RUANG CEWEK</h1>
@@ -427,10 +386,7 @@ footer {
 </header>
 
 
-<!-- =========================
-     FITUR
-========================= -->
-
+<!-- FITUR -->
 <div class="feature-grid">
 
     <a href="curhat.html" class="feature-card">
@@ -459,16 +415,12 @@ footer {
 </div>
 
 
-<!-- =========================
-     SOUNDCLOUD
-========================= -->
-
+<!-- SOUNDCLOUD -->
 <section class="music-section">
 
     <div class="music-title">
         🎵 Temani ngobrol sambil dengerin musik
     </div>
-
 
     <div class="soundcloud-box">
 
@@ -485,10 +437,7 @@ footer {
 </section>
 
 
-<!-- =========================
-     CHATROOM
-========================= -->
-
+<!-- CHATROOM -->
 <section class="chatroom">
 
     <div class="chat-header">
@@ -498,16 +447,13 @@ footer {
         <div
             class="online"
             id="onlineCount">
-
             🟢 Menghubungkan...
-
         </div>
 
     </div>
 
 
     <!-- CATATAN -->
-
     <div class="chat-notice">
 
         ⚠️ <strong>Catatan Chatroom</strong><br>
@@ -523,13 +469,11 @@ footer {
 
 
     <!-- NICKNAME -->
-
     <div class="nickname-box">
 
         <label for="nickname">
             Nama panggilan kamu:
         </label>
-
 
         <div class="nickname-row">
 
@@ -538,7 +482,6 @@ footer {
                 id="nickname"
                 maxlength="20"
                 placeholder="Contoh: Maya">
-
 
             <button id="saveNickname">
                 Simpan
@@ -550,7 +493,6 @@ footer {
 
 
     <!-- PESAN -->
-
     <div
         class="messages"
         id="messages">
@@ -563,7 +505,6 @@ footer {
 
 
     <!-- INPUT -->
-
     <div class="chat-input">
 
         <input
@@ -573,13 +514,10 @@ footer {
             placeholder="Tulis pesan..."
             disabled>
 
-
         <button
             id="sendButton"
             disabled>
-
             Kirim
-
         </button>
 
     </div>
@@ -592,28 +530,28 @@ footer {
 
     </div>
 
+
+    <!-- ERROR FIREBASE -->
+    <div
+        id="firebaseError"
+        class="firebase-error">
+    </div>
+
 </section>
 
 
 <footer>
-
     © 2026 Ruang Cewek ❤️
-
 </footer>
-
 
 </div>
 
 
-<!-- =========================
-     FIREBASE
-========================= -->
-
+<!-- FIREBASE -->
 <script type="module">
 
 import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
     getDatabase,
@@ -627,7 +565,6 @@ import {
 }
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-
 import {
     getAuth,
     signInAnonymously
@@ -637,6 +574,7 @@ from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 /* =========================
    FIREBASE CONFIG
+   VERSI YANG SUDAH TERBUKTI
 ========================= */
 
 const firebaseConfig = {
@@ -666,47 +604,85 @@ const firebaseConfig = {
 
 
 /* =========================
-   INIT FIREBASE
-========================= */
-
-const app =
-    initializeApp(firebaseConfig);
-
-
-const db =
-    getDatabase(app);
-
-
-const auth =
-    getAuth(app);
-
-
-/* =========================
    ELEMENT
 ========================= */
 
 const nicknameInput =
     document.getElementById("nickname");
 
-
 const saveNicknameButton =
     document.getElementById("saveNickname");
-
 
 const messageInput =
     document.getElementById("messageInput");
 
-
 const sendButton =
     document.getElementById("sendButton");
-
 
 const messages =
     document.getElementById("messages");
 
-
 const onlineCount =
     document.getElementById("onlineCount");
+
+const firebaseError =
+    document.getElementById("firebaseError");
+
+
+/* =========================
+   ERROR DISPLAY
+========================= */
+
+function showFirebaseError(error) {
+
+    console.error(
+        "Firebase Error:",
+        error
+    );
+
+    firebaseError.style.display =
+        "block";
+
+    firebaseError.innerHTML =
+        "<strong>Detail error Firebase:</strong><br>" +
+        "Kode: " +
+        (error.code || "tidak diketahui") +
+        "<br>" +
+        "Pesan: " +
+        (error.message || "tidak diketahui");
+
+}
+
+
+/* =========================
+   INIT FIREBASE
+========================= */
+
+let app;
+let db;
+let auth;
+
+try {
+
+    app =
+        initializeApp(
+            firebaseConfig
+        );
+
+    db =
+        getDatabase(app);
+
+    auth =
+        getAuth(app);
+
+} catch (error) {
+
+    showFirebaseError(error);
+
+    onlineCount.textContent =
+        "🔴 Chatroom offline";
+
+}
 
 
 /* =========================
@@ -714,7 +690,9 @@ const onlineCount =
 ========================= */
 
 let nickname =
-    sessionStorage.getItem("ruangCewekNickname") || "";
+    sessionStorage.getItem(
+        "ruangCewekNickname"
+    ) || "";
 
 
 if (nickname) {
@@ -780,45 +758,42 @@ saveNicknameButton.addEventListener(
    LOGIN ANONIM
 ========================= */
 
-signInAnonymously(auth)
+if (auth) {
 
-    .then((result) => {
+    signInAnonymously(auth)
 
-        const uid =
-            result.user.uid;
+        .then((result) => {
 
-
-        setupPresence(uid);
-
-        loadMessages();
-
-    })
+            const uid =
+                result.user.uid;
 
 
-    .catch((error) => {
+            setupPresence(uid);
 
-        console.error(
-            "Firebase Auth Error:",
-            error
-        );
+            loadMessages();
 
+        })
 
-        messages.innerHTML = `
+        .catch((error) => {
 
-            <div class="info">
-
-                Chatroom belum bisa terhubung.
-                Coba refresh halaman.
-
-            </div>
-
-        `;
+            showFirebaseError(error);
 
 
-        onlineCount.textContent =
-            "🔴 Chatroom offline";
+            messages.innerHTML = `
 
-    });
+                <div class="info">
+                    Chatroom belum bisa terhubung.
+                </div>
+
+            `;
+
+
+            onlineCount.textContent =
+                "🔴 Chatroom offline";
+
+        });
+
+}
 
 
 /* =========================
@@ -864,12 +839,25 @@ function setupPresence(uid) {
                     nickname:
                         nickname || "Tamu"
                 }
-            );
+            )
+
+            .catch((error) => {
+
+                showFirebaseError(error);
+
+            });
 
 
             onDisconnect(
                 myPresenceRef
-            ).remove();
+            )
+            .remove()
+
+            .catch((error) => {
+
+                showFirebaseError(error);
+
+            });
 
         }
     );
@@ -898,6 +886,12 @@ function setupPresence(uid) {
                 "🟢 " +
                 count +
                 " orang sedang online";
+
+        },
+
+        (error) => {
+
+            showFirebaseError(error);
 
         }
     );
@@ -930,6 +924,12 @@ function loadMessages() {
 
 
             displayMessage(data);
+
+        },
+
+        (error) => {
+
+            showFirebaseError(error);
 
         }
     );
@@ -1074,7 +1074,6 @@ function sendMessage() {
     push(
         messagesRef,
         {
-
             nickname:
                 nickname,
 
@@ -1083,10 +1082,8 @@ function sendMessage() {
 
             timestamp:
                 serverTimestamp()
-
         }
     )
-
 
     .then(() => {
 
@@ -1097,11 +1094,9 @@ function sendMessage() {
 
     })
 
-
     .catch((error) => {
 
-        console.error(error);
-
+        showFirebaseError(error);
 
         alert(
             "Pesan gagal dikirim. Coba lagi."
@@ -1123,7 +1118,7 @@ sendButton.addEventListener(
 
 
 /* =========================
-   ENTER UNTUK KIRIM
+   ENTER
 ========================= */
 
 messageInput.addEventListener(
