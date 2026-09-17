@@ -1,1104 +1,825 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
-
-
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff7fb;
-    color: #3a2630;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 12px;
-}
-
-
-/* =========================
-   TOP NAV
-========================= */
-
-.topbar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 8px;
-}
-
-.topbar a {
-    text-decoration: none;
-    color: #765866;
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 20px;
-    padding: 5px 8px;
-    font-size: 10px;
-}
-
-.topbar a:hover {
-    color: #d92f72;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    text-align: center;
-    padding: 10px 5px;
-}
-
-header h1 {
-    margin: 0;
-    color: #d92f72;
-    font-size: 27px;
-}
-
-header p {
-    margin-top: 5px;
-    color: #765866;
-    font-size: 12px;
-}
-
-
-/* =========================
-   FEATURE
-========================= */
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-top: 4px;
-}
-
-.feature-card {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 14px;
-    padding: 12px 8px;
-    text-align: center;
-    text-decoration: none;
-    color: #3a2630;
-    box-shadow: 0 3px 8px rgba(160, 80, 110, 0.06);
-}
-
-.feature-card h2 {
-    margin: 0 0 4px;
-    color: #d92f72;
-    font-size: 16px;
-}
-
-.feature-card p {
-    margin: 0;
-    line-height: 1.35;
-    font-size: 10px;
-}
-
-
-/* =========================
-   MUSIC
-========================= */
-
-.music-section {
-    margin-top: 10px;
-}
-
-.music-title {
-    text-align: center;
-    color: #765866;
-    font-size: 11px;
-    margin-bottom: 6px;
-}
-
-.music-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 5px;
-}
-
-.music-button {
-    border: 1px solid #f1d9e4;
-    background: white;
-    color: #765866;
-    border-radius: 20px;
-    padding: 5px 10px;
-    font-size: 10px;
-    cursor: pointer;
-    font-weight: normal;
-}
-
-.music-button.active {
-    background: #d92f72;
-    color: white;
-    border-color: #d92f72;
-}
-
-.soundcloud-box {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 81px;
-}
-
-.soundcloud-box iframe {
-    display: block;
-    width: 100%;
-    height: 81px;
-    border: none;
-}
-
-
-/* =========================
-   CHATROOM
-========================= */
-
-.chatroom {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 18px;
-    margin-top: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
-}
-
-.chat-header {
-    text-align: center;
-    margin-bottom: 11px;
-}
-
-.chat-header h2 {
-    margin: 0;
-    color: #d92f72;
-    font-size: 21px;
-}
-
-.online {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #348b57;
-}
-
-
-/* =========================
-   CATATAN
-========================= */
-
-.chat-notice {
-    background: #fff7fb;
-    border: 1px solid #f1d9e4;
-    border-radius: 12px;
-    padding: 10px 12px;
-    margin-bottom: 11px;
-    font-size: 11px;
-    line-height: 1.55;
-    color: #765866;
-}
-
-
-/* =========================
-   NICKNAME
-========================= */
-
-.nickname-box {
-    background: #fff7fb;
-    border-radius: 12px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.nickname-box label {
-    display: block;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.nickname-row {
-    display: flex;
-    gap: 7px;
-}
-
-.nickname-row input {
-    flex: 1;
-}
-
-
-/* =========================
-   MESSAGES
-========================= */
-
-.messages {
-    height: 300px;
-    overflow-y: auto;
-    background: #fffafd;
-    border: 1px solid #f0dce6;
-    border-radius: 12px;
-    padding: 10px;
-}
-
-.message {
-    margin-bottom: 9px;
-    padding: 8px 10px;
-    background: #fff0f6;
-    border-radius: 12px;
-}
-
-.message-name {
-    font-size: 11px;
-    font-weight: bold;
-    color: #d92f72;
-    margin-bottom: 3px;
-}
-
-.message-text {
-    font-size: 13px;
-    line-height: 1.4;
-    word-break: break-word;
-}
-
-.message-time {
-    font-size: 9px;
-    color: #9b858e;
-    margin-top: 3px;
-}
-
-
-/* =========================
-   INPUT
-========================= */
-
-.chat-input {
-    display: flex;
-    gap: 7px;
-    margin-top: 8px;
-}
-
-input,
-button {
-    font-family: inherit;
-}
-
-input {
-    border: 1px solid #e6cbd7;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    outline: none;
-}
-
-input:focus {
-    border-color: #d92f72;
-}
-
-button {
-    border: none;
-    border-radius: 10px;
-    padding: 10px 14px;
-    background: #d92f72;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.info {
-    text-align: center;
-    font-size: 11px;
-    color: #8b737d;
-    margin-top: 8px;
-}
-
-
-/* =========================
-   FIREBASE ERROR
-========================= */
-
-.firebase-error {
-    display: none;
-    margin-top: 8px;
-    padding: 9px 10px;
-    background: #fff1f1;
-    border: 1px solid #f0caca;
-    border-radius: 10px;
-    color: #a33a3a;
-    font-size: 10px;
-    line-height: 1.5;
-    word-break: break-word;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 25px 10px 10px;
-    font-size: 11px;
-    color: #8b737d;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .container {
-        padding: 9px;
-    }
-
-    .topbar {
-        gap: 4px;
-    }
-
-    .topbar a {
-        font-size: 9px;
-        padding: 4px 7px;
-    }
-
-    header {
-        padding: 9px 5px;
-    }
-
-    header h1 {
-        font-size: 25px;
-    }
-
-    header p {
-        font-size: 11px;
-    }
-
-    .feature-grid {
-        gap: 7px;
-    }
-
-    .feature-card {
-        padding: 11px 7px;
-    }
-
-    .feature-card h2 {
-        font-size: 15px;
-    }
-
-    .feature-card p {
-        font-size: 9px;
-    }
-
-    .music-button {
-        padding: 5px 8px;
-        font-size: 9px;
-    }
-
-    .chatroom {
-        padding: 12px;
-    }
-
-    .messages {
-        height: 300px;
-    }
-
-    .chat-notice {
-        font-size: 10px;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ruang Cewek</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #3a2630;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d92f72;
+            margin: 5px 0 2px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #7b5a66;
+        }
+
+        /* MINI NAV */
+        .mini-nav {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .mini-nav a {
+            text-decoration: none;
+            color: #8b5267;
+            background: #fff;
+            border: 1px solid #f1d6e1;
+            border-radius: 20px;
+            padding: 5px 9px;
+            font-size: 11px;
+        }
+
+        .mini-nav a.active {
+            background: #fde1ec;
+            color: #d92f72;
+        }
+
+        /* MENU CARDS */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card {
+            background: white;
+            border: 1px solid #f3dce5;
+            border-radius: 15px;
+            padding: 18px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #3a2630;
+            box-shadow: 0 3px 10px rgba(150, 80, 110, 0.06);
+        }
+
+        .menu-card .emoji {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .menu-card strong {
+            font-size: 14px;
+        }
+
+        /* MUSIC */
+        .music-box {
+            background: white;
+            border: 1px solid #f3dce5;
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .music-title {
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            color: #d92f72;
+            margin-bottom: 8px;
+        }
+
+        .music-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .music-buttons button {
+            border: 1px solid #f0d4df;
+            background: #fff7fb;
+            color: #7b5263;
+            border-radius: 20px;
+            padding: 6px 10px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .music-buttons button.active {
+            background: #fde0eb;
+            color: #d92f72;
+        }
+
+        .soundcloud-frame {
+            width: 100%;
+            height: 81px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        /* CHATROOM */
+        .chat-box {
+            background: white;
+            border: 1px solid #f3dce5;
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 3px 10px rgba(150, 80, 110, 0.06);
+        }
+
+        .chat-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .chat-title strong {
+            color: #d92f72;
+            font-size: 16px;
+        }
+
+        #onlineCount {
+            font-size: 11px;
+            color: #777;
+        }
+
+        /* KETENTUAN RINGKAS */
+        .chat-terms {
+            margin-bottom: 8px;
+            font-size: 11px;
+        }
+
+        .chat-terms summary {
+            cursor: pointer;
+            color: #9a6477;
+            padding: 4px 2px;
+        }
+
+        .chat-terms summary:hover {
+            color: #d92f72;
+        }
+
+        .terms-content {
+            background: #fff8fb;
+            border: 1px solid #f3dce5;
+            border-radius: 10px;
+            padding: 9px;
+            line-height: 1.5;
+            color: #674955;
+        }
+
+        .terms-content strong {
+            color: #d92f72;
+        }
+
+        /* ERROR FIREBASE */
+        #firebaseError {
+            display: none;
+            background: #fff0f0;
+            border: 1px solid #e5a5a5;
+            color: #9b3030;
+            border-radius: 10px;
+            padding: 9px;
+            margin-bottom: 8px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* MESSAGES */
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            background: #fffafd;
+            border: 1px solid #f1dce5;
+            border-radius: 10px;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+
+        .message {
+            margin-bottom: 8px;
+            padding: 7px 9px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #f3e2e8;
+            font-size: 12px;
+        }
+
+        .message .nickname {
+            font-weight: bold;
+            color: #d92f72;
+            margin-bottom: 2px;
+        }
+
+        .message .text {
+            word-wrap: break-word;
+        }
+
+        .message .time {
+            font-size: 9px;
+            color: #999;
+            margin-top: 3px;
+        }
+
+        .info {
+            text-align: center;
+            color: #999;
+            font-size: 11px;
+            padding: 15px;
+        }
+
+        /* INPUT */
+        .chat-input-area {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        #nickname,
+        #messageInput {
+            width: 100%;
+            border: 1px solid #efd8e1;
+            border-radius: 10px;
+            padding: 9px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        #nickname {
+            font-size: 11px;
+        }
+
+        #messageInput {
+            font-size: 12px;
+            resize: none;
+        }
+
+        .send-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        #sendButton {
+            flex: 1;
+            border: 0;
+            border-radius: 10px;
+            padding: 10px;
+            background: #d92f72;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #sendButton:disabled {
+            background: #d8aabd;
+            cursor: not-allowed;
+        }
+
+        .limit {
+            font-size: 9px;
+            color: #999;
+            text-align: right;
+        }
+
+        /* FLOATING BUTTON */
+        .floating {
+            position: fixed;
+            right: 14px;
+            bottom: 14px;
+            background: #d92f72;
+            color: white;
+            text-decoration: none;
+            padding: 10px 13px;
+            border-radius: 25px;
+            font-size: 11px;
+            box-shadow: 0 4px 15px rgba(150, 50, 90, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .menu-grid {
+                gap: 8px;
+            }
+
+            .menu-card {
+                padding: 15px 8px;
+            }
+
+            #messages {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+    <h1>💬 RUANG CEWEK</h1>
 
-<!-- =========================
-     TOP NAV
-========================= -->
-
-<nav class="topbar">
-
-    <a href="../index.html">
-        💄 Cantik
-    </a>
-
-    <a href="../index.html">
-        💍 Nikah
-    </a>
-
-    <a href="../index.html">
-        🛍️ Makan
-    </a>
-
-    <a href="../index.html">
-        🌴 Healing
-    </a>
-
-    <a href="index.html">
-        💬 Cerita
-    </a>
-
-    <a href="../ruanglawak/index.html">
-        😂 Lawak
-    </a>
-
-</nav>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-    <h1>
-        💬 RUANG CEWEK
-    </h1>
-
-    <p>
+    <div class="subtitle">
         Cerita • Berbagi • Ngobrol ❤️
-    </p>
+    </div>
 
-</header>
+    <!-- MINI NAV -->
+    <div class="mini-nav">
+        <a href="../index.html">💄 Cantik</a>
+        <a href="../index.html">💍 Nikah</a>
+        <a href="../index.html">🛍️ Makan</a>
+        <a href="../index.html">🌴 Healing</a>
+        <a href="index.html" class="active">💬 Cerita</a>
+        <a href="../ruanglawak/index.html">😂 Lawak</a>
+    </div>
 
+    <!-- MENU -->
+    <div class="menu-grid">
 
-<!-- =========================
-     FITUR
-========================= -->
+        <a href="curhat.html" class="menu-card">
+            <span class="emoji">💭</span>
+            <strong>Curhat</strong>
+        </a>
 
-<div class="feature-grid">
-
-
-    <a
-        href="curhat.html"
-        class="feature-card"
-    >
-
-        <h2>
-            💭 CURHAT
-        </h2>
-
-        <p>
-            Cerita & pengalaman.<br>
-            Siapa tahu ada yang pernah merasakan hal yang sama.
-        </p>
-
-    </a>
-
-
-    <a
-        href="reviewproduk.html"
-        class="feature-card"
-    >
-
-        <h2>
-            ⭐ REVIEW PRODUK
-        </h2>
-
-        <p>
-            Sudah pernah coba?<br>
-            Bagikan pengalamanmu.
-        </p>
-
-    </a>
-
-
-</div>
-
-
-<!-- =========================
-     MUSIC
-========================= -->
-
-<section class="music-section">
-
-
-    <div class="music-title">
-
-        🎵 Pilih musik sambil ngobrol
+        <a href="reviewproduk.html" class="menu-card">
+            <span class="emoji">⭐</span>
+            <strong>Review Produk</strong>
+        </a>
 
     </div>
 
+    <!-- MUSIC -->
+    <div class="music-box">
 
-    <div class="music-buttons">
+        <div class="music-title">
+            🎵 Teman Ngobrol
+        </div>
 
-        <button
-            type="button"
-            class="music-button active"
-            data-music="korea"
-        >
-            🇰🇷 Korea
-        </button>
+        <div class="music-buttons">
 
+            <button id="btnKorea" onclick="changeMusic('korea')">
+                🇰🇷 Korea
+            </button>
 
-        <button
-            type="button"
-            class="music-button"
-            data-music="pop"
-        >
-            🎧 Pop
-        </button>
+            <button id="btnPop" onclick="changeMusic('pop')">
+                🎧 Pop
+            </button>
 
+            <button id="btnBarat" onclick="changeMusic('barat')">
+                🌎 Barat
+            </button>
 
-        <button
-            type="button"
-            class="music-button"
-            data-music="barat"
-        >
-            🌎 Barat
-        </button>
-
-    </div>
-
-
-    <div class="soundcloud-box">
+        </div>
 
         <iframe
             id="soundcloudPlayer"
+            class="soundcloud-frame"
             scrolling="no"
             frameborder="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/soundcloud-stories/sets/k-pop&color=d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/soundcloud-stories/sets/k-pop&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
         </iframe>
 
     </div>
 
-</section>
+    <!-- CHATROOM -->
+    <div class="chat-box">
 
-
-<!-- =========================
-     CHATROOM
-========================= -->
-
-<section class="chatroom">
-
-
-    <div class="chat-header">
-
-        <h2>
-            🟢 CHATROOM
-        </h2>
-
-
-        <div
-            class="online"
-            id="onlineCount"
-        >
-
-            🟢 Menghubungkan...
-
+        <div class="chat-title">
+            <strong>🟢 Chatroom</strong>
+            <span id="onlineCount">Menghubungkan...</span>
         </div>
 
-    </div>
+        <!-- KETENTUAN CHAT -->
+        <details class="chat-terms">
+            <summary>⚠️ Ketentuan Chat — klik di sini</summary>
 
+            <div class="terms-content">
+                <strong>Ketentuan Chatroom</strong><br><br>
 
-    <!-- CATATAN -->
+                Chatroom ini merupakan ruang komunikasi antar pengguna.
+                Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
+                <br><br>
 
-    <div class="chat-notice">
+                Jangan membagikan data pribadi, melakukan penipuan,
+                pelecehan, ancaman, spam, atau aktivitas yang melanggar hukum.
+                <br><br>
 
-        ⚠️ <strong>Catatan Chatroom</strong><br>
+                Pengelola berhak menghapus pesan atau membatasi akses pengguna
+                apabila ditemukan pelanggaran.
+            </div>
+        </details>
 
-        Chatroom ini merupakan ruang komunikasi antar pengguna.
-        Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
-        Jangan membagikan data pribadi, melakukan penipuan, pelecehan,
-        ancaman, spam, atau aktivitas yang melanggar hukum.
-        Pengelola berhak menghapus pesan atau membatasi akses pengguna
-        apabila ditemukan pelanggaran.
+        <!-- FIREBASE ERROR -->
+        <div id="firebaseError"></div>
 
-    </div>
+        <!-- MESSAGES -->
+        <div id="messages">
+            <div class="info">Menghubungkan ke chatroom...</div>
+        </div>
 
-
-    <!-- NICKNAME -->
-
-    <div class="nickname-box">
-
-        <label for="nickname">
-            Nama panggilan kamu:
-        </label>
-
-
-        <div class="nickname-row">
+        <!-- INPUT -->
+        <div class="chat-input-area">
 
             <input
                 type="text"
                 id="nickname"
                 maxlength="20"
-                placeholder="Contoh: Maya"
+                placeholder="Nama / nickname"
             >
 
+            <textarea
+                id="messageInput"
+                maxlength="300"
+                rows="2"
+                placeholder="Tulis pesan..."
+            ></textarea>
 
-            <button
-                id="saveNickname"
-            >
-                Simpan
-            </button>
+            <div class="limit">
+                Maksimal 300 karakter
+            </div>
+
+            <div class="send-row">
+                <button id="sendButton" disabled>
+                    Kirim 💬
+                </button>
+            </div>
 
         </div>
 
     </div>
-
-
-    <!-- PESAN -->
-
-    <div
-        class="messages"
-        id="messages"
-    >
-
-        <div class="info">
-            Menghubungkan ke chatroom...
-        </div>
-
-    </div>
-
-
-    <!-- INPUT -->
-
-    <div class="chat-input">
-
-        <input
-            type="text"
-            id="messageInput"
-            maxlength="300"
-            placeholder="Tulis pesan..."
-            disabled
-        >
-
-
-        <button
-            id="sendButton"
-            disabled
-        >
-            Kirim
-        </button>
-
-    </div>
-
-
-    <div class="info">
-
-        Gunakan nama panggilan.
-        Jangan bagikan data pribadi ya ❤️
-
-    </div>
-
-
-    <!-- ERROR -->
-
-    <div
-        id="firebaseError"
-        class="firebase-error"
-    ></div>
-
-
-</section>
-
-
-<footer>
-
-    © 2026 Ruang Cewek ❤️
-
-</footer>
-
 
 </div>
 
+<a href="curhat.html" class="floating">
+    💌 Bagikan Ceritamu
+</a>
 
-<!-- =====================================================
-     FIREBASE + MUSIC
-===================================================== -->
 
+<!-- FIREBASE -->
 <script type="module">
 
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-/* =========================
-   FIREBASE CDN
-========================= */
+    import {
+        getDatabase,
+        ref,
+        push,
+        onChildAdded,
+        onValue,
+        serverTimestamp,
+        onDisconnect,
+        set
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
-
-import {
-    getDatabase,
-    ref,
-    push,
-    onChildAdded,
-    onValue,
-    serverTimestamp,
-    onDisconnect,
-    set
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-
-
-import {
-    getAuth,
-    signInAnonymously
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+    import {
+        getAuth,
+        signInAnonymously
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-/* =========================
-   FIREBASE CONFIG
-   DARI SDK CDN FIREBASE
-========================= */
+    /* =========================
+       FIREBASE CONFIG
+       ========================= */
 
-const firebaseConfig = {
-
-    apiKey:
-        "AIzaSyCnhVGlnGKoqddyLvE7tMGG926iO8O0",
-
-    authDomain:
-        "ruang-cewek.firebaseapp.com",
-
-    databaseURL:
-        "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-    projectId:
-        "ruang-cewek",
-
-    storageBucket:
-        "ruang-cewek.firebasestorage.app",
-
-    messagingSenderId:
-        "300030693884",
-
-    appId:
-        "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
-};
+    const firebaseConfig = {
+        apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+        authDomain: "ruang-cewek.firebaseapp.com",
+        databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "ruang-cewek",
+        storageBucket: "ruang-cewek.firebasestorage.app",
+        messagingSenderId: "300030693884",
+        appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+    };
 
 
-/* =========================
-   MUSIC PLAYLISTS
-========================= */
+    /* =========================
+       ELEMENT
+       ========================= */
 
-const musicLinks = {
-
-    korea:
-        "https://soundcloud.com/soundcloud-stories/sets/k-pop",
-
-    pop:
-        "https://soundcloud.com/user-561597389/sets/pop",
-
-    barat:
-        "https://soundcloud.com/joannawangofficial/sets/hotel-la-rut"
-
-};
+    const messages = document.getElementById("messages");
+    const nicknameInput = document.getElementById("nickname");
+    const messageInput = document.getElementById("messageInput");
+    const sendButton = document.getElementById("sendButton");
+    const onlineCount = document.getElementById("onlineCount");
+    const firebaseError = document.getElementById("firebaseError");
 
 
-/* =========================
-   SOUNDCloud PLAYER
-========================= */
+    /* =========================
+       ERROR DISPLAY
+       ========================= */
 
-const soundcloudPlayer =
-    document.getElementById(
-        "soundcloudPlayer"
-    );
+    function showFirebaseError(error) {
 
+        console.error("Firebase Error:", error);
 
-const musicButtons =
-    document.querySelectorAll(
-        ".music-button"
-    );
+        if (!firebaseError) return;
 
+        firebaseError.style.display = "block";
 
-function changeMusic(type) {
-
-    const url =
-        musicLinks[type];
-
-
-    if (!url) {
-        return;
+        firebaseError.innerHTML =
+            "<strong>⚠️ Detail error Firebase</strong><br>" +
+            "Kode: " + (error.code || "tidak diketahui") +
+            "<br>" +
+            "Pesan: " + (error.message || "tidak diketahui");
     }
 
 
-    const embedUrl =
+    /* =========================
+       INITIALIZE FIREBASE
+       ========================= */
 
-        "https://w.soundcloud.com/player/?" +
+    let app;
+    let db;
+    let auth;
 
-        "url=" +
+    try {
 
-        encodeURIComponent(url) +
+        app = initializeApp(firebaseConfig);
 
-        "&color=d92f72" +
+        db = getDatabase(app);
 
-        "&auto_play=false" +
+        auth = getAuth(app);
 
-        "&hide_related=true" +
+    } catch (error) {
 
-        "&show_comments=false" +
+        showFirebaseError(error);
 
-        "&show_user=false" +
-
-        "&show_reposts=false" +
-
-        "&show_teaser=false" +
-
-        "&visual=false";
-
-
-    soundcloudPlayer.src =
-        embedUrl;
-
-
-    musicButtons.forEach(
-        (button) => {
-
-            button.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    const activeButton =
-        document.querySelector(
-            `[data-music="${type}"]`
-        );
-
-
-    if (activeButton) {
-
-        activeButton.classList.add(
-            "active"
-        );
+        onlineCount.textContent = "🔴 Chatroom offline";
 
     }
 
-}
 
+    /* =========================
+       ANONYMOUS LOGIN
+       ========================= */
 
-musicButtons.forEach(
-    (button) => {
+    if (auth) {
 
-        button.addEventListener(
-            "click",
-            () => {
+        signInAnonymously(auth)
 
-                changeMusic(
-                    button.dataset.music
+            .then((result) => {
+
+                console.log(
+                    "Anonymous Auth berhasil:",
+                    result.user.uid
                 );
+
+                onlineCount.textContent = "🟢 Terhubung";
+
+                sendButton.disabled = false;
+
+                setupPresence(result.user.uid);
+
+                loadMessages();
+
+            })
+
+            .catch((error) => {
+
+                showFirebaseError(error);
+
+                messages.innerHTML =
+                    '<div class="info">Chatroom belum bisa terhubung.</div>';
+
+                onlineCount.textContent =
+                    "🔴 Chatroom offline";
+
+            });
+
+    }
+
+
+    /* =========================
+       PRESENCE / ONLINE
+       ========================= */
+
+    function setupPresence(uid) {
+
+        const connectedRef = ref(db, ".info/connected");
+
+        const presenceRef = ref(
+            db,
+            "presence/" + uid
+        );
+
+        onValue(connectedRef, (snapshot) => {
+
+            if (snapshot.val() === true) {
+
+                set(presenceRef, {
+                    online: true,
+                    nickname:
+                        nicknameInput.value.trim() ||
+                        "Anonim"
+                });
+
+                onDisconnect(presenceRef).remove();
+
+            }
+
+        });
+
+
+        onValue(ref(db, "presence"), (snapshot) => {
+
+            let count = 0;
+
+            snapshot.forEach((child) => {
+
+                if (
+                    child.val() &&
+                    child.val().online === true
+                ) {
+                    count++;
+                }
+
+            });
+
+            onlineCount.textContent =
+                "🟢 " + count + " online";
+
+        });
+
+    }
+
+
+    /* =========================
+       LOAD MESSAGES
+       ========================= */
+
+    function loadMessages() {
+
+        const messagesRef =
+            ref(db, "messages");
+
+        messages.innerHTML = "";
+
+        onChildAdded(
+            messagesRef,
+            (snapshot) => {
+
+                const data = snapshot.val();
+
+                if (!data) return;
+
+                displayMessage(data);
 
             }
         );
 
     }
-);
 
 
-/* =========================
-   ELEMENT FIREBASE
-========================= */
+    /* =========================
+       DISPLAY MESSAGE
+       ========================= */
 
-const nicknameInput =
-    document.getElementById(
-        "nickname"
-    );
+    function displayMessage(data) {
 
+        const div =
+            document.createElement("div");
 
-const saveNicknameButton =
-    document.getElementById(
-        "saveNickname"
-    );
+        div.className = "message";
 
+        const nickname =
+            document.createElement("div");
 
-const messageInput =
-    document.getElementById(
-        "messageInput"
-    );
+        nickname.className = "nickname";
+
+        nickname.textContent =
+            data.nickname || "Anonim";
 
 
-const sendButton =
-    document.getElementById(
-        "sendButton"
-    );
+        const text =
+            document.createElement("div");
+
+        text.className = "text";
+
+        text.textContent =
+            data.text || "";
 
 
-const messages =
-    document.getElementById(
-        "messages"
-    );
+        const time =
+            document.createElement("div");
+
+        time.className = "time";
+
+        if (data.timestamp) {
+
+            const date =
+                new Date(data.timestamp);
+
+            time.textContent =
+                date.toLocaleTimeString(
+                    "id-ID",
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    }
+                );
+
+        }
 
 
-const onlineCount =
-    document.getElementById(
-        "onlineCount"
-    );
+        div.appendChild(nickname);
+        div.appendChild(text);
+        div.appendChild(time);
 
+        messages.appendChild(div);
 
-const firebaseError =
-    document.getElementById(
-        "firebaseError"
-    );
+        messages.scrollTop =
+            messages.scrollHeight;
 
-
-/* =========================
-   ERROR FIREBASE
-========================= */
-
-function showFirebaseError(error) {
-
-    console.error(
-        "Firebase Error:",
-        error
-    );
-
-
-    if (!firebaseError) {
-        return;
     }
 
 
-    firebaseError.style.display =
-        "block";
+    /* =========================
+       SEND MESSAGE
+       ========================= */
 
-
-    firebaseError.innerHTML =
-
-        "<strong>⚠️ Detail error Firebase</strong><br>" +
-
-        "Kode: " +
-
-        (
-            error.code ||
-            "tidak diketahui"
-        ) +
-
-        "<br>" +
-
-        "Pesan: " +
-
-        (
-            error.message ||
-            "tidak diketahui"
-        );
-
-}
-
-
-/* =========================
-   INITIALIZE FIREBASE
-========================= */
-
-let app = null;
-
-let db = null;
-
-let auth = null;
-
-
-try {
-
-    app =
-        initializeApp(
-            firebaseConfig
-        );
-
-
-    db =
-        getDatabase(
-            app
-        );
-
-
-    auth =
-        getAuth(
-            app
-        );
-
-
-    console.log(
-        "Firebase berhasil diinisialisasi."
+    sendButton.addEventListener(
+        "click",
+        sendMessage
     );
 
 
-} catch (error) {
+    messageInput.addEventListener(
+        "keydown",
+        (event) => {
 
-    showFirebaseError(
-        error
+            if (
+                event.key === "Enter" &&
+                !event.shiftKey
+            ) {
+
+                event.preventDefault();
+
+                sendMessage();
+
+            }
+
+        }
     );
 
 
-    onlineCount.textContent =
-        "🔴 Chatroom offline";
+    function sendMessage() {
 
-}
-
-
-/* =========================
-   NICKNAME
-========================= */
-
-let nickname =
-
-    sessionStorage.getItem(
-        "ruangCewekNickname"
-    ) || "";
-
-
-if (nickname) {
-
-    nicknameInput.value =
-        nickname;
-
-}
-
-
-/* =========================
-   SIMPAN NICKNAME
-========================= */
-
-saveNicknameButton.addEventListener(
-
-    "click",
-
-    () => {
-
-        const value =
+        const nickname =
             nicknameInput.value.trim();
 
+        const text =
+            messageInput.value.trim();
 
-        if (!value) {
+
+        if (!nickname) {
 
             alert(
-                "Isi nama panggilan dulu ya ❤️"
+                "Silakan isi nickname terlebih dahulu."
+            );
+
+            nicknameInput.focus();
+
+            return;
+
+        }
+
+
+        if (!text) return;
+
+
+        if (nickname.length > 20) {
+
+            alert(
+                "Nickname maksimal 20 karakter."
             );
 
             return;
@@ -1106,527 +827,165 @@ saveNicknameButton.addEventListener(
         }
 
 
-        nickname =
-            value.substring(
-                0,
-                20
+        if (text.length > 300) {
+
+            alert(
+                "Pesan maksimal 300 karakter."
             );
 
+            return;
 
-        sessionStorage.setItem(
-            "ruangCewekNickname",
-            nickname
-        );
+        }
 
 
-        nicknameInput.value =
-            nickname;
+        const messagesRef =
+            ref(db, "messages");
 
 
-        messageInput.disabled =
-            false;
+        push(messagesRef, {
 
+            nickname: nickname,
+            text: text,
+            timestamp: serverTimestamp()
 
-        sendButton.disabled =
-            false;
+        })
 
+        .then(() => {
 
-        messageInput.focus();
+            messageInput.value = "";
+
+        })
+
+        .catch((error) => {
+
+            showFirebaseError(error);
+
+        });
 
     }
 
-);
 
+    /* =========================
+       UPDATE PRESENCE NICKNAME
+       ========================= */
 
-/* =========================
-   ANONYMOUS AUTH
-========================= */
-
-if (auth) {
-
-    signInAnonymously(
-        auth
-    )
-
-    .then(
-
-        (result) => {
-
-            console.log(
-                "Anonymous Auth berhasil:",
-                result.user.uid
-            );
-
-
-            onlineCount.textContent =
-                "🟢 Terhubung";
-
-
-            setupPresence(
-                result.user.uid
-            );
-
-
-            loadMessages();
-
-        }
-
-    )
-
-    .catch(
-
-        (error) => {
-
-            showFirebaseError(
-                error
-            );
-
-
-            messages.innerHTML = `
-
-                <div class="info">
-                    Chatroom belum bisa terhubung.
-                </div>
-
-            `;
-
-
-            onlineCount.textContent =
-                "🔴 Chatroom offline";
-
-        }
-
-    );
-
-}
-
-
-/* =========================
-   PRESENCE
-========================= */
-
-function setupPresence(uid) {
-
-    const connectedRef =
-        ref(
-            db,
-            ".info/connected"
-        );
-
-
-    const myPresenceRef =
-        ref(
-            db,
-            "presence/" + uid
-        );
-
-
-    onValue(
-
-        connectedRef,
-
-        (snapshot) => {
+    nicknameInput.addEventListener(
+        "change",
+        () => {
 
             if (
-                snapshot.val() !== true
+                auth.currentUser
             ) {
 
-                onlineCount.textContent =
-                    "🟡 Menghubungkan...";
+                const presenceRef =
+                    ref(
+                        db,
+                        "presence/" +
+                        auth.currentUser.uid
+                    );
 
-                return;
+                set(presenceRef, {
+
+                    online: true,
+
+                    nickname:
+                        nicknameInput.value.trim() ||
+                        "Anonim"
+
+                });
 
             }
 
-
-            set(
-
-                myPresenceRef,
-
-                {
-
-                    online:
-                        true,
-
-                    nickname:
-                        nickname ||
-                        "Tamu"
-
-                }
-
-            )
-
-            .catch(
-
-                (error) => {
-
-                    showFirebaseError(
-                        error
-                    );
-
-                }
-
-            );
-
-
-            onDisconnect(
-                myPresenceRef
-            )
-
-            .remove()
-
-            .catch(
-
-                (error) => {
-
-                    showFirebaseError(
-                        error
-                    );
-
-                }
-
-            );
-
-        },
-
-        (error) => {
-
-            showFirebaseError(
-                error
-            );
-
         }
-
     );
-
-
-    const presenceRef =
-        ref(
-            db,
-            "presence"
-        );
-
-
-    onValue(
-
-        presenceRef,
-
-        (snapshot) => {
-
-            const data =
-                snapshot.val() || {};
-
-
-            const count =
-                Object.keys(
-                    data
-                ).length;
-
-
-            onlineCount.textContent =
-
-                "🟢 " +
-                count +
-                " orang sedang online";
-
-        },
-
-        (error) => {
-
-            showFirebaseError(
-                error
-            );
-
-        }
-
-    );
-
-}
-
-
-/* =========================
-   LOAD MESSAGES
-========================= */
-
-function loadMessages() {
-
-    const messagesRef =
-        ref(
-            db,
-            "messages"
-        );
-
-
-    messages.innerHTML =
-        "";
-
-
-    onChildAdded(
-
-        messagesRef,
-
-        (snapshot) => {
-
-            displayMessage(
-                snapshot.val()
-            );
-
-        },
-
-        (error) => {
-
-            showFirebaseError(
-                error
-            );
-
-        }
-
-    );
-
-}
-
-
-/* =========================
-   DISPLAY MESSAGE
-========================= */
-
-function displayMessage(data) {
-
-    const messageDiv =
-        document.createElement(
-            "div"
-        );
-
-
-    messageDiv.className =
-        "message";
-
-
-    const nameDiv =
-        document.createElement(
-            "div"
-        );
-
-
-    nameDiv.className =
-        "message-name";
-
-
-    nameDiv.textContent =
-        data.nickname ||
-        "Tamu";
-
-
-    const textDiv =
-        document.createElement(
-            "div"
-        );
-
-
-    textDiv.className =
-        "message-text";
-
-
-    textDiv.textContent =
-        data.text ||
-        "";
-
-
-    const timeDiv =
-        document.createElement(
-            "div"
-        );
-
-
-    timeDiv.className =
-        "message-time";
-
-
-    if (
-        data.timestamp
-    ) {
-
-        const date =
-            new Date(
-                data.timestamp
-            );
-
-
-        timeDiv.textContent =
-            date.toLocaleTimeString(
-                "id-ID",
-                {
-                    hour:
-                        "2-digit",
-
-                    minute:
-                        "2-digit"
-                }
-            );
-
-    }
-
-
-    messageDiv.appendChild(
-        nameDiv
-    );
-
-
-    messageDiv.appendChild(
-        textDiv
-    );
-
-
-    messageDiv.appendChild(
-        timeDiv
-    );
-
-
-    messages.appendChild(
-        messageDiv
-    );
-
-
-    messages.scrollTop =
-        messages.scrollHeight;
-
-}
-
-
-/* =========================
-   SEND MESSAGE
-========================= */
-
-function sendMessage() {
-
-    if (!nickname) {
-
-        alert(
-            "Isi nama panggilan dan tekan Simpan dulu ya ❤️"
-        );
-
-        return;
-
-    }
-
-
-    const text =
-        messageInput.value.trim();
-
-
-    if (!text) {
-        return;
-    }
-
-
-    if (
-        text.length > 300
-    ) {
-
-        alert(
-            "Pesan maksimal 300 karakter."
-        );
-
-        return;
-
-    }
-
-
-    const messagesRef =
-        ref(
-            db,
-            "messages"
-        );
-
-
-    push(
-
-        messagesRef,
-
-        {
-
-            nickname:
-                nickname,
-
-            text:
-                text,
-
-            timestamp:
-                serverTimestamp()
-
-        }
-
-    )
-
-    .then(
-
-        () => {
-
-            messageInput.value =
-                "";
-
-            messageInput.focus();
-
-        }
-
-    )
-
-    .catch(
-
-        (error) => {
-
-            showFirebaseError(
-                error
-            );
-
-
-            alert(
-                "Pesan gagal dikirim. Coba lagi."
-            );
-
-        }
-
-    );
-
-}
-
-
-/* =========================
-   SEND BUTTON
-========================= */
-
-sendButton.addEventListener(
-    "click",
-    sendMessage
-);
-
-
-/* =========================
-   ENTER
-========================= */
-
-messageInput.addEventListener(
-
-    "keydown",
-
-    (event) => {
-
-        if (
-            event.key === "Enter"
-        ) {
-
-            event.preventDefault();
-
-            sendMessage();
-
-        }
-
-    }
-
-);
 
 </script>
 
+
+<!-- SOUNDCLOUD -->
+<script>
+
+    const musicLinks = {
+
+        korea:
+            "https://soundcloud.com/soundcloud-stories/sets/k-pop",
+
+        pop:
+            "https://soundcloud.com/user-561597389/sets/pop",
+
+        barat:
+            "https://soundcloud.com/joannawangofficial/sets/hotel-la-rut"
+
+    };
+
+
+    function changeMusic(type) {
+
+        const player =
+            document.getElementById(
+                "soundcloudPlayer"
+            );
+
+        const url =
+            musicLinks[type];
+
+
+        const encoded =
+            encodeURIComponent(url);
+
+
+        player.src =
+            "https://w.soundcloud.com/player/?" +
+            "url=" + encoded +
+            "&color=%23ff5500" +
+            "&auto_play=false" +
+            "&hide_related=true" +
+            "&show_comments=false" +
+            "&show_user=false" +
+            "&show_reposts=false" +
+            "&show_teaser=false";
+
+
+        document
+            .querySelectorAll(".music-buttons button")
+            .forEach(button => {
+                button.classList.remove("active");
+            });
+
+
+        if (type === "korea") {
+
+            document
+                .getElementById("btnKorea")
+                .classList.add("active");
+
+        }
+
+        if (type === "pop") {
+
+            document
+                .getElementById("btnPop")
+                .classList.add("active");
+
+        }
+
+        if (type === "barat") {
+
+            document
+                .getElementById("btnBarat")
+                .classList.add("active");
+
+        }
+
+    }
+
+
+    // Korea sebagai pilihan awal
+    document
+        .getElementById("btnKorea")
+        .classList.add("active");
+
+</script>
 
 </body>
 </html>
