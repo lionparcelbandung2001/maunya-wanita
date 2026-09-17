@@ -1,39 +1,202 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
 <title>CewekPedia Music</title>
+
 <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;background:transparent;overflow:hidden}
-   .player-box{width:100%;background:#fff7fb;border:1px solid #f3c6d8;border-radius:14px;padding:7px;box-shadow:0 4px 15px rgba(217,47,114,.12)}
-   .playlist-buttons{display:flex;gap:5px;margin-bottom:6px}
-   .playlist-buttons button{flex:1;border:none;border-radius:9px;padding:6px 2px;background:#f8d9e5;color:#6b3047;font-size:10px;cursor:pointer;font-weight:bold}
-   .playlist-buttons button.active{background:#d92f72;color:#fff}
-   .soundcloud-frame{width:100%;height:110px;border:none;border-radius:10px;display:block}
-</style>
-</head><body>
-<div class="player-box">
-    <div class="playlist-buttons">
-        <button id="btnIndonesia" class="active" onclick="changeMusic('indonesia')">🇮🇩 Indo</button>
-        <button id="btnKorea" onclick="changeMusic('korea')">🇰🇷 Korea</button>
-        <button id="btnBarat" onclick="changeMusic('barat')">🌎 Barat</button>
-    </div>
-    <iframe id="soundcloudPlayer" class="soundcloud-frame" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Futam-aza%2Fsets%2Fdewa-19-full-music&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false&show_teaser=false">
-    </iframe>
-</div>
-<script>
-    const musicLinks={
-        indonesia:"https://soundcloud.com/utam-aza/sets/dewa-19-full-music",
-        korea:"https://soundcloud.com/user-808285823/sets/k-pop",
-        barat:"https://soundcloud.com/gorgijpark/sets/90s-12-inches"
-    };
-    function changeMusic(type){
-        const p=document.getElementById("soundcloudPlayer");
-        p.src="https://w.soundcloud.com/player/?url="+encodeURIComponent(musicLinks[type])+"&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false&show_teaser=false";
-        document.querySelectorAll(".playlist-buttons button").forEach(b=>b.classList.remove("active"));
-        document.getElementById("btn"+type.charAt(0).toUpperCase()+type.slice(1)).classList.add("active");
-        document.body.classList.add("open");
+
+    * {
+        box-sizing: border-box;
     }
-    document.addEventListener('click',()=>document.body.classList.add("open"));
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: transparent;
+    }
+
+    .player-box {
+        width: 100%;
+        background: #fff7fb;
+        border: 1px solid #f3c6d8;
+        border-radius: 14px;
+        padding: 8px;
+        box-shadow: 0 4px 15px rgba(217, 47, 114, 0.12);
+    }
+
+    .music-title {
+        text-align: center;
+        color: #d92f72;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .playlist-buttons {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 7px;
+    }
+
+    .playlist-buttons button {
+        flex: 1;
+        border: none;
+        border-radius: 9px;
+        padding: 7px 4px;
+        background: #f8d9e5;
+        color: #6b3047;
+        font-size: 11px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .playlist-buttons button.active {
+        background: #d92f72;
+        color: white;
+    }
+
+    .soundcloud-frame {
+        width: 100%;
+        height: 166px;
+        border: none;
+        border-radius: 10px;
+        display: block;
+    }
+
+    .music-note {
+        text-align: center;
+        font-size: 10px;
+        color: #98717f;
+        margin-top: 5px;
+    }
+
+</style>
+
+</head><body><div class="player-box">
+
+    <div class="music-title">
+        🎵 CewekPedia Music
+    </div>
+
+    <div class="playlist-buttons">
+
+        <button
+            id="btnIndonesia"
+            class="active"
+            onclick="changeMusic('indonesia')"
+        >
+            🇮🇩 Indonesia
+        </button>
+
+        <button
+            id="btnKorea"
+            onclick="changeMusic('korea')"
+        >
+            🇰🇷 Korea
+        </button>
+
+        <button
+            id="btnBarat"
+            onclick="changeMusic('barat')"
+        >
+            🌎 Barat
+        </button>
+
+    </div>
+
+    <iframe
+        id="soundcloudPlayer"
+        class="soundcloud-frame"
+        title="CewekPedia Music Player"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Futam-aza%2Fsets%2Fdewa-19-full-music&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+    >
+    </iframe>
+
+    <div class="music-note">
+        🎧 Pilih playlist sesuai suasana kamu
+    </div>
+
+</div>
+
+
+<script>
+
+    const musicLinks = {
+
+        indonesia:
+            "https://soundcloud.com/utam-aza/sets/dewa-19-full-music",
+
+        korea:
+            "https://soundcloud.com/user-808285823/sets/k-pop",
+
+        barat:
+            "https://soundcloud.com/gorgijpark/sets/90s-12-inches"
+
+    };
+
+
+    function changeMusic(type) {
+
+        const player =
+            document.getElementById("soundcloudPlayer");
+
+        const url =
+            encodeURIComponent(musicLinks[type]);
+
+        player.src =
+            "https://w.soundcloud.com/player/?url=" +
+            url +
+            "&color=%23d92f72" +
+            "&auto_play=false" +
+            "&hide_related=true" +
+            "&show_comments=false" +
+            "&show_user=false" +
+            "&show_reposts=false" +
+            "&visual=false";
+
+
+        document
+            .querySelectorAll(".playlist-buttons button")
+            .forEach(function(button) {
+
+                button.classList.remove("active");
+
+            });
+
+
+        if (type === "indonesia") {
+
+            document
+                .getElementById("btnIndonesia")
+                .classList.add("active");
+
+        }
+
+        if (type === "korea") {
+
+            document
+                .getElementById("btnKorea")
+                .classList.add("active");
+
+        }
+
+        if (type === "barat") {
+
+            document
+                .getElementById("btnBarat")
+                .classList.add("active");
+
+        }
+
+    }
+
 </script>
+
 </body></html>
