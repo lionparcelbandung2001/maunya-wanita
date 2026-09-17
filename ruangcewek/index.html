@@ -5,151 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags (Persyaratan Wajib AdSense) -->
-    <title>MAUNYA WANITA ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
-    <meta name="description" content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim.">
+    <!-- SEO Meta Tags -->
+    <title>Ruang Cewek 💕 — Tempat Curhat & Berbagi Cerita | MAUNYA WANITA</title>
+    <meta name="description" content="Ruang khusus cewek untuk saling curhat, berbagi pengalaman, tips kecantikan, hubungan, dan obrolan sesama wanita.">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Panggil CSS dari folder utama (memakai ../) -->
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-<header class="container">
-    <h1>MAUNYA WANITA ❤️❤️</h1>
-    <p>Lagi pengen apa hari ini??</p>
-</header>
+<!-- =========================================
+     STICKY TOP NAV (KHUSUS SUB-HALAMAN)
+     ========================================= -->
+<nav class="top-category-nav">
+    <div class="top-category-container">
+        <a href="../index.html" class="category-chip">🏠 Utama</a>
+        <a href="../index.html?kat=cantik" class="category-chip">💄 Pengen Cantik</a>
+        <a href="../index.html?kat=nikah" class="category-chip">💍 Pengen Nikah</a>
+        <a href="../index.html?kat=makan" class="category-chip">🛍️ Makan & Belanja</a>
+        <a href="../index.html?kat=healing" class="category-chip">🌴 Jalan-jalan</a>
+        <a href="index.html" class="category-chip active">💬 Ruang Cewek</a>
+        <a href="../ruanglawak/" class="category-chip">😂 Ruang Lawak</a>
+    </div>
+</nav>
 
+<header class="container">
+    <h1>RUANG CEWEK 💬</h1>
+    <p>Tempat cewek curhat, berbagi cerita & pengalamannya</p>
+</header>
 
 <main class="container">
 
-    <!-- INTRO -->
-    <section class="intro">
-        <h2>Pilih maunya kamu 💕</h2>
-
-        <p>
-            Nggak usah ribet. Pilih dulu, nanti kita carikan pilihannya.
-        </p>
+    <!-- KONTEN RUANG CEWEK -->
+    <section class="page-card" style="margin-bottom: 25px;">
+        <h2>Obrolan Sesama Cewek 💕</h2>
+        <p>Punya cerita tentang percintaan, karir, skincare, atau sekadar mau meluapkan emosi hari ini? Tulis curhatan kamu di bawah ini secara anonim.</p>
     </section>
 
-
-    <!-- =========================================
-         6 KOTAK UTAMA — GRID 2 x 3
-         ========================================= -->
-
-    <section class="category-grid">
-
-        <!-- BARIS 1 — PENGEN CANTIK -->
-        <div
-            class="category"
-            onclick="chooseCategory('Pengen Cantik')"
-        >
-            <div class="icon">💄</div>
-
-            <h3>PENGEN CANTIK</h3>
-
-            <p>
-                Salon, skincare store, fashion,
-                parfum, dan kebutuhan kecantikan lainnya.
-            </p>
-        </div>
-
-
-        <!-- BARIS 1 — PENGEN NIKAH -->
-        <div
-            class="category"
-            onclick="chooseCategory('Pengen Nikah')"
-        >
-            <div class="icon">💍</div>
-
-            <h3>PENGEN NIKAH</h3>
-
-            <p>
-                WO, MUA, toko pengantin,
-                dan berbagai kebutuhan pernikahan.
-            </p>
-        </div>
-
-
-        <!-- BARIS 2 — PENGEN MAKAN & BELANJA -->
-        <div
-            class="category"
-            onclick="chooseCategory('Pengen Makan & Belanja')"
-        >
-            <div class="icon">🛍️</div>
-
-            <h3>PENGEN MAKAN & BELANJA</h3>
-
-            <p>
-                Restoran & cafe, toko & mall,
-                serta tempat makan dan belanja.
-            </p>
-        </div>
-
-
-        <!-- BARIS 2 — PENGEN JALAN-JALAN / HEALING -->
-        <div
-            class="category"
-            onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
-        >
-            <div class="icon">🌴</div>
-
-            <h3>PENGEN JALAN-JALAN / HEALING</h3>
-
-            <p>
-                Hotel & penginapan, wisata,
-                hiburan, dan tempat untuk healing.
-            </p>
-        </div>
-
-
-        <!-- BARIS 3 — RUANG CEWEK -->
-        <a
-            class="category"
-            href="ruangcewek/"
-            style="text-decoration: none; color: inherit;"
-        >
-            <div class="icon">💬</div>
-
-            <h3>RUANG CEWEK</h3>
-
-            <p>
-                Tempat cewek curhat, berbagi cerita,
-                pengalaman, dan ngobrol bareng.
-            </p>
-        </a>
-
-
-        <!-- BARIS 3 — RUANG LAWAK -->
-        <a
-            class="category"
-            href="ruanglawak/"
-            style="text-decoration: none; color: inherit;"
-        >
-            <div class="icon">😂</div>
-
-            <h3>RUANG LAWAK</h3>
-
-            <p>
-                Tempat cari cerita lucu,
-                hiburan, dan hal-hal yang bikin ketawa.
-            </p>
-        </a>
-
+    <!-- FORM CURHAT / KOMENTAR -->
+    <section class="comment-box">
+        <h3 style="margin-top:0; color:#4b303b;">Mau curhat apa hari ini?</h3>
+        <textarea placeholder="Tulis cerita atau pertanyaan kamu di sini..."></textarea>
+        <button class="send" type="button">Kirim Curhatan 💌</button>
     </section>
 
 </main>
-
 
 <!-- =========================================
      FOOTER & HALAMAN WAJIB ADSENSE
      ========================================= -->
 <footer>
     <div style="margin-bottom: 12px;">
-        <a href="tentang.html" style="color: #927985; text-decoration: none; font-weight: bold;">Tentang Kami</a> • 
-        <a href="kontak.html" style="color: #927985; text-decoration: none; font-weight: bold;">Kontak</a> • 
-        <a href="kebijakan-privasi.html" style="color: #927985; text-decoration: none; font-weight: bold;">Kebijakan Privasi</a> • 
-        <a href="syarat-ketentuan.html" style="color: #927985; text-decoration: none; font-weight: bold;">Syarat & Ketentuan</a>
+        <a href="../tentang.html">Tentang Kami</a> • 
+        <a href="../kontak.html">Kontak</a> • 
+        <a href="../kebijakan-privasi.html">Kebijakan Privasi</a> • 
+        <a href="../syarat-ketentuan.html">Syarat & Ketentuan</a>
     </div>
 
     <strong>MAUNYA WANITA ❤️❤️</strong> — Cari yang kamu mau. Tanpa ribet.
@@ -157,8 +69,7 @@
     <small style="opacity: 0.8; display: block; margin-top: 5px;">© 2026 MAUNYA WANITA. All rights reserved.</small>
 </footer>
 
-
-<script src="script.js"></script>
+<script src="../script.js"></script>
 
 </body>
 </html>
