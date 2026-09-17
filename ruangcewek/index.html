@@ -1,1 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Ruang Cewek ❤️ | CewekPedia</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #3a2630;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 15px 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #d92f72;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #6b4a57;
+            font-size: 15px;
+        }
+
+        /* =========================
+           MENU UTAMA
+        ========================= */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 18px;
+            padding: 25px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #3a2630;
+            border: 1px solid #f2d9e4;
+            box-shadow: 0 4px 12px rgba(180, 100, 130, 0.08);
+            transition: 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 16px rgba(180, 100, 130, 0.13);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card h2 {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #d92f72;
+        }
+
+        .feature-card p {
+            margin: 5px 0 0;
+            font-size: 13px;
+            color: #765967;
+        }
+
+        /* =========================
+           CHATROOM
+        ========================= */
+
+        .chat-section {
+            background: white;
+            border: 1px solid #f2d9e4;
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 4px 12px rgba(180, 100, 130, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .chat-header {
+            text-align: center;
+            border-bottom: 1px solid #f2e3e8;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .chat-header h2 {
+            margin: 0;
+            color: #d92f72;
+            font-size: 21px;
+        }
+
+        .online {
+            margin-top: 5px;
+            font-size: 13px;
+            color: #299447;
+            font-weight: bold;
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            background: #fffafd;
+            border: 1px solid #f0dfe6;
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .message {
+            margin-bottom: 12px;
+        }
+
+        .message-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #d92f72;
+            margin-bottom: 3px;
+        }
+
+        .message-text {
+            display: inline-block;
+            background: #fff0f6;
+            border-radius: 12px;
+            padding: 8px 11px;
+            font-size: 14px;
+            max-width: 85%;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            border: 1px solid #e6cdd8;
+            border-radius: 12px;
+            padding: 11px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .chat-input:focus {
+            border-color: #d92f72;
+        }
+
+        .send-button {
+            border: none;
+            background: #d92f72;
+            color: white;
+            border-radius: 12px;
+            padding: 0 18px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .send-button:hover {
+            opacity: 0.9;
+        }
+
+        .chat-note {
+            text-align: center;
+            font-size: 11px;
+            color: #8a707b;
+            margin: 10px 0 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 20px 10px 30px;
+            font-size: 12px;
+            color: #8a707b;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 94%;
+            }
+
+            header {
+                padding-top: 25px;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .feature-card {
+                padding: 20px 8px;
+                border-radius: 15px;
+            }
+
+            .feature-icon {
+                font-size: 29px;
+            }
+
+            .feature-card h2 {
+                font-size: 16px;
+            }
+
+            .feature-card p {
+                font-size: 11px;
+            }
+
+            .chat-section {
+                padding: 13px;
+                border-radius: 17px;
+            }
+
+            .chat-box {
+                height: 280px;
+            }
+
+            .chat-input-area {
+                gap: 6px;
+            }
+
+            .send-button {
+                padding: 0 14px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .feature-card h2 {
+                font-size: 14px;
+            }
+
+            .feature-card p {
+                font-size: 10px;
+            }
+
+            .feature-icon {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <h1>💬 RUANG CEWEK</h1>
+            <p>Cerita • Berbagi • Ngobrol ❤️</p>
+        </header>
+
+
+        <!-- CURHAT & REVIEW -->
+        <div class="feature-grid">
+
+            <a href="curhat.html" class="feature-card">
+                <div class="feature-icon">💭</div>
+                <h2>Curhat</h2>
+                <p>Cerita dan berbagi pengalaman</p>
+            </a>
+
+            <a href="reviewproduk.html" class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h2>Review Produk</h2>
+                <p>Bagikan pengalaman produkmu</p>
+            </a>
+
+        </div>
+
+
+        <!-- CHATROOM -->
+        <section class="chat-section">
+
+            <div class="chat-header">
+                <h2>🟢 CHATROOM</h2>
+                <div class="online">🟢 7 orang sedang online</div>
+            </div>
+
+
+            <!-- KERANGKA CHAT -->
+            <div class="chat-box">
+
+                <div class="message">
+                    <div class="message-name">Maya</div>
+                    <div class="message-text">
+                        Hai semuanya 👋
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-name">Sasa</div>
+                    <div class="message-text">
+                        Haiii ❤️
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-name">Rani</div>
+                    <div class="message-text">
+                        Lagi pada ngapain? 😆
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- INPUT CHAT -->
+            <div class="chat-input-area">
+
+                <input
+                    type="text"
+                    class="chat-input"
+                    placeholder="Tulis pesan..."
+                    disabled
+                >
+
+                <button
+                    class="send-button"
+                    disabled
+                >
+                    Kirim
+                </button>
+
+            </div>
+
+            <p class="chat-note">
+                Chatroom realtime akan segera hadir ❤️
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            © CewekPedia ❤️
+        </footer>
+
+    </div>
+
+</body>
+</html>
