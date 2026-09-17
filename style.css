@@ -83,7 +83,7 @@ header p {
 
 /* =========================
    CATEGORY
-   HOMEPAGE = 2 KOLOM
+   HOMEPAGE = 2 KOLOM (DEFAULT MOBILE)
 ========================= */
 
 .category-grid {
@@ -124,6 +124,16 @@ header p {
 .category .icon {
     font-size: 38px;
     line-height: 1;
+    flex-shrink: 0; /* Mencegah ikon tergencet saat ruang sempit */
+}
+
+/* Mengatur ukuran jika ikon berupa tag img atau svg */
+.category .icon img,
+.category .icon svg {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
 }
 
 .category h3 {
@@ -296,6 +306,14 @@ header p {
     display: grid;
     place-items: center;
     font-size: 42px;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -490,7 +508,7 @@ footer a {
         font-size: 14px;
     }
 
-    /* Grid dasar 4 kolom di PC */
+    /* Grid 4 kolom dasar di PC */
     .category-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
@@ -503,10 +521,17 @@ footer a {
         border-radius: 18px;
     }
 
-    /* 4 kartu atas normal (span 1), 2 kartu bawah jadi setengah-setengah (span 2) */
+    /* Item ke-5 dan ke-6 dibuat melebarkan diri setengah-setengah (50%-50%) */
     .category:nth-child(5),
     .category:nth-child(6) {
         grid-column: span 2;
+    }
+
+    /* Ukuran gambar/svg ikon di PC */
+    .category .icon img,
+    .category .icon svg {
+        width: 30px;
+        height: 30px;
     }
 
     .category .icon {
