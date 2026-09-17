@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
 
 <meta
     name="viewport"
@@ -7,450 +11,367 @@
 
 <title>CewekPedia Music</title>
 
-
 <style>
 
-    * {
-        box-sizing: border-box;
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:transparent;
+    font-family:Arial,sans-serif;
+}
+
+.music-box{
+    width:100%;
+    height:100%;
+    padding:5px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    background:#fff7fb;
+    overflow:hidden;
+}
+
+.music-title{
+    flex-shrink:0;
+    text-align:center;
+    color:#d92f72;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.playlist{
+    flex-shrink:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.playlist::-webkit-scrollbar{
+    display:none;
+}
+
+.playlist button{
+    flex-shrink:0;
+    border:none;
+    border-radius:16px;
+    padding:6px 10px;
+    background:#f9dce8;
+    color:#6d4051;
+    font-size:10px;
+    font-weight:bold;
+    white-space:nowrap;
+    cursor:pointer;
+}
+
+.playlist button.active{
+    background:#d92f72;
+    color:white;
+}
+
+.soundcloud-wrap{
+    flex:1;
+    min-height:0;
+    width:100%;
+    overflow:hidden;
+    border-radius:10px;
+    position:relative;
+}
+
+.soundcloud{
+    width:100%;
+    height:166px;
+    border:none;
+    display:block;
+}
+
+
+/* =========================
+   MINI MUSIC BAR
+   ========================= */
+
+.mini .music-box{
+    position:relative;
+    flex-direction:row;
+    align-items:center;
+    gap:5px;
+    padding:3px 5px;
+    overflow:hidden;
+}
+
+.mini .music-title{
+    flex-shrink:0;
+    width:18px;
+    font-size:10px;
+    text-align:center;
+}
+
+.mini .playlist{
+    flex:1;
+    min-width:0;
+    justify-content:flex-start;
+    overflow-x:auto;
+}
+
+.mini .playlist button{
+    padding:5px 7px;
+    font-size:8px;
+}
+
+
+/* Petunjuk kecil */
+
+.mini .music-hint{
+    display:block;
+    position:absolute;
+    right:7px;
+    top:-1px;
+    z-index:20;
+
+    font-size:7px;
+    font-weight:bold;
+
+    color:#d92f72;
+    background:rgba(255,247,251,.95);
+
+    padding:1px 4px;
+    border-radius:6px;
+
+    pointer-events:none;
+}
+
+
+/* Area SoundCloud */
+
+.mini .soundcloud-wrap{
+    flex-shrink:0;
+    width:88px;
+    height:38px;
+    overflow:hidden;
+    border-radius:9px;
+    position:relative;
+}
+
+
+/*
+   Diturunkan sedikit supaya
+   tombol PLAY terlihat lebih penuh.
+*/
+
+.mini .soundcloud{
+    position:absolute;
+
+    left:0;
+    top:2px;
+
+    width:88px;
+    height:55px;
+
+    border:none;
+}
+
+
+/* Petunjuk tidak muncul di halaman HOME */
+
+.music-hint{
+    display:none;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .mini .playlist button{
+        padding:5px 6px;
+        font-size:8px;
     }
 
-
-    html,
-    body {
-
-        margin: 0;
-        padding: 0;
-
-        width: 100%;
-        height: 100%;
-
-        overflow: hidden;
-
-        background: transparent;
-
-        font-family: Arial, sans-serif;
+    .mini .soundcloud-wrap{
+        width:72px;
+        height:36px;
     }
 
-
-    /* =========================
-       MUSIC BOX
-    ========================= */
-
-    .music-box {
-
-        width: 100%;
-        height: 100%;
-
-        padding: 5px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 5px;
-
-        background: #fff7fb;
-
-        overflow: hidden;
+    .mini .soundcloud{
+        width:72px;
+        height:53px;
+        top:2px;
     }
 
-
-    /* =========================
-       TITLE
-    ========================= */
-
-    .music-title {
-
-        flex-shrink: 0;
-
-        text-align: center;
-
-        color: #d92f72;
-
-        font-size: 14px;
-
-        font-weight: bold;
+    .mini .music-hint{
+        right:5px;
+        top:-1px;
+        font-size:7px;
     }
 
-
-    /* =========================
-       PLAYLIST
-    ========================= */
-
-    .playlist {
-
-        flex-shrink: 0;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        gap: 5px;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-    }
-
-
-    .playlist::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    .playlist button {
-
-        flex-shrink: 0;
-
-        border: none;
-
-        border-radius: 16px;
-
-        padding: 6px 10px;
-
-        background: #f9dce8;
-
-        color: #6d4051;
-
-        font-size: 10px;
-
-        font-weight: bold;
-
-        white-space: nowrap;
-
-        cursor: pointer;
-    }
-
-
-    .playlist button.active {
-
-        background: #d92f72;
-
-        color: white;
-    }
-
-
-    /* =========================
-       SOUNDCLOUD WRAPPER
-    ========================= */
-
-    .soundcloud-wrap {
-
-        flex: 1;
-
-        min-height: 0;
-
-        width: 100%;
-
-        overflow: hidden;
-
-        border-radius: 10px;
-    }
-
-
-    .soundcloud {
-
-        width: 100%;
-
-        height: 166px;
-
-        border: none;
-
-        display: block;
-    }
-
-
-    /* =================================================
-       MINI / TOP BAR MODE
-    ================================================= */
-
-    .mini .music-box {
-
-        flex-direction: row;
-
-        align-items: center;
-
-        gap: 5px;
-
-        padding: 3px 5px;
-
-        overflow: hidden;
-    }
-
-
-    .mini .music-title {
-
-        flex-shrink: 0;
-
-        width: 18px;
-
-        font-size: 10px;
-
-        text-align: center;
-    }
-
-
-    .mini .playlist {
-
-        flex: 1;
-
-        min-width: 0;
-
-        justify-content: flex-start;
-
-        overflow-x: auto;
-    }
-
-
-    .mini .playlist button {
-
-        padding: 5px 7px;
-
-        font-size: 8px;
-    }
-
-
-    /* =========================
-       MINI SOUNDCLOUD
-    ========================= */
-
-    .mini .soundcloud-wrap {
-
-        flex-shrink: 0;
-
-        width: 88px;
-
-        height: 38px;
-
-        overflow: hidden;
-
-        border-radius: 9px;
-
-        position: relative;
-    }
-
-
-    .mini .soundcloud {
-
-        position: absolute;
-
-        left: 0;
-
-        top: -2px;
-
-        width: 88px;
-
-        height: 55px;
-
-        border: none;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 600px) {
-
-        .mini .playlist button {
-
-            padding: 5px 6px;
-
-            font-size: 8px;
-        }
-
-
-        .mini .soundcloud-wrap {
-
-            width: 72px;
-
-            height: 36px;
-        }
-
-
-        .mini .soundcloud {
-
-            width: 72px;
-
-            height: 53px;
-
-            top: -2px;
-        }
-
-    }
+}
 
 </style>
 
-</head><body><div class="music-box"><div class="music-title">
-    🎵
+</head>
+
+
+<body>
+
+<div class="music-box">
+
+    <div class="music-title">
+        🎵
+    </div>
+
+
+    <div class="playlist">
+
+        <button
+            id="btnIndonesia"
+            class="active"
+            onclick="changeMusic('indonesia')"
+        >
+            🇮🇩 Indo
+        </button>
+
+        <button
+            id="btnKorea"
+            onclick="changeMusic('korea')"
+        >
+            🇰🇷 Korea
+        </button>
+
+        <button
+            id="btnBarat"
+            onclick="changeMusic('barat')"
+        >
+            🌎 Barat
+        </button>
+
+    </div>
+
+
+    <div class="soundcloud-wrap">
+
+        <iframe
+            id="soundcloudPlayer"
+            class="soundcloud"
+            title="CewekPedia Music Player"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+        >
+        </iframe>
+
+    </div>
+
+
+    <!-- Petunjuk khusus mini bar -->
+
+    <div class="music-hint">
+        musik disini ↑
+    </div>
+
 </div>
 
 
-<div class="playlist">
+<script>
+
+const musicLinks={
+
+    indonesia:
+        "https://soundcloud.com/nugraha-74739955/sets/yy",
+
+    korea:
+        "https://soundcloud.com/oyukh-h/sets/korean",
+
+    barat:
+        "https://soundcloud.com/alireza-eshraghjahromi/evanescence-greatest-hitsbest-songs"
+
+};
 
 
-    <button
-        id="btnIndonesia"
-        class="active"
-        onclick="changeMusic('indonesia')"
-    >
-        🇮🇩 Indo
-    </button>
+function changeMusic(type){
+
+    const player =
+        document.getElementById("soundcloudPlayer");
+
+    const url =
+        encodeURIComponent(musicLinks[type]);
 
 
-    <button
-        id="btnKorea"
-        onclick="changeMusic('korea')"
-    >
-        🇰🇷 Korea
-    </button>
+    player.src =
+        "https://w.soundcloud.com/player/?url="
+        + url
+        + "&color=%23d92f72"
+        + "&auto_play=false"
+        + "&hide_related=true"
+        + "&show_comments=false"
+        + "&show_user=false"
+        + "&show_reposts=false"
+        + "&visual=false";
 
 
-    <button
-        id="btnBarat"
-        onclick="changeMusic('barat')"
-    >
-        🌎 Barat
-    </button>
+    document
+        .querySelectorAll(".playlist button")
+        .forEach(function(button){
+
+            button.classList.remove("active");
+
+        });
 
 
-</div>
-
-
-<div class="soundcloud-wrap">
-
-    <iframe
-        id="soundcloudPlayer"
-        class="soundcloud"
-        title="CewekPedia Music Player"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
-    >
-    </iframe>
-
-</div>
-
-</div><script>
-
-
-    const musicLinks = {
-
-        indonesia:
-            "https://soundcloud.com/nugraha-74739955/sets/yy",
-
-        korea:
-            "https://soundcloud.com/oyukh-h/sets/korean",
-
-        barat:
-            "https://soundcloud.com/alireza-eshraghjahromi/evanescence-greatest-hitsbest-songs"
-
-    };
-
-
-    function changeMusic(type) {
-
-        const player =
-            document.getElementById(
-                "soundcloudPlayer"
-            );
-
-
-        const url =
-            encodeURIComponent(
-                musicLinks[type]
-            );
-
-
-        player.src =
-            "https://w.soundcloud.com/player/?" +
-            "url=" + url +
-            "&color=%23d92f72" +
-            "&auto_play=false" +
-            "&hide_related=true" +
-            "&show_comments=false" +
-            "&show_user=false" +
-            "&show_reposts=false" +
-            "&visual=false";
-
-
+    if(type==="indonesia")
         document
-            .querySelectorAll(
-                ".playlist button"
-            )
-            .forEach(function(button) {
-
-                button.classList.remove(
-                    "active"
-                );
-
-            });
+            .getElementById("btnIndonesia")
+            .classList.add("active");
 
 
-        if (type === "indonesia") {
-
-            document
-                .getElementById(
-                    "btnIndonesia"
-                )
-                .classList.add("active");
-
-        }
+    if(type==="korea")
+        document
+            .getElementById("btnKorea")
+            .classList.add("active");
 
 
-        if (type === "korea") {
+    if(type==="barat")
+        document
+            .getElementById("btnBarat")
+            .classList.add("active");
 
-            document
-                .getElementById(
-                    "btnKorea"
-                )
-                .classList.add("active");
-
-        }
+}
 
 
-        if (type === "barat") {
+function detectPlayerMode(){
 
-            document
-                .getElementById(
-                    "btnBarat"
-                )
-                .classList.add("active");
+    if(window.innerHeight < 100){
 
-        }
+        document.body.classList.add("mini");
+
+    }else{
+
+        document.body.classList.remove("mini");
 
     }
 
-
-    function detectPlayerMode() {
-
-        if (window.innerHeight < 100) {
-
-            document.body.classList.add(
-                "mini"
-            );
-
-        } else {
-
-            document.body.classList.remove(
-                "mini"
-            );
-
-        }
-
-    }
+}
 
 
-    detectPlayerMode();
+detectPlayerMode();
 
+window.addEventListener(
+    "resize",
+    detectPlayerMode
+);
 
-    window.addEventListener(
-        "resize",
-        detectPlayerMode
-    );
+</script>
 
+</body>
 
-</script></body></html>
+</html>
