@@ -1,28 +1,50 @@
-<!DOCTYPE html><html lang="id"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- SEO Meta Tags -->
-<title>MAUNYA WANITA ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 
 <meta
-    name="description"
-    content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim."
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
-<meta name="robots" content="index, follow">
-
-<link rel="stylesheet" href="style.css">
-
+<title>CewekPedia ❤️</title>
 
 <style>
 
-    /* =========================================
-       TOP NAV — KECIL & STICKY
-       ========================================= */
+    * {
+        box-sizing: border-box;
+    }
 
-    .top-category-nav {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background: #fff7fb;
+        font-family: Arial, sans-serif;
+        color: #3a2630;
+    }
+
+
+    /* =========================
+       NAVIGASI GLOBAL
+    ========================= */
+
+    .global-nav {
+
         position: sticky;
         top: 0;
-        z-index: 9999;
+        z-index: 1000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 7px 6px;
 
         background: rgba(255, 247, 251, 0.97);
 
@@ -30,430 +52,281 @@
 
         box-shadow:
             0 2px 8px rgba(80, 40, 60, 0.06);
-    }
-
-
-    .top-category-container {
-        max-width: 1100px;
-        margin: auto;
-
-        padding: 5px 7px;
-
-        display: flex;
-        gap: 5px;
 
         overflow-x: auto;
-        white-space: nowrap;
 
         scrollbar-width: none;
     }
 
 
-    .top-category-container::-webkit-scrollbar {
+    .global-nav::-webkit-scrollbar {
         display: none;
     }
 
 
-    .category-chip {
+    .global-nav a {
+
         flex: 0 0 auto;
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        padding: 5px 9px;
-
-        border-radius: 18px;
-
-        background: #ffffff;
-
-        color: #5b3b48;
 
         text-decoration: none;
 
-        font-size: 11px;
-        font-weight: 600;
+        color: #633f4d;
+
+        background: #ffffff;
 
         border: 1px solid #efdce6;
+
+        border-radius: 18px;
+
+        padding: 6px 9px;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        cursor: pointer;
     }
 
 
-    .category-chip.active {
+    .global-nav a.active {
+
         background: #d92f72;
+
         color: #ffffff;
+
         border-color: #d92f72;
     }
 
 
-    /* =========================================
-       MUSIC PLAYER
-       ========================================= */
+    .global-nav a:hover {
 
-    .global-music {
+        background: #fff0f6;
+    }
+
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music-area {
+
         width: 100%;
-        max-width: 720px;
 
-        margin: 15px auto 8px;
+        padding: 7px 8px 4px;
+
+        background: #fff7fb;
     }
 
 
     .music-frame {
+
         display: block;
 
         width: 100%;
-        height: 128px;
+
+        max-width: 740px;
+
+        height: 205px;
+
+        margin: 0 auto;
 
         border: 0;
     }
 
 
-    /* =========================================
-       MOBILE
-       ========================================= */
+    /* =========================
+       HALAMAN
+    ========================= */
+
+    .page-frame {
+
+        display: block;
+
+        width: 100%;
+
+        height: calc(100vh - 255px);
+
+        min-height: 650px;
+
+        border: 0;
+
+        background: #fff7fb;
+    }
+
 
     @media (max-width: 600px) {
 
-        .top-category-container {
-            padding: 5px 6px;
-            gap: 4px;
+        .global-nav {
+
+            justify-content: flex-start;
         }
 
+        .global-nav a {
 
-        .category-chip {
             padding: 5px 8px;
+
             font-size: 10px;
         }
 
+        .music-area {
 
-        .global-music {
-            margin-top: 12px;
+            padding: 6px 6px 3px;
         }
 
-
         .music-frame {
-            height: 128px;
+
+            height: 205px;
+        }
+
+        .page-frame {
+
+            height: calc(100vh - 250px);
+
+            min-height: 650px;
         }
 
     }
 
 </style>
 
-</head><body><!-- =========================================
-     STICKY TOP NAV
-     ========================================= --><nav class="top-category-nav"><div class="top-category-container">
+</head><body><!-- =========================
+     NAVIGASI GLOBAL
+========================= --><nav class="global-nav"><a
+    href="home.html"
+    onclick="goPage('home.html', this); return false;"
+    class="active"
+>
+    🏠 Utama
+</a>
 
 
-    <a
-        href="index.html"
-        class="category-chip active">
-        🏠 Utama
-    </a>
+<a
+    href="kota.html"
+    onclick="goCategory('Pengen Cantik', this); return false;"
+>
+    💄 Cantik
+</a>
 
 
-    <a
-        href="#cantik"
-        class="category-chip"
-        onclick="chooseCategory('Pengen Cantik')">
-        💄 Cantik
-    </a>
+<a
+    href="kota.html"
+    onclick="goCategory('Pengen Nikah', this); return false;"
+>
+    💍 Nikah
+</a>
 
 
-    <a
-        href="#nikah"
-        class="category-chip"
-        onclick="chooseCategory('Pengen Nikah')">
-        💍 Nikah
-    </a>
+<a
+    href="kota.html"
+    onclick="goCategory('Pengen Makan & Belanja', this); return false;"
+>
+    🛍️ Makan
+</a>
 
 
-    <a
-        href="#makan"
-        class="category-chip"
-        onclick="chooseCategory('Pengen Makan & Belanja')">
-        🛍️ Makan
-    </a>
+<a
+    href="kota.html"
+    onclick="goCategory('Pengen Jalan-jalan / Healing', this); return false;"
+>
+    🌴 Healing
+</a>
 
 
-    <a
-        href="#healing"
-        class="category-chip"
-        onclick="chooseCategory('Pengen Jalan-jalan / Healing')">
-        🌴 Healing
-    </a>
+<a
+    href="ruangcewek/index.html"
+    onclick="goPage('ruangcewek/index.html', this); return false;"
+>
+    💬 Cewek
+</a>
 
 
-    <a
-        href="ruangcewek/"
-        class="category-chip">
-        💬 Cewek
-    </a>
+<a
+    href="ruanglawak/index.html"
+    onclick="goPage('ruanglawak/index.html', this); return false;"
+>
+    😂 Lawak
+</a>
 
-
-    <a
-        href="ruanglawak/"
-        class="category-chip">
-        😂 Lawak
-    </a>
-
-
-</div>
-
-</nav><!-- =========================================
-     HEADER
-     ========================================= --><header
-    class="container"
-    id="header"><h1>
-    MAUNYA WANITA ❤️❤️
-</h1>
-
-
-<p>
-    Lagi pengen apa hari ini??
-</p>
-
-</header><!-- =========================================
-     GLOBAL MUSIC PLAYER
-     ========================================= --><section class="global-music"><iframe
+</nav><!-- =========================
+     MUSIC GLOBAL
+========================= --><section class="music-area"><iframe
     src="music-player.html"
     class="music-frame"
-    title="Music Player CewekPedia"
-    scrolling="no">
+    title="CewekPedia Music Player"
+    scrolling="no"
+    frameborder="0"
+    allow="autoplay"
+>
 </iframe>
 
-</section><!-- =========================================
-     MAIN CONTENT
-     ========================================= --><main class="container"><!-- INTRO -->
+</section><!-- =========================
+     KONTEN
+========================= --><iframe
+    src="home.html"
+    name="cewekpediaPage"
+    id="pageFrame"
+    class="page-frame"
+    title="CewekPedia"
+>
+</iframe><script>
 
-<section class="intro">
+    const pageFrame =
+        document.getElementById("pageFrame");
 
-    <h2>
-        Pilih maunya kamu 💕
-    </h2>
 
+    function setActive(button) {
 
-    <p>
-        Nggak usah ribet. Pilih dulu,
-        nanti kita carikan pilihannya.
-    </p>
+        const buttons =
+            document.querySelectorAll(".global-nav a");
 
-</section>
+        buttons.forEach(function(item) {
 
+            item.classList.remove("active");
 
+        });
 
-<!-- =========================================
-     6 KOTAK UTAMA — GRID 2 x 3
-     ========================================= -->
 
-<section class="category-grid">
+        if (button) {
 
+            button.classList.add("active");
 
-    <!-- PENGEN CANTIK -->
+        }
 
-    <div
-        id="cantik"
-        class="category"
-        onclick="chooseCategory('Pengen Cantik')">
+    }
 
-        <div class="icon">
-            💄
-        </div>
 
+    function goPage(url, button) {
 
-        <h3>
-            PENGEN CANTIK
-        </h3>
+        setActive(button);
 
+        pageFrame.src = url;
 
-        <p>
-            Salon, skincare store, fashion,
-            parfum, dan kebutuhan kecantikan lainnya.
-        </p>
+    }
 
-    </div>
 
+    function goCategory(category, button) {
 
+        localStorage.setItem(
+            "mw_category",
+            category
+        );
 
-    <!-- PENGEN NIKAH -->
+        localStorage.removeItem(
+            "mw_city"
+        );
 
-    <div
-        id="nikah"
-        class="category"
-        onclick="chooseCategory('Pengen Nikah')">
+        localStorage.removeItem(
+            "mw_subcategory"
+        );
 
-        <div class="icon">
-            💍
-        </div>
 
+        setActive(button);
 
-        <h3>
-            PENGEN NIKAH
-        </h3>
 
+        pageFrame.src = "kota.html";
 
-        <p>
-            WO, MUA, toko pengantin,
-            dan berbagai kebutuhan pernikahan.
-        </p>
+    }
 
-    </div>
-
-
-
-    <!-- PENGEN MAKAN & BELANJA -->
-
-    <div
-        id="makan"
-        class="category"
-        onclick="chooseCategory('Pengen Makan & Belanja')">
-
-        <div class="icon">
-            🛍️
-        </div>
-
-
-        <h3>
-            PENGEN MAKAN & BELANJA
-        </h3>
-
-
-        <p>
-            Restoran & cafe, toko & mall,
-            serta tempat makan dan belanja.
-        </p>
-
-    </div>
-
-
-
-    <!-- PENGEN JALAN-JALAN / HEALING -->
-
-    <div
-        id="healing"
-        class="category"
-        onclick="chooseCategory('Pengen Jalan-jalan / Healing')">
-
-        <div class="icon">
-            🌴
-        </div>
-
-
-        <h3>
-            PENGEN JALAN-JALAN / HEALING
-        </h3>
-
-
-        <p>
-            Hotel & penginapan, wisata,
-            hiburan, dan tempat untuk healing.
-        </p>
-
-    </div>
-
-
-
-    <!-- RUANG CEWEK -->
-
-    <a
-        class="category"
-        href="ruangcewek/"
-        style="text-decoration: none; color: inherit;">
-
-        <div class="icon">
-            💬
-        </div>
-
-
-        <h3>
-            RUANG CEWEK
-        </h3>
-
-
-        <p>
-            Tempat cewek curhat, berbagi cerita,
-            pengalaman, dan ngobrol bareng.
-        </p>
-
-    </a>
-
-
-
-    <!-- RUANG LAWAK -->
-
-    <a
-        class="category"
-        href="ruanglawak/"
-        style="text-decoration: none; color: inherit;">
-
-        <div class="icon">
-            😂
-        </div>
-
-
-        <h3>
-            RUANG LAWAK
-        </h3>
-
-
-        <p>
-            Tempat cari cerita lucu,
-            hiburan, dan hal-hal yang bikin ketawa.
-        </p>
-
-    </a>
-
-
-</section>
-
-</main><!-- =========================================
-     FOOTER
-     ========================================= --><footer><div style="margin-bottom: 12px;">
-
-    <a
-        href="tentang.html"
-        style="color: #927985; text-decoration: none; font-weight: bold;">
-        Tentang Kami
-    </a>
-
-    •
-
-    <a
-        href="kontak.html"
-        style="color: #927985; text-decoration: none; font-weight: bold;">
-        Kontak
-    </a>
-
-    •
-
-    <a
-        href="kebijakan-privasi.html"
-        style="color: #927985; text-decoration: none; font-weight: bold;">
-        Kebijakan Privasi
-    </a>
-
-    •
-
-    <a
-        href="syarat-ketentuan.html"
-        style="color: #927985; text-decoration: none; font-weight: bold;">
-        Syarat & Ketentuan
-    </a>
-
-</div>
-
-
-<strong>
-    MAUNYA WANITA ❤️❤️
-</strong>
-
-— Cari yang kamu mau. Tanpa ribet.
-
-
-<br>
-
-
-<small
-    style="opacity: 0.8; display: block; margin-top: 5px;">
-    © 2026 MAUNYA WANITA. All rights reserved.
-</small>
-
-</footer><script src="script.js"></script></body></html>
+</script></body></html>
