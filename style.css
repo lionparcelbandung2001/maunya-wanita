@@ -35,7 +35,7 @@ body {
 
 
 /* =========================
-   STICKY TOP NAV (SUB-HALAMAN)
+   STICKY TOP NAV (KHUSUS SUB-HALAMAN)
 ========================= */
 
 .top-category-nav {
@@ -514,7 +514,7 @@ textarea:focus {
 
 
 /* =========================
-   FOOTER
+   FOOTER & LEGAL LINKS (SYARAT ADSENSE)
 ========================= */
 
 footer {
@@ -522,6 +522,8 @@ footer {
     color: #927985;
     padding: 25px 15px 35px;
     font-size: 13px;
+    border-top: 1px solid #efd1df;
+    margin-top: 40px;
 }
 
 footer strong {
@@ -530,6 +532,14 @@ footer strong {
 
 footer a {
     color: #927985;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #c94f7d;
+    text-decoration: underline;
 }
 
 
