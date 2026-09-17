@@ -140,7 +140,9 @@
 
         width: 100%;
 
-        padding: 7px 8px 5px;
+        padding: 7px 8px 6px;
+
+        background: #fff7fb;
 
     }
 
@@ -158,6 +160,10 @@
         margin: 0 auto;
 
         border: 0;
+
+        border-radius: 14px;
+
+        overflow: hidden;
 
     }
 
@@ -227,7 +233,7 @@
 
             padding:
 
-                5px 6px 3px;
+                5px 6px 5px;
 
         }
 
@@ -255,145 +261,117 @@
 
 </head><body><!-- =========================================
      GLOBAL NAVIGATION
-     ========================================= -->
-
-<nav class="global-nav">
+     ========================================= --><nav class="global-nav"><div class="nav-scroll">
 
 
-    <div class="nav-scroll">
+    <a
+        href="home.html"
+        target="cewekpediaPage"
+        class="active"
+        onclick="setActive(this)">
+
+        🏠 Utama
+
+    </a>
 
 
-        <a
-            href="home.html"
-            target="cewekpediaPage"
-            class="active"
-            onclick="setActive(this)">
+    <a
+        href="kota.html"
+        target="cewekpediaPage"
+        onclick="chooseFromShell(
+            'Pengen Cantik',
+            this
+        )">
 
-            🏠 Utama
+        💄 Cantik
 
-        </a>
-
-
-        <a
-            href="kota.html"
-            target="cewekpediaPage"
-            onclick="setActive(this)">
-
-            💄 Cantik
-
-        </a>
+    </a>
 
 
-        <a
-            href="kota.html"
-            target="cewekpediaPage"
-            onclick="chooseFromShell('Pengen Cantik', this)">
+    <a
+        href="kota.html"
+        target="cewekpediaPage"
+        onclick="chooseFromShell(
+            'Pengen Nikah',
+            this
+        )">
 
-            💄 Cantik
+        💍 Nikah
 
-        </a>
-
-
-        <a
-            href="kota.html"
-            target="cewekpediaPage"
-            onclick="chooseFromShell('Pengen Nikah', this)">
-
-            💍 Nikah
-
-        </a>
+    </a>
 
 
-        <a
-            href="kota.html"
-            target="cewekpediaPage"
-            onclick="chooseFromShell('Pengen Makan & Belanja', this)">
+    <a
+        href="kota.html"
+        target="cewekpediaPage"
+        onclick="chooseFromShell(
+            'Pengen Makan & Belanja',
+            this
+        )">
 
-            🛍️ Makan
+        🛍️ Makan
 
-        </a>
-
-
-        <a
-            href="kota.html"
-            target="cewekpediaPage"
-            onclick="chooseFromShell('Pengen Jalan-jalan / Healing', this)">
-
-            🌴 Healing
-
-        </a>
+    </a>
 
 
-        <a
-            href="ruangcewek/index.html"
-            target="cewekpediaPage"
-            onclick="setActive(this)">
+    <a
+        href="kota.html"
+        target="cewekpediaPage"
+        onclick="chooseFromShell(
+            'Pengen Jalan-jalan / Healing',
+            this
+        )">
 
-            💬 Cewek
+        🌴 Healing
 
-        </a>
-
-
-        <a
-            href="ruanglawak/index.html"
-            target="cewekpediaPage"
-            onclick="setActive(this)">
-
-            😂 Lawak
-
-        </a>
+    </a>
 
 
-    </div>
+    <a
+        href="ruangcewek/index.html"
+        target="cewekpediaPage"
+        onclick="setActive(this)">
 
-</nav>
+        💬 Cewek
+
+    </a>
 
 
+    <a
+        href="ruanglawak/index.html"
+        target="cewekpediaPage"
+        onclick="setActive(this)">
 
-<!-- =========================================
+        😂 Lawak
+
+    </a>
+
+
+</div>
+
+</nav><!-- =========================================
      PERSISTENT MUSIC PLAYER
-     ========================================= -->
+     ========================================= --><section class="music-area"><iframe
+    src="music-player.html"
+    class="music-frame"
+    title="CewekPedia Music Player"
+    scrolling="no"
+    allow="autoplay">
+</iframe>
 
-<section class="music-area">
-
-
-    <iframe
-        src="music-player.html"
-        class="music-frame"
-        title="CewekPedia Music Player"
-        scrolling="no">
-    </iframe>
-
-
-</section>
-
-
-
-<!-- =========================================
+</section><!-- =========================================
      PAGE CONTENT
-     ========================================= -->
+     ========================================= --><main class="page-area"><iframe
+    id="pageFrame"
+    name="cewekpediaPage"
+    class="page-frame"
+    src="home.html"
+    title="CewekPedia Content">
+</iframe>
 
-<main class="page-area">
-
-
-    <iframe
-        id="pageFrame"
-        name="cewekpediaPage"
-        class="page-frame"
-        src="home.html"
-        title="CewekPedia Content">
-    </iframe>
-
-
-</main>
-
-
-
-<!-- =========================================
+</main><!-- =========================================
      SHELL JAVASCRIPT
-     ========================================= -->
-
-<script>
+     ========================================= --><script>
 
 
     /* =========================================
@@ -464,6 +442,4 @@
     }
 
 
-</script>
-
-</body></html>
+</script></body></html>
