@@ -1,4 +1,9 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
 
 <meta
     name="viewport"
@@ -12,743 +17,810 @@
     href="style.css"
 >
 
+
 <style>
 
-    * {
-        box-sizing: border-box;
+/* =========================================
+   DASAR
+   ========================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    background:#fff7fb;
+}
+
+.shell{
+    width:100%;
+    min-height:100vh;
+    background:#fff7fb;
+}
+
+
+/* =========================================
+   TOP BAR 1 — KATEGORI
+   Dibuat sedikit lebih tipis
+   ========================================= */
+
+.category-bar{
+
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    width:100%;
+
+    min-height:42px;
+
+    padding:3px 8px;
+
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    background:rgba(255,247,251,.98);
+
+    border-bottom:1px solid #f1d2df;
+
+    box-shadow:
+        0 2px 9px rgba(217,47,114,.08);
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.category-bar::-webkit-scrollbar{
+    display:none;
+}
+
+
+/* HOME */
+
+.home-button{
+
+    flex-shrink:0;
+
+    width:32px;
+    height:32px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#fbe3ec;
+
+    color:#d92f72;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+.home-button.active{
+
+    background:#d92f72;
+
+    color:white;
+}
+
+
+/* KATEGORI */
+
+.category-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    flex-shrink:0;
+}
+
+.category-links button{
+
+    border:none;
+
+    border-radius:17px;
+
+    padding:6px 9px;
+
+    background:#fbe3ec;
+
+    color:#713b50;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    cursor:pointer;
+}
+
+.category-links button.active{
+
+    background:#d92f72;
+
+    color:white;
+}
+
+.category-links button:hover{
+
+    background:#f4cfde;
+}
+
+
+/* =========================================
+   TOP BAR 2 — MUSIK
+   Dibuat sedikit lebih tinggi
+   ========================================= */
+
+.music-area{
+
+    position:relative;
+
+    width:100%;
+
+    height:58px;
+
+    padding:4px 8px;
+
+    background:#fff7fb;
+
+    border-bottom:1px solid #f1d2df;
+
+    overflow:hidden;
+
+    transition:
+        height .2s ease,
+        padding .2s ease;
+}
+
+
+/* HOMEPAGE
+   Player besar
+   */
+
+.music-area.home-music{
+
+    height:205px;
+
+    padding:5px 8px;
+}
+
+
+/* =========================================
+   PETUNJUK "MUSIK DISINI ↑"
+   ========================================= */
+
+.music-hint{
+
+    display:block;
+
+    position:absolute;
+
+    right:12px;
+
+    top:2px;
+
+    z-index:50;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    color:#d92f72;
+
+    background:rgba(255,247,251,.95);
+
+    padding:2px 6px;
+
+    border-radius:8px;
+
+    pointer-events:none;
+
+    animation:musicHintFloat 1.8s ease-in-out infinite;
+}
+
+
+/* Gerakan naik turun kecil */
+
+@keyframes musicHintFloat{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+
+/* HOME tidak menampilkan petunjuk */
+
+.home-music .music-hint{
+
+    display:none;
+}
+
+
+/* =========================================
+   PLAYER
+   ========================================= */
+
+.music-frame{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+#pageFrame{
+
+    display:block;
+
+    width:100%;
+
+    height:calc(100vh - 100px);
+
+    min-height:650px;
+
+    border:none;
+
+    background:#fff7fb;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:600px){
+
+    /* BAR 1 */
+
+    .category-bar{
+
+        min-height:40px;
+
+        padding:2px 6px;
+
+        gap:4px;
+    }
+
+    .home-button{
+
+        width:30px;
+        height:30px;
+
+        font-size:15px;
+    }
+
+    .category-links{
+
+        gap:3px;
+    }
+
+    .category-links button{
+
+        padding:5px 8px;
+
+        font-size:9px;
     }
 
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
+    /* BAR 2 */
 
-        width: 100%;
-        min-height: 100%;
+    .music-area{
 
-        background: #fff7fb;
+        height:56px;
+
+        padding:3px 5px;
+    }
+
+    .music-area.home-music{
+
+        height:205px;
+
+        padding:4px 5px;
     }
 
 
-    /* =========================
-       SHELL
-    ========================= */
+    /* PETUNJUK */
 
-    .shell {
-        width: 100%;
-        min-height: 100vh;
+    .music-hint{
 
-        background: #fff7fb;
+        right:8px;
+
+        top:1px;
+
+        font-size:7px;
+
+        padding:2px 5px;
     }
 
 
-    /* =========================
-       TOP CATEGORY BAR
-    ========================= */
+    /* CONTENT */
 
-    .category-bar {
+    #pageFrame{
 
-        position: sticky;
-        top: 0;
+        height:calc(100vh - 96px);
 
-        z-index: 9999;
-
-        width: 100%;
-
-        min-height: 48px;
-
-        padding: 6px 8px;
-
-        display: flex;
-        align-items: center;
-
-        gap: 6px;
-
-        background: rgba(255, 247, 251, 0.98);
-
-        border-bottom: 1px solid #f1d2df;
-
-        box-shadow:
-            0 2px 9px rgba(217, 47, 114, 0.08);
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
+        min-height:650px;
     }
 
-
-    .category-bar::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    /* HOME */
-
-    .home-button {
-
-        flex-shrink: 0;
-
-        width: 34px;
-        height: 34px;
-
-        border: none;
-
-        border-radius: 50%;
-
-        background: #fbe3ec;
-
-        color: #d92f72;
-
-        font-size: 17px;
-
-        cursor: pointer;
-    }
-
-
-    .home-button.active {
-
-        background: #d92f72;
-
-        color: white;
-    }
-
-
-    /* CATEGORY BUTTONS */
-
-    .category-links {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 5px;
-
-        flex-shrink: 0;
-    }
-
-
-    .category-links button {
-
-        border: none;
-
-        border-radius: 18px;
-
-        padding: 7px 10px;
-
-        background: #fbe3ec;
-
-        color: #713b50;
-
-        font-size: 11px;
-
-        font-weight: bold;
-
-        white-space: nowrap;
-
-        cursor: pointer;
-    }
-
-
-    .category-links button.active {
-
-        background: #d92f72;
-
-        color: white;
-    }
-
-
-    .category-links button:hover {
-
-        background: #f4cfde;
-    }
-
-
-    /* =========================
-       MUSIC BAR
-    ========================= */
-
-    .music-area {
-
-        width: 100%;
-
-        height: 48px;
-
-        padding: 3px 8px;
-
-        background: #fff7fb;
-
-        border-bottom: 1px solid #f1d2df;
-
-        overflow: hidden;
-
-        transition:
-            height 0.2s ease,
-            padding 0.2s ease;
-    }
-
-
-    /* HOME = FULL PLAYER */
-
-    .music-area.home-music {
-
-        height: 205px;
-
-        padding: 5px 8px;
-    }
-
-
-    .music-frame {
-
-        display: block;
-
-        width: 100%;
-
-        height: 100%;
-
-        border: none;
-
-        border-radius: 12px;
-
-        background: transparent;
-    }
-
-
-    /* =========================
-       PAGE CONTENT
-    ========================= */
-
-    #pageFrame {
-
-        display: block;
-
-        width: 100%;
-
-        height: calc(100vh - 96px);
-
-        min-height: 650px;
-
-        border: none;
-
-        background: #fff7fb;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 600px) {
-
-        .category-bar {
-
-            min-height: 46px;
-
-            padding: 5px 6px;
-
-            gap: 5px;
-        }
-
-
-        .home-button {
-
-            width: 32px;
-
-            height: 32px;
-
-            font-size: 16px;
-        }
-
-
-        .category-links {
-
-            gap: 4px;
-        }
-
-
-        .category-links button {
-
-            padding: 6px 8px;
-
-            font-size: 10px;
-        }
-
-
-        .music-area {
-
-            height: 46px;
-
-            padding: 3px 5px;
-        }
-
-
-        .music-area.home-music {
-
-            height: 205px;
-
-            padding: 4px 5px;
-        }
-
-
-        #pageFrame {
-
-            height: calc(100vh - 92px);
-
-            min-height: 650px;
-        }
-
-    }
+}
 
 </style>
 
-</head><body><div class="shell"><!-- =================================
-     TOP BAR 1
-     6 MENU UTAMA
-================================== -->
-
-<nav class="category-bar">
+</head>
 
 
-    <button
-        id="homeButton"
-        class="home-button active"
-        onclick="goHome()"
-        aria-label="Beranda"
+<body>
+
+
+<div class="shell">
+
+
+    <!-- =====================================
+         TOP BAR 1 — KATEGORI
+         ===================================== -->
+
+    <nav class="category-bar">
+
+
+        <button
+            id="homeButton"
+            class="home-button active"
+            onclick="goHome()"
+            aria-label="Beranda"
+        >
+            🏠
+        </button>
+
+
+        <div class="category-links">
+
+
+            <button
+                id="navCantik"
+                onclick="goCategory('cantik')"
+            >
+                💄 Pengen Cantik
+            </button>
+
+
+            <button
+                id="navNikah"
+                onclick="goCategory('nikah')"
+            >
+                💍 Pengen Nikah
+            </button>
+
+
+            <button
+                id="navMakan"
+                onclick="goCategory('makan')"
+            >
+                🛍️ Makan & Belanja
+            </button>
+
+
+            <button
+                id="navHealing"
+                onclick="goCategory('healing')"
+            >
+                🌴 Jalan-jalan / Healing
+            </button>
+
+
+            <button
+                id="navRuangCewek"
+                onclick="goPage('ruangcewek/index.html')"
+            >
+                💬 Ruang Cewek
+            </button>
+
+
+            <button
+                id="navRuangLawak"
+                onclick="goPage('ruanglawak/index.html')"
+            >
+                😂 Ruang Lawak
+            </button>
+
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         TOP BAR 2 — MUSIK
+         ===================================== -->
+
+    <div
+        id="musicArea"
+        class="music-area home-music"
     >
-        🏠
-    </button>
 
 
-    <div class="category-links">
-
-
-        <button
-            id="navCantik"
-            onclick="goCategory('cantik')"
+        <iframe
+            id="musicFrame"
+            class="music-frame"
+            src="music-player.html"
+            title="CewekPedia Music"
+            scrolling="no"
         >
-            💄 Pengen Cantik
-        </button>
+        </iframe>
 
 
-        <button
-            id="navNikah"
-            onclick="goCategory('nikah')"
+        <!-- Petunjuk kecil -->
+
+        <div
+            id="musicHint"
+            class="music-hint"
         >
-            💍 Pengen Nikah
-        </button>
-
-
-        <button
-            id="navMakan"
-            onclick="goCategory('makan')"
-        >
-            🛍️ Makan & Belanja
-        </button>
-
-
-        <button
-            id="navHealing"
-            onclick="goCategory('healing')"
-        >
-            🌴 Jalan-jalan / Healing
-        </button>
-
-
-        <button
-            id="navRuangCewek"
-            onclick="goPage('ruangcewek/index.html')"
-        >
-            💬 Ruang Cewek
-        </button>
-
-
-        <button
-            id="navRuangLawak"
-            onclick="goPage('ruanglawak/index.html')"
-        >
-            😂 Ruang Lawak
-        </button>
+            musik disini ↑
+        </div>
 
 
     </div>
 
 
-</nav>
-
-
-<!-- =================================
-     TOP BAR 2
-     MUSIC
-================================== -->
-
-<div
-    id="musicArea"
-    class="music-area home-music"
->
+    <!-- =====================================
+         ISI HALAMAN
+         ===================================== -->
 
     <iframe
-        id="musicFrame"
-        class="music-frame"
-        src="music-player.html"
-        title="CewekPedia Music"
-        scrolling="no"
+        id="pageFrame"
+        src="home.html"
+        title="CewekPedia Content"
     >
     </iframe>
+
 
 </div>
 
 
-<!-- =================================
-     CONTENT
-================================== -->
-
-<iframe
-    id="pageFrame"
-    src="home.html"
-    title="CewekPedia Content"
->
-</iframe>
-
-</div><script>
+<script>
 
 
-    const pageFrame =
-        document.getElementById("pageFrame");
+const pageFrame =
+    document.getElementById("pageFrame");
 
 
-    const musicArea =
-        document.getElementById("musicArea");
+const musicArea =
+    document.getElementById("musicArea");
 
 
-    /*
-     * HOME
-     */
+const musicHint =
+    document.getElementById("musicHint");
 
-    function goHome() {
 
-        pageFrame.src = "home.html";
 
-        setMusicMode(true);
+/* =========================================
+   HOME
+   ========================================= */
 
-        clearActive();
+function goHome(){
+
+    pageFrame.src="home.html";
+
+    setMusicMode(true);
+
+    clearActive();
+
+    document
+        .getElementById("homeButton")
+        .classList.add("active");
+
+}
+
+
+
+/* =========================================
+   KATEGORI
+   ========================================= */
+
+function goCategory(category){
+
+    localStorage.setItem(
+        "mw_category",
+        category
+    );
+
+    localStorage.removeItem(
+        "mw_city"
+    );
+
+    localStorage.removeItem(
+        "mw_subcategory"
+    );
+
+
+    pageFrame.src="kota.html";
+
+    setMusicMode(false);
+
+    clearActive();
+
+
+    if(category==="cantik")
+        document
+            .getElementById("navCantik")
+            .classList.add("active");
+
+
+    if(category==="nikah")
+        document
+            .getElementById("navNikah")
+            .classList.add("active");
+
+
+    if(category==="makan")
+        document
+            .getElementById("navMakan")
+            .classList.add("active");
+
+
+    if(category==="healing")
+        document
+            .getElementById("navHealing")
+            .classList.add("active");
+
+}
+
+
+
+/* =========================================
+   RUANG CEWEK / RUANG LAWAK
+   ========================================= */
+
+function goPage(url){
+
+    pageFrame.src=url;
+
+    setMusicMode(false);
+
+    clearActive();
+
+
+    if(url==="ruangcewek/index.html"){
 
         document
-            .getElementById("homeButton")
+            .getElementById("navRuangCewek")
             .classList.add("active");
 
     }
 
 
-    /*
-     * CATEGORY
-     */
-
-    function goCategory(category) {
-
-        localStorage.setItem(
-            "mw_category",
-            category
-        );
-
-        localStorage.removeItem(
-            "mw_city"
-        );
-
-        localStorage.removeItem(
-            "mw_subcategory"
-        );
-
-
-        pageFrame.src = "kota.html";
-
-
-        setMusicMode(false);
-
-
-        clearActive();
-
-
-        if (category === "cantik") {
-
-            document
-                .getElementById("navCantik")
-                .classList.add("active");
-
-        }
-
-
-        if (category === "nikah") {
-
-            document
-                .getElementById("navNikah")
-                .classList.add("active");
-
-        }
-
-
-        if (category === "makan") {
-
-            document
-                .getElementById("navMakan")
-                .classList.add("active");
-
-        }
-
-
-        if (category === "healing") {
-
-            document
-                .getElementById("navHealing")
-                .classList.add("active");
-
-        }
-
-    }
-
-
-    /*
-     * OTHER PAGES
-     */
-
-    function goPage(url) {
-
-        pageFrame.src = url;
-
-        setMusicMode(false);
-
-        clearActive();
-
-
-        if (
-            url === "ruangcewek/index.html"
-        ) {
-
-            document
-                .getElementById("navRuangCewek")
-                .classList.add("active");
-
-        }
-
-
-        if (
-            url === "ruanglawak/index.html"
-        ) {
-
-            document
-                .getElementById("navRuangLawak")
-                .classList.add("active");
-
-        }
-
-    }
-
-
-    /*
-     * MUSIC MODE
-     */
-
-    function setMusicMode(isHome) {
-
-        if (isHome) {
-
-            musicArea.classList.add(
-                "home-music"
-            );
-
-        } else {
-
-            musicArea.classList.remove(
-                "home-music"
-            );
-
-        }
-
-    }
-
-
-    /*
-     * CLEAR ACTIVE
-     */
-
-    function clearActive() {
+    if(url==="ruanglawak/index.html"){
 
         document
-            .querySelectorAll(
-                ".category-links button"
-            )
-            .forEach(function(button) {
-
-                button.classList.remove(
-                    "active"
-                );
-
-            });
-
-
-        document
-            .getElementById("homeButton")
-            .classList.remove("active");
+            .getElementById("navRuangLawak")
+            .classList.add("active");
 
     }
 
-
-    /*
-     * DETECT PAGE INSIDE IFRAME
-     */
-
-    pageFrame.addEventListener(
-        "load",
-        function() {
-
-            let path = "";
+}
 
 
-            try {
 
-                path =
-                    pageFrame
-                        .contentWindow
-                        .location
-                        .pathname;
+/* =========================================
+   MODE MUSIK
+   ========================================= */
 
-            } catch (error) {
+function setMusicMode(isHome){
 
-                return;
+    if(isHome){
 
-            }
+        musicArea
+            .classList
+            .add("home-music");
 
+        musicHint.style.display="none";
 
-            /*
-             * HOME
-             */
+    }else{
 
-            if (
-                path.endsWith("/") ||
-                path.includes("home.html")
-            ) {
+        musicArea
+            .classList
+            .remove("home-music");
 
-                setMusicMode(true);
+        musicHint.style.display="block";
 
-                clearActive();
+    }
 
-                document
-                    .getElementById(
-                        "homeButton"
-                    )
-                    .classList.add("active");
-
-                return;
-
-            }
+}
 
 
-            /*
-             * RUANG CEWEK
-             */
 
-            if (
-                path.includes("ruangcewek")
-            ) {
+/* =========================================
+   ACTIVE MENU
+   ========================================= */
 
-                setMusicMode(false);
+function clearActive(){
 
-                clearActive();
+    document
+        .querySelectorAll(
+            ".category-links button"
+        )
+        .forEach(function(button){
 
-                document
-                    .getElementById(
-                        "navRuangCewek"
-                    )
-                    .classList.add("active");
+            button
+                .classList
+                .remove("active");
 
-                return;
-
-            }
+        });
 
 
-            /*
-             * RUANG LAWAK
-             */
+    document
+        .getElementById("homeButton")
+        .classList
+        .remove("active");
 
-            if (
-                path.includes("ruanglawak")
-            ) {
-
-                setMusicMode(false);
-
-                clearActive();
-
-                document
-                    .getElementById(
-                        "navRuangLawak"
-                    )
-                    .classList.add("active");
-
-                return;
-
-            }
+}
 
 
-            /*
-             * OTHER CATALOG PAGES
-             */
 
-            setMusicMode(false);
+/* =========================================
+   DETEKSI HALAMAN
+   ========================================= */
+
+pageFrame.addEventListener(
+    "load",
+    function(){
+
+        let path="";
 
 
-            const category =
-                localStorage.getItem(
-                    "mw_category"
-                );
+        try{
 
+            path =
+                pageFrame
+                    .contentWindow
+                    .location
+                    .pathname;
+
+        }catch(error){
+
+            return;
+
+        }
+
+
+        /* HOME */
+
+        if(
+            path.endsWith("/") ||
+            path.includes("home.html")
+        ){
+
+            setMusicMode(true);
 
             clearActive();
 
+            document
+                .getElementById("homeButton")
+                .classList
+                .add("active");
 
-            if (category === "cantik") {
-
-                document
-                    .getElementById(
-                        "navCantik"
-                    )
-                    .classList.add("active");
-
-            }
-
-
-            if (category === "nikah") {
-
-                document
-                    .getElementById(
-                        "navNikah"
-                    )
-                    .classList.add("active");
-
-            }
-
-
-            if (category === "makan") {
-
-                document
-                    .getElementById(
-                        "navMakan"
-                    )
-                    .classList.add("active");
-
-            }
-
-
-            if (category === "healing") {
-
-                document
-                    .getElementById(
-                        "navHealing"
-                    )
-                    .classList.add("active");
-
-            }
+            return;
 
         }
-    );
 
 
-</script></body></html>
+        /* RUANG CEWEK */
+
+        if(
+            path.includes("ruangcewek")
+        ){
+
+            setMusicMode(false);
+
+            clearActive();
+
+            document
+                .getElementById("navRuangCewek")
+                .classList
+                .add("active");
+
+            return;
+
+        }
+
+
+        /* RUANG LAWAK */
+
+        if(
+            path.includes("ruanglawak")
+        ){
+
+            setMusicMode(false);
+
+            clearActive();
+
+            document
+                .getElementById("navRuangLawak")
+                .classList
+                .add("active");
+
+            return;
+
+        }
+
+
+        /* HALAMAN LAIN */
+
+        setMusicMode(false);
+
+        const category =
+            localStorage.getItem(
+                "mw_category"
+            );
+
+
+        clearActive();
+
+
+        if(category==="cantik")
+            document
+                .getElementById("navCantik")
+                .classList
+                .add("active");
+
+
+        if(category==="nikah")
+            document
+                .getElementById("navNikah")
+                .classList
+                .add("active");
+
+
+        if(category==="makan")
+            document
+                .getElementById("navMakan")
+                .classList
+                .add("active");
+
+
+        if(category==="healing")
+            document
+                .getElementById("navHealing")
+                .classList
+                .add("active");
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
