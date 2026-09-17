@@ -146,24 +146,26 @@
             box-shadow: 0 3px 10px rgba(150, 80, 110, 0.06);
         }
 
+        /* HEADER CHAT DI TENGAH */
         .chat-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
             margin-bottom: 8px;
         }
 
         .chat-title strong {
+            display: block;
             color: #d92f72;
-            font-size: 16px;
+            font-size: 17px;
+            margin-bottom: 3px;
         }
 
         #onlineCount {
+            display: block;
             font-size: 11px;
             color: #777;
         }
 
-        /* KETENTUAN RINGKAS */
+        /* KETENTUAN CHAT */
         .chat-terms {
             margin-bottom: 8px;
             font-size: 11px;
@@ -173,6 +175,7 @@
             cursor: pointer;
             color: #9a6477;
             padding: 4px 2px;
+            text-align: center;
         }
 
         .chat-terms summary:hover {
@@ -186,6 +189,7 @@
             padding: 9px;
             line-height: 1.5;
             color: #674955;
+            text-align: left;
         }
 
         .terms-content strong {
@@ -205,40 +209,70 @@
             line-height: 1.5;
         }
 
-        /* MESSAGES */
+        /* AREA PESAN */
         #messages {
             height: 300px;
             overflow-y: auto;
             background: #fffafd;
             border: 1px solid #f1dce5;
             border-radius: 10px;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 8px;
         }
 
-        .message {
+        /* BUBBLE CHAT */
+        .message-row {
+            display: flex;
+            width: 100%;
             margin-bottom: 8px;
-            padding: 7px 9px;
-            background: #fff;
-            border-radius: 10px;
-            border: 1px solid #f3e2e8;
+        }
+
+        .message-row.other {
+            justify-content: flex-start;
+        }
+
+        .message-row.mine {
+            justify-content: flex-end;
+        }
+
+        .message {
+            max-width: 78%;
+            padding: 7px 10px;
+            border-radius: 12px;
             font-size: 12px;
+            word-wrap: break-word;
+        }
+
+        /* CHAT ORANG LAIN */
+        .message-row.other .message {
+            background: #ffffff;
+            border: 1px solid #f0dfe6;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* CHAT AKU */
+        .message-row.mine .message {
+            background: #fde1ec;
+            border: 1px solid #f4cad9;
+            border-bottom-right-radius: 4px;
         }
 
         .message .nickname {
             font-weight: bold;
             color: #d92f72;
             margin-bottom: 2px;
+            font-size: 10px;
         }
 
         .message .text {
-            word-wrap: break-word;
+            line-height: 1.4;
         }
 
         .message .time {
-            font-size: 9px;
+            font-size: 8px;
             color: #999;
             margin-top: 3px;
+            text-align: right;
         }
 
         .info {
@@ -316,6 +350,7 @@
         }
 
         @media (max-width: 480px) {
+
             .container {
                 padding: 10px;
             }
@@ -335,6 +370,10 @@
             #messages {
                 height: 300px;
             }
+
+            .message {
+                max-width: 82%;
+            }
         }
     </style>
 </head>
@@ -349,30 +388,47 @@
         Cerita • Berbagi • Ngobrol ❤️
     </div>
 
+
     <!-- MINI NAV -->
     <div class="mini-nav">
+
         <a href="../index.html">💄 Cantik</a>
+
         <a href="../index.html">💍 Nikah</a>
+
         <a href="../index.html">🛍️ Makan</a>
+
         <a href="../index.html">🌴 Healing</a>
+
         <a href="index.html" class="active">💬 Cerita</a>
+
         <a href="../ruanglawak/index.html">😂 Lawak</a>
+
     </div>
+
 
     <!-- MENU -->
     <div class="menu-grid">
 
         <a href="curhat.html" class="menu-card">
+
             <span class="emoji">💭</span>
+
             <strong>Curhat</strong>
+
         </a>
 
+
         <a href="reviewproduk.html" class="menu-card">
+
             <span class="emoji">⭐</span>
+
             <strong>Review Produk</strong>
+
         </a>
 
     </div>
+
 
     <!-- MUSIC -->
     <div class="music-box">
@@ -381,21 +437,31 @@
             🎵 Teman Ngobrol
         </div>
 
+
         <div class="music-buttons">
 
-            <button id="btnKorea" onclick="changeMusic('korea')">
+            <button
+                id="btnKorea"
+                onclick="changeMusic('korea')">
                 🇰🇷 Korea
             </button>
 
-            <button id="btnPop" onclick="changeMusic('pop')">
+
+            <button
+                id="btnPop"
+                onclick="changeMusic('pop')">
                 🎧 Pop
             </button>
 
-            <button id="btnBarat" onclick="changeMusic('barat')">
+
+            <button
+                id="btnBarat"
+                onclick="changeMusic('barat')">
                 🌎 Barat
             </button>
 
         </div>
+
 
         <iframe
             id="soundcloudPlayer"
@@ -408,67 +474,103 @@
 
     </div>
 
+
     <!-- CHATROOM -->
     <div class="chat-box">
 
+
+        <!-- HEADER CHAT -->
         <div class="chat-title">
-            <strong>🟢 Chatroom</strong>
-            <span id="onlineCount">Menghubungkan...</span>
+
+            <strong>
+                🟢 Chatroom
+            </strong>
+
+            <span id="onlineCount">
+                Menghubungkan...
+            </span>
+
         </div>
 
-        <!-- KETENTUAN CHAT -->
+
+        <!-- KETENTUAN -->
         <details class="chat-terms">
-            <summary>⚠️ Ketentuan Chat — klik di sini</summary>
+
+            <summary>
+                ⚠️ Ketentuan Chat — klik di sini
+            </summary>
+
 
             <div class="terms-content">
-                <strong>Ketentuan Chatroom</strong><br><br>
+
+                <strong>Ketentuan Chatroom</strong>
+                <br><br>
 
                 Chatroom ini merupakan ruang komunikasi antar pengguna.
                 Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
+
                 <br><br>
 
                 Jangan membagikan data pribadi, melakukan penipuan,
                 pelecehan, ancaman, spam, atau aktivitas yang melanggar hukum.
+
                 <br><br>
 
                 Pengelola berhak menghapus pesan atau membatasi akses pengguna
                 apabila ditemukan pelanggaran.
+
             </div>
+
         </details>
 
-        <!-- FIREBASE ERROR -->
+
+        <!-- ERROR FIREBASE -->
         <div id="firebaseError"></div>
 
-        <!-- MESSAGES -->
+
+        <!-- PESAN -->
         <div id="messages">
-            <div class="info">Menghubungkan ke chatroom...</div>
+
+            <div class="info">
+                Menghubungkan ke chatroom...
+            </div>
+
         </div>
+
 
         <!-- INPUT -->
         <div class="chat-input-area">
+
 
             <input
                 type="text"
                 id="nickname"
                 maxlength="20"
-                placeholder="Nama / nickname"
-            >
+                placeholder="Nama / nickname">
+
 
             <textarea
                 id="messageInput"
                 maxlength="300"
                 rows="2"
-                placeholder="Tulis pesan..."
-            ></textarea>
+                placeholder="Tulis pesan..."></textarea>
+
 
             <div class="limit">
                 Maksimal 300 karakter
             </div>
 
+
             <div class="send-row">
-                <button id="sendButton" disabled>
+
+                <button
+                    id="sendButton"
+                    disabled>
+
                     Kirim 💬
+
                 </button>
+
             </div>
 
         </div>
@@ -477,6 +579,8 @@
 
 </div>
 
+
+<!-- FLOATING -->
 <a href="curhat.html" class="floating">
     💌 Bagikan Ceritamu
 </a>
@@ -489,6 +593,7 @@
         initializeApp
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
+
     import {
         getDatabase,
         ref,
@@ -499,6 +604,7 @@
         onDisconnect,
         set
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
 
     import {
         getAuth,
@@ -511,13 +617,27 @@
        ========================= */
 
     const firebaseConfig = {
+
         apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-        authDomain: "ruang-cewek.firebaseapp.com",
-        databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "ruang-cewek",
-        storageBucket: "ruang-cewek.firebasestorage.app",
-        messagingSenderId: "300030693884",
-        appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+        authDomain:
+            "ruang-cewek.firebaseapp.com",
+
+        databaseURL:
+            "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+        projectId:
+            "ruang-cewek",
+
+        storageBucket:
+            "ruang-cewek.firebasestorage.app",
+
+        messagingSenderId:
+            "300030693884",
+
+        appId:
+            "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
     };
 
 
@@ -525,55 +645,91 @@
        ELEMENT
        ========================= */
 
-    const messages = document.getElementById("messages");
-    const nicknameInput = document.getElementById("nickname");
-    const messageInput = document.getElementById("messageInput");
-    const sendButton = document.getElementById("sendButton");
-    const onlineCount = document.getElementById("onlineCount");
-    const firebaseError = document.getElementById("firebaseError");
+    const messages =
+        document.getElementById("messages");
+
+    const nicknameInput =
+        document.getElementById("nickname");
+
+    const messageInput =
+        document.getElementById("messageInput");
+
+    const sendButton =
+        document.getElementById("sendButton");
+
+    const onlineCount =
+        document.getElementById("onlineCount");
+
+    const firebaseError =
+        document.getElementById("firebaseError");
 
 
     /* =========================
-       ERROR DISPLAY
+       ERROR
        ========================= */
 
     function showFirebaseError(error) {
 
-        console.error("Firebase Error:", error);
+        console.error(
+            "Firebase Error:",
+            error
+        );
+
 
         if (!firebaseError) return;
 
-        firebaseError.style.display = "block";
+
+        firebaseError.style.display =
+            "block";
+
 
         firebaseError.innerHTML =
             "<strong>⚠️ Detail error Firebase</strong><br>" +
-            "Kode: " + (error.code || "tidak diketahui") +
+
+            "Kode: " +
+            (error.code || "tidak diketahui") +
+
             "<br>" +
-            "Pesan: " + (error.message || "tidak diketahui");
+
+            "Pesan: " +
+            (error.message || "tidak diketahui");
+
     }
 
 
     /* =========================
-       INITIALIZE FIREBASE
+       INITIALIZE
        ========================= */
 
     let app;
+
     let db;
+
     let auth;
+
 
     try {
 
-        app = initializeApp(firebaseConfig);
+        app =
+            initializeApp(
+                firebaseConfig
+            );
 
-        db = getDatabase(app);
 
-        auth = getAuth(app);
+        db =
+            getDatabase(app);
+
+
+        auth =
+            getAuth(app);
+
 
     } catch (error) {
 
         showFirebaseError(error);
 
-        onlineCount.textContent = "🔴 Chatroom offline";
+        onlineCount.textContent =
+            "🔴 Chatroom offline";
 
     }
 
@@ -586,88 +742,127 @@
 
         signInAnonymously(auth)
 
-            .then((result) => {
+        .then((result) => {
 
-                console.log(
-                    "Anonymous Auth berhasil:",
-                    result.user.uid
-                );
+            console.log(
+                "Anonymous Auth berhasil:",
+                result.user.uid
+            );
 
-                onlineCount.textContent = "🟢 Terhubung";
 
-                sendButton.disabled = false;
+            setupPresence(
+                result.user.uid
+            );
 
-                setupPresence(result.user.uid);
 
-                loadMessages();
+            loadMessages();
 
-            })
 
-            .catch((error) => {
+            sendButton.disabled =
+                false;
 
-                showFirebaseError(error);
+        })
 
-                messages.innerHTML =
-                    '<div class="info">Chatroom belum bisa terhubung.</div>';
 
-                onlineCount.textContent =
-                    "🔴 Chatroom offline";
+        .catch((error) => {
 
-            });
+            showFirebaseError(error);
+
+
+            messages.innerHTML =
+                '<div class="info">' +
+                'Chatroom belum bisa terhubung.' +
+                '</div>';
+
+
+            onlineCount.textContent =
+                "🔴 Chatroom offline";
+
+        });
 
     }
 
 
     /* =========================
-       PRESENCE / ONLINE
+       PRESENCE
        ========================= */
 
     function setupPresence(uid) {
 
-        const connectedRef = ref(db, ".info/connected");
-
-        const presenceRef = ref(
-            db,
-            "presence/" + uid
-        );
-
-        onValue(connectedRef, (snapshot) => {
-
-            if (snapshot.val() === true) {
-
-                set(presenceRef, {
-                    online: true,
-                    nickname:
-                        nicknameInput.value.trim() ||
-                        "Anonim"
-                });
-
-                onDisconnect(presenceRef).remove();
-
-            }
-
-        });
+        const connectedRef =
+            ref(
+                db,
+                ".info/connected"
+            );
 
 
-        onValue(ref(db, "presence"), (snapshot) => {
+        const presenceRef =
+            ref(
+                db,
+                "presence/" + uid
+            );
 
-            let count = 0;
 
-            snapshot.forEach((child) => {
+        onValue(
+            connectedRef,
+            (snapshot) => {
 
                 if (
-                    child.val() &&
-                    child.val().online === true
+                    snapshot.val() === true
                 ) {
-                    count++;
+
+                    set(
+                        presenceRef,
+                        {
+                            online: true,
+
+                            nickname:
+                                nicknameInput.value.trim() ||
+                                "Anonim"
+                        }
+                    );
+
+
+                    onDisconnect(
+                        presenceRef
+                    ).remove();
+
                 }
 
-            });
+            }
+        );
 
-            onlineCount.textContent =
-                "🟢 " + count + " online";
 
-        });
+        onValue(
+            ref(db, "presence"),
+            (snapshot) => {
+
+                let count = 0;
+
+
+                snapshot.forEach(
+                    (child) => {
+
+                        if (
+                            child.val() &&
+                            child.val().online === true
+                        ) {
+
+                            count++;
+
+                        }
+
+                    }
+                );
+
+
+                onlineCount.textContent =
+                    "🟢 " +
+                    count +
+                    " online";
+
+            }
+        );
 
     }
 
@@ -679,19 +874,29 @@
     function loadMessages() {
 
         const messagesRef =
-            ref(db, "messages");
+            ref(
+                db,
+                "messages"
+            );
+
 
         messages.innerHTML = "";
+
 
         onChildAdded(
             messagesRef,
             (snapshot) => {
 
-                const data = snapshot.val();
+                const data =
+                    snapshot.val();
+
 
                 if (!data) return;
 
-                displayMessage(data);
+
+                displayMessage(
+                    data
+                );
 
             }
         );
@@ -705,24 +910,50 @@
 
     function displayMessage(data) {
 
-        const div =
+        const row =
             document.createElement("div");
 
-        div.className = "message";
+
+        const isMine =
+            auth.currentUser &&
+            data.uid ===
+            auth.currentUser.uid;
+
+
+        row.className =
+            "message-row " +
+            (isMine ? "mine" : "other");
+
+
+        const bubble =
+            document.createElement("div");
+
+
+        bubble.className =
+            "message";
+
 
         const nickname =
             document.createElement("div");
 
-        nickname.className = "nickname";
+
+        nickname.className =
+            "nickname";
+
 
         nickname.textContent =
-            data.nickname || "Anonim";
+            isMine
+                ? "Aku"
+                : (data.nickname || "Anonim");
 
 
         const text =
             document.createElement("div");
 
-        text.className = "text";
+
+        text.className =
+            "text";
+
 
         text.textContent =
             data.text || "";
@@ -731,12 +962,18 @@
         const time =
             document.createElement("div");
 
-        time.className = "time";
+
+        time.className =
+            "time";
+
 
         if (data.timestamp) {
 
             const date =
-                new Date(data.timestamp);
+                new Date(
+                    data.timestamp
+                );
+
 
             time.textContent =
                 date.toLocaleTimeString(
@@ -750,11 +987,30 @@
         }
 
 
-        div.appendChild(nickname);
-        div.appendChild(text);
-        div.appendChild(time);
+        bubble.appendChild(
+            nickname
+        );
 
-        messages.appendChild(div);
+
+        bubble.appendChild(
+            text
+        );
+
+
+        bubble.appendChild(
+            time
+        );
+
+
+        row.appendChild(
+            bubble
+        );
+
+
+        messages.appendChild(
+            row
+        );
+
 
         messages.scrollTop =
             messages.scrollHeight;
@@ -796,6 +1052,7 @@
         const nickname =
             nicknameInput.value.trim();
 
+
         const text =
             messageInput.value.trim();
 
@@ -806,7 +1063,9 @@
                 "Silakan isi nickname terlebih dahulu."
             );
 
+
             nicknameInput.focus();
+
 
             return;
 
@@ -822,6 +1081,7 @@
                 "Nickname maksimal 20 karakter."
             );
 
+
             return;
 
         }
@@ -833,32 +1093,64 @@
                 "Pesan maksimal 300 karakter."
             );
 
+
+            return;
+
+        }
+
+
+        if (!auth.currentUser) {
+
+            alert(
+                "Chatroom belum terhubung."
+            );
+
+
             return;
 
         }
 
 
         const messagesRef =
-            ref(db, "messages");
+            ref(
+                db,
+                "messages"
+            );
 
 
-        push(messagesRef, {
+        push(
+            messagesRef,
+            {
 
-            nickname: nickname,
-            text: text,
-            timestamp: serverTimestamp()
+                uid:
+                    auth.currentUser.uid,
 
-        })
+                nickname:
+                    nickname,
+
+                text:
+                    text,
+
+                timestamp:
+                    serverTimestamp()
+
+            }
+        )
+
 
         .then(() => {
 
-            messageInput.value = "";
+            messageInput.value =
+                "";
 
         })
 
+
         .catch((error) => {
 
-            showFirebaseError(error);
+            showFirebaseError(
+                error
+            );
 
         });
 
@@ -866,7 +1158,7 @@
 
 
     /* =========================
-       UPDATE PRESENCE NICKNAME
+       UPDATE PRESENCE
        ========================= */
 
     nicknameInput.addEventListener(
@@ -884,15 +1176,19 @@
                         auth.currentUser.uid
                     );
 
-                set(presenceRef, {
 
-                    online: true,
+                set(
+                    presenceRef,
+                    {
 
-                    nickname:
-                        nicknameInput.value.trim() ||
-                        "Anonim"
+                        online: true,
 
-                });
+                        nickname:
+                            nicknameInput.value.trim() ||
+                            "Anonim"
+
+                    }
+                );
 
             }
 
@@ -926,64 +1222,103 @@
                 "soundcloudPlayer"
             );
 
+
         const url =
             musicLinks[type];
 
 
         const encoded =
-            encodeURIComponent(url);
+            encodeURIComponent(
+                url
+            );
 
 
         player.src =
             "https://w.soundcloud.com/player/?" +
-            "url=" + encoded +
+
+            "url=" +
+            encoded +
+
             "&color=%23ff5500" +
+
             "&auto_play=false" +
+
             "&hide_related=true" +
+
             "&show_comments=false" +
+
             "&show_user=false" +
+
             "&show_reposts=false" +
+
             "&show_teaser=false";
 
 
         document
-            .querySelectorAll(".music-buttons button")
-            .forEach(button => {
-                button.classList.remove("active");
-            });
+            .querySelectorAll(
+                ".music-buttons button"
+            )
+            .forEach(
+                button => {
+
+                    button.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
 
 
         if (type === "korea") {
 
             document
-                .getElementById("btnKorea")
-                .classList.add("active");
+                .getElementById(
+                    "btnKorea"
+                )
+                .classList.add(
+                    "active"
+                );
 
         }
+
 
         if (type === "pop") {
 
             document
-                .getElementById("btnPop")
-                .classList.add("active");
+                .getElementById(
+                    "btnPop"
+                )
+                .classList.add(
+                    "active"
+                );
 
         }
+
 
         if (type === "barat") {
 
             document
-                .getElementById("btnBarat")
-                .classList.add("active");
+                .getElementById(
+                    "btnBarat"
+                )
+                .classList.add(
+                    "active"
+                );
 
         }
 
     }
 
 
-    // Korea sebagai pilihan awal
+    /* Korea sebagai pilihan awal */
+
     document
-        .getElementById("btnKorea")
-        .classList.add("active");
+        .getElementById(
+            "btnKorea"
+        )
+        .classList.add(
+            "active"
+        );
 
 </script>
 
