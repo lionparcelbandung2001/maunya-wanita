@@ -38,21 +38,26 @@ body{
 }
 
 .shell{
+
+    position:relative;
+
     width:100%;
     min-height:100vh;
+
     background:#fff7fb;
 }
 
 
 /* =========================================
    TOP BAR 1 — KATEGORI
-   Dibuat sedikit lebih tipis
+   Lebih tipis atas-bawah
    ========================================= */
 
 .category-bar{
 
     position:sticky;
     top:0;
+
     z-index:9999;
 
     width:100%;
@@ -83,7 +88,7 @@ body{
 }
 
 
-/* HOME */
+/* HOME BUTTON */
 
 .home-button{
 
@@ -112,7 +117,7 @@ body{
 }
 
 
-/* KATEGORI */
+/* CATEGORY LINKS */
 
 .category-links{
 
@@ -161,7 +166,7 @@ body{
 
 /* =========================================
    TOP BAR 2 — MUSIK
-   Dibuat sedikit lebih tinggi
+   Sedikit lebih tinggi
    ========================================= */
 
 .music-area{
@@ -199,64 +204,6 @@ body{
 
 
 /* =========================================
-   PETUNJUK "MUSIK DISINI ↑"
-   ========================================= */
-
-.music-hint{
-
-    display:block;
-
-    position:absolute;
-
-    right:12px;
-
-    top:2px;
-
-    z-index:50;
-
-    font-size:8px;
-
-    font-weight:bold;
-
-    color:#d92f72;
-
-    background:rgba(255,247,251,.95);
-
-    padding:2px 6px;
-
-    border-radius:8px;
-
-    pointer-events:none;
-
-    animation:musicHintFloat 1.8s ease-in-out infinite;
-}
-
-
-/* Gerakan naik turun kecil */
-
-@keyframes musicHintFloat{
-
-    0%,
-    100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-4px);
-    }
-
-}
-
-
-/* HOME tidak menampilkan petunjuk */
-
-.home-music .music-hint{
-
-    display:none;
-}
-
-
-/* =========================================
    PLAYER
    ========================================= */
 
@@ -273,6 +220,68 @@ body{
     border-radius:12px;
 
     background:transparent;
+}
+
+
+/* =========================================
+   PETUNJUK "MUSIK DISINI ↑"
+   BERADA DI LUAR TOP BAR
+   ========================================= */
+
+.music-hint{
+
+    display:block;
+
+    position:absolute;
+
+    right:8px;
+
+    top:62px;
+
+    z-index:10000;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    color:#d92f72;
+
+    background:rgba(255,247,251,.95);
+
+    padding:2px 5px;
+
+    border-radius:8px;
+
+    pointer-events:none;
+
+    animation:
+        musicHintFloat
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* Gerakan naik-turun */
+
+@keyframes musicHintFloat{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+
+/* Homepage tidak menampilkan petunjuk */
+
+.music-hint.hidden{
+    display:none;
 }
 
 
@@ -302,7 +311,7 @@ body{
 
 @media(max-width:600px){
 
-    /* BAR 1 */
+    /* TOP BAR 1 */
 
     .category-bar{
 
@@ -313,6 +322,7 @@ body{
         gap:4px;
     }
 
+
     .home-button{
 
         width:30px;
@@ -321,10 +331,12 @@ body{
         font-size:15px;
     }
 
+
     .category-links{
 
         gap:3px;
     }
+
 
     .category-links button{
 
@@ -334,7 +346,7 @@ body{
     }
 
 
-    /* BAR 2 */
+    /* TOP BAR 2 */
 
     .music-area{
 
@@ -342,6 +354,7 @@ body{
 
         padding:3px 5px;
     }
+
 
     .music-area.home-music{
 
@@ -357,7 +370,7 @@ body{
 
         right:8px;
 
-        top:1px;
+        top:60px;
 
         font-size:7px;
 
@@ -480,16 +493,19 @@ body{
         </iframe>
 
 
-        <!-- Petunjuk kecil -->
-
-        <div
-            id="musicHint"
-            class="music-hint"
-        >
-            musik disini ↑
-        </div>
+    </div>
 
 
+    <!-- =====================================
+         PETUNJUK MUSIK
+         BERADA DI LUAR TOP BAR
+         ===================================== -->
+
+    <div
+        id="musicHint"
+        class="music-hint"
+    >
+        musik disini ↑
     </div>
 
 
@@ -523,7 +539,6 @@ const musicHint =
     document.getElementById("musicHint");
 
 
-
 /* =========================================
    HOME
    ========================================= */
@@ -538,10 +553,10 @@ function goHome(){
 
     document
         .getElementById("homeButton")
-        .classList.add("active");
+        .classList
+        .add("active");
 
 }
-
 
 
 /* =========================================
@@ -571,31 +586,46 @@ function goCategory(category){
     clearActive();
 
 
-    if(category==="cantik")
+    if(category==="cantik"){
+
         document
             .getElementById("navCantik")
-            .classList.add("active");
+            .classList
+            .add("active");
+
+    }
 
 
-    if(category==="nikah")
+    if(category==="nikah"){
+
         document
             .getElementById("navNikah")
-            .classList.add("active");
+            .classList
+            .add("active");
+
+    }
 
 
-    if(category==="makan")
+    if(category==="makan"){
+
         document
             .getElementById("navMakan")
-            .classList.add("active");
+            .classList
+            .add("active");
+
+    }
 
 
-    if(category==="healing")
+    if(category==="healing"){
+
         document
             .getElementById("navHealing")
-            .classList.add("active");
+            .classList
+            .add("active");
+
+    }
 
 }
-
 
 
 /* =========================================
@@ -615,7 +645,8 @@ function goPage(url){
 
         document
             .getElementById("navRuangCewek")
-            .classList.add("active");
+            .classList
+            .add("active");
 
     }
 
@@ -624,12 +655,12 @@ function goPage(url){
 
         document
             .getElementById("navRuangLawak")
-            .classList.add("active");
+            .classList
+            .add("active");
 
     }
 
 }
-
 
 
 /* =========================================
@@ -644,7 +675,9 @@ function setMusicMode(isHome){
             .classList
             .add("home-music");
 
-        musicHint.style.display="none";
+        musicHint
+            .classList
+            .add("hidden");
 
     }else{
 
@@ -652,12 +685,13 @@ function setMusicMode(isHome){
             .classList
             .remove("home-music");
 
-        musicHint.style.display="block";
+        musicHint
+            .classList
+            .remove("hidden");
 
     }
 
 }
-
 
 
 /* =========================================
@@ -685,7 +719,6 @@ function clearActive(){
         .remove("active");
 
 }
-
 
 
 /* =========================================
@@ -788,32 +821,44 @@ pageFrame.addEventListener(
         clearActive();
 
 
-        if(category==="cantik")
+        if(category==="cantik"){
+
             document
                 .getElementById("navCantik")
                 .classList
                 .add("active");
 
+        }
 
-        if(category==="nikah")
+
+        if(category==="nikah"){
+
             document
                 .getElementById("navNikah")
                 .classList
                 .add("active");
 
+        }
 
-        if(category==="makan")
+
+        if(category==="makan"){
+
             document
                 .getElementById("navMakan")
                 .classList
                 .add("active");
 
+        }
 
-        if(category==="healing")
+
+        if(category==="healing"){
+
             document
                 .getElementById("navHealing")
                 .classList
                 .add("active");
+
+        }
 
     }
 );
