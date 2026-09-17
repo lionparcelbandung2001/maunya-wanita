@@ -56,8 +56,8 @@
         overflow-x: auto;
 
         scrollbar-width: none;
-
     }
+
 
     .global-nav::-webkit-scrollbar {
         display: none;
@@ -86,6 +86,7 @@
 
         white-space: nowrap;
 
+        cursor: pointer;
     }
 
 
@@ -96,14 +97,12 @@
         color: #ffffff;
 
         border-color: #d92f72;
-
     }
 
 
     .global-nav a:hover {
 
         background: #fff0f6;
-
     }
 
 
@@ -118,7 +117,6 @@
         padding: 7px 8px 4px;
 
         background: #fff7fb;
-
     }
 
 
@@ -135,7 +133,6 @@
         margin: 0 auto;
 
         border: 0;
-
     }
 
 
@@ -156,7 +153,6 @@
         border: 0;
 
         background: #fff7fb;
-
     }
 
 
@@ -165,7 +161,6 @@
         .global-nav {
 
             justify-content: flex-start;
-
         }
 
         .global-nav a {
@@ -173,19 +168,16 @@
             padding: 5px 8px;
 
             font-size: 10px;
-
         }
 
         .music-area {
 
             padding: 6px 6px 3px;
-
         }
 
         .music-frame {
 
             height: 205px;
-
         }
 
         .page-frame {
@@ -193,7 +185,6 @@
             height: calc(100vh - 250px);
 
             min-height: 650px;
-
         }
 
     }
@@ -204,8 +195,7 @@
      NAVIGASI GLOBAL
 ========================= --><nav class="global-nav"><a
     href="home.html"
-    target="cewekpediaPage"
-    onclick="setActive(this)"
+    onclick="goPage('home.html', this); return false;"
     class="active"
 >
     🏠 Utama
@@ -214,8 +204,7 @@
 
 <a
     href="kota.html"
-    target="cewekpediaPage"
-    onclick="chooseFromShell('Pengen Cantik', this)"
+    onclick="goCategory('Pengen Cantik', this); return false;"
 >
     💄 Cantik
 </a>
@@ -223,8 +212,7 @@
 
 <a
     href="kota.html"
-    target="cewekpediaPage"
-    onclick="chooseFromShell('Pengen Nikah', this)"
+    onclick="goCategory('Pengen Nikah', this); return false;"
 >
     💍 Nikah
 </a>
@@ -232,8 +220,7 @@
 
 <a
     href="kota.html"
-    target="cewekpediaPage"
-    onclick="chooseFromShell('Pengen Makan & Belanja', this)"
+    onclick="goCategory('Pengen Makan & Belanja', this); return false;"
 >
     🛍️ Makan
 </a>
@@ -241,8 +228,7 @@
 
 <a
     href="kota.html"
-    target="cewekpediaPage"
-    onclick="chooseFromShell('Pengen Jalan-jalan / Healing', this)"
+    onclick="goCategory('Pengen Jalan-jalan / Healing', this); return false;"
 >
     🌴 Healing
 </a>
@@ -250,8 +236,7 @@
 
 <a
     href="ruangcewek/index.html"
-    target="cewekpediaPage"
-    onclick="setActive(this)"
+    onclick="goPage('ruangcewek/index.html', this); return false;"
 >
     💬 Cewek
 </a>
@@ -259,8 +244,7 @@
 
 <a
     href="ruanglawak/index.html"
-    target="cewekpediaPage"
-    onclick="setActive(this)"
+    onclick="goPage('ruanglawak/index.html', this); return false;"
 >
     😂 Lawak
 </a>
@@ -278,7 +262,7 @@
 </iframe>
 
 </section><!-- =========================
-     HALAMAN KONTEN
+     KONTEN
 ========================= --><iframe
     src="home.html"
     name="cewekpediaPage"
@@ -287,6 +271,10 @@
     title="CewekPedia"
 >
 </iframe><script>
+
+    const pageFrame =
+        document.getElementById("pageFrame");
+
 
     function setActive(button) {
 
@@ -301,13 +289,24 @@
 
 
         if (button) {
+
             button.classList.add("active");
+
         }
 
     }
 
 
-    function chooseFromShell(category, button) {
+    function goPage(url, button) {
+
+        setActive(button);
+
+        pageFrame.src = url;
+
+    }
+
+
+    function goCategory(category, button) {
 
         localStorage.setItem(
             "mw_category",
@@ -324,6 +323,9 @@
 
 
         setActive(button);
+
+
+        pageFrame.src = "kota.html";
 
     }
 
