@@ -1,358 +1,445 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
+    <!-- SEO Meta Tags (Syarat AdSense) -->
+    <title>Ruang Cewek — Tempat Cerita, Review, & Chatroom Anonim</title>
+    <meta name="description" content="Wadah berkumpulnya wanita untuk saling berbagi cerita, curhat anonim, review produk favorit, dan ngobrol santai di chatroom.">
+    <meta name="robots" content="index, follow">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff7fb;
-    color: #3a2630;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #3a2630;
+        }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 30px 10px 20px;
-}
+        /* =========================
+           STICKY TOP NAV
+        ========================= */
+        .top-category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 247, 251, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #efd1df;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(170, 80, 120, 0.08);
+        }
 
-header h1 {
-    margin: 0;
-    color: #d92f72;
-    font-size: 32px;
-}
+        .top-category-container {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
 
-header p {
-    margin-top: 8px;
-    color: #765866;
-}
+        .top-category-container::-webkit-scrollbar {
+            display: none;
+        }
 
-/* FITUR */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
+        .category-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: #ffffff;
+            border: 1px solid #efd1df;
+            border-radius: 999px;
+            color: #735763;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(170, 80, 120, 0.04);
+        }
 
-.feature-card {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 18px;
-    padding: 25px 18px;
-    text-align: center;
-    text-decoration: none;
-    color: #3a2630;
-    box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
-    transition: transform 0.2s ease;
-}
+        .category-chip:hover,
+        .category-chip.active {
+            background: #d92f72;
+            color: #ffffff;
+            border-color: #d92f72;
+        }
 
-.feature-card:hover {
-    transform: translateY(-2px);
-}
+        /* =========================
+           CONTAINER
+        ========================= */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-.feature-card h2 {
-    margin: 0 0 8px;
-    color: #d92f72;
-    font-size: 21px;
-}
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 30px 10px 20px;
+        }
 
-.feature-card p {
-    margin: 0;
-    line-height: 1.5;
-    font-size: 14px;
-}
+        header h1 {
+            margin: 0;
+            color: #d92f72;
+            font-size: 32px;
+        }
 
-/* CHATROOM */
-.chatroom {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 18px;
-    margin-top: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
-}
+        header p {
+            margin-top: 8px;
+            color: #765866;
+        }
 
-.chat-header {
-    text-align: center;
-    margin-bottom: 15px;
-}
+        /* FITUR */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
 
-.chat-header h2 {
-    margin: 0;
-    color: #d92f72;
-}
+        .feature-card {
+            background: white;
+            border: 1px solid #f1d9e4;
+            border-radius: 18px;
+            padding: 25px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: #3a2630;
+            box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
+            transition: transform 0.2s ease;
+        }
 
-.online {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #348b57;
-}
+        .feature-card:hover {
+            transform: translateY(-2px);
+        }
 
-/* CATATAN CHATROOM (BISA DITUTUP/BUKA) */
-.chat-notice {
-    background: #fff7fb;
-    border: 1px solid #f1d9e4;
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 15px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #765866;
-}
+        .feature-card h2 {
+            margin: 0 0 8px;
+            color: #d92f72;
+            font-size: 21px;
+        }
 
-.chat-notice summary {
-    font-weight: bold;
-    cursor: pointer;
-    color: #d92f72;
-    outline: none;
-}
+        .feature-card p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 14px;
+        }
 
-.chat-notice p {
-    margin: 8px 0 0;
-}
+        /* CHATROOM */
+        .chatroom {
+            background: white;
+            border: 1px solid #f1d9e4;
+            border-radius: 18px;
+            margin-top: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
+        }
 
-/* NICKNAME */
-.nickname-box {
-    background: #fff7fb;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 12px;
-}
+        .chat-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
 
-.nickname-box label {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 6px;
-}
+        .chat-header h2 {
+            margin: 0;
+            color: #d92f72;
+        }
 
-.nickname-row {
-    display: flex;
-    gap: 8px;
-}
+        .online {
+            margin-top: 6px;
+            font-size: 13px;
+            color: #348b57;
+        }
 
-.nickname-row input {
-    flex: 1;
-}
+        /* CATATAN CHATROOM */
+        .chat-notice {
+            background: #fff7fb;
+            border: 1px solid #f1d9e4;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #765866;
+        }
 
-/* CHAT AREA & BUBBLES */
-.messages {
-    height: 350px;
-    overflow-y: auto;
-    background: #fffafd;
-    border: 1px solid #f0dce6;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        .chat-notice summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #d92f72;
+            outline: none;
+        }
 
-/* LAYOUT PESAN (DESAIN BARU) */
-.message-wrapper {
-    display: flex;
-    gap: 8px;
-    max-width: 85%;
-}
+        .chat-notice p {
+            margin: 8px 0 0;
+        }
 
-/* PESAN PENGGUNA LAIN (KIRI) */
-.message-wrapper.other {
-    align-self: flex-start;
-}
+        /* NICKNAME */
+        .nickname-box {
+            background: #fff7fb;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
 
-/* PESAN SENDIRI (KANAN) */
-.message-wrapper.me {
-    align-self: flex-end;
-    flex-direction: row-reverse;
-}
+        .nickname-box label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
 
-.avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    text-transform: uppercase;
-}
+        .nickname-row {
+            display: flex;
+            gap: 8px;
+        }
 
-.message-content {
-    display: flex;
-    flex-direction: column;
-}
+        .nickname-row input {
+            flex: 1;
+        }
 
-.message-bubble {
-    padding: 10px 14px;
-    border-radius: 16px;
-    font-size: 14px;
-    line-height: 1.4;
-    word-break: break-word;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-}
+        /* CHAT AREA & BUBBLES */
+        .messages {
+            height: 350px;
+            overflow-y: auto;
+            background: #fffafd;
+            border: 1px solid #f0dce6;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.message-wrapper.other .message-bubble {
-    background: #ffffff;
-    border: 1px solid #f1d9e4;
-    border-top-left-radius: 4px;
-    color: #3a2630;
-}
+        .message-wrapper {
+            display: flex;
+            gap: 8px;
+            max-width: 85%;
+        }
 
-.message-wrapper.me .message-bubble {
-    background: #d92f72;
-    color: #ffffff;
-    border-top-right-radius: 4px;
-}
+        .message-wrapper.other {
+            align-self: flex-start;
+        }
 
-.message-name {
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 3px;
-}
+        .message-wrapper.me {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
 
-.message-wrapper.me .message-name {
-    text-align: right;
-    color: #d92f72;
-}
+        .avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
 
-.message-time {
-    font-size: 10px;
-    margin-top: 4px;
-    opacity: 0.7;
-}
+        .message-content {
+            display: flex;
+            flex-direction: column;
+        }
 
-.message-wrapper.other .message-time {
-    color: #9b858e;
-}
+        .message-bubble {
+            padding: 10px 14px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.4;
+            word-break: break-word;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
 
-.message-wrapper.me .message-time {
-    text-align: right;
-    color: rgba(255, 255, 255, 0.85);
-}
+        .message-wrapper.other .message-bubble {
+            background: #ffffff;
+            border: 1px solid #f1d9e4;
+            border-top-left-radius: 4px;
+            color: #3a2630;
+        }
 
-/* INPUT CHAT */
-.chat-input {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-}
+        .message-wrapper.me .message-bubble {
+            background: #d92f72;
+            color: #ffffff;
+            border-top-right-radius: 4px;
+        }
 
-input,
-button {
-    font-family: inherit;
-}
+        .message-name {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
 
-input {
-    border: 1px solid #e6cbd7;
-    border-radius: 10px;
-    padding: 11px;
-    width: 100%;
-    outline: none;
-}
+        .message-wrapper.me .message-name {
+            text-align: right;
+            color: #d92f72;
+        }
 
-input:focus {
-    border-color: #d92f72;
-}
+        .message-time {
+            font-size: 10px;
+            margin-top: 4px;
+            opacity: 0.7;
+        }
 
-button {
-    border: none;
-    border-radius: 10px;
-    padding: 11px 16px;
-    background: #d92f72;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .message-wrapper.other .message-time {
+            color: #9b858e;
+        }
 
-button:hover {
-    opacity: 0.9;
-}
+        .message-wrapper.me .message-time {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.85);
+        }
 
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+        /* INPUT CHAT */
+        .chat-input {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
 
-.info {
-    text-align: center;
-    font-size: 12px;
-    color: #8b737d;
-    margin-top: 10px;
-}
+        input,
+        button {
+            font-family: inherit;
+        }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px 10px 15px;
-    font-size: 12px;
-    color: #8b737d;
-}
+        input {
+            border: 1px solid #e6cbd7;
+            border-radius: 10px;
+            padding: 11px;
+            width: 100%;
+            outline: none;
+        }
 
-/* MOBILE */
-@media (max-width: 600px) {
+        input:focus {
+            border-color: #d92f72;
+        }
 
-    .container {
-        padding: 15px;
-    }
+        button {
+            border: none;
+            border-radius: 10px;
+            padding: 11px 16px;
+            background: #d92f72;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-    header h1 {
-        font-size: 28px;
-    }
+        button:hover {
+            opacity: 0.9;
+        }
 
-    .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-    .feature-card {
-        padding: 20px 10px;
-    }
+        .info {
+            text-align: center;
+            font-size: 12px;
+            color: #8b737d;
+            margin-top: 10px;
+        }
 
-    .feature-card h2 {
-        font-size: 17px;
-    }
+        /* FOOTER & HALAMAN LEGAL ADSENSE */
+        footer {
+            text-align: center;
+            padding: 30px 10px 25px;
+            font-size: 12px;
+            color: #8b737d;
+        }
 
-    .feature-card p {
-        font-size: 12px;
-    }
+        footer a {
+            color: #d92f72;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .chatroom {
-        padding: 15px;
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    .messages {
-        height: 320px;
-    }
+        /* MOBILE */
+        @media (max-width: 600px) {
 
-    .chat-notice {
-        font-size: 11px;
-    }
+            .container {
+                padding: 15px;
+            }
 
-    .message-wrapper {
-        max-width: 90%;
-    }
-}
-</style>
+            header h1 {
+                font-size: 28px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .feature-card {
+                padding: 20px 10px;
+            }
+
+            .feature-card h2 {
+                font-size: 17px;
+            }
+
+            .feature-card p {
+                font-size: 12px;
+            }
+
+            .chatroom {
+                padding: 15px;
+            }
+
+            .messages {
+                height: 320px;
+            }
+
+            .chat-notice {
+                font-size: 11px;
+            }
+
+            .message-wrapper {
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+<!-- =========================================
+     STICKY TOP NAV
+     ========================================= -->
+<nav class="top-category-nav">
+    <div class="top-category-container">
+        <a href="../index.html" class="category-chip">🏠 Utama</a>
+        <a href="../index.html#cantik" class="category-chip">💄 Pengen Cantik</a>
+        <a href="../index.html#nikah" class="category-chip">💍 Pengen Nikah</a>
+        <a href="../index.html#makan" class="category-chip">🛍️ Makan & Belanja</a>
+        <a href="../index.html#healing" class="category-chip">🌴 Jalan-jalan</a>
+        <a href="./" class="category-chip active">💬 Ruang Cewek</a>
+        <a href="../ruanglawak/" class="category-chip">😂 Ruang Lawak</a>
+    </div>
+</nav>
+
 
 <div class="container">
 
@@ -463,8 +550,16 @@ footer {
 
 </section>
 
+<!-- FOOTER ADSENSE COMPLIANT -->
 <footer>
-    © 2026 Ruang Cewek ❤️
+    <div style="margin-bottom: 10px;">
+        <a href="../tentang.html">Tentang Kami</a> • 
+        <a href="../kontak.html">Kontak</a> • 
+        <a href="../kebijakan-privasi.html">Kebijakan Privasi</a> • 
+        <a href="../syarat-ketentuan.html">Syarat & Ketentuan</a>
+    </div>
+
+    © 2026 Ruang Cewek — Part of MAUNYA WANITA ❤️
 </footer>
 
 </div>
