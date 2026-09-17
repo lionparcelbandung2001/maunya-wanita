@@ -1,394 +1,391 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 
-<head>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta charset="UTF-8">
+<title>
+    Katalog — MAUNYA WANITA ❤️❤️
+</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Katalog — MAUNYA WANITA ❤️❤️</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 
 
-    <style>
+<style>
 
-        /* ==========================================
-           IKLAN / HUBUNGI KAMI
-           ========================================== */
+    /* ==========================================
+       IKLAN / HUBUNGI KAMI
+       ========================================== */
+
+    .advertise-float {
+
+        position: fixed;
+
+        right: 0;
+        top: 50%;
+
+        transform:
+            translateY(-50%);
+
+        background: #e91e63;
+
+        color: white;
+
+        padding: 12px 10px;
+
+        text-decoration: none;
+
+        border-radius:
+            12px 0 0 12px;
+
+        font-size: 13px;
+
+        font-weight: bold;
+
+        text-align: center;
+
+        z-index: 9999;
+
+        box-shadow:
+            0 4px 12px
+            rgba(0, 0, 0, 0.15);
+
+        animation:
+            naikTurun
+            2.5s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    .advertise-float span {
+
+        font-size: 11px;
+
+    }
+
+
+
+    /* ==========================================
+       ANIMASI NAIK TURUN
+       ========================================== */
+
+    @keyframes naikTurun {
+
+        0% {
+
+            transform:
+                translateY(-50%);
+
+        }
+
+        50% {
+
+            transform:
+                translateY(
+                    calc(-50% - 8px)
+                );
+
+        }
+
+        100% {
+
+            transform:
+                translateY(-50%);
+
+        }
+
+    }
+
+
+
+    /* ==========================================
+       EFEK SAAT DISENTUH / DIKLIK
+       ========================================== */
+
+    .advertise-float:hover {
+
+        transform:
+            translateY(-50%)
+            scale(1.03);
+
+    }
+
+
+
+    /* ==========================================
+       TAMPILAN HP
+       ========================================== */
+
+    @media (max-width: 700px) {
 
         .advertise-float {
 
-            position: fixed;
+            font-size: 11px;
 
-            right: 0;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            background: #e91e63;
-            color: white;
-
-            padding: 12px 10px;
-
-            text-decoration: none;
-
-            border-radius: 12px 0 0 12px;
-
-            font-size: 13px;
-            font-weight: bold;
-
-            text-align: center;
-
-            z-index: 9999;
-
-            box-shadow:
-                0 4px 12px
-                rgba(0, 0, 0, 0.15);
-
-            animation:
-                naikTurun
-                2.5s
-                ease-in-out
-                infinite;
+            padding:
+                9px 7px;
 
         }
 
 
         .advertise-float span {
 
-            font-size: 11px;
+            font-size: 9px;
 
         }
 
+    }
 
-        /* ==========================================
-           ANIMASI NAIK TURUN
-           ========================================== */
+</style>
 
-        @keyframes naikTurun {
+</head><body><!-- ==========================================
+     HEADER
+     ========================================== -->
 
-            0% {
+<header class="container">
 
-                transform:
-                    translateY(-50%);
+    <h1>
+        MAUNYA WANITA ❤️❤️
+    </h1>
 
-            }
+    <p>
+        Lagi pengen apa hari ini??
+    </p>
 
-            50% {
+</header>
 
-                transform:
-                    translateY(
-                        calc(-50% - 8px)
-                    );
 
-            }
 
-            100% {
+<!-- ==========================================
+     KONTEN UTAMA
+     ========================================== -->
 
-                transform:
-                    translateY(-50%);
+<main class="container">
 
-            }
 
-        }
-
-
-        /* ==========================================
-           EFEK SAAT DISENTUH / DIKLIK
-           ========================================== */
-
-        .advertise-float:hover {
-
-            transform:
-                translateY(-50%)
-                scale(1.03);
-
-        }
-
-
-        /* ==========================================
-           TAMPILAN HP
-           ========================================== */
-
-        @media (max-width: 700px) {
-
-            .advertise-float {
-
-                font-size: 11px;
-
-                padding: 9px 7px;
-
-            }
-
-            .advertise-float span {
-
-                font-size: 9px;
-
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- ==========================================
-         HEADER
-         ========================================== -->
-
-    <header class="container">
-
-        <h1>
-            MAUNYA WANITA ❤️❤️
-        </h1>
-
-        <p>
-            Lagi pengen apa hari ini??
-        </p>
-
-    </header>
-
-
-    <!-- ==========================================
-         KONTEN UTAMA
-         ========================================== -->
-
-    <main class="container">
-
-
-        <!-- ======================================
-             KEMBALI KE SUBKATEGORI
-             ====================================== -->
-
-        <a
-            class="back"
-            href="subkategori.html"
-        >
-            ← Pilih kebutuhan lain
-        </a>
-
-
-        <!-- ======================================
-             NOTICE
-             ====================================== -->
-
-        <div class="notice">
-
-            🔗 DAFTAR INI AKAN TERHUBUNG
-            KE LINK RESMI
-
-            <small>
-
-                Jika Anda pemilik usaha dan ingin
-                keluar dari daftar, silakan hubungi kami.
-
-            </small>
-
-        </div>
-
-
-        <!-- ======================================
-             HASIL KATALOG
-             ====================================== -->
-
-        <section class="results">
-
-
-            <!-- JUDUL OTOMATIS -->
-
-            <h2 id="catalogTitle">
-
-                Pilihan untukmu ❤️
-
-            </h2>
-
-
-            <p class="result-note">
-
-                Daftar pilihan berdasarkan
-                kebutuhan dan kota yang kamu pilih.
-
-            </p>
-
-
-            <!-- ==================================
-                 KARTU USAHA
-                 
-                 Akan dibuat otomatis oleh
-                 script.js
-                 ================================== -->
-
-            <div
-                class="cards"
-                id="catalogCards"
-            ></div>
-
-
-            <!-- ==================================
-                 JIKA DATA TIDAK DITEMUKAN
-                 ================================== -->
-
-            <p
-                id="noData"
-                style="display:none;"
-            >
-
-                Maaf, data untuk pilihan ini
-                belum tersedia. ❤️
-
-            </p>
-
-
-        </section>
-
-
-        <!-- ======================================
-             KATA MEREKA
-             
-             TEMPAT INI AKAN KITA KEMBANGKAN
-             DENGAN ECHOTHREAD NANTI.
-             ====================================== -->
-
-        <section
-            class="feedback"
-            style="margin-top: 30px;"
-        >
-
-            <h2>
-
-                ⭐ Kata Mereka
-
-            </h2>
-
-
-            <p>
-
-                Punya pengalaman dengan tempat
-                atau usaha di atas?
-
-            </p>
-
-
-            <p>
-
-                Nanti kamu bisa berbagi pengalaman
-                di sini. ❤️
-
-            </p>
-
-
-            <!--
-                ECHOTHREAD AKAN DIPASANG DI SINI
-                SETELAH STRUKTUR KATALOG SELESAI.
-
-                Setiap usaha nantinya akan mempunyai
-                thread / ID review masing-masing.
-            -->
-
-        </section>
-
-
-        <!-- ======================================
-             SARAN
-             ====================================== -->
-
-        <section class="feedback">
-
-            <h2>
-
-                ❤️ Apakah kami membantu?
-
-            </h2>
-
-
-            <p>
-
-                Ada yang sedang kamu cari tetapi
-                belum kami sediakan?
-
-            </p>
-
-
-            <a href="saran.html">
-
-                Berikan saranmu di sini →
-
-            </a>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ==========================================
-         IKLAN / HUBUNGI KAMI
-         ========================================== -->
+    <!-- ======================================
+         KEMBALI KE SUBKATEGORI
+         ====================================== -->
 
     <a
-        class="advertise-float"
-        href="https://wa.me/6285183090486?text=Halo%20MAUNYA%20WANITA,%20saya%20tertarik%20untuk%20beriklan%20di%20website%20MAUNYA%20WANITA."
-        target="_blank"
-        rel="noopener noreferrer"
+        class="back"
+        href="subkategori.html"
     >
 
-        📢 Ingin beriklan?
-
-        <br>
-
-        <span>
-            Hubungi kami ❤️
-        </span>
+        ← Pilih kebutuhan lain
 
     </a>
 
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
 
-    <footer>
+    <!-- ======================================
+         NOTICE
+         ====================================== -->
 
-        <strong>
-            MAUNYA WANITA ❤️❤️
-        </strong>
+    <div class="notice">
 
-        <br>
+        🔗 DAFTAR INI AKAN TERHUBUNG
+        KE LINK RESMI
 
-        Cari yang kamu mau. Tanpa ribet.
+        <small>
 
-        <br><br>
+            Jika Anda pemilik usaha dan ingin
+            keluar dari daftar, silakan hubungi kami.
 
-        <span>
+        </small>
 
-            MAUNYA WANITA adalah katalog informasi.
-            Link yang tersedia akan mengarah ke website
-            atau kanal resmi pihak terkait.
-
-        </span>
-
-    </footer>
+    </div>
 
 
-    <!-- ==========================================
-         SCRIPT UTAMA
-         ========================================== -->
 
-    <script src="script.js"></script>
+    <!-- ======================================
+         HASIL KATALOG
+         ====================================== -->
+
+    <section class="results">
 
 
-</body>
+        <!-- JUDUL OTOMATIS -->
 
-</html>
+        <h2 id="catalogTitle">
+
+            Pilihan untukmu ❤️
+
+        </h2>
+
+
+        <p class="result-note">
+
+            Daftar pilihan berdasarkan
+            kebutuhan dan kota yang kamu pilih.
+
+        </p>
+
+
+
+        <!-- ==================================
+             KARTU USAHA
+             ================================== -->
+
+        <div
+            class="cards"
+            id="catalogCards"
+        ></div>
+
+
+
+        <!-- ==================================
+             JIKA DATA TIDAK DITEMUKAN
+             ================================== -->
+
+        <p
+            id="noData"
+            style="display:none;"
+        >
+
+            Maaf, data untuk pilihan ini
+            belum tersedia. ❤️
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         KATA MEREKA
+         ====================================== -->
+
+    <section
+        class="feedback"
+        style="margin-top: 30px;"
+    >
+
+        <h2>
+            ⭐ Kata Mereka
+        </h2>
+
+
+        <p>
+            Punya pengalaman dengan tempat
+            atau usaha di atas?
+        </p>
+
+
+        <p>
+            Nanti kamu bisa berbagi pengalaman
+            di sini. ❤️
+        </p>
+
+
+        <!--
+            ECHOTHREAD AKAN DIPASANG DI SINI.
+
+            Setiap usaha nantinya akan mempunyai
+            thread / ID review masing-masing.
+
+            Pengunjung dapat memberikan review
+            dan review akan melalui moderasi.
+        -->
+
+    </section>
+
+
+
+    <!-- ======================================
+         SARAN
+         ====================================== -->
+
+    <section class="feedback">
+
+        <h2>
+            ❤️ Apakah kami membantu?
+        </h2>
+
+
+        <p>
+
+            Ada yang sedang kamu cari tetapi
+            belum kami sediakan?
+
+        </p>
+
+
+        <a href="saran.html">
+
+            Berikan saranmu di sini →
+
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     IKLAN / HUBUNGI KAMI
+     ========================================== -->
+
+<a
+    class="advertise-float"
+    href="https://wa.me/6285183090486?text=Halo%20MAUNYA%20WANITA,%20saya%20tertarik%20untuk%20beriklan%20di%20website%20MAUNYA%20WANITA."
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
+    📢 Ingin beriklan?
+
+    <br>
+
+    <span>
+        Hubungi kami ❤️
+    </span>
+
+</a>
+
+
+
+<!-- ==========================================
+     FOOTER
+     ========================================== -->
+
+<footer>
+
+    <strong>
+        MAUNYA WANITA ❤️❤️
+    </strong>
+
+    <br>
+
+    Cari yang kamu mau. Tanpa ribet.
+
+    <br><br>
+
+    <span>
+
+        MAUNYA WANITA adalah katalog informasi.
+        Link yang tersedia akan mengarah ke website
+        atau kanal resmi pihak terkait.
+
+    </span>
+
+</footer>
+
+
+
+<!-- ==========================================
+     SCRIPT UTAMA
+     ========================================== -->
+
+<script src="script.js"></script>
+
+</body></html>
