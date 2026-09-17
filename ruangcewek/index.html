@@ -103,16 +103,27 @@ header p {
     color: #348b57;
 }
 
-/* CATATAN CHATROOM */
+/* CATATAN CHATROOM (BISA DITUTUP/BUKA) */
 .chat-notice {
     background: #fff7fb;
     border: 1px solid #f1d9e4;
     border-radius: 12px;
-    padding: 12px 14px;
+    padding: 10px 14px;
     margin-bottom: 15px;
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #765866;
+}
+
+.chat-notice summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #d92f72;
+    outline: none;
+}
+
+.chat-notice p {
+    margin: 8px 0 0;
 }
 
 /* NICKNAME */
@@ -138,40 +149,102 @@ header p {
     flex: 1;
 }
 
-/* CHAT */
+/* CHAT AREA & BUBBLES */
 .messages {
-    height: 320px;
+    height: 350px;
     overflow-y: auto;
     background: #fffafd;
     border: 1px solid #f0dce6;
     border-radius: 12px;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.message {
-    margin-bottom: 10px;
-    padding: 9px 11px;
-    background: #fff0f6;
-    border-radius: 12px;
+/* LAYOUT PESAN (DESAIN BARU) */
+.message-wrapper {
+    display: flex;
+    gap: 8px;
+    max-width: 85%;
 }
 
-.message-name {
-    font-size: 12px;
+/* PESAN PENGGUNA LAIN (KIRI) */
+.message-wrapper.other {
+    align-self: flex-start;
+}
+
+/* PESAN SENDIRI (KANAN) */
+.message-wrapper.me {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: white;
     font-weight: bold;
-    color: #d92f72;
-    margin-bottom: 3px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-transform: uppercase;
 }
 
-.message-text {
+.message-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-bubble {
+    padding: 10px 14px;
+    border-radius: 16px;
     font-size: 14px;
     line-height: 1.4;
     word-break: break-word;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.message-wrapper.other .message-bubble {
+    background: #ffffff;
+    border: 1px solid #f1d9e4;
+    border-top-left-radius: 4px;
+    color: #3a2630;
+}
+
+.message-wrapper.me .message-bubble {
+    background: #d92f72;
+    color: #ffffff;
+    border-top-right-radius: 4px;
+}
+
+.message-name {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.message-wrapper.me .message-name {
+    text-align: right;
+    color: #d92f72;
 }
 
 .message-time {
     font-size: 10px;
-    color: #9b858e;
     margin-top: 4px;
+    opacity: 0.7;
+}
+
+.message-wrapper.other .message-time {
+    color: #9b858e;
+}
+
+.message-wrapper.me .message-time {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* INPUT CHAT */
@@ -265,11 +338,15 @@ footer {
     }
 
     .messages {
-        height: 300px;
+        height: 320px;
     }
 
     .chat-notice {
         font-size: 11px;
+    }
+
+    .message-wrapper {
+        max-width: 90%;
     }
 }
 </style>
@@ -309,23 +386,25 @@ footer {
 <section class="chatroom">
 
     <div class="chat-header">
-        <h2>🟢 CHATROOM</h2>
+        <h2>💬 CHATROOM</h2>
 
         <div class="online" id="onlineCount">
             🟢 Menghubungkan...
         </div>
     </div>
 
-    <!-- CATATAN -->
-    <div class="chat-notice">
-        ⚠️ <strong>Catatan Chatroom</strong><br>
-        Chatroom ini merupakan ruang komunikasi antar pengguna.
-        Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
-        Jangan membagikan data pribadi, melakukan penipuan, pelecehan,
-        ancaman, spam, atau aktivitas yang melanggar hukum.
-        Pengelola berhak menghapus pesan atau membatasi akses pengguna
-        apabila ditemukan pelanggaran.
-    </div>
+    <!-- CATATAN (DAPAT DILIPAT) -->
+    <details class="chat-notice">
+        <summary>⚠️ Catatan Chatroom (Klik untuk membaca aturan)</summary>
+        <p>
+            Chatroom ini merupakan ruang komunikasi antar pengguna.
+            Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
+            Jangan membagikan data pribadi, melakukan penipuan, pelecehan,
+            ancaman, spam, atau aktivitas yang melanggar hukum.
+            Pengelola berhak menghapus pesan atau membatasi akses pengguna
+            apabila ditemukan pelanggaran.
+        </p>
+    </details>
 
     <!-- NICKNAME -->
     <div class="nickname-box">
@@ -474,6 +553,26 @@ const messages =
 
 const onlineCount =
     document.getElementById("onlineCount");
+
+
+/* =========================
+   HELPER UTILS (AVATAR & WARNA)
+========================= */
+
+const colors = [
+    "#d92f72", "#b84270", "#c94f7d", 
+    "#e0528c", "#8e44ad", "#2980b9", 
+    "#16a085", "#d35400"
+];
+
+function getColorForName(name) {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash % colors.length);
+    return colors[index];
+}
 
 
 /* =========================
@@ -652,66 +751,51 @@ function loadMessages() {
 
 function displayMessage(data) {
 
-    const messageDiv =
-        document.createElement("div");
+    const isMe = data.nickname === nickname;
+    const initial = (data.nickname || "Tamu").charAt(0);
+    const userColor = getColorForName(data.nickname || "Tamu");
 
-    messageDiv.className =
-        "message";
+    const wrapper = document.createElement("div");
+    wrapper.className = `message-wrapper ${isMe ? "me" : "other"}`;
 
+    const avatar = document.createElement("div");
+    avatar.className = "avatar";
+    avatar.textContent = initial;
+    avatar.style.backgroundColor = userColor;
 
-    const nameDiv =
-        document.createElement("div");
+    const content = document.createElement("div");
+    content.className = "message-content";
 
-    nameDiv.className =
-        "message-name";
+    const nameDiv = document.createElement("div");
+    nameDiv.className = "message-name";
+    nameDiv.textContent = data.nickname || "Tamu";
+    if (!isMe) nameDiv.style.color = userColor;
 
-    nameDiv.textContent =
-        data.nickname || "Tamu";
+    const bubble = document.createElement("div");
+    bubble.className = "message-bubble";
+    bubble.textContent = data.text || "";
 
-
-    const textDiv =
-        document.createElement("div");
-
-    textDiv.className =
-        "message-text";
-
-    textDiv.textContent =
-        data.text || "";
-
-
-    const timeDiv =
-        document.createElement("div");
-
-    timeDiv.className =
-        "message-time";
+    const timeDiv = document.createElement("div");
+    timeDiv.className = "message-time";
 
     if (data.timestamp) {
-
-        const date =
-            new Date(data.timestamp);
-
-        timeDiv.textContent =
-            date.toLocaleTimeString(
-                "id-ID",
-                {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                }
-            );
-
+        const date = new Date(data.timestamp);
+        timeDiv.textContent = date.toLocaleTimeString("id-ID", {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
     }
 
+    bubble.appendChild(timeDiv);
+    content.appendChild(nameDiv);
+    content.appendChild(bubble);
 
-    messageDiv.appendChild(nameDiv);
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(content);
 
-    messageDiv.appendChild(textDiv);
+    messages.appendChild(wrapper);
 
-    messageDiv.appendChild(timeDiv);
-
-    messages.appendChild(messageDiv);
-
-    messages.scrollTop =
-        messages.scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
 
 }
 
