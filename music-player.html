@@ -7,78 +7,116 @@
 
 <title>CewekPedia Music</title>
 
+
 <style>
 
     * {
         box-sizing: border-box;
     }
 
+
     html,
     body {
+
         margin: 0;
+
         padding: 0;
+
         width: 100%;
+
         height: 100%;
+
         overflow: hidden;
+
         background: transparent;
+
         font-family: Arial, sans-serif;
     }
 
+
+    /* =========================
+       MUSIC BOX
+    ========================= */
+
     .music-box {
+
         width: 100%;
+
         height: 100%;
 
+        padding: 5px;
+
         display: flex;
-        align-items: center;
+
+        flex-direction: column;
 
         gap: 5px;
-        padding: 3px 5px;
 
         background: #fff7fb;
     }
 
-    .music-label {
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    .music-title {
+
         flex-shrink: 0;
+
+        text-align: center;
 
         color: #d92f72;
 
-        font-size: 11px;
-        font-weight: bold;
+        font-size: 14px;
 
-        white-space: nowrap;
+        font-weight: bold;
     }
 
+
+    /* =========================
+       PLAYLIST BUTTONS
+    ========================= */
+
     .playlist {
-        flex: 1;
-        min-width: 0;
+
+        flex-shrink: 0;
 
         display: flex;
 
-        gap: 3px;
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 5px;
 
         overflow-x: auto;
 
         scrollbar-width: none;
     }
 
+
     .playlist::-webkit-scrollbar {
         display: none;
     }
 
+
     .playlist button {
+
         flex-shrink: 0;
 
         border: none;
 
-        border-radius: 14px;
+        border-radius: 16px;
+
+        padding: 6px 10px;
 
         background: #f9dce8;
 
         color: #6d4051;
 
-        padding: 5px 7px;
+        font-size: 10px;
 
-        font-size: 9px;
         font-weight: bold;
 
         white-space: nowrap;
@@ -86,37 +124,122 @@
         cursor: pointer;
     }
 
+
     .playlist button.active {
+
         background: #d92f72;
+
         color: white;
     }
 
-    .soundcloud {
-        flex-shrink: 0;
 
-        width: 85px;
-        height: 36px;
+    /* =========================
+       SOUNDCLOUD
+    ========================= */
+
+    .soundcloud {
+
+        flex: 1;
+
+        width: 100%;
+
+        min-height: 0;
 
         border: none;
 
         border-radius: 10px;
 
-        overflow: hidden;
+        display: block;
     }
+
+
+    /* =================================================
+       MINI MODE
+       Ketika iframe parent hanya sekitar 48px tinggi
+    ================================================= */
+
+    .mini .music-box {
+
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 3px 5px;
+    }
+
+
+    .mini .music-title {
+
+        flex-shrink: 0;
+
+        font-size: 11px;
+
+        width: 20px;
+    }
+
+
+    .mini .playlist {
+
+        flex: 1;
+
+        min-width: 0;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+    }
+
+
+    .mini .playlist button {
+
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+
+    .mini .soundcloud {
+
+        flex-shrink: 0;
+
+        width: 90px;
+
+        height: 36px;
+
+        flex: none;
+
+        border-radius: 9px;
+    }
+
+
+    /* =========================
+       MOBILE MINI
+    ========================= */
 
     @media (max-width: 600px) {
 
-        .music-label {
+        .mini .music-title {
+
             font-size: 10px;
+
+            width: 18px;
         }
 
-        .playlist button {
+
+        .mini .playlist button {
+
+            padding: 5px 7px;
+
             font-size: 8px;
-            padding: 5px 6px;
         }
 
-        .soundcloud {
-            width: 75px;
+
+        .mini .soundcloud {
+
+            width: 72px;
+
             height: 34px;
         }
 
@@ -124,108 +247,77 @@
 
 </style>
 
-</head><body><div class="music-box">
+</head><body><div class="music-box"><div class="music-title">
+    🎵
+</div>
 
 
-    <div class="music-label">
-        🎵
-    </div>
+<div class="playlist">
 
 
-    <div class="playlist">
-
-
-        <button
-            id="btnIndonesia"
-            class="active"
-            onclick="changeMusic('indonesia')"
-        >
-            🇮🇩 Indo
-        </button>
-
-
-        <button
-            id="btnKorea"
-            onclick="changeMusic('korea')"
-        >
-            🇰🇷 Korea
-        </button>
-
-
-        <button
-            id="btnBarat"
-            onclick="changeMusic('barat')"
-        >
-            🌎 Barat
-        </button>
-
-
-    </div>
-
-
-    <iframe
-        id="soundcloudPlayer"
-        class="soundcloud"
-        title="CewekPedia Music Player"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+    <button
+        id="btnIndonesia"
+        class="active"
+        onclick="changeMusic('indonesia')"
     >
-    </iframe>
+        🇮🇩 Indo
+    </button>
+
+
+    <button
+        id="btnKorea"
+        onclick="changeMusic('korea')"
+    >
+        🇰🇷 Korea
+    </button>
+
+
+    <button
+        id="btnBarat"
+        onclick="changeMusic('barat')"
+    >
+        🌎 Barat
+    </button>
 
 
 </div>
 
 
-<script>
+<iframe
+    id="soundcloudPlayer"
+    class="soundcloud"
+    title="CewekPedia Music Player"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+>
+</iframe>
 
+</div><script>
+
+
+    /* =========================
+       PLAYLIST
+    ========================= */
 
     const musicLinks = {
-
-        /*
-         * 🇮🇩 INDONESIA
-         *
-         * Playlist dimulai dengan:
-         * Ungu - Demi Waktu
-         *
-         * Kemudian berisi lagu Indonesia
-         * termasuk Dewa 19, Noah/Peterpan,
-         * dan lagu-lagu sejenis.
-         */
 
         indonesia:
             "https://soundcloud.com/nugraha-74739955/sets/yy",
 
-
-        /*
-         * 🇰🇷 KOREA
-         *
-         * Playlist berisi OST Korea dan
-         * K-pop nostalgia.
-         *
-         * Full House - Bi Rain tersedia
-         * di playlist.
-         */
-
         korea:
             "https://soundcloud.com/oyukh-h/sets/korean",
-
-
-        /*
-         * 🌎 BARAT
-         *
-         * Playlist dimulai dengan:
-         * Evanescence - Bring Me To Life
-         *
-         * Kemudian rock/pop era 2000-an.
-         */
 
         barat:
             "https://soundcloud.com/alireza-eshraghjahromi/evanescence-greatest-hitsbest-songs"
 
     };
 
+
+    /* =========================
+       CHANGE MUSIC
+    ========================= */
 
     function changeMusic(type) {
 
@@ -302,6 +394,36 @@
     }
 
 
-</script>
+    /* =========================
+       DETECT PLAYER SIZE
+    ========================= */
 
-</body></html>
+    function detectPlayerMode() {
+
+        if (window.innerHeight < 100) {
+
+            document.body.classList.add(
+                "mini"
+            );
+
+        } else {
+
+            document.body.classList.remove(
+                "mini"
+            );
+
+        }
+
+    }
+
+
+    detectPlayerMode();
+
+
+    window.addEventListener(
+        "resize",
+        detectPlayerMode
+    );
+
+
+</script></body></html>
