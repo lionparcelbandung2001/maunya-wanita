@@ -14,70 +14,110 @@
 
 <style>
 
+    * {
+        box-sizing: border-box;
+    }
+
+
     html,
     body {
         margin: 0;
         padding: 0;
+
         width: 100%;
         min-height: 100%;
-    }
 
-    body {
         background: #fff7fb;
     }
 
 
     /* =========================
-       TOP NAVIGATION
+       SHELL
     ========================= */
 
-    .top-nav {
+    .shell {
+        width: 100%;
+        min-height: 100vh;
+
+        background: #fff7fb;
+    }
+
+
+    /* =========================
+       TOP CATEGORY BAR
+    ========================= */
+
+    .category-bar {
+
         position: sticky;
         top: 0;
+
         z-index: 9999;
 
         width: 100%;
 
-        background: rgba(255, 247, 251, 0.97);
+        min-height: 48px;
+
+        padding: 6px 8px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 6px;
+
+        background: rgba(255, 247, 251, 0.98);
 
         border-bottom: 1px solid #f1d2df;
 
         box-shadow:
-            0 2px 10px rgba(217, 47, 114, 0.08);
-
-        padding: 8px 10px;
-
-        display: flex;
-        align-items: center;
-        gap: 8px;
+            0 2px 9px rgba(217, 47, 114, 0.08);
 
         overflow-x: auto;
 
         scrollbar-width: none;
     }
 
-    .top-nav::-webkit-scrollbar {
+
+    .category-bar::-webkit-scrollbar {
         display: none;
     }
 
 
-    .nav-home {
+    /* HOME */
+
+    .home-button {
+
         flex-shrink: 0;
 
+        width: 34px;
+        height: 34px;
+
         border: none;
-        background: transparent;
+
+        border-radius: 50%;
+
+        background: #fbe3ec;
 
         color: #d92f72;
 
-        font-size: 18px;
+        font-size: 17px;
 
         cursor: pointer;
-
-        padding: 5px 7px;
     }
 
 
-    .nav-links {
+    .home-button.active {
+
+        background: #d92f72;
+
+        color: white;
+    }
+
+
+    /* CATEGORY BUTTONS */
+
+    .category-links {
+
         display: flex;
 
         align-items: center;
@@ -88,16 +128,17 @@
     }
 
 
-    .nav-links button {
+    .category-links button {
+
         border: none;
-
-        background: #fbe3ec;
-
-        color: #713b50;
 
         border-radius: 18px;
 
         padding: 7px 10px;
+
+        background: #fbe3ec;
+
+        color: #713b50;
 
         font-size: 11px;
 
@@ -109,15 +150,17 @@
     }
 
 
-    .nav-links button:hover {
-        background: #f5cedd;
-    }
+    .category-links button.active {
 
-
-    .nav-links button.active {
         background: #d92f72;
 
         color: white;
+    }
+
+
+    .category-links button:hover {
+
+        background: #f4cfde;
     }
 
 
@@ -125,47 +168,63 @@
        MUSIC BAR
     ========================= */
 
-    .music-top {
-        flex: 1;
+    .music-area {
 
-        min-width: 145px;
-        max-width: 430px;
+        width: 100%;
 
-        height: 43px;
+        height: 48px;
+
+        padding: 3px 8px;
+
+        background: #fff7fb;
+
+        border-bottom: 1px solid #f1d2df;
 
         overflow: hidden;
 
-        border-radius: 22px;
-
-        background: #fff;
-
-        border: 1px solid #f0c8d8;
-
-        box-shadow:
-            0 2px 8px rgba(217, 47, 114, 0.08);
+        transition:
+            height 0.2s ease,
+            padding 0.2s ease;
     }
 
 
-    .music-top iframe {
+    /* HOME = FULL PLAYER */
+
+    .music-area.home-music {
+
+        height: 205px;
+
+        padding: 5px 8px;
+    }
+
+
+    .music-frame {
+
         display: block;
 
         width: 100%;
-        height: 43px;
 
-        border: 0;
+        height: 100%;
+
+        border: none;
+
+        border-radius: 12px;
+
+        background: transparent;
     }
 
 
     /* =========================
-       CONTENT FRAME
+       PAGE CONTENT
     ========================= */
 
     #pageFrame {
+
         display: block;
 
         width: 100%;
 
-        height: calc(100vh - 65px);
+        height: calc(100vh - 96px);
 
         min-height: 650px;
 
@@ -181,48 +240,59 @@
 
     @media (max-width: 600px) {
 
-        .top-nav {
-            padding: 7px 6px;
+        .category-bar {
+
+            min-height: 46px;
+
+            padding: 5px 6px;
 
             gap: 5px;
         }
 
 
-        .nav-home {
-            font-size: 17px;
+        .home-button {
 
-            padding: 5px;
+            width: 32px;
+
+            height: 32px;
+
+            font-size: 16px;
         }
 
 
-        .nav-links {
+        .category-links {
+
             gap: 4px;
         }
 
 
-        .nav-links button {
-            font-size: 10px;
+        .category-links button {
 
             padding: 6px 8px;
+
+            font-size: 10px;
         }
 
 
-        .music-top {
-            min-width: 120px;
+        .music-area {
 
-            height: 40px;
+            height: 46px;
 
-            border-radius: 20px;
+            padding: 3px 5px;
         }
 
 
-        .music-top iframe {
-            height: 40px;
+        .music-area.home-music {
+
+            height: 205px;
+
+            padding: 4px 5px;
         }
 
 
         #pageFrame {
-            height: calc(100vh - 55px);
+
+            height: calc(100vh - 92px);
 
             min-height: 650px;
         }
@@ -231,31 +301,32 @@
 
 </style>
 
-</head><body><!-- =========================
-     TOP BAR
-========================== -->
+</head><body><div class="shell"><!-- =================================
+     TOP BAR 1
+     6 MENU UTAMA
+================================== -->
 
-<nav class="top-nav">
+<nav class="category-bar">
 
 
     <button
-        class="nav-home active"
         id="homeButton"
-        onclick="goPage('home.html')"
-        aria-label="Home"
+        class="home-button active"
+        onclick="goHome()"
+        aria-label="Beranda"
     >
         🏠
     </button>
 
 
-    <div class="nav-links">
+    <div class="category-links">
 
 
         <button
             id="navCantik"
             onclick="goCategory('cantik')"
         >
-            💄 Cantik
+            💄 Pengen Cantik
         </button>
 
 
@@ -263,7 +334,7 @@
             id="navNikah"
             onclick="goCategory('nikah')"
         >
-            💍 Nikah
+            💍 Pengen Nikah
         </button>
 
 
@@ -279,7 +350,7 @@
             id="navHealing"
             onclick="goCategory('healing')"
         >
-            🌴 Healing
+            🌴 Jalan-jalan / Healing
         </button>
 
 
@@ -302,26 +373,34 @@
     </div>
 
 
-    <!-- MUSIC PLAYER PERSISTENT -->
-
-    <div class="music-top">
-
-        <iframe
-            src="music-player.html"
-            title="CewekPedia Music"
-            scrolling="no"
-        >
-        </iframe>
-
-    </div>
-
-
 </nav>
 
 
-<!-- =========================
-     PAGE CONTENT
-========================== -->
+<!-- =================================
+     TOP BAR 2
+     MUSIC
+================================== -->
+
+<div
+    id="musicArea"
+    class="music-area home-music"
+>
+
+    <iframe
+        id="musicFrame"
+        class="music-frame"
+        src="music-player.html"
+        title="CewekPedia Music"
+        scrolling="no"
+    >
+    </iframe>
+
+</div>
+
+
+<!-- =================================
+     CONTENT
+================================== -->
 
 <iframe
     id="pageFrame"
@@ -330,22 +409,39 @@
 >
 </iframe>
 
-
-<script>
+</div><script>
 
 
     const pageFrame =
         document.getElementById("pageFrame");
 
 
-    function goPage(url) {
+    const musicArea =
+        document.getElementById("musicArea");
 
-        pageFrame.src = url;
 
-        updateActiveNav(url);
+    /*
+     * HOME
+     */
+
+    function goHome() {
+
+        pageFrame.src = "home.html";
+
+        setMusicMode(true);
+
+        clearActive();
+
+        document
+            .getElementById("homeButton")
+            .classList.add("active");
 
     }
 
+
+    /*
+     * CATEGORY
+     */
 
     function goCategory(category) {
 
@@ -365,45 +461,14 @@
 
         pageFrame.src = "kota.html";
 
-        updateActiveNav(category);
 
-    }
-
-
-    function updateActiveNav(value) {
-
-        document
-            .querySelectorAll(".nav-links button")
-            .forEach(function(button) {
-
-                button.classList.remove("active");
-
-            });
+        setMusicMode(false);
 
 
-        document
-            .getElementById("homeButton")
-            .classList.remove("active");
+        clearActive();
 
 
-        if (
-            value === "home.html" ||
-            value === ""
-        ) {
-
-            document
-                .getElementById("homeButton")
-                .classList.add("active");
-
-            return;
-
-        }
-
-
-        if (
-            value === "cantik" ||
-            value === "Pengen Cantik"
-        ) {
+        if (category === "cantik") {
 
             document
                 .getElementById("navCantik")
@@ -412,10 +477,7 @@
         }
 
 
-        if (
-            value === "nikah" ||
-            value === "Pengen Nikah"
-        ) {
+        if (category === "nikah") {
 
             document
                 .getElementById("navNikah")
@@ -424,10 +486,7 @@
         }
 
 
-        if (
-            value === "makan" ||
-            value === "Pengen Makan & Belanja"
-        ) {
+        if (category === "makan") {
 
             document
                 .getElementById("navMakan")
@@ -436,10 +495,7 @@
         }
 
 
-        if (
-            value === "healing" ||
-            value === "Pengen Jalan-jalan / Healing"
-        ) {
+        if (category === "healing") {
 
             document
                 .getElementById("navHealing")
@@ -447,9 +503,24 @@
 
         }
 
+    }
+
+
+    /*
+     * OTHER PAGES
+     */
+
+    function goPage(url) {
+
+        pageFrame.src = url;
+
+        setMusicMode(false);
+
+        clearActive();
+
 
         if (
-            value === "ruangcewek/index.html"
+            url === "ruangcewek/index.html"
         ) {
 
             document
@@ -460,7 +531,7 @@
 
 
         if (
-            value === "ruanglawak/index.html"
+            url === "ruanglawak/index.html"
         ) {
 
             document
@@ -472,55 +543,207 @@
     }
 
 
+    /*
+     * MUSIC MODE
+     */
+
+    function setMusicMode(isHome) {
+
+        if (isHome) {
+
+            musicArea.classList.add(
+                "home-music"
+            );
+
+        } else {
+
+            musicArea.classList.remove(
+                "home-music"
+            );
+
+        }
+
+    }
+
+
+    /*
+     * CLEAR ACTIVE
+     */
+
+    function clearActive() {
+
+        document
+            .querySelectorAll(
+                ".category-links button"
+            )
+            .forEach(function(button) {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+        document
+            .getElementById("homeButton")
+            .classList.remove("active");
+
+    }
+
+
+    /*
+     * DETECT PAGE INSIDE IFRAME
+     */
+
     pageFrame.addEventListener(
         "load",
         function() {
 
-            const current =
-                pageFrame.contentWindow.location.pathname;
+            let path = "";
 
+
+            try {
+
+                path =
+                    pageFrame
+                        .contentWindow
+                        .location
+                        .pathname;
+
+            } catch (error) {
+
+                return;
+
+            }
+
+
+            /*
+             * HOME
+             */
 
             if (
-                current.includes("ruangcewek")
+                path.endsWith("/") ||
+                path.includes("home.html")
             ) {
 
-                updateActiveNav(
-                    "ruangcewek/index.html"
-                );
+                setMusicMode(true);
+
+                clearActive();
+
+                document
+                    .getElementById(
+                        "homeButton"
+                    )
+                    .classList.add("active");
+
+                return;
 
             }
 
-            else if (
-                current.includes("ruanglawak")
+
+            /*
+             * RUANG CEWEK
+             */
+
+            if (
+                path.includes("ruangcewek")
             ) {
 
-                updateActiveNav(
-                    "ruanglawak/index.html"
-                );
+                setMusicMode(false);
+
+                clearActive();
+
+                document
+                    .getElementById(
+                        "navRuangCewek"
+                    )
+                    .classList.add("active");
+
+                return;
 
             }
 
-            else if (
-                current.includes("home.html") ||
-                current.endsWith("/")
+
+            /*
+             * RUANG LAWAK
+             */
+
+            if (
+                path.includes("ruanglawak")
             ) {
 
-                updateActiveNav(
-                    "home.html"
-                );
+                setMusicMode(false);
+
+                clearActive();
+
+                document
+                    .getElementById(
+                        "navRuangLawak"
+                    )
+                    .classList.add("active");
+
+                return;
 
             }
 
-            else {
 
-                const category =
-                    localStorage.getItem(
-                        "mw_category"
-                    );
+            /*
+             * OTHER CATALOG PAGES
+             */
 
-                updateActiveNav(
-                    category || ""
+            setMusicMode(false);
+
+
+            const category =
+                localStorage.getItem(
+                    "mw_category"
                 );
+
+
+            clearActive();
+
+
+            if (category === "cantik") {
+
+                document
+                    .getElementById(
+                        "navCantik"
+                    )
+                    .classList.add("active");
+
+            }
+
+
+            if (category === "nikah") {
+
+                document
+                    .getElementById(
+                        "navNikah"
+                    )
+                    .classList.add("active");
+
+            }
+
+
+            if (category === "makan") {
+
+                document
+                    .getElementById(
+                        "navMakan"
+                    )
+                    .classList.add("active");
+
+            }
+
+
+            if (category === "healing") {
+
+                document
+                    .getElementById(
+                        "navHealing"
+                    )
+                    .classList.add("active");
 
             }
 
@@ -528,6 +751,4 @@
     );
 
 
-</script>
-
-</body></html>
+</script></body></html>
