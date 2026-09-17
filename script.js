@@ -1,7 +1,49 @@
 // ==========================================
 // MAUNYA WANITA ❤️❤️
 // SCRIPT UTAMA
+// VERSI SHELL + NORMAL
 // ==========================================
+
+
+// ==========================================
+// FUNGSI NAVIGASI
+// ==========================================
+
+function navigatePage(url) {
+
+    /*
+     * Kalau halaman sedang berada di dalam
+     * shell.html, navigasi dilakukan melalui
+     * pageFrame milik shell.
+     *
+     * Jadi music-player.html tetap berada
+     * di luar frame dan tidak ikut reload.
+     */
+
+    if (window.parent && window.parent !== window) {
+
+        const frame =
+            window.parent.document.getElementById("pageFrame");
+
+        if (frame) {
+
+            frame.src = url;
+
+            return;
+
+        }
+
+    }
+
+
+    /*
+     * Kalau halaman dibuka langsung,
+     * tetap gunakan navigasi biasa.
+     */
+
+    window.location.href = url;
+
+}
 
 
 // ==========================================
@@ -11,13 +53,24 @@
 
 function chooseCategory(category) {
 
-    localStorage.setItem("mw_category", category);
+    localStorage.setItem(
+        "mw_category",
+        category
+    );
 
-    // Pilihan lama harus dibersihkan
-    localStorage.removeItem("mw_city");
-    localStorage.removeItem("mw_subcategory");
+    // Bersihkan pilihan lama
+    localStorage.removeItem(
+        "mw_city"
+    );
 
-    window.location.href = "kota.html";
+    localStorage.removeItem(
+        "mw_subcategory"
+    );
+
+
+    // Masuk halaman kota
+    navigatePage("kota.html");
+
 }
 
 
@@ -31,14 +84,28 @@ function chooseCity(city) {
     const category =
         localStorage.getItem("mw_category") || "";
 
-    localStorage.setItem("mw_category", category);
-    localStorage.setItem("mw_city", city);
 
-    // Karena ganti kota, subkategori lama harus dibersihkan
-    localStorage.removeItem("mw_subcategory");
+    localStorage.setItem(
+        "mw_category",
+        category
+    );
 
-    // SEKARANG TIDAK LANGSUNG KE KATALOG
-    window.location.href = "subkategori.html";
+
+    localStorage.setItem(
+        "mw_city",
+        city
+    );
+
+
+    // Bersihkan subkategori lama
+    localStorage.removeItem(
+        "mw_subcategory"
+    );
+
+
+    // Masuk halaman subkategori
+    navigatePage("subkategori.html");
+
 }
 
 
@@ -52,30 +119,31 @@ function chooseSubcategory(subcategory) {
     const category =
         localStorage.getItem("mw_category") || "";
 
+
     const city =
         localStorage.getItem("mw_city") || "";
 
 
-    // Simpan pilihan subkategori
+    // Simpan subkategori
     localStorage.setItem(
         "mw_subcategory",
         subcategory
     );
 
 
-    // Pastikan kategori dan kota masih tersedia
+    // Pastikan pilihan lengkap
     if (!category || !city) {
 
-        // Kalau pilihan belum lengkap,
-        // kembali ke halaman awal
-        window.location.href = "index.html";
+        navigatePage("index.html");
 
         return;
+
     }
 
 
-    // Masuk ke halaman katalog
-    window.location.href = "katalog.html";
+    // Masuk katalog
+    navigatePage("katalog.html");
+
 }
 
 
@@ -85,7 +153,9 @@ function chooseSubcategory(subcategory) {
 
 function getChoice(key) {
 
-    return localStorage.getItem(key) || "";
+    return (
+        localStorage.getItem(key) || ""
+    );
 
 }
 
@@ -99,6 +169,7 @@ function setupCity() {
     const category =
         getChoice("mw_category");
 
+
     const title =
         document.getElementById("cityTitle");
 
@@ -109,7 +180,9 @@ function setupCity() {
     if (category) {
 
         title.textContent =
-            "📍 " + category + " — pilih kotamu";
+            "📍 " +
+            category +
+            " — pilih kotamu";
 
     } else {
 
@@ -130,12 +203,15 @@ function setupSubcategory() {
     const category =
         getChoice("mw_category");
 
+
     const city =
         getChoice("mw_city");
 
 
     const title =
-        document.getElementById("subcategoryTitle");
+        document.getElementById(
+            "subcategoryTitle"
+        );
 
 
     if (!title) return;
@@ -144,12 +220,16 @@ function setupSubcategory() {
     if (category && city) {
 
         title.textContent =
-            category + " — " + city + " ❤️";
+            category +
+            " — " +
+            city +
+            " ❤️";
 
     } else if (category) {
 
         title.textContent =
-            category + " ❤️";
+            category +
+            " ❤️";
 
     } else {
 
@@ -163,7 +243,6 @@ function setupSubcategory() {
 
 // ==========================================
 // SETUP HALAMAN KATALOG
-// HALAMAN 4
 // ==========================================
 
 function setupCatalog() {
@@ -171,15 +250,19 @@ function setupCatalog() {
     const category =
         getChoice("mw_category");
 
+
     const city =
         getChoice("mw_city");
+
 
     const subcategory =
         getChoice("mw_subcategory");
 
 
     const title =
-        document.getElementById("catalogTitle");
+        document.getElementById(
+            "catalogTitle"
+        );
 
 
     if (!title) return;
@@ -231,7 +314,9 @@ function loadCityData(
 
 
     const script =
-        document.createElement("script");
+        document.createElement(
+            "script"
+        );
 
 
     script.src =
@@ -241,7 +326,7 @@ function loadCityData(
 
 
     // ======================================
-    // JIKA FILE DATA BERHASIL DIMUAT
+    // DATA BERHASIL DIMUAT
     // ======================================
 
     script.onload = function () {
@@ -249,7 +334,10 @@ function loadCityData(
         const variableName =
             city
                 .toLowerCase()
-                .replace(/[^a-zA-Z0-9]/g, "") +
+                .replace(
+                    /[^a-zA-Z0-9]/g,
+                    ""
+                ) +
             "Data";
 
 
@@ -264,6 +352,7 @@ function loadCityData(
                 variableName
             );
 
+
             showNoData();
 
             return;
@@ -271,26 +360,18 @@ function loadCityData(
         }
 
 
-        // ==================================
-        // FILTER:
-        // 1. KATEGORI
-        // 2. SUBKATEGORI
-        // ==================================
-
         const filteredData =
-            cityData.filter(function (item) {
+            cityData.filter(
+                function (item) {
 
-                return (
-                    item.kategori === category &&
-                    item.subkategori === subcategory
-                );
+                    return (
+                        item.kategori === category &&
+                        item.subkategori === subcategory
+                    );
 
-            });
+                }
+            );
 
-
-        // ==================================
-        // TAMPILKAN DATA
-        // ==================================
 
         displayCatalog(
             filteredData,
@@ -301,7 +382,7 @@ function loadCityData(
 
 
     // ======================================
-    // JIKA FILE DATA GAGAL DIMUAT
+    // DATA GAGAL DIMUAT
     // ======================================
 
     script.onerror = function () {
@@ -311,12 +392,15 @@ function loadCityData(
             script.src
         );
 
+
         showNoData();
 
     };
 
 
-    document.body.appendChild(script);
+    document.body.appendChild(
+        script
+    );
 
 }
 
@@ -331,24 +415,31 @@ function displayCatalog(
 ) {
 
     const container =
-        document.getElementById("catalogCards");
+        document.getElementById(
+            "catalogCards"
+        );
+
 
     const noData =
-        document.getElementById("noData");
+        document.getElementById(
+            "noData"
+        );
 
 
     if (!container) return;
 
 
-    // Kosongkan katalog sebelumnya
     container.innerHTML = "";
 
 
     // ======================================
-    // JIKA TIDAK ADA DATA
+    // TIDAK ADA DATA
     // ======================================
 
-    if (!data || data.length === 0) {
+    if (
+        !data ||
+        data.length === 0
+    ) {
 
         showNoData();
 
@@ -357,250 +448,272 @@ function displayCatalog(
     }
 
 
-    // Sembunyikan pesan tidak ada data
     if (noData) {
 
-        noData.style.display = "none";
+        noData.style.display =
+            "none";
 
     }
 
 
     // ======================================
-    // BUAT CARD SATU PER SATU
+    // CARD
     // ======================================
 
-    data.forEach(function (item) {
+    data.forEach(
+        function (item) {
 
-        const card =
-            document.createElement("article");
-
-
-        card.className = "card";
-
-
-        // ==================================
-        // LINK RESMI
-        // ==================================
-
-        const hasOfficialLink =
-            item.link &&
-            item.link !== "#";
+            const card =
+                document.createElement(
+                    "article"
+                );
 
 
-        // ==================================
-        // FOTO
-        // ==================================
-
-        let photoHTML = "";
+            card.className =
+                "card";
 
 
-        if (
-            item.foto &&
-            item.foto.trim() !== ""
-        ) {
+            // ==================================
+            // LINK RESMI
+            // ==================================
 
-            const fotoNama =
-                item.foto.trim();
-
-
-            let fotoPath = "";
+            const hasOfficialLink =
+                item.link &&
+                item.link !== "#";
 
 
-            // Kalau path sudah lengkap
+            // ==================================
+            // FOTO
+            // ==================================
+
+            let photoHTML = "";
+
+
             if (
-                fotoNama.startsWith("images/")
+                item.foto &&
+                item.foto.trim() !== ""
             ) {
 
-                fotoPath =
-                    fotoNama;
-
-            } else {
-
-                const folderKota =
-                    city
-                        .toLowerCase()
-                        .replace(/ /g, "-");
+                const fotoNama =
+                    item.foto.trim();
 
 
-                fotoPath =
-                    "images/" +
-                    folderKota +
-                    "/" +
-                    fotoNama;
-
-            }
+                let fotoPath = "";
 
 
-            const imageHTML = `
-                <img
-                    src="${fotoPath}"
-                    alt="${item.nama}"
-                    loading="lazy"
-                    style="
-                        width:100%;
-                        height:180px;
-                        object-fit:cover;
-                        display:block;
-                    "
-                    onerror="
-                        this.style.display='none';
-                        this.parentElement.parentElement.classList.add('photo-empty');
-                    "
-                >
-            `;
+                if (
+                    fotoNama.startsWith(
+                        "images/"
+                    )
+                ) {
+
+                    fotoPath =
+                        fotoNama;
+
+                } else {
+
+                    const folderKota =
+                        city
+                            .toLowerCase()
+                            .replace(
+                                / /g,
+                                "-"
+                            );
 
 
-            // ==================================
-            // FOTO BISA DIKLIK
-            // ==================================
-
-            if (hasOfficialLink) {
-
-                photoHTML = `
-                    <a
-                        href="${item.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="photo-link"
-                        style="
-                            display:block;
-                            width:100%;
-                            height:180px;
-                            overflow:hidden;
-                            text-decoration:none;
-                        "
-                    >
-                        ${imageHTML}
-                    </a>
-                `;
-
-            } else {
-
-                photoHTML =
-                    imageHTML;
-
-            }
-
-
-        } else {
-
-            photoHTML = `
-                <span>✨</span>
-            `;
-
-        }
-
-
-        // ==================================
-        // DESKRIPSI
-        // ==================================
-
-        let descriptionHTML = `
-            <p>
-                ✨ ${item.deskripsi}
-            </p>
-        `;
-
-
-        // Kalau ada link resmi,
-        // deskripsi juga bisa diklik
-        if (hasOfficialLink) {
-
-            descriptionHTML = `
-                <a
-                    href="${item.link}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="description-link"
-                    style="
-                        display:block;
-                        color:inherit;
-                        text-decoration:none;
-                        cursor:pointer;
-                    "
-                >
-                    <p>
-                        ✨ ${item.deskripsi}
-                    </p>
-                </a>
-            `;
-
-        }
-
-
-        // ==================================
-        // ISI CARD
-        // ==================================
-
-        card.innerHTML = `
-
-            <div
-                class="photo"
-                style="
-                    width:100%;
-                    height:180px;
-                    overflow:hidden;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                "
-            >
-                ${photoHTML}
-            </div>
-
-
-            <div class="card-body">
-
-                <h3>
-                    ${item.nama}
-                </h3>
-
-
-                <p>
-                    📍 ${item.jenis}
-                </p>
-
-
-                ${descriptionHTML}
-
-
-                ${
-                    hasOfficialLink
-
-                    ?
-
-                    `
-                    <a
-                        class="button"
-                        href="${item.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Lihat Link Resmi →
-                    </a>
-                    `
-
-                    :
-
-                    `
-                    <span
-                        class="button"
-                        style="opacity:0.6;"
-                    >
-                        Link resmi belum tersedia
-                    </span>
-                    `
+                    fotoPath =
+                        "images/" +
+                        folderKota +
+                        "/" +
+                        fotoNama;
 
                 }
 
-            </div>
 
-        `;
+                const imageHTML = `
+
+                    <img
+                        src="${fotoPath}"
+                        alt="${item.nama}"
+                        loading="lazy"
+                        style="
+                            width:100%;
+                            height:180px;
+                            object-fit:cover;
+                            display:block;
+                        "
+                        onerror="
+                            this.style.display='none';
+                            this.parentElement.parentElement.classList.add('photo-empty');
+                        "
+                    >
+
+                `;
 
 
-        container.appendChild(card);
+                if (hasOfficialLink) {
 
-    });
+                    photoHTML = `
+
+                        <a
+                            href="${item.link}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="photo-link"
+                            style="
+                                display:block;
+                                width:100%;
+                                height:180px;
+                                overflow:hidden;
+                                text-decoration:none;
+                            "
+                        >
+
+                            ${imageHTML}
+
+                        </a>
+
+                    `;
+
+                } else {
+
+                    photoHTML =
+                        imageHTML;
+
+                }
+
+
+            } else {
+
+                photoHTML = `
+                    <span>✨</span>
+                `;
+
+            }
+
+
+            // ==================================
+            // DESKRIPSI
+            // ==================================
+
+            let descriptionHTML = `
+
+                <p>
+                    ✨ ${item.deskripsi}
+                </p>
+
+            `;
+
+
+            if (hasOfficialLink) {
+
+                descriptionHTML = `
+
+                    <a
+                        href="${item.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="description-link"
+                        style="
+                            display:block;
+                            color:inherit;
+                            text-decoration:none;
+                            cursor:pointer;
+                        "
+                    >
+
+                        <p>
+                            ✨ ${item.deskripsi}
+                        </p>
+
+                    </a>
+
+                `;
+
+            }
+
+
+            // ==================================
+            // ISI CARD
+            // ==================================
+
+            card.innerHTML = `
+
+                <div
+                    class="photo"
+                    style="
+                        width:100%;
+                        height:180px;
+                        overflow:hidden;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                    "
+                >
+
+                    ${photoHTML}
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <h3>
+                        ${item.nama}
+                    </h3>
+
+
+                    <p>
+                        📍 ${item.jenis}
+                    </p>
+
+
+                    ${descriptionHTML}
+
+
+                    ${
+                        hasOfficialLink
+
+                        ?
+
+                        `
+
+                        <a
+                            class="button"
+                            href="${item.link}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Lihat Link Resmi →
+                        </a>
+
+                        `
+
+                        :
+
+                        `
+
+                        <span
+                            class="button"
+                            style="opacity:0.6;"
+                        >
+                            Link resmi belum tersedia
+                        </span>
+
+                        `
+                    }
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
@@ -612,22 +725,30 @@ function displayCatalog(
 function showNoData() {
 
     const container =
-        document.getElementById("catalogCards");
+        document.getElementById(
+            "catalogCards"
+        );
+
 
     const noData =
-        document.getElementById("noData");
+        document.getElementById(
+            "noData"
+        );
 
 
     if (container) {
 
-        container.innerHTML = "";
+        container.innerHTML =
+            "";
 
     }
 
 
     if (noData) {
 
-        noData.style.display = "block";
+        noData.style.display =
+            "block";
+
 
         noData.textContent =
             "Maaf, data untuk pilihan ini belum tersedia. ❤️";
@@ -644,13 +765,21 @@ function showNoData() {
 function demoComment() {
 
     const box =
-        document.getElementById("comment");
+        document.getElementById(
+            "comment"
+        );
+
 
     const status =
-        document.getElementById("commentStatus");
+        document.getElementById(
+            "commentStatus"
+        );
 
 
-    if (!box || !status) return;
+    if (
+        !box ||
+        !status
+    ) return;
 
 
     if (!box.value.trim()) {
@@ -670,7 +799,7 @@ function demoComment() {
 
 
 // ==========================================
-// JALANKAN OTOMATIS SAAT HALAMAN DIBUKA
+// JALANKAN OTOMATIS
 // ==========================================
 
 document.addEventListener(
