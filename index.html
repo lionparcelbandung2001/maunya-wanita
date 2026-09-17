@@ -1,716 +1,533 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 
-<head>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta charset="UTF-8">
+<title>MAUNYA WANITA ❤️❤️ — CewekPedia</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 
-    <title>CewekPedia ❤️</title>
+<style>
 
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+    }
 
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        html,
-        body {
-
-            margin: 0;
-            padding: 0;
-
-            width: 100%;
-            min-height: 100%;
-
-        }
+    body {
+        background: #fff7fb;
+    }
 
 
-        body {
+    /* =========================
+       TOP NAVIGATION
+    ========================= */
 
-            background: #fff7fb;
+    .top-nav {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
 
-            font-family: Arial, sans-serif;
+        width: 100%;
 
-            color: #3a2630;
+        background: rgba(255, 247, 251, 0.97);
 
-        }
+        border-bottom: 1px solid #f1d2df;
+
+        box-shadow:
+            0 2px 10px rgba(217, 47, 114, 0.08);
+
+        padding: 8px 10px;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .top-nav::-webkit-scrollbar {
+        display: none;
+    }
 
 
-        /* =========================
-           NAVIGASI GLOBAL
-        ========================= */
+    .nav-home {
+        flex-shrink: 0;
 
-        .global-nav {
+        border: none;
+        background: transparent;
 
-            position: sticky;
+        color: #d92f72;
 
-            top: 0;
+        font-size: 18px;
 
-            z-index: 1000;
+        cursor: pointer;
 
-            display: flex;
+        padding: 5px 7px;
+    }
 
-            justify-content: center;
 
-            align-items: center;
+    .nav-links {
+        display: flex;
 
-            gap: 5px;
+        align-items: center;
 
+        gap: 5px;
+
+        flex-shrink: 0;
+    }
+
+
+    .nav-links button {
+        border: none;
+
+        background: #fbe3ec;
+
+        color: #713b50;
+
+        border-radius: 18px;
+
+        padding: 7px 10px;
+
+        font-size: 11px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+        cursor: pointer;
+    }
+
+
+    .nav-links button:hover {
+        background: #f5cedd;
+    }
+
+
+    .nav-links button.active {
+        background: #d92f72;
+
+        color: white;
+    }
+
+
+    /* =========================
+       MUSIC BAR
+    ========================= */
+
+    .music-top {
+        flex: 1;
+
+        min-width: 145px;
+        max-width: 430px;
+
+        height: 43px;
+
+        overflow: hidden;
+
+        border-radius: 22px;
+
+        background: #fff;
+
+        border: 1px solid #f0c8d8;
+
+        box-shadow:
+            0 2px 8px rgba(217, 47, 114, 0.08);
+    }
+
+
+    .music-top iframe {
+        display: block;
+
+        width: 100%;
+        height: 43px;
+
+        border: 0;
+    }
+
+
+    /* =========================
+       CONTENT FRAME
+    ========================= */
+
+    #pageFrame {
+        display: block;
+
+        width: 100%;
+
+        height: calc(100vh - 65px);
+
+        min-height: 650px;
+
+        border: none;
+
+        background: #fff7fb;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .top-nav {
             padding: 7px 6px;
 
-            background:
-                rgba(255, 247, 251, 0.97);
-
-            border-bottom:
-                1px solid #f0dce6;
-
-            box-shadow:
-                0 2px 8px rgba(80, 40, 60, 0.06);
-
-            overflow-x: auto;
-
-            scrollbar-width: none;
-
+            gap: 5px;
         }
 
 
-        .global-nav::-webkit-scrollbar {
+        .nav-home {
+            font-size: 17px;
 
-            display: none;
-
+            padding: 5px;
         }
 
 
-        .global-nav a {
-
-            flex: 0 0 auto;
-
-            text-decoration: none;
-
-            color: #633f4d;
-
-            background: #ffffff;
-
-            border:
-                1px solid #efdce6;
-
-            border-radius: 18px;
-
-            padding: 6px 9px;
-
-            font-size: 11px;
-
-            font-weight: 600;
-
-            white-space: nowrap;
-
-            cursor: pointer;
-
+        .nav-links {
+            gap: 4px;
         }
 
 
-        .global-nav a.active {
+        .nav-links button {
+            font-size: 10px;
 
-            background: #d92f72;
-
-            color: #ffffff;
-
-            border-color: #d92f72;
-
+            padding: 6px 8px;
         }
 
 
-        .global-nav a:hover {
+        .music-top {
+            min-width: 120px;
 
-            background: #fff0f6;
+            height: 40px;
 
+            border-radius: 20px;
         }
 
 
-        /* =========================
-           MUSIC GLOBAL
-        ========================= */
-
-        .music-area {
-
-            width: 100%;
-
-            padding: 7px 8px 4px;
-
-            background: #fff7fb;
-
-            position: relative;
-
-            z-index: 9999;
-
-            transition:
-                width 0.25s ease,
-                height 0.25s ease,
-                padding 0.25s ease;
-
+        .music-top iframe {
+            height: 40px;
         }
 
 
-        .music-frame {
-
-            display: block;
-
-            width: 100%;
-
-            max-width: 740px;
-
-            height: 205px;
-
-            margin: 0 auto;
-
-            border: 0;
-
-            transition:
-                width 0.25s ease,
-                height 0.25s ease;
-
-        }
-
-
-        /* =========================
-           FLOATING MUSIC
-        ========================= */
-
-        .music-area.floating {
-
-            position: fixed;
-
-            right: 14px;
-
-            bottom: 16px;
-
-            width: 54px;
-
-            height: 54px;
-
-            padding: 0;
-
-            background: transparent;
-
-            z-index: 99999;
-
-        }
-
-
-        .music-area.floating .music-frame {
-
-            width: 54px;
-
-            height: 54px;
-
-            margin: 0;
-
-        }
-
-
-        /* =========================
-           FLOATING OPEN
-        ========================= */
-
-        .music-area.floating.open {
-
-            width: 300px;
-
-            height: 245px;
-
-            padding: 0;
-
-        }
-
-
-        .music-area.floating.open .music-frame {
-
-            width: 300px;
-
-            height: 245px;
-
-            margin: 0;
-
-        }
-
-
-        /* =========================
-           HALAMAN
-        ========================= */
-
-        .page-frame {
-
-            display: block;
-
-            width: 100%;
-
-            height: calc(100vh - 255px);
+        #pageFrame {
+            height: calc(100vh - 55px);
 
             min-height: 650px;
-
-            border: 0;
-
-            background: #fff7fb;
-
         }
 
+    }
 
-        /* =========================
-           MOBILE
-        ========================= */
+</style>
 
-        @media (max-width: 600px) {
+</head><body><!-- =========================
+     TOP BAR
+========================== -->
 
-            .global-nav {
-
-                justify-content: flex-start;
-
-            }
+<nav class="top-nav">
 
 
-            .global-nav a {
-
-                padding: 5px 8px;
-
-                font-size: 10px;
-
-            }
-
-
-            .music-area {
-
-                padding: 6px 6px 3px;
-
-            }
+    <button
+        class="nav-home active"
+        id="homeButton"
+        onclick="goPage('home.html')"
+        aria-label="Home"
+    >
+        🏠
+    </button>
 
 
-            .music-frame {
-
-                height: 205px;
-
-            }
+    <div class="nav-links">
 
 
-            .music-area.floating {
-
-                right: 10px;
-
-                bottom: 12px;
-
-            }
-
-
-            .music-area.floating.open {
-
-                width: 280px;
-
-                height: 245px;
-
-            }
-
-
-            .music-area.floating.open .music-frame {
-
-                width: 280px;
-
-                height: 245px;
-
-            }
-
-
-            .page-frame {
-
-                height: calc(100vh - 250px);
-
-                min-height: 650px;
-
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- =========================
-         NAVIGASI GLOBAL
-    ========================= -->
-
-    <nav class="global-nav">
-
-        <a
-            href="home.html"
-            onclick="goPage('home.html', this); return false;"
-            class="active"
-        >
-            🏠 Utama
-        </a>
-
-
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Cantik', this); return false;"
+        <button
+            id="navCantik"
+            onclick="goCategory('cantik')"
         >
             💄 Cantik
-        </a>
+        </button>
 
 
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Nikah', this); return false;"
+        <button
+            id="navNikah"
+            onclick="goCategory('nikah')"
         >
             💍 Nikah
-        </a>
+        </button>
 
 
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Makan & Belanja', this); return false;"
+        <button
+            id="navMakan"
+            onclick="goCategory('makan')"
         >
-            🛍️ Makan
-        </a>
+            🛍️ Makan & Belanja
+        </button>
 
 
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Jalan-jalan / Healing', this); return false;"
+        <button
+            id="navHealing"
+            onclick="goCategory('healing')"
         >
             🌴 Healing
-        </a>
+        </button>
 
 
-        <a
-            href="ruangcewek/index.html"
-            onclick="goPage('ruangcewek/index.html', this); return false;"
+        <button
+            id="navRuangCewek"
+            onclick="goPage('ruangcewek/index.html')"
         >
-            💬 Cewek
-        </a>
+            💬 Ruang Cewek
+        </button>
 
 
-        <a
-            href="ruanglawak/index.html"
-            onclick="goPage('ruanglawak/index.html', this); return false;"
+        <button
+            id="navRuangLawak"
+            onclick="goPage('ruanglawak/index.html')"
         >
-            😂 Lawak
-        </a>
-
-    </nav>
+            😂 Ruang Lawak
+        </button>
 
 
-    <!-- =========================
-         MUSIC GLOBAL
-    ========================= -->
+    </div>
 
-    <section
-        class="music-area"
-        id="musicArea"
-    >
+
+    <!-- MUSIC PLAYER PERSISTENT -->
+
+    <div class="music-top">
 
         <iframe
             src="music-player.html"
-            id="musicFrame"
-            class="music-frame"
-            title="CewekPedia Music Player"
+            title="CewekPedia Music"
             scrolling="no"
-            frameborder="0"
-            allow="autoplay"
         >
         </iframe>
 
-    </section>
+    </div>
 
 
-    <!-- =========================
-         KONTEN
-    ========================= -->
-
-    <iframe
-        src="home.html"
-        name="cewekpediaPage"
-        id="pageFrame"
-        class="page-frame"
-        title="CewekPedia"
-    >
-    </iframe>
+</nav>
 
 
-    <script>
+<!-- =========================
+     PAGE CONTENT
+========================== -->
 
-        const pageFrame =
-            document.getElementById(
-                "pageFrame"
-            );
-
-
-        const musicArea =
-            document.getElementById(
-                "musicArea"
-            );
+<iframe
+    id="pageFrame"
+    src="home.html"
+    title="CewekPedia Content"
+>
+</iframe>
 
 
-        const musicFrame =
-            document.getElementById(
-                "musicFrame"
-            );
+<script>
 
 
-        /* =========================
-           NAVIGASI
-        ========================= */
-
-        function setActive(button) {
-
-            const buttons =
-                document.querySelectorAll(
-                    ".global-nav a"
-                );
+    const pageFrame =
+        document.getElementById("pageFrame");
 
 
-            buttons.forEach(
-                function(item) {
+    function goPage(url) {
 
-                    item.classList.remove(
-                        "active"
-                    );
+        pageFrame.src = url;
 
-                }
-            );
+        updateActiveNav(url);
+
+    }
 
 
-            if (button) {
+    function goCategory(category) {
 
-                button.classList.add(
-                    "active"
-                );
+        localStorage.setItem(
+            "mw_category",
+            category
+        );
 
-            }
+        localStorage.removeItem(
+            "mw_city"
+        );
 
-        }
+        localStorage.removeItem(
+            "mw_subcategory"
+        );
 
 
-        function goPage(
-            url,
-            button
+        pageFrame.src = "kota.html";
+
+        updateActiveNav(category);
+
+    }
+
+
+    function updateActiveNav(value) {
+
+        document
+            .querySelectorAll(".nav-links button")
+            .forEach(function(button) {
+
+                button.classList.remove("active");
+
+            });
+
+
+        document
+            .getElementById("homeButton")
+            .classList.remove("active");
+
+
+        if (
+            value === "home.html" ||
+            value === ""
         ) {
 
-            setActive(button);
+            document
+                .getElementById("homeButton")
+                .classList.add("active");
 
-            pageFrame.src = url;
+            return;
 
         }
 
 
-        function goCategory(
-            category,
-            button
+        if (
+            value === "cantik" ||
+            value === "Pengen Cantik"
         ) {
 
-            localStorage.setItem(
-                "mw_category",
-                category
-            );
-
-
-            localStorage.removeItem(
-                "mw_city"
-            );
-
-
-            localStorage.removeItem(
-                "mw_subcategory"
-            );
-
-
-            setActive(button);
-
-
-            pageFrame.src =
-                "kota.html";
+            document
+                .getElementById("navCantik")
+                .classList.add("active");
 
         }
 
 
-        /* =========================
-           CEK HALAMAN
-        ========================= */
+        if (
+            value === "nikah" ||
+            value === "Pengen Nikah"
+        ) {
 
-        function updateMusicMode() {
+            document
+                .getElementById("navNikah")
+                .classList.add("active");
+
+        }
+
+
+        if (
+            value === "makan" ||
+            value === "Pengen Makan & Belanja"
+        ) {
+
+            document
+                .getElementById("navMakan")
+                .classList.add("active");
+
+        }
+
+
+        if (
+            value === "healing" ||
+            value === "Pengen Jalan-jalan / Healing"
+        ) {
+
+            document
+                .getElementById("navHealing")
+                .classList.add("active");
+
+        }
+
+
+        if (
+            value === "ruangcewek/index.html"
+        ) {
+
+            document
+                .getElementById("navRuangCewek")
+                .classList.add("active");
+
+        }
+
+
+        if (
+            value === "ruanglawak/index.html"
+        ) {
+
+            document
+                .getElementById("navRuangLawak")
+                .classList.add("active");
+
+        }
+
+    }
+
+
+    pageFrame.addEventListener(
+        "load",
+        function() {
+
+            const current =
+                pageFrame.contentWindow.location.pathname;
+
 
             if (
-                !musicFrame ||
-                !musicArea ||
-                !pageFrame
+                current.includes("ruangcewek")
             ) {
 
-                return;
+                updateActiveNav(
+                    "ruangcewek/index.html"
+                );
 
             }
 
+            else if (
+                current.includes("ruanglawak")
+            ) {
 
-            const page =
-                pageFrame.getAttribute(
-                    "src"
-                ) || "";
+                updateActiveNav(
+                    "ruanglawak/index.html"
+                );
 
+            }
 
-            const isHome =
-                page.includes(
+            else if (
+                current.includes("home.html") ||
+                current.endsWith("/")
+            ) {
+
+                updateActiveNav(
                     "home.html"
-                ) ||
-                page === "";
-
-
-            if (isHome) {
-
-                /* =================
-                   HOME
-                ================= */
-
-                musicArea.classList.remove(
-                    "floating"
                 );
 
-                musicArea.classList.remove(
-                    "open"
+            }
+
+            else {
+
+                const category =
+                    localStorage.getItem(
+                        "mw_category"
+                    );
+
+                updateActiveNav(
+                    category || ""
                 );
-
-
-                musicFrame.style.width =
-                    "100%";
-
-                musicFrame.style.height =
-                    "205px";
-
-            } else {
-
-                /* =================
-                   HALAMAN LAIN
-                ================= */
-
-                musicArea.classList.add(
-                    "floating"
-                );
-
-
-                /*
-                 * Cek apakah player
-                 * sedang dibuka.
-                 *
-                 * music-player.html
-                 * menggunakan class
-                 * "open" pada body.
-                 */
-
-                try {
-
-                    const musicDocument =
-                        musicFrame.contentDocument;
-
-
-                    if (
-                        musicDocument &&
-                        musicDocument.body
-                    ) {
-
-                        const isOpen =
-                            musicDocument.body.classList.contains(
-                                "open"
-                            );
-
-
-                        if (isOpen) {
-
-                            musicArea.classList.add(
-                                "open"
-                            );
-
-                        } else {
-
-                            musicArea.classList.remove(
-                                "open"
-                            );
-
-                        }
-
-                    }
-
-                } catch (error) {
-
-                    /*
-                     * Tidak melakukan apa-apa.
-                     * Player tetap berjalan.
-                     */
-
-                }
 
             }
 
         }
+    );
 
 
-        /* =========================
-           SAAT HALAMAN BERPINDAH
-        ========================= */
+</script>
 
-        pageFrame.addEventListener(
-            "load",
-            function() {
-
-                updateMusicMode();
-
-            }
-        );
-
-
-        /* =========================
-           CEK PLAYER
-        ========================= */
-
-        musicFrame.addEventListener(
-            "load",
-            function() {
-
-                updateMusicMode();
-
-            }
-        );
-
-
-        /*
-         * Mengecek status player
-         * secara berkala.
-         *
-         * Ini hanya membaca status
-         * tampilan, bukan me-reload
-         * musik.
-         */
-
-        setInterval(
-            updateMusicMode,
-            250
-        );
-
-
-        /* =========================
-           START
-        ========================= */
-
-        updateMusicMode();
-
-    </script>
-
-
-</body>
-
-</html>
+</body></html>
