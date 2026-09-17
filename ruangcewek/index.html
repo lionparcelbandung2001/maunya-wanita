@@ -1,593 +1,558 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+<!DOCTYPE html><html lang="id"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
 
-    <title>Ruang Cewek</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff7fb;
+        font-family: Arial, sans-serif;
+        color: #3a2630;
+    }
+
+    body {
+        padding: 18px 12px 30px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .header h1 {
+        margin: 0;
+        color: #d92f72;
+        font-size: 25px;
+    }
+
+    .header p {
+        margin: 6px 0 0;
+        color: #765362;
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       FEATURE CARDS
+    ========================= */
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .feature-card {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+
+        background: #ffffff;
+        border: 1px solid #f0dce6;
+        border-radius: 14px;
+
+        padding: 16px 10px;
+
+        color: #633f4d;
+
+        box-shadow: 0 2px 9px rgba(80, 40, 60, 0.06);
+
+        transition: 0.2s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .feature-icon {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    .feature-title {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .feature-desc {
+        margin-top: 4px;
+        font-size: 11px;
+        color: #8a6c78;
+    }
+
+
+    /* =========================
+       CHATROOM
+    ========================= */
+
+    .chat-card {
+        background: #ffffff;
+        border: 1px solid #f0dce6;
+        border-radius: 16px;
+        padding: 12px;
+
+        box-shadow: 0 2px 10px rgba(80, 40, 60, 0.07);
+    }
+
+    .chat-header {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .chat-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #633f4d;
+    }
+
+    .online-count {
+        margin-top: 3px;
+        font-size: 11px;
+        color: #2f9e58;
+        font-weight: bold;
+    }
+
+
+    /* =========================
+       TERMS
+    ========================= */
+
+    .chat-terms {
+        margin: 8px 0 10px;
+
+        border: 1px solid #f0dce6;
+        border-radius: 10px;
+
+        background: #fff7fb;
+        font-size: 11px;
+    }
+
+    .chat-terms summary {
+        cursor: pointer;
+        padding: 8px 9px;
+        color: #765362;
+        font-weight: bold;
+    }
+
+    .terms-content {
+        padding: 0 10px 10px;
+        line-height: 1.5;
+        color: #765362;
+    }
+
+
+    /* =========================
+       FIREBASE ERROR
+    ========================= */
+
+    #firebaseError {
+        display: none;
+
+        margin-bottom: 9px;
+        padding: 8px 9px;
+
+        border-radius: 9px;
+        border: 1px solid #e8b7b7;
+
+        background: #fff1f1;
+        color: #9b3333;
+
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+
+    /* =========================
+       CHAT MESSAGES
+    ========================= */
+
+    #messages {
+        height: 300px;
+        overflow-y: auto;
+
+        padding: 9px;
+
+        background: #fffafd;
+        border: 1px solid #f0dce6;
+        border-radius: 11px;
+
+        margin-bottom: 9px;
+    }
+
+    .message-row {
+        display: flex;
+        margin-bottom: 7px;
+    }
+
+    .message-row.mine {
+        justify-content: flex-end;
+    }
+
+    .message-row.other {
+        justify-content: flex-start;
+    }
+
+    .message-bubble {
+        max-width: 78%;
+
+        padding: 7px 9px;
+
+        border-radius: 12px;
+
+        font-size: 12px;
+        line-height: 1.4;
+
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .message-row.other .message-bubble {
+        background: #ffffff;
+        border: 1px solid #f0dce6;
+        color: #4a3540;
+        border-bottom-left-radius: 4px;
+    }
+
+    .message-row.mine .message-bubble {
+        background: #f8dce9;
+        color: #4a3540;
+        border-bottom-right-radius: 4px;
+    }
+
+    .message-name {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        color: #8a5a6c;
+    }
+
+    .message-text {
+        white-space: pre-wrap;
+    }
+
+
+    /* =========================
+       INPUT
+    ========================= */
+
+    .nickname-row {
+        margin-bottom: 7px;
+    }
+
+    .nickname-input,
+    .message-input {
+        width: 100%;
+
+        border: 1px solid #e8d3dd;
+        border-radius: 10px;
+
+        padding: 9px;
+
+        background: #ffffff;
+        color: #3a2630;
+
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+
+        outline: none;
+    }
+
+    .nickname-input:focus,
+    .message-input:focus {
+        border-color: #d92f72;
+    }
+
+    .message-row-input {
+        display: flex;
+        gap: 7px;
+        align-items: flex-end;
+    }
+
+    .message-input {
+        resize: none;
+        min-height: 40px;
+        max-height: 100px;
+    }
+
+    .send-button {
+        flex: 0 0 auto;
+
+        border: 0;
+        border-radius: 10px;
+
+        padding: 10px 13px;
+
+        background: #d92f72;
+        color: #ffffff;
+
+        font-size: 12px;
+        font-weight: bold;
+
+        cursor: pointer;
+    }
+
+    .send-button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    .input-info {
+        margin-top: 5px;
+        font-size: 10px;
+        color: #927582;
+        text-align: right;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        text-align: center;
+        margin-top: 22px;
+
+        color: #987b87;
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff7fb;
-            color: #3a2630;
+            padding: 14px 9px 25px;
         }
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-            padding: 15px;
+        .header h1 {
+            font-size: 23px;
         }
 
-        h1 {
-            text-align: center;
-            color: #d92f72;
-            margin: 5px 0 2px;
-            font-size: 28px;
+        .feature-grid {
+            gap: 8px;
         }
 
-        .subtitle {
-            text-align: center;
-            font-size: 14px;
-            margin-bottom: 15px;
-            color: #7b5a66;
+        .feature-card {
+            padding: 14px 8px;
         }
 
-        /* MINI NAV */
-        .mini-nav {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-
-        .mini-nav a {
-            text-decoration: none;
-            color: #8b5267;
-            background: #fff;
-            border: 1px solid #f1d6e1;
-            border-radius: 20px;
-            padding: 5px 9px;
-            font-size: 11px;
-        }
-
-        .mini-nav a.active {
-            background: #fde1ec;
-            color: #d92f72;
-        }
-
-        /* MENU CARDS */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .menu-card {
-            background: white;
-            border: 1px solid #f3dce5;
-            border-radius: 15px;
-            padding: 18px 10px;
-            text-align: center;
-            text-decoration: none;
-            color: #3a2630;
-            box-shadow: 0 3px 10px rgba(150, 80, 110, 0.06);
-        }
-
-        .menu-card .emoji {
-            font-size: 28px;
-            display: block;
-            margin-bottom: 7px;
-        }
-
-        .menu-card strong {
-            font-size: 14px;
-        }
-
-        /* MUSIC */
-        .music-box {
-            background: white;
-            border: 1px solid #f3dce5;
-            border-radius: 15px;
-            padding: 10px;
-            margin-bottom: 15px;
-        }
-
-        .music-title {
-            text-align: center;
-            font-size: 13px;
-            font-weight: bold;
-            color: #d92f72;
-            margin-bottom: 8px;
-        }
-
-        .music-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .music-buttons button {
-            border: 1px solid #f0d4df;
-            background: #fff7fb;
-            color: #7b5263;
-            border-radius: 20px;
-            padding: 6px 10px;
-            font-size: 11px;
-            cursor: pointer;
-        }
-
-        .music-buttons button.active {
-            background: #fde0eb;
-            color: #d92f72;
-        }
-
-        .soundcloud-frame {
-            width: 100%;
-            height: 81px;
-            border: 0;
-            border-radius: 10px;
-        }
-
-        /* CHATROOM */
-        .chat-box {
-            background: white;
-            border: 1px solid #f3dce5;
-            border-radius: 15px;
-            padding: 12px;
-            box-shadow: 0 3px 10px rgba(150, 80, 110, 0.06);
-        }
-
-        /* HEADER CHAT DI TENGAH */
-        .chat-title {
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .chat-title strong {
-            display: block;
-            color: #d92f72;
-            font-size: 17px;
-            margin-bottom: 3px;
-        }
-
-        #onlineCount {
-            display: block;
-            font-size: 11px;
-            color: #777;
-        }
-
-        /* KETENTUAN CHAT */
-        .chat-terms {
-            margin-bottom: 8px;
-            font-size: 11px;
-        }
-
-        .chat-terms summary {
-            cursor: pointer;
-            color: #9a6477;
-            padding: 4px 2px;
-            text-align: center;
-        }
-
-        .chat-terms summary:hover {
-            color: #d92f72;
-        }
-
-        .terms-content {
-            background: #fff8fb;
-            border: 1px solid #f3dce5;
-            border-radius: 10px;
-            padding: 9px;
-            line-height: 1.5;
-            color: #674955;
-            text-align: left;
-        }
-
-        .terms-content strong {
-            color: #d92f72;
-        }
-
-        /* ERROR FIREBASE */
-        #firebaseError {
-            display: none;
-            background: #fff0f0;
-            border: 1px solid #e5a5a5;
-            color: #9b3030;
-            border-radius: 10px;
-            padding: 9px;
-            margin-bottom: 8px;
-            font-size: 11px;
-            line-height: 1.5;
-        }
-
-        /* AREA PESAN */
         #messages {
             height: 300px;
-            overflow-y: auto;
-            background: #fffafd;
-            border: 1px solid #f1dce5;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 8px;
         }
 
-        /* BUBBLE CHAT */
-        .message-row {
-            display: flex;
-            width: 100%;
-            margin-bottom: 8px;
+        .message-bubble {
+            max-width: 84%;
         }
 
-        .message-row.other {
-            justify-content: flex-start;
+        .send-button {
+            padding: 10px 11px;
         }
+    }
+</style>
 
-        .message-row.mine {
-            justify-content: flex-end;
-        }
+</head><body><div class="container"><!-- =========================
+     HEADER
+========================== -->
 
-        .message {
-            max-width: 78%;
-            padding: 7px 10px;
-            border-radius: 12px;
-            font-size: 12px;
-            word-wrap: break-word;
-        }
-
-        /* CHAT ORANG LAIN */
-        .message-row.other .message {
-            background: #ffffff;
-            border: 1px solid #f0dfe6;
-            border-bottom-left-radius: 4px;
-        }
-
-        /* CHAT AKU */
-        .message-row.mine .message {
-            background: #fde1ec;
-            border: 1px solid #f4cad9;
-            border-bottom-right-radius: 4px;
-        }
-
-        .message .nickname {
-            font-weight: bold;
-            color: #d92f72;
-            margin-bottom: 2px;
-            font-size: 10px;
-        }
-
-        .message .text {
-            line-height: 1.4;
-        }
-
-        .message .time {
-            font-size: 8px;
-            color: #999;
-            margin-top: 3px;
-            text-align: right;
-        }
-
-        .info {
-            text-align: center;
-            color: #999;
-            font-size: 11px;
-            padding: 15px;
-        }
-
-        /* INPUT */
-        .chat-input-area {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        #nickname,
-        #messageInput {
-            width: 100%;
-            border: 1px solid #efd8e1;
-            border-radius: 10px;
-            padding: 9px;
-            font-family: inherit;
-            outline: none;
-        }
-
-        #nickname {
-            font-size: 11px;
-        }
-
-        #messageInput {
-            font-size: 12px;
-            resize: none;
-        }
-
-        .send-row {
-            display: flex;
-            gap: 6px;
-        }
-
-        #sendButton {
-            flex: 1;
-            border: 0;
-            border-radius: 10px;
-            padding: 10px;
-            background: #d92f72;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        #sendButton:disabled {
-            background: #d8aabd;
-            cursor: not-allowed;
-        }
-
-        .limit {
-            font-size: 9px;
-            color: #999;
-            text-align: right;
-        }
-
-        /* FLOATING BUTTON */
-        .floating {
-            position: fixed;
-            right: 14px;
-            bottom: 14px;
-            background: #d92f72;
-            color: white;
-            text-decoration: none;
-            padding: 10px 13px;
-            border-radius: 25px;
-            font-size: 11px;
-            box-shadow: 0 4px 15px rgba(150, 50, 90, 0.2);
-        }
-
-        @media (max-width: 480px) {
-
-            .container {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 25px;
-            }
-
-            .menu-grid {
-                gap: 8px;
-            }
-
-            .menu-card {
-                padding: 15px 8px;
-            }
-
-            #messages {
-                height: 300px;
-            }
-
-            .message {
-                max-width: 82%;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="container">
+<div class="header">
 
     <h1>💬 RUANG CEWEK</h1>
 
-    <div class="subtitle">
+    <p>
         Cerita • Berbagi • Ngobrol ❤️
-    </div>
-
-
-    <!-- MINI NAV -->
-    <div class="mini-nav">
-
-        <a href="../index.html">💄 Cantik</a>
-
-        <a href="../index.html">💍 Nikah</a>
-
-        <a href="../index.html">🛍️ Makan</a>
-
-        <a href="../index.html">🌴 Healing</a>
-
-        <a href="index.html" class="active">💬 Cerita</a>
-
-        <a href="../ruanglawak/index.html">😂 Lawak</a>
-
-    </div>
-
-
-    <!-- MENU -->
-    <div class="menu-grid">
-
-        <a href="curhat.html" class="menu-card">
-
-            <span class="emoji">💭</span>
-
-            <strong>Curhat</strong>
-
-        </a>
-
-
-        <a href="reviewproduk.html" class="menu-card">
-
-            <span class="emoji">⭐</span>
-
-            <strong>Review Produk</strong>
-
-        </a>
-
-    </div>
-
-
-    <!-- MUSIC -->
-    <div class="music-box">
-
-        <div class="music-title">
-            🎵 Teman Ngobrol
-        </div>
-
-
-        <div class="music-buttons">
-
-            <button
-                id="btnKorea"
-                onclick="changeMusic('korea')">
-                🇰🇷 Korea
-            </button>
-
-
-            <button
-                id="btnPop"
-                onclick="changeMusic('pop')">
-                🇮🇩 Pop Indo
-            </button>
-
-
-            <button
-                id="btnBarat"
-                onclick="changeMusic('barat')">
-                🌎 Barat
-            </button>
-
-        </div>
-
-
-        <iframe
-            id="soundcloudPlayer"
-            class="soundcloud-frame"
-            scrolling="no"
-            frameborder="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/soundcloud-stories/sets/k-pop&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-        </iframe>
-
-    </div>
-
-
-    <!-- CHATROOM -->
-    <div class="chat-box">
-
-
-        <!-- HEADER CHAT -->
-        <div class="chat-title">
-
-            <strong>
-                🟢 Chatroom
-            </strong>
-
-            <span id="onlineCount">
-                Menghubungkan...
-            </span>
-
-        </div>
-
-
-        <!-- KETENTUAN -->
-        <details class="chat-terms">
-
-            <summary>
-                ⚠️ Ketentuan Chat — klik di sini
-            </summary>
-
-
-            <div class="terms-content">
-
-                <strong>Ketentuan Chatroom</strong>
-                <br><br>
-
-                Chatroom ini merupakan ruang komunikasi antar pengguna.
-                Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
-
-                <br><br>
-
-                Jangan membagikan data pribadi, melakukan penipuan,
-                pelecehan, ancaman, spam, atau aktivitas yang melanggar hukum.
-
-                <br><br>
-
-                Pengelola berhak menghapus pesan atau membatasi akses pengguna
-                apabila ditemukan pelanggaran.
-
-            </div>
-
-        </details>
-
-
-        <!-- ERROR FIREBASE -->
-        <div id="firebaseError"></div>
-
-
-        <!-- PESAN -->
-        <div id="messages">
-
-            <div class="info">
-                Menghubungkan ke chatroom...
-            </div>
-
-        </div>
-
-
-        <!-- INPUT -->
-        <div class="chat-input-area">
-
-
-            <input
-                type="text"
-                id="nickname"
-                maxlength="20"
-                placeholder="Nama / nickname">
-
-
-            <textarea
-                id="messageInput"
-                maxlength="300"
-                rows="2"
-                placeholder="Tulis pesan..."></textarea>
-
-
-            <div class="limit">
-                Maksimal 300 karakter
-            </div>
-
-
-            <div class="send-row">
-
-                <button
-                    id="sendButton"
-                    disabled>
-
-                    Kirim 💬
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
+    </p>
 
 </div>
 
 
-<!-- FLOATING -->
-<a href="curhat.html" class="floating">
-    💌 Bagikan Ceritamu
-</a>
+<!-- =========================
+     FEATURE MENU
+========================== -->
+
+<div class="feature-grid">
+
+    <a
+        href="curhat.html"
+        class="feature-card">
+
+        <div class="feature-icon">
+            💭
+        </div>
+
+        <div class="feature-title">
+            Curhat
+        </div>
+
+        <div class="feature-desc">
+            Ceritakan apa yang kamu rasakan
+        </div>
+
+    </a>
 
 
-<!-- FIREBASE -->
-<script type="module">
+    <a
+        href="reviewproduk.html"
+        class="feature-card">
+
+        <div class="feature-icon">
+            ⭐
+        </div>
+
+        <div class="feature-title">
+            Review Produk
+        </div>
+
+        <div class="feature-desc">
+            Bagikan pengalamanmu
+        </div>
+
+    </a>
+
+</div>
+
+
+<!-- =========================
+     CHATROOM
+========================== -->
+
+<div class="chat-card">
+
+
+    <div class="chat-header">
+
+        <div class="chat-title">
+            🟢 Chatroom
+        </div>
+
+        <div
+            id="onlineCount"
+            class="online-count">
+
+            🟢 0 online
+
+        </div>
+
+    </div>
+
+
+    <!-- KETENTUAN -->
+
+    <details class="chat-terms">
+
+        <summary>
+            ⚠️ Ketentuan Chat — klik di sini
+        </summary>
+
+        <div class="terms-content">
+
+            <strong>Ketentuan Chatroom</strong>
+
+            <br><br>
+
+            Chatroom ini merupakan ruang komunikasi
+            antar pengguna. Setiap pengguna bertanggung
+            jawab atas isi pesan yang mereka kirim.
+
+            <br><br>
+
+            Jangan membagikan data pribadi, melakukan
+            penipuan, pelecehan, ancaman, spam, atau
+            aktivitas yang melanggar hukum.
+
+            <br><br>
+
+            Pengelola berhak menghapus pesan atau
+            membatasi akses pengguna apabila ditemukan
+            pelanggaran.
+
+        </div>
+
+    </details>
+
+
+    <!-- FIREBASE ERROR -->
+
+    <div id="firebaseError"></div>
+
+
+    <!-- MESSAGES -->
+
+    <div id="messages"></div>
+
+
+    <!-- NICKNAME -->
+
+    <div class="nickname-row">
+
+        <input
+            id="nickname"
+            class="nickname-input"
+            type="text"
+            maxlength="20"
+            placeholder="Nama panggilan (maks. 20 karakter)"
+            autocomplete="off">
+
+    </div>
+
+
+    <!-- MESSAGE INPUT -->
+
+    <div class="message-row-input">
+
+        <textarea
+            id="messageInput"
+            class="message-input"
+            maxlength="300"
+            rows="1"
+            placeholder="Tulis pesan..."
+            autocomplete="off"></textarea>
+
+        <button
+            id="sendButton"
+            class="send-button">
+
+            Kirim
+
+        </button>
+
+    </div>
+
+
+    <div class="input-info">
+        Maks. 300 karakter • Enter = kirim • Shift+Enter = baris baru
+    </div>
+
+
+</div>
+
+
+<footer>
+    © CewekPedia — Ruang Cewek ❤️
+</footer>
+
+</div><!-- ==================================================
+     FIREBASE
+================================================== --><script type="module">
 
     import {
         initializeApp
@@ -614,11 +579,12 @@
 
     /* =========================
        FIREBASE CONFIG
-       ========================= */
+    ========================== */
 
     const firebaseConfig = {
 
-        apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+        apiKey:
+            "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
 
         authDomain:
             "ruang-cewek.firebaseapp.com",
@@ -642,10 +608,24 @@
 
 
     /* =========================
-       ELEMENT
-       ========================= */
+       INIT FIREBASE
+    ========================== */
 
-    const messages =
+    const app =
+        initializeApp(firebaseConfig);
+
+    const db =
+        getDatabase(app);
+
+    const auth =
+        getAuth(app);
+
+
+    /* =========================
+       ELEMENTS
+    ========================== */
+
+    const messagesBox =
         document.getElementById("messages");
 
     const nicknameInput =
@@ -665,238 +645,127 @@
 
 
     /* =========================
-       ERROR
-       ========================= */
+       ERROR DISPLAY
+    ========================== */
 
     function showFirebaseError(error) {
 
-        console.error(
-            "Firebase Error:",
-            error
-        );
+        console.error(error);
 
-
-        if (!firebaseError) return;
-
-
-        firebaseError.style.display =
-            "block";
-
+        firebaseError.style.display = "block";
 
         firebaseError.innerHTML =
-            "<strong>⚠️ Detail error Firebase</strong><br>" +
-
-            "Kode: " +
-            (error.code || "tidak diketahui") +
-
+            "<strong>⚠️ Firebase Error</strong><br>" +
+            (error.code || "unknown") +
             "<br>" +
-
-            "Pesan: " +
-            (error.message || "tidak diketahui");
+            (error.message || error);
 
     }
 
 
     /* =========================
-       INITIALIZE
-       ========================= */
+       NICKNAME
+    ========================== */
 
-    let app;
-
-    let db;
-
-    let auth;
+    let nickname =
+        localStorage.getItem("ruangcewek_nickname") || "";
 
 
-    try {
+    nicknameInput.value =
+        nickname;
 
-        app =
-            initializeApp(
-                firebaseConfig
+
+    nicknameInput.addEventListener(
+        "input",
+        function () {
+
+            nickname =
+                nicknameInput.value.trim();
+
+            localStorage.setItem(
+                "ruangcewek_nickname",
+                nickname
             );
 
+            updatePresence();
 
-        db =
-            getDatabase(app);
-
-
-        auth =
-            getAuth(app);
-
-
-    } catch (error) {
-
-        showFirebaseError(error);
-
-        onlineCount.textContent =
-            "🔴 Chatroom offline";
-
-    }
+        }
+    );
 
 
     /* =========================
-       ANONYMOUS LOGIN
-       ========================= */
+       AUTH
+    ========================== */
 
-    if (auth) {
+    signInAnonymously(auth)
 
-        signInAnonymously(auth)
+        .then(function () {
 
-        .then((result) => {
+            setupChat();
 
-            console.log(
-                "Anonymous Auth berhasil:",
-                result.user.uid
-            );
-
-
-            setupPresence(
-                result.user.uid
-            );
-
-
-            loadMessages();
-
-
-            sendButton.disabled =
-                false;
+            setupPresence();
 
         })
 
-
-        .catch((error) => {
+        .catch(function (error) {
 
             showFirebaseError(error);
 
-
-            messages.innerHTML =
-                '<div class="info">' +
-                'Chatroom belum bisa terhubung.' +
-                '</div>';
-
-
-            onlineCount.textContent =
-                "🔴 Chatroom offline";
-
         });
 
-    }
-
 
     /* =========================
-       PRESENCE
-       ========================= */
+       CHAT SETUP
+    ========================== */
 
-    function setupPresence(uid) {
-
-        const connectedRef =
-            ref(
-                db,
-                ".info/connected"
-            );
-
-
-        const presenceRef =
-            ref(
-                db,
-                "presence/" + uid
-            );
-
-
-        onValue(
-            connectedRef,
-            (snapshot) => {
-
-                if (
-                    snapshot.val() === true
-                ) {
-
-                    set(
-                        presenceRef,
-                        {
-                            online: true,
-
-                            nickname:
-                                nicknameInput.value.trim() ||
-                                "Anonim"
-                        }
-                    );
-
-
-                    onDisconnect(
-                        presenceRef
-                    ).remove();
-
-                }
-
-            }
-        );
-
-
-        onValue(
-            ref(db, "presence"),
-            (snapshot) => {
-
-                let count = 0;
-
-
-                snapshot.forEach(
-                    (child) => {
-
-                        if (
-                            child.val() &&
-                            child.val().online === true
-                        ) {
-
-                            count++;
-
-                        }
-
-                    }
-                );
-
-
-                onlineCount.textContent =
-                    "🟢 " +
-                    count +
-                    " online";
-
-            }
-        );
-
-    }
-
-
-    /* =========================
-       LOAD MESSAGES
-       ========================= */
-
-    function loadMessages() {
+    function setupChat() {
 
         const messagesRef =
-            ref(
-                db,
-                "messages"
-            );
-
-
-        messages.innerHTML = "";
+            ref(db, "messages");
 
 
         onChildAdded(
             messagesRef,
-            (snapshot) => {
+            function (snapshot) {
 
                 const data =
                     snapshot.val();
 
+                if (!data) {
+                    return;
+                }
 
-                if (!data) return;
+                displayMessage(data);
+
+            },
+            function (error) {
+
+                showFirebaseError(error);
+
+            }
+        );
 
 
-                displayMessage(
-                    data
-                );
+        sendButton.addEventListener(
+            "click",
+            sendMessage
+        );
+
+
+        messageInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
+
+                    event.preventDefault();
+
+                    sendMessage();
+
+                }
 
             }
         );
@@ -906,7 +775,7 @@
 
     /* =========================
        DISPLAY MESSAGE
-       ========================= */
+    ========================== */
 
     function displayMessage(data) {
 
@@ -914,10 +783,16 @@
             document.createElement("div");
 
 
+        const currentUid =
+            auth.currentUser
+                ? auth.currentUser.uid
+                : null;
+
+
         const isMine =
-            auth.currentUser &&
-            data.uid ===
-            auth.currentUser.uid;
+            data.uid &&
+            currentUid &&
+            data.uid === currentUid;
 
 
         row.className =
@@ -928,20 +803,18 @@
         const bubble =
             document.createElement("div");
 
-
         bubble.className =
-            "message";
+            "message-bubble";
 
 
-        const nickname =
+        const name =
             document.createElement("div");
 
+        name.className =
+            "message-name";
 
-        nickname.className =
-            "nickname";
 
-
-        nickname.textContent =
+        name.textContent =
             isMine
                 ? "Aku"
                 : (data.nickname || "Anonim");
@@ -950,137 +823,80 @@
         const text =
             document.createElement("div");
 
-
         text.className =
-            "text";
+            "message-text";
 
 
         text.textContent =
             data.text || "";
 
 
-        const time =
-            document.createElement("div");
+        bubble.appendChild(name);
+
+        bubble.appendChild(text);
+
+        row.appendChild(bubble);
+
+        messagesBox.appendChild(row);
 
 
-        time.className =
-            "time";
-
-
-        if (data.timestamp) {
-
-            const date =
-                new Date(
-                    data.timestamp
-                );
-
-
-            time.textContent =
-                date.toLocaleTimeString(
-                    "id-ID",
-                    {
-                        hour: "2-digit",
-                        minute: "2-digit"
-                    }
-                );
-
-        }
-
-
-        bubble.appendChild(
-            nickname
-        );
-
-
-        bubble.appendChild(
-            text
-        );
-
-
-        bubble.appendChild(
-            time
-        );
-
-
-        row.appendChild(
-            bubble
-        );
-
-
-        messages.appendChild(
-            row
-        );
-
-
-        messages.scrollTop =
-            messages.scrollHeight;
+        messagesBox.scrollTop =
+            messagesBox.scrollHeight;
 
     }
 
 
     /* =========================
        SEND MESSAGE
-       ========================= */
-
-    sendButton.addEventListener(
-        "click",
-        sendMessage
-    );
-
-
-    messageInput.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Enter" &&
-                !event.shiftKey
-            ) {
-
-                event.preventDefault();
-
-                sendMessage();
-
-            }
-
-        }
-    );
-
+    ========================== */
 
     function sendMessage() {
 
-        const nickname =
-            nicknameInput.value.trim();
+        if (
+            !auth.currentUser
+        ) {
 
+            firebaseError.style.display =
+                "block";
 
-        const text =
-            messageInput.value.trim();
-
-
-        if (!nickname) {
-
-            alert(
-                "Silakan isi nickname terlebih dahulu."
-            );
-
-
-            nicknameInput.focus();
-
+            firebaseError.innerHTML =
+                "⚠️ Chat belum terhubung ke Firebase.";
 
             return;
 
         }
 
 
-        if (!text) return;
+        const name =
+            nicknameInput.value.trim();
+
+        const text =
+            messageInput.value.trim();
 
 
-        if (nickname.length > 20) {
+        if (!name) {
+
+            nicknameInput.focus();
+
+            return;
+
+        }
+
+
+        if (!text) {
+
+            messageInput.focus();
+
+            return;
+
+        }
+
+
+        if (name.length > 20) {
 
             alert(
-                "Nickname maksimal 20 karakter."
+                "Nama panggilan maksimal 20 karakter."
             );
-
 
             return;
 
@@ -1093,29 +909,17 @@
                 "Pesan maksimal 300 karakter."
             );
 
-
             return;
 
         }
 
 
-        if (!auth.currentUser) {
-
-            alert(
-                "Chatroom belum terhubung."
-            );
-
-
-            return;
-
-        }
+        sendButton.disabled =
+            true;
 
 
         const messagesRef =
-            ref(
-                db,
-                "messages"
-            );
+            ref(db, "messages");
 
 
         push(
@@ -1126,7 +930,7 @@
                     auth.currentUser.uid,
 
                 nickname:
-                    nickname,
+                    name,
 
                 text:
                     text,
@@ -1137,20 +941,24 @@
             }
         )
 
+        .then(function () {
 
-        .then(() => {
+            messageInput.value = "";
 
-            messageInput.value =
-                "";
+            messageInput.focus();
 
         })
 
+        .catch(function (error) {
 
-        .catch((error) => {
+            showFirebaseError(error);
 
-            showFirebaseError(
-                error
-            );
+        })
+
+        .finally(function () {
+
+            sendButton.disabled =
+                false;
 
         });
 
@@ -1158,172 +966,130 @@
 
 
     /* =========================
-       UPDATE PRESENCE
-       ========================= */
+       PRESENCE
+    ========================== */
 
-    nicknameInput.addEventListener(
-        "change",
-        () => {
+    function setupPresence() {
 
-            if (
-                auth.currentUser
-            ) {
-
-                const presenceRef =
-                    ref(
-                        db,
-                        "presence/" +
-                        auth.currentUser.uid
-                    );
+        const uid =
+            auth.currentUser.uid;
 
 
-                set(
-                    presenceRef,
-                    {
+        const presenceRef =
+            ref(db, "presence/" + uid);
 
-                        online: true,
 
-                        nickname:
-                            nicknameInput.value.trim() ||
-                            "Anonim"
+        onDisconnect(
+            presenceRef
+        )
+        .remove();
 
-                    }
-                );
+
+        set(
+            presenceRef,
+            {
+
+                online:
+                    true,
+
+                nickname:
+                    nicknameInput.value.trim() || "Anonim"
 
             }
+        )
+        .catch(function (error) {
 
-        }
-    );
+            showFirebaseError(error);
 
-</script>
-
-
-<!-- SOUNDCLOUD -->
-<script>
-
-    const musicLinks = {
-
-        /* K-POP */
-        korea:
-            "https://soundcloud.com/soundcloud-stories/sets/k-pop",
-
-        /* POP INDONESIA LAMA */
-        pop:
-            "https://soundcloud.com/nugraha-74739955/sets/yy",
-
-        /* BARAT - POP / ROCK */
-        barat:
-            "https://soundcloud.com/miladgh-1/sets/rock-2"
-
-    };
+        });
 
 
-    function changeMusic(type) {
+        onValue(
+            ref(db, "presence"),
+            function (snapshot) {
 
-        const player =
-            document.getElementById(
-                "soundcloudPlayer"
-            );
-
-
-        const url =
-            musicLinks[type];
+                const data =
+                    snapshot.val() || {};
 
 
-        const encoded =
-            encodeURIComponent(
-                url
-            );
+                const count =
+                    Object.keys(data).length;
 
 
-        player.src =
-            "https://w.soundcloud.com/player/?" +
+                onlineCount.textContent =
+                    "🟢 " + count + " online";
 
-            "url=" +
-            encoded +
+            },
+            function (error) {
 
-            "&color=%23ff5500" +
+                showFirebaseError(error);
 
-            "&auto_play=false" +
-
-            "&hide_related=true" +
-
-            "&show_comments=false" +
-
-            "&show_user=false" +
-
-            "&show_reposts=false" +
-
-            "&show_teaser=false";
-
-
-        document
-            .querySelectorAll(
-                ".music-buttons button"
-            )
-            .forEach(
-                button => {
-
-                    button.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-
-        if (type === "korea") {
-
-            document
-                .getElementById(
-                    "btnKorea"
-                )
-                .classList.add(
-                    "active"
-                );
-
-        }
-
-
-        if (type === "pop") {
-
-            document
-                .getElementById(
-                    "btnPop"
-                )
-                .classList.add(
-                    "active"
-                );
-
-        }
-
-
-        if (type === "barat") {
-
-            document
-                .getElementById(
-                    "btnBarat"
-                )
-                .classList.add(
-                    "active"
-                );
-
-        }
+            }
+        );
 
     }
 
 
-    /* Korea sebagai musik awal */
+    /* =========================
+       UPDATE PRESENCE
+    ========================== */
 
-    document
-        .getElementById(
-            "btnKorea"
+    function updatePresence() {
+
+        if (
+            !auth.currentUser
+        ) {
+            return;
+        }
+
+
+        const uid =
+            auth.currentUser.uid;
+
+
+        const presenceRef =
+            ref(db, "presence/" + uid);
+
+
+        set(
+            presenceRef,
+            {
+
+                online:
+                    true,
+
+                nickname:
+                    nicknameInput.value.trim() || "Anonim"
+
+            }
         )
-        .classList.add(
-            "active"
-        );
+        .catch(function (error) {
 
-</script>
+            showFirebaseError(error);
 
-</body>
-</html>
+        });
+
+    }
+
+
+    /* =========================
+       AUTO RESIZE TEXTAREA
+    ========================== */
+
+    messageInput.addEventListener(
+        "input",
+        function () {
+
+            this.style.height =
+                "auto";
+
+            this.style.height =
+                Math.min(
+                    this.scrollHeight,
+                    100
+                ) + "px";
+
+        }
+    );
+
+</script></body></html>
