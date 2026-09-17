@@ -13,84 +13,136 @@
         box-sizing: border-box;
     }
 
+    html,
     body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: transparent;
-    }
-
-    .player-box {
+        padding: 0;
         width: 100%;
-        background: #fff7fb;
-        border: 1px solid #f3c6d8;
-        border-radius: 14px;
-        padding: 8px;
-        box-shadow: 0 4px 15px rgba(217, 47, 114, 0.12);
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+        font-family: Arial, sans-serif;
     }
 
-    .music-title {
-        text-align: center;
-        color: #d92f72;
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 7px;
-    }
+    .music-box {
+        width: 100%;
+        height: 100%;
 
-    .playlist-buttons {
         display: flex;
+        align-items: center;
+
         gap: 5px;
-        margin-bottom: 7px;
+        padding: 3px 5px;
+
+        background: #fff7fb;
     }
 
-    .playlist-buttons button {
-        flex: 1;
-        border: none;
-        border-radius: 9px;
-        padding: 7px 4px;
-        background: #f8d9e5;
-        color: #6b3047;
+    .music-label {
+        flex-shrink: 0;
+
+        color: #d92f72;
+
         font-size: 11px;
-        cursor: pointer;
         font-weight: bold;
+
+        white-space: nowrap;
     }
 
-    .playlist-buttons button.active {
+    .playlist {
+        flex: 1;
+        min-width: 0;
+
+        display: flex;
+
+        gap: 3px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .playlist::-webkit-scrollbar {
+        display: none;
+    }
+
+    .playlist button {
+        flex-shrink: 0;
+
+        border: none;
+
+        border-radius: 14px;
+
+        background: #f9dce8;
+
+        color: #6d4051;
+
+        padding: 5px 7px;
+
+        font-size: 9px;
+        font-weight: bold;
+
+        white-space: nowrap;
+
+        cursor: pointer;
+    }
+
+    .playlist button.active {
         background: #d92f72;
         color: white;
     }
 
-    .soundcloud-frame {
-        width: 100%;
-        height: 166px;
+    .soundcloud {
+        flex-shrink: 0;
+
+        width: 85px;
+        height: 36px;
+
         border: none;
+
         border-radius: 10px;
-        display: block;
+
+        overflow: hidden;
     }
 
-    .music-note {
-        text-align: center;
-        font-size: 10px;
-        color: #98717f;
-        margin-top: 5px;
+    @media (max-width: 600px) {
+
+        .music-label {
+            font-size: 10px;
+        }
+
+        .playlist button {
+            font-size: 8px;
+            padding: 5px 6px;
+        }
+
+        .soundcloud {
+            width: 75px;
+            height: 34px;
+        }
+
     }
 
 </style>
 
-</head><body><div class="player-box">
+</head><body><div class="music-box">
 
-    <div class="music-title">
-        🎵 CewekPedia Music
+
+    <div class="music-label">
+        🎵
     </div>
 
-    <div class="playlist-buttons">
+
+    <div class="playlist">
+
 
         <button
             id="btnIndonesia"
             class="active"
             onclick="changeMusic('indonesia')"
         >
-            🇮🇩 Indonesia
+            🇮🇩 Indo
         </button>
+
 
         <button
             id="btnKorea"
@@ -99,6 +151,7 @@
             🇰🇷 Korea
         </button>
 
+
         <button
             id="btnBarat"
             onclick="changeMusic('barat')"
@@ -106,53 +159,92 @@
             🌎 Barat
         </button>
 
+
     </div>
+
 
     <iframe
         id="soundcloudPlayer"
-        class="soundcloud-frame"
+        class="soundcloud"
         title="CewekPedia Music Player"
         scrolling="no"
         frameborder="no"
         allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Futam-aza%2Fsets%2Fdewa-19-full-music&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
     >
     </iframe>
 
-    <div class="music-note">
-        🎧 Pilih playlist sesuai suasana kamu
-    </div>
 
 </div>
 
 
 <script>
 
+
     const musicLinks = {
 
+        /*
+         * 🇮🇩 INDONESIA
+         *
+         * Playlist dimulai dengan:
+         * Ungu - Demi Waktu
+         *
+         * Kemudian berisi lagu Indonesia
+         * termasuk Dewa 19, Noah/Peterpan,
+         * dan lagu-lagu sejenis.
+         */
+
         indonesia:
-            "https://soundcloud.com/utam-aza/sets/dewa-19-full-music",
+            "https://soundcloud.com/nugraha-74739955/sets/yy",
+
+
+        /*
+         * 🇰🇷 KOREA
+         *
+         * Playlist berisi OST Korea dan
+         * K-pop nostalgia.
+         *
+         * Full House - Bi Rain tersedia
+         * di playlist.
+         */
 
         korea:
-            "https://soundcloud.com/user-808285823/sets/k-pop",
+            "https://soundcloud.com/oyukh-h/sets/korean",
+
+
+        /*
+         * 🌎 BARAT
+         *
+         * Playlist dimulai dengan:
+         * Evanescence - Bring Me To Life
+         *
+         * Kemudian rock/pop era 2000-an.
+         */
 
         barat:
-            "https://soundcloud.com/gorgijpark/sets/90s-12-inches"
+            "https://soundcloud.com/alireza-eshraghjahromi/evanescence-greatest-hitsbest-songs"
 
     };
 
 
     function changeMusic(type) {
 
+
         const player =
-            document.getElementById("soundcloudPlayer");
+            document.getElementById(
+                "soundcloudPlayer"
+            );
+
 
         const url =
-            encodeURIComponent(musicLinks[type]);
+            encodeURIComponent(
+                musicLinks[type]
+            );
+
 
         player.src =
-            "https://w.soundcloud.com/player/?url=" +
-            url +
+            "https://w.soundcloud.com/player/?" +
+            "url=" + url +
             "&color=%23d92f72" +
             "&auto_play=false" +
             "&hide_related=true" +
@@ -163,10 +255,14 @@
 
 
         document
-            .querySelectorAll(".playlist-buttons button")
+            .querySelectorAll(
+                ".playlist button"
+            )
             .forEach(function(button) {
 
-                button.classList.remove("active");
+                button.classList.remove(
+                    "active"
+                );
 
             });
 
@@ -174,28 +270,37 @@
         if (type === "indonesia") {
 
             document
-                .getElementById("btnIndonesia")
+                .getElementById(
+                    "btnIndonesia"
+                )
                 .classList.add("active");
 
         }
+
 
         if (type === "korea") {
 
             document
-                .getElementById("btnKorea")
+                .getElementById(
+                    "btnKorea"
+                )
                 .classList.add("active");
 
         }
 
+
         if (type === "barat") {
 
             document
-                .getElementById("btnBarat")
+                .getElementById(
+                    "btnBarat"
+                )
                 .classList.add("active");
 
         }
 
     }
+
 
 </script>
 
