@@ -19,11 +19,9 @@
     body {
 
         margin: 0;
-
         padding: 0;
 
         width: 100%;
-
         height: 100%;
 
         overflow: hidden;
@@ -41,7 +39,6 @@
     .music-box {
 
         width: 100%;
-
         height: 100%;
 
         padding: 5px;
@@ -53,6 +50,8 @@
         gap: 5px;
 
         background: #fff7fb;
+
+        overflow: hidden;
     }
 
 
@@ -75,7 +74,7 @@
 
 
     /* =========================
-       PLAYLIST BUTTONS
+       PLAYLIST
     ========================= */
 
     .playlist {
@@ -134,28 +133,37 @@
 
 
     /* =========================
-       SOUNDCLOUD
+       SOUNDCLOUD WRAPPER
     ========================= */
 
-    .soundcloud {
+    .soundcloud-wrap {
 
         flex: 1;
 
-        width: 100%;
-
         min-height: 0;
 
-        border: none;
+        width: 100%;
+
+        overflow: hidden;
 
         border-radius: 10px;
+    }
+
+
+    .soundcloud {
+
+        width: 100%;
+
+        height: 166px;
+
+        border: none;
 
         display: block;
     }
 
 
     /* =================================================
-       MINI MODE
-       Ketika iframe parent hanya sekitar 48px tinggi
+       MINI / TOP BAR MODE
     ================================================= */
 
     .mini .music-box {
@@ -167,6 +175,8 @@
         gap: 5px;
 
         padding: 3px 5px;
+
+        overflow: hidden;
     }
 
 
@@ -174,9 +184,11 @@
 
         flex-shrink: 0;
 
-        font-size: 11px;
+        width: 18px;
 
-        width: 20px;
+        font-size: 10px;
+
+        text-align: center;
     }
 
 
@@ -194,45 +206,67 @@
 
     .mini .playlist button {
 
-        padding: 5px 8px;
+        padding: 5px 7px;
 
-        font-size: 9px;
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       MINI SOUNDCLOUD
+    ========================= */
+
+    .mini .soundcloud-wrap {
+
+        flex-shrink: 0;
+
+        width: 88px;
+
+        height: 38px;
+
+        overflow: hidden;
+
+        border-radius: 9px;
+
+        position: relative;
     }
 
 
     .mini .soundcloud {
 
-        flex-shrink: 0;
+        position: absolute;
 
-        width: 90px;
+        left: 0;
 
-        height: 36px;
+        top: -2px;
 
-        flex: none;
+        width: 88px;
 
-        border-radius: 9px;
+        height: 55px;
+
+        border: none;
     }
 
 
     /* =========================
-       MOBILE MINI
+       MOBILE
     ========================= */
 
     @media (max-width: 600px) {
 
-        .mini .music-title {
+        .mini .playlist button {
 
-            font-size: 10px;
+            padding: 5px 6px;
 
-            width: 18px;
+            font-size: 8px;
         }
 
 
-        .mini .playlist button {
+        .mini .soundcloud-wrap {
 
-            padding: 5px 7px;
+            width: 72px;
 
-            font-size: 8px;
+            height: 36px;
         }
 
 
@@ -240,7 +274,9 @@
 
             width: 72px;
 
-            height: 34px;
+            height: 53px;
+
+            top: -2px;
         }
 
     }
@@ -283,23 +319,23 @@
 </div>
 
 
-<iframe
-    id="soundcloudPlayer"
-    class="soundcloud"
-    title="CewekPedia Music Player"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
->
-</iframe>
+<div class="soundcloud-wrap">
+
+    <iframe
+        id="soundcloudPlayer"
+        class="soundcloud"
+        title="CewekPedia Music Player"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+    >
+    </iframe>
+
+</div>
 
 </div><script>
 
-
-    /* =========================
-       PLAYLIST
-    ========================= */
 
     const musicLinks = {
 
@@ -315,12 +351,7 @@
     };
 
 
-    /* =========================
-       CHANGE MUSIC
-    ========================= */
-
     function changeMusic(type) {
-
 
         const player =
             document.getElementById(
@@ -393,10 +424,6 @@
 
     }
 
-
-    /* =========================
-       DETECT PLAYER SIZE
-    ========================= */
 
     function detectPlayerMode() {
 
