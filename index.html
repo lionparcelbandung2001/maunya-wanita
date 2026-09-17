@@ -1,716 +1,220 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CewekPedia ❤️</title>
-
-
     <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        html,
-        body {
-
+        * { box-sizing: border-box; }
+        html, body {
             margin: 0;
             padding: 0;
-
             width: 100%;
             min-height: 100%;
-
         }
-
-
         body {
-
             background: #fff7fb;
-
             font-family: Arial, sans-serif;
-
             color: #3a2630;
-
         }
-
 
         /* =========================
            NAVIGASI GLOBAL
         ========================= */
-
         .global-nav {
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             gap: 5px;
-
             padding: 7px 6px;
-
-            background:
-                rgba(255, 247, 251, 0.97);
-
-            border-bottom:
-                1px solid #f0dce6;
-
-            box-shadow:
-                0 2px 8px rgba(80, 40, 60, 0.06);
-
+            background: rgba(255, 247, 251, 0.97);
+            border-bottom: 1px solid #f0dce6;
+            box-shadow: 0 2px 8px rgba(80, 40, 60, 0.06);
             overflow-x: auto;
-
             scrollbar-width: none;
-
         }
-
-
-        .global-nav::-webkit-scrollbar {
-
-            display: none;
-
-        }
-
-
+        .global-nav::-webkit-scrollbar { display: none; }
         .global-nav a {
-
             flex: 0 0 auto;
-
             text-decoration: none;
-
             color: #633f4d;
-
             background: #ffffff;
-
-            border:
-                1px solid #efdce6;
-
+            border: 1px solid #efdce6;
             border-radius: 18px;
-
             padding: 6px 9px;
-
             font-size: 11px;
-
             font-weight: 600;
-
             white-space: nowrap;
-
             cursor: pointer;
-
         }
-
-
         .global-nav a.active {
-
             background: #d92f72;
-
             color: #ffffff;
-
             border-color: #d92f72;
-
         }
-
-
-        .global-nav a:hover {
-
-            background: #fff0f6;
-
-        }
-
+        .global-nav a:hover { background: #fff0f6; }
 
         /* =========================
            MUSIC GLOBAL
         ========================= */
-
         .music-area {
-
             width: 100%;
-
             padding: 7px 8px 4px;
-
             background: #fff7fb;
-
             position: relative;
-
             z-index: 9999;
-
-            transition:
-                width 0.25s ease,
-                height 0.25s ease,
-                padding 0.25s ease;
-
+            transition: width 0.25s ease, height 0.25s ease, padding 0.25s ease;
         }
-
-
         .music-frame {
-
             display: block;
-
             width: 100%;
-
             max-width: 740px;
-
             height: 205px;
-
             margin: 0 auto;
-
             border: 0;
-
-            transition:
-                width 0.25s ease,
-                height 0.25s ease;
-
+            transition: width 0.25s ease, height 0.25s ease;
         }
-
 
         /* =========================
-           FLOATING MUSIC
+           FLOATING MUSIC - FIX
         ========================= */
-
         .music-area.floating {
-
             position: fixed;
-
             right: 14px;
-
-            bottom: 16px;
-
+            bottom: 90px; /* FIX: dinaikin biar gak ketutup bar Google */
             width: 54px;
-
             height: 54px;
-
             padding: 0;
-
             background: transparent;
-
             z-index: 99999;
-
         }
-
-
         .music-area.floating .music-frame {
-
             width: 54px;
-
             height: 54px;
-
             margin: 0;
-
         }
-
 
         /* =========================
            FLOATING OPEN
         ========================= */
-
         .music-area.floating.open {
-
             width: 300px;
-
             height: 245px;
-
             padding: 0;
-
         }
-
-
         .music-area.floating.open .music-frame {
-
             width: 300px;
-
             height: 245px;
-
             margin: 0;
-
         }
-
 
         /* =========================
            HALAMAN
         ========================= */
-
         .page-frame {
-
             display: block;
-
             width: 100%;
-
             height: calc(100vh - 255px);
-
             min-height: 650px;
-
             border: 0;
-
             background: #fff7fb;
-
         }
-
 
         /* =========================
-           MOBILE
+           MOBILE - FIX KHUSUS HP
         ========================= */
-
         @media (max-width: 600px) {
-
-            .global-nav {
-
-                justify-content: flex-start;
-
-            }
-
-
-            .global-nav a {
-
-                padding: 5px 8px;
-
-                font-size: 10px;
-
-            }
-
-
-            .music-area {
-
-                padding: 6px 6px 3px;
-
-            }
-
-
-            .music-frame {
-
-                height: 205px;
-
-            }
-
-
+            .global-nav { justify-content: flex-start; }
+            .global-nav a { padding: 5px 8px; font-size: 10px; }
+            .music-area { padding: 6px 6px 3px; }
+            .music-frame { height: 205px; }
             .music-area.floating {
-
                 right: 10px;
-
-                bottom: 12px;
-
+                bottom: 110px; /* FIX: di HP naikin lebih tinggi lagi */
             }
-
-
             .music-area.floating.open {
-
                 width: 280px;
-
                 height: 245px;
-
+                bottom: 110px;
             }
-
-
             .music-area.floating.open .music-frame {
-
                 width: 280px;
-
                 height: 245px;
-
             }
-
-
             .page-frame {
-
                 height: calc(100vh - 250px);
-
                 min-height: 650px;
-
             }
-
         }
-
     </style>
-
 </head>
-
-
 <body>
 
-
-    <!-- =========================
-         NAVIGASI GLOBAL
-    ========================= -->
-
     <nav class="global-nav">
-
-        <a
-            href="home.html"
-            onclick="goPage('home.html', this); return false;"
-            class="active"
-        >
-            🏠 Utama
-        </a>
-
-
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Cantik', this); return false;"
-        >
-            💄 Cantik
-        </a>
-
-
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Nikah', this); return false;"
-        >
-            💍 Nikah
-        </a>
-
-
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Makan & Belanja', this); return false;"
-        >
-            🛍️ Makan
-        </a>
-
-
-        <a
-            href="kota.html"
-            onclick="goCategory('Pengen Jalan-jalan / Healing', this); return false;"
-        >
-            🌴 Healing
-        </a>
-
-
-        <a
-            href="ruangcewek/index.html"
-            onclick="goPage('ruangcewek/index.html', this); return false;"
-        >
-            💬 Cewek
-        </a>
-
-
-        <a
-            href="ruanglawak/index.html"
-            onclick="goPage('ruanglawak/index.html', this); return false;"
-        >
-            😂 Lawak
-        </a>
-
+        <a href="home.html" onclick="goPage('home.html', this); return false;" class="active">🏠 Utama</a>
+        <a href="kota.html" onclick="goCategory('Pengen Cantik', this); return false;">💄 Cantik</a>
+        <a href="kota.html" onclick="goCategory('Pengen Nikah', this); return false;">💍 Nikah</a>
+        <a href="kota.html" onclick="goCategory('Pengen Makan & Belanja', this); return false;">🛍️ Makan</a>
+        <a href="kota.html" onclick="goCategory('Pengen Jalan-jalan / Healing', this); return false;">🌴 Healing</a>
+        <a href="ruangcewek/index.html" onclick="goPage('ruangcewek/index.html', this); return false;">💬 Cewek</a>
+        <a href="ruanglawak/index.html" onclick="goPage('ruanglawak/index.html', this); return false;">😂 Lawak</a>
     </nav>
 
-
-    <!-- =========================
-         MUSIC GLOBAL
-    ========================= -->
-
-    <section
-        class="music-area"
-        id="musicArea"
-    >
-
-        <iframe
-            src="music-player.html"
-            id="musicFrame"
-            class="music-frame"
-            title="CewekPedia Music Player"
-            scrolling="no"
-            frameborder="0"
-            allow="autoplay"
-        >
-        </iframe>
-
+    <section class="music-area" id="musicArea">
+        <iframe src="music-player.html" id="musicFrame" class="music-frame" title="CewekPedia Music Player" scrolling="no" frameborder="0" allow="autoplay"></iframe>
     </section>
 
-
-    <!-- =========================
-         KONTEN
-    ========================= -->
-
-    <iframe
-        src="home.html"
-        name="cewekpediaPage"
-        id="pageFrame"
-        class="page-frame"
-        title="CewekPedia"
-    >
-    </iframe>
-
+    <iframe src="home.html" name="cewekpediaPage" id="pageFrame" class="page-frame" title="CewekPedia"></iframe>
 
     <script>
-
-        const pageFrame =
-            document.getElementById(
-                "pageFrame"
-            );
-
-
-        const musicArea =
-            document.getElementById(
-                "musicArea"
-            );
-
-
-        const musicFrame =
-            document.getElementById(
-                "musicFrame"
-            );
-
-
-        /* =========================
-           NAVIGASI
-        ========================= */
+        const pageFrame = document.getElementById("pageFrame");
+        const musicArea = document.getElementById("musicArea");
+        const musicFrame = document.getElementById("musicFrame");
 
         function setActive(button) {
-
-            const buttons =
-                document.querySelectorAll(
-                    ".global-nav a"
-                );
-
-
-            buttons.forEach(
-                function(item) {
-
-                    item.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-
-            if (button) {
-
-                button.classList.add(
-                    "active"
-                );
-
-            }
-
+            const buttons = document.querySelectorAll(".global-nav a");
+            buttons.forEach(function(item) { item.classList.remove("active"); });
+            if (button) { button.classList.add("active"); }
         }
-
-
-        function goPage(
-            url,
-            button
-        ) {
-
+        function goPage(url, button) {
             setActive(button);
-
             pageFrame.src = url;
-
         }
-
-
-        function goCategory(
-            category,
-            button
-        ) {
-
-            localStorage.setItem(
-                "mw_category",
-                category
-            );
-
-
-            localStorage.removeItem(
-                "mw_city"
-            );
-
-
-            localStorage.removeItem(
-                "mw_subcategory"
-            );
-
-
+        function goCategory(category, button) {
+            localStorage.setItem("mw_category", category);
+            localStorage.removeItem("mw_city");
+            localStorage.removeItem("mw_subcategory");
             setActive(button);
-
-
-            pageFrame.src =
-                "kota.html";
-
+            pageFrame.src = "kota.html";
         }
-
-
-        /* =========================
-           CEK HALAMAN
-        ========================= */
-
         function updateMusicMode() {
-
-            if (
-                !musicFrame ||
-                !musicArea ||
-                !pageFrame
-            ) {
-
-                return;
-
-            }
-
-
-            const page =
-                pageFrame.getAttribute(
-                    "src"
-                ) || "";
-
-
-            const isHome =
-                page.includes(
-                    "home.html"
-                ) ||
-                page === "";
-
-
+            if (!musicFrame || !musicArea || !pageFrame) { return; }
+            const page = pageFrame.getAttribute("src") || "";
+            const isHome = page.includes("home.html") || page === "";
             if (isHome) {
-
-                /* =================
-                   HOME
-                ================= */
-
-                musicArea.classList.remove(
-                    "floating"
-                );
-
-                musicArea.classList.remove(
-                    "open"
-                );
-
-
-                musicFrame.style.width =
-                    "100%";
-
-                musicFrame.style.height =
-                    "205px";
-
+                musicArea.classList.remove("floating");
+                musicArea.classList.remove("open");
+                musicFrame.style.width = "100%";
+                musicFrame.style.height = "205px";
             } else {
-
-                /* =================
-                   HALAMAN LAIN
-                ================= */
-
-                musicArea.classList.add(
-                    "floating"
-                );
-
-
-                /*
-                 * Cek apakah player
-                 * sedang dibuka.
-                 *
-                 * music-player.html
-                 * menggunakan class
-                 * "open" pada body.
-                 */
-
+                musicArea.classList.add("floating");
                 try {
-
-                    const musicDocument =
-                        musicFrame.contentDocument;
-
-
-                    if (
-                        musicDocument &&
-                        musicDocument.body
-                    ) {
-
-                        const isOpen =
-                            musicDocument.body.classList.contains(
-                                "open"
-                            );
-
-
-                        if (isOpen) {
-
-                            musicArea.classList.add(
-                                "open"
-                            );
-
-                        } else {
-
-                            musicArea.classList.remove(
-                                "open"
-                            );
-
-                        }
-
+                    const musicDocument = musicFrame.contentDocument;
+                    if (musicDocument && musicDocument.body) {
+                        const isOpen = musicDocument.body.classList.contains("open");
+                        if (isOpen) { musicArea.classList.add("open"); } 
+                        else { musicArea.classList.remove("open"); }
                     }
-
-                } catch (error) {
-
-                    /*
-                     * Tidak melakukan apa-apa.
-                     * Player tetap berjalan.
-                     */
-
-                }
-
+                } catch (error) {}
             }
-
         }
-
-
-        /* =========================
-           SAAT HALAMAN BERPINDAH
-        ========================= */
-
-        pageFrame.addEventListener(
-            "load",
-            function() {
-
-                updateMusicMode();
-
-            }
-        );
-
-
-        /* =========================
-           CEK PLAYER
-        ========================= */
-
-        musicFrame.addEventListener(
-            "load",
-            function() {
-
-                updateMusicMode();
-
-            }
-        );
-
-
-        /*
-         * Mengecek status player
-         * secara berkala.
-         *
-         * Ini hanya membaca status
-         * tampilan, bukan me-reload
-         * musik.
-         */
-
-        setInterval(
-            updateMusicMode,
-            250
-        );
-
-
-        /* =========================
-           START
-        ========================= */
-
+        pageFrame.addEventListener("load", function() { updateMusicMode(); });
+        musicFrame.addEventListener("load", function() { updateMusicMode(); });
+        setInterval(updateMusicMode, 250);
         updateMusicMode();
-
     </script>
-
-
 </body>
-
 </html>
