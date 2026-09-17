@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
 
+
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -24,7 +31,11 @@ body {
     padding: 12px;
 }
 
-/* TOP BAR */
+
+/* =========================
+   TOP NAV
+========================= */
+
 .topbar {
     display: flex;
     justify-content: center;
@@ -47,7 +58,11 @@ body {
     color: #d92f72;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 header {
     text-align: center;
     padding: 10px 5px;
@@ -65,7 +80,11 @@ header p {
     font-size: 12px;
 }
 
-/* FITUR */
+
+/* =========================
+   FEATURE
+========================= */
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -96,16 +115,44 @@ header p {
     font-size: 10px;
 }
 
-/* SOUNDCLOUD */
+
+/* =========================
+   MUSIC
+========================= */
+
 .music-section {
-    margin-top: 9px;
+    margin-top: 10px;
 }
 
 .music-title {
     text-align: center;
     color: #765866;
     font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.music-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
     margin-bottom: 5px;
+}
+
+.music-button {
+    border: 1px solid #f1d9e4;
+    background: white;
+    color: #765866;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.music-button.active {
+    background: #d92f72;
+    color: white;
+    border-color: #d92f72;
 }
 
 .soundcloud-box {
@@ -123,7 +170,11 @@ header p {
     border: none;
 }
 
-/* CHATROOM */
+
+/* =========================
+   CHATROOM
+========================= */
+
 .chatroom {
     background: white;
     border: 1px solid #f1d9e4;
@@ -150,7 +201,11 @@ header p {
     color: #348b57;
 }
 
-/* CATATAN */
+
+/* =========================
+   CATATAN
+========================= */
+
 .chat-notice {
     background: #fff7fb;
     border: 1px solid #f1d9e4;
@@ -162,7 +217,11 @@ header p {
     color: #765866;
 }
 
-/* NICKNAME */
+
+/* =========================
+   NICKNAME
+========================= */
+
 .nickname-box {
     background: #fff7fb;
     border-radius: 12px;
@@ -185,7 +244,11 @@ header p {
     flex: 1;
 }
 
-/* CHAT */
+
+/* =========================
+   MESSAGES
+========================= */
+
 .messages {
     height: 300px;
     overflow-y: auto;
@@ -221,7 +284,11 @@ header p {
     margin-top: 3px;
 }
 
-/* INPUT */
+
+/* =========================
+   INPUT
+========================= */
+
 .chat-input {
     display: flex;
     gap: 7px;
@@ -271,11 +338,15 @@ button:disabled {
     margin-top: 8px;
 }
 
-/* ERROR FIREBASE */
+
+/* =========================
+   FIREBASE ERROR
+========================= */
+
 .firebase-error {
     display: none;
     margin-top: 8px;
-    padding: 8px 10px;
+    padding: 9px 10px;
     background: #fff1f1;
     border: 1px solid #f0caca;
     border-radius: 10px;
@@ -285,7 +356,11 @@ button:disabled {
     word-break: break-word;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     text-align: center;
     padding: 25px 10px 10px;
@@ -293,7 +368,11 @@ footer {
     color: #8b737d;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
 
     .container {
@@ -337,6 +416,11 @@ footer {
         font-size: 9px;
     }
 
+    .music-button {
+        padding: 5px 8px;
+        font-size: 9px;
+    }
+
     .chatroom {
         padding: 12px;
     }
@@ -348,31 +432,62 @@ footer {
     .chat-notice {
         font-size: 10px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-<!-- TOP BAR -->
+
+<!-- =========================
+     TOP NAV
+========================= -->
+
 <nav class="topbar">
 
-    <a href="../index.html">💄 Cantik</a>
-    <a href="../index.html">💍 Nikah</a>
-    <a href="../index.html">🛍️ Makan</a>
-    <a href="../index.html">🌴 Healing</a>
-    <a href="index.html">💬 Cerita</a>
-    <a href="../ruanglawak/index.html">😂 Lawak</a>
+    <a href="../index.html">
+        💄 Cantik
+    </a>
+
+    <a href="../index.html">
+        💍 Nikah
+    </a>
+
+    <a href="../index.html">
+        🛍️ Makan
+    </a>
+
+    <a href="../index.html">
+        🌴 Healing
+    </a>
+
+    <a href="index.html">
+        💬 Cerita
+    </a>
+
+    <a href="../ruanglawak/index.html">
+        😂 Lawak
+    </a>
 
 </nav>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-    <h1>💬 RUANG CEWEK</h1>
+    <h1>
+        💬 RUANG CEWEK
+    </h1>
 
     <p>
         Cerita • Berbagi • Ngobrol ❤️
@@ -381,12 +496,21 @@ footer {
 </header>
 
 
-<!-- FITUR -->
+<!-- =========================
+     FITUR
+========================= -->
+
 <div class="feature-grid">
 
-    <a href="curhat.html" class="feature-card">
 
-        <h2>💭 CURHAT</h2>
+    <a
+        href="curhat.html"
+        class="feature-card"
+    >
+
+        <h2>
+            💭 CURHAT
+        </h2>
 
         <p>
             Cerita & pengalaman.<br>
@@ -396,9 +520,14 @@ footer {
     </a>
 
 
-    <a href="reviewproduk.html" class="feature-card">
+    <a
+        href="reviewproduk.html"
+        class="feature-card"
+    >
 
-        <h2>⭐ REVIEW PRODUK</h2>
+        <h2>
+            ⭐ REVIEW PRODUK
+        </h2>
 
         <p>
             Sudah pernah coba?<br>
@@ -407,15 +536,54 @@ footer {
 
     </a>
 
+
 </div>
 
 
-<!-- SOUNDCLOUD -->
+<!-- =========================
+     MUSIC
+========================= -->
+
 <section class="music-section">
 
+
     <div class="music-title">
-        🎵 Temani ngobrol sambil dengerin musik
+
+        🎵 Pilih musik sambil ngobrol
+
     </div>
+
+
+    <div class="music-buttons">
+
+        <button
+            type="button"
+            class="music-button active"
+            data-music="korea"
+        >
+            🇰🇷 Korea
+        </button>
+
+
+        <button
+            type="button"
+            class="music-button"
+            data-music="pop"
+        >
+            🎧 Pop
+        </button>
+
+
+        <button
+            type="button"
+            class="music-button"
+            data-music="barat"
+        >
+            🌎 Barat
+        </button>
+
+    </div>
+
 
     <div class="soundcloud-box">
 
@@ -424,7 +592,7 @@ footer {
             scrolling="no"
             frameborder="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/forss/flickermood&color=d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/soundcloud-stories/sets/k-pop&color=d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
         </iframe>
 
     </div>
@@ -432,23 +600,34 @@ footer {
 </section>
 
 
-<!-- CHATROOM -->
+<!-- =========================
+     CHATROOM
+========================= -->
+
 <section class="chatroom">
+
 
     <div class="chat-header">
 
-        <h2>🟢 CHATROOM</h2>
+        <h2>
+            🟢 CHATROOM
+        </h2>
+
 
         <div
             class="online"
-            id="onlineCount">
+            id="onlineCount"
+        >
+
             🟢 Menghubungkan...
+
         </div>
 
     </div>
 
 
     <!-- CATATAN -->
+
     <div class="chat-notice">
 
         ⚠️ <strong>Catatan Chatroom</strong><br>
@@ -464,11 +643,13 @@ footer {
 
 
     <!-- NICKNAME -->
+
     <div class="nickname-box">
 
         <label for="nickname">
             Nama panggilan kamu:
         </label>
+
 
         <div class="nickname-row">
 
@@ -476,9 +657,13 @@ footer {
                 type="text"
                 id="nickname"
                 maxlength="20"
-                placeholder="Contoh: Maya">
+                placeholder="Contoh: Maya"
+            >
 
-            <button id="saveNickname">
+
+            <button
+                id="saveNickname"
+            >
                 Simpan
             </button>
 
@@ -488,9 +673,11 @@ footer {
 
 
     <!-- PESAN -->
+
     <div
         class="messages"
-        id="messages">
+        id="messages"
+    >
 
         <div class="info">
             Menghubungkan ke chatroom...
@@ -500,6 +687,7 @@ footer {
 
 
     <!-- INPUT -->
+
     <div class="chat-input">
 
         <input
@@ -507,11 +695,14 @@ footer {
             id="messageInput"
             maxlength="300"
             placeholder="Tulis pesan..."
-            disabled>
+            disabled
+        >
+
 
         <button
             id="sendButton"
-            disabled>
+            disabled
+        >
             Kirim
         </button>
 
@@ -526,33 +717,42 @@ footer {
     </div>
 
 
-    <!-- ERROR FIREBASE -->
+    <!-- ERROR -->
+
     <div
         id="firebaseError"
-        class="firebase-error">
-    </div>
+        class="firebase-error"
+    ></div>
+
 
 </section>
 
 
 <footer>
+
     © 2026 Ruang Cewek ❤️
+
 </footer>
+
 
 </div>
 
 
-<!-- FIREBASE -->
+<!-- =====================================================
+     FIREBASE + MUSIC
+===================================================== -->
+
 <script type="module">
 
-/*
- * FIREBASE SDK
- * Menggunakan modul resmi Firebase.
- */
+
+/* =========================
+   FIREBASE CDN
+========================= */
 
 import {
     initializeApp
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
 
 import {
     getDatabase,
@@ -565,21 +765,22 @@ import {
     set
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
+
 import {
     getAuth,
     signInAnonymously
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-/* =========================================
+/* =========================
    FIREBASE CONFIG
-   DIAMBIL DARI KODE TERBARU FIREBASE
-========================================= */
+   DARI SDK CDN FIREBASE
+========================= */
 
 const firebaseConfig = {
 
     apiKey:
-        "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+        "AIzaSyCnhVGlnGKoqddyLvE7tMGG926iO8O0",
 
     authDomain:
         "ruang-cewek.firebaseapp.com",
@@ -602,35 +803,175 @@ const firebaseConfig = {
 };
 
 
-/* =========================================
-   ELEMENT
-========================================= */
+/* =========================
+   MUSIC PLAYLISTS
+========================= */
+
+const musicLinks = {
+
+    korea:
+        "https://soundcloud.com/soundcloud-stories/sets/k-pop",
+
+    pop:
+        "https://soundcloud.com/user-561597389/sets/pop",
+
+    barat:
+        "https://soundcloud.com/joannawangofficial/sets/hotel-la-rut"
+
+};
+
+
+/* =========================
+   SOUNDCloud PLAYER
+========================= */
+
+const soundcloudPlayer =
+    document.getElementById(
+        "soundcloudPlayer"
+    );
+
+
+const musicButtons =
+    document.querySelectorAll(
+        ".music-button"
+    );
+
+
+function changeMusic(type) {
+
+    const url =
+        musicLinks[type];
+
+
+    if (!url) {
+        return;
+    }
+
+
+    const embedUrl =
+
+        "https://w.soundcloud.com/player/?" +
+
+        "url=" +
+
+        encodeURIComponent(url) +
+
+        "&color=d92f72" +
+
+        "&auto_play=false" +
+
+        "&hide_related=true" +
+
+        "&show_comments=false" +
+
+        "&show_user=false" +
+
+        "&show_reposts=false" +
+
+        "&show_teaser=false" +
+
+        "&visual=false";
+
+
+    soundcloudPlayer.src =
+        embedUrl;
+
+
+    musicButtons.forEach(
+        (button) => {
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    const activeButton =
+        document.querySelector(
+            `[data-music="${type}"]`
+        );
+
+
+    if (activeButton) {
+
+        activeButton.classList.add(
+            "active"
+        );
+
+    }
+
+}
+
+
+musicButtons.forEach(
+    (button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                changeMusic(
+                    button.dataset.music
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   ELEMENT FIREBASE
+========================= */
 
 const nicknameInput =
-    document.getElementById("nickname");
+    document.getElementById(
+        "nickname"
+    );
+
 
 const saveNicknameButton =
-    document.getElementById("saveNickname");
+    document.getElementById(
+        "saveNickname"
+    );
+
 
 const messageInput =
-    document.getElementById("messageInput");
+    document.getElementById(
+        "messageInput"
+    );
+
 
 const sendButton =
-    document.getElementById("sendButton");
+    document.getElementById(
+        "sendButton"
+    );
+
 
 const messages =
-    document.getElementById("messages");
+    document.getElementById(
+        "messages"
+    );
+
 
 const onlineCount =
-    document.getElementById("onlineCount");
+    document.getElementById(
+        "onlineCount"
+    );
+
 
 const firebaseError =
-    document.getElementById("firebaseError");
+    document.getElementById(
+        "firebaseError"
+    );
 
 
-/* =========================================
-   ERROR DISPLAY
-========================================= */
+/* =========================
+   ERROR FIREBASE
+========================= */
 
 function showFirebaseError(error) {
 
@@ -640,31 +981,47 @@ function showFirebaseError(error) {
     );
 
 
+    if (!firebaseError) {
+        return;
+    }
+
+
     firebaseError.style.display =
         "block";
 
 
     firebaseError.innerHTML =
+
         "<strong>⚠️ Detail error Firebase</strong><br>" +
 
         "Kode: " +
-        (error.code || "tidak diketahui") +
+
+        (
+            error.code ||
+            "tidak diketahui"
+        ) +
 
         "<br>" +
 
         "Pesan: " +
-        (error.message || "tidak diketahui");
+
+        (
+            error.message ||
+            "tidak diketahui"
+        );
 
 }
 
 
-/* =========================================
+/* =========================
    INITIALIZE FIREBASE
-========================================= */
+========================= */
 
-let app;
-let db;
-let auth;
+let app = null;
+
+let db = null;
+
+let auth = null;
 
 
 try {
@@ -676,16 +1033,27 @@ try {
 
 
     db =
-        getDatabase(app);
+        getDatabase(
+            app
+        );
 
 
     auth =
-        getAuth(app);
+        getAuth(
+            app
+        );
+
+
+    console.log(
+        "Firebase berhasil diinisialisasi."
+    );
 
 
 } catch (error) {
 
-    showFirebaseError(error);
+    showFirebaseError(
+        error
+    );
 
 
     onlineCount.textContent =
@@ -694,11 +1062,12 @@ try {
 }
 
 
-/* =========================================
+/* =========================
    NICKNAME
-========================================= */
+========================= */
 
 let nickname =
+
     sessionStorage.getItem(
         "ruangCewekNickname"
     ) || "";
@@ -712,12 +1081,14 @@ if (nickname) {
 }
 
 
-/* =========================================
+/* =========================
    SIMPAN NICKNAME
-========================================= */
+========================= */
 
 saveNicknameButton.addEventListener(
+
     "click",
+
     () => {
 
         const value =
@@ -763,43 +1134,52 @@ saveNicknameButton.addEventListener(
         messageInput.focus();
 
     }
+
 );
 
 
-/* =========================================
-   LOGIN ANONYMOUS
-========================================= */
+/* =========================
+   ANONYMOUS AUTH
+========================= */
 
 if (auth) {
 
-    signInAnonymously(auth)
+    signInAnonymously(
+        auth
+    )
 
-        .then((result) => {
+    .then(
+
+        (result) => {
 
             console.log(
-                "Firebase Anonymous Auth berhasil:",
+                "Anonymous Auth berhasil:",
                 result.user.uid
             );
-
-
-            const uid =
-                result.user.uid;
 
 
             onlineCount.textContent =
                 "🟢 Terhubung";
 
 
-            setupPresence(uid);
+            setupPresence(
+                result.user.uid
+            );
+
 
             loadMessages();
 
-        })
+        }
 
+    )
 
-        .catch((error) => {
+    .catch(
 
-            showFirebaseError(error);
+        (error) => {
+
+            showFirebaseError(
+                error
+            );
 
 
             messages.innerHTML = `
@@ -814,14 +1194,16 @@ if (auth) {
             onlineCount.textContent =
                 "🔴 Chatroom offline";
 
-        });
+        }
+
+    );
 
 }
 
 
-/* =========================================
-   ONLINE PRESENCE
-========================================= */
+/* =========================
+   PRESENCE
+========================= */
 
 function setupPresence(uid) {
 
@@ -840,6 +1222,7 @@ function setupPresence(uid) {
 
 
     onValue(
+
         connectedRef,
 
         (snapshot) => {
@@ -857,40 +1240,63 @@ function setupPresence(uid) {
 
 
             set(
+
                 myPresenceRef,
+
                 {
-                    online: true,
+
+                    online:
+                        true,
 
                     nickname:
-                        nickname || "Tamu"
+                        nickname ||
+                        "Tamu"
+
                 }
+
             )
 
-            .catch((error) => {
+            .catch(
 
-                showFirebaseError(error);
+                (error) => {
 
-            });
+                    showFirebaseError(
+                        error
+                    );
+
+                }
+
+            );
 
 
             onDisconnect(
                 myPresenceRef
             )
+
             .remove()
 
-            .catch((error) => {
+            .catch(
 
-                showFirebaseError(error);
+                (error) => {
 
-            });
+                    showFirebaseError(
+                        error
+                    );
+
+                }
+
+            );
 
         },
 
         (error) => {
 
-            showFirebaseError(error);
+            showFirebaseError(
+                error
+            );
 
         }
+
     );
 
 
@@ -902,6 +1308,7 @@ function setupPresence(uid) {
 
 
     onValue(
+
         presenceRef,
 
         (snapshot) => {
@@ -911,10 +1318,13 @@ function setupPresence(uid) {
 
 
             const count =
-                Object.keys(data).length;
+                Object.keys(
+                    data
+                ).length;
 
 
             onlineCount.textContent =
+
                 "🟢 " +
                 count +
                 " orang sedang online";
@@ -923,17 +1333,20 @@ function setupPresence(uid) {
 
         (error) => {
 
-            showFirebaseError(error);
+            showFirebaseError(
+                error
+            );
 
         }
+
     );
 
 }
 
 
-/* =========================================
-   LOAD PESAN
-========================================= */
+/* =========================
+   LOAD MESSAGES
+========================= */
 
 function loadMessages() {
 
@@ -954,12 +1367,8 @@ function loadMessages() {
 
         (snapshot) => {
 
-            const data =
-                snapshot.val();
-
-
             displayMessage(
-                data
+                snapshot.val()
             );
 
         },
@@ -971,14 +1380,15 @@ function loadMessages() {
             );
 
         }
+
     );
 
 }
 
 
-/* =========================================
-   TAMPILKAN PESAN
-========================================= */
+/* =========================
+   DISPLAY MESSAGE
+========================= */
 
 function displayMessage(data) {
 
@@ -1018,7 +1428,8 @@ function displayMessage(data) {
 
 
     textDiv.textContent =
-        data.text || "";
+        data.text ||
+        "";
 
 
     const timeDiv =
@@ -1031,7 +1442,9 @@ function displayMessage(data) {
         "message-time";
 
 
-    if (data.timestamp) {
+    if (
+        data.timestamp
+    ) {
 
         const date =
             new Date(
@@ -1043,8 +1456,11 @@ function displayMessage(data) {
             date.toLocaleTimeString(
                 "id-ID",
                 {
-                    hour: "2-digit",
-                    minute: "2-digit"
+                    hour:
+                        "2-digit",
+
+                    minute:
+                        "2-digit"
                 }
             );
 
@@ -1077,9 +1493,9 @@ function displayMessage(data) {
 }
 
 
-/* =========================================
-   KIRIM PESAN
-========================================= */
+/* =========================
+   SEND MESSAGE
+========================= */
 
 function sendMessage() {
 
@@ -1099,13 +1515,13 @@ function sendMessage() {
 
 
     if (!text) {
-
         return;
-
     }
 
 
-    if (text.length > 300) {
+    if (
+        text.length > 300
+    ) {
 
         alert(
             "Pesan maksimal 300 karakter."
@@ -1124,9 +1540,11 @@ function sendMessage() {
 
 
     push(
+
         messagesRef,
 
         {
+
             nickname:
                 nickname,
 
@@ -1135,38 +1553,47 @@ function sendMessage() {
 
             timestamp:
                 serverTimestamp()
+
         }
 
     )
 
-    .then(() => {
+    .then(
 
-        messageInput.value =
-            "";
+        () => {
 
-        messageInput.focus();
+            messageInput.value =
+                "";
 
-    })
+            messageInput.focus();
 
-    .catch((error) => {
+        }
 
-        showFirebaseError(
-            error
-        );
+    )
+
+    .catch(
+
+        (error) => {
+
+            showFirebaseError(
+                error
+            );
 
 
-        alert(
-            "Pesan gagal dikirim. Coba lagi."
-        );
+            alert(
+                "Pesan gagal dikirim. Coba lagi."
+            );
 
-    });
+        }
+
+    );
 
 }
 
 
-/* =========================================
-   BUTTON KIRIM
-========================================= */
+/* =========================
+   SEND BUTTON
+========================= */
 
 sendButton.addEventListener(
     "click",
@@ -1174,11 +1601,12 @@ sendButton.addEventListener(
 );
 
 
-/* =========================================
+/* =========================
    ENTER
-========================================= */
+========================= */
 
 messageInput.addEventListener(
+
     "keydown",
 
     (event) => {
@@ -1194,9 +1622,11 @@ messageInput.addEventListener(
         }
 
     }
+
 );
 
 </script>
+
 
 </body>
 </html>
