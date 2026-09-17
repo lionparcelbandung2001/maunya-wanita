@@ -9,12 +9,16 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(
-        180deg,
-        #fff0f6 0%,
-        #fff7fb 45%,
-        #fdeff6 100%
-    );
+
+    /* BACKGROUND SOFT PINK */
+    background:
+        linear-gradient(
+            180deg,
+            #fff0f6 0%,
+            #fff7fb 45%,
+            #fdeff6 100%
+        );
+
     color: #3a2630;
     min-height: 100vh;
 }
@@ -44,7 +48,8 @@ header h1 {
     font-size: clamp(32px, 6vw, 58px);
     color: #c94f7d;
     letter-spacing: -2px;
-    text-shadow: 0 2px 10px rgba(201, 79, 125, 0.08);
+    text-shadow:
+        0 2px 10px rgba(201, 79, 125, 0.08);
 }
 
 header p {
@@ -78,7 +83,7 @@ header p {
 
 /* =========================
    CATEGORY
-   HOMEPAGE = 2 KOLOM (DEFAULT MOBILE)
+   HOMEPAGE = 2 KOLOM
 ========================= */
 
 .category-grid {
@@ -97,10 +102,12 @@ header p {
     min-height: 165px;
     border: 1px solid #efd1df;
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.86);
+    background:
+        rgba(255, 255, 255, 0.86);
     padding: 20px;
     cursor: pointer;
-    box-shadow: 0 7px 20px rgba(170, 80, 120, 0.07);
+    box-shadow:
+        0 7px 20px rgba(170, 80, 120, 0.07);
     transition: 0.25s ease;
     display: flex;
     flex-direction: column;
@@ -109,7 +116,8 @@ header p {
 
 .category:hover {
     transform: translateY(-3px);
-    box-shadow: 0 11px 26px rgba(170, 80, 120, 0.12);
+    box-shadow:
+        0 11px 26px rgba(170, 80, 120, 0.12);
     border-color: #e5b4c9;
 }
 
@@ -148,19 +156,22 @@ header p {
     text-align: center;
     text-decoration: none;
     border: 1px solid #e6bfd0;
-    background: rgba(255, 255, 255, 0.84);
+    background:
+        rgba(255, 255, 255, 0.84);
     color: #a5225b;
     padding: 16px;
     border-radius: 18px;
     font-weight: bold;
-    box-shadow: 0 5px 16px rgba(170, 80, 120, 0.05);
+    box-shadow:
+        0 5px 16px rgba(170, 80, 120, 0.05);
     transition: 0.2s ease;
 }
 
 .city:hover {
     background: #ffe7f0;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(170, 80, 120, 0.08);
+    box-shadow:
+        0 8px 20px rgba(170, 80, 120, 0.08);
 }
 
 
@@ -169,11 +180,13 @@ header p {
 ========================= */
 
 .page-card {
-    background: rgba(255, 255, 255, 0.84);
+    background:
+        rgba(255, 255, 255, 0.84);
     border: 1px solid #efd1df;
     border-radius: 24px;
     padding: 25px;
-    box-shadow: 0 8px 24px rgba(170, 80, 120, 0.08);
+    box-shadow:
+        0 8px 24px rgba(170, 80, 120, 0.08);
 }
 
 
@@ -203,11 +216,13 @@ header p {
     padding: 15px 18px;
     border: 1px solid #e8b6ca;
     border-radius: 14px;
-    background: rgba(255, 235, 244, 0.9);
+    background:
+        rgba(255, 235, 244, 0.9);
     color: #b92b61;
     font-weight: bold;
     line-height: 1.5;
-    box-shadow: 0 5px 15px rgba(170, 80, 120, 0.04);
+    box-shadow:
+        0 5px 15px rgba(170, 80, 120, 0.04);
 }
 
 .notice small {
@@ -249,17 +264,20 @@ header p {
 ========================= */
 
 .card {
-    background: rgba(255, 255, 255, 0.88);
+    background:
+        rgba(255, 255, 255, 0.88);
     border: 1px solid #efd5e0;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 7px 20px rgba(170, 80, 120, 0.07);
+    box-shadow:
+        0 7px 20px rgba(170, 80, 120, 0.07);
     transition: 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 11px 25px rgba(170, 80, 120, 0.11);
+    box-shadow:
+        0 11px 25px rgba(170, 80, 120, 0.11);
 }
 
 
@@ -269,7 +287,12 @@ header p {
 
 .photo {
     height: 150px;
-    background: linear-gradient(135deg, #f6d5e3, #eadced);
+    background:
+        linear-gradient(
+            135deg,
+            #f6d5e3,
+            #eadced
+        );
     display: grid;
     place-items: center;
     font-size: 42px;
@@ -326,12 +349,14 @@ header p {
 
 .feedback {
     margin: 45px auto 25px;
-    background: rgba(255, 232, 242, 0.82);
+    background:
+        rgba(255, 232, 242, 0.82);
     border: 1px solid #efcbd9;
     border-radius: 24px;
     padding: 28px;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(170, 80, 120, 0.05);
+    box-shadow:
+        0 6px 20px rgba(170, 80, 120, 0.05);
 }
 
 .feedback h2 {
@@ -364,11 +389,13 @@ header p {
 .comment-box {
     max-width: 720px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.86);
+    background:
+        rgba(255, 255, 255, 0.86);
     border: 1px solid #efd1df;
     border-radius: 24px;
     padding: 25px;
-    box-shadow: 0 8px 24px rgba(170, 80, 120, 0.08);
+    box-shadow:
+        0 8px 24px rgba(170, 80, 120, 0.08);
 }
 
 textarea {
@@ -386,7 +413,8 @@ textarea {
 textarea:focus {
     outline: none;
     border-color: #d98aaa;
-    box-shadow: 0 0 0 3px rgba(217, 138, 170, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(217, 138, 170, 0.12);
 }
 
 
@@ -462,7 +490,7 @@ footer a {
         font-size: 14px;
     }
 
-    /* Mengubah kategori jadi 4 kolom di PC agar hemat tempat vertikal */
+    /* Grid dasar 4 kolom di PC */
     .category-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
@@ -473,6 +501,12 @@ footer a {
         min-height: 125px;
         padding: 14px;
         border-radius: 18px;
+    }
+
+    /* 4 kartu atas normal (span 1), 2 kartu bawah jadi setengah-setengah (span 2) */
+    .category:nth-child(5),
+    .category:nth-child(6) {
+        grid-column: span 2;
     }
 
     .category .icon {
@@ -516,7 +550,7 @@ footer a {
         padding: 12px;
     }
 
-    /* Area Feedback & Komentar diperringkas */
+    /* Area Feedback & Komentar ringkas di PC */
     .feedback {
         margin: 25px auto 15px;
         padding: 18px;
