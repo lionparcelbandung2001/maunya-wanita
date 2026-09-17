@@ -1,131 +1,203 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <title>Pilih Kota — MAUNYA WANITA ❤️❤️</title>
+<title>
+    Pilih Kota — MAUNYA WANITA ❤️❤️
+</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+<link
+    rel="stylesheet"
+    href="style.css">
+
+</head><body><!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="container">
+
+    <h1>
+        MAUNYA WANITA ❤️❤️
+    </h1>
+
+    <p>
+        Lagi pengen apa hari ini??
+    </p>
+
+</header>
 
 
-<body>
 
-    <!-- HEADER -->
-    <header class="container">
+<!-- =========================================
+     HALAMAN PILIH KOTA
+     ========================================= -->
 
-        <h1>MAUNYA WANITA ❤️❤️</h1>
-
-        <p>Lagi pengen apa hari ini??</p>
-
-    </header>
+<main class="container">
 
 
-    <!-- HALAMAN PILIH KOTA -->
-    <main class="container">
+    <div class="page-card">
 
-        <div class="page-card">
 
-            <!-- Kembali ke halaman utama -->
-            <a class="back" href="index.html">
-                ← Kembali
+        <!-- KEMBALI -->
+
+        <a
+            class="back"
+            href="home.html">
+
+            ← Kembali
+
+        </a>
+
+
+
+        <!-- JUDUL -->
+
+        <h2 id="cityTitle">
+
+            📍 Pilih kotamu
+
+        </h2>
+
+
+
+        <p>
+
+            Pilih kota untuk melihat katalog
+            yang tersedia.
+
+        </p>
+
+
+
+        <!-- =================================
+             DAFTAR KOTA
+             ================================= -->
+
+        <div class="city-list">
+
+
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Bandung');
+                    return false;
+                ">
+
+                Bandung
+
             </a>
 
 
-            <!-- Judul akan otomatis mengikuti kategori -->
-            <h2 id="cityTitle">
-                📍 Pilih kotamu
-            </h2>
+
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Jakarta');
+                    return false;
+                ">
+
+                Jakarta
+
+            </a>
 
 
-            <p>
-                Pilih kota untuk melihat katalog yang tersedia.
-            </p>
+
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Surabaya');
+                    return false;
+                ">
+
+                Surabaya
+
+            </a>
 
 
-            <!-- DAFTAR KOTA -->
-            <div class="city-list">
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Bandung'); return false;"
-                >
-                    Bandung
-                </a>
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Medan');
+                    return false;
+                ">
 
+                Medan
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Jakarta'); return false;"
-                >
-                    Jakarta
-                </a>
+            </a>
 
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Surabaya'); return false;"
-                >
-                    Surabaya
-                </a>
+
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Semarang');
+                    return false;
+                ">
+
+                Semarang
+
+            </a>
 
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Medan'); return false;"
-                >
-                    Medan
-                </a>
 
+            <a
+                class="city"
+                href="#"
+                onclick="
+                    chooseCity('Makassar');
+                    return false;
+                ">
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Semarang'); return false;"
-                >
-                    Semarang
-                </a>
+                Makassar
 
+            </a>
 
-                <a
-                    class="city"
-                    href="#"
-                    onclick="chooseCity('Makassar'); return false;"
-                >
-                    Makassar
-                </a>
-
-            </div>
 
         </div>
 
-    </main>
+
+    </div>
 
 
-    <!-- FOOTER -->
-    <footer>
-
-        MAUNYA WANITA ❤️❤️
-        <br>
-
-        Cari yang kamu mau. Tanpa ribet.
-
-    </footer>
+</main>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
 
-    <script>
-        setupCity();
-    </script>
+<!-- =========================================
+     FOOTER
+     ========================================= -->
 
-</body>
+<footer>
 
-</html>
+    MAUNYA WANITA ❤️❤️
+
+    <br>
+
+    Cari yang kamu mau. Tanpa ribet.
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+    setupCity();
+
+</script>
+
+</body></html>
