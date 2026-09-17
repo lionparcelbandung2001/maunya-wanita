@@ -5,14 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MAUNYA WANITA ❤️❤️</title>
+    <!-- SEO Meta Tags (Penting untuk AdSense) -->
+    <title>MAUNYA WANITA ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
+    <meta name="description" content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim.">
+    <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="container">
+<!-- =========================================
+     STICKY TOP NAV (NAVIGASI ATAS)
+     ========================================= -->
+<nav class="top-category-nav">
+    <div class="top-category-container">
+        <a href="index.html" class="category-chip active">🏠 Utama</a>
+        <a href="#cantik" class="category-chip" onclick="chooseCategory('Pengen Cantik')">💄 Pengen Cantik</a>
+        <a href="#nikah" class="category-chip" onclick="chooseCategory('Pengen Nikah')">💍 Pengen Nikah</a>
+        <a href="#makan" class="category-chip" onclick="chooseCategory('Pengen Makan & Belanja')">🛍️ Makan & Belanja</a>
+        <a href="#healing" class="category-chip" onclick="chooseCategory('Pengen Jalan-jalan / Healing')">🌴 Jalan-jalan</a>
+        <a href="ruangcewek/" class="category-chip">💬 Ruang Cewek</a>
+        <a href="ruanglawak/" class="category-chip">😂 Ruang Lawak</a>
+    </div>
+</nav>
+
+
+<header class="container" id="header">
     <h1>MAUNYA WANITA ❤️❤️</h1>
     <p>Lagi pengen apa hari ini??</p>
 </header>
@@ -38,6 +57,7 @@
 
         <!-- BARIS 1 — PENGEN CANTIK -->
         <div
+            id="cantik"
             class="category"
             onclick="chooseCategory('Pengen Cantik')"
         >
@@ -54,6 +74,7 @@
 
         <!-- BARIS 1 — PENGEN NIKAH -->
         <div
+            id="nikah"
             class="category"
             onclick="chooseCategory('Pengen Nikah')"
         >
@@ -70,6 +91,7 @@
 
         <!-- BARIS 2 — PENGEN MAKAN & BELANJA -->
         <div
+            id="makan"
             class="category"
             onclick="chooseCategory('Pengen Makan & Belanja')"
         >
@@ -86,6 +108,7 @@
 
         <!-- BARIS 2 — PENGEN JALAN-JALAN / HEALING -->
         <div
+            id="healing"
             class="category"
             onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
         >
@@ -138,11 +161,20 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================================
+     FOOTER & HALAMAN WAJIB ADSENSE
+     ========================================= -->
 <footer>
-    MAUNYA WANITA ❤️❤️
+    <div style="margin-bottom: 12px;">
+        <a href="tentang.html" style="color: #927985; text-decoration: none; font-weight: bold;">Tentang Kami</a> • 
+        <a href="kontak.html" style="color: #927985; text-decoration: none; font-weight: bold;">Kontak</a> • 
+        <a href="kebijakan-privasi.html" style="color: #927985; text-decoration: none; font-weight: bold;">Kebijakan Privasi</a> • 
+        <a href="syarat-ketentuan.html" style="color: #927985; text-decoration: none; font-weight: bold;">Syarat & Ketentuan</a>
+    </div>
+
+    <strong>MAUNYA WANITA ❤️❤️</strong> — Cari yang kamu mau. Tanpa ribet.
     <br>
-    Cari yang kamu mau. Tanpa ribet.
+    <small style="opacity: 0.8; display: block; margin-top: 5px;">© 2026 MAUNYA WANITA. All rights reserved.</small>
 </footer>
 
 
