@@ -1,13 +1,20 @@
 <!DOCTYPE html><html lang="id"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MAUNYA WANITA ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- SEO Meta Tags -->
+<title>MAUNYA WANITA ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
 
-<meta name="description" content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim.">
+<meta
+    name="description"
+    content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim."
+>
+
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="style.css">
 
+
 <style>
+
     /* =========================================
        TOP NAV — KECIL & STICKY
        ========================================= */
@@ -16,27 +23,36 @@
         position: sticky;
         top: 0;
         z-index: 9999;
+
         background: rgba(255, 247, 251, 0.97);
+
         border-bottom: 1px solid #f0dce6;
-        box-shadow: 0 2px 8px rgba(80, 40, 60, 0.06);
+
+        box-shadow:
+            0 2px 8px rgba(80, 40, 60, 0.06);
     }
+
 
     .top-category-container {
         max-width: 1100px;
         margin: auto;
-        padding: 6px 8px;
+
+        padding: 5px 7px;
 
         display: flex;
-        gap: 6px;
+        gap: 5px;
+
         overflow-x: auto;
         white-space: nowrap;
 
         scrollbar-width: none;
     }
 
+
     .top-category-container::-webkit-scrollbar {
         display: none;
     }
+
 
     .category-chip {
         flex: 0 0 auto;
@@ -45,22 +61,26 @@
         align-items: center;
         justify-content: center;
 
-        padding: 6px 10px;
-        border-radius: 20px;
+        padding: 5px 9px;
+
+        border-radius: 18px;
 
         background: #ffffff;
+
         color: #5b3b48;
 
         text-decoration: none;
-        font-size: 12px;
+
+        font-size: 11px;
         font-weight: 600;
 
         border: 1px solid #efdce6;
     }
 
+
     .category-chip.active {
         background: #d92f72;
-        color: white;
+        color: #ffffff;
         border-color: #d92f72;
     }
 
@@ -70,57 +90,20 @@
        ========================================= */
 
     .global-music {
-        max-width: 700px;
-        margin: 22px auto 8px;
-        padding: 10px;
-
-        background: #ffffff;
-        border: 1px solid #f0dce6;
-        border-radius: 16px;
-
-        box-shadow: 0 3px 12px rgba(80, 40, 60, 0.07);
-    }
-
-    .music-title {
-        text-align: center;
-        font-size: 13px;
-        font-weight: bold;
-        color: #6a4655;
-        margin-bottom: 8px;
-    }
-
-    .music-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-    }
-
-    .music-buttons button {
-        border: 1px solid #efdce6;
-        background: #fff7fb;
-        color: #633f4d;
-
-        border-radius: 18px;
-        padding: 6px 10px;
-
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .music-buttons button.active {
-        background: #d92f72;
-        color: white;
-        border-color: #d92f72;
-    }
-
-    .soundcloud-frame {
         width: 100%;
-        height: 81px;
+        max-width: 720px;
+
+        margin: 15px auto 8px;
+    }
+
+
+    .music-frame {
+        display: block;
+
+        width: 100%;
+        height: 128px;
+
         border: 0;
-        border-radius: 10px;
     }
 
 
@@ -132,86 +115,97 @@
 
         .top-category-container {
             padding: 5px 6px;
-            gap: 5px;
+            gap: 4px;
         }
+
 
         .category-chip {
             padding: 5px 8px;
-            font-size: 11px;
+            font-size: 10px;
         }
+
 
         .global-music {
-            margin: 16px 8px 8px;
-            padding: 8px;
-            border-radius: 14px;
+            margin-top: 12px;
         }
 
-        .music-title {
-            font-size: 12px;
-            margin-bottom: 6px;
+
+        .music-frame {
+            height: 128px;
         }
 
-        .music-buttons {
-            gap: 5px;
-            margin-bottom: 6px;
-        }
-
-        .music-buttons button {
-            padding: 5px 8px;
-            font-size: 11px;
-        }
-
-        .soundcloud-frame {
-            height: 81px;
-        }
     }
+
 </style>
 
 </head><body><!-- =========================================
-     GLOBAL TOP NAV
+     STICKY TOP NAV
      ========================================= --><nav class="top-category-nav"><div class="top-category-container">
 
-    <a href="index.html" class="category-chip active">
+
+    <a
+        href="index.html"
+        class="category-chip active">
         🏠 Utama
     </a>
 
-    <a href="#cantik"
-       class="category-chip"
-       onclick="chooseCategory('Pengen Cantik')">
+
+    <a
+        href="#cantik"
+        class="category-chip"
+        onclick="chooseCategory('Pengen Cantik')">
         💄 Cantik
     </a>
 
-    <a href="#nikah"
-       class="category-chip"
-       onclick="chooseCategory('Pengen Nikah')">
+
+    <a
+        href="#nikah"
+        class="category-chip"
+        onclick="chooseCategory('Pengen Nikah')">
         💍 Nikah
     </a>
 
-    <a href="#makan"
-       class="category-chip"
-       onclick="chooseCategory('Pengen Makan & Belanja')">
+
+    <a
+        href="#makan"
+        class="category-chip"
+        onclick="chooseCategory('Pengen Makan & Belanja')">
         🛍️ Makan
     </a>
 
-    <a href="#healing"
-       class="category-chip"
-       onclick="chooseCategory('Pengen Jalan-jalan / Healing')">
+
+    <a
+        href="#healing"
+        class="category-chip"
+        onclick="chooseCategory('Pengen Jalan-jalan / Healing')">
         🌴 Healing
     </a>
 
-    <a href="ruangcewek/" class="category-chip">
+
+    <a
+        href="ruangcewek/"
+        class="category-chip">
         💬 Cewek
     </a>
 
-    <a href="ruanglawak/" class="category-chip">
+
+    <a
+        href="ruanglawak/"
+        class="category-chip">
         😂 Lawak
     </a>
+
 
 </div>
 
 </nav><!-- =========================================
      HEADER
-     ========================================= --><header class="container" id="header"><h1>MAUNYA WANITA ❤️❤️</h1>
+     ========================================= --><header
+    class="container"
+    id="header"><h1>
+    MAUNYA WANITA ❤️❤️
+</h1>
+
 
 <p>
     Lagi pengen apa hari ini??
@@ -219,42 +213,11 @@
 
 </header><!-- =========================================
      GLOBAL MUSIC PLAYER
-     ========================================= --><section class="global-music"><div class="music-title">
-    🎵 Teman Dengerin Kamu
-</div>
-
-
-<div class="music-buttons">
-
-    <button
-        id="music-pop"
-        class="active"
-        onclick="changeMusic('pop')">
-        🇮🇩 Pop Indonesia
-    </button>
-
-    <button
-        id="music-korea"
-        onclick="changeMusic('korea')">
-        🇰🇷 Korea
-    </button>
-
-    <button
-        id="music-barat"
-        onclick="changeMusic('barat')">
-        🌎 Slow Rock Barat
-    </button>
-
-</div>
-
-
-<iframe
-    id="soundcloudPlayer"
-    class="soundcloud-frame"
-    title="Music Player"
-    scrolling="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/api.html?url=https%3A//soundcloud.com/nugraha-74739955/sets/yy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false">
+     ========================================= --><section class="global-music"><iframe
+    src="music-player.html"
+    class="music-frame"
+    title="Music Player CewekPedia"
+    scrolling="no">
 </iframe>
 
 </section><!-- =========================================
@@ -263,13 +226,18 @@
 
 <section class="intro">
 
-    <h2>Pilih maunya kamu 💕</h2>
+    <h2>
+        Pilih maunya kamu 💕
+    </h2>
+
 
     <p>
-        Nggak usah ribet. Pilih dulu, nanti kita carikan pilihannya.
+        Nggak usah ribet. Pilih dulu,
+        nanti kita carikan pilihannya.
     </p>
 
 </section>
+
 
 
 <!-- =========================================
@@ -290,9 +258,11 @@
             💄
         </div>
 
+
         <h3>
             PENGEN CANTIK
         </h3>
+
 
         <p>
             Salon, skincare store, fashion,
@@ -300,6 +270,7 @@
         </p>
 
     </div>
+
 
 
     <!-- PENGEN NIKAH -->
@@ -313,9 +284,11 @@
             💍
         </div>
 
+
         <h3>
             PENGEN NIKAH
         </h3>
+
 
         <p>
             WO, MUA, toko pengantin,
@@ -323,6 +296,7 @@
         </p>
 
     </div>
+
 
 
     <!-- PENGEN MAKAN & BELANJA -->
@@ -336,9 +310,11 @@
             🛍️
         </div>
 
+
         <h3>
             PENGEN MAKAN & BELANJA
         </h3>
+
 
         <p>
             Restoran & cafe, toko & mall,
@@ -346,6 +322,7 @@
         </p>
 
     </div>
+
 
 
     <!-- PENGEN JALAN-JALAN / HEALING -->
@@ -359,9 +336,11 @@
             🌴
         </div>
 
+
         <h3>
             PENGEN JALAN-JALAN / HEALING
         </h3>
+
 
         <p>
             Hotel & penginapan, wisata,
@@ -369,6 +348,7 @@
         </p>
 
     </div>
+
 
 
     <!-- RUANG CEWEK -->
@@ -382,9 +362,11 @@
             💬
         </div>
 
+
         <h3>
             RUANG CEWEK
         </h3>
+
 
         <p>
             Tempat cewek curhat, berbagi cerita,
@@ -392,6 +374,7 @@
         </p>
 
     </a>
+
 
 
     <!-- RUANG LAWAK -->
@@ -405,9 +388,11 @@
             😂
         </div>
 
+
         <h3>
             RUANG LAWAK
         </h3>
+
 
         <p>
             Tempat cari cerita lucu,
@@ -459,87 +444,16 @@
 <strong>
     MAUNYA WANITA ❤️❤️
 </strong>
+
 — Cari yang kamu mau. Tanpa ribet.
+
 
 <br>
 
-<small style="opacity: 0.8; display: block; margin-top: 5px;">
+
+<small
+    style="opacity: 0.8; display: block; margin-top: 5px;">
     © 2026 MAUNYA WANITA. All rights reserved.
 </small>
 
-</footer><script src="script.js"></script><!-- =========================================
-     MUSIC SWITCHER
-     ========================================= --><script>
-
-    const musicLinks = {
-
-        /* DEFAULT */
-        pop:
-            "https://soundcloud.com/nugraha-74739955/sets/yy",
-
-        /* K-POP */
-        korea:
-            "https://soundcloud.com/soundcloud-stories/sets/k-pop",
-
-        /* SLOW ROCK BARAT */
-        barat:
-            "https://soundcloud.com/miladgh-1/sets/rock-2"
-
-    };
-
-
-    function changeMusic(type) {
-
-        const player =
-            document.getElementById("soundcloudPlayer");
-
-        const buttons = [
-            "pop",
-            "korea",
-            "barat"
-        ];
-
-
-        buttons.forEach(function(item) {
-
-            const button =
-                document.getElementById("music-" + item);
-
-            if (button) {
-
-                button.classList.remove("active");
-
-            }
-
-        });
-
-
-        const activeButton =
-            document.getElementById("music-" + type);
-
-        if (activeButton) {
-
-            activeButton.classList.add("active");
-
-        }
-
-
-        const url =
-            encodeURIComponent(musicLinks[type]);
-
-
-        player.src =
-            "https://w.soundcloud.com/player/api.html?url="
-            + url
-            + "&color=%23d92f72"
-            + "&auto_play=true"
-            + "&hide_related=true"
-            + "&show_comments=false"
-            + "&show_user=false"
-            + "&show_reposts=false"
-            + "&visual=false";
-
-    }
-
-</script></body>
-</html>
+</footer><script src="script.js"></script></body></html>
