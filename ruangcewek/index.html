@@ -4,349 +4,427 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
+<title>Ruang Cewek ❤️</title>
 
 <style>
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     background: #fff7fb;
     color: #3a2630;
 }
 
-.container {
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 100%;
     max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    height: 100vh;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* HEADER */
-header {
+/* =========================
+   HEADER
+========================= */
+
+.header {
     text-align: center;
-    padding: 30px 10px 20px;
+    flex-shrink: 0;
+    margin-bottom: 5px;
 }
 
-header h1 {
+.header h1 {
     margin: 0;
+    font-size: 22px;
     color: #d92f72;
-    font-size: 32px;
 }
 
-header p {
-    margin-top: 8px;
+.header p {
+    margin: 1px 0 0;
+    font-size: 11px;
     color: #765866;
 }
 
-/* FITUR */
-.feature-grid {
+
+/* =========================
+   MINI NAV 6 KATEGORI
+========================= */
+
+.mini-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.mini-nav a {
+    text-decoration: none;
+    color: #765866;
+    background: #ffffff;
+    border: 1px solid #f1d9e4;
+    border-radius: 7px;
+    padding: 3px 1px;
+    text-align: center;
+    font-size: 8px;
+    line-height: 1.15;
+}
+
+.mini-nav a.active {
+    color: #d92f72;
+    background: #fff0f6;
+    border-color: #e9b8cd;
+}
+
+
+/* =========================
+   CURHAT + REVIEW
+========================= */
+
+.top-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 15px;
+    gap: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
 }
 
 .feature-card {
-    background: white;
-    border: 1px solid #f1d9e4;
-    border-radius: 18px;
-    padding: 25px 18px;
-    text-align: center;
     text-decoration: none;
     color: #3a2630;
-    box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
-    transition: transform 0.2s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-2px);
-}
-
-.feature-card h2 {
-    margin: 0 0 8px;
-    color: #d92f72;
-    font-size: 21px;
-}
-
-.feature-card p {
-    margin: 0;
-    line-height: 1.5;
-    font-size: 14px;
-}
-
-/* CHATROOM */
-.chatroom {
-    background: white;
+    background: #ffffff;
     border: 1px solid #f1d9e4;
-    border-radius: 18px;
-    margin-top: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(160, 80, 110, 0.08);
+    border-radius: 9px;
+    min-height: 48px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.chat-header {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.chat-header h2 {
-    margin: 0;
+.feature-card strong {
     color: #d92f72;
-}
-
-.online {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #348b57;
-}
-
-/* CATATAN CHATROOM (BISA DITUTUP/BUKA) */
-.chat-notice {
-    background: #fff7fb;
-    border: 1px solid #f1d9e4;
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 15px;
     font-size: 12px;
-    line-height: 1.5;
+}
+
+.feature-card span {
+    margin-top: 2px;
+    font-size: 9px;
     color: #765866;
 }
 
-.chat-notice summary {
-    font-weight: bold;
-    cursor: pointer;
-    color: #d92f72;
-    outline: none;
-}
 
-.chat-notice p {
-    margin: 8px 0 0;
-}
+/* =========================
+   MUSIK
+========================= */
 
-/* NICKNAME */
-.nickname-box {
-    background: #fff7fb;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 12px;
-}
-
-.nickname-box label {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 6px;
-}
-
-.nickname-row {
-    display: flex;
-    gap: 8px;
-}
-
-.nickname-row input {
-    flex: 1;
-}
-
-/* CHAT AREA & BUBBLES */
-.messages {
-    height: 350px;
-    overflow-y: auto;
-    background: #fffafd;
-    border: 1px solid #f0dce6;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* LAYOUT PESAN (DESAIN BARU) */
-.message-wrapper {
-    display: flex;
-    gap: 8px;
-    max-width: 85%;
-}
-
-/* PESAN PENGGUNA LAIN (KIRI) */
-.message-wrapper.other {
-    align-self: flex-start;
-}
-
-/* PESAN SENDIRI (KANAN) */
-.message-wrapper.me {
-    align-self: flex-end;
-    flex-direction: row-reverse;
-}
-
-.avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    text-transform: uppercase;
-}
-
-.message-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.message-bubble {
-    padding: 10px 14px;
-    border-radius: 16px;
-    font-size: 14px;
-    line-height: 1.4;
-    word-break: break-word;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-}
-
-.message-wrapper.other .message-bubble {
+.music-section {
     background: #ffffff;
     border: 1px solid #f1d9e4;
-    border-top-left-radius: 4px;
-    color: #3a2630;
-}
-
-.message-wrapper.me .message-bubble {
-    background: #d92f72;
-    color: #ffffff;
-    border-top-right-radius: 4px;
-}
-
-.message-name {
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 3px;
-}
-
-.message-wrapper.me .message-name {
-    text-align: right;
-    color: #d92f72;
-}
-
-.message-time {
-    font-size: 10px;
-    margin-top: 4px;
-    opacity: 0.7;
-}
-
-.message-wrapper.other .message-time {
-    color: #9b858e;
-}
-
-.message-wrapper.me .message-time {
-    text-align: right;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-/* INPUT CHAT */
-.chat-input {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-input,
-button {
-    font-family: inherit;
-}
-
-input {
-    border: 1px solid #e6cbd7;
     border-radius: 10px;
-    padding: 11px;
-    width: 100%;
-    outline: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
 }
 
-input:focus {
-    border-color: #d92f72;
+.music-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-bottom: 5px;
 }
 
-button {
-    border: none;
-    border-radius: 10px;
-    padding: 11px 16px;
-    background: #d92f72;
-    color: white;
+.music-tab {
+    border: 1px solid #e9cbd8;
+    background: #fff7fb;
+    color: #765866;
+    border-radius: 7px;
+    padding: 4px 2px;
+    font-size: 9px;
     cursor: pointer;
-    font-weight: bold;
 }
 
-button:hover {
-    opacity: 0.9;
+.music-tab.active {
+    background: #d92f72;
+    border-color: #d92f72;
+    color: #ffffff;
 }
 
-button:disabled {
-    opacity: 0.5;
+.music-player-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/*
+   YouTube player minimum 200x200.
+   Kita tampilkan hanya SATU player aktif.
+*/
+
+.youtube-player {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.music-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 95px;
+}
+
+.music-status {
+    font-size: 9px;
+    line-height: 1.3;
+    color: #765866;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.music-controls button {
+    border: 1px solid #e9b8cd;
+    background: #fff7fb;
+    color: #d92f72;
+    border-radius: 7px;
+    padding: 5px 4px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.music-controls button:disabled {
+    opacity: 0.45;
     cursor: not-allowed;
 }
 
-.info {
-    text-align: center;
-    font-size: 12px;
-    color: #8b737d;
-    margin-top: 10px;
+
+/* =========================
+   CHATROOM
+========================= */
+
+.chat-box {
+    background: #ffffff;
+    border: 1px solid #f1d9e4;
+    border-radius: 11px;
+    padding: 7px;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* FOOTER */
-footer {
+.chat-title {
     text-align: center;
-    padding: 30px 10px 15px;
-    font-size: 12px;
-    color: #8b737d;
+    flex-shrink: 0;
+    margin-bottom: 4px;
 }
 
-/* MOBILE */
+.chat-title strong {
+    color: #d92f72;
+    font-size: 14px;
+}
+
+.chat-title div {
+    font-size: 9px;
+    color: #765866;
+}
+
+.online {
+    color: #238636 !important;
+    margin-top: 1px;
+}
+
+
+/* =========================
+   SAFETY NOTICE
+========================= */
+
+.chat-notice {
+    background: #fff7fb;
+    border: 1px solid #f1d9e4;
+    border-radius: 8px;
+    padding: 5px 7px;
+    margin-bottom: 5px;
+    font-size: 8px;
+    line-height: 1.35;
+    color: #765866;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    border: 1px solid #f3e0e8;
+    border-radius: 8px;
+    padding: 5px;
+    background: #fffafd;
+}
+
+.message {
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.message-name {
+    font-size: 10px;
+    font-weight: bold;
+    color: #d92f72;
+}
+
+.message-text {
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.message-time {
+    font-size: 8px;
+    color: #9b818d;
+}
+
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-area {
+    display: grid;
+    grid-template-columns: 90px 1fr 52px;
+    gap: 4px;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.chat-input-area input {
+    width: 100%;
+    border: 1px solid #e9cbd8;
+    border-radius: 7px;
+    padding: 6px;
+    font-size: 10px;
+    outline: none;
+}
+
+.chat-input-area input:focus {
+    border-color: #d92f72;
+}
+
+.chat-input-area button {
+    border: none;
+    border-radius: 7px;
+    background: #d92f72;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HP
+========================= */
+
 @media (max-width: 600px) {
 
-    .container {
-        padding: 15px;
+    .page {
+        padding: 6px;
     }
 
-    header h1 {
-        font-size: 28px;
+    .header h1 {
+        font-size: 18px;
     }
 
-    .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+    .header p {
+        font-size: 9px;
+    }
+
+    .mini-nav a {
+        font-size: 7px;
+        padding: 3px 1px;
     }
 
     .feature-card {
-        padding: 20px 10px;
+        min-height: 43px;
     }
 
-    .feature-card h2 {
-        font-size: 17px;
+    .feature-card strong {
+        font-size: 10px;
     }
 
-    .feature-card p {
+    .feature-card span {
+        font-size: 8px;
+    }
+
+    .music-section {
+        padding: 4px;
+    }
+
+    .music-tab {
+        font-size: 8px;
+        padding: 4px 1px;
+    }
+
+    .music-player-area {
+        gap: 5px;
+    }
+
+    .youtube-player {
+        width: 200px;
+        height: 200px;
+    }
+
+    .music-controls {
+        width: 75px;
+    }
+
+    .music-controls button {
+        font-size: 9px;
+        padding: 5px 2px;
+    }
+
+    .music-status {
+        font-size: 8px;
+    }
+
+    .chat-title strong {
         font-size: 12px;
     }
 
-    .chatroom {
-        padding: 15px;
-    }
-
-    .messages {
-        height: 320px;
+    .chat-title div {
+        font-size: 8px;
     }
 
     .chat-notice {
-        font-size: 11px;
+        font-size: 7px;
     }
 
-    .message-wrapper {
-        max-width: 90%;
+    .chat-input-area {
+        grid-template-columns: 65px 1fr 45px;
+    }
+
+    .chat-input-area input,
+    .chat-input-area button {
+        font-size: 9px;
+        padding: 5px;
     }
 }
 </style>
@@ -354,123 +432,206 @@ footer {
 
 <body>
 
-<div class="container">
+<div class="page">
 
-<header>
-    <h1>💬 RUANG CEWEK</h1>
-    <p>Cerita • Berbagi • Ngobrol ❤️</p>
-</header>
-
-<!-- FITUR -->
-<div class="feature-grid">
-
-    <a href="curhat.html" class="feature-card">
-        <h2>💭 CURHAT</h2>
-        <p>
-            Cerita & pengalaman.<br>
-            Siapa tahu ada yang pernah merasakan hal yang sama.
-        </p>
-    </a>
-
-    <a href="reviewproduk.html" class="feature-card">
-        <h2>⭐ REVIEW PRODUK</h2>
-        <p>
-            Sudah pernah coba?<br>
-            Bagikan pengalamanmu.
-        </p>
-    </a>
-
-</div>
-
-<!-- CHATROOM -->
-<section class="chatroom">
-
-    <div class="chat-header">
-        <h2>💬 CHATROOM</h2>
-
-        <div class="online" id="onlineCount">
-            🟢 Menghubungkan...
-        </div>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>💬 RUANG CEWEK</h1>
+        <p>Cerita • Berbagi • Ngobrol ❤️</p>
     </div>
 
-    <!-- CATATAN (DAPAT DILIPAT) -->
-    <details class="chat-notice">
-        <summary>⚠️ Catatan Chatroom (Klik untuk membaca aturan)</summary>
-        <p>
+
+    <!-- MINI NAVIGASI 6 KATEGORI -->
+    <div class="mini-nav">
+
+        <a href="../index.html">
+            💄<br>Cantik
+        </a>
+
+        <a href="../index.html">
+            💍<br>Nikah
+        </a>
+
+        <a href="../index.html">
+            🛍️<br>Makan
+        </a>
+
+        <a href="../index.html">
+            🌴<br>Healing
+        </a>
+
+        <a href="index.html" class="active">
+            💬<br>Cerita
+        </a>
+
+        <a href="../ruanglawak/index.html">
+            😂<br>Lawak
+        </a>
+
+    </div>
+
+
+    <!-- CURHAT + REVIEW -->
+    <div class="top-features">
+
+        <a href="curhat.html" class="feature-card">
+            <strong>💭 Curhat</strong>
+            <span>Cerita & pengalaman</span>
+        </a>
+
+        <a href="reviewproduk.html" class="feature-card">
+            <strong>⭐ Review Produk</strong>
+            <span>Berbagi pengalaman</span>
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         MUSIK
+    ========================== -->
+
+    <div class="music-section">
+
+        <div class="music-tabs">
+
+            <button
+                class="music-tab active"
+                id="tabKorea">
+                🇰🇷 Lagu Korea
+            </button>
+
+            <button
+                class="music-tab"
+                id="tabPop">
+                🎤 Lagu Pop
+            </button>
+
+            <button
+                class="music-tab"
+                id="tabBarat">
+                🌎 Lagu Barat
+            </button>
+
+        </div>
+
+
+        <div class="music-player-area">
+
+            <div
+                id="youtubePlayer"
+                class="youtube-player">
+            </div>
+
+
+            <div class="music-controls">
+
+                <div
+                    id="musicStatus"
+                    class="music-status">
+                    Pilih musik lalu tekan Play 🎵
+                </div>
+
+                <button id="playMusic">
+                    ▶ Play
+                </button>
+
+                <button id="nextMusic">
+                    ⏭ Play Next
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHATROOM
+    ========================== -->
+
+    <div class="chat-box">
+
+        <div class="chat-title">
+
+            <strong>🟢 CHATROOM</strong>
+
+            <div>
+                Ngobrol santai bareng pengguna Ruang Cewek
+            </div>
+
+            <div class="online">
+                🟢
+                <span id="onlineCount">0</span>
+                online
+            </div>
+
+        </div>
+
+
+        <!-- CATATAN KEAMANAN -->
+
+        <div class="chat-notice">
+
+            ⚠️ <strong>Catatan Chatroom</strong><br>
+
             Chatroom ini merupakan ruang komunikasi antar pengguna.
             Setiap pengguna bertanggung jawab atas isi pesan yang mereka kirim.
             Jangan membagikan data pribadi, melakukan penipuan, pelecehan,
             ancaman, spam, atau aktivitas yang melanggar hukum.
             Pengelola berhak menghapus pesan atau membatasi akses pengguna
             apabila ditemukan pelanggaran.
-        </p>
-    </details>
 
-    <!-- NICKNAME -->
-    <div class="nickname-box">
+        </div>
 
-        <label for="nickname">
-            Nama panggilan kamu:
-        </label>
 
-        <div class="nickname-row">
+        <!-- PESAN -->
+
+        <div
+            id="messages"
+            class="messages">
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="chat-input-area">
 
             <input
                 type="text"
                 id="nickname"
                 maxlength="20"
-                placeholder="Contoh: Maya"
-            >
+                placeholder="Nama">
 
-            <button id="saveNickname">
-                Simpan
+            <input
+                type="text"
+                id="messageInput"
+                maxlength="300"
+                placeholder="Tulis pesan...">
+
+            <button id="sendButton">
+                Kirim
             </button>
 
         </div>
 
     </div>
 
-    <!-- PESAN -->
-    <div class="messages" id="messages">
-        <div class="info">
-            Menghubungkan ke chatroom...
-        </div>
-    </div>
-
-    <!-- INPUT -->
-    <div class="chat-input">
-
-        <input
-            type="text"
-            id="messageInput"
-            maxlength="300"
-            placeholder="Tulis pesan..."
-            disabled
-        >
-
-        <button
-            id="sendButton"
-            disabled
-        >
-            Kirim
-        </button>
-
-    </div>
-
-    <div class="info">
-        Gunakan nama panggilan. Jangan bagikan data pribadi ya ❤️
-    </div>
-
-</section>
-
-<footer>
-    © 2026 Ruang Cewek ❤️
-</footer>
-
 </div>
 
 
-<!-- FIREBASE -->
+<!-- =========================
+     YOUTUBE IFRAME API
+========================= -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
 <script type="module">
 
 import { initializeApp }
@@ -497,23 +658,28 @@ import {
 
 /* =========================
    FIREBASE CONFIG
+   SAMA DENGAN CHATROOM
 ========================= */
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+    apiKey:
+        "AIzaSyCnhVGlnGKoqddyLvOgE7tMGG926iO8O0",
 
-    authDomain: "ruang-cewek.firebaseapp.com",
+    authDomain:
+        "ruang-cewek.firebaseapp.com",
 
     databaseURL:
         "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-    projectId: "ruang-cewek",
+    projectId:
+        "ruang-cewek",
 
     storageBucket:
         "ruang-cewek.firebasestorage.app",
 
-    messagingSenderId: "300030693884",
+    messagingSenderId:
+        "300030693884",
 
     appId:
         "1:300030693884:web:ec02ce2cf35646dbf3a279"
@@ -521,26 +687,25 @@ const firebaseConfig = {
 };
 
 
-/* =========================
-   INIT FIREBASE
-========================= */
+const app =
+    initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
+const db =
+    getDatabase(app);
 
-const db = getDatabase(app);
-
-const auth = getAuth(app);
+const auth =
+    getAuth(app);
 
 
 /* =========================
    ELEMENT
 ========================= */
 
+const messagesEl =
+    document.getElementById("messages");
+
 const nicknameInput =
     document.getElementById("nickname");
-
-const saveNicknameButton =
-    document.getElementById("saveNickname");
 
 const messageInput =
     document.getElementById("messageInput");
@@ -548,170 +713,101 @@ const messageInput =
 const sendButton =
     document.getElementById("sendButton");
 
-const messages =
-    document.getElementById("messages");
-
 const onlineCount =
     document.getElementById("onlineCount");
-
-
-/* =========================
-   HELPER UTILS (AVATAR & WARNA)
-========================= */
-
-const colors = [
-    "#d92f72", "#b84270", "#c94f7d", 
-    "#e0528c", "#8e44ad", "#2980b9", 
-    "#16a085", "#d35400"
-];
-
-function getColorForName(name) {
-    let hash = 0;
-    for (let i = 0; i < name.length; i++) {
-        hash = name.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    const index = Math.abs(hash % colors.length);
-    return colors[index];
-}
 
 
 /* =========================
    NICKNAME
 ========================= */
 
-let nickname =
-    sessionStorage.getItem("ruangCewekNickname") || "";
+const savedNickname =
+    sessionStorage.getItem(
+        "ruangCewekNickname"
+    );
 
-if (nickname) {
+if (savedNickname) {
 
-    nicknameInput.value = nickname;
+    nicknameInput.value =
+        savedNickname;
 
 }
 
 
 /* =========================
-   SIMPAN NICKNAME
+   AUTH
 ========================= */
 
-saveNicknameButton.addEventListener("click", () => {
+signInAnonymously(auth)
 
-    const value =
-        nicknameInput.value.trim();
+.then((result) => {
 
-    if (!value) {
+    const uid =
+        result.user.uid;
 
-        alert("Isi nama panggilan dulu ya ❤️");
+    setupPresence(uid);
 
-        return;
+    loadMessages();
 
-    }
+})
 
-    nickname = value.substring(0, 20);
+.catch((error) => {
 
-    sessionStorage.setItem(
-        "ruangCewekNickname",
-        nickname
-    );
+    console.error(error);
 
-    nicknameInput.value = nickname;
-
-    messageInput.disabled = false;
-
-    sendButton.disabled = false;
-
-    messageInput.focus();
+    messagesEl.innerHTML =
+        "<div style='font-size:10px;color:#d92f72;text-align:center;padding:10px;'>Gagal menghubungkan ke chatroom.</div>";
 
 });
 
 
 /* =========================
-   LOGIN ANONIM
-========================= */
-
-signInAnonymously(auth)
-    .then((result) => {
-
-        const uid = result.user.uid;
-
-        setupPresence(uid);
-
-        loadMessages();
-
-    })
-    .catch((error) => {
-
-        console.error(error);
-
-        messages.innerHTML = `
-            <div class="info">
-                Chatroom belum bisa terhubung.
-                Coba refresh halaman.
-            </div>
-        `;
-
-        onlineCount.textContent =
-            "🔴 Chatroom offline";
-
-    });
-
-
-/* =========================
-   ONLINE PRESENCE
+   PRESENCE
 ========================= */
 
 function setupPresence(uid) {
 
-    const connectedRef =
-        ref(db, ".info/connected");
-
     const myPresenceRef =
-        ref(db, "presence/" + uid);
+        ref(
+            db,
+            "presence/" + uid
+        );
 
-    onValue(
-        connectedRef,
-        (snapshot) => {
 
-            if (snapshot.val() !== true) {
+    onDisconnect(
+        myPresenceRef
+    ).remove();
 
-                onlineCount.textContent =
-                    "🟡 Menghubungkan...";
 
-                return;
+    set(myPresenceRef, {
 
-            }
+        online: true,
 
-            set(
-                myPresenceRef,
-                {
-                    online: true,
-                    nickname: nickname || "Tamu"
-                }
-            );
+        nickname:
+            nicknameInput.value.trim()
+            || "Tamu"
 
-            onDisconnect(myPresenceRef)
-                .remove();
-
-        }
-    );
+    });
 
 
     const presenceRef =
         ref(db, "presence");
+
 
     onValue(
         presenceRef,
         (snapshot) => {
 
             const data =
-                snapshot.val() || {};
+                snapshot.val();
 
             const count =
-                Object.keys(data).length;
+                data
+                ? Object.keys(data).length
+                : 0;
 
             onlineCount.textContent =
-                "🟢 " +
-                count +
-                " orang sedang online";
+                count;
 
         }
     );
@@ -720,7 +816,7 @@ function setupPresence(uid) {
 
 
 /* =========================
-   LOAD PESAN
+   LOAD MESSAGES
 ========================= */
 
 function loadMessages() {
@@ -728,7 +824,6 @@ function loadMessages() {
     const messagesRef =
         ref(db, "messages");
 
-    messages.innerHTML = "";
 
     onChildAdded(
         messagesRef,
@@ -746,80 +841,118 @@ function loadMessages() {
 
 
 /* =========================
-   TAMPILKAN PESAN
+   DISPLAY MESSAGE
 ========================= */
 
 function displayMessage(data) {
 
-    const isMe = data.nickname === nickname;
-    const initial = (data.nickname || "Tamu").charAt(0);
-    const userColor = getColorForName(data.nickname || "Tamu");
+    const wrapper =
+        document.createElement("div");
 
-    const wrapper = document.createElement("div");
-    wrapper.className = `message-wrapper ${isMe ? "me" : "other"}`;
+    wrapper.className =
+        "message";
 
-    const avatar = document.createElement("div");
-    avatar.className = "avatar";
-    avatar.textContent = initial;
-    avatar.style.backgroundColor = userColor;
 
-    const content = document.createElement("div");
-    content.className = "message-content";
+    const name =
+        document.createElement("div");
 
-    const nameDiv = document.createElement("div");
-    nameDiv.className = "message-name";
-    nameDiv.textContent = data.nickname || "Tamu";
-    if (!isMe) nameDiv.style.color = userColor;
+    name.className =
+        "message-name";
 
-    const bubble = document.createElement("div");
-    bubble.className = "message-bubble";
-    bubble.textContent = data.text || "";
+    name.textContent =
+        data.nickname || "Tamu";
 
-    const timeDiv = document.createElement("div");
-    timeDiv.className = "message-time";
+
+    const text =
+        document.createElement("div");
+
+    text.className =
+        "message-text";
+
+    text.textContent =
+        data.text || "";
+
+
+    const time =
+        document.createElement("div");
+
+    time.className =
+        "message-time";
+
 
     if (data.timestamp) {
-        const date = new Date(data.timestamp);
-        timeDiv.textContent = date.toLocaleTimeString("id-ID", {
-            hour: "2-digit",
-            minute: "2-digit"
-        });
+
+        const date =
+            new Date(data.timestamp);
+
+        time.textContent =
+            date.toLocaleTimeString(
+                "id-ID",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
     }
 
-    bubble.appendChild(timeDiv);
-    content.appendChild(nameDiv);
-    content.appendChild(bubble);
 
-    wrapper.appendChild(avatar);
-    wrapper.appendChild(content);
+    wrapper.appendChild(name);
 
-    messages.appendChild(wrapper);
+    wrapper.appendChild(text);
 
-    messages.scrollTop = messages.scrollHeight;
+    wrapper.appendChild(time);
+
+    messagesEl.appendChild(wrapper);
+
+
+    messagesEl.scrollTop =
+        messagesEl.scrollHeight;
 
 }
 
 
 /* =========================
-   KIRIM PESAN
+   SEND MESSAGE
 ========================= */
 
-function sendMessage() {
+async function sendMessage() {
 
-    if (!nickname) {
-
-        alert(
-            "Isi nama panggilan dan tekan Simpan dulu ya ❤️"
-        );
-
-        return;
-
-    }
+    const nickname =
+        nicknameInput.value.trim();
 
     const text =
         messageInput.value.trim();
 
-    if (!text) return;
+
+    if (!nickname) {
+
+        alert(
+            "Isi nama dulu ya ❤️"
+        );
+
+        nicknameInput.focus();
+
+        return;
+    }
+
+
+    if (!text) {
+
+        messageInput.focus();
+
+        return;
+    }
+
+
+    if (nickname.length > 20) {
+
+        alert(
+            "Nama maksimal 20 karakter."
+        );
+
+        return;
+    }
 
 
     if (text.length > 300) {
@@ -829,55 +962,59 @@ function sendMessage() {
         );
 
         return;
-
     }
 
 
-    const messagesRef =
-        ref(db, "messages");
+    sessionStorage.setItem(
+        "ruangCewekNickname",
+        nickname
+    );
 
 
-    push(
-        messagesRef,
-        {
-            nickname: nickname,
-            text: text,
-            timestamp: serverTimestamp()
-        }
-    )
-    .then(() => {
+    try {
+
+        const messagesRef =
+            ref(db, "messages");
+
+
+        await push(
+            messagesRef,
+            {
+
+                nickname: nickname,
+
+                text: text,
+
+                timestamp:
+                    serverTimestamp()
+
+            }
+        );
+
 
         messageInput.value = "";
 
         messageInput.focus();
 
-    })
-    .catch((error) => {
+
+    } catch (error) {
 
         console.error(error);
 
         alert(
-            "Pesan gagal dikirim. Coba lagi."
+            "Pesan gagal dikirim."
         );
 
-    });
+    }
 
 }
 
-
-/* =========================
-   BUTTON KIRIM
-========================= */
 
 sendButton.addEventListener(
     "click",
     sendMessage
 );
 
-
-/* =========================
-   ENTER UNTUK KIRIM
-========================= */
 
 messageInput.addEventListener(
     "keydown",
@@ -895,6 +1032,430 @@ messageInput.addEventListener(
 
     }
 );
+
+
+/* =========================
+   UPDATE NICKNAME
+========================= */
+
+nicknameInput.addEventListener(
+    "change",
+    async () => {
+
+        const nickname =
+            nicknameInput.value.trim();
+
+
+        sessionStorage.setItem(
+            "ruangCewekNickname",
+            nickname
+        );
+
+
+        if (auth.currentUser) {
+
+            const myPresenceRef =
+                ref(
+                    db,
+                    "presence/" +
+                    auth.currentUser.uid
+                );
+
+
+            try {
+
+                await set(
+                    myPresenceRef,
+                    {
+
+                        online: true,
+
+                        nickname:
+                            nickname || "Tamu"
+
+                    }
+                );
+
+            } catch (error) {
+
+                console.error(error);
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+<!-- =========================
+     YOUTUBE MUSIC
+========================= -->
+
+<script>
+
+/*
+   PLAYLIST ID AKAN DIISI SETELAH
+   KITA VERIFIKASI 3 PLAYLIST.
+
+   Format:
+   "PLxxxxxxxxxxxxxxxx"
+
+   Jangan mengubah Firebase config di atas.
+*/
+
+
+const MUSIC_PLAYLISTS = {
+
+    korea: "",
+
+    pop: "",
+
+    barat: ""
+
+};
+
+
+let youtubePlayer = null;
+
+let currentCategory = "korea";
+
+
+const tabKorea =
+    document.getElementById(
+        "tabKorea"
+    );
+
+const tabPop =
+    document.getElementById(
+        "tabPop"
+    );
+
+const tabBarat =
+    document.getElementById(
+        "tabBarat"
+    );
+
+const playMusic =
+    document.getElementById(
+        "playMusic"
+    );
+
+const nextMusic =
+    document.getElementById(
+        "nextMusic"
+    );
+
+const musicStatus =
+    document.getElementById(
+        "musicStatus"
+    );
+
+
+/* =========================
+   YOUTUBE READY
+========================= */
+
+function onYouTubeIframeAPIReady() {
+
+    youtubePlayer =
+        new YT.Player(
+            "youtubePlayer",
+            {
+
+                width: "200",
+
+                height: "200",
+
+                playerVars: {
+
+                    controls: 1,
+
+                    playsinline: 1,
+
+                    rel: 0
+
+                },
+
+                events: {
+
+                    onReady:
+                        onPlayerReady,
+
+                    onStateChange:
+                        onPlayerStateChange
+
+                }
+
+            }
+        );
+
+}
+
+
+/* =========================
+   PLAYER READY
+========================= */
+
+function onPlayerReady() {
+
+    updateMusicButtons();
+
+}
+
+
+/* =========================
+   PLAYER STATE
+========================= */
+
+function onPlayerStateChange(event) {
+
+    if (
+        event.data ===
+        YT.PlayerState.PLAYING
+    ) {
+
+        musicStatus.textContent =
+            "Sedang diputar 🎵";
+
+    }
+
+    else if (
+        event.data ===
+        YT.PlayerState.PAUSED
+    ) {
+
+        musicStatus.textContent =
+            "Dijeda";
+
+    }
+
+    else if (
+        event.data ===
+        YT.PlayerState.ENDED
+    ) {
+
+        musicStatus.textContent =
+            "Lagu selesai";
+
+    }
+
+}
+
+
+/* =========================
+   PILIH KATEGORI
+========================= */
+
+function selectMusic(category) {
+
+    currentCategory =
+        category;
+
+
+    tabKorea.classList.remove(
+        "active"
+    );
+
+    tabPop.classList.remove(
+        "active"
+    );
+
+    tabBarat.classList.remove(
+        "active"
+    );
+
+
+    if (category === "korea") {
+
+        tabKorea.classList.add(
+            "active"
+        );
+
+    }
+
+    if (category === "pop") {
+
+        tabPop.classList.add(
+            "active"
+        );
+
+    }
+
+    if (category === "barat") {
+
+        tabBarat.classList.add(
+            "active"
+        );
+
+    }
+
+
+    updateMusicButtons();
+
+
+    if (
+        !MUSIC_PLAYLISTS[
+            category
+        ]
+    ) {
+
+        musicStatus.textContent =
+            "Playlist belum dipasang 🎵";
+
+        return;
+
+    }
+
+
+    if (!youtubePlayer) {
+
+        return;
+
+    }
+
+
+    youtubePlayer.cuePlaylist({
+
+        listType:
+            "playlist",
+
+        list:
+            MUSIC_PLAYLISTS[
+                category
+            ],
+
+        index: 0
+
+    });
+
+
+    musicStatus.textContent =
+        "Playlist siap 🎵";
+
+}
+
+
+/* =========================
+   UPDATE BUTTON
+========================= */
+
+function updateMusicButtons() {
+
+    const available =
+        !!MUSIC_PLAYLISTS[
+            currentCategory
+        ];
+
+
+    playMusic.disabled =
+        !available;
+
+    nextMusic.disabled =
+        !available;
+
+}
+
+
+/* =========================
+   PLAY
+========================= */
+
+playMusic.addEventListener(
+    "click",
+    function() {
+
+        if (!youtubePlayer) {
+
+            return;
+
+        }
+
+
+        if (
+            !MUSIC_PLAYLISTS[
+                currentCategory
+            ]
+        ) {
+
+            return;
+
+        }
+
+
+        youtubePlayer.playVideo();
+
+    }
+);
+
+
+/* =========================
+   PLAY NEXT
+========================= */
+
+nextMusic.addEventListener(
+    "click",
+    function() {
+
+        if (!youtubePlayer) {
+
+            return;
+
+        }
+
+
+        if (
+            !MUSIC_PLAYLISTS[
+                currentCategory
+            ]
+        ) {
+
+            return;
+
+        }
+
+
+        youtubePlayer.nextVideo();
+
+    }
+);
+
+
+/* =========================
+   TAB EVENTS
+========================= */
+
+tabKorea.addEventListener(
+    "click",
+    () => {
+        selectMusic("korea");
+    }
+);
+
+
+tabPop.addEventListener(
+    "click",
+    () => {
+        selectMusic("pop");
+    }
+);
+
+
+tabBarat.addEventListener(
+    "click",
+    () => {
+        selectMusic("barat");
+    }
+);
+
+
+/* =========================
+   INITIAL
+========================= */
+
+updateMusicButtons();
 
 </script>
 
