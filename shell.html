@@ -1,1 +1,254 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CewekPedia ❤️ — Teman Dengerin Kamu</title>
 
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        background: #fff7fb;
+        font-family: Arial, sans-serif;
+        color: #3a2630;
+    }
+
+    /* =========================
+       NAVIGASI GLOBAL
+    ========================= */
+
+    .global-nav {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        width: 100%;
+        background: #ffffff;
+
+        border-bottom: 1px solid #f0dce6;
+
+        padding: 7px 5px;
+
+        box-shadow: 0 2px 8px rgba(80, 40, 60, 0.06);
+    }
+
+    .nav-scroll {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5px;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        scrollbar-width: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-scroll a {
+        flex-shrink: 0;
+
+        text-decoration: none;
+
+        background: #fff7fb;
+        color: #633f4d;
+
+        border: 1px solid #efdce6;
+
+        border-radius: 18px;
+
+        padding: 6px 9px;
+
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .nav-scroll a.active {
+        background: #d92f72;
+        color: #ffffff;
+        border-color: #d92f72;
+    }
+
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music-area {
+        width: 100%;
+        padding: 7px 8px 5px;
+    }
+
+    .music-frame {
+        display: block;
+
+        width: 100%;
+        max-width: 720px;
+
+        height: 128px;
+
+        margin: 0 auto;
+
+        border: 0;
+    }
+
+
+    /* =========================
+       KONTEN WEBSITE
+    ========================= */
+
+    .page-area {
+        width: 100%;
+        min-height: calc(100vh - 180px);
+
+        padding: 0;
+    }
+
+    .page-frame {
+        display: block;
+
+        width: 100%;
+        height: calc(100vh - 180px);
+
+        min-height: 600px;
+
+        border: 0;
+
+        background: #fff7fb;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .global-nav {
+            padding: 6px 4px;
+        }
+
+        .nav-scroll {
+            justify-content: flex-start;
+        }
+
+        .nav-scroll a {
+            font-size: 10px;
+            padding: 5px 8px;
+        }
+
+        .music-area {
+            padding: 5px 6px 3px;
+        }
+
+        .music-frame {
+            height: 128px;
+        }
+
+        .page-frame {
+            height: calc(100vh - 170px);
+            min-height: 550px;
+        }
+    }
+</style>
+
+</head><body><!-- =========================
+     NAVIGASI GLOBAL
+========================= -->
+
+<nav class="global-nav">
+
+    <div class="nav-scroll">
+
+        <a
+            href="index.html"
+            target="cewekpediaPage"
+            class="active">
+            🏠 Utama
+        </a>
+
+        <a
+            href="index.html"
+            target="cewekpediaPage">
+            💄 Cantik
+        </a>
+
+        <a
+            href="index.html"
+            target="cewekpediaPage">
+            💍 Nikah
+        </a>
+
+        <a
+            href="index.html"
+            target="cewekpediaPage">
+            🛍️ Makan
+        </a>
+
+        <a
+            href="index.html"
+            target="cewekpediaPage">
+            🌴 Healing
+        </a>
+
+        <a
+            href="ruangcewek/index.html"
+            target="cewekpediaPage">
+            💬 Cewek
+        </a>
+
+        <a
+            href="ruanglawak/index.html"
+            target="cewekpediaPage">
+            😂 Lawak
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     MUSIC PLAYER
+     BAGIAN INI TIDAK BERUBAH
+     SAAT HALAMAN DI DALAM IFRAME BERGANTI
+========================= -->
+
+<section class="music-area">
+
+    <iframe
+        src="music-player.html"
+        class="music-frame"
+        title="CewekPedia Music Player"
+        scrolling="no">
+    </iframe>
+
+</section>
+
+
+<!-- =========================
+     AREA KONTEN
+========================= -->
+
+<main class="page-area">
+
+    <iframe
+        id="pageFrame"
+        name="cewekpediaPage"
+        class="page-frame"
+        src="index.html"
+        title="CewekPedia Content">
+    </iframe>
+
+</main>
+
+</body></html>
