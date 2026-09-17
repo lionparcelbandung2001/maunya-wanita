@@ -40,7 +40,10 @@
       color: #6b4b59;
     }
 
-    /* MINI NAV */
+    /* =========================
+       MINI NAV
+    ========================= */
+
     .mini-nav {
       display: flex;
       justify-content: center;
@@ -65,7 +68,10 @@
       font-weight: bold;
     }
 
-    /* CARD UMUM */
+    /* =========================
+       CARD
+    ========================= */
+
     .card {
       background: #fff;
       border: 1px solid #f0dce5;
@@ -114,7 +120,10 @@
       color: #674b57;
     }
 
-    /* MUSIK */
+    /* =========================
+       MUSIC
+    ========================= */
+
     .music-section {
       margin-bottom: 14px;
     }
@@ -122,25 +131,25 @@
     .section-title {
       text-align: center;
       color: #c92d6c;
-      margin: 5px 0 13px;
+      margin: 5px 0 10px;
       font-size: 20px;
     }
 
     .music-tabs {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
+      gap: 7px;
+      margin-bottom: 8px;
     }
 
     .music-tab {
       border: 1px solid #efcedd;
       background: #fff;
       color: #765262;
-      border-radius: 12px;
-      padding: 10px 5px;
+      border-radius: 10px;
+      padding: 8px 4px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .music-tab.active {
@@ -149,50 +158,33 @@
       font-weight: bold;
     }
 
-    .music-player {
+    .spotify-box {
       background: #fff;
       border: 1px solid #f0dce5;
-      border-radius: 14px;
-      padding: 10px;
+      border-radius: 13px;
+      padding: 4px;
+      overflow: hidden;
     }
 
-    #youtube-player {
+    .spotify-box iframe {
+      display: block;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: 152px;
       border: 0;
       border-radius: 10px;
-      background: #f8eef2;
     }
 
-    .music-buttons {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .music-buttons button {
-      flex: 1;
-      border: 0;
-      border-radius: 10px;
-      padding: 10px;
-      background: #d92f72;
-      color: white;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .music-buttons button:active {
-      transform: scale(.98);
-    }
-
-    .music-info {
+    .music-note {
       text-align: center;
-      font-size: 12px;
-      color: #8a6976;
-      margin-top: 8px;
+      font-size: 10px;
+      color: #9a7b87;
+      margin-top: 5px;
     }
 
-    /* CHATROOM */
+    /* =========================
+       CHATROOM
+    ========================= */
+
     .chat-section {
       margin-bottom: 20px;
     }
@@ -337,6 +329,7 @@
     }
 
     @media (max-width: 600px) {
+
       header h1 {
         font-size: 24px;
       }
@@ -364,6 +357,10 @@
       #messages {
         height: 300px;
       }
+
+      .spotify-box iframe {
+        height: 152px;
+      }
     }
   </style>
 </head>
@@ -372,98 +369,182 @@
 
 <div class="container">
 
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header>
     <h1>💬 RUANG CEWEK</h1>
     <p>Cerita • Berbagi • Ngobrol ❤️</p>
   </header>
 
-  <!-- MINI NAV -->
+
+  <!-- =========================
+       MINI NAV
+  ========================= -->
+
   <nav class="mini-nav">
-    <a href="../index.html">💄 Cantik</a>
-    <a href="../index.html">💍 Nikah</a>
-    <a href="../index.html">🛍️ Makan</a>
-    <a href="../index.html">🌴 Healing</a>
-    <a href="index.html" class="active">💬 Cerita</a>
-    <a href="../ruanglawak/index.html">😂 Lawak</a>
+
+    <a href="../index.html">
+      💄 Cantik
+    </a>
+
+    <a href="../index.html">
+      💍 Nikah
+    </a>
+
+    <a href="../index.html">
+      🛍️ Makan
+    </a>
+
+    <a href="../index.html">
+      🌴 Healing
+    </a>
+
+    <a href="index.html" class="active">
+      💬 Cerita
+    </a>
+
+    <a href="../ruanglawak/index.html">
+      😂 Lawak
+    </a>
+
   </nav>
 
-  <!-- CURHAT + REVIEW -->
+
+  <!-- =========================
+       CURHAT + REVIEW
+  ========================= -->
+
   <div class="top-grid">
 
     <a href="curhat.html" class="card-link">
+
       <div class="card">
-        <div class="feature-icon">💭</div>
-        <h2>Curhat</h2>
+
+        <div class="feature-icon">
+          💭
+        </div>
+
+        <h2>
+          Curhat
+        </h2>
+
         <p>
           Ceritakan apa yang kamu rasakan,
           pengalaman, masalah, atau kisah hidupmu.
         </p>
+
       </div>
+
     </a>
 
+
     <a href="reviewproduk.html" class="card-link">
+
       <div class="card">
-        <div class="feature-icon">⭐</div>
-        <h2>Review Produk</h2>
+
+        <div class="feature-icon">
+          ⭐
+        </div>
+
+        <h2>
+          Review Produk
+        </h2>
+
         <p>
           Bagikan pengalamanmu setelah mencoba
           produk yang pernah kamu gunakan.
         </p>
+
       </div>
+
     </a>
 
   </div>
 
-  <!-- MUSIK -->
+
+  <!-- =========================
+       MUSIK SPOTIFY
+  ========================= -->
+
   <section class="music-section">
 
-    <h2 class="section-title">🎵 Teman Ngobrol</h2>
+    <h2 class="section-title">
+      🎵 Teman Ngobrol
+    </h2>
+
 
     <div class="music-tabs">
 
-      <button class="music-tab active" data-music="korea">
-        🇰🇷 Lagu Korea
+      <button
+        class="music-tab active"
+        data-playlist="korea">
+        🇰🇷 Korea
       </button>
 
-      <button class="music-tab" data-music="pop">
-        🎤 Lagu Pop
+      <button
+        class="music-tab"
+        data-playlist="pop">
+        🎤 Pop
       </button>
 
-      <button class="music-tab" data-music="barat">
-        🌎 Lagu Barat
+      <button
+        class="music-tab"
+        data-playlist="barat">
+        🌎 Barat
       </button>
 
     </div>
 
-    <div class="music-player">
 
-      <div id="youtube-player"></div>
+    <div class="spotify-box">
 
-      <div class="music-buttons">
-        <button id="playBtn">▶ Play</button>
-        <button id="nextBtn">⏭ Play Next</button>
-      </div>
+      <iframe
+        id="spotifyPlayer"
+        src="https://open.spotify.com/embed/playlist/78s1nKzEo5irL2SJOPuhXe?utm_source=generator"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
 
-      <div class="music-info" id="musicInfo">
-        Pilih musik yang kamu suka 🎶
-      </div>
+    </div>
 
+
+    <div class="music-note">
+      🎧 Musik diputar melalui Spotify Embed
     </div>
 
   </section>
 
-  <!-- CHATROOM -->
+
+  <!-- =========================
+       CHATROOM
+  ========================= -->
+
   <section class="chat-section">
 
     <div class="chat-header">
-      <h2>🟢 Chatroom</h2>
+
+      <h2>
+        🟢 Chatroom
+      </h2>
+
       <div class="online">
-        <span id="onlineCount">0</span> orang sedang online
+        <span id="onlineCount">0</span>
+        orang sedang online
       </div>
+
     </div>
 
+
     <details class="chat-notice">
-      <summary>⚠️ Catatan Chatroom — klik untuk membaca aturan</summary>
+
+      <summary>
+        ⚠️ Catatan Chatroom — klik untuk membaca aturan
+      </summary>
 
       <p>
         Chatroom ini merupakan ruang komunikasi antar pengguna.
@@ -473,41 +554,64 @@
         Pengelola berhak menghapus pesan atau membatasi akses pengguna
         apabila ditemukan pelanggaran.
       </p>
+
     </details>
+
 
     <div class="chat-box">
 
       <div id="messages">
-        <div style="text-align:center;color:#9b818c;font-size:12px;">
+
+        <div style="
+          text-align:center;
+          color:#9b818c;
+          font-size:12px;
+        ">
           Menghubungkan ke Chatroom...
         </div>
+
       </div>
 
+
       <div class="nickname-row">
+
         <input
           type="text"
           id="nickname"
           maxlength="20"
           placeholder="Nama panggilan..."
         >
-        <button id="saveNickname">Simpan</button>
+
+        <button id="saveNickname">
+          Simpan
+        </button>
+
       </div>
 
+
       <div class="send-row">
+
         <textarea
           id="messageInput"
           maxlength="300"
           placeholder="Tulis pesan..."
         ></textarea>
 
-        <button id="sendBtn">Kirim</button>
+        <button id="sendBtn">
+          Kirim
+        </button>
+
       </div>
 
-      <div id="status">Menghubungkan...</div>
+
+      <div id="status">
+        Menghubungkan...
+      </div>
 
     </div>
 
   </section>
+
 
   <footer>
     © Ruang Cewek ❤️
@@ -516,22 +620,102 @@
 </div>
 
 
-<!-- YOUTUBE IFRAME API -->
-<script src="https://www.youtube.com/iframe_api"></script>
+<!-- =========================
+     SPOTIFY PLAYLIST SWITCHER
+========================= -->
+
+<script>
+
+  /*
+    PLAYLIST SPOTIFY
+
+    🇰🇷 KOREA
+    K-POP HITS | Lagu K-Pop Terbaik 2026
+    Filtr Indonesia
+
+    🎤 POP
+    POP HITS 2026
+
+    🌎 BARAT
+    TOP HITS - Global Hits & Pop Nostalgia
+  */
+
+  const SPOTIFY_PLAYLISTS = {
+
+    korea:
+      "78s1nKzEo5irL2SJOPuhXe",
+
+    pop:
+      "0FPTnEHCJS2xxxrTzI1ciy",
+
+    barat:
+      "0xqkC5H1oerl14tBctvN3z"
+
+  };
 
 
-<!-- FIREBASE -->
+  const spotifyPlayer =
+    document.getElementById("spotifyPlayer");
+
+
+  document
+    .querySelectorAll(".music-tab")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          document
+            .querySelectorAll(".music-tab")
+            .forEach(btn => {
+              btn.classList.remove("active");
+            });
+
+
+          this.classList.add("active");
+
+
+          const category =
+            this.dataset.playlist;
+
+
+          const playlistId =
+            SPOTIFY_PLAYLISTS[category];
+
+
+          spotifyPlayer.src =
+            "https://open.spotify.com/embed/playlist/"
+            + playlistId
+            + "?utm_source=generator";
+
+        }
+      );
+
+    });
+
+</script>
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
 <script type="module">
 
-  import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import {
+    initializeApp
+  }
+  from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
 
   import {
     getAuth,
     signInAnonymously,
     onAuthStateChanged
   }
-    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
   import {
     getDatabase,
@@ -540,10 +724,9 @@
     set,
     update,
     onValue,
-    onDisconnect,
-    serverTimestamp
+    onDisconnect
   }
-    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+  from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
   /* =========================
@@ -551,32 +734,73 @@
   ========================= */
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7tMGG926iO8O0",
-    authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "ruang-cewek",
-    storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "300030693884",
-    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7tMGG926iO8O0",
+
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+      "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
   };
 
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getDatabase(app);
+  const app =
+    initializeApp(firebaseConfig);
+
+
+  const auth =
+    getAuth(app);
+
+
+  const db =
+    getDatabase(app);
 
 
   /* =========================
      ELEMENTS
   ========================= */
 
-  const messagesEl = document.getElementById("messages");
-  const onlineCountEl = document.getElementById("onlineCount");
-  const nicknameInput = document.getElementById("nickname");
-  const saveNicknameBtn = document.getElementById("saveNickname");
-  const messageInput = document.getElementById("messageInput");
-  const sendBtn = document.getElementById("sendBtn");
-  const statusEl = document.getElementById("status");
+  const messagesEl =
+    document.getElementById("messages");
+
+
+  const onlineCountEl =
+    document.getElementById("onlineCount");
+
+
+  const nicknameInput =
+    document.getElementById("nickname");
+
+
+  const saveNicknameBtn =
+    document.getElementById("saveNickname");
+
+
+  const messageInput =
+    document.getElementById("messageInput");
+
+
+  const sendBtn =
+    document.getElementById("sendBtn");
+
+
+  const statusEl =
+    document.getElementById("status");
 
 
   /* =========================
@@ -584,48 +808,77 @@
   ========================= */
 
   let nickname =
-    sessionStorage.getItem("ruangCewekNickname") || "";
+    sessionStorage.getItem(
+      "ruangCewekNickname"
+    ) || "";
 
-  nicknameInput.value = nickname;
+
+  nicknameInput.value =
+    nickname;
 
 
-  saveNicknameBtn.addEventListener("click", () => {
+  saveNicknameBtn.addEventListener(
+    "click",
+    () => {
 
-    const value = nicknameInput.value.trim();
+      const value =
+        nicknameInput.value.trim();
 
-    if (!value) {
-      alert("Isi nama panggilan dulu ya 😊");
-      return;
-    }
 
-    nickname = value.substring(0, 20);
+      if (!value) {
 
-    sessionStorage.setItem(
-      "ruangCewekNickname",
-      nickname
-    );
+        alert(
+          "Isi nama panggilan dulu ya 😊"
+        );
 
-    nicknameInput.value = nickname;
+        return;
+      }
 
-    if (currentUser) {
-      update(
-        ref(db, "presence/" + currentUser.uid),
-        {
-          nickname: nickname
-        }
+
+      nickname =
+        value.substring(0, 20);
+
+
+      sessionStorage.setItem(
+        "ruangCewekNickname",
+        nickname
       );
-    }
 
-    statusEl.textContent =
-      "Nama panggilan tersimpan ❤️";
-  });
+
+      nicknameInput.value =
+        nickname;
+
+
+      if (currentUser) {
+
+        update(
+          ref(
+            db,
+            "presence/" +
+            currentUser.uid
+          ),
+          {
+            nickname: nickname
+          }
+        );
+
+      }
+
+
+      statusEl.textContent =
+        "Nama panggilan tersimpan ❤️";
+
+    }
+  );
 
 
   /* =========================
      AUTH
   ========================= */
 
-  let currentUser = null;
+  let currentUser =
+    null;
+
 
   signInAnonymously(auth)
     .catch(error => {
@@ -634,22 +887,33 @@
 
       statusEl.textContent =
         "Gagal menghubungkan ke Chatroom.";
+
     });
 
 
-  onAuthStateChanged(auth, user => {
+  onAuthStateChanged(
+    auth,
+    user => {
 
-    if (!user) return;
+      if (!user) {
+        return;
+      }
 
-    currentUser = user;
 
-    setupPresence(user);
+      currentUser =
+        user;
 
-    loadMessages();
 
-    statusEl.textContent =
-      "Chatroom siap digunakan ❤️";
-  });
+      setupPresence(user);
+
+      loadMessages();
+
+
+      statusEl.textContent =
+        "Chatroom siap digunakan ❤️";
+
+    }
+  );
 
 
   /* =========================
@@ -659,25 +923,45 @@
   function setupPresence(user) {
 
     const presenceRef =
-      ref(db, "presence/" + user.uid);
+      ref(
+        db,
+        "presence/" +
+        user.uid
+      );
+
 
     const connectedRef =
-      ref(db, ".info/connected");
+      ref(
+        db,
+        ".info/connected"
+      );
 
-    onValue(connectedRef, snapshot => {
 
-      if (snapshot.val() !== true) {
-        return;
+    onValue(
+      connectedRef,
+      snapshot => {
+
+        if (snapshot.val() !== true) {
+          return;
+        }
+
+
+        set(
+          presenceRef,
+          {
+            online: true,
+            nickname:
+              nickname || "Anonim"
+          }
+        );
+
+
+        onDisconnect(
+          presenceRef
+        ).remove();
+
       }
-
-      set(presenceRef, {
-        online: true,
-        nickname:
-          nickname || "Anonim"
-      });
-
-      onDisconnect(presenceRef).remove();
-    });
+    );
 
 
     onValue(
@@ -687,13 +971,17 @@
         const data =
           snapshot.val() || {};
 
+
         const count =
           Object.keys(data).length;
 
+
         onlineCountEl.textContent =
           count;
+
       }
     );
+
   }
 
 
@@ -704,103 +992,156 @@
   function loadMessages() {
 
     const messagesRef =
-      ref(db, "messages");
-
-    onValue(messagesRef, snapshot => {
-
-      messagesEl.innerHTML = "";
-
-      const data =
-        snapshot.val() || {};
-
-      const entries =
-        Object.entries(data)
-          .sort((a, b) =>
-            (a[1].timestamp || 0) -
-            (b[1].timestamp || 0)
-          )
-          .slice(-100);
+      ref(
+        db,
+        "messages"
+      );
 
 
-      if (entries.length === 0) {
+    onValue(
+      messagesRef,
+      snapshot => {
 
-        messagesEl.innerHTML = `
-          <div style="
-            text-align:center;
-            color:#9b818c;
-            font-size:12px;
-            padding:20px;
-          ">
-            Belum ada pesan. Jadilah yang pertama 😊
-          </div>
-        `;
-
-        return;
-      }
+        messagesEl.innerHTML = "";
 
 
-      entries.forEach(([id, msg]) => {
-
-        const wrapper =
-          document.createElement("div");
-
-        wrapper.className = "message";
+        const data =
+          snapshot.val() || {};
 
 
-        const name =
-          document.createElement("div");
-
-        name.className =
-          "message-name";
-
-        name.textContent =
-          msg.nickname || "Anonim";
-
-
-        const text =
-          document.createElement("div");
-
-        text.className =
-          "message-text";
-
-        text.textContent =
-          msg.text || "";
+        const entries =
+          Object.entries(data)
+            .sort(
+              (a, b) =>
+                (a[1].timestamp || 0) -
+                (b[1].timestamp || 0)
+            )
+            .slice(-100);
 
 
-        const time =
-          document.createElement("div");
+        if (entries.length === 0) {
 
-        time.className =
-          "message-time";
+          messagesEl.innerHTML = `
 
-        if (msg.timestamp) {
+            <div style="
+              text-align:center;
+              color:#9b818c;
+              font-size:12px;
+              padding:20px;
+            ">
 
-          const date =
-            new Date(msg.timestamp);
+              Belum ada pesan.
+              Jadilah yang pertama 😊
 
-          time.textContent =
-            date.toLocaleTimeString(
-              "id-ID",
-              {
-                hour: "2-digit",
-                minute: "2-digit"
-              }
-            );
+            </div>
+
+          `;
+
+          return;
         }
 
 
-        wrapper.appendChild(name);
-        wrapper.appendChild(text);
-        wrapper.appendChild(time);
+        entries.forEach(
+          ([id, msg]) => {
 
-        messagesEl.appendChild(wrapper);
-      });
+            const wrapper =
+              document.createElement(
+                "div"
+              );
 
 
-      messagesEl.scrollTop =
-        messagesEl.scrollHeight;
+            wrapper.className =
+              "message";
 
-    });
+
+            const name =
+              document.createElement(
+                "div"
+              );
+
+
+            name.className =
+              "message-name";
+
+
+            name.textContent =
+              msg.nickname ||
+              "Anonim";
+
+
+            const text =
+              document.createElement(
+                "div"
+              );
+
+
+            text.className =
+              "message-text";
+
+
+            text.textContent =
+              msg.text || "";
+
+
+            const time =
+              document.createElement(
+                "div"
+              );
+
+
+            time.className =
+              "message-time";
+
+
+            if (msg.timestamp) {
+
+              const date =
+                new Date(
+                  msg.timestamp
+                );
+
+
+              time.textContent =
+                date.toLocaleTimeString(
+                  "id-ID",
+                  {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                  }
+                );
+
+            }
+
+
+            wrapper.appendChild(
+              name
+            );
+
+
+            wrapper.appendChild(
+              text
+            );
+
+
+            wrapper.appendChild(
+              time
+            );
+
+
+            messagesEl.appendChild(
+              wrapper
+            );
+
+          }
+        );
+
+
+        messagesEl.scrollTop =
+          messagesEl.scrollHeight;
+
+      }
+    );
+
   }
 
 
@@ -825,6 +1166,7 @@
         "Isi nama panggilan dan tekan Simpan dulu ya 😊"
       );
 
+
       nicknameInput.focus();
 
       return;
@@ -834,11 +1176,18 @@
     const text =
       messageInput.value.trim();
 
-    if (!text) return;
+
+    if (!text) {
+      return;
+    }
 
 
     const messagesRef =
-      ref(db, "messages");
+      ref(
+        db,
+        "messages"
+      );
+
 
     const newMessageRef =
       push(messagesRef);
@@ -846,31 +1195,47 @@
 
     try {
 
-      await set(newMessageRef, {
+      await set(
+        newMessageRef,
+        {
 
-        nickname:
-          nickname.substring(0, 20),
+          nickname:
+            nickname.substring(
+              0,
+              20
+            ),
 
-        text:
-          text.substring(0, 300),
+          text:
+            text.substring(
+              0,
+              300
+            ),
 
-        timestamp:
-          Date.now()
-      });
+          timestamp:
+            Date.now()
+
+        }
+      );
 
 
-      messageInput.value = "";
+      messageInput.value =
+        "";
+
 
       statusEl.textContent =
         "Pesan terkirim ❤️";
 
-    } catch (error) {
+    }
+    catch (error) {
 
       console.error(error);
 
+
       statusEl.textContent =
         "Pesan gagal dikirim.";
+
     }
+
   }
 
 
@@ -892,187 +1257,11 @@
         event.preventDefault();
 
         sendMessage();
+
       }
+
     }
   );
-
-</script>
-
-
-<!-- MUSIC SCRIPT -->
-<script>
-
-  /*
-    PLAYLIST YANG SUDAH DIVERIFIKASI:
-    POP = PL-FMlqaZ9yoVwGUyLbZyF8JpSztfKeo2X
-
-    Korea dan Barat sengaja dikosongkan sampai
-    ditemukan playlist ID yang benar-benar terverifikasi.
-    Nanti cukup isi ID di sini tanpa mengubah
-    struktur halaman.
-  */
-
-  const MUSIC_PLAYLISTS = {
-
-    korea: "",
-
-    pop: "PL-FMlqaZ9yoVwGUyLbZyF8JpSztfKeo2X",
-
-    barat: ""
-
-  };
-
-
-  const MUSIC_NAMES = {
-
-    korea: "🇰🇷 Lagu Korea",
-
-    pop: "🎤 Lagu Pop",
-
-    barat: "🌎 Lagu Barat"
-
-  };
-
-
-  let player = null;
-  let currentMusic = "korea";
-
-
-  function onYouTubeIframeAPIReady() {
-
-    player =
-      new YT.Player(
-        "youtube-player",
-        {
-
-          videoId: "",
-
-          playerVars: {
-            autoplay: 0,
-            rel: 0
-          },
-
-          events: {
-
-            onReady: () => {
-
-              updateMusicPlayer();
-            }
-
-          }
-
-        }
-      );
-  }
-
-
-  function updateMusicPlayer() {
-
-    if (!player) return;
-
-    const playlistId =
-      MUSIC_PLAYLISTS[currentMusic];
-
-
-    const info =
-      document.getElementById("musicInfo");
-
-
-    if (!playlistId) {
-
-      info.textContent =
-        MUSIC_NAMES[currentMusic] +
-        " — playlist belum dipasang 🎵";
-
-      return;
-    }
-
-
-    player.cuePlaylist({
-      listType: "playlist",
-      list: playlistId,
-      index: 0
-    });
-
-
-    info.textContent =
-      MUSIC_NAMES[currentMusic];
-  }
-
-
-  document
-    .querySelectorAll(".music-tab")
-    .forEach(button => {
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          document
-            .querySelectorAll(".music-tab")
-            .forEach(btn =>
-              btn.classList.remove("active")
-            );
-
-          button.classList.add("active");
-
-          currentMusic =
-            button.dataset.music;
-
-          updateMusicPlayer();
-        }
-      );
-    });
-
-
-  document
-    .getElementById("playBtn")
-    .addEventListener(
-      "click",
-      () => {
-
-        if (!player) return;
-
-        const playlistId =
-          MUSIC_PLAYLISTS[currentMusic];
-
-        if (!playlistId) {
-
-          alert(
-            "Playlist untuk kategori ini belum tersedia 😊"
-          );
-
-          return;
-        }
-
-        player.playVideo();
-      }
-    );
-
-
-  document
-    .getElementById("nextBtn")
-    .addEventListener(
-      "click",
-      () => {
-
-        if (!player) return;
-
-        const playlistId =
-          MUSIC_PLAYLISTS[currentMusic];
-
-        if (!playlistId) {
-
-          alert(
-            "Playlist untuk kategori ini belum tersedia 😊"
-          );
-
-          return;
-        }
-
-        player.nextVideo();
-      }
-    );
 
 </script>
 
