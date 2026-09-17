@@ -1,238 +1,410 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="id">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<head>
+    <meta charset="UTF-8">
 
-<title>CewekPedia Music Player</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<style>
+    <title>CewekPedia Music</title>
 
-    * {
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        background: transparent;
-        font-family: Arial, sans-serif;
-    }
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            font-family: Arial, sans-serif;
+        }
 
-    .music-player {
-        width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 7px;
-        background: #ffffff;
-        border: 1px solid #f0dce6;
-        border-radius: 14px;
-        box-shadow: 0 2px 10px rgba(80, 40, 60, 0.07);
-    }
+        .music-box {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            background: #fff7fb;
+            border: 1px solid #f3c7d9;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(180, 70, 110, 0.08);
+        }
 
-    .music-title {
-        text-align: center;
-        color: #6a4655;
-        font-size: 12px;
-        font-weight: bold;
-        margin-bottom: 6px;
-    }
+        /* =========================
+           MINI MUSIC BAR
+        ========================= */
 
-    .music-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        margin-bottom: 7px;
-        flex-wrap: wrap;
-    }
+        .music-bar {
+            min-height: 44px;
+            padding: 7px 10px;
 
-    .music-buttons button {
-        border: 1px solid #efdce6;
-        background: #fff7fb;
-        color: #633f4d;
-        border-radius: 18px;
-        padding: 5px 9px;
-        font-size: 11px;
-        font-weight: 600;
-        cursor: pointer;
-    }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
 
-    .music-buttons button.active {
-        background: #d92f72;
-        color: #ffffff;
-        border-color: #d92f72;
-    }
-
-    .music-buttons button:active {
-        transform: scale(0.97);
-    }
-
-    .soundcloud-frame {
-        display: block;
-        width: 100%;
-        height: 166px;
-        border: 0;
-        border-radius: 9px;
-        overflow: hidden;
-    }
-
-    @media (max-width: 600px) {
-
-        .music-player {
-            padding: 6px;
-            border-radius: 12px;
+            background: #fff;
         }
 
         .music-title {
-            font-size: 11px;
-            margin-bottom: 5px;
+            min-width: 0;
+            flex: 1;
+
+            color: #d92f72;
+            font-size: 14px;
+            font-weight: bold;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .music-buttons {
-            gap: 4px;
-            margin-bottom: 6px;
+        .toggle-button {
+            border: none;
+            background: #d92f72;
+            color: white;
+
+            min-width: 38px;
+            height: 30px;
+
+            border-radius: 9px;
+            cursor: pointer;
+
+            font-size: 15px;
+            font-weight: bold;
         }
 
-        .music-buttons button {
-            padding: 5px 7px;
-            font-size: 10px;
+        .toggle-button:hover {
+            opacity: 0.9;
+        }
+
+        /* =========================
+           PLAYER AREA
+        ========================= */
+
+        .music-content {
+            display: none;
+            padding: 7px 8px 8px;
+            background: #fff7fb;
+        }
+
+        .music-content.open {
+            display: block;
+        }
+
+        .playlist-buttons {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 7px;
+            flex-wrap: wrap;
+        }
+
+        .playlist-button {
+            flex: 1;
+            min-width: 90px;
+
+            border: 1px solid #efbfd3;
+            background: white;
+            color: #7d3b55;
+
+            padding: 6px 8px;
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .playlist-button.active {
+            background: #d92f72;
+            color: white;
+            border-color: #d92f72;
         }
 
         .soundcloud-frame {
+            display: block;
+
+            width: 100%;
             height: 166px;
+
+            border: none;
+            border-radius: 8px;
+            background: white;
         }
 
-    }
+        @media (max-width: 480px) {
 
-</style>
-
-</head><body><div class="music-player"><div class="music-title">
-    🎵 Teman Dengerin Kamu
-</div>
-
-<div class="music-buttons">
-
-    <button
-        id="music-pop"
-        class="active"
-        onclick="changeMusic('pop')"
-    >
-        🇮🇩 Pop Indonesia
-    </button>
-
-    <button
-        id="music-korea"
-        onclick="changeMusic('korea')"
-    >
-        🇰🇷 Korea
-    </button>
-
-    <button
-        id="music-barat"
-        onclick="changeMusic('barat')"
-    >
-        🌎 Slow Rock Barat
-    </button>
-
-</div>
-
-<iframe
-    id="soundcloudPlayer"
-    class="soundcloud-frame"
-    title="CewekPedia Music Player"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
->
-</iframe>
-
-</div><script>
-
-    const musicLinks = {
-
-        pop:
-            "https://soundcloud.com/nugraha-74739955/sets/yy",
-
-        korea:
-            "https://soundcloud.com/soundcloud-stories/sets/k-pop",
-
-        barat:
-            "https://soundcloud.com/miladgh-1/sets/rock-2"
-
-    };
-
-
-    function buildPlayerUrl(soundcloudUrl, autoPlay) {
-
-        return (
-            "https://w.soundcloud.com/player/?url="
-            + encodeURIComponent(soundcloudUrl)
-            + "&color=%23d92f72"
-            + "&auto_play="
-            + autoPlay
-            + "&hide_related=true"
-            + "&show_comments=false"
-            + "&show_user=false"
-            + "&show_reposts=false"
-            + "&visual=false"
-        );
-
-    }
-
-
-    function setActiveButton(type) {
-
-        const buttons = [
-            "pop",
-            "korea",
-            "barat"
-        ];
-
-        buttons.forEach(function(item) {
-
-            const button =
-                document.getElementById("music-" + item);
-
-            if (button) {
-                button.classList.remove("active");
+            .music-title {
+                font-size: 13px;
             }
 
-        });
+            .playlist-button {
+                min-width: 80px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="music-box">
+
+        <!-- MINI BAR -->
+        <div class="music-bar">
+
+            <div
+                class="music-title"
+                id="musicTitle"
+            >
+                🎵 🇮🇩 Pop Indonesia
+            </div>
+
+            <button
+                class="toggle-button"
+                id="toggleButton"
+                onclick="toggleMusic()"
+                aria-label="Buka atau tutup music player"
+            >
+                ▲
+            </button>
+
+        </div>
 
 
-        const activeButton =
-            document.getElementById("music-" + type);
+        <!-- PLAYER -->
+        <div
+            class="music-content"
+            id="musicContent"
+        >
 
-        if (activeButton) {
-            activeButton.classList.add("active");
+            <div class="playlist-buttons">
+
+                <button
+                    class="playlist-button active"
+                    id="popButton"
+                    onclick="changeMusic('pop')"
+                >
+                    🇮🇩 Pop Indo
+                </button>
+
+                <button
+                    class="playlist-button"
+                    id="koreaButton"
+                    onclick="changeMusic('korea')"
+                >
+                    🇰🇷 Korea
+                </button>
+
+                <button
+                    class="playlist-button"
+                    id="baratButton"
+                    onclick="changeMusic('barat')"
+                >
+                    🌎 Barat
+                </button>
+
+            </div>
+
+
+            <iframe
+                id="soundcloudPlayer"
+                class="soundcloud-frame"
+                title="CewekPedia Music Player"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+            >
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           PLAYLIST
+        ========================= */
+
+        const musicLinks = {
+
+            pop:
+                "https://soundcloud.com/nugraha-74739955/sets/yy",
+
+            korea:
+                "https://soundcloud.com/soundcloud-stories/sets/k-pop",
+
+            barat:
+                "https://soundcloud.com/miladgh-1/sets/rock-2"
+
+        };
+
+
+        /* =========================
+           TOGGLE PLAYER
+        ========================= */
+
+        function toggleMusic() {
+
+            const content =
+                document.getElementById("musicContent");
+
+            const button =
+                document.getElementById("toggleButton");
+
+            if (content.classList.contains("open")) {
+
+                content.classList.remove("open");
+
+                button.textContent = "▲";
+
+            } else {
+
+                content.classList.add("open");
+
+                button.textContent = "▼";
+
+            }
+
         }
 
-    }
 
+        /* =========================
+           BUILD SOUNDCLOUD URL
+        ========================= */
 
-    function changeMusic(type) {
+        function buildPlayerUrl(
+            soundcloudUrl,
+            autoPlay
+        ) {
 
-        const player =
-            document.getElementById("soundcloudPlayer");
-
-        if (!player || !musicLinks[type]) {
-            return;
-        }
-
-
-        setActiveButton(type);
-
-
-        player.src =
-            buildPlayerUrl(
-                musicLinks[type],
-                true
+            return (
+                "https://w.soundcloud.com/player/?url="
+                + encodeURIComponent(soundcloudUrl)
+                + "&color=%23d92f72"
+                + "&auto_play="
+                + autoPlay
+                + "&hide_related=true"
+                + "&show_comments=false"
+                + "&show_user=false"
+                + "&show_reposts=false"
+                + "&visual=false"
             );
 
-    }
+        }
 
-</script></body></html>
+
+        /* =========================
+           ACTIVE BUTTON
+        ========================= */
+
+        function setActiveButton(type) {
+
+            document
+                .querySelectorAll(".playlist-button")
+                .forEach(function(button) {
+
+                    button.classList.remove("active");
+
+                });
+
+
+            if (type === "pop") {
+
+                document
+                    .getElementById("popButton")
+                    .classList.add("active");
+
+            }
+
+            if (type === "korea") {
+
+                document
+                    .getElementById("koreaButton")
+                    .classList.add("active");
+
+            }
+
+            if (type === "barat") {
+
+                document
+                    .getElementById("baratButton")
+                    .classList.add("active");
+
+            }
+
+        }
+
+
+        /* =========================
+           CHANGE MUSIC
+        ========================= */
+
+        function changeMusic(type) {
+
+            const player =
+                document.getElementById(
+                    "soundcloudPlayer"
+                );
+
+            const title =
+                document.getElementById(
+                    "musicTitle"
+                );
+
+
+            if (
+                !player ||
+                !musicLinks[type]
+            ) {
+
+                return;
+
+            }
+
+
+            setActiveButton(type);
+
+
+            if (type === "pop") {
+
+                title.textContent =
+                    "🎵 🇮🇩 Pop Indonesia";
+
+            }
+
+            if (type === "korea") {
+
+                title.textContent =
+                    "🎵 🇰🇷 Korea";
+
+            }
+
+            if (type === "barat") {
+
+                title.textContent =
+                    "🎵 🌎 Barat";
+
+            }
+
+
+            player.src =
+                buildPlayerUrl(
+                    musicLinks[type],
+                    true
+                );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
