@@ -50,7 +50,7 @@ body {
 /* HEADER */
 header {
     text-align: center;
-    padding: 10px 5px 10px;
+    padding: 10px 5px;
 }
 
 header h1 {
@@ -271,7 +271,7 @@ button:disabled {
     margin-top: 8px;
 }
 
-/* ERROR */
+/* ERROR FIREBASE */
 .firebase-error {
     display: none;
     margin-top: 8px;
@@ -360,15 +360,10 @@ footer {
 <nav class="topbar">
 
     <a href="../index.html">💄 Cantik</a>
-
     <a href="../index.html">💍 Nikah</a>
-
     <a href="../index.html">🛍️ Makan</a>
-
     <a href="../index.html">🌴 Healing</a>
-
     <a href="index.html">💬 Cerita</a>
-
     <a href="../ruanglawak/index.html">😂 Lawak</a>
 
 </nav>
@@ -550,8 +545,14 @@ footer {
 <!-- FIREBASE -->
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+/*
+ * FIREBASE SDK
+ * Menggunakan modul resmi Firebase.
+ */
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
     getDatabase,
@@ -562,25 +563,23 @@ import {
     serverTimestamp,
     onDisconnect,
     set
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 import {
     getAuth,
     signInAnonymously
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
-/* =========================
+/* =========================================
    FIREBASE CONFIG
-   VERSI YANG SUDAH TERBUKTI
-========================= */
+   DIAMBIL DARI KODE TERBARU FIREBASE
+========================================= */
 
 const firebaseConfig = {
 
     apiKey:
-        "AIzaSyCnhVGlnGKoqddyLvOgE7tMGG926iO8O0",
+        "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
 
     authDomain:
         "ruang-cewek.firebaseapp.com",
@@ -603,9 +602,9 @@ const firebaseConfig = {
 };
 
 
-/* =========================
+/* =========================================
    ELEMENT
-========================= */
+========================================= */
 
 const nicknameInput =
     document.getElementById("nickname");
@@ -629,9 +628,9 @@ const firebaseError =
     document.getElementById("firebaseError");
 
 
-/* =========================
+/* =========================================
    ERROR DISPLAY
-========================= */
+========================================= */
 
 function showFirebaseError(error) {
 
@@ -640,27 +639,33 @@ function showFirebaseError(error) {
         error
     );
 
+
     firebaseError.style.display =
         "block";
 
+
     firebaseError.innerHTML =
-        "<strong>Detail error Firebase:</strong><br>" +
+        "<strong>⚠️ Detail error Firebase</strong><br>" +
+
         "Kode: " +
         (error.code || "tidak diketahui") +
+
         "<br>" +
+
         "Pesan: " +
         (error.message || "tidak diketahui");
 
 }
 
 
-/* =========================
-   INIT FIREBASE
-========================= */
+/* =========================================
+   INITIALIZE FIREBASE
+========================================= */
 
 let app;
 let db;
 let auth;
+
 
 try {
 
@@ -669,15 +674,19 @@ try {
             firebaseConfig
         );
 
+
     db =
         getDatabase(app);
+
 
     auth =
         getAuth(app);
 
+
 } catch (error) {
 
     showFirebaseError(error);
+
 
     onlineCount.textContent =
         "🔴 Chatroom offline";
@@ -685,9 +694,9 @@ try {
 }
 
 
-/* =========================
+/* =========================================
    NICKNAME
-========================= */
+========================================= */
 
 let nickname =
     sessionStorage.getItem(
@@ -703,9 +712,9 @@ if (nickname) {
 }
 
 
-/* =========================
+/* =========================================
    SIMPAN NICKNAME
-========================= */
+========================================= */
 
 saveNicknameButton.addEventListener(
     "click",
@@ -727,7 +736,10 @@ saveNicknameButton.addEventListener(
 
 
         nickname =
-            value.substring(0, 20);
+            value.substring(
+                0,
+                20
+            );
 
 
         sessionStorage.setItem(
@@ -754,9 +766,9 @@ saveNicknameButton.addEventListener(
 );
 
 
-/* =========================
-   LOGIN ANONIM
-========================= */
+/* =========================================
+   LOGIN ANONYMOUS
+========================================= */
 
 if (auth) {
 
@@ -764,8 +776,18 @@ if (auth) {
 
         .then((result) => {
 
+            console.log(
+                "Firebase Anonymous Auth berhasil:",
+                result.user.uid
+            );
+
+
             const uid =
                 result.user.uid;
+
+
+            onlineCount.textContent =
+                "🟢 Terhubung";
 
 
             setupPresence(uid);
@@ -773,6 +795,7 @@ if (auth) {
             loadMessages();
 
         })
+
 
         .catch((error) => {
 
@@ -796,9 +819,9 @@ if (auth) {
 }
 
 
-/* =========================
+/* =========================================
    ONLINE PRESENCE
-========================= */
+========================================= */
 
 function setupPresence(uid) {
 
@@ -818,6 +841,7 @@ function setupPresence(uid) {
 
     onValue(
         connectedRef,
+
         (snapshot) => {
 
             if (
@@ -836,6 +860,7 @@ function setupPresence(uid) {
                 myPresenceRef,
                 {
                     online: true,
+
                     nickname:
                         nickname || "Tamu"
                 }
@@ -859,6 +884,12 @@ function setupPresence(uid) {
 
             });
 
+        },
+
+        (error) => {
+
+            showFirebaseError(error);
+
         }
     );
 
@@ -872,6 +903,7 @@ function setupPresence(uid) {
 
     onValue(
         presenceRef,
+
         (snapshot) => {
 
             const data =
@@ -899,9 +931,9 @@ function setupPresence(uid) {
 }
 
 
-/* =========================
+/* =========================================
    LOAD PESAN
-========================= */
+========================================= */
 
 function loadMessages() {
 
@@ -912,24 +944,31 @@ function loadMessages() {
         );
 
 
-    messages.innerHTML = "";
+    messages.innerHTML =
+        "";
 
 
     onChildAdded(
+
         messagesRef,
+
         (snapshot) => {
 
             const data =
                 snapshot.val();
 
 
-            displayMessage(data);
+            displayMessage(
+                data
+            );
 
         },
 
         (error) => {
 
-            showFirebaseError(error);
+            showFirebaseError(
+                error
+            );
 
         }
     );
@@ -937,14 +976,16 @@ function loadMessages() {
 }
 
 
-/* =========================
+/* =========================================
    TAMPILKAN PESAN
-========================= */
+========================================= */
 
 function displayMessage(data) {
 
     const messageDiv =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     messageDiv.className =
@@ -952,7 +993,9 @@ function displayMessage(data) {
 
 
     const nameDiv =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     nameDiv.className =
@@ -960,11 +1003,14 @@ function displayMessage(data) {
 
 
     nameDiv.textContent =
-        data.nickname || "Tamu";
+        data.nickname ||
+        "Tamu";
 
 
     const textDiv =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     textDiv.className =
@@ -976,7 +1022,9 @@ function displayMessage(data) {
 
 
     const timeDiv =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     timeDiv.className =
@@ -1029,9 +1077,9 @@ function displayMessage(data) {
 }
 
 
-/* =========================
+/* =========================================
    KIRIM PESAN
-========================= */
+========================================= */
 
 function sendMessage() {
 
@@ -1050,7 +1098,11 @@ function sendMessage() {
         messageInput.value.trim();
 
 
-    if (!text) return;
+    if (!text) {
+
+        return;
+
+    }
 
 
     if (text.length > 300) {
@@ -1073,6 +1125,7 @@ function sendMessage() {
 
     push(
         messagesRef,
+
         {
             nickname:
                 nickname,
@@ -1083,6 +1136,7 @@ function sendMessage() {
             timestamp:
                 serverTimestamp()
         }
+
     )
 
     .then(() => {
@@ -1096,7 +1150,10 @@ function sendMessage() {
 
     .catch((error) => {
 
-        showFirebaseError(error);
+        showFirebaseError(
+            error
+        );
+
 
         alert(
             "Pesan gagal dikirim. Coba lagi."
@@ -1107,9 +1164,9 @@ function sendMessage() {
 }
 
 
-/* =========================
+/* =========================================
    BUTTON KIRIM
-========================= */
+========================================= */
 
 sendButton.addEventListener(
     "click",
@@ -1117,12 +1174,13 @@ sendButton.addEventListener(
 );
 
 
-/* =========================
+/* =========================================
    ENTER
-========================= */
+========================================= */
 
 messageInput.addEventListener(
     "keydown",
+
     (event) => {
 
         if (
