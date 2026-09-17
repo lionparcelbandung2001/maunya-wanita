@@ -2,12 +2,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>
-    CewekPedia ❤️ — Teman Dengerin Kamu
-</title>
-
+<title>CewekPedia ❤️</title>
 
 <style>
 
@@ -15,39 +13,38 @@
         box-sizing: border-box;
     }
 
-
     html,
     body {
-
         margin: 0;
         padding: 0;
-
         width: 100%;
         min-height: 100%;
+    }
 
+    body {
         background: #fff7fb;
-
         font-family: Arial, sans-serif;
-
         color: #3a2630;
-
     }
 
 
-
-    /* =========================================
-       GLOBAL NAVIGATION
-       ========================================= */
+    /* =========================
+       NAVIGASI GLOBAL
+    ========================= */
 
     .global-nav {
 
         position: sticky;
-
         top: 0;
+        z-index: 1000;
 
-        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        width: 100%;
+        gap: 5px;
+
+        padding: 7px 6px;
 
         background: rgba(255, 247, 251, 0.97);
 
@@ -56,71 +53,43 @@
         box-shadow:
             0 2px 8px rgba(80, 40, 60, 0.06);
 
-    }
-
-
-    .nav-scroll {
-
-        max-width: 1100px;
-
-        margin: auto;
-
-        padding: 5px 7px;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        gap: 5px;
-
         overflow-x: auto;
-
-        white-space: nowrap;
 
         scrollbar-width: none;
 
     }
 
-
-    .nav-scroll::-webkit-scrollbar {
+    .global-nav::-webkit-scrollbar {
         display: none;
     }
 
 
-    .nav-scroll a {
+    .global-nav a {
 
         flex: 0 0 auto;
 
-        display: inline-flex;
+        text-decoration: none;
 
-        align-items: center;
-
-        justify-content: center;
-
-        padding: 5px 9px;
-
-        border-radius: 18px;
+        color: #633f4d;
 
         background: #ffffff;
 
-        color: #5b3b48;
+        border: 1px solid #efdce6;
 
-        text-decoration: none;
+        border-radius: 18px;
+
+        padding: 6px 9px;
 
         font-size: 11px;
 
         font-weight: 600;
 
-        border: 1px solid #efdce6;
-
-        cursor: pointer;
+        white-space: nowrap;
 
     }
 
 
-    .nav-scroll a.active {
+    .global-nav a.active {
 
         background: #d92f72;
 
@@ -131,16 +100,22 @@
     }
 
 
+    .global-nav a:hover {
 
-    /* =========================================
+        background: #fff0f6;
+
+    }
+
+
+    /* =========================
        MUSIC
-       ========================================= */
+    ========================= */
 
     .music-area {
 
         width: 100%;
 
-        padding: 7px 8px 6px;
+        padding: 7px 8px 4px;
 
         background: #fff7fb;
 
@@ -153,35 +128,20 @@
 
         width: 100%;
 
-        max-width: 720px;
+        max-width: 740px;
 
-        height: 180px;
+        height: 205px;
 
         margin: 0 auto;
 
         border: 0;
 
-        border-radius: 14px;
-
-        overflow: hidden;
-
     }
 
 
-
-    /* =========================================
-       PAGE CONTENT
-       ========================================= */
-
-    .page-area {
-
-        width: 100%;
-
-        min-height:
-            calc(100vh - 180px);
-
-    }
-
+    /* =========================
+       HALAMAN
+    ========================= */
 
     .page-frame {
 
@@ -189,8 +149,7 @@
 
         width: 100%;
 
-        height:
-            calc(100vh - 180px);
+        height: calc(100vh - 255px);
 
         min-height: 650px;
 
@@ -201,26 +160,15 @@
     }
 
 
-
-    /* =========================================
-       MOBILE
-       ========================================= */
-
     @media (max-width: 600px) {
 
-
-        .nav-scroll {
+        .global-nav {
 
             justify-content: flex-start;
 
-            padding: 5px 6px;
-
-            gap: 4px;
-
         }
 
-
-        .nav-scroll a {
+        .global-nav a {
 
             padding: 5px 8px;
 
@@ -228,30 +176,23 @@
 
         }
 
-
         .music-area {
 
-            padding:
-
-                5px 6px 5px;
+            padding: 6px 6px 3px;
 
         }
-
 
         .music-frame {
 
-            height: 180px;
+            height: 205px;
 
         }
 
-
         .page-frame {
 
-            height:
+            height: calc(100vh - 250px);
 
-                calc(100vh - 170px);
-
-            min-height: 600px;
+            min-height: 650px;
 
         }
 
@@ -259,133 +200,98 @@
 
 </style>
 
-</head><body><!-- =========================================
-     GLOBAL NAVIGATION
-     ========================================= --><nav class="global-nav"><div class="nav-scroll">
+</head><body><!-- =========================
+     NAVIGASI GLOBAL
+========================= --><nav class="global-nav"><a
+    href="home.html"
+    target="cewekpediaPage"
+    onclick="setActive(this)"
+    class="active"
+>
+    🏠 Utama
+</a>
 
 
-    <a
-        href="home.html"
-        target="cewekpediaPage"
-        class="active"
-        onclick="setActive(this)">
-
-        🏠 Utama
-
-    </a>
+<a
+    href="kota.html"
+    target="cewekpediaPage"
+    onclick="chooseFromShell('Pengen Cantik', this)"
+>
+    💄 Cantik
+</a>
 
 
-    <a
-        href="kota.html"
-        target="cewekpediaPage"
-        onclick="chooseFromShell(
-            'Pengen Cantik',
-            this
-        )">
-
-        💄 Cantik
-
-    </a>
+<a
+    href="kota.html"
+    target="cewekpediaPage"
+    onclick="chooseFromShell('Pengen Nikah', this)"
+>
+    💍 Nikah
+</a>
 
 
-    <a
-        href="kota.html"
-        target="cewekpediaPage"
-        onclick="chooseFromShell(
-            'Pengen Nikah',
-            this
-        )">
-
-        💍 Nikah
-
-    </a>
+<a
+    href="kota.html"
+    target="cewekpediaPage"
+    onclick="chooseFromShell('Pengen Makan & Belanja', this)"
+>
+    🛍️ Makan
+</a>
 
 
-    <a
-        href="kota.html"
-        target="cewekpediaPage"
-        onclick="chooseFromShell(
-            'Pengen Makan & Belanja',
-            this
-        )">
-
-        🛍️ Makan
-
-    </a>
+<a
+    href="kota.html"
+    target="cewekpediaPage"
+    onclick="chooseFromShell('Pengen Jalan-jalan / Healing', this)"
+>
+    🌴 Healing
+</a>
 
 
-    <a
-        href="kota.html"
-        target="cewekpediaPage"
-        onclick="chooseFromShell(
-            'Pengen Jalan-jalan / Healing',
-            this
-        )">
-
-        🌴 Healing
-
-    </a>
+<a
+    href="ruangcewek/index.html"
+    target="cewekpediaPage"
+    onclick="setActive(this)"
+>
+    💬 Cewek
+</a>
 
 
-    <a
-        href="ruangcewek/index.html"
-        target="cewekpediaPage"
-        onclick="setActive(this)">
+<a
+    href="ruanglawak/index.html"
+    target="cewekpediaPage"
+    onclick="setActive(this)"
+>
+    😂 Lawak
+</a>
 
-        💬 Cewek
-
-    </a>
-
-
-    <a
-        href="ruanglawak/index.html"
-        target="cewekpediaPage"
-        onclick="setActive(this)">
-
-        😂 Lawak
-
-    </a>
-
-
-</div>
-
-</nav><!-- =========================================
-     PERSISTENT MUSIC PLAYER
-     ========================================= --><section class="music-area"><iframe
+</nav><!-- =========================
+     MUSIC GLOBAL
+========================= --><section class="music-area"><iframe
     src="music-player.html"
     class="music-frame"
     title="CewekPedia Music Player"
     scrolling="no"
-    allow="autoplay">
+    frameborder="0"
+    allow="autoplay"
+>
 </iframe>
 
-</section><!-- =========================================
-     PAGE CONTENT
-     ========================================= --><main class="page-area"><iframe
-    id="pageFrame"
-    name="cewekpediaPage"
-    class="page-frame"
+</section><!-- =========================
+     HALAMAN KONTEN
+========================= --><iframe
     src="home.html"
-    title="CewekPedia Content">
-</iframe>
-
-</main><!-- =========================================
-     SHELL JAVASCRIPT
-     ========================================= --><script>
-
-
-    /* =========================================
-       AKTIFKAN TOMBOL NAV
-       ========================================= */
+    name="cewekpediaPage"
+    id="pageFrame"
+    class="page-frame"
+    title="CewekPedia"
+>
+</iframe><script>
 
     function setActive(button) {
 
-
         const buttons =
-            document.querySelectorAll(
-                ".nav-scroll a"
-            );
-
+            document.querySelectorAll(".global-nav a");
 
         buttons.forEach(function(item) {
 
@@ -394,52 +300,31 @@
         });
 
 
-        button.classList.add("active");
-
-    }
-
-
-
-    /* =========================================
-       PILIH KATEGORI DARI NAV SHELL
-       ========================================= */
-
-    function chooseFromShell(
-        category,
-        button
-    ) {
-
-
-        setActive(button);
-
-
-        try {
-
-            localStorage.setItem(
-                "mw_category",
-                category
-            );
-
-
-            localStorage.removeItem(
-                "mw_city"
-            );
-
-
-            localStorage.removeItem(
-                "mw_subcategory"
-            );
-
-        } catch (error) {
-
-            console.log(
-                "localStorage error:",
-                error
-            );
-
+        if (button) {
+            button.classList.add("active");
         }
 
     }
 
+
+    function chooseFromShell(category, button) {
+
+        localStorage.setItem(
+            "mw_category",
+            category
+        );
+
+        localStorage.removeItem(
+            "mw_city"
+        );
+
+        localStorage.removeItem(
+            "mw_subcategory"
+        );
+
+
+        setActive(button);
+
+    }
 
 </script></body></html>
