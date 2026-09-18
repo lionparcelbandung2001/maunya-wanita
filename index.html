@@ -164,7 +164,7 @@ body{
 
 
 /* =========================================
-   TOP BAR 2 — MUSIK (DITINGGIKAN)
+   TOP BAR 2 — MUSIK (UKURAN DISESUAIKAN)
    ========================================= */
 
 .music-area{
@@ -173,7 +173,7 @@ body{
 
     width:100%;
 
-    height:78px; /* Ditinggikan agar tombol play merah penuh terlihat */
+    height:76px; /* Ditinggikan agar tombol play merah terlihat jelas */
 
     padding:6px 8px;
 
@@ -220,22 +220,24 @@ body{
 
 
 /* =========================================
-   PETUNJUK "MUSIK DISINI ↑" (MELAYANG/FIXED)
+   BADGE PEMUTAR MUSIK (AMAN GOOGLE)
    ========================================= */
 
 .music-hint{
 
-    display:block;
+    display:inline-flex;
 
-    position:fixed; /* Diubah ke fixed agar tetap ikut saat layar di-scroll */
+    align-items:center;
 
-    right:12px;
+    position:absolute;
 
-    top:85px;
+    right:10px;
+
+    top:6px;
 
     z-index:10000;
 
-    font-size:10px;
+    font-size:9px;
 
     font-weight:bold;
 
@@ -243,39 +245,17 @@ body{
 
     background:#d92f72;
 
-    padding:4px 8px;
+    padding:3px 8px;
 
     border-radius:12px;
 
-    box-shadow:0 2px 8px rgba(217,47,114,.3);
+    box-shadow:0 2px 5px rgba(217,47,114,.2);
 
     pointer-events:none;
-
-    animation:
-        musicHintFloat
-        1.8s
-        ease-in-out
-        infinite;
 }
 
 
-/* Gerakan naik-turun */
-
-@keyframes musicHintFloat{
-
-    0%,
-    100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-4px);
-    }
-
-}
-
-
-/* Homepage tidak menampilkan petunjuk */
+/* Homepage tidak menampilkan badge */
 
 .music-hint.hidden{
     display:none;
@@ -292,7 +272,7 @@ body{
 
     width:100%;
 
-    height:calc(100vh - 120px);
+    height:calc(100vh - 118px);
 
     min-height:650px;
 
@@ -343,11 +323,11 @@ body{
     }
 
 
-    /* TOP BAR 2 MUSIK (DITINGGIKAN DI HP) */
+    /* TOP BAR 2 MUSIK (HP) */
 
     .music-area{
 
-        height:75px; /* Ditinggikan dari 56px */
+        height:72px; /* Cukup tinggi untuk HP */
 
         padding:4px 5px;
     }
@@ -361,17 +341,17 @@ body{
     }
 
 
-    /* PETUNJUK MELAYANG DI HP */
+    /* BADGE MUSIK HP */
 
     .music-hint{
 
-        right:10px;
+        right:8px;
 
-        top:82px;
+        top:5px;
 
-        font-size:9px;
+        font-size:8px;
 
-        padding:3px 7px;
+        padding:2px 6px;
     }
 
 
@@ -379,7 +359,7 @@ body{
 
     #pageFrame{
 
-        height:calc(100vh - 115px);
+        height:calc(100vh - 112px);
 
         min-height:650px;
     }
@@ -490,18 +470,15 @@ body{
         </iframe>
 
 
-    </div>
+        <!-- BADGE PEMUTAR MUSIK AMAN -->
+        <div
+            id="musicHint"
+            class="music-hint"
+        >
+            🎵 Pemutar Musik
+        </div>
 
 
-    <!-- =====================================
-         PETUNJUK MUSIK (FLOATING BADGE)
-         ===================================== -->
-
-    <div
-        id="musicHint"
-        class="music-hint"
-    >
-        musik disini ↑
     </div>
 
 
