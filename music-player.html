@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -97,7 +98,7 @@ body{
 
 
 /* =========================
-   MINI MUSIC BAR
+   MINI MUSIC BAR (DIPERBAIKI)
    ========================= */
 
 .mini .music-box{
@@ -151,12 +152,12 @@ body{
 }
 
 
-/* Area SoundCloud */
+/* Area SoundCloud Mini (Ukuran & Posisi Disesuaikan) */
 
 .mini .soundcloud-wrap{
     flex-shrink:0;
-    width:88px;
-    height:38px;
+    width:110px;
+    height:48px; /* Ditinggikan agar tombol play muat penuh */
     overflow:hidden;
     border-radius:9px;
     position:relative;
@@ -164,18 +165,18 @@ body{
 
 
 /*
-   Diturunkan sedikit supaya
-   tombol PLAY terlihat lebih penuh.
+   Posisi top diubah ke -8px agar memotong margin atas
+   dan memunculkan tombol PLAY secara utuh di tengah.
 */
 
 .mini .soundcloud{
     position:absolute;
 
-    left:0;
-    top:2px;
+    left:-2px;
+    top:-8px; /* Digeser ke atas agar tombol play tidak terpotong bawahnya */
 
-    width:88px;
-    height:55px;
+    width:120px;
+    height:68px;
 
     border:none;
 }
@@ -198,14 +199,15 @@ body{
     }
 
     .mini .soundcloud-wrap{
-        width:72px;
-        height:36px;
+        width:95px;
+        height:46px; /* Tinggi disesuaikan untuk layar HP */
     }
 
     .mini .soundcloud{
-        width:72px;
-        height:53px;
-        top:2px;
+        width:105px;
+        height:65px;
+        top:-7px; /* Menyesuaikan posisi di layar HP */
+        left:-2px;
     }
 
     .mini .music-hint{
@@ -350,7 +352,7 @@ function changeMusic(type){
 
 function detectPlayerMode(){
 
-    if(window.innerHeight < 100){
+    if(window.innerHeight < 120){
 
         document.body.classList.add("mini");
 
