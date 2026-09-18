@@ -50,7 +50,6 @@ body{
 
 /* =========================================
    TOP BAR 1 — KATEGORI
-   Lebih tipis atas-bawah
    ========================================= */
 
 .category-bar{
@@ -165,8 +164,7 @@ body{
 
 
 /* =========================================
-   TOP BAR 2 — MUSIK
-   Sedikit lebih tinggi
+   TOP BAR 2 — MUSIK (DITINGGIKAN)
    ========================================= */
 
 .music-area{
@@ -175,9 +173,9 @@ body{
 
     width:100%;
 
-    height:58px;
+    height:78px; /* Ditinggikan agar tombol play merah penuh terlihat */
 
-    padding:4px 8px;
+    padding:6px 8px;
 
     background:#fff7fb;
 
@@ -191,9 +189,7 @@ body{
 }
 
 
-/* HOMEPAGE
-   Player besar
-   */
+/* HOMEPAGE (Player Besar) */
 
 .music-area.home-music{
 
@@ -224,33 +220,34 @@ body{
 
 
 /* =========================================
-   PETUNJUK "MUSIK DISINI ↑"
-   BERADA DI LUAR TOP BAR
+   PETUNJUK "MUSIK DISINI ↑" (MELAYANG/FIXED)
    ========================================= */
 
 .music-hint{
 
     display:block;
 
-    position:absolute;
+    position:fixed; /* Diubah ke fixed agar tetap ikut saat layar di-scroll */
 
-    right:8px;
+    right:12px;
 
-    top:62px;
+    top:85px;
 
     z-index:10000;
 
-    font-size:8px;
+    font-size:10px;
 
     font-weight:bold;
 
-    color:#d92f72;
+    color:#ffffff;
 
-    background:rgba(255,247,251,.95);
+    background:#d92f72;
 
-    padding:2px 5px;
+    padding:4px 8px;
 
-    border-radius:8px;
+    border-radius:12px;
+
+    box-shadow:0 2px 8px rgba(217,47,114,.3);
 
     pointer-events:none;
 
@@ -295,7 +292,7 @@ body{
 
     width:100%;
 
-    height:calc(100vh - 100px);
+    height:calc(100vh - 120px);
 
     min-height:650px;
 
@@ -346,13 +343,13 @@ body{
     }
 
 
-    /* TOP BAR 2 */
+    /* TOP BAR 2 MUSIK (DITINGGIKAN DI HP) */
 
     .music-area{
 
-        height:56px;
+        height:75px; /* Ditinggikan dari 56px */
 
-        padding:3px 5px;
+        padding:4px 5px;
     }
 
 
@@ -364,17 +361,17 @@ body{
     }
 
 
-    /* PETUNJUK */
+    /* PETUNJUK MELAYANG DI HP */
 
     .music-hint{
 
-        right:8px;
+        right:10px;
 
-        top:60px;
+        top:82px;
 
-        font-size:7px;
+        font-size:9px;
 
-        padding:2px 5px;
+        padding:3px 7px;
     }
 
 
@@ -382,7 +379,7 @@ body{
 
     #pageFrame{
 
-        height:calc(100vh - 96px);
+        height:calc(100vh - 115px);
 
         min-height:650px;
     }
@@ -497,8 +494,7 @@ body{
 
 
     <!-- =====================================
-         PETUNJUK MUSIK
-         BERADA DI LUAR TOP BAR
+         PETUNJUK MUSIK (FLOATING BADGE)
          ===================================== -->
 
     <div
