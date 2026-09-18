@@ -98,7 +98,7 @@ body{
 
 
 /* =========================
-   MINI MUSIC BAR (DIPERBAIKI)
+   MINI MUSIC BAR
    ========================= */
 
 .mini .music-box{
@@ -152,28 +152,22 @@ body{
 }
 
 
-/* Area SoundCloud Mini (Ukuran & Posisi Disesuaikan) */
+/* Area SoundCloud Mini */
 
 .mini .soundcloud-wrap{
     flex-shrink:0;
     width:110px;
-    height:48px; /* Ditinggikan agar tombol play muat penuh */
+    height:48px;
     overflow:hidden;
     border-radius:9px;
     position:relative;
 }
 
-
-/*
-   Posisi top diubah ke -8px agar memotong margin atas
-   dan memunculkan tombol PLAY secara utuh di tengah.
-*/
-
 .mini .soundcloud{
     position:absolute;
 
     left:-2px;
-    top:-8px; /* Digeser ke atas agar tombol play tidak terpotong bawahnya */
+    top:-8px;
 
     width:120px;
     height:68px;
@@ -189,7 +183,9 @@ body{
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media(max-width:600px){
 
@@ -200,13 +196,13 @@ body{
 
     .mini .soundcloud-wrap{
         width:95px;
-        height:46px; /* Tinggi disesuaikan untuk layar HP */
+        height:46px;
     }
 
     .mini .soundcloud{
         width:105px;
         height:65px;
-        top:-7px; /* Menyesuaikan posisi di layar HP */
+        top:-7px;
         left:-2px;
     }
 
@@ -268,7 +264,7 @@ body{
             scrolling="no"
             frameborder="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fnugraha-74739955%2Fsets%2Fyy&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"
+            src=""
         >
         </iframe>
 
@@ -278,7 +274,6 @@ body{
     <!-- Petunjuk khusus mini bar -->
 
     <div class="music-hint">
-    
     </div>
 
 </div>
@@ -286,10 +281,31 @@ body{
 
 <script>
 
-const musicLinks={
 
-    indonesia:
-        "https://soundcloud.com/nugraha-74739955/sets/yy",
+/* =========================================================
+   PLAYLIST INDONESIA
+   🇮🇩 Tetap menjadi kategori DEFAULT.
+   
+   Saat pertama kali music-player dibuka,
+   salah satu playlist di bawah dipilih secara RANDOM.
+   ========================================================= */
+
+const indonesiaPlaylists = [
+
+    "https://soundcloud.com/nugraha-74739955/sets/yy",
+
+    "https://soundcloud.com/ms-ga-501205696/sets/lagu-pop-indonesia-2000an",
+
+    "https://soundcloud.com/storemusic-974485696/sets/top-chart-pop-indonesia-2024"
+
+];
+
+
+/* =========================================================
+   PLAYLIST KOREA & BARAT
+   ========================================================= */
+
+const musicLinks = {
 
     korea:
         "https://soundcloud.com/oyukh-h/sets/korean",
@@ -300,18 +316,38 @@ const musicLinks={
 };
 
 
-function changeMusic(type){
+/* =========================================================
+   RANDOM PLAYLIST INDONESIA
+   ========================================================= */
+
+function getRandomIndonesiaPlaylist(){
+
+    const randomIndex =
+        Math.floor(
+            Math.random() * indonesiaPlaylists.length
+        );
+
+    return indonesiaPlaylists[randomIndex];
+
+}
+
+
+/* =========================================================
+   LOAD SOUNDCLOUD
+   ========================================================= */
+
+function loadSoundCloud(url){
 
     const player =
         document.getElementById("soundcloudPlayer");
 
-    const url =
-        encodeURIComponent(musicLinks[type]);
+    const encodedUrl =
+        encodeURIComponent(url);
 
 
     player.src =
         "https://w.soundcloud.com/player/?url="
-        + url
+        + encodedUrl
         + "&color=%23d92f72"
         + "&auto_play=false"
         + "&hide_related=true"
@@ -320,6 +356,52 @@ function changeMusic(type){
         + "&show_reposts=false"
         + "&visual=false";
 
+}
+
+
+/* =========================================================
+   GANTI MUSIK
+   ========================================================= */
+
+function changeMusic(type){
+
+    let selectedUrl;
+
+
+    /* 🇮🇩 Indonesia */
+
+    if(type === "indonesia"){
+
+        selectedUrl =
+            getRandomIndonesiaPlaylist();
+
+    }
+
+
+    /* 🇰🇷 Korea */
+
+    if(type === "korea"){
+
+        selectedUrl =
+            musicLinks.korea;
+
+    }
+
+
+    /* 🌎 Barat */
+
+    if(type === "barat"){
+
+        selectedUrl =
+            musicLinks.barat;
+
+    }
+
+
+    loadSoundCloud(selectedUrl);
+
+
+    /* Reset tombol aktif */
 
     document
         .querySelectorAll(".playlist button")
@@ -330,25 +412,62 @@ function changeMusic(type){
         });
 
 
-    if(type==="indonesia")
+    /* Tandai tombol Indonesia */
+
+    if(type === "indonesia"){
+
         document
             .getElementById("btnIndonesia")
             .classList.add("active");
 
+    }
 
-    if(type==="korea")
+
+    /* Tandai tombol Korea */
+
+    if(type === "korea"){
+
         document
             .getElementById("btnKorea")
             .classList.add("active");
 
+    }
 
-    if(type==="barat")
+
+    /* Tandai tombol Barat */
+
+    if(type === "barat"){
+
         document
             .getElementById("btnBarat")
             .classList.add("active");
 
+    }
+
 }
 
+
+/* =========================================================
+   DEFAULT MUSIC
+   🇮🇩 INDONESIA
+   
+   Kategori Indonesia tetap aktif,
+   tetapi playlistnya dipilih RANDOM.
+   ========================================================= */
+
+function loadDefaultIndonesia(){
+
+    const randomIndonesia =
+        getRandomIndonesiaPlaylist();
+
+    loadSoundCloud(randomIndonesia);
+
+}
+
+
+/* =========================================================
+   DETECT PLAYER MODE
+   ========================================================= */
 
 function detectPlayerMode(){
 
@@ -365,7 +484,19 @@ function detectPlayerMode(){
 }
 
 
+/* =========================================================
+   JALANKAN DEFAULT
+   ========================================================= */
+
+loadDefaultIndonesia();
+
+
+/* Jalankan mode player */
+
 detectPlayerMode();
+
+
+/* Pantau perubahan ukuran */
 
 window.addEventListener(
     "resize",
