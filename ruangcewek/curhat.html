@@ -1,393 +1,902 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Curhat ❤️ | Ruang Cewek</title>
+<meta charset="UTF-8">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff7fb;
-            color: #3a2630;
-        }
+<title>Curhat ❤️ | Ruang Cewek — Cerita yang Menenangkan Hati</title>
 
-        .container {
-            width: 92%;
-            max-width: 900px;
-            margin: auto;
-        }
+<meta
+    name="description"
+    content="Ruang curhat untuk berbagi cerita tentang cinta, keluarga, pertemanan, pekerjaan, dan kehidupan. Baca cerita yang hangat, menyentuh, dan menemani hati."
+>
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 28px 15px 18px;
-        }
 
-        header h1 {
-            margin: 0;
-            color: #d92f72;
-            font-size: 30px;
-        }
+<style>
 
-        header p {
-            margin: 7px 0 0;
-            color: #765967;
-            font-size: 14px;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        /* BACK */
-        .back {
-            display: inline-block;
-            margin: 5px 0 15px;
-            color: #d92f72;
-            text-decoration: none;
-            font-size: 13px;
-        }
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff7fb;
+    color:#3a2630;
+}
 
-        /* FILTER */
-        .filter-title {
-            text-align: center;
-            font-size: 13px;
-            color: #765967;
-            margin-bottom: 8px;
-        }
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+}
 
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 8px;
-            margin-bottom: 22px;
-        }
 
-        .category-button {
-            border: 1px solid #f0cfdd;
-            background: white;
-            color: #5d3d4b;
-            border-radius: 12px;
-            padding: 10px 5px;
-            font-size: 12px;
-            cursor: pointer;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .category-button:hover,
-        .category-button.active {
-            background: #fde5ef;
-            color: #d92f72;
-            border-color: #e9a9c1;
-            font-weight: bold;
-        }
+header{
+    text-align:center;
+    padding:28px 15px 18px;
+}
 
-        /* LIST */
-        .section-title {
-            color: #d92f72;
-            font-size: 19px;
-            margin: 0 0 12px;
-        }
+header h1{
+    margin:0;
+    color:#d92f72;
+    font-size:30px;
+}
 
-        .story-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 35px;
-        }
+header p{
+    margin:7px 0 0;
+    color:#765967;
+    font-size:14px;
+}
 
-        .story-card {
-            display: block;
-            background: white;
-            border: 1px solid #f2d9e4;
-            border-radius: 15px;
-            padding: 15px;
-            text-decoration: none;
-            color: #3a2630;
-            box-shadow: 0 3px 10px rgba(180, 100, 130, 0.06);
-            transition: 0.2s;
-        }
 
-        .story-card:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 14px rgba(180, 100, 130, 0.1);
-        }
+/* =========================
+   BACK
+========================= */
 
-        .story-title {
-            font-weight: bold;
-            color: #3a2630;
-            font-size: 15px;
-            margin-bottom: 7px;
-        }
+.back{
+    display:inline-block;
+    margin:5px 0 15px;
+    color:#d92f72;
+    text-decoration:none;
+    font-size:13px;
+}
 
-        .story-meta {
-            font-size: 11px;
-            color: #8a707b;
-        }
 
-        .story-preview {
-            font-size: 13px;
-            color: #765967;
-            line-height: 1.5;
-            margin-top: 7px;
-        }
+/* =========================
+   FILTER
+========================= */
 
-        /* FLOATING BUTTON */
-        .share-story {
-            position: fixed;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
+.filter-title{
+    text-align:center;
+    font-size:13px;
+    color:#765967;
+    margin-bottom:8px;
+}
 
-            background: #d92f72;
-            color: white;
-            text-decoration: none;
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+    margin-bottom:22px;
+}
 
-            padding: 12px 14px;
-            border-radius: 14px;
+.category-button{
+    border:1px solid #f0cfdd;
+    background:white;
+    color:#5d3d4b;
+    border-radius:12px;
+    padding:10px 5px;
+    font-size:12px;
+    cursor:pointer;
+}
 
-            text-align: center;
-            font-weight: bold;
-            font-size: 12px;
+.category-button:hover,
+.category-button.active{
+    background:#fde5ef;
+    color:#d92f72;
+    border-color:#e9a9c1;
+    font-weight:bold;
+}
 
-            box-shadow: 0 5px 15px rgba(150, 50, 90, 0.22);
-        }
 
-        .share-story span {
-            display: block;
-            font-size: 11px;
-            margin-top: 3px;
-        }
+/* =========================
+   SECTION
+========================= */
 
-        .share-story:hover {
-            opacity: 0.9;
-        }
+.section-title{
+    color:#d92f72;
+    font-size:19px;
+    margin:0 0 12px;
+}
 
-        /* INFO */
-        .info-box {
-            background: #fff0f6;
-            border: 1px solid #f3d5e2;
-            border-radius: 14px;
-            padding: 13px;
-            font-size: 12px;
-            line-height: 1.5;
-            color: #765967;
-            margin-bottom: 25px;
-        }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 20px 10px 30px;
-            color: #8a707b;
-            font-size: 12px;
-        }
+/* =========================
+   STORY LIST
+========================= */
 
-        /* MOBILE */
-        @media (max-width: 700px) {
+.story-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:30px;
+}
 
-            .container {
-                width: 94%;
-            }
+.story-card{
+    display:block;
+    background:white;
+    border:1px solid #f2d9e4;
+    border-radius:15px;
+    padding:15px;
+    text-decoration:none;
+    color:#3a2630;
+    box-shadow:0 3px 10px rgba(180,100,130,.06);
+    transition:.2s;
+}
 
-            header h1 {
-                font-size: 27px;
-            }
+.story-card:hover{
+    transform:translateY(-1px);
+    box-shadow:0 5px 14px rgba(180,100,130,.1);
+}
 
-            .category-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 6px;
-            }
+.story-title{
+    font-weight:bold;
+    color:#3a2630;
+    font-size:15px;
+    margin-bottom:7px;
+    line-height:1.4;
+}
 
-            .category-button {
-                padding: 9px 3px;
-                font-size: 11px;
-            }
+.story-meta{
+    font-size:11px;
+    color:#8a707b;
+}
 
-            .story-card {
-                padding: 13px;
-            }
+.story-preview{
+    font-size:13px;
+    color:#765967;
+    line-height:1.6;
+    margin-top:7px;
+}
 
-            .share-story {
-                right: 8px;
-                padding: 10px 11px;
-                border-radius: 12px;
-                font-size: 11px;
-            }
 
-            .share-story span {
-                font-size: 10px;
-            }
-        }
+/* =========================
+   EMPTY CATEGORY
+========================= */
 
-        @media (max-width: 380px) {
+.empty-story{
+    display:none;
+    text-align:center;
+    background:white;
+    border:1px solid #f2d9e4;
+    border-radius:15px;
+    padding:25px 15px;
+    color:#8a707b;
+    font-size:13px;
+    line-height:1.6;
+}
 
-            .category-button {
-                font-size: 10px;
-                padding: 8px 2px;
-            }
 
-            .share-story {
-                right: 5px;
-                padding: 9px 9px;
-            }
-        }
-    </style>
+/* =========================
+   FLOATING BUTTON
+========================= */
+
+.share-story{
+    position:fixed;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:1000;
+
+    background:#d92f72;
+    color:white;
+    text-decoration:none;
+
+    padding:12px 14px;
+    border-radius:14px;
+
+    text-align:center;
+    font-weight:bold;
+    font-size:12px;
+
+    box-shadow:0 5px 15px rgba(150,50,90,.22);
+}
+
+.share-story span{
+    display:block;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.share-story:hover{
+    opacity:.9;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info-box{
+    background:#fff0f6;
+    border:1px solid #f3d5e2;
+    border-radius:14px;
+    padding:14px;
+    font-size:12px;
+    line-height:1.6;
+    color:#765967;
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:20px 10px 30px;
+    color:#8a707b;
+    font-size:12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .container{
+        width:94%;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
+    .category-grid{
+        gap:6px;
+    }
+
+    .category-button{
+        padding:9px 3px;
+        font-size:11px;
+    }
+
+    .story-card{
+        padding:13px;
+    }
+
+    .story-preview{
+        line-height:1.55;
+    }
+
+    .share-story{
+        right:8px;
+        padding:10px 11px;
+        border-radius:12px;
+        font-size:11px;
+    }
+
+    .share-story span{
+        font-size:10px;
+    }
+
+}
+
+
+@media(max-width:380px){
+
+    .category-button{
+        font-size:10px;
+        padding:8px 2px;
+    }
+
+    .share-story{
+        right:5px;
+        padding:9px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <!-- HEADER -->
-    <header>
-        <h1>💭 CURHAT</h1>
-        <p>Cerita apa yang lagi kamu rasain? ❤️</p>
-    </header>
 
-    <!-- BACK -->
-    <a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
+<!-- =========================
+     HEADER
+========================= -->
 
+<header>
 
-    <!-- FILTER KATEGORI -->
-    <div class="filter-title">
-        Pilih kategori cerita
-    </div>
+    <h1>
+        💭 CURHAT
+    </h1>
 
-    <div class="category-grid">
+    <p>
+        Cerita yang mungkin pernah kamu rasakan ❤️
+    </p>
 
-        <button class="category-button active">
-            Semua
-        </button>
-
-        <button class="category-button">
-            Percintaan
-        </button>
-
-        <button class="category-button">
-            Pernikahan
-        </button>
-
-        <button class="category-button">
-            Pertemanan
-        </button>
-
-        <button class="category-button">
-            Keluarga
-        </button>
-
-        <button class="category-button">
-            Pekerjaan
-        </button>
-
-        <button class="category-button">
-            Kehidupan
-        </button>
-
-    </div>
+</header>
 
 
-    <!-- DAFTAR CERITA -->
-    <h2 class="section-title">
-        💗 Cerita Terbaru
-    </h2>
+<!-- =========================
+     BACK
+========================= -->
 
-    <div class="story-list">
+<a
+    href="index.html"
+    class="back">
 
-        <a href="#" class="story-card">
+    ← Kembali ke Ruang Cewek
 
-            <div class="story-title">
-                Aku bingung harus bagaimana dengan hubungan ini...
-            </div>
-
-            <div class="story-meta">
-                💗 Percintaan • 2 jam lalu • 💬 12 komentar
-            </div>
-
-            <div class="story-preview">
-                Aku sudah menjalani hubungan ini cukup lama, tapi akhir-akhir ini...
-            </div>
-
-        </a>
+</a>
 
 
-        <a href="#" class="story-card">
+<!-- =========================
+     FILTER
+========================= -->
 
-            <div class="story-title">
-                Mau menikah tapi keluarga belum sepakat
-            </div>
+<div class="filter-title">
 
-            <div class="story-meta">
-                💍 Pernikahan • 5 jam lalu • 💬 8 komentar
-            </div>
-
-            <div class="story-preview">
-                Aku dan pasangan sebenarnya sudah siap, tapi ada beberapa hal yang...
-            </div>
-
-        </a>
-
-
-        <a href="#" class="story-card">
-
-            <div class="story-title">
-                Sahabatku tiba-tiba menjauh
-            </div>
-
-            <div class="story-meta">
-                👭 Pertemanan • kemarin • 💬 5 komentar
-            </div>
-
-            <div class="story-preview">
-                Kami sudah berteman bertahun-tahun. Tapi beberapa minggu terakhir...
-            </div>
-
-        </a>
-
-
-        <a href="#" class="story-card">
-
-            <div class="story-title">
-                Aku capek selalu jadi orang yang harus mengerti
-            </div>
-
-            <div class="story-meta">
-                🌷 Kehidupan • kemarin • 💬 9 komentar
-            </div>
-
-            <div class="story-preview">
-                Kadang rasanya aku juga ingin dimengerti, bukan terus-terusan...
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- INFO -->
-    <div class="info-box">
-        💌 Cerita yang dikirim akan melalui proses moderasi terlebih dahulu
-        sebelum ditampilkan di Ruang Cewek.
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer>
-        © CewekPedia ❤️
-    </footer>
+    Pilih kategori cerita
 
 </div>
 
 
-<!-- BAGIKAN CERITAMU -->
-<a href="#" class="share-story">
+<div class="category-grid">
+
+    <button
+        class="category-button active"
+        data-category="Semua">
+
+        Semua
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Percintaan">
+
+        Percintaan
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Pernikahan">
+
+        Pernikahan
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Pertemanan">
+
+        Pertemanan
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Keluarga">
+
+        Keluarga
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Pekerjaan">
+
+        Pekerjaan
+
+    </button>
+
+    <button
+        class="category-button"
+        data-category="Kehidupan">
+
+        Kehidupan
+
+    </button>
+
+</div>
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<h2 class="section-title">
+
+    💗 Cerita yang Menemani
+
+</h2>
+
+
+<div class="story-list">
+
+
+    <!-- CERITA 1 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Percintaan">
+
+        <div class="story-title">
+
+            Ternyata dicintai itu sesederhana ini...
+
+        </div>
+
+        <div class="story-meta">
+
+            💗 Percintaan • 2 jam lalu • 💬 18 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Dulu aku selalu berpikir bahwa dicintai berarti
+            harus mendapatkan bunga, hadiah, atau kata-kata
+            manis setiap hari. Sampai akhirnya aku bertemu
+            seseorang yang selalu memastikan aku sudah makan,
+            mengingatkan untuk hati-hati di jalan, dan tetap
+            mendengarkan ceritaku meskipun ceritanya sederhana.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 2 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Keluarga">
+
+        <div class="story-title">
+
+            Hari ini aku baru sadar, ibu ternyata selalu menungguku
+
+        </div>
+
+        <div class="story-meta">
+
+            🏠 Keluarga • 4 jam lalu • 💬 24 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Aku pulang malam karena pekerjaan. Rumah sudah
+            sepi dan aku kira semua orang tidur. Ternyata ibu
+            masih duduk di ruang tengah sambil menungguku.
+            Beliau cuma bilang, "Sudah makan belum?"
+            Entah kenapa pertanyaan sederhana itu membuat
+            aku ingin menangis.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 3 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Pertemanan">
+
+        <div class="story-title">
+
+            Sahabat yang tetap ada meskipun aku menghilang
+
+        </div>
+
+        <div class="story-meta">
+
+            👭 Pertemanan • kemarin • 💬 16 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Beberapa bulan terakhir aku sedang tidak baik-baik
+            saja. Aku bahkan jarang membalas pesan teman-temanku.
+            Tapi ada satu orang yang tidak pernah berhenti
+            bertanya, "Kamu baik-baik aja?" Sampai akhirnya
+            aku sadar, mungkin itulah arti seorang sahabat.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 4 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Kehidupan">
+
+        <div class="story-title">
+
+            Untuk kamu yang merasa hidupmu tertinggal...
+
+        </div>
+
+        <div class="story-meta">
+
+            🌷 Kehidupan • kemarin • 💬 31 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Teman-temanku sudah menikah, punya rumah,
+            punya karier yang bagus. Sementara aku masih
+            mencoba memahami hidupku sendiri. Tapi hari ini
+            aku belajar satu hal: setiap orang punya waktunya
+            masing-masing. Aku tidak terlambat. Aku hanya
+            sedang berjalan dengan jalanku sendiri.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 5 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Pekerjaan">
+
+        <div class="story-title">
+
+            Aku hampir menyerah, lalu seseorang bilang "kamu hebat"
+
+        </div>
+
+        <div class="story-meta">
+
+            💼 Pekerjaan • 2 hari lalu • 💬 14 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Hari itu aku merasa gagal. Pekerjaan berantakan
+            dan aku merasa tidak cukup baik. Seorang teman
+            melihatku diam lalu berkata, "Kamu mungkin capek,
+            tapi jangan bilang kamu nggak hebat. Aku tahu
+            kamu sudah berusaha." Kalimat itu masih aku ingat
+            sampai sekarang.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 6 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Pernikahan">
+
+        <div class="story-title">
+
+            Bukan pesta mewah yang aku inginkan...
+
+        </div>
+
+        <div class="story-meta">
+
+            💍 Pernikahan • 2 hari lalu • 💬 11 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Dulu aku membayangkan pernikahan dengan dekorasi
+            indah dan pesta besar. Sekarang aku justru lebih
+            menginginkan satu hal: seseorang yang tetap
+            menggenggam tanganku ketika hidup sedang tidak
+            indah-indahnya.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 7 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Percintaan">
+
+        <div class="story-title">
+
+            Dia tidak banyak bicara, tapi selalu membuatku merasa aman
+
+        </div>
+
+        <div class="story-meta">
+
+            💗 Percintaan • 3 hari lalu • 💬 20 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Dia bukan orang yang pandai membuat kata-kata romantis.
+            Tapi setiap kali aku pulang, dia selalu memastikan
+            aku sampai dengan selamat. Ketika aku sedih, dia
+            tidak memaksa aku bercerita. Dia cuma bilang,
+            "Aku di sini kalau kamu butuh." Ternyata rasa aman
+            juga bisa terasa sangat romantis.
+
+        </div>
+
+    </a>
+
+
+    <!-- CERITA 8 -->
+
+    <a
+        href="#"
+        class="story-card"
+        data-category="Kehidupan">
+
+        <div class="story-title">
+
+            Kalau hari ini kamu sedang lelah, istirahatlah sebentar
+
+        </div>
+
+        <div class="story-meta">
+
+            🌷 Kehidupan • 3 hari lalu • 💬 27 komentar
+
+        </div>
+
+        <div class="story-preview">
+
+            Kamu tidak harus selalu kuat. Tidak harus selalu
+            tersenyum. Tidak apa-apa kalau hari ini kamu hanya
+            ingin diam dan beristirahat. Besok masih ada.
+            Pelan-pelan saja. Kamu sudah melakukan yang terbaik
+            yang kamu bisa hari ini.
+
+        </div>
+
+    </a>
+
+
+</div>
+
+
+<!-- =========================
+     EMPTY
+========================= -->
+
+<div
+    id="emptyStory"
+    class="empty-story">
+
+    🌷 Belum ada cerita di kategori ini.
+
+    <br>
+
+    Mungkin kamu bisa menjadi orang pertama
+    yang berbagi cerita. ❤️
+
+</div>
+
+
+<!-- =========================
+     INFO
+========================= -->
+
+<div class="info-box">
+
+    💌 <strong>Ruang yang nyaman untuk bercerita.</strong>
+
+    <br><br>
+
+    Cerita yang dikirim akan melalui proses moderasi
+    terlebih dahulu sebelum ditampilkan di Ruang Cewek.
+
+    <br><br>
+
+    Kamu boleh menggunakan nama panggilan atau memilih
+    untuk tetap anonim. Jangan cantumkan data pribadi
+    seperti nomor telepon, alamat, password, atau informasi
+    sensitif lainnya.
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © CewekPedia ❤️
+
+</footer>
+
+
+</div>
+
+
+<!-- =========================
+     BAGIKAN CERITA
+========================= -->
+
+<a
+    href="#"
+    class="share-story">
+
     💌 Bagikan
-    <span>Ceritamu</span>
+
+    <span>
+        Ceritamu
+    </span>
+
 </a>
 
 
+<!-- =========================
+     FILTER SCRIPT
+========================= -->
+
+<script>
+
+const buttons =
+    document.querySelectorAll(
+        ".category-button"
+    );
+
+
+const stories =
+    document.querySelectorAll(
+        ".story-card"
+    );
+
+
+const emptyStory =
+    document.getElementById(
+        "emptyStory"
+    );
+
+
+buttons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            const selectedCategory =
+                button.dataset.category;
+
+
+            /* Tombol aktif */
+
+            buttons.forEach(function(item){
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            /* Filter cerita */
+
+            let visibleCount = 0;
+
+
+            stories.forEach(function(story){
+
+                const storyCategory =
+                    story.dataset.category;
+
+
+                if(
+                    selectedCategory === "Semua" ||
+                    storyCategory === selectedCategory
+                ){
+
+                    story.style.display =
+                        "block";
+
+                    visibleCount++;
+
+                }else{
+
+                    story.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            /* Pesan jika kosong */
+
+            if(visibleCount === 0){
+
+                emptyStory.style.display =
+                    "block";
+
+            }else{
+
+                emptyStory.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+});
+
+
+/*
+   Tombol Bagikan Ceritamu
+   sementara diarahkan ke form nanti.
+*/
+
+document
+    .querySelector(".share-story")
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            alert(
+                "Fitur Bagikan Ceritamu akan segera tersedia ❤️"
+            );
+
+        }
+    );
+
+</script>
+
+
 </body>
+
 </html>
