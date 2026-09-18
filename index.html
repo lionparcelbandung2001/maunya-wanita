@@ -49,15 +49,27 @@ body{
 
 
 /* =========================================
-   TOP BAR 1 — KATEGORI
+   HEADER STICKY (MEMBUNGKUS KEDUA TOP BAR)
    ========================================= */
 
-.category-bar{
+.sticky-header{
 
     position:sticky;
     top:0;
 
     z-index:9999;
+
+    width:100%;
+
+    background:#fff7fb;
+}
+
+
+/* =========================================
+   TOP BAR 1 — KATEGORI
+   ========================================= */
+
+.category-bar{
 
     width:100%;
 
@@ -164,7 +176,7 @@ body{
 
 
 /* =========================================
-   TOP BAR 2 — MUSIK (TINGGI DISESUAIKAN KEBUTUHAN)
+   TOP BAR 2 — MUSIK (TINGGI TETAP & STABIL)
    ========================================= */
 
 .music-area{
@@ -173,7 +185,7 @@ body{
 
     width:100%;
 
-    height:110px; /* Ditinggikan dari 76px ke 110px agar player tidak terpotong */
+    height:110px; /* Tinggi stabil untuk PC */
 
     padding:4px 8px;
 
@@ -182,20 +194,6 @@ body{
     border-bottom:1px solid #f1d2df;
 
     overflow:hidden;
-
-    transition:
-        height .2s ease,
-        padding .2s ease;
-}
-
-
-/* HOMEPAGE (Player Besar) */
-
-.music-area.home-music{
-
-    height:205px;
-
-    padding:5px 8px;
 }
 
 
@@ -220,7 +218,7 @@ body{
 
 
 /* =========================================
-   BADGE PEMUTAR MUSIK (AMAN GOOGLE)
+   BADGE PEMUTAR MUSIK
    ========================================= */
 
 .music-hint{
@@ -252,13 +250,6 @@ body{
     box-shadow:0 2px 5px rgba(217,47,114,.2);
 
     pointer-events:none;
-}
-
-
-/* Homepage tidak menampilkan badge */
-
-.music-hint.hidden{
-    display:none;
 }
 
 
@@ -327,17 +318,9 @@ body{
 
     .music-area{
 
-        height:105px; /* Ditinggikan dari 72px ke 105px untuk HP */
+        height:105px; /* Tinggi stabil untuk HP */
 
         padding:3px 5px;
-    }
-
-
-    .music-area.home-music{
-
-        height:205px;
-
-        padding:4px 5px;
     }
 
 
@@ -378,108 +361,111 @@ body{
 
 
     <!-- =====================================
-         TOP BAR 1 — KATEGORI
+         STUCK HEADER (KATEGORI + MUSIK NEMPUL BERBERSAMAAN)
          ===================================== -->
 
-    <nav class="category-bar">
+    <header class="sticky-header">
 
 
-        <button
-            id="homeButton"
-            class="home-button active"
-            onclick="goHome()"
-            aria-label="Beranda"
-        >
-            🏠
-        </button>
-
-
-        <div class="category-links">
+        <!-- TOP BAR 1 — KATEGORI -->
+        <nav class="category-bar">
 
 
             <button
-                id="navCantik"
-                onclick="goCategory('cantik')"
+                id="homeButton"
+                class="home-button active"
+                onclick="goHome()"
+                aria-label="Beranda"
             >
-                💄 Pengen Cantik
+                🏠
             </button>
 
 
-            <button
-                id="navNikah"
-                onclick="goCategory('nikah')"
-            >
-                💍 Pengen Nikah
-            </button>
+            <div class="category-links">
 
 
-            <button
-                id="navMakan"
-                onclick="goCategory('makan')"
-            >
-                🛍️ Makan & Belanja
-            </button>
+                <button
+                    id="navCantik"
+                    onclick="goCategory('cantik')"
+                >
+                    💄 Pengen Cantik
+                </button>
 
 
-            <button
-                id="navHealing"
-                onclick="goCategory('healing')"
-            >
-                🌴 Jalan-jalan / Healing
-            </button>
+                <button
+                    id="navNikah"
+                    onclick="goCategory('nikah')"
+                >
+                    💍 Pengen Nikah
+                </button>
 
 
-            <button
-                id="navRuangCewek"
-                onclick="goPage('ruangcewek/index.html')"
-            >
-                💬 Ruang Cewek
-            </button>
+                <button
+                    id="navMakan"
+                    onclick="goCategory('makan')"
+                >
+                    🛍️ Makan & Belanja
+                </button>
 
 
-            <button
-                id="navRuangLawak"
-                onclick="goPage('ruanglawak/index.html')"
-            >
-                😂 Ruang Lawak
-            </button>
+                <button
+                    id="navHealing"
+                    onclick="goCategory('healing')"
+                >
+                    🌴 Jalan-jalan / Healing
+                </button>
 
 
-        </div>
-
-    </nav>
-
-
-    <!-- =====================================
-         TOP BAR 2 — MUSIK
-         ===================================== -->
-
-    <div
-        id="musicArea"
-        class="music-area home-music"
-    >
+                <button
+                    id="navRuangCewek"
+                    onclick="goPage('ruangcewek/index.html')"
+                >
+                    💬 Ruang Cewek
+                </button>
 
 
-        <iframe
-            id="musicFrame"
-            class="music-frame"
-            src="music-player.html"
-            title="CewekPedia Music"
-            scrolling="no"
-        >
-        </iframe>
+                <button
+                    id="navRuangLawak"
+                    onclick="goPage('ruanglawak/index.html')"
+                >
+                    😂 Ruang Lawak
+                </button>
 
 
-        <!-- BADGE PEMUTAR MUSIK AMAN -->
+            </div>
+
+        </nav>
+
+
+        <!-- TOP BAR 2 — MUSIK -->
         <div
-            id="musicHint"
-            class="music-hint"
+            id="musicArea"
+            class="music-area"
         >
-            🎵 Pemutar Musik
+
+
+            <iframe
+                id="musicFrame"
+                class="music-frame"
+                src="music-player.html"
+                title="CewekPedia Music"
+                scrolling="no"
+            >
+            </iframe>
+
+
+            <div
+                id="musicHint"
+                class="music-hint"
+            >
+                🎵 Pemutar Musik
+            </div>
+
+
         </div>
 
 
-    </div>
+    </header>
 
 
     <!-- =====================================
@@ -504,14 +490,6 @@ const pageFrame =
     document.getElementById("pageFrame");
 
 
-const musicArea =
-    document.getElementById("musicArea");
-
-
-const musicHint =
-    document.getElementById("musicHint");
-
-
 /* =========================================
    HOME
    ========================================= */
@@ -519,8 +497,6 @@ const musicHint =
 function goHome(){
 
     pageFrame.src="home.html";
-
-    setMusicMode(true);
 
     clearActive();
 
@@ -553,8 +529,6 @@ function goCategory(category){
 
 
     pageFrame.src="kota.html";
-
-    setMusicMode(false);
 
     clearActive();
 
@@ -609,8 +583,6 @@ function goPage(url){
 
     pageFrame.src=url;
 
-    setMusicMode(false);
-
     clearActive();
 
 
@@ -630,37 +602,6 @@ function goPage(url){
             .getElementById("navRuangLawak")
             .classList
             .add("active");
-
-    }
-
-}
-
-
-/* =========================================
-   MODE MUSIK
-   ========================================= */
-
-function setMusicMode(isHome){
-
-    if(isHome){
-
-        musicArea
-            .classList
-            .add("home-music");
-
-        musicHint
-            .classList
-            .add("hidden");
-
-    }else{
-
-        musicArea
-            .classList
-            .remove("home-music");
-
-        musicHint
-            .classList
-            .remove("hidden");
 
     }
 
@@ -727,8 +668,6 @@ pageFrame.addEventListener(
             path.includes("home.html")
         ){
 
-            setMusicMode(true);
-
             clearActive();
 
             document
@@ -746,8 +685,6 @@ pageFrame.addEventListener(
         if(
             path.includes("ruangcewek")
         ){
-
-            setMusicMode(false);
 
             clearActive();
 
@@ -767,8 +704,6 @@ pageFrame.addEventListener(
             path.includes("ruanglawak")
         ){
 
-            setMusicMode(false);
-
             clearActive();
 
             document
@@ -782,8 +717,6 @@ pageFrame.addEventListener(
 
 
         /* HALAMAN LAIN */
-
-        setMusicMode(false);
 
         const category =
             localStorage.getItem(
