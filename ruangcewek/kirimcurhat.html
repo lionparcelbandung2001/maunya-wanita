@@ -1,677 +1,95 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Kirim Cerita | Ruang Cewek</title>
-
-  <meta
-    name="description"
-    content="Kirim cerita, pengalaman, atau curhatmu ke Ruang Cewek."
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
-      color: #3a2630;
-    }
-
-    .container {
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .back {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: #d92f72;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      color: #d92f72;
-      font-size: 27px;
-      line-height: 1.4;
-    }
-
-    .intro {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 7px;
-      font-weight: bold;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #ead5df;
-      border-radius: 12px;
-      padding: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      color: #3a2630;
-      background: #fffafd;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #d92f72;
-    }
-
-    textarea {
-      min-height: 220px;
-      resize: vertical;
-      line-height: 1.6;
-    }
-
-    .field {
-      margin-bottom: 20px;
-    }
-
-    .hint {
-      margin-top: 6px;
-      color: #999;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    button {
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      padding: 14px;
-      background: #d92f72;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.92;
-    }
-
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .info {
-      margin-top: 20px;
-      padding: 15px;
-      background: #fff0f6;
-      border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .success {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 12px;
-      background: #f0fff5;
-      color: #27633d;
-      line-height: 1.7;
-    }
-
-    .error {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 12px;
-      background: #fff0f0;
-      color: #a52a2a;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 25px;
-      color: #999;
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-
-      body {
-        padding: 15px;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 23px;
-      }
-
-      textarea {
-        min-height: 200px;
-      }
-
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirim Cerita | Ruang Cewek</title>
+<style>
+*{box-sizing:border-box} body{margin:0;padding:20px;font-family:Arial,sans-serif;background:#fff7fb;color:#3a2630}
+.container{max-width:750px;margin:auto}
+.back{display:inline-block;margin-bottom:18px;color:#d92f72;text-decoration:none;font-weight:bold}
+.card{background:white;border-radius:18px;padding:25px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}
+h1{margin:0 0 10px;color:#d92f72;font-size:27px}
+.intro{color:#666;line-height:1.7;margin-bottom:25px}
+label{display:block;margin-bottom:7px;font-weight:bold}
+input,select,textarea{width:100%;border:1px solid #ead5df;border-radius:12px;padding:12px;font-size:15px;background:#fffafd;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#d92f72}
+textarea{min-height:220px;resize:vertical;line-height:1.6}
+.field{margin-bottom:20px} .hint{margin-top:6px;color:#999;font-size:12px}
+button{width:100%;border:none;border-radius:12px;padding:14px;background:#d92f72;color:white;font-size:16px;font-weight:bold;cursor:pointer}
+button:disabled{opacity:0.6;cursor:not-allowed}
+.info{margin-top:20px;padding:15px;background:#fff0f6;border-radius:12px;font-size:13px;line-height:1.7}
+.success{margin-top:20px;padding:18px;border-radius:12px;background:#f0fff5;color:#27633d;line-height:1.7}
+.error{margin-top:20px;padding:18px;border-radius:12px;background:#fff0f0;color:#a52a2a;line-height:1.7}
+</style>
 </head>
-
 <body>
-
 <div class="container">
-
-  <a href="curhat.html" class="back">
-    ← Kembali ke Curhat
-  </a>
-
-  <div class="card">
-
-    <h1>💌 Kirim Ceritamu</h1>
-
-    <div class="intro">
-      Punya cerita, pengalaman, atau curhat yang ingin kamu bagikan?
-      Tulis di sini ❤️
-      <br><br>
-      Cerita yang masuk akan diperiksa terlebih dahulu sebelum ditampilkan
-      di Ruang Cewek.
-    </div>
-
-
-    <form id="storyForm">
-
-      <!-- NICKNAME -->
-
-      <div class="field">
-
-        <label for="nickname">
-          Nama / Nickname
-        </label>
-
-        <input
-          type="text"
-          id="nickname"
-          maxlength="20"
-          placeholder="Contoh: Anonim"
-          required
-        >
-
-        <div class="hint">
-          Maksimal 20 karakter. Kamu tidak perlu menggunakan nama asli.
-        </div>
-
-      </div>
-
-
-      <!-- CATEGORY -->
-
-      <div class="field">
-
-        <label for="category">
-          Kategori
-        </label>
-
-        <select id="category" required>
-
-          <option value="">
-            Pilih kategori
-          </option>
-
-          <option value="Percintaan">
-            Percintaan
-          </option>
-
-          <option value="Pernikahan">
-            Pernikahan
-          </option>
-
-          <option value="Pertemanan">
-            Pertemanan
-          </option>
-
-          <option value="Keluarga">
-            Keluarga
-          </option>
-
-          <option value="Pekerjaan">
-            Pekerjaan
-          </option>
-
-          <option value="Kehidupan Sehari-hari">
-            Kehidupan Sehari-hari
-          </option>
-
-          <option value="Makanan">
-            Makanan
-          </option>
-
-          <option value="Lainnya">
-            Lainnya
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <!-- TITLE -->
-
-      <div class="field">
-
-        <label for="title">
-          Judul Cerita
-        </label>
-
-        <input
-          type="text"
-          id="title"
-          maxlength="100"
-          placeholder="Contoh: Aku bingung harus memilih apa"
-          required
-        >
-
-      </div>
-
-
-      <!-- STORY -->
-
-      <div class="field">
-
-        <label for="text">
-          Cerita / Curhat
-        </label>
-
-        <textarea
-          id="text"
-          maxlength="5000"
-          placeholder="Ceritakan apa yang ingin kamu bagikan..."
-          required
-        ></textarea>
-
-        <div class="hint">
-          Maksimal 5.000 karakter.
-        </div>
-
-      </div>
-
-
-      <button
-        type="submit"
-        id="submitButton"
-      >
-        💌 Kirim Cerita
-      </button>
-
-    </form>
-
-
-    <div class="info">
-
-      ❤️ <strong>Sebelum mengirim:</strong>
-
-      <br>
-
-      Jangan mencantumkan nomor telepon, alamat rumah,
-      password, data rekening, atau informasi pribadi yang sensitif.
-
-      <br><br>
-
-      Cerita akan berstatus <strong>pending</strong>
-      dan baru muncul di halaman Curhat setelah disetujui.
-
-    </div>
-
-
-    <div id="message"></div>
-
-  </div>
-
-
-  <footer>
-    © CewekPedia — Ruang Cewek ❤️
-  </footer>
-
+<a href="curhat.html" class="back">← Kembali ke Curhat</a>
+<div class="card">
+<h1>💌 Kirim Ceritamu</h1>
+<div class="intro">Punya cerita? Tulis di sini ❤️ Cerita akan diperiksa dulu sebelum tampil.</div>
+<form id="storyForm">
+<div class="field"><label>Nama / Nickname</label><input type="text" id="nickname" maxlength="20" placeholder="Anonim" required><div class="hint">Maks 20 karakter</div></div>
+<div class="field"><label>Kategori</label><select id="category" required><option value="">Pilih kategori</option><option>Percintaan</option><option>Pernikahan</option><option>Pertemanan</option><option>Keluarga</option><option>Pekerjaan</option><option>Kehidupan Sehari-hari</option><option>Makanan</option><option>Lainnya</option></select></div>
+<div class="field"><label>Judul Cerita</label><input type="text" id="title" maxlength="100" placeholder="Judul cerita" required></div>
+<div class="field"><label>Cerita / Curhat</label><textarea id="text" maxlength="2000" placeholder="Ceritakan..." required></textarea><div class="hint">Maksimal 2.000 karakter (sesuai Rules Firebase)</div></div>
+<button type="submit" id="submitButton">💌 Kirim Cerita</button>
+</form>
+<div class="info">❤️ Jangan cantumkan data pribadi sensitif. Status awal <strong>pending</strong>, baru muncul setelah di approve.</div>
+<div id="message"></div>
 </div>
-
-
-<!-- =========================
-     FIREBASE
-     ========================= -->
-
+</div>
 <script type="module">
-
-  import { initializeApp } from
-    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
-  import {
-    getDatabase,
-    ref,
-    push,
-    set
-  } from
-    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-
-
-  /* =========================
-     FIREBASE CONFIG
-     ========================= */
-
-  const firebaseConfig = {
-
-    apiKey:
-      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-
-    authDomain:
-      "ruang-cewek.firebaseapp.com",
-
-    databaseURL:
-      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-    projectId:
-      "ruang-cewek",
-
-    storageBucket:
-      "ruang-cewek.firebasestorage.app",
-
-    messagingSenderId:
-      "300030693884",
-
-    appId:
-      "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
-  };
-
-
-  const app =
-    initializeApp(firebaseConfig);
-
-  const db =
-    getDatabase(app);
-
-
-  /* =========================
-     ELEMENT
-     ========================= */
-
-  const form =
-    document.getElementById("storyForm");
-
-  const submitButton =
-    document.getElementById("submitButton");
-
-  const message =
-    document.getElementById("message");
-
-
-  /* =========================
-     KIRIM CERITA
-     ========================= */
-
-  form.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-
-    const nickname =
-      document
-        .getElementById("nickname")
-        .value
-        .trim();
-
-    const category =
-      document
-        .getElementById("category")
-        .value;
-
-    const title =
-      document
-        .getElementById("title")
-        .value
-        .trim();
-
-    const text =
-      document
-        .getElementById("text")
-        .value
-        .trim();
-
-
-    /* =========================
-       VALIDASI
-       ========================= */
-
-    if (!nickname || !category || !title || !text) {
-
-      showError(
-        "Semua bagian harus diisi terlebih dahulu."
-      );
-
-      return;
-
-    }
-
-
-    if (nickname.length > 20) {
-
-      showError(
-        "Nama / nickname maksimal 20 karakter."
-      );
-
-      return;
-
-    }
-
-
-    if (title.length > 100) {
-
-      showError(
-        "Judul maksimal 100 karakter."
-      );
-
-      return;
-
-    }
-
-
-    if (text.length > 5000) {
-
-      showError(
-        "Cerita maksimal 5.000 karakter."
-      );
-
-      return;
-
-    }
-
-
-    /* =========================
-       TOMBOL
-       ========================= */
-
-    submitButton.disabled = true;
-
-    submitButton.textContent =
-      "⏳ Mengirim cerita...";
-
-
-    try {
-
-      /*
-        Buat ID cerita otomatis.
-
-        Contoh:
-
-        stories
-          └── -Oxxxxxxx
-               ├── nickname
-               ├── category
-               ├── title
-               ├── text
-               ├── status
-               └── timestamp
-      */
-
-      const storiesRef =
-        ref(db, "stories");
-
-      const newStoryRef =
-        push(storiesRef);
-
-
-      const storyData = {
-
-        nickname: nickname,
-
-        category: category,
-
-        title: title,
-
-        text: text,
-
-        /*
-          PENTING:
-          Cerita tidak langsung tampil.
-
-          curhat.html hanya mengambil
-          status = approved.
-        */
-
-        status: "pending",
-
-        timestamp:
-          Date.now()
-
-      };
-
-
-      await set(
-        newStoryRef,
-        storyData
-      );
-
-
-      /* =========================
-         BERHASIL
-         ========================= */
-
-      form.reset();
-
-      submitButton.disabled = false;
-
-      submitButton.textContent =
-        "💌 Kirim Cerita";
-
-
-      message.innerHTML = `
-
-        <div class="success">
-
-          ❤️ <strong>Cerita berhasil dikirim!</strong>
-
-          <br><br>
-
-          Terima kasih sudah berbagi cerita
-          di Ruang Cewek.
-
-          <br><br>
-
-          Ceritamu sedang menunggu pemeriksaan
-          sebelum ditampilkan secara publik.
-
-          <br><br>
-
-          <a href="curhat.html">
-            ← Kembali ke daftar curhat
-          </a>
-
-        </div>
-
-      `;
-
-
-    } catch (error) {
-
-      console.error(
-        "Gagal mengirim cerita:",
-        error
-      );
-
-
-      submitButton.disabled = false;
-
-      submitButton.textContent =
-        "💌 Kirim Cerita";
-
-
-      showError(
-        "Maaf, cerita belum berhasil dikirim. Silakan coba lagi."
-      );
-
-    }
-
-  });
-
-
-  /* =========================
-     ERROR
-     ========================= */
-
-  function showError(text) {
-
-    message.innerHTML = `
-
-      <div class="error">
-
-        ❌ ${escapeHTML(text)}
-
-      </div>
-
-    `;
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+  authDomain: "ruang-cewek.firebaseapp.com",
+  databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ruang-cewek",
+  storageBucket: "ruang-cewek.firebasestorage.app",
+  messagingSenderId: "300030693884",
+  appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const auth = getAuth(app);
+await signInAnonymously(auth);
+
+const form = document.getElementById("storyForm");
+const submitButton = document.getElementById("submitButton");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", async function(event){
+  event.preventDefault();
+  const nickname = document.getElementById("nickname").value.trim();
+  const category = document.getElementById("category").value;
+  const title = document.getElementById("title").value.trim();
+  const text = document.getElementById("text").value.trim();
+
+  if(!nickname||!category||!title||!text){ showError("Semua harus diisi"); return; }
+  if(nickname.length>20){ showError("Nickname maks 20"); return; }
+  if(title.length>100){ showError("Judul maks 100"); return; }
+  if(text.length>2000){ showError("Cerita maks 2000"); return; }
+
+  submitButton.disabled = true; submitButton.textContent = "⏳ Mengirim...";
+  try{
+    const storiesRef = ref(db, "stories");
+    const newStoryRef = push(storiesRef);
+    await set(newStoryRef, { nickname, category, title, text, status:"pending", timestamp:Date.now() });
+    form.reset();
+    submitButton.disabled = false; submitButton.textContent = "💌 Kirim Cerita";
+    message.innerHTML = `<div class="success">❤️ <strong>Berhasil dikirim!</strong><br>Menunggu approve admin.<br><br><a href="curhat.html">← Kembali</a></div>`;
+  }catch(error){
+    console.error(error);
+    submitButton.disabled = false; submitButton.textContent = "💌 Kirim Cerita";
+    showError("Gagal: "+error.message);
   }
-
-
-  /* =========================
-     SECURITY
-     ========================= */
-
-  function escapeHTML(value) {
-
-    return String(value)
-
-      .replace(/&/g, "&amp;")
-
-      .replace(/</g, "&lt;")
-
-      .replace(/>/g, "&gt;")
-
-      .replace(/"/g, "&quot;")
-
-      .replace(/'/g, "&#039;");
-
-  }
-
+});
+function showError(t){ message.innerHTML = `<div class="error">❌ ${escapeHTML(t)}</div>`; }
+function escapeHTML(v){ return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
 </script>
-
 </body>
 </html>
