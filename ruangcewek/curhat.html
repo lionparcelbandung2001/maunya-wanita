@@ -1,736 +1,555 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-«»
+  <title>Curhat & Cerita ❤️ | Ruang Cewek</title>
+  <meta name="description" content="Kumpulan cerita, pengalaman, curhat, dan kisah dari perempuan di Ruang Cewek.">
 
-<title>Curhat ❤️ | Ruang Cewek — Cerita yang Menenangkan Hati</title><meta
-name="description"
-content="Ruang curhat untuk berbagi cerita tentang cinta, keluarga, pertemanan, pekerjaan, dan pernikahan. Baca cerita yang hangat, menyentuh, dan menemani hati."
-
-«»
-
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#fff7fb;
-    color:#3a2630;
-}
-
-.container{
-    width:92%;
-    max-width:900px;
-    margin:auto;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    text-align:center;
-    padding:28px 15px 18px;
-}
-
-header h1{
-    margin:0;
-    color:#d92f72;
-    font-size:30px;
-}
-
-header p{
-    margin:7px 0 0;
-    color:#765967;
-    font-size:14px;
-}
-
-
-/* =========================
-   BACK
-========================= */
-
-.back{
-    display:inline-block;
-    margin:5px 0 15px;
-    color:#d92f72;
-    text-decoration:none;
-    font-size:13px;
-}
-
-
-/* =========================
-   FILTER
-========================= */
-
-.filter-title{
-    text-align:center;
-    font-size:13px;
-    color:#765967;
-    margin-bottom:8px;
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px;
-    margin-bottom:22px;
-}
-
-.category-button{
-    border:1px solid #f0cfdd;
-    background:white;
-    color:#5d3d4b;
-    border-radius:12px;
-    padding:10px 5px;
-    font-size:12px;
-    cursor:pointer;
-}
-
-.category-button:hover,
-.category-button.active{
-    background:#fde5ef;
-    color:#d92f72;
-    border-color:#e9a9c1;
-    font-weight:bold;
-}
-
-
-/* =========================
-   SECTION
-========================= */
-
-.section-title{
-    color:#d92f72;
-    font-size:19px;
-    margin:0 0 12px;
-}
-
-
-/* =========================
-   STORY LIST
-========================= */
-
-.story-list{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.story-card{
-    display:block;
-    background:white;
-    border:1px solid #f2d9e4;
-    border-radius:15px;
-    padding:15px;
-    text-decoration:none;
-    color:#3a2630;
-    box-shadow:0 3px 10px rgba(180,100,130,.06);
-    transition:.2s;
-}
-
-.story-card:hover{
-    transform:translateY(-1px);
-    box-shadow:0 5px 14px rgba(180,100,130,.1);
-}
-
-.story-title{
-    font-weight:bold;
-    color:#3a2630;
-    font-size:15px;
-    margin-bottom:7px;
-    line-height:1.4;
-}
-
-.story-meta{
-    font-size:11px;
-    color:#8a707b;
-}
-
-.story-preview{
-    font-size:13px;
-    color:#765967;
-    line-height:1.6;
-    margin-top:7px;
-}
-
-
-/* =========================
-   EMPTY CATEGORY
-========================= */
-
-.empty-story{
-    display:none;
-    text-align:center;
-    background:white;
-    border:1px solid #f2d9e4;
-    border-radius:15px;
-    padding:25px 15px;
-    color:#8a707b;
-    font-size:13px;
-    line-height:1.6;
-}
-
-
-/* =========================
-   FLOATING BUTTON
-========================= */
-
-.share-story{
-    position:fixed;
-    right:18px;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:1000;
-
-    background:#d92f72;
-    color:white;
-    text-decoration:none;
-
-    padding:12px 14px;
-    border-radius:14px;
-
-    text-align:center;
-    font-weight:bold;
-    font-size:12px;
-
-    box-shadow:0 5px 15px rgba(150,50,90,.22);
-}
-
-.share-story span{
-    display:block;
-    font-size:11px;
-    margin-top:3px;
-}
-
-.share-story:hover{
-    opacity:.9;
-}
-
-
-/* =========================
-   INFO
-========================= */
-
-.info-box{
-    background:#fff0f6;
-    border:1px solid #f3d5e2;
-    border-radius:14px;
-    padding:14px;
-    font-size:12px;
-    line-height:1.6;
-    color:#765967;
-    margin-bottom:25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    text-align:center;
-    padding:20px 10px 30px;
-    color:#8a707b;
-    font-size:12px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:700px){
-
-    .container{
-        width:94%;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    header h1{
-        font-size:27px;
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
     }
 
-    .category-grid{
-        gap:6px;
+    .container {
+      max-width: 850px;
+      margin: auto;
     }
 
-    .category-button{
-        padding:9px 3px;
-        font-size:11px;
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .story-card{
-        padding:13px;
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
     }
 
-    .story-preview{
-        line-height:1.55;
+    h1 {
+      margin-bottom: 8px;
+      color: #d92f72;
     }
 
-    .share-story{
-        right:8px;
-        padding:10px 11px;
-        border-radius:12px;
-        font-size:11px;
+    .header p {
+      margin: 0;
+      line-height: 1.6;
+      color: #6d5961;
     }
 
-    .share-story span{
-        font-size:10px;
+    .send-box {
+      background: white;
+      padding: 18px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
     }
 
-}
-
-
-@media(max-width:380px){
-
-    .category-button{
-        font-size:10px;
-        padding:8px 2px;
+    .send-box p {
+      margin-top: 0;
+      line-height: 1.5;
     }
 
-    .share-story{
-        right:5px;
-        padding:9px;
+    .send-button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: #d92f72;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-}
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
 
-</style></head><body><div class="container"><!-- =========================
-     HEADER
-========================= --><header><h1>
-    💭 CURHAT
-</h1>
+    .filter-btn {
+      flex: 0 0 auto;
+      border: 1px solid #edcbd9;
+      background: white;
+      color: #6b4c59;
+      padding: 9px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-<p>
-    Cerita yang mungkin pernah kamu rasakan ❤️
-</p>
+    .filter-btn.active {
+      background: #d92f72;
+      color: white;
+      border-color: #d92f72;
+    }
 
-</header><!-- =========================
-     BACK
-========================= --><a
-href="index.html"
-class="back">
+    #storyList {
+      display: grid;
+      gap: 15px;
+    }
 
-← Kembali ke Ruang Cewek
+    .story-card {
+      display: block;
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
 
-</a><!-- =========================
-     FILTER
-========================= --><div class="filter-title">Pilih kategori cerita
+    .story-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
 
-</div><div class="category-grid"><button
-    class="category-button active"
-    data-category="Semua">
+    .story-category {
+      display: inline-block;
+      font-size: 12px;
+      color: #d92f72;
+      background: #fff0f6;
+      padding: 5px 9px;
+      border-radius: 10px;
+      margin-bottom: 9px;
+    }
 
-    Semua
+    .story-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #3a2630;
+      line-height: 1.4;
+    }
 
-</button>
+    .story-preview {
+      color: #6d5961;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
 
-<button
-    class="category-button"
-    data-category="Percintaan">
+    .story-meta {
+      font-size: 12px;
+      color: #999;
+    }
 
-    Percintaan
+    .loading,
+    .empty,
+    .error {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-</button>
+    .loading {
+      color: #777;
+    }
 
-<button
-    class="category-button"
-    data-category="Pernikahan">
+    .empty {
+      color: #777;
+    }
 
-    Pernikahan
+    .error {
+      color: #a52a2a;
+      background: #fff0f0;
+    }
 
-</button>
+    .info {
+      margin-top: 20px;
+      background: #fff0f6;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
-<button
-    class="category-button"
-    data-category="Pertemanan">
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #999;
+    }
 
-    Pertemanan
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
 
-</button>
+      .story-title {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
 
-<button
-    class="category-button"
-    data-category="Keluarga">
+<body>
 
-    Keluarga
+<div class="container">
 
-</button>
+  <a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
 
-<button
-    class="category-button"
-    data-category="Pekerjaan">
+  <div class="header">
+    <h1>💭 Curhat & Cerita</h1>
+    <p>
+      Cerita, pengalaman, dan kisah dari perempuan di Ruang Cewek ❤️
+    </p>
+  </div>
 
-    Pekerjaan
 
-</button>
+  <div class="send-box">
+    <p>
+      Punya cerita yang ingin kamu bagikan?
+      <br>
+      Ceritakan di sini dan biarkan perempuan lain ikut membaca pengalamanmu.
+    </p>
 
-</div><!-- =========================
-     STORY
-========================= --><h2 class="section-title">💗 Cerita yang Menemani
+    <a href="kirimcerita.html" class="send-button">
+      💌 Kirim Ceritamu
+    </a>
+  </div>
 
-</h2><div class="story-list"><!-- CERITA 1 -->
 
-<a
-    href="curhat-cinta-1.html"
-    class="story-card"
-    data-category="Percintaan">
+  <!-- FILTER -->
+  <div class="filters">
 
-    <div class="story-title">
+    <button class="filter-btn active" data-category="Semua">
+      Semua
+    </button>
 
-        Ternyata dicintai itu sesederhana ini...
+    <button class="filter-btn" data-category="Percintaan">
+      ❤️ Percintaan
+    </button>
 
+    <button class="filter-btn" data-category="Pernikahan">
+      💍 Pernikahan
+    </button>
+
+    <button class="filter-btn" data-category="Pertemanan">
+      🫶 Pertemanan
+    </button>
+
+    <button class="filter-btn" data-category="Keluarga">
+      🏠 Keluarga
+    </button>
+
+    <button class="filter-btn" data-category="Pekerjaan">
+      💼 Pekerjaan
+    </button>
+
+    <button class="filter-btn" data-category="Kehidupan Sehari-hari">
+      🌷 Kehidupan Sehari-hari
+    </button>
+
+    <button class="filter-btn" data-category="Makanan">
+      🍜 Makanan
+    </button>
+
+    <button class="filter-btn" data-category="Lainnya">
+      💕 Lainnya
+    </button>
+
+  </div>
+
+
+  <!-- DAFTAR CERITA -->
+  <div id="storyList">
+
+    <div class="loading">
+      ⏳ Memuat cerita...
     </div>
 
-    <div class="story-meta">
+  </div>
 
-        💗 Percintaan • 2 jam lalu • 💬 18 komentar
 
-    </div>
+  <div class="info">
+    ❤️ Semua cerita yang tampil di halaman ini sudah melalui proses moderasi.
+    <br>
+    🔒 Jangan membagikan informasi pribadi atau data sensitif dalam cerita.
+  </div>
 
-    <div class="story-preview">
 
-        Dulu aku selalu berpikir bahwa dicintai berarti
-        harus mendapatkan bunga, hadiah, atau kata-kata
-        manis setiap hari. Sampai akhirnya aku bertemu
-        seseorang yang selalu memastikan aku sudah makan,
-        mengingatkan untuk hati-hati di jalan, dan tetap
-        mendengarkan ceritaku meskipun ceritanya sederhana.
+  <footer>
+    © CewekPedia — Ruang Cewek ❤️
+  </footer>
 
-    </div>
+</div>
 
-</a>
 
+<!-- FIREBASE -->
+<script type="module">
 
-<!-- CERITA 2 -->
+  import { initializeApp } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-<a
-    href="curhat-keluarga-1.html"
-    class="story-card"
-    data-category="Keluarga">
+  import {
+    getDatabase,
+    ref,
+    query,
+    orderByChild,
+    equalTo,
+    get
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-    <div class="story-title">
 
-        Hari ini aku baru sadar, ibu ternyata selalu menungguku
+  /* =========================
+     FIREBASE CONFIG
+     ========================= */
 
-    </div>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+    authDomain: "ruang-cewek.firebaseapp.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ruang-cewek",
+    storageBucket: "ruang-cewek.firebasestorage.app",
+    messagingSenderId: "300030693884",
+    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+  };
 
-    <div class="story-meta">
 
-        🏠 Keluarga • 4 jam lalu • 💬 24 komentar
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
 
-    </div>
 
-    <div class="story-preview">
+  /* =========================
+     ELEMENT
+     ========================= */
 
-        Aku pulang malam karena pekerjaan. Rumah sudah
-        sepi dan aku kira semua orang tidur. Ternyata ibu
-        masih duduk di ruang tengah sambil menungguku.
-        Beliau cuma bilang, "Sudah makan belum?"
-        Entah kenapa pertanyaan sederhana itu membuat
-        aku ingin menangis.
+  const storyList = document.getElementById("storyList");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
-    </div>
 
-</a>
+  let allStories = [];
+  let currentCategory = "Semua";
 
 
-<!-- CERITA 3 -->
+  /* =========================
+     LOAD STORIES
+     ========================= */
 
-<a
-    href="curhat-pertemanan.html"
-    class="story-card"
-    data-category="Pertemanan">
+  async function loadStories() {
 
-    <div class="story-title">
+    storyList.innerHTML = `
+      <div class="loading">
+        ⏳ Memuat cerita...
+      </div>
+    `;
 
-        Sahabat yang tetap ada meskipun aku menghilang
+    try {
 
-    </div>
+      const storiesRef = ref(db, "stories");
 
-    <div class="story-meta">
+      const storiesQuery = query(
+        storiesRef,
+        orderByChild("status"),
+        equalTo("approved")
+      );
 
-        👭 Pertemanan • kemarin • 💬 16 komentar
+      const snapshot = await get(storiesQuery);
 
-    </div>
 
-    <div class="story-preview">
+      allStories = [];
 
-        Beberapa bulan terakhir aku sedang tidak baik-baik
-        saja. Aku bahkan jarang membalas pesan teman-temanku.
-        Tapi ada satu orang yang tidak pernah berhenti
-        bertanya, "Kamu baik-baik aja?" Sampai akhirnya
-        aku sadar, mungkin itulah arti seorang sahabat.
 
-    </div>
+      if (snapshot.exists()) {
 
-</a>
+        snapshot.forEach((childSnapshot) => {
 
+          const story = childSnapshot.val();
 
-<!-- CERITA 4 -->
+          allStories.push({
+            id: childSnapshot.key,
+            ...story
+          });
 
-<a
-    href="curhat-pekerjaan-1.html"
-    class="story-card"
-    data-category="Pekerjaan">
+        });
 
-    <div class="story-title">
+      }
 
-        Aku hampir menyerah, lalu seseorang bilang "kamu hebat"
 
-    </div>
+      /* Cerita terbaru di atas */
+      allStories.sort((a, b) => {
+        return (b.timestamp || 0) - (a.timestamp || 0);
+      });
 
-    <div class="story-meta">
 
-        💼 Pekerjaan • 2 hari lalu • 💬 14 komentar
+      renderStories();
 
-    </div>
 
-    <div class="story-preview">
+    } catch (error) {
 
-        Hari itu aku merasa gagal. Pekerjaan berantakan
-        dan aku merasa tidak cukup baik. Seorang teman
-        melihatku diam lalu berkata, "Kamu mungkin capek,
-        tapi jangan bilang kamu nggak hebat. Aku tahu
-        kamu sudah berusaha." Kalimat itu masih aku ingat
-        sampai sekarang.
+      console.error("Gagal mengambil cerita:", error);
 
-    </div>
+      storyList.innerHTML = `
+        <div class="error">
+          Maaf, daftar cerita belum dapat dimuat.
+          <br><br>
+          Silakan coba beberapa saat lagi.
+        </div>
+      `;
 
-</a>
+    }
 
+  }
 
-<!-- CERITA 5 -->
 
-<a
-    href="curhat-pernikahan-1.html"
-    class="story-card"
-    data-category="Pernikahan">
+  /* =========================
+     RENDER STORIES
+     ========================= */
 
-    <div class="story-title">
+  function renderStories() {
 
-        Bukan pesta mewah yang aku inginkan...
+    storyList.innerHTML = "";
 
-    </div>
 
-    <div class="story-meta">
+    const filteredStories = allStories.filter((story) => {
 
-        💍 Pernikahan • 2 hari lalu • 💬 11 komentar
+      if (currentCategory === "Semua") {
+        return true;
+      }
 
-    </div>
+      return story.category === currentCategory;
 
-    <div class="story-preview">
+    });
 
-        Dulu aku membayangkan pernikahan dengan dekorasi
-        indah dan pesta besar. Sekarang aku justru lebih
-        menginginkan satu hal: seseorang yang tetap
-        menggenggam tanganku ketika hidup sedang tidak
-        indah-indahnya.
 
-    </div>
+    if (filteredStories.length === 0) {
 
-</a>
+      storyList.innerHTML = `
+        <div class="empty">
+          Belum ada cerita untuk kategori ini. ❤️
+        </div>
+      `;
 
+      return;
+    }
 
-<!-- CERITA 6 -->
 
-<a
-    href="#"
-    class="story-card"
-    data-category="Percintaan">
+    filteredStories.forEach((story) => {
 
-    <div class="story-title">
+      const card = document.createElement("a");
 
-        Dia tidak banyak bicara, tapi selalu membuatku merasa aman
+      card.className = "story-card";
 
-    </div>
+      /*
+        Untuk sekarang menuju ke halaman detail dinamis.
+        Halaman ini akan kita buat pada Tahap 4.
+      */
+      card.href =
+        "curhat-detail.html?id=" +
+        encodeURIComponent(story.id);
 
-    <div class="story-meta">
 
-        💗 Percintaan • 3 hari lalu • 💬 20 komentar
+      const category = document.createElement("div");
 
-    </div>
+      category.className = "story-category";
+      category.textContent = story.category || "Lainnya";
 
-    <div class="story-preview">
 
-        Dia bukan orang yang pandai membuat kata-kata romantis.
-        Tapi setiap kali aku pulang, dia selalu memastikan
-        aku sampai dengan selamat. Ketika aku sedih, dia
-        tidak memaksa aku bercerita. Dia cuma bilang,
-        "Aku di sini kalau kamu butuh." Ternyata rasa aman
-        juga bisa terasa sangat romantis.
+      const title = document.createElement("div");
 
-    </div>
+      title.className = "story-title";
+      title.textContent = story.title || "Tanpa Judul";
 
-</a>
 
-</div><!-- =========================
-     EMPTY
-========================= --><div
-    id="emptyStory"
-    class="empty-story">🌷 Belum ada cerita di kategori ini.
+      const preview = document.createElement("div");
 
-<br>
+      preview.className = "story-preview";
 
-Mungkin kamu bisa menjadi orang pertama
-yang berbagi cerita. ❤️
+      const text = story.text || "";
 
-</div><!-- =========================
-     INFO
-========================= --><div class="info-box">💌 <strong>Ruang yang nyaman untuk bercerita.</strong>
+      preview.textContent =
+        text.length > 160
+          ? text.substring(0, 160) + "..."
+          : text;
 
-<br><br>
 
-Cerita yang dikirim akan melalui proses moderasi
-terlebih dahulu sebelum ditampilkan di Ruang Cewek.
+      const meta = document.createElement("div");
 
-<br><br>
+      meta.className = "story-meta";
 
-Kamu boleh menggunakan nama panggilan atau memilih
-untuk tetap anonim. Jangan cantumkan data pribadi
-seperti nomor telepon, alamat, password, atau informasi
-sensitif lainnya.
+      const nickname =
+        story.nickname || "Anonim";
 
-</div><!-- =========================
-     FOOTER
-========================= --><footer>© CewekPedia ❤️
 
-</footer></div><!-- =========================
-     BAGIKAN CERITA
-========================= --><a
-href="#"
-class="share-story">
-
-💌 Bagikan
-
-<span>
-    Ceritamu
-</span>
-
-</a><!-- =========================
-     FILTER SCRIPT
-========================= --><script>
-
-const buttons =
-    document.querySelectorAll(
-        ".category-button"
-    );
-
-
-const stories =
-    document.querySelectorAll(
-        ".story-card"
-    );
-
-
-const emptyStory =
-    document.getElementById(
-        "emptyStory"
-    );
-
-
-buttons.forEach(function(button){
-
-    button.addEventListener(
-        "click",
-        function(){
-
-            const selectedCategory =
-                button.dataset.category;
-
-
-            /* Tombol aktif */
-
-            buttons.forEach(function(item){
-
-                item.classList.remove(
-                    "active"
-                );
-
-            });
-
-
-            button.classList.add(
-                "active"
-            );
-
-
-            /* Filter cerita */
-
-            let visibleCount = 0;
-
-
-            stories.forEach(function(story){
-
-                const storyCategory =
-                    story.dataset.category;
-
-
-                if(
-                    selectedCategory === "Semua" ||
-                    storyCategory === selectedCategory
-                ){
-
-                    story.style.display =
-                        "block";
-
-                    visibleCount++;
-
-                }else{
-
-                    story.style.display =
-                        "none";
-
-                }
-
-            });
-
-
-            /* Pesan jika kosong */
-
-            if(visibleCount === 0){
-
-                emptyStory.style.display =
-                    "block";
-
-            }else{
-
-                emptyStory.style.display =
-                    "none";
-
+      const date = story.timestamp
+        ? new Date(story.timestamp).toLocaleDateString(
+            "id-ID",
+            {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
             }
-
-        }
-    );
-
-});
+          )
+        : "";
 
 
-/*
-   Tombol Bagikan Ceritamu
-   sementara diarahkan ke form nanti.
-*/
+      meta.textContent =
+        "✍️ " + nickname +
+        (date ? " • " + date : "");
 
-document
-    .querySelector(".share-story")
-    .addEventListener(
-        "click",
-        function(event){
 
-            event.preventDefault();
+      card.appendChild(category);
+      card.appendChild(title);
+      card.appendChild(preview);
+      card.appendChild(meta);
 
-            alert(
-                "Fitur Bagikan Ceritamu akan segera tersedia ❤️"
-            );
+      storyList.appendChild(card);
 
-        }
-    );
+    });
 
-</script></body></html>
+  }
+
+
+  /* =========================
+     FILTER
+     ========================= */
+
+  filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      currentCategory =
+        button.dataset.category;
+
+      renderStories();
+
+    });
+
+  });
+
+
+  /* =========================
+     START
+     ========================= */
+
+  loadStories();
+
+</script>
+
+</body>
+</html>
