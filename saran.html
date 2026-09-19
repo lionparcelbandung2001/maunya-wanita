@@ -1,13 +1,31 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Saran & Pendapat ❤️ | CewekPedia</title><meta name="description"
-content="Berikan saran, pendapat, dan pengalaman kamu untuk pengembangan kategori CewekPedia.">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Saran & Pendapat ❤️ | CewekPedia
+</title>
+
+<meta
+    name="description"
+    content="Berikan saran, pendapat, dan pengalaman kamu untuk pengembangan kategori CewekPedia."
+>
+
 
 <style>
+
 *{
     box-sizing:border-box;
 }
+
 
 body{
     margin:0;
@@ -16,16 +34,19 @@ body{
     color:#3a2630;
 }
 
+
 .container{
     max-width:850px;
     margin:auto;
     padding:20px;
 }
 
+
 header{
     text-align:center;
     padding:15px 10px 20px;
 }
+
 
 header h1{
     margin:0 0 8px;
@@ -33,11 +54,13 @@ header h1{
     font-size:30px;
 }
 
+
 header p{
     margin:0;
     color:#765b67;
     line-height:1.6;
 }
+
 
 .back{
     display:inline-block;
@@ -46,6 +69,7 @@ header p{
     text-decoration:none;
     font-weight:bold;
 }
+
 
 .intro{
     background:#fff;
@@ -57,6 +81,40 @@ header p{
     line-height:1.6;
 }
 
+
+/* ==========================================
+   PILIHAN KATEGORI
+   ========================================== */
+
+.category-choice{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+
+.category-choice a{
+    display:block;
+    background:#fff;
+    border:1px solid #f3d8e5;
+    border-radius:15px;
+    padding:15px 10px;
+    text-align:center;
+    text-decoration:none;
+    color:#d92f72;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,.04);
+    transition:.2s;
+}
+
+
+.category-choice a:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 14px rgba(0,0,0,.08);
+}
+
+
 .saran-card{
     background:#fff;
     border:1px solid #f3d8e5;
@@ -64,13 +122,16 @@ header p{
     padding:20px;
     margin-bottom:20px;
     box-shadow:0 4px 12px rgba(0,0,0,.04);
+    scroll-margin-top:15px;
 }
+
 
 .saran-card h2{
     margin:0 0 6px;
     color:#d92f72;
     font-size:21px;
 }
+
 
 .saran-card p{
     margin:0 0 15px;
@@ -79,10 +140,21 @@ header p{
     line-height:1.5;
 }
 
+
 .echo-box{
     border-top:1px solid #f3d8e5;
     padding-top:15px;
 }
+
+
+.back-to-category{
+    display:inline-block;
+    margin-top:15px;
+    color:#927784;
+    text-decoration:none;
+    font-size:13px;
+}
+
 
 footer{
     text-align:center;
@@ -91,112 +163,319 @@ footer{
     font-size:13px;
 }
 
+
 @media(max-width:600px){
 
     .container{
         padding:15px;
     }
 
+
     header h1{
         font-size:26px;
     }
 
+
     .saran-card{
         padding:16px;
     }
+
+
+    .category-choice{
+        gap:8px;
+    }
+
+
+    .category-choice a{
+        padding:13px 7px;
+        font-size:13px;
+    }
+
 }
-</style></head><body><div class="container"><header>
-    <h1>💌 Saran & Pendapat</h1>
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<header>
+
+    <h1>
+        💌 Saran & Pendapat
+    </h1>
+
     <p>
         Punya saran, pengalaman, atau masukan untuk CewekPedia?
-        Tulis di kategori yang sesuai ❤️
+        Pilih kategori yang sesuai ❤️
     </p>
-</header><a class="back" href="home.html">← Kembali ke Beranda</a>
+
+</header>
+
+
+<a
+    class="back"
+    href="#"
+    onclick="parent.goPage('home.html'); return false;"
+>
+    ← Kembali ke Beranda
+</a>
+
 
 <div class="intro">
+
     💕 Pendapat kamu bisa membantu CewekPedia menjadi lebih
     lengkap dan bermanfaat untuk semuanya.
-</div><!-- ========================= --><!-- 1. PENGEN CANTIK --><!-- ========================= --><section class="saran-card"><h2>💄 Pengen Cantik</h2>
-
-<p>
-    Saran atau pengalaman seputar salon, skincare,
-    fashion, parfum, makeup, dan kebutuhan kecantikan lainnya.
-</p>
-
-<div class="echo-box">
-
-    <div id="echothread-cantik"
-         data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
-         data-page-url=""
-         data-identifier="saran-pengen-cantik"
-         data-page-title="Saran — Pengen Cantik">
-    </div>
 
 </div>
 
-</section><!-- ========================= --><!-- 2. PENGEN NIKAH --><!-- ========================= --><section class="saran-card"><h2>💍 Pengen Nikah</h2>
 
-<p>
-    Saran atau pengalaman seputar WO, MUA,
-    toko pengantin, persiapan pernikahan, dan lainnya.
-</p>
+<!-- ==========================================
+     PILIH KATEGORI
+     ========================================== -->
 
-<div class="echo-box">
+<div class="category-choice">
 
-    <div id="echothread-nikah"
-         data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
-         data-page-url=""
-         data-identifier="saran-pengen-nikah"
-         data-page-title="Saran — Pengen Nikah">
-    </div>
+    <a href="#cantik">
+        💄<br>
+        Pengen Cantik
+    </a>
 
-</div>
 
-</section><!-- ========================= --><!-- 3. MAKAN & BELANJA --><!-- ========================= --><section class="saran-card"><h2>🛍️ Pengen Makan & Belanja</h2>
+    <a href="#nikah">
+        💍<br>
+        Pengen Nikah
+    </a>
 
-<p>
-    Saran atau pengalaman seputar restoran, cafe,
-    toko, mall, makanan, dan tempat belanja.
-</p>
 
-<div class="echo-box">
+    <a href="#belanja">
+        🛍️<br>
+        Makan & Belanja
+    </a>
 
-    <div id="echothread-belanja"
-         data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
-         data-page-url=""
-         data-identifier="saran-makan-belanja"
-         data-page-title="Saran — Pengen Makan & Belanja">
-    </div>
+
+    <a href="#healing">
+        🌴<br>
+        Jalan-jalan / Healing
+    </a>
 
 </div>
 
-</section><!-- ========================= --><!-- 4. JALAN-JALAN / HEALING --><!-- ========================= --><section class="saran-card"><h2>🌴 Pengen Jalan-jalan / Healing</h2>
 
-<p>
-    Saran atau pengalaman seputar hotel, penginapan,
-    wisata, hiburan, dan tempat healing.
-</p>
 
-<div class="echo-box">
+<!-- ==========================================
+     1. PENGEN CANTIK
+     ========================================== -->
 
-    <div id="echothread-healing"
-         data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
-         data-page-url=""
-         data-identifier="saran-jalan-jalan-healing"
-         data-page-title="Saran — Jalan-jalan / Healing">
+<section
+    class="saran-card"
+    id="cantik"
+>
+
+    <h2>
+        💄 Pengen Cantik
+    </h2>
+
+
+    <p>
+        Saran atau pengalaman seputar salon, skincare,
+        fashion, parfum, makeup, dan kebutuhan kecantikan lainnya.
+    </p>
+
+
+    <div class="echo-box">
+
+        <div
+            id="echothread-cantik"
+            data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+            data-page-url=""
+            data-identifier="saran-pengen-cantik"
+            data-page-title="Saran — Pengen Cantik"
+        ></div>
+
     </div>
 
-</div>
 
-</section><footer>
+    <a
+        class="back-to-category"
+        href="#top"
+    >
+        ↑ Kembali ke pilihan kategori
+    </a>
+
+</section>
+
+
+
+<!-- ==========================================
+     2. PENGEN NIKAH
+     ========================================== -->
+
+<section
+    class="saran-card"
+    id="nikah"
+>
+
+    <h2>
+        💍 Pengen Nikah
+    </h2>
+
+
+    <p>
+        Saran atau pengalaman seputar WO, MUA,
+        toko pengantin, persiapan pernikahan, dan lainnya.
+    </p>
+
+
+    <div class="echo-box">
+
+        <div
+            id="echothread-nikah"
+            data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+            data-page-url=""
+            data-identifier="saran-pengen-nikah"
+            data-page-title="Saran — Pengen Nikah"
+        ></div>
+
+    </div>
+
+
+    <a
+        class="back-to-category"
+        href="#top"
+    >
+        ↑ Kembali ke pilihan kategori
+    </a>
+
+</section>
+
+
+
+<!-- ==========================================
+     3. MAKAN & BELANJA
+     ========================================== -->
+
+<section
+    class="saran-card"
+    id="belanja"
+>
+
+    <h2>
+        🛍️ Pengen Makan & Belanja
+    </h2>
+
+
+    <p>
+        Saran atau pengalaman seputar restoran, cafe,
+        toko, mall, makanan, dan tempat belanja.
+    </p>
+
+
+    <div class="echo-box">
+
+        <div
+            id="echothread-belanja"
+            data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+            data-page-url=""
+            data-identifier="saran-makan-belanja"
+            data-page-title="Saran — Pengen Makan & Belanja"
+        ></div>
+
+    </div>
+
+
+    <a
+        class="back-to-category"
+        href="#top"
+    >
+        ↑ Kembali ke pilihan kategori
+    </a>
+
+</section>
+
+
+
+<!-- ==========================================
+     4. JALAN-JALAN / HEALING
+     ========================================== -->
+
+<section
+    class="saran-card"
+    id="healing"
+>
+
+    <h2>
+        🌴 Pengen Jalan-jalan / Healing
+    </h2>
+
+
+    <p>
+        Saran atau pengalaman seputar hotel, penginapan,
+        wisata, hiburan, dan tempat healing.
+    </p>
+
+
+    <div class="echo-box">
+
+        <div
+            id="echothread-healing"
+            data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+            data-page-url=""
+            data-identifier="saran-jalan-jalan-healing"
+            data-page-title="Saran — Jalan-jalan / Healing"
+        ></div>
+
+    </div>
+
+
+    <a
+        class="back-to-category"
+        href="#top"
+    >
+        ↑ Kembali ke pilihan kategori
+    </a>
+
+</section>
+
+
+
+<footer>
+
     © 2026 CewekPedia ❤️
-</footer></div><script>
 
-const API_KEY = "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+/* ==========================================
+   API KEY ECHOTHREAD
+   ========================================== */
+
+const API_KEY =
+    "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+
+
+/* ==========================================
+   URL DASAR
+   ========================================== */
 
 const baseUrl =
     window.location.origin + "/saran.html";
 
+
+/* ==========================================
+   4 THREAD SARAN
+   ========================================== */
 
 const threads = [
 
@@ -227,6 +506,10 @@ const threads = [
 ];
 
 
+/* ==========================================
+   PASANG KONFIGURASI ECHOTHREAD
+   ========================================== */
+
 threads.forEach(thread => {
 
     const element =
@@ -234,20 +517,24 @@ threads.forEach(thread => {
 
     if(!element) return;
 
+
     element.setAttribute(
         "data-api-key",
         API_KEY
     );
+
 
     element.setAttribute(
         "data-page-url",
         baseUrl
     );
 
+
     element.setAttribute(
         "data-identifier",
         thread.identifier
     );
+
 
     element.setAttribute(
         "data-page-title",
@@ -256,6 +543,10 @@ threads.forEach(thread => {
 
 });
 
+
+/* ==========================================
+   LOAD ECHOTHREAD
+   ========================================== */
 
 const script =
     document.createElement("script");
@@ -267,5 +558,9 @@ script.async = true;
 
 document.body.appendChild(script);
 
-</script></body>
+</script>
+
+
+</body>
+
 </html>
