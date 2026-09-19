@@ -2,51 +2,83 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar Curhat | Ruang Cewek</title>
+<title>Curhat | Ruang Cewek</title>
 <style>
 *{box-sizing:border-box} body{margin:0;padding:20px;font-family:Arial,sans-serif;background:#fff7fb;color:#3a2630}
-.container{max-width:750px;margin:auto} .back{color:#d92f72;text-decoration:none;font-weight:bold}
-.card{background:white;border-radius:18px;padding:20px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}
-.card h3{margin:0 0 8px;color:#d92f72} .meta{color:#999;font-size:12px;margin-bottom:8px}
-a{color:inherit;text-decoration:none}
+.container{max-width:750px;margin:auto}
+.back{display:inline-block;margin-bottom:18px;color:#d92f72;text-decoration:none;font-weight:bold}
+.story-card{background:white;border-radius:18px;padding:25px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}
+.category{display:inline-block;background:#fff0f6;color:#d92f72;padding:6px 10px;border-radius:10px;font-size:13px;margin-bottom:12px}
+h1{margin:0 0 12px;color:#d92f72;line-height:1.4;font-size:27px}
+.meta{color:#999;font-size:13px;margin-bottom:25px}
+.story-text{white-space:pre-wrap;font-size:16px;line-height:1.8}
+.divider{height:1px;background:#f0dce5;margin:30px 0}
+.loading,.error,.not-found{background:white;border-radius:16px;padding:25px;text-align:center;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="container">
-<a href="index.html" class="back">← Kembali</a>
-<h2 style="color:#d92f72">💭 Daftar Curhat</h2>
-<div id="list">⏳ Memuat...</div>
+<a href="curhat.html" class="back">← Kembali ke Daftar Curhat</a>
+<div id="content"><div class="loading">⏳ Memuat cerita...</div></div>
+<footer style="text-align:center;margin-top:25px;color:#999;font-size:13px">© CewekPedia — Ruang Cewek ❤️</footer>
 </div>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getDatabase, ref, query, orderByChild, equalTo, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
   authDomain: "ruang-cewek.firebaseapp.com",
   databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "ruang-cewek", storageBucket: "ruang-cewek.firebasestorage.app",
-  messagingSenderId: "300030693884", appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+  projectId: "ruang-cewek",
+  storageBucket: "ruang-cewek.firebasestorage.app",
+  messagingSenderId: "300030693884",
+  appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
 };
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
-
 await signInAnonymously(auth);
 
-const list = document.getElementById("list");
-try {
-  const q = query(ref(db, "stories"), orderByChild("status"), equalTo("approved"));
-  const snap = await get(q);
-  if(!snap.exists()){ list.innerHTML = "Belum ada curhat approved"; return; }
-  let html = "";
-  snap.forEach(child=>{
-    const v = child.val();
-    html += `<a href="curhat-detail.html?id=${child.key}"><div class="card"><h3>${v.title}</h3><div class="meta">${v.category} • ${v.nickname}</div><div>${v.text.substring(0,100)}...</div></div></a>`;
-  });
-  list.innerHTML = html;
-} catch(e){ console.error(e); list.innerHTML = "Gagal memuat: " + e.message; }
+const content = document.getElementById("content");
+const ECHOTHREAD_API_KEY = "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+const params = new URLSearchParams(window.location.search);
+const storyId = params.get("id");
+if(!storyId){ showNotFound(); } else { loadStory(); }
+
+async function loadStory(){
+  try{
+    const storyRef = ref(db, "stories/" + storyId);
+    const snapshot = await get(storyRef);
+    if(!snapshot.exists()){ showNotFound(); return; }
+    const story = snapshot.val();
+    if(story.status !== "approved"){ showNotFound(); return; }
+    renderStory(story);
+  }catch(error){
+    console.error(error);
+    content.innerHTML = `<div class="error">Maaf, cerita belum dapat dimuat.<br>${error.message}</div>`;
+  }
+}
+function renderStory(story){
+  const title = escapeHTML(story.title||"Tanpa Judul");
+  const category = escapeHTML(story.category||"Lainnya");
+  const nickname = escapeHTML(story.nickname||"Anonim");
+  const text = escapeHTML(story.text||"");
+  let date = "";
+  if(story.timestamp){ date = new Date(story.timestamp).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"}); }
+  document.title = (story.title||"Curhat")+" ❤️ | Ruang Cewek";
+  content.innerHTML = `<article class="story-card"><div class="category">${category}</div><h1>${title}</h1><div class="meta">✍️ ${nickname} ${date?" • "+date:""}</div><div class="story-text">${text}</div><div class="divider"></div><h2 style="color:#d92f72">💬 Obrolan Cerita</h2><div id="echothread" data-api-key="${ECHOTHREAD_API_KEY}" data-page-url="${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(storyId)}" data-identifier="${escapeHTML(storyId)}" data-page-title="${title}"></div></article>`;
+  loadEchoThread();
+}
+function loadEchoThread(){
+  if(document.querySelector('script[data-echothread="true"]')) return;
+  const script = document.createElement("script");
+  script.src = "https://cdn.echothread.io/widget.js"; script.async = true; script.dataset.echothread = "true";
+  document.body.appendChild(script);
+}
+function showNotFound(){ content.innerHTML = `<div class="not-found">😔 Cerita tidak ditemukan atau belum tersedia.<br><br><a href="curhat.html">← Kembali ke daftar curhat</a></div>`; }
+function escapeHTML(value){ return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"); }
 </script>
 </body>
 </html>
