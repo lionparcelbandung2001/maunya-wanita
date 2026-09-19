@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ruang Lawak 😂 | CewekPedia</title><style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fffaf2;
+    color:#3b3028;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+.back{
+    display:inline-block;
+    margin:5px 0 20px;
+    color:#d96b2b;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.article{
+    background:white;
+    border:1px solid #f1dfd0;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+
+.category{
+    display:inline-block;
+    background:#fff0e6;
+    color:#d96b2b;
+    padding:6px 10px;
+    border-radius:12px;
+    font-size:12px;
+}
+
+h1{
+    font-size:28px;
+    margin:12px 0 8px;
+    color:#e87535;
+}
+
+.meta{
+    color:#927e70;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.story{
+    line-height:1.8;
+    white-space:pre-wrap;
+    color:#4d4038;
+}
+
+.comments{
+    margin-top:28px;
+    background:white;
+    border:1px solid #f1dfd0;
+    border-radius:18px;
+    padding:20px;
+}
+
+.comments h2{
+    margin-top:0;
+    color:#e87535;
+}
+
+.loading,
+.error{
+    text-align:center;
+    padding:35px 15px;
+    color:#765f50;
+}
+</style></head><body><div class="container"><a class="back" href="index.html">
+    ← Kembali ke Ruang Lawak
+</a><div id="content">
+    <div class="loading">😂 Lagi membuka ceritanya...</div>
+</div></div><script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getAuth,
+    signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+    getDatabase,
+    ref,
+    get
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+    authDomain: "ruang-cewek.firebaseapp.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ruang-cewek",
+    storageBucket: "ruang-cewek.firebasestorage.app",
+    messagingSenderId: "300030693884",
+    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+
+const content = document.getElementById("content");
+
+function escapeHTML(text){
+    const div = document.createElement("div");
+    div.textContent = text ?? "";
+    return div.innerHTML;
+}
+
+function formatDate(timestamp){
+
+    if(!timestamp) return "";
+
+    return new Date(timestamp).toLocaleDateString("id-ID",{
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+    });
+}
+
+async function loadStory(){
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    if(!id){
+        content.innerHTML = `
+            <div class="error">
+                😅 Cerita tidak ditemukan.
+            </div>
+        `;
+        return;
+    }
+
+    try{
+
+        await signInAnonymously(auth);
+
+        const snapshot = await get(
+            ref(db,"lawak/" + id)
+        );
+
+        if(!snapshot.exists()){
+
+            content.innerHTML = `
+                <div class="error">
+                    😅 Cerita tidak ditemukan.
+                </div>
+            `;
+
+            return;
+        }
+
+        const data = snapshot.val();
+
+        if(data.status !== "approved"){
+
+            content.innerHTML = `
+                <div class="error">
+                    😅 Cerita ini belum tersedia.
+                </div>
+            `;
+
+            return;
+        }
+
+        document.title =
+            escapeHTML(data.title) +
+            " 😂 | Ruang Lawak — CewekPedia";
+
+        content.innerHTML = `
+
+            <article class="article">
+
+                <div class="category">
+                    😂 ${escapeHTML(data.category)}
+                </div>
+
+                <h1>
+                    ${escapeHTML(data.title)}
+                </h1>
+
+                <div class="meta">
+                    Oleh ${escapeHTML(data.nickname || "Anonim")}
+                    • ${formatDate(data.timestamp)}
+                </div>
+
+                <div class="story">
+                    ${escapeHTML(data.text)}
+                </div>
+
+            </article>
+
+            <section class="comments">
+
+                <h2>💬 Komentar</h2>
+
+                <div
+                    id="echothread"
+                    data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+                    data-page-url=""
+                    data-identifier="${escapeHTML(id)}"
+                    data-page-title="${escapeHTML(data.title)}">
+                </div>
+
+            </section>
+        `;
+
+        const pageUrl =
+            window.location.origin +
+            "/ruanglawak/lawak-detail.html?id=" +
+            encodeURIComponent(id);
+
+        const echo = document.getElementById("echothread");
+
+        echo.setAttribute("data-page-url",pageUrl);
+
+        const script = document.createElement("script");
+        script.src = "https://cdn.echothread.io/widget.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+
+    }catch(error){
+
+        console.error(error);
+
+        content.innerHTML = `
+            <div class="error">
+                😅 Cerita belum bisa dimuat.<br>
+                Silakan coba lagi nanti.
+            </div>
+        `;
+    }
+}
+
+loadStory();
+
+</script></body>
+</html>
