@@ -1,1089 +1,720 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Produk ⭐ | Ruang Cewek</title>
 
-    <title>Review Produk ⭐ | Ruang Cewek</title>
+  <meta
+    name="description"
+    content="Baca dan bagikan review produk, makanan, dan penginapan di Ruang Cewek."
+  >
 
-    <meta name="description"
-          content="Tempat berbagi pengalaman dan review fashion, makeup, makanan & penginapan bersama perempuan lainnya di Ruang Cewek.">
-
-<style>
-
+  <style>
     * {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #fff7fb;
-        color: #3a2630;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
     }
 
     .container {
-        width: 92%;
-        max-width: 900px;
-        margin: auto;
+      max-width: 800px;
+      margin: auto;
     }
-
-    /* HEADER */
-
-    header {
-        text-align: center;
-        padding: 28px 15px 18px;
-    }
-
-    header h1 {
-        margin: 0;
-        color: #d92f72;
-        font-size: 30px;
-    }
-
-    header p {
-        margin: 7px 0 0;
-        color: #765967;
-        font-size: 14px;
-    }
-
-    /* BACK */
 
     .back {
-        display: inline-block;
-        margin: 5px 0 15px;
-        color: #d92f72;
-        text-decoration: none;
-        font-size: 13px;
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* FILTER */
-
-    .filter-title {
-        text-align: center;
-        font-size: 13px;
-        color: #765967;
-        margin-bottom: 8px;
+    header {
+      text-align: center;
+      margin-bottom: 25px;
     }
 
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        margin-bottom: 22px;
+    h1 {
+      margin: 0 0 8px;
+      color: #d92f72;
+      font-size: 29px;
     }
 
-    .category-button {
-        border: 1px solid #f0cfdd;
-        background: white;
-        color: #5d3d4b;
-        border-radius: 12px;
-        padding: 10px 5px;
-        font-size: 12px;
-        cursor: pointer;
+    .tagline {
+      color: #777;
+      line-height: 1.6;
     }
 
-    .category-button:hover,
-    .category-button.active {
-        background: #fde5ef;
-        color: #d92f72;
-        border-color: #e9a9c1;
-        font-weight: bold;
+    .send-box {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 25px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    /* LIST */
-
-    .section-title {
-        color: #d92f72;
-        font-size: 19px;
-        margin: 0 0 12px;
+    .send-box p {
+      margin-top: 0;
+      color: #666;
+      line-height: 1.6;
     }
 
-    .review-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 35px;
+    .send-button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: #d92f72;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+      justify-content: center;
+    }
+
+    .filter-button {
+      border: 1px solid #edcbd9;
+      background: white;
+      color: #d92f72;
+      padding: 9px 13px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .filter-button.active {
+      background: #d92f72;
+      color: white;
+      border-color: #d92f72;
+    }
+
+    #reviewList {
+      display: grid;
+      gap: 15px;
     }
 
     .review-card {
-        display: block;
-        background: white;
-        border: 1px solid #f2d9e4;
-        border-radius: 15px;
-        padding: 15px;
-        text-decoration: none;
-        color: #3a2630;
-        box-shadow: 0 3px 10px rgba(180, 100, 130, 0.06);
-        transition: 0.2s;
+      display: block;
+      background: white;
+      border-radius: 17px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease;
     }
 
     .review-card:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 14px rgba(180, 100, 130, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .category {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d92f72;
+      padding: 5px 9px;
+      border-radius: 9px;
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
     .review-title {
-        font-weight: bold;
-        color: #3a2630;
-        font-size: 15px;
-        margin-bottom: 7px;
+      margin: 0 0 9px;
+      color: #d92f72;
+      font-size: 20px;
+      line-height: 1.4;
     }
 
-    .review-meta {
-        font-size: 11px;
-        color: #8a707b;
+    .preview {
+      margin: 0 0 12px;
+      color: #555;
+      line-height: 1.6;
+      font-size: 14px;
     }
 
-    .review-preview {
-        font-size: 13px;
-        color: #765967;
-        line-height: 1.5;
-        margin-top: 7px;
+    .meta {
+      color: #999;
+      font-size: 12px;
     }
 
-    .rating {
-        margin-top: 7px;
-        font-size: 13px;
+    .read-more {
+      margin-top: 12px;
+      color: #d92f72;
+      font-weight: bold;
+      font-size: 13px;
     }
 
-    /* EMPTY */
-
-    .empty-message {
-        display: none;
-        text-align: center;
-        background: white;
-        border: 1px solid #f2d9e4;
-        border-radius: 15px;
-        padding: 22px 15px;
-        color: #8a707b;
-        font-size: 13px;
-        margin-bottom: 25px;
+    .loading,
+    .empty,
+    .error {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      line-height: 1.7;
     }
 
-    /* SHARE BUTTON */
-
-    .share-review {
-        position: fixed;
-        right: 18px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1000;
-
-        background: #d92f72;
-        color: white;
-        text-decoration: none;
-
-        padding: 12px 14px;
-        border-radius: 14px;
-
-        text-align: center;
-        font-weight: bold;
-        font-size: 12px;
-
-        box-shadow: 0 5px 15px rgba(150, 50, 90, 0.22);
-
-        cursor: pointer;
-        border: none;
+    .error {
+      background: #fff0f0;
+      color: #a52a2a;
     }
-
-    .share-review span {
-        display: block;
-        font-size: 11px;
-        margin-top: 3px;
-    }
-
-    .share-review:hover {
-        opacity: 0.9;
-    }
-
-    /* FORM */
-
-    .form-box {
-        display: none;
-        background: white;
-        border: 1px solid #f2d9e4;
-        border-radius: 16px;
-        padding: 18px;
-        margin-bottom: 25px;
-        box-shadow: 0 3px 12px rgba(180, 100, 130, 0.07);
-    }
-
-    .form-box.show {
-        display: block;
-    }
-
-    .form-title {
-        margin: 0 0 5px;
-        color: #d92f72;
-        font-size: 18px;
-    }
-
-    .form-subtitle {
-        margin: 0 0 16px;
-        color: #765967;
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .form-group {
-        margin-bottom: 13px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 12px;
-        font-weight: bold;
-        color: #5d3d4b;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        border: 1px solid #eccfdb;
-        border-radius: 10px;
-        padding: 10px;
-        font-family: Arial, sans-serif;
-        font-size: 13px;
-        background: #fffafd;
-        color: #3a2630;
-        outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        border-color: #d92f72;
-    }
-
-    .form-group textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    /* RATING */
-
-    .rating-select {
-        display: flex;
-        gap: 5px;
-    }
-
-    .star-button {
-        border: none;
-        background: transparent;
-        font-size: 25px;
-        cursor: pointer;
-        padding: 2px;
-        opacity: 0.35;
-    }
-
-    .star-button.selected {
-        opacity: 1;
-    }
-
-    /* ANONYM */
-
-    .anonymous {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        font-size: 12px;
-        color: #765967;
-        margin-bottom: 15px;
-    }
-
-    .anonymous input {
-        width: auto;
-    }
-
-    /* FORM BUTTONS */
-
-    .form-buttons {
-        display: flex;
-        gap: 8px;
-    }
-
-    .submit-button,
-    .cancel-button {
-        border: none;
-        border-radius: 10px;
-        padding: 11px 16px;
-        font-size: 12px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .submit-button {
-        background: #d92f72;
-        color: white;
-    }
-
-    .cancel-button {
-        background: #f8e8ef;
-        color: #765967;
-    }
-
-    /* SUCCESS */
-
-    .success-message {
-        display: none;
-        background: #fff0f6;
-        border: 1px solid #f3d5e2;
-        border-radius: 14px;
-        padding: 14px;
-        font-size: 12px;
-        line-height: 1.5;
-        color: #765967;
-        margin-bottom: 20px;
-    }
-
-    /* INFO */
-
-    .info-box {
-        background: #fff0f6;
-        border: 1px solid #f3d5e2;
-        border-radius: 14px;
-        padding: 13px;
-        font-size: 12px;
-        line-height: 1.5;
-        color: #765967;
-        margin-bottom: 25px;
-    }
-
-    /* FOOTER */
 
     footer {
-        text-align: center;
-        padding: 20px 10px 30px;
-        color: #8a707b;
+      text-align: center;
+      margin-top: 30px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .filter-button {
         font-size: 12px;
+        padding: 8px 11px;
+      }
+
+      .review-card {
+        padding: 17px;
+      }
+
+      .review-title {
+        font-size: 18px;
+      }
+
     }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-        .container {
-            width: 94%;
-        }
-
-        header h1 {
-            font-size: 27px;
-        }
-
-        .category-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 6px;
-        }
-
-        .category-button {
-            padding: 9px 3px;
-            font-size: 11px;
-        }
-
-        .review-card {
-            padding: 13px;
-        }
-
-        .share-review {
-            right: 8px;
-            padding: 10px 11px;
-            border-radius: 12px;
-            font-size: 11px;
-        }
-
-        .share-review span {
-            font-size: 10px;
-        }
-    }
-
-    @media (max-width: 380px) {
-
-        .category-button {
-            font-size: 10px;
-            padding: 8px 2px;
-        }
-
-        .share-review {
-            right: 5px;
-            padding: 9px 9px;
-        }
-    }
-
-</style>
-
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
-
-    <header>
-
-        <h1>⭐ REVIEW PRODUK</h1>
-
-        <p>
-            Sudah pernah coba? Ceritakan pengalamanmu ❤️
-        </p>
-
-    </header>
+  <a href="index.html" class="back">
+    ← Kembali ke Ruang Cewek
+  </a>
 
 
-    <!-- BACK -->
+  <header>
 
-    <a href="index.html" class="back">
-        ← Kembali ke Ruang Cewek
+    <h1>⭐ Review Produk</h1>
+
+    <div class="tagline">
+      Cerita pengalaman • Berbagi pendapat • Bantu yang lain ❤️
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       KIRIM REVIEW
+       ========================= -->
+
+  <div class="send-box">
+
+    <p>
+      Pernah mencoba produk, makanan, atau penginapan?
+      Bagikan pengalaman kamu di sini.
+    </p>
+
+    <a
+      href="kirimreview.html"
+      class="send-button"
+    >
+      ⭐ Kirim Review
     </a>
 
+  </div>
 
-    <!-- FILTER -->
 
-    <div class="filter-title">
-        Pilih kategori review
+  <!-- =========================
+       FILTER
+       ========================= -->
+
+  <div class="filters">
+
+    <button
+      class="filter-button active"
+      data-category="Semua"
+    >
+      Semua
+    </button>
+
+    <button
+      class="filter-button"
+      data-category="Fashion"
+    >
+      👗 Fashion
+    </button>
+
+    <button
+      class="filter-button"
+      data-category="Makeup"
+    >
+      💄 Makeup
+    </button>
+
+    <button
+      class="filter-button"
+      data-category="Makanan & Penginapan"
+    >
+      🍽️ Makanan & Penginapan
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       REVIEW LIST
+       ========================= -->
+
+  <div id="reviewList">
+
+    <div class="loading">
+      ⏳ Memuat review...
     </div>
 
+  </div>
 
-    <div class="category-grid">
 
-        <button
-            class="category-button active"
-            data-category="Semua">
-            Semua
-        </button>
-
-        <button
-            class="category-button"
-            data-category="Fashion">
-            👗 Fashion
-        </button>
-
-        <button
-            class="category-button"
-            data-category="Makeup">
-            💄 Makeup
-        </button>
-
-        <button
-            class="category-button"
-            data-category="Makanan & Penginapan">
-            🍽️ Makanan & Penginapan
-        </button>
-
-    </div>
-
-
-    <!-- FORM REVIEW -->
-
-    <div class="form-box" id="reviewForm">
-
-        <h2 class="form-title">
-            ⭐ Bagikan Reviewmu
-        </h2>
-
-        <p class="form-subtitle">
-            Ceritakan pengalamanmu supaya bisa membantu perempuan lain
-            sebelum mencoba produk atau tempat tersebut. ❤️
-        </p>
-
-
-        <div class="form-group">
-
-            <label for="productName">
-                Nama produk / tempat
-            </label>
-
-            <input
-                type="text"
-                id="productName"
-                maxlength="100"
-                placeholder="Contoh: Nama produk atau tempat..."
-            >
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="productCategory">
-                Kategori
-            </label>
-
-            <select id="productCategory">
-
-                <option value="">
-                    Pilih kategori
-                </option>
-
-                <option value="Fashion">
-                    Fashion
-                </option>
-
-                <option value="Makeup">
-                    Makeup
-                </option>
-
-                <option value="Makanan & Penginapan">
-                    Makanan & Penginapan
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-                Rating
-            </label>
-
-            <div class="rating-select">
-
-                <button
-                    type="button"
-                    class="star-button"
-                    data-rating="1">
-                    ⭐
-                </button>
-
-                <button
-                    type="button"
-                    class="star-button"
-                    data-rating="2">
-                    ⭐
-                </button>
-
-                <button
-                    type="button"
-                    class="star-button"
-                    data-rating="3">
-                    ⭐
-                </button>
-
-                <button
-                    type="button"
-                    class="star-button"
-                    data-rating="4">
-                    ⭐
-                </button>
-
-                <button
-                    type="button"
-                    class="star-button"
-                    data-rating="5">
-                    ⭐
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="nickname">
-                Nickname
-            </label>
-
-            <input
-                type="text"
-                id="nickname"
-                maxlength="20"
-                placeholder="Contoh: Aulia"
-            >
-
-        </div>
-
-
-        <label class="anonymous">
-
-            <input
-                type="checkbox"
-                id="anonymous">
-
-            Tampilkan sebagai anonim
-
-        </label>
-
-
-        <div class="form-group">
-
-            <label for="reviewText">
-                Review kamu
-            </label>
-
-            <textarea
-                id="reviewText"
-                maxlength="500"
-                placeholder="Ceritakan pengalamanmu..."
-            ></textarea>
-
-        </div>
-
-
-        <div class="form-buttons">
-
-            <button
-                type="button"
-                class="submit-button"
-                id="submitReview">
-                Kirim Review
-            </button>
-
-            <button
-                type="button"
-                class="cancel-button"
-                id="cancelReview">
-                Batal
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- SUCCESS -->
-
-    <div
-        class="success-message"
-        id="successMessage">
-
-        ❤️ <strong>Terima kasih!</strong>
-
-        <br>
-
-        Reviewmu sudah diterima.
-
-        Review akan diperiksa terlebih dahulu sebelum ditampilkan
-        di Ruang Cewek.
-
-    </div>
-
-
-    <!-- LIST -->
-
-    <h2 class="section-title">
-        ⭐ Review Terbaru
-    </h2>
-
-
-    <div class="review-list">
-
-
-        <!-- FASHION -->
-
-        <a
-            href="reviewproduk-fashion-1.html"
-            class="review-card"
-            data-category="Fashion">
-
-            <div class="review-title">
-                Bahannya bagus, tapi ukurannya agak kecil
-            </div>
-
-            <div class="review-meta">
-                👗 Fashion • 3 jam lalu • 💬 5 komentar
-            </div>
-
-            <div class="rating">
-                ⭐⭐⭐⭐☆
-            </div>
-
-            <div class="review-preview">
-                Aku beli karena tertarik modelnya. Setelah datang ternyata
-                bahannya bagus, tapi ukurannya agak kecil...
-            </div>
-
-        </a>
-
-
-        <!-- MAKEUP -->
-
-        <a
-            href="reviewproduk-makeup-1.html"
-            class="review-card"
-            data-category="Makeup">
-
-            <div class="review-title">
-                Makeup ini warnanya cantik banget
-            </div>
-
-            <div class="review-meta">
-                💄 Makeup • 5 jam lalu • 💬 7 komentar
-            </div>
-
-            <div class="rating">
-                ⭐⭐⭐⭐⭐
-            </div>
-
-            <div class="review-preview">
-                Warnanya cantik dan gampang dibaurkan. Dipakai untuk
-                makeup sehari-hari juga masih terlihat natural...
-            </div>
-
-        </a>
-
-
-        <!-- MAKANAN & PENGINAPAN -->
-
-        <a
-            href="reviewproduk-makanan-penginapan.html"
-            class="review-card"
-            data-category="Makanan & Penginapan">
-
-            <div class="review-title">
-                Tempatnya nyaman, makanannya juga enak
-            </div>
-
-            <div class="review-meta">
-                🍽️ Makanan & Penginapan • kemarin • 💬 10 komentar
-            </div>
-
-            <div class="rating">
-                ⭐⭐⭐⭐⭐
-            </div>
-
-            <div class="review-preview">
-                Tempatnya nyaman dan suasananya juga enak buat santai.
-                Makanannya cukup enak dan pelayanannya ramah...
-            </div>
-
-        </a>
-
-
-    </div>
-
-
-    <!-- EMPTY -->
-
-    <div
-        class="empty-message"
-        id="emptyMessage">
-
-        Belum ada review di kategori ini. ❤️
-
-    </div>
-
-
-    <!-- INFO -->
-
-    <div class="info-box">
-
-        ⭐ Review yang dikirim akan melalui proses moderasi terlebih dahulu
-        sebelum ditampilkan di Ruang Cewek.
-
-        <br><br>
-
-        💕 Hindari memasukkan data pribadi seperti nomor HP,
-        alamat rumah, password, atau informasi sensitif lainnya.
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-        © CewekPedia ❤️
-    </footer>
+  <footer>
+    © CewekPedia — Ruang Cewek ❤️
+  </footer>
 
 </div>
 
 
-<!-- BAGIKAN REVIEW -->
+<!-- =========================
+     FIREBASE
+     ========================= -->
 
-<button
-    class="share-review"
-    id="openReviewForm">
+<script type="module">
 
-    ⭐ Bagikan
+  import { initializeApp } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-    <span>
-        Reviewmu
-    </span>
+  import {
+    getDatabase,
+    ref,
+    get,
+    query,
+    orderByChild,
+    equalTo
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-</button>
 
+  /* =========================
+     FIREBASE CONFIG
+     ========================= */
 
-<script>
+  const firebaseConfig = {
 
-    /* =========================
-       FILTER KATEGORI
-    ========================= */
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
 
-    const categoryButtons =
-        document.querySelectorAll(".category-button");
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
 
-    const reviewCards =
-        document.querySelectorAll(".review-card");
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-    const emptyMessage =
-        document.getElementById("emptyMessage");
+    projectId:
+      "ruang-cewek",
 
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
 
-    categoryButtons.forEach(button => {
+    messagingSenderId:
+      "300030693884",
 
-        button.addEventListener("click", function () {
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
 
-            categoryButtons.forEach(btn => {
-                btn.classList.remove("active");
-            });
+  };
 
-            this.classList.add("active");
 
-            const selectedCategory =
-                this.dataset.category;
+  const app =
+    initializeApp(firebaseConfig);
 
-            let visibleCount = 0;
+  const db =
+    getDatabase(app);
 
 
-            reviewCards.forEach(card => {
+  const reviewList =
+    document.getElementById(
+      "reviewList"
+    );
 
-                const cardCategory =
-                    card.dataset.category;
 
+  let allReviews = [];
 
-                if (
-                    selectedCategory === "Semua" ||
-                    cardCategory === selectedCategory
-                ) {
+  let currentCategory = "Semua";
 
-                    card.style.display = "block";
 
-                    visibleCount++;
+  /* =========================
+     LOAD APPROVED REVIEWS
+     ========================= */
 
-                } else {
+  async function loadReviews() {
 
-                    card.style.display = "none";
+    try {
 
-                }
+      const reviewsRef =
+        ref(db, "reviews");
 
-            });
 
+      const reviewsQuery =
+        query(
+          reviewsRef,
+          orderByChild("status"),
+          equalTo("approved")
+        );
 
-            if (visibleCount === 0) {
 
-                emptyMessage.style.display = "block";
+      const snapshot =
+        await get(reviewsQuery);
 
-            } else {
 
-                emptyMessage.style.display = "none";
+      allReviews = [];
 
-            }
 
-        });
+      if (snapshot.exists()) {
 
-    });
+        snapshot.forEach(
+          (childSnapshot) => {
 
+            const review =
+              childSnapshot.val();
 
-    /* =========================
-       BUKA FORM
-    ========================= */
 
-    const openReviewForm =
-        document.getElementById("openReviewForm");
+            allReviews.push({
 
-    const reviewForm =
-        document.getElementById("reviewForm");
+              id:
+                childSnapshot.key,
 
-    const cancelReview =
-        document.getElementById("cancelReview");
-
-
-    openReviewForm.addEventListener("click", function () {
-
-        reviewForm.classList.add("show");
-
-        reviewForm.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-
-    /* =========================
-       BATAL FORM
-    ========================= */
-
-    cancelReview.addEventListener("click", function () {
-
-        reviewForm.classList.remove("show");
-
-    });
-
-
-    /* =========================
-       RATING
-    ========================= */
-
-    const starButtons =
-        document.querySelectorAll(".star-button");
-
-    let selectedRating = 0;
-
-
-    starButtons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            selectedRating =
-                Number(this.dataset.rating);
-
-
-            starButtons.forEach(star => {
-
-                const rating =
-                    Number(star.dataset.rating);
-
-
-                if (rating <= selectedRating) {
-
-                    star.classList.add("selected");
-
-                } else {
-
-                    star.classList.remove("selected");
-
-                }
+              ...review
 
             });
 
-        });
+          }
+        );
 
-    });
-
-
-    /* =========================
-       SUBMIT REVIEW
-    ========================= */
-
-    const submitReview =
-        document.getElementById("submitReview");
-
-    const successMessage =
-        document.getElementById("successMessage");
+      }
 
 
-    submitReview.addEventListener("click", function () {
+      /*
+        Review terbaru
+        ditampilkan paling atas.
+      */
 
-        const productName =
+      allReviews.sort(
+        (a, b) =>
+          (b.timestamp || 0) -
+          (a.timestamp || 0)
+      );
+
+
+      renderReviews();
+
+
+    } catch (error) {
+
+      console.error(
+        "Gagal memuat review:",
+        error
+      );
+
+
+      reviewList.innerHTML = `
+
+        <div class="error">
+
+          Maaf, review belum dapat dimuat.
+
+          <br><br>
+
+          Silakan coba lagi nanti.
+
+        </div>
+
+      `;
+
+    }
+
+  }
+
+
+  /* =========================
+     RENDER
+     ========================= */
+
+  function renderReviews() {
+
+    let reviews =
+      allReviews;
+
+
+    if (
+      currentCategory !== "Semua"
+    ) {
+
+      reviews =
+        allReviews.filter(
+          review =>
+            review.category ===
+            currentCategory
+        );
+
+    }
+
+
+    if (reviews.length === 0) {
+
+      reviewList.innerHTML = `
+
+        <div class="empty">
+
+          💕 Belum ada review
+          untuk kategori ini.
+
+          <br><br>
+
+          Kamu bisa menjadi
+          yang pertama berbagi pengalaman.
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    reviewList.innerHTML =
+      reviews.map(
+        review =>
+          createReviewCard(review)
+      ).join("");
+
+  }
+
+
+  /* =========================
+     REVIEW CARD
+     ========================= */
+
+  function createReviewCard(review) {
+
+    const title =
+      escapeHTML(
+        review.title ||
+        "Review Produk"
+      );
+
+
+    const category =
+      escapeHTML(
+        review.category ||
+        "Lainnya"
+      );
+
+
+    const nickname =
+      escapeHTML(
+        review.nickname ||
+        "Anonim"
+      );
+
+
+    const text =
+      escapeHTML(
+        review.text ||
+        ""
+      );
+
+
+    const preview =
+      text.length > 160
+        ? text.substring(0, 160) +
+          "..."
+        : text;
+
+
+    const date =
+      formatDate(
+        review.timestamp
+      );
+
+
+    return `
+
+      <a
+        class="review-card"
+        href="review-detail.html?id=${encodeURIComponent(review.id)}"
+      >
+
+        <div class="category">
+          ⭐ ${category}
+        </div>
+
+        <h2 class="review-title">
+          ${title}
+        </h2>
+
+        <p class="preview">
+          ${preview}
+        </p>
+
+        <div class="meta">
+          ✍️ ${nickname}
+          ${date ? " • " + date : ""}
+        </div>
+
+        <div class="read-more">
+          Baca Review →
+        </div>
+
+      </a>
+
+    `;
+
+  }
+
+
+  /* =========================
+     FILTER BUTTON
+     ========================= */
+
+  document
+    .querySelectorAll(
+      ".filter-button"
+    )
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          function() {
+
             document
-                .getElementById("productName")
-                .value
-                .trim();
+              .querySelectorAll(
+                ".filter-button"
+              )
+              .forEach(
+                btn =>
+                  btn.classList.remove(
+                    "active"
+                  )
+              );
 
 
-        const category =
-            document
-                .getElementById("productCategory")
-                .value;
+            this.classList.add(
+              "active"
+            );
 
 
-        const nickname =
-            document
-                .getElementById("nickname")
-                .value
-                .trim();
+            currentCategory =
+              this.dataset.category;
 
 
-        const reviewText =
-            document
-                .getElementById("reviewText")
-                .value
-                .trim();
+            renderReviews();
+
+          }
+        );
+
+      }
+    );
 
 
-        if (!productName) {
+  /* =========================
+     DATE
+     ========================= */
 
-            alert("Nama produk atau tempat belum diisi ❤️");
+  function formatDate(timestamp) {
 
-            return;
-
-        }
-
-
-        if (!category) {
-
-            alert("Silakan pilih kategori ❤️");
-
-            return;
-
-        }
+    if (!timestamp) {
+      return "";
+    }
 
 
-        if (selectedRating === 0) {
+    return new Date(
+      timestamp
+    ).toLocaleDateString(
+      "id-ID",
+      {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }
+    );
 
-            alert("Silakan pilih rating terlebih dahulu ⭐");
-
-            return;
-
-        }
-
-
-        if (!nickname) {
-
-            alert("Nickname belum diisi ❤️");
-
-            return;
-
-        }
+  }
 
 
-        if (!reviewText) {
+  /* =========================
+     SECURITY
+     ========================= */
 
-            alert("Review kamu belum diisi ❤️");
+  function escapeHTML(value) {
 
-            return;
+    return String(value)
 
-        }
+      .replace(
+        /&/g,
+        "&amp;"
+      )
 
+      .replace(
+        /</g,
+        "&lt;"
+      )
 
-        /*
-         * Untuk sementara form review belum
-         * menyimpan data ke database.
-         *
-         * EchoThread digunakan pada halaman
-         * detail masing-masing review.
-         */
+      .replace(
+        />/g,
+        "&gt;"
+      )
 
+      .replace(
+        /"/g,
+        "&quot;"
+      )
 
-        reviewForm.classList.remove("show");
+      .replace(
+        /'/g,
+        "&#039;"
+      );
 
-        successMessage.style.display = "block";
-
-
-        successMessage.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-
-        /* RESET FORM */
-
-        document.getElementById("productName").value = "";
-
-        document.getElementById("productCategory").value = "";
-
-        document.getElementById("nickname").value = "";
-
-        document.getElementById("reviewText").value = "";
-
-        document.getElementById("anonymous").checked = false;
+  }
 
 
-        selectedRating = 0;
+  /* =========================
+     START
+     ========================= */
 
-
-        starButtons.forEach(star => {
-            star.classList.remove("selected");
-        });
-
-    });
+  loadReviews();
 
 </script>
 
