@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
+                            <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Curhat | Ruang Cewek</title><meta
+name="description"
+content="Baca curhat dan pengalaman dari Ruang Cewek."
 
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Curhat | Ruang Cewek</title>
-
-<meta
-    name="description"
-    content="Baca curhat dan pengalaman dari Ruang Cewek."
->
+«»
 
 <style>
 
@@ -201,140 +193,107 @@ footer{
     font-size:10px;
 }
 
-</style>
+</style></head><body><div class="container"><a
+class="back"
+href="index.html"
 
-</head>
+«»
 
-<body>
+← Kembali ke Ruang Cewek
 
-<div class="container">
+</a><div class="header"><h1>💭 Curhat & Cerita</h1>
+
+<p>
+    Baca cerita dan pengalaman dari sesama pengguna Ruang Cewek ❤️
+</p>
+
+</div><div class="send-box"><p>
+    Punya cerita yang ingin dibagikan?
+</p>
 
 <a
-    class="back"
-    href="index.html"
+    class="send-button"
+    href="kirimcurhat.html"
 >
-    ← Kembali ke Ruang Cewek
+    💌 Kirim Curhat
 </a>
 
-
-<div class="header">
-
-    <h1>💭 Curhat & Cerita</h1>
-
-    <p>
-        Baca cerita dan pengalaman dari sesama pengguna Ruang Cewek ❤️
-    </p>
-
-</div>
-
-
-<div class="send-box">
-
-    <p>
-        Punya cerita yang ingin dibagikan?
-    </p>
-
-    <a
-        class="send-button"
-        href="kirimcurhat.html"
-    >
-        💌 Kirim Curhat
-    </a>
-
-</div>
-
-
-<div
+</div><div
     id="filters"
     class="filters"
+><button
+    class="filter-button active"
+    data-category="Semua"
 >
+    Semua
+</button>
 
-    <button
-        class="filter-button active"
-        data-category="Semua"
-    >
-        Semua
-    </button>
+<button
+    class="filter-button"
+    data-category="Percintaan"
+>
+    Percintaan
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Percintaan"
-    >
-        Percintaan
-    </button>
+<button
+    class="filter-button"
+    data-category="Pernikahan"
+>
+    Pernikahan
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Pernikahan"
-    >
-        Pernikahan
-    </button>
+<button
+    class="filter-button"
+    data-category="Pertemanan"
+>
+    Pertemanan
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Pertemanan"
-    >
-        Pertemanan
-    </button>
+<button
+    class="filter-button"
+    data-category="Keluarga"
+>
+    Keluarga
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Keluarga"
-    >
-        Keluarga
-    </button>
+<button
+    class="filter-button"
+    data-category="Pekerjaan"
+>
+    Pekerjaan
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Pekerjaan"
-    >
-        Pekerjaan
-    </button>
+<button
+    class="filter-button"
+    data-category="Kehidupan Sehari-hari"
+>
+    Keseharian
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Kehidupan Sehari-hari"
-    >
-        Keseharian
-    </button>
+<button
+    class="filter-button"
+    data-category="Makanan"
+>
+    Makanan
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Makanan"
-    >
-        Makanan
-    </button>
+<button
+    class="filter-button"
+    data-category="Lainnya"
+>
+    Lainnya
+</button>
 
-    <button
-        class="filter-button"
-        data-category="Lainnya"
-    >
-        Lainnya
-    </button>
-
-</div>
-
-
-<div
+</div><div
     id="storyList"
     class="story-list"
->
-
-    <div class="loading">
-        💭 Lagi membuka curhat...
-    </div>
-
+><div class="loading">
+    💭 Lagi membuka curhat...
 </div>
 
-
-<footer>
+</div><footer>
     © CewekPedia — Ruang Cewek ❤️
-</footer>
-
-</div>
-
-
-<script type="module">
+</footer></div><script type="module">
 
 import {
     initializeApp
@@ -343,6 +302,9 @@ import {
 import {
     getDatabase,
     ref,
+    query,
+    orderByChild,
+    equalTo,
     onValue
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
@@ -389,19 +351,6 @@ const filterButtons =
 
 let stories = [];
 let currentCategory = "Semua";
-
-
-function escapeHTML(value){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        value ?? "";
-
-    return div.innerHTML;
-
-}
 
 
 function formatDate(timestamp){
@@ -563,8 +512,16 @@ filterButtons.forEach(function(button){
 });
 
 
+const approvedStoriesQuery =
+    query(
+        ref(db,"stories"),
+        orderByChild("status"),
+        equalTo("approved")
+    );
+
+
 onValue(
-    ref(db,"stories"),
+    approvedStoriesQuery,
     function(snapshot){
 
         stories = [];
@@ -580,28 +537,26 @@ onValue(
                 data[id];
 
 
-            if(
-                story &&
-                story.status === "approved"
-            ){
-
-                stories.push({
-
-                    id:id,
-
-                    title:story.title,
-
-                    category:story.category,
-
-                    nickname:story.nickname,
-
-                    text:story.text,
-
-                    timestamp:story.timestamp
-
-                });
-
+            if(!story){
+                return;
             }
+
+
+            stories.push({
+
+                id:id,
+
+                title:story.title,
+
+                category:story.category,
+
+                nickname:story.nickname,
+
+                text:story.text,
+
+                timestamp:story.timestamp
+
+            });
 
         });
 
@@ -611,7 +566,10 @@ onValue(
     },
     function(error){
 
-        console.error(error);
+        console.error(
+            "Firebase Curhat error:",
+            error
+        );
 
 
         storyList.innerHTML = `
@@ -624,7 +582,5 @@ onValue(
     }
 );
 
-</script>
-
-</body>
+</script></body>
 </html>
