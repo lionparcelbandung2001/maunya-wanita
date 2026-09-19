@@ -89,6 +89,7 @@
       color: #777;
       font-size: 14px;
       line-height: 1.6;
+      margin-bottom: 15px;
     }
 
     .loading,
@@ -150,7 +151,6 @@
     ← Kembali ke Daftar Curhat
   </a>
 
-
   <div id="content">
 
     <div class="loading">
@@ -159,7 +159,6 @@
 
   </div>
 
-
   <footer>
     © CewekPedia — Ruang Cewek ❤️
   </footer>
@@ -167,7 +166,10 @@
 </div>
 
 
-<!-- FIREBASE -->
+<!-- =========================
+     FIREBASE
+     ========================= -->
+
 <script type="module">
 
   import { initializeApp } from
@@ -180,10 +182,6 @@
   } from
     "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-
-  /* =========================
-     FIREBASE CONFIG
-     ========================= */
 
   const firebaseConfig = {
 
@@ -212,13 +210,28 @@
 
   const db = getDatabase(app);
 
-
   const content =
     document.getElementById("content");
 
 
   /* =========================
-     AMBIL ID DARI URL
+     ECHOTHREAD API KEY
+     =========================
+
+     TEMPEL API KEY ECHOTHREAD
+     CEWEKPEDIA KAMU DI SINI.
+
+     Contoh:
+
+     const ECHOTHREAD_API_KEY = "API_KEY_KAMU";
+
+  */
+
+  const ECHOTHREAD_API_KEY = "TEMPEL_API_KEY_ECHOTHREAD_DI_SINI";
+
+
+  /* =========================
+     AMBIL ID CERITA
      ========================= */
 
   const params =
@@ -228,21 +241,9 @@
     params.get("id");
 
 
-  /* =========================
-     CEK ID
-     ========================= */
-
   if (!storyId) {
 
-    content.innerHTML = `
-      <div class="not-found">
-        😔 Cerita tidak ditemukan.
-        <br><br>
-        <a href="curhat.html">
-          Kembali ke daftar curhat
-        </a>
-      </div>
-    `;
+    showNotFound();
 
   } else {
 
@@ -281,7 +282,7 @@
 
       /*
         Hanya cerita approved
-        yang boleh ditampilkan.
+        yang boleh tampil.
       */
 
       if (story.status !== "approved") {
@@ -364,7 +365,7 @@
 
 
     document.title =
-      story.title +
+      (story.title || "Curhat") +
       " ❤️ | Ruang Cewek";
 
 
@@ -389,22 +390,66 @@
           ${text}
         </div>
 
-
         <div class="divider"></div>
-
 
         <h2 class="comment-title">
           💬 Obrolan Cerita
         </h2>
 
         <div class="comment-info">
-          Kolom komentar akan tersedia di sini.
-          ❤️
+          Punya pengalaman atau pendapat tentang cerita ini?
+          Kamu bisa ikut ngobrol di bawah ❤️
         </div>
+
+        <!-- ECHOTHREAD -->
+        <div
+          id="echothread"
+          data-api-key="${ECHOTHREAD_API_KEY}"
+          data-page-url="${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(storyId)}"
+          data-identifier="${escapeHTML(storyId)}"
+          data-page-title="${title}"
+        ></div>
 
       </article>
 
     `;
+
+
+    /* =========================
+       LOAD ECHOTHREAD
+       ========================= */
+
+    loadEchoThread();
+
+  }
+
+
+  /* =========================
+     LOAD ECHOTHREAD SCRIPT
+     ========================= */
+
+  function loadEchoThread() {
+
+    if (
+      document.querySelector(
+        'script[data-echothread="true"]'
+      )
+    ) {
+      return;
+    }
+
+
+    const script =
+      document.createElement("script");
+
+    script.src =
+      "https://cdn.echothread.io/widget.js";
+
+    script.async = true;
+
+    script.dataset.echothread = "true";
+
+    document.body.appendChild(script);
 
   }
 
@@ -441,7 +486,7 @@
 
   function escapeHTML(value) {
 
-    return value
+    return String(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
