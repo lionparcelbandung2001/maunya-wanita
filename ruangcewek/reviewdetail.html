@@ -176,6 +176,12 @@
   } from
     "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
+  import {
+    getAuth,
+    signInAnonymously
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
   /* =========================
      FIREBASE
@@ -183,14 +189,17 @@
 
   const firebaseConfig = {
 
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
 
-    authDomain: "ruang-cewek.firebaseapp.com",
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
 
     databaseURL:
       "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-    projectId: "ruang-cewek",
+    projectId:
+      "ruang-cewek",
 
     storageBucket:
       "ruang-cewek.firebasestorage.app",
@@ -204,9 +213,15 @@
   };
 
 
-  const app = initializeApp(firebaseConfig);
+  const app =
+    initializeApp(firebaseConfig);
 
-  const db = getDatabase(app);
+  const db =
+    getDatabase(app);
+
+  const auth =
+    getAuth(app);
+
 
   const content =
     document.getElementById("content");
@@ -214,19 +229,14 @@
 
   /* =========================
      ECHOTHREAD
-     =========================
-
-     Masukkan API key EchoThread
-     CewekPedia yang sama seperti
-     halaman EchoThread sebelumnya.
-  */
+     ========================= */
 
   const ECHOTHREAD_API_KEY =
     "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
 
 
   /* =========================
-     AMBIL ID REVIEW
+     REVIEW ID
      ========================= */
 
   const params =
@@ -244,7 +254,49 @@
 
   } else {
 
-    loadReview();
+    start();
+
+  }
+
+
+  /* =========================
+     LOGIN + LOAD
+     ========================= */
+
+  async function start() {
+
+    try {
+
+      if (!auth.currentUser) {
+
+        await signInAnonymously(auth);
+
+      }
+
+      await loadReview();
+
+    } catch (error) {
+
+      console.error(
+        "Firebase authentication error:",
+        error
+      );
+
+      content.innerHTML = `
+
+        <div class="error">
+
+          Maaf, review belum dapat dimuat.
+
+          <br><br>
+
+          Silakan coba lagi nanti.
+
+        </div>
+
+      `;
+
+    }
 
   }
 
@@ -263,6 +315,7 @@
           "reviews/" + reviewId
         );
 
+
       const snapshot =
         await get(reviewRef);
 
@@ -280,12 +333,9 @@
         snapshot.val();
 
 
-      /*
-        Hanya review approved
-        yang boleh tampil.
-      */
-
-      if (review.status !== "approved") {
+      if (
+        review.status !== "approved"
+      ) {
 
         showNotFound();
 
@@ -415,19 +465,12 @@
           atau ngobrol di bawah ❤️
         </div>
 
-        <!-- ECHOTHREAD -->
-
         <div
           id="echothread"
-
           data-api-key="${ECHOTHREAD_API_KEY}"
-
           data-page-url="${getCanonicalReviewURL(reviewId)}"
-
           data-identifier="${escapeHTML(reviewId)}"
-
           data-page-title="${title}"
-
         ></div>
 
       </article>
@@ -441,7 +484,7 @@
 
 
   /* =========================
-     URL CANONICAL REVIEW
+     CANONICAL URL
      ========================= */
 
   function getCanonicalReviewURL(id) {
@@ -456,7 +499,7 @@
 
 
   /* =========================
-     LOAD ECHOTHREAD
+     ECHOTHREAD
      ========================= */
 
   function loadEchoThread() {
@@ -525,15 +568,10 @@
   function escapeHTML(value) {
 
     return String(value)
-
       .replace(/&/g, "&amp;")
-
       .replace(/</g, "&lt;")
-
       .replace(/>/g, "&gt;")
-
       .replace(/"/g, "&quot;")
-
       .replace(/'/g, "&#039;");
 
   }
