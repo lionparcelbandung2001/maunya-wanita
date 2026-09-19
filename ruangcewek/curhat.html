@@ -1,4 +1,4 @@
-                            <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Curhat | Ruang Cewek</title><meta
 name="description"
 content="Baca curhat dan pengalaman dari Ruang Cewek."
@@ -222,82 +222,94 @@ href="index.html"
     id="filters"
     class="filters"
 ><button
-    class="filter-button active"
-    data-category="Semua"
->
-    Semua
-</button>
+class="filter-button active"
+data-category="Semua"
 
-<button
-    class="filter-button"
-    data-category="Percintaan"
->
-    Percintaan
-</button>
+«»
 
-<button
-    class="filter-button"
-    data-category="Pernikahan"
->
-    Pernikahan
-</button>
+Semua
 
-<button
-    class="filter-button"
-    data-category="Pertemanan"
->
-    Pertemanan
-</button>
+</button><button
+class="filter-button"
+data-category="Percintaan"
 
-<button
-    class="filter-button"
-    data-category="Keluarga"
->
-    Keluarga
-</button>
+«»
 
-<button
-    class="filter-button"
-    data-category="Pekerjaan"
->
-    Pekerjaan
-</button>
+Percintaan
 
-<button
-    class="filter-button"
-    data-category="Kehidupan Sehari-hari"
->
-    Keseharian
-</button>
+</button><button
+class="filter-button"
+data-category="Pernikahan"
 
-<button
-    class="filter-button"
-    data-category="Makanan"
->
-    Makanan
-</button>
+«»
 
-<button
-    class="filter-button"
-    data-category="Lainnya"
->
-    Lainnya
-</button>
+Pernikahan
 
-</div><div
+</button><button
+class="filter-button"
+data-category="Pertemanan"
+
+«»
+
+Pertemanan
+
+</button><button
+class="filter-button"
+data-category="Keluarga"
+
+«»
+
+Keluarga
+
+</button><button
+class="filter-button"
+data-category="Pekerjaan"
+
+«»
+
+Pekerjaan
+
+</button><button
+class="filter-button"
+data-category="Kehidupan Sehari-hari"
+
+«»
+
+Keseharian
+
+</button><button
+class="filter-button"
+data-category="Makanan"
+
+«»
+
+Makanan
+
+</button><button
+class="filter-button"
+data-category="Lainnya"
+
+«»
+
+Lainnya
+
+</button></div><div
     id="storyList"
     class="story-list"
 ><div class="loading">
     💭 Lagi membuka curhat...
-</div>
-
-</div><footer>
+</div></div><footer>
     © CewekPedia — Ruang Cewek ❤️
 </footer></div><script type="module">
 
 import {
     initializeApp
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getAuth,
+    signInAnonymously
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 import {
     getDatabase,
@@ -338,6 +350,9 @@ const firebaseConfig = {
 const app =
     initializeApp(firebaseConfig);
 
+const auth =
+    getAuth(app);
+
 const db =
     getDatabase(app);
 
@@ -350,7 +365,9 @@ const filterButtons =
 
 
 let stories = [];
-let currentCategory = "Semua";
+
+let currentCategory =
+    "Semua";
 
 
 function formatDate(timestamp){
@@ -397,6 +414,7 @@ function renderStories(){
         `;
 
         return;
+
     }
 
 
@@ -473,8 +491,11 @@ function renderStories(){
 
 
         card.appendChild(category);
+
         card.appendChild(title);
+
         card.appendChild(meta);
+
         card.appendChild(preview);
 
         storyList.appendChild(card);
@@ -512,75 +533,105 @@ filterButtons.forEach(function(button){
 });
 
 
-const approvedStoriesQuery =
-    query(
-        ref(db,"stories"),
-        orderByChild("status"),
-        equalTo("approved")
-    );
+/*
+   FIREBASE:
+   Login anonim terlebih dahulu,
+   karena Firebase Rules stories
+   membutuhkan auth anonymous.
+*/
 
+signInAnonymously(auth)
 
-onValue(
-    approvedStoriesQuery,
-    function(snapshot){
+.then(function(){
 
-        stories = [];
-
-
-        const data =
-            snapshot.val() || {};
-
-
-        Object.keys(data).forEach(function(id){
-
-            const story =
-                data[id];
-
-
-            if(!story){
-                return;
-            }
-
-
-            stories.push({
-
-                id:id,
-
-                title:story.title,
-
-                category:story.category,
-
-                nickname:story.nickname,
-
-                text:story.text,
-
-                timestamp:story.timestamp
-
-            });
-
-        });
-
-
-        renderStories();
-
-    },
-    function(error){
-
-        console.error(
-            "Firebase Curhat error:",
-            error
+    const approvedStoriesQuery =
+        query(
+            ref(db,"stories"),
+            orderByChild("status"),
+            equalTo("approved")
         );
 
 
-        storyList.innerHTML = `
-            <div class="error">
-                😔 Curhat belum bisa dimuat.<br>
-                Silakan coba lagi nanti.
-            </div>
-        `;
+    onValue(
+        approvedStoriesQuery,
+        function(snapshot){
 
-    }
-);
+            stories = [];
+
+
+            const data =
+                snapshot.val() || {};
+
+
+            Object.keys(data).forEach(function(id){
+
+                const story =
+                    data[id];
+
+
+                if(!story){
+                    return;
+                }
+
+
+                stories.push({
+
+                    id:id,
+
+                    title:story.title,
+
+                    category:story.category,
+
+                    nickname:story.nickname,
+
+                    text:story.text,
+
+                    timestamp:story.timestamp
+
+                });
+
+            });
+
+
+            renderStories();
+
+        },
+        function(error){
+
+            console.error(
+                "Firebase Curhat error:",
+                error
+            );
+
+
+            storyList.innerHTML = `
+                <div class="error">
+                    😔 Curhat belum bisa dimuat.<br>
+                    Silakan coba lagi nanti.
+                </div>
+            `;
+
+        }
+    );
+
+})
+
+.catch(function(error){
+
+    console.error(
+        "Firebase Anonymous Auth error:",
+        error
+    );
+
+
+    storyList.innerHTML = `
+        <div class="error">
+            😔 Curhat belum bisa dimuat.<br>
+            Silakan coba lagi nanti.
+        </div>
+    `;
+
+});
 
 </script></body>
 </html>
