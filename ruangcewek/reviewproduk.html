@@ -215,7 +215,6 @@
     ← Kembali ke Ruang Cewek
   </a>
 
-
   <header>
 
     <h1>⭐ Review Produk</h1>
@@ -227,9 +226,7 @@
   </header>
 
 
-  <!-- =========================
-       KIRIM REVIEW
-       ========================= -->
+  <!-- KIRIM REVIEW -->
 
   <div class="send-box">
 
@@ -248,9 +245,7 @@
   </div>
 
 
-  <!-- =========================
-       FILTER
-       ========================= -->
+  <!-- FILTER -->
 
   <div class="filters">
 
@@ -285,9 +280,7 @@
   </div>
 
 
-  <!-- =========================
-       REVIEW LIST
-       ========================= -->
+  <!-- DAFTAR REVIEW -->
 
   <div id="reviewList">
 
@@ -305,10 +298,6 @@
 </div>
 
 
-<!-- =========================
-     FIREBASE
-     ========================= -->
-
 <script type="module">
 
   import { initializeApp } from
@@ -323,6 +312,12 @@
     equalTo
   } from
     "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+  import {
+    getAuth,
+    signInAnonymously
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
   /* =========================
@@ -361,16 +356,56 @@
   const db =
     getDatabase(app);
 
+  const auth =
+    getAuth(app);
+
 
   const reviewList =
-    document.getElementById(
-      "reviewList"
-    );
+    document.getElementById("reviewList");
 
 
   let allReviews = [];
 
   let currentCategory = "Semua";
+
+
+  /* =========================
+     LOGIN ANONIM
+     ========================= */
+
+  async function start() {
+
+    try {
+
+      if (!auth.currentUser) {
+
+        await signInAnonymously(auth);
+
+      }
+
+      await loadReviews();
+
+    } catch (error) {
+
+      console.error(
+        "Firebase authentication error:",
+        error
+      );
+
+      reviewList.innerHTML = `
+
+        <div class="error">
+          Maaf, halaman review belum dapat
+          terhubung ke server.
+          <br><br>
+          Silakan coba lagi nanti.
+        </div>
+
+      `;
+
+    }
+
+  }
 
 
   /* =========================
@@ -405,16 +440,12 @@
         snapshot.forEach(
           (childSnapshot) => {
 
-            const review =
-              childSnapshot.val();
-
-
             allReviews.push({
 
               id:
                 childSnapshot.key,
 
-              ...review
+              ...childSnapshot.val()
 
             });
 
@@ -423,11 +454,6 @@
 
       }
 
-
-      /*
-        Review terbaru
-        ditampilkan paling atas.
-      */
 
       allReviews.sort(
         (a, b) =>
@@ -445,7 +471,6 @@
         "Gagal memuat review:",
         error
       );
-
 
       reviewList.innerHTML = `
 
@@ -514,10 +539,9 @@
 
 
     reviewList.innerHTML =
-      reviews.map(
-        review =>
-          createReviewCard(review)
-      ).join("");
+      reviews
+        .map(createReviewCard)
+        .join("");
 
   }
 
@@ -558,15 +582,12 @@
 
     const preview =
       text.length > 160
-        ? text.substring(0, 160) +
-          "..."
+        ? text.substring(0, 160) + "..."
         : text;
 
 
     const date =
-      formatDate(
-        review.timestamp
-      );
+      formatDate(review.timestamp);
 
 
     return `
@@ -605,48 +626,37 @@
 
 
   /* =========================
-     FILTER BUTTON
+     FILTER
      ========================= */
 
   document
-    .querySelectorAll(
-      ".filter-button"
-    )
-    .forEach(
-      button => {
+    .querySelectorAll(".filter-button")
+    .forEach(button => {
 
-        button.addEventListener(
-          "click",
-          function() {
+      button.addEventListener(
+        "click",
+        function() {
 
-            document
-              .querySelectorAll(
-                ".filter-button"
-              )
-              .forEach(
-                btn =>
-                  btn.classList.remove(
-                    "active"
-                  )
-              );
-
-
-            this.classList.add(
-              "active"
+          document
+            .querySelectorAll(".filter-button")
+            .forEach(btn =>
+              btn.classList.remove("active")
             );
 
 
-            currentCategory =
-              this.dataset.category;
+          this.classList.add("active");
 
 
-            renderReviews();
+          currentCategory =
+            this.dataset.category;
 
-          }
-        );
 
-      }
-    );
+          renderReviews();
+
+        }
+      );
+
+    });
 
 
   /* =========================
@@ -659,17 +669,15 @@
       return "";
     }
 
-
-    return new Date(
-      timestamp
-    ).toLocaleDateString(
-      "id-ID",
-      {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      }
-    );
+    return new Date(timestamp)
+      .toLocaleDateString(
+        "id-ID",
+        {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }
+      );
 
   }
 
@@ -681,31 +689,11 @@
   function escapeHTML(value) {
 
     return String(value)
-
-      .replace(
-        /&/g,
-        "&amp;"
-      )
-
-      .replace(
-        /</g,
-        "&lt;"
-      )
-
-      .replace(
-        />/g,
-        "&gt;"
-      )
-
-      .replace(
-        /"/g,
-        "&quot;"
-      )
-
-      .replace(
-        /'/g,
-        "&#039;"
-      );
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
 
   }
 
@@ -714,7 +702,7 @@
      START
      ========================= */
 
-  loadReviews();
+  start();
 
 </script>
 
