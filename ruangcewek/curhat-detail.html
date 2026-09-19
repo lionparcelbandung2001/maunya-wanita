@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Curhat | Ruang Cewek</title><meta
+name="description"
+content="Baca curhat dan pengalaman dari Ruang Cewek."
 
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Curhat | Ruang Cewek</title>
+«»
 
 <style>
 
@@ -42,61 +39,137 @@ body{
     font-size:14px;
 }
 
-.article{
-    background:#ffffff;
-    border:1px solid #f0dce6;
-    border-radius:17px;
-    padding:20px;
-    box-shadow:0 2px 10px rgba(80,40,60,.06);
+.header{
+    text-align:center;
+    margin-bottom:18px;
 }
 
-.category{
+.header h1{
+    margin:0;
+    color:#d92f72;
+    font-size:25px;
+}
+
+.header p{
+    margin:7px 0 0;
+    color:#765362;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.send-box{
+    background:#ffffff;
+    border:1px solid #f0dce6;
+    border-radius:16px;
+    padding:15px;
+    margin-bottom:15px;
+    text-align:center;
+    box-shadow:0 2px 9px rgba(80,40,60,.05);
+}
+
+.send-box p{
+    margin:0 0 10px;
+    font-size:13px;
+    color:#765362;
+}
+
+.send-button{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:10px;
+    background:#d92f72;
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:15px;
+}
+
+.filter-button{
+    border:1px solid #edcfdd;
+    background:#ffffff;
+    color:#765362;
+    border-radius:20px;
+    padding:8px 11px;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.filter-button.active{
+    background:#f8dce9;
+    border-color:#e7b8cb;
+    color:#b62c60;
+    font-weight:bold;
+}
+
+.story-list{
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+}
+
+.story-card{
+    display:block;
+    text-decoration:none;
+    background:#ffffff;
+    border:1px solid #f0dce6;
+    border-radius:15px;
+    padding:15px;
+    color:#3a2630;
+    box-shadow:0 2px 9px rgba(80,40,60,.05);
+}
+
+.story-card:hover{
+    transform:translateY(-1px);
+}
+
+.story-category{
     display:inline-block;
     background:#fff0f5;
     color:#c52f68;
     border-radius:10px;
-    padding:6px 9px;
-    font-size:11px;
+    padding:5px 8px;
+    font-size:10px;
+    margin-bottom:8px;
 }
 
-h1{
-    margin:12px 0 8px;
-    color:#d92f72;
-    font-size:25px;
+.story-title{
+    font-size:15px;
+    font-weight:bold;
+    color:#633f4d;
     line-height:1.4;
 }
 
-.meta{
-    margin-bottom:20px;
+.story-meta{
+    margin-top:7px;
     color:#927582;
     font-size:11px;
 }
 
-.story{
-    color:#4d3943;
-    font-size:13px;
-    line-height:1.8;
-    white-space:pre-wrap;
-    overflow-wrap:anywhere;
+.story-preview{
+    margin-top:8px;
+    color:#765362;
+    font-size:12px;
+    line-height:1.6;
 }
 
-.comments{
-    margin-top:16px;
+.empty{
+    text-align:center;
+    padding:35px 15px;
     background:#ffffff;
     border:1px solid #f0dce6;
-    border-radius:17px;
-    padding:18px;
-    box-shadow:0 2px 10px rgba(80,40,60,.05);
+    border-radius:15px;
+    color:#765362;
+    font-size:13px;
 }
 
-.comments h2{
-    margin:0 0 12px;
-    color:#d92f72;
-    font-size:18px;
-}
-
-.loading,
-.error{
+.loading{
     text-align:center;
     padding:35px 15px;
     color:#765362;
@@ -104,10 +177,13 @@ h1{
 }
 
 .error{
+    text-align:center;
+    padding:25px 15px;
     background:#fff1f1;
     border:1px solid #e8b7b7;
     border-radius:14px;
     color:#9b3333;
+    font-size:13px;
 }
 
 footer{
@@ -117,48 +193,131 @@ footer{
     font-size:10px;
 }
 
-</style>
+</style></head><body><div class="container"><a
+class="back"
+href="index.html"
 
-</head>
+«»
 
-<body>
+← Kembali ke Ruang Cewek
 
-<div class="container">
+</a><div class="header"><h1>💭 Curhat & Cerita</h1>
+
+<p>
+    Baca cerita dan pengalaman dari sesama pengguna Ruang Cewek ❤️
+</p>
+
+</div><div class="send-box"><p>
+    Punya cerita yang ingin dibagikan?
+</p>
 
 <a
-    class="back"
-    href="curhat.html"
+    class="send-button"
+    href="kirimcurhat.html"
 >
-    ← Kembali ke Curhat
+    💌 Kirim Curhat
 </a>
 
+</div><div
+    id="filters"
+    class="filters"
+><button
+class="filter-button active"
+data-category="Semua"
 
-<div id="content">
+«»
 
-    <div class="loading">
-        💭 Lagi membuka curhat...
-    </div>
+Semua
 
-</div>
+</button><button
+class="filter-button"
+data-category="Percintaan"
 
+«»
 
-<footer>
+Percintaan
+
+</button><button
+class="filter-button"
+data-category="Pernikahan"
+
+«»
+
+Pernikahan
+
+</button><button
+class="filter-button"
+data-category="Pertemanan"
+
+«»
+
+Pertemanan
+
+</button><button
+class="filter-button"
+data-category="Keluarga"
+
+«»
+
+Keluarga
+
+</button><button
+class="filter-button"
+data-category="Pekerjaan"
+
+«»
+
+Pekerjaan
+
+</button><button
+class="filter-button"
+data-category="Kehidupan Sehari-hari"
+
+«»
+
+Keseharian
+
+</button><button
+class="filter-button"
+data-category="Makanan"
+
+«»
+
+Makanan
+
+</button><button
+class="filter-button"
+data-category="Lainnya"
+
+«»
+
+Lainnya
+
+</button></div><div
+    id="storyList"
+    class="story-list"
+><div class="loading">
+    💭 Lagi membuka curhat...
+</div></div><footer>
     © CewekPedia — Ruang Cewek ❤️
-</footer>
-
-</div>
-
-
-<script type="module">
+</footer></div><script type="module">
 
 import {
     initializeApp
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
+    getAuth,
+    signInAnonymously
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
     getDatabase,
     ref,
-    get
+    query,
+    orderByChild,
+    equalTo,
+    onValue
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
@@ -188,32 +347,27 @@ const firebaseConfig = {
 };
 
 
-const ECHOTHREAD_API_KEY =
-    "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
-
-
 const app =
     initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
 
 const db =
     getDatabase(app);
 
 
-const content =
-    document.getElementById("content");
+const storyList =
+    document.getElementById("storyList");
+
+const filterButtons =
+    document.querySelectorAll(".filter-button");
 
 
-function escapeHTML(value){
+let stories = [];
 
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        value ?? "";
-
-    return div.innerHTML;
-
-}
+let currentCategory =
+    "Semua";
 
 
 function formatDate(timestamp){
@@ -234,23 +388,28 @@ function formatDate(timestamp){
 }
 
 
-async function loadCurhat(){
+function renderStories(){
 
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
+    storyList.innerHTML = "";
 
 
-    const id =
-        params.get("id");
+    let filtered =
+        stories.filter(function(story){
+
+            if(currentCategory === "Semua"){
+                return true;
+            }
+
+            return story.category === currentCategory;
+
+        });
 
 
-    if(!id){
+    if(filtered.length === 0){
 
-        content.innerHTML = `
-            <div class="error">
-                😔 Curhat tidak ditemukan.
+        storyList.innerHTML = `
+            <div class="empty">
+                💭 Belum ada curhat di kategori ini.
             </div>
         `;
 
@@ -259,168 +418,220 @@ async function loadCurhat(){
     }
 
 
-    try{
+    filtered.sort(function(a,b){
 
-        const snapshot =
-            await get(
-                ref(
-                    db,
-                    "stories/" + id
-                )
-            );
+        return (b.timestamp || 0) -
+               (a.timestamp || 0);
+
+    });
 
 
-        if(!snapshot.exists()){
+    filtered.forEach(function(story){
 
-            content.innerHTML = `
-                <div class="error">
-                    😔 Curhat tidak ditemukan.
-                </div>
-            `;
+        const card =
+            document.createElement("a");
 
-            return;
+        card.className =
+            "story-card";
 
-        }
-
-
-        const data =
-            snapshot.val();
+        card.href =
+            "curhat-detail.html?id=" +
+            encodeURIComponent(story.id);
 
 
-        if(data.status !== "approved"){
+        const category =
+            document.createElement("div");
 
-            content.innerHTML = `
-                <div class="error">
-                    😔 Curhat ini belum tersedia.
-                </div>
-            `;
+        category.className =
+            "story-category";
 
-            return;
-
-        }
+        category.textContent =
+            "💭 " +
+            (story.category || "Lainnya");
 
 
         const title =
-            data.title || "Curhat";
+            document.createElement("div");
+
+        title.className =
+            "story-title";
+
+        title.textContent =
+            story.title || "Tanpa judul";
 
 
-        document.title =
-            title +
-            " | Ruang Cewek";
+        const meta =
+            document.createElement("div");
+
+        meta.className =
+            "story-meta";
+
+        meta.textContent =
+            "Oleh " +
+            (story.nickname || "Anonim") +
+            " • " +
+            formatDate(story.timestamp);
 
 
-        content.innerHTML = `
+        const preview =
+            document.createElement("div");
 
-            <article class="article">
-
-                <div class="category">
-                    💭 ${escapeHTML(data.category)}
-                </div>
-
-                <h1>
-                    ${escapeHTML(title)}
-                </h1>
-
-                <div class="meta">
-                    Oleh ${escapeHTML(data.nickname || "Anonim")}
-                    • ${formatDate(data.timestamp)}
-                </div>
-
-                <div class="story">
-                    ${escapeHTML(data.text)}
-                </div>
-
-            </article>
+        preview.className =
+            "story-preview";
 
 
-            <section class="comments">
-
-                <h2>
-                    💬 Komentar
-                </h2>
-
-                <div
-                    id="echothread"
-                    data-api-key="${ECHOTHREAD_API_KEY}"
-                    data-page-url=""
-                    data-identifier=""
-                    data-page-title=""
-                >
-                </div>
-
-            </section>
-
-        `;
+        const text =
+            story.text || "";
 
 
-        const echo =
-            document.getElementById(
-                "echothread"
-            );
+        preview.textContent =
+            text.length > 140
+                ? text.substring(0,140) + "..."
+                : text;
 
 
-        const pageUrl =
-            window.location.origin +
-            window.location.pathname +
-            "?id=" +
-            encodeURIComponent(id);
+        card.appendChild(category);
 
+        card.appendChild(title);
 
-        echo.setAttribute(
-            "data-page-url",
-            pageUrl
-        );
+        card.appendChild(meta);
 
+        card.appendChild(preview);
 
-        echo.setAttribute(
-            "data-identifier",
-            id
-        );
+        storyList.appendChild(card);
 
-
-        echo.setAttribute(
-            "data-page-title",
-            title
-        );
-
-
-        const script =
-            document.createElement("script");
-
-
-        script.src =
-            "https://cdn.echothread.io/widget.js";
-
-
-        script.async =
-            true;
-
-
-        document.body.appendChild(
-            script
-        );
-
-
-    }catch(error){
-
-        console.error(error);
-
-
-        content.innerHTML = `
-            <div class="error">
-                😔 Curhat belum bisa dimuat.<br>
-                Silakan coba lagi nanti.
-            </div>
-        `;
-
-    }
+    });
 
 }
 
 
-loadCurhat();
+filterButtons.forEach(function(button){
 
-</script>
+    button.addEventListener(
+        "click",
+        function(){
 
-</body>
+            filterButtons.forEach(function(item){
+
+                item.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            currentCategory =
+                button.dataset.category;
+
+
+            renderStories();
+
+        }
+    );
+
+});
+
+
+/*
+   FIREBASE:
+   Login anonim terlebih dahulu,
+   karena Firebase Rules stories
+   membutuhkan auth anonymous.
+*/
+
+signInAnonymously(auth)
+
+.then(function(){
+
+    const approvedStoriesQuery =
+        query(
+            ref(db,"stories"),
+            orderByChild("status"),
+            equalTo("approved")
+        );
+
+
+    onValue(
+        approvedStoriesQuery,
+        function(snapshot){
+
+            stories = [];
+
+
+            const data =
+                snapshot.val() || {};
+
+
+            Object.keys(data).forEach(function(id){
+
+                const story =
+                    data[id];
+
+
+                if(!story){
+                    return;
+                }
+
+
+                stories.push({
+
+                    id:id,
+
+                    title:story.title,
+
+                    category:story.category,
+
+                    nickname:story.nickname,
+
+                    text:story.text,
+
+                    timestamp:story.timestamp
+
+                });
+
+            });
+
+
+            renderStories();
+
+        },
+        function(error){
+
+            console.error(
+                "Firebase Curhat error:",
+                error
+            );
+
+
+            storyList.innerHTML = `
+                <div class="error">
+                    😔 Curhat belum bisa dimuat.<br>
+                    Silakan coba lagi nanti.
+                </div>
+            `;
+
+        }
+    );
+
+})
+
+.catch(function(error){
+
+    console.error(
+        "Firebase Anonymous Auth error:",
+        error
+    );
+
+
+    storyList.innerHTML = `
+        <div class="error">
+            😔 Curhat belum bisa dimuat.<br>
+            Silakan coba lagi nanti.
+        </div>
+    `;
+
+});
+
+</script></body>
 </html>
