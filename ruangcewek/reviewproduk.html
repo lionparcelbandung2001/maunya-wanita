@@ -1,10 +1,17 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Review Produk ⭐ | Ruang Cewek</title>
-<meta name="description" content="Tempat berbagi pengalaman dan review produk bersama perempuan lainnya di Ruang Cewek.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Review Produk ⭐ | Ruang Cewek</title>
+
+    <meta name="description"
+          content="Tempat berbagi pengalaman dan review fashion, makeup, makanan & penginapan bersama perempuan lainnya di Ruang Cewek.">
 
 <style>
+
     * {
         box-sizing: border-box;
     }
@@ -23,6 +30,7 @@
     }
 
     /* HEADER */
+
     header {
         text-align: center;
         padding: 28px 15px 18px;
@@ -41,6 +49,7 @@
     }
 
     /* BACK */
+
     .back {
         display: inline-block;
         margin: 5px 0 15px;
@@ -50,6 +59,7 @@
     }
 
     /* FILTER */
+
     .filter-title {
         text-align: center;
         font-size: 13px;
@@ -83,6 +93,7 @@
     }
 
     /* LIST */
+
     .section-title {
         color: #d92f72;
         font-size: 19px;
@@ -138,6 +149,7 @@
     }
 
     /* EMPTY */
+
     .empty-message {
         display: none;
         text-align: center;
@@ -151,6 +163,7 @@
     }
 
     /* SHARE BUTTON */
+
     .share-review {
         position: fixed;
         right: 18px;
@@ -186,6 +199,7 @@
     }
 
     /* FORM */
+
     .form-box {
         display: none;
         background: white;
@@ -251,6 +265,7 @@
     }
 
     /* RATING */
+
     .rating-select {
         display: flex;
         gap: 5px;
@@ -270,6 +285,7 @@
     }
 
     /* ANONYM */
+
     .anonymous {
         display: flex;
         align-items: center;
@@ -284,6 +300,7 @@
     }
 
     /* FORM BUTTONS */
+
     .form-buttons {
         display: flex;
         gap: 8px;
@@ -310,6 +327,7 @@
     }
 
     /* SUCCESS */
+
     .success-message {
         display: none;
         background: #fff0f6;
@@ -323,6 +341,7 @@
     }
 
     /* INFO */
+
     .info-box {
         background: #fff0f6;
         border: 1px solid #f3d5e2;
@@ -335,6 +354,7 @@
     }
 
     /* FOOTER */
+
     footer {
         text-align: center;
         padding: 20px 10px 30px;
@@ -343,6 +363,7 @@
     }
 
     /* MOBILE */
+
     @media (max-width: 700px) {
 
         .container {
@@ -391,297 +412,404 @@
             padding: 9px 9px;
         }
     }
+
 </style>
 
-</head><body><div class="container"><!-- HEADER -->
-<header>
-    <h1>⭐ REVIEW PRODUK</h1>
-    <p>Sudah pernah coba? Ceritakan pengalamanmu ❤️</p>
-</header>
+</head>
 
-<!-- BACK -->
-<a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
+<body>
 
-<!-- FILTER -->
-<div class="filter-title">
-    Pilih kategori review
-</div>
+<div class="container">
 
-<div class="category-grid">
+    <!-- HEADER -->
 
-    <button class="category-button active" data-category="Semua">
-        Semua
-    </button>
+    <header>
 
-    <button class="category-button" data-category="Fashion">
-        Fashion
-    </button>
+        <h1>⭐ REVIEW PRODUK</h1>
 
-    <button class="category-button" data-category="Kosmetik">
-        Kosmetik
-    </button>
+        <p>
+            Sudah pernah coba? Ceritakan pengalamanmu ❤️
+        </p>
 
-    <button class="category-button" data-category="Skincare">
-        Skincare
-    </button>
-
-    <button class="category-button" data-category="Parfum">
-        Parfum
-    </button>
-
-    <button class="category-button" data-category="Sepatu">
-        Sepatu
-    </button>
-
-    <button class="category-button" data-category="Tas & Aksesoris">
-        Tas & Aksesoris
-    </button>
-
-    <button class="category-button" data-category="Makanan">
-        Makanan
-    </button>
-
-    <button class="category-button" data-category="Lainnya">
-        Lainnya
-    </button>
-
-</div>
+    </header>
 
 
-<!-- FORM REVIEW -->
-<div class="form-box" id="reviewForm">
+    <!-- BACK -->
 
-    <h2 class="form-title">⭐ Bagikan Reviewmu</h2>
+    <a href="index.html" class="back">
+        ← Kembali ke Ruang Cewek
+    </a>
 
-    <p class="form-subtitle">
-        Ceritakan pengalamanmu supaya bisa membantu perempuan lain sebelum mencoba produk tersebut. ❤️
-    </p>
 
-    <div class="form-group">
-        <label for="productName">Nama produk</label>
-        <input
-            type="text"
-            id="productName"
-            maxlength="100"
-            placeholder="Contoh: Serum wajah..."
-        >
+    <!-- FILTER -->
+
+    <div class="filter-title">
+        Pilih kategori review
     </div>
 
-    <div class="form-group">
-        <label for="productCategory">Kategori</label>
 
-        <select id="productCategory">
-            <option value="">Pilih kategori</option>
-            <option value="Fashion">Fashion</option>
-            <option value="Kosmetik">Kosmetik</option>
-            <option value="Skincare">Skincare</option>
-            <option value="Parfum">Parfum</option>
-            <option value="Sepatu">Sepatu</option>
-            <option value="Tas & Aksesoris">Tas & Aksesoris</option>
-            <option value="Makanan">Makanan</option>
-            <option value="Lainnya">Lainnya</option>
-        </select>
-    </div>
+    <div class="category-grid">
 
-    <div class="form-group">
-
-        <label>Rating</label>
-
-        <div class="rating-select">
-
-            <button type="button" class="star-button" data-rating="1">⭐</button>
-            <button type="button" class="star-button" data-rating="2">⭐</button>
-            <button type="button" class="star-button" data-rating="3">⭐</button>
-            <button type="button" class="star-button" data-rating="4">⭐</button>
-            <button type="button" class="star-button" data-rating="5">⭐</button>
-
-        </div>
-
-    </div>
-
-    <div class="form-group">
-
-        <label for="nickname">Nickname</label>
-
-        <input
-            type="text"
-            id="nickname"
-            maxlength="20"
-            placeholder="Contoh: Aulia"
-        >
-
-    </div>
-
-    <label class="anonymous">
-
-        <input type="checkbox" id="anonymous">
-
-        Tampilkan sebagai anonim
-
-    </label>
-
-    <div class="form-group">
-
-        <label for="reviewText">Review kamu</label>
-
-        <textarea
-            id="reviewText"
-            maxlength="500"
-            placeholder="Ceritakan pengalamanmu memakai produk ini..."
-        ></textarea>
-
-    </div>
-
-    <div class="form-buttons">
-
-        <button type="button" class="submit-button" id="submitReview">
-            Kirim Review
+        <button
+            class="category-button active"
+            data-category="Semua">
+            Semua
         </button>
 
-        <button type="button" class="cancel-button" id="cancelReview">
-            Batal
+        <button
+            class="category-button"
+            data-category="Fashion">
+            👗 Fashion
+        </button>
+
+        <button
+            class="category-button"
+            data-category="Makeup">
+            💄 Makeup
+        </button>
+
+        <button
+            class="category-button"
+            data-category="Makanan & Penginapan">
+            🍽️ Makanan & Penginapan
         </button>
 
     </div>
 
+
+    <!-- FORM REVIEW -->
+
+    <div class="form-box" id="reviewForm">
+
+        <h2 class="form-title">
+            ⭐ Bagikan Reviewmu
+        </h2>
+
+        <p class="form-subtitle">
+            Ceritakan pengalamanmu supaya bisa membantu perempuan lain
+            sebelum mencoba produk atau tempat tersebut. ❤️
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="productName">
+                Nama produk / tempat
+            </label>
+
+            <input
+                type="text"
+                id="productName"
+                maxlength="100"
+                placeholder="Contoh: Nama produk atau tempat..."
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="productCategory">
+                Kategori
+            </label>
+
+            <select id="productCategory">
+
+                <option value="">
+                    Pilih kategori
+                </option>
+
+                <option value="Fashion">
+                    Fashion
+                </option>
+
+                <option value="Makeup">
+                    Makeup
+                </option>
+
+                <option value="Makanan & Penginapan">
+                    Makanan & Penginapan
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Rating
+            </label>
+
+            <div class="rating-select">
+
+                <button
+                    type="button"
+                    class="star-button"
+                    data-rating="1">
+                    ⭐
+                </button>
+
+                <button
+                    type="button"
+                    class="star-button"
+                    data-rating="2">
+                    ⭐
+                </button>
+
+                <button
+                    type="button"
+                    class="star-button"
+                    data-rating="3">
+                    ⭐
+                </button>
+
+                <button
+                    type="button"
+                    class="star-button"
+                    data-rating="4">
+                    ⭐
+                </button>
+
+                <button
+                    type="button"
+                    class="star-button"
+                    data-rating="5">
+                    ⭐
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="nickname">
+                Nickname
+            </label>
+
+            <input
+                type="text"
+                id="nickname"
+                maxlength="20"
+                placeholder="Contoh: Aulia"
+            >
+
+        </div>
+
+
+        <label class="anonymous">
+
+            <input
+                type="checkbox"
+                id="anonymous">
+
+            Tampilkan sebagai anonim
+
+        </label>
+
+
+        <div class="form-group">
+
+            <label for="reviewText">
+                Review kamu
+            </label>
+
+            <textarea
+                id="reviewText"
+                maxlength="500"
+                placeholder="Ceritakan pengalamanmu..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-buttons">
+
+            <button
+                type="button"
+                class="submit-button"
+                id="submitReview">
+                Kirim Review
+            </button>
+
+            <button
+                type="button"
+                class="cancel-button"
+                id="cancelReview">
+                Batal
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUCCESS -->
+
+    <div
+        class="success-message"
+        id="successMessage">
+
+        ❤️ <strong>Terima kasih!</strong>
+
+        <br>
+
+        Reviewmu sudah diterima.
+
+        Review akan diperiksa terlebih dahulu sebelum ditampilkan
+        di Ruang Cewek.
+
+    </div>
+
+
+    <!-- LIST -->
+
+    <h2 class="section-title">
+        ⭐ Review Terbaru
+    </h2>
+
+
+    <div class="review-list">
+
+
+        <!-- FASHION -->
+
+        <a
+            href="reviewproduk-fashion-1.html"
+            class="review-card"
+            data-category="Fashion">
+
+            <div class="review-title">
+                Bahannya bagus, tapi ukurannya agak kecil
+            </div>
+
+            <div class="review-meta">
+                👗 Fashion • 3 jam lalu • 💬 5 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐☆
+            </div>
+
+            <div class="review-preview">
+                Aku beli karena tertarik modelnya. Setelah datang ternyata
+                bahannya bagus, tapi ukurannya agak kecil...
+            </div>
+
+        </a>
+
+
+        <!-- MAKEUP -->
+
+        <a
+            href="reviewproduk-makeup-1.html"
+            class="review-card"
+            data-category="Makeup">
+
+            <div class="review-title">
+                Makeup ini warnanya cantik banget
+            </div>
+
+            <div class="review-meta">
+                💄 Makeup • 5 jam lalu • 💬 7 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="review-preview">
+                Warnanya cantik dan gampang dibaurkan. Dipakai untuk
+                makeup sehari-hari juga masih terlihat natural...
+            </div>
+
+        </a>
+
+
+        <!-- MAKANAN & PENGINAPAN -->
+
+        <a
+            href="reviewproduk-makanan-penginapan.html"
+            class="review-card"
+            data-category="Makanan & Penginapan">
+
+            <div class="review-title">
+                Tempatnya nyaman, makanannya juga enak
+            </div>
+
+            <div class="review-meta">
+                🍽️ Makanan & Penginapan • kemarin • 💬 10 komentar
+            </div>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="review-preview">
+                Tempatnya nyaman dan suasananya juga enak buat santai.
+                Makanannya cukup enak dan pelayanannya ramah...
+            </div>
+
+        </a>
+
+
+    </div>
+
+
+    <!-- EMPTY -->
+
+    <div
+        class="empty-message"
+        id="emptyMessage">
+
+        Belum ada review di kategori ini. ❤️
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <div class="info-box">
+
+        ⭐ Review yang dikirim akan melalui proses moderasi terlebih dahulu
+        sebelum ditampilkan di Ruang Cewek.
+
+        <br><br>
+
+        💕 Hindari memasukkan data pribadi seperti nomor HP,
+        alamat rumah, password, atau informasi sensitif lainnya.
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © CewekPedia ❤️
+    </footer>
+
 </div>
 
 
-<!-- SUCCESS -->
-<div class="success-message" id="successMessage">
+<!-- BAGIKAN REVIEW -->
 
-    ❤️ <strong>Terima kasih!</strong>
+<button
+    class="share-review"
+    id="openReviewForm">
 
-    <br>
+    ⭐ Bagikan
 
-    Reviewmu sudah diterima.
+    <span>
+        Reviewmu
+    </span>
 
-    Review akan diperiksa terlebih dahulu sebelum ditampilkan di Ruang Cewek.
-
-</div>
-
-
-<!-- LIST -->
-<h2 class="section-title">
-    ⭐ Review Terbaru
-</h2>
-
-<div class="review-list">
-
-    <a href="#" class="review-card" data-category="Skincare">
-
-        <div class="review-title">
-            Serum ini ternyata cocok banget di kulitku
-        </div>
-
-        <div class="review-meta">
-            🧴 Skincare • 1 jam lalu • 💬 8 komentar
-        </div>
-
-        <div class="rating">
-            ⭐⭐⭐⭐⭐
-        </div>
-
-        <div class="review-preview">
-            Sudah pakai sekitar dua minggu dan sejauh ini hasilnya...
-        </div>
-
-    </a>
+</button>
 
 
-    <a href="#" class="review-card" data-category="Fashion">
-
-        <div class="review-title">
-            Bahannya bagus, tapi ukurannya agak kecil
-        </div>
-
-        <div class="review-meta">
-            👗 Fashion • 3 jam lalu • 💬 5 komentar
-        </div>
-
-        <div class="rating">
-            ⭐⭐⭐⭐☆
-        </div>
-
-        <div class="review-preview">
-            Aku beli karena tertarik modelnya. Setelah datang ternyata...
-        </div>
-
-    </a>
-
-
-    <a href="#" class="review-card" data-category="Parfum">
-
-        <div class="review-title">
-            Wanginya soft dan nggak bikin pusing
-        </div>
-
-        <div class="review-meta">
-            🌸 Parfum • kemarin • 💬 7 komentar
-        </div>
-
-        <div class="rating">
-            ⭐⭐⭐⭐⭐
-        </div>
-
-        <div class="review-preview">
-            Buat yang suka wangi lembut, menurutku parfum ini cukup...
-        </div>
-
-    </a>
-
-
-    <a href="#" class="review-card" data-category="Tas & Aksesoris">
-
-        <div class="review-title">
-            Tasnya cantik, ternyata muat banyak
-        </div>
-
-        <div class="review-meta">
-            👜 Tas & Aksesoris • kemarin • 💬 10 komentar
-        </div>
-
-        <div class="rating">
-            ⭐⭐⭐⭐☆
-        </div>
-
-        <div class="review-preview">
-            Awalnya kupikir cuma cocok buat jalan-jalan, ternyata...
-        </div>
-
-    </a>
-
-</div>
-
-<div class="empty-message" id="emptyMessage">
-    Belum ada review di kategori ini. ❤️
-</div>
-
-
-<!-- INFO -->
-<div class="info-box">
-
-    ⭐ Review yang dikirim akan melalui proses moderasi terlebih dahulu
-    sebelum ditampilkan di Ruang Cewek.
-
-    <br><br>
-
-    💕 Hindari memasukkan data pribadi seperti nomor HP,
-    alamat rumah, password, atau informasi sensitif lainnya.
-
-</div>
-
-
-<!-- FOOTER -->
-<footer>
-    © CewekPedia ❤️
-</footer>
-
-</div><!-- BAGIKAN REVIEW --><button class="share-review" id="openReviewForm">⭐ Bagikan
-
-<span>Reviewmu</span>
-
-</button><script>
+<script>
 
     /* =========================
        FILTER KATEGORI
@@ -717,6 +845,7 @@
 
                 const cardCategory =
                     card.dataset.category;
+
 
                 if (
                     selectedCategory === "Semua" ||
@@ -811,6 +940,7 @@
                 const rating =
                     Number(star.dataset.rating);
 
+
                 if (rating <= selectedRating) {
 
                     star.classList.add("selected");
@@ -842,21 +972,36 @@
     submitReview.addEventListener("click", function () {
 
         const productName =
-            document.getElementById("productName").value.trim();
+            document
+                .getElementById("productName")
+                .value
+                .trim();
+
 
         const category =
-            document.getElementById("productCategory").value;
+            document
+                .getElementById("productCategory")
+                .value;
+
 
         const nickname =
-            document.getElementById("nickname").value.trim();
+            document
+                .getElementById("nickname")
+                .value
+                .trim();
+
 
         const reviewText =
-            document.getElementById("reviewText").value.trim();
+            document
+                .getElementById("reviewText")
+                .value
+                .trim();
 
 
         if (!productName) {
 
-            alert("Nama produk belum diisi ❤️");
+            alert("Nama produk atau tempat belum diisi ❤️");
+
             return;
 
         }
@@ -864,7 +1009,8 @@
 
         if (!category) {
 
-            alert("Silakan pilih kategori produk ❤️");
+            alert("Silakan pilih kategori ❤️");
+
             return;
 
         }
@@ -873,6 +1019,7 @@
         if (selectedRating === 0) {
 
             alert("Silakan pilih rating terlebih dahulu ⭐");
+
             return;
 
         }
@@ -881,6 +1028,7 @@
         if (!nickname) {
 
             alert("Nickname belum diisi ❤️");
+
             return;
 
         }
@@ -889,23 +1037,25 @@
         if (!reviewText) {
 
             alert("Review kamu belum diisi ❤️");
+
             return;
 
         }
 
 
         /*
-         * Untuk sementara review belum disimpan
-         * ke database.
+         * Untuk sementara form review belum
+         * menyimpan data ke database.
          *
-         * Nantinya bagian ini akan dihubungkan
-         * dengan sistem moderasi / Firebase.
+         * EchoThread digunakan pada halaman
+         * detail masing-masing review.
          */
 
 
         reviewForm.classList.remove("show");
 
         successMessage.style.display = "block";
+
 
         successMessage.scrollIntoView({
             behavior: "smooth",
@@ -928,11 +1078,14 @@
 
         selectedRating = 0;
 
+
         starButtons.forEach(star => {
             star.classList.remove("selected");
         });
 
     });
 
-</script></body>
+</script>
+
+</body>
 </html>
