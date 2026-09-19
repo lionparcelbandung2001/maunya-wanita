@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Curhat | Ruang Cewek</title>
+
+  <meta
+    name="description"
+    content="Baca cerita dan pengalaman dari Ruang Cewek."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .category {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d92f72;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #d92f72;
+      line-height: 1.4;
+      font-size: 27px;
+    }
+
+    .meta {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .story-text {
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #3a2630;
+    }
+
+    .divider {
+      height: 1px;
+      background: #f0dce5;
+      margin: 30px 0;
+    }
+
+    .comment-title {
+      color: #d92f72;
+      margin-bottom: 10px;
+    }
+
+    .comment-info {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .loading,
+    .error {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .error {
+      color: #a52a2a;
+      background: #fff0f0;
+    }
+
+    .not-found {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 15px;
+      }
+
+      .story-card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .story-text {
+        font-size: 15px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a href="curhat.html" class="back">
+    ← Kembali ke Daftar Curhat
+  </a>
+
+
+  <div id="content">
+
+    <div class="loading">
+      ⏳ Memuat cerita...
+    </div>
+
+  </div>
+
+
+  <footer>
+    © CewekPedia — Ruang Cewek ❤️
+  </footer>
+
+</div>
+
+
+<!-- FIREBASE -->
+<script type="module">
+
+  import { initializeApp } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+  import {
+    getDatabase,
+    ref,
+    get
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  /* =========================
+     FIREBASE CONFIG
+     ========================= */
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain: "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+
+  const db = getDatabase(app);
+
+
+  const content =
+    document.getElementById("content");
+
+
+  /* =========================
+     AMBIL ID DARI URL
+     ========================= */
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const storyId =
+    params.get("id");
+
+
+  /* =========================
+     CEK ID
+     ========================= */
+
+  if (!storyId) {
+
+    content.innerHTML = `
+      <div class="not-found">
+        😔 Cerita tidak ditemukan.
+        <br><br>
+        <a href="curhat.html">
+          Kembali ke daftar curhat
+        </a>
+      </div>
+    `;
+
+  } else {
+
+    loadStory();
+
+  }
+
+
+  /* =========================
+     LOAD STORY
+     ========================= */
+
+  async function loadStory() {
+
+    try {
+
+      const storyRef =
+        ref(db, "stories/" + storyId);
+
+      const snapshot =
+        await get(storyRef);
+
+
+      if (!snapshot.exists()) {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      const story =
+        snapshot.val();
+
+
+      /*
+        Hanya cerita approved
+        yang boleh ditampilkan.
+      */
+
+      if (story.status !== "approved") {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      renderStory(story);
+
+
+    } catch (error) {
+
+      console.error(
+        "Gagal mengambil cerita:",
+        error
+      );
+
+      content.innerHTML = `
+        <div class="error">
+          Maaf, cerita belum dapat dimuat.
+          <br><br>
+          Silakan coba lagi nanti.
+        </div>
+      `;
+
+    }
+
+  }
+
+
+  /* =========================
+     RENDER STORY
+     ========================= */
+
+  function renderStory(story) {
+
+    const title =
+      escapeHTML(
+        story.title || "Tanpa Judul"
+      );
+
+    const category =
+      escapeHTML(
+        story.category || "Lainnya"
+      );
+
+    const nickname =
+      escapeHTML(
+        story.nickname || "Anonim"
+      );
+
+    const text =
+      escapeHTML(
+        story.text || ""
+      );
+
+
+    let date = "";
+
+
+    if (story.timestamp) {
+
+      date =
+        new Date(
+          story.timestamp
+        ).toLocaleDateString(
+          "id-ID",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          }
+        );
+
+    }
+
+
+    document.title =
+      story.title +
+      " ❤️ | Ruang Cewek";
+
+
+    content.innerHTML = `
+
+      <article class="story-card">
+
+        <div class="category">
+          ${category}
+        </div>
+
+        <h1>
+          ${title}
+        </h1>
+
+        <div class="meta">
+          ✍️ ${nickname}
+          ${date ? " • " + date : ""}
+        </div>
+
+        <div class="story-text">
+          ${text}
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <h2 class="comment-title">
+          💬 Obrolan Cerita
+        </h2>
+
+        <div class="comment-info">
+          Kolom komentar akan tersedia di sini.
+          ❤️
+        </div>
+
+      </article>
+
+    `;
+
+  }
+
+
+  /* =========================
+     NOT FOUND
+     ========================= */
+
+  function showNotFound() {
+
+    content.innerHTML = `
+
+      <div class="not-found">
+
+        😔 Cerita tidak ditemukan
+        atau belum tersedia.
+
+        <br><br>
+
+        <a href="curhat.html">
+          ← Kembali ke daftar curhat
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =========================
+     SECURITY
+     ========================= */
+
+  function escapeHTML(value) {
+
+    return value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+</script>
+
+</body>
+</html>
