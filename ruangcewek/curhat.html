@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Curhat & Cerita ❤️ | Ruang Cewek</title>
-  <meta name="description" content="Kumpulan cerita, pengalaman, curhat, dan kisah dari perempuan di Ruang Cewek.">
+  <title>Curhat | Ruang Cewek</title>
+
+  <meta
+    name="description"
+    content="Baca cerita dan pengalaman dari Ruang Cewek."
+  >
 
   <style>
     * {
@@ -27,7 +31,7 @@
 
     .back {
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
       color: #d92f72;
       text-decoration: none;
       font-weight: bold;
@@ -35,118 +39,116 @@
 
     .header {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      margin-bottom: 8px;
+    .header h1 {
+      margin: 0;
       color: #d92f72;
+      font-size: 28px;
     }
 
     .header p {
-      margin: 0;
+      margin: 8px 0 0;
+      color: #765362;
       line-height: 1.6;
-      color: #6d5961;
     }
 
     .send-box {
       background: white;
-      padding: 18px;
       border-radius: 16px;
+      padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
       text-align: center;
     }
 
     .send-box p {
       margin-top: 0;
-      line-height: 1.5;
+      color: #666;
+      line-height: 1.6;
     }
 
     .send-button {
       display: inline-block;
-      padding: 11px 18px;
-      border-radius: 10px;
       background: #d92f72;
       color: white;
       text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 12px;
       font-weight: bold;
     }
 
-    .filters {
+    .send-button:hover {
+      opacity: 0.9;
+    }
+
+    .filter {
       display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 7px;
       margin-bottom: 20px;
     }
 
-    .filter-btn {
-      flex: 0 0 auto;
-      border: 1px solid #edcbd9;
+    .filter button {
+      border: 1px solid #f0dce5;
       background: white;
-      color: #6b4c59;
-      padding: 9px 14px;
-      border-radius: 20px;
+      color: #633f4d;
+      border-radius: 10px;
+      padding: 8px 11px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 12px;
     }
 
-    .filter-btn.active {
+    .filter button.active {
       background: #d92f72;
       color: white;
       border-color: #d92f72;
-    }
-
-    #storyList {
-      display: grid;
-      gap: 15px;
     }
 
     .story-card {
       display: block;
       background: white;
       border-radius: 16px;
-      padding: 18px;
+      padding: 20px;
+      margin-bottom: 14px;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+      transition: 0.2s;
     }
 
     .story-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    .story-category {
+    .category {
       display: inline-block;
-      font-size: 12px;
-      color: #d92f72;
       background: #fff0f6;
+      color: #d92f72;
       padding: 5px 9px;
-      border-radius: 10px;
-      margin-bottom: 9px;
+      border-radius: 9px;
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
     .story-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #3a2630;
+      margin: 0 0 8px;
+      color: #d92f72;
+      font-size: 19px;
       line-height: 1.4;
     }
 
     .story-preview {
-      color: #6d5961;
+      color: #555;
+      line-height: 1.7;
       font-size: 14px;
-      line-height: 1.6;
       margin-bottom: 10px;
     }
 
     .story-meta {
-      font-size: 12px;
       color: #999;
+      font-size: 12px;
     }
 
     .loading,
@@ -156,15 +158,7 @@
       border-radius: 16px;
       padding: 25px;
       text-align: center;
-      line-height: 1.6;
-    }
-
-    .loading {
-      color: #777;
-    }
-
-    .empty {
-      color: #777;
+      line-height: 1.7;
     }
 
     .error {
@@ -173,29 +167,40 @@
     }
 
     .info {
-      margin-top: 20px;
       background: #fff0f6;
+      border-radius: 14px;
       padding: 15px;
-      border-radius: 12px;
+      margin-top: 20px;
+      color: #765362;
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     footer {
       text-align: center;
       margin-top: 25px;
-      font-size: 13px;
       color: #999;
+      font-size: 13px;
     }
 
     @media (max-width: 600px) {
+
       body {
         padding: 15px;
       }
 
-      .story-title {
-        font-size: 16px;
+      .header h1 {
+        font-size: 24px;
       }
+
+      .story-card {
+        padding: 18px;
+      }
+
+      .story-title {
+        font-size: 18px;
+      }
+
     }
   </style>
 </head>
@@ -204,72 +209,125 @@
 
 <div class="container">
 
-  <a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
+  <a href="index.html" class="back">
+    ← Kembali ke Ruang Cewek
+  </a>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <div class="header">
+
     <h1>💭 Curhat & Cerita</h1>
+
     <p>
-      Cerita, pengalaman, dan kisah dari perempuan di Ruang Cewek ❤️
+      Cerita, pengalaman, dan kisah dari perempuan
+      di Ruang Cewek ❤️
     </p>
+
   </div>
 
+
+  <!-- =========================
+       KIRIM CURHAT
+  ========================== -->
 
   <div class="send-box">
+
     <p>
-      Punya cerita yang ingin kamu bagikan?
-      <br>
-      Ceritakan di sini dan biarkan perempuan lain ikut membaca pengalamanmu.
+      Punya cerita atau pengalaman yang ingin kamu
+      bagikan?
     </p>
 
-    <a href="kirimcerita.html" class="send-button">
-      💌 Kirim Ceritamu
+    <a
+      href="kirimcurhat.html"
+      class="send-button"
+    >
+      💌 Kirim Curhat
     </a>
+
   </div>
 
 
-  <!-- FILTER -->
-  <div class="filters">
+  <!-- =========================
+       FILTER
+  ========================== -->
 
-    <button class="filter-btn active" data-category="Semua">
+  <div class="filter">
+
+    <button
+      type="button"
+      class="active"
+      data-category="Semua"
+    >
       Semua
     </button>
 
-    <button class="filter-btn" data-category="Percintaan">
-      ❤️ Percintaan
+    <button
+      type="button"
+      data-category="Percintaan"
+    >
+      Percintaan
     </button>
 
-    <button class="filter-btn" data-category="Pernikahan">
-      💍 Pernikahan
+    <button
+      type="button"
+      data-category="Pernikahan"
+    >
+      Pernikahan
     </button>
 
-    <button class="filter-btn" data-category="Pertemanan">
-      🫶 Pertemanan
+    <button
+      type="button"
+      data-category="Pertemanan"
+    >
+      Pertemanan
     </button>
 
-    <button class="filter-btn" data-category="Keluarga">
-      🏠 Keluarga
+    <button
+      type="button"
+      data-category="Keluarga"
+    >
+      Keluarga
     </button>
 
-    <button class="filter-btn" data-category="Pekerjaan">
-      💼 Pekerjaan
+    <button
+      type="button"
+      data-category="Pekerjaan"
+    >
+      Pekerjaan
     </button>
 
-    <button class="filter-btn" data-category="Kehidupan Sehari-hari">
-      🌷 Kehidupan Sehari-hari
+    <button
+      type="button"
+      data-category="Kehidupan Sehari-hari"
+    >
+      Kehidupan Sehari-hari
     </button>
 
-    <button class="filter-btn" data-category="Makanan">
-      🍜 Makanan
+    <button
+      type="button"
+      data-category="Makanan"
+    >
+      Makanan
     </button>
 
-    <button class="filter-btn" data-category="Lainnya">
-      💕 Lainnya
+    <button
+      type="button"
+      data-category="Lainnya"
+    >
+      Lainnya
     </button>
 
   </div>
 
 
-  <!-- DAFTAR CERITA -->
+  <!-- =========================
+       STORY LIST
+  ========================== -->
+
   <div id="storyList">
 
     <div class="loading">
@@ -279,10 +337,21 @@
   </div>
 
 
+  <!-- =========================
+       INFO
+  ========================== -->
+
   <div class="info">
-    ❤️ Semua cerita yang tampil di halaman ini sudah melalui proses moderasi.
-    <br>
-    🔒 Jangan membagikan informasi pribadi atau data sensitif dalam cerita.
+
+    ❤️ Semua cerita yang tampil di halaman ini
+    sudah melalui proses moderasi.
+
+    <br><br>
+
+    Demi keamanan bersama, jangan membagikan
+    nomor telepon, alamat rumah, password,
+    informasi rekening, atau data pribadi sensitif.
+
   </div>
 
 
@@ -293,7 +362,10 @@
 </div>
 
 
-<!-- FIREBASE -->
+<!-- =========================
+     FIREBASE
+========================== -->
+
 <script type="module">
 
   import { initializeApp } from
@@ -312,58 +384,72 @@
 
   /* =========================
      FIREBASE CONFIG
-     ========================= */
+  ========================== */
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-    authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "ruang-cewek",
-    storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "300030693884",
-    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+      "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
   };
 
 
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
+  const app =
+    initializeApp(firebaseConfig);
+
+  const db =
+    getDatabase(app);
 
 
-  /* =========================
-     ELEMENT
-     ========================= */
-
-  const storyList = document.getElementById("storyList");
-  const filterButtons = document.querySelectorAll(".filter-btn");
+  const storyList =
+    document.getElementById("storyList");
 
 
   let allStories = [];
+
   let currentCategory = "Semua";
 
 
   /* =========================
      LOAD STORIES
-     ========================= */
+  ========================== */
 
   async function loadStories() {
 
-    storyList.innerHTML = `
-      <div class="loading">
-        ⏳ Memuat cerita...
-      </div>
-    `;
-
     try {
 
-      const storiesRef = ref(db, "stories");
+      const storiesRef =
+        ref(db, "stories");
 
-      const storiesQuery = query(
-        storiesRef,
-        orderByChild("status"),
-        equalTo("approved")
-      );
 
-      const snapshot = await get(storiesQuery);
+      const storiesQuery =
+        query(
+          storiesRef,
+          orderByChild("status"),
+          equalTo("approved")
+        );
+
+
+      const snapshot =
+        await get(storiesQuery);
 
 
       allStories = [];
@@ -371,24 +457,42 @@
 
       if (snapshot.exists()) {
 
-        snapshot.forEach((childSnapshot) => {
+        snapshot.forEach(
+          function(childSnapshot) {
 
-          const story = childSnapshot.val();
+            const story =
+              childSnapshot.val();
 
-          allStories.push({
-            id: childSnapshot.key,
-            ...story
-          });
 
-        });
+            allStories.push({
+
+              id:
+                childSnapshot.key,
+
+              ...story
+
+            });
+
+          }
+        );
 
       }
 
 
-      /* Cerita terbaru di atas */
-      allStories.sort((a, b) => {
-        return (b.timestamp || 0) - (a.timestamp || 0);
-      });
+      /* =========================
+         TERBARU → TERATAS
+      ========================== */
+
+      allStories.sort(
+        function(a, b) {
+
+          return (
+            (b.timestamp || 0) -
+            (a.timestamp || 0)
+          );
+
+        }
+      );
 
 
       renderStories();
@@ -396,14 +500,24 @@
 
     } catch (error) {
 
-      console.error("Gagal mengambil cerita:", error);
+      console.error(
+        "Gagal mengambil cerita:",
+        error
+      );
+
 
       storyList.innerHTML = `
+
         <div class="error">
-          Maaf, daftar cerita belum dapat dimuat.
+
+          Maaf, cerita belum dapat dimuat.
+
           <br><br>
-          Silakan coba beberapa saat lagi.
+
+          Silakan coba lagi nanti.
+
         </div>
+
       `;
 
     }
@@ -413,139 +527,211 @@
 
   /* =========================
      RENDER STORIES
-     ========================= */
+  ========================== */
 
   function renderStories() {
 
-    storyList.innerHTML = "";
+    const filteredStories =
+      currentCategory === "Semua"
 
+        ? allStories
 
-    const filteredStories = allStories.filter((story) => {
+        : allStories.filter(
+            function(story) {
 
-      if (currentCategory === "Semua") {
-        return true;
-      }
+              return (
+                story.category ===
+                currentCategory
+              );
 
-      return story.category === currentCategory;
-
-    });
+            }
+          );
 
 
     if (filteredStories.length === 0) {
 
       storyList.innerHTML = `
+
         <div class="empty">
-          Belum ada cerita untuk kategori ini. ❤️
+
+          💭 Belum ada cerita
+          untuk kategori ini.
+
         </div>
+
       `;
 
       return;
+
     }
 
 
-    filteredStories.forEach((story) => {
-
-      const card = document.createElement("a");
-
-      card.className = "story-card";
-
-      /*
-        Untuk sekarang menuju ke halaman detail dinamis.
-        Halaman ini akan kita buat pada Tahap 4.
-      */
-      card.href =
-        "curhat-detail.html?id=" +
-        encodeURIComponent(story.id);
+    storyList.innerHTML = "";
 
 
-      const category = document.createElement("div");
+    filteredStories.forEach(
+      function(story) {
 
-      category.className = "story-category";
-      category.textContent = story.category || "Lainnya";
-
-
-      const title = document.createElement("div");
-
-      title.className = "story-title";
-      title.textContent = story.title || "Tanpa Judul";
+        const card =
+          document.createElement("a");
 
 
-      const preview = document.createElement("div");
-
-      preview.className = "story-preview";
-
-      const text = story.text || "";
-
-      preview.textContent =
-        text.length > 160
-          ? text.substring(0, 160) + "..."
-          : text;
+        card.className =
+          "story-card";
 
 
-      const meta = document.createElement("div");
-
-      meta.className = "story-meta";
-
-      const nickname =
-        story.nickname || "Anonim";
+        card.href =
+          "curhat-detail.html?id=" +
+          encodeURIComponent(story.id);
 
 
-      const date = story.timestamp
-        ? new Date(story.timestamp).toLocaleDateString(
-            "id-ID",
-            {
-              day: "numeric",
-              month: "long",
-              year: "numeric"
-            }
-          )
-        : "";
+        const category =
+          document.createElement("div");
 
 
-      meta.textContent =
-        "✍️ " + nickname +
-        (date ? " • " + date : "");
+        category.className =
+          "category";
 
 
-      card.appendChild(category);
-      card.appendChild(title);
-      card.appendChild(preview);
-      card.appendChild(meta);
+        category.textContent =
+          story.category || "Lainnya";
 
-      storyList.appendChild(card);
 
-    });
+        const title =
+          document.createElement("h2");
+
+
+        title.className =
+          "story-title";
+
+
+        title.textContent =
+          story.title || "Tanpa Judul";
+
+
+        const preview =
+          document.createElement("div");
+
+
+        preview.className =
+          "story-preview";
+
+
+        let previewText =
+          story.text || "";
+
+
+        if (previewText.length > 160) {
+
+          previewText =
+            previewText.substring(0, 160) +
+            "...";
+
+        }
+
+
+        preview.textContent =
+          previewText;
+
+
+        const meta =
+          document.createElement("div");
+
+
+        meta.className =
+          "story-meta";
+
+
+        let date = "";
+
+
+        if (story.timestamp) {
+
+          date =
+            new Date(
+              story.timestamp
+            ).toLocaleDateString(
+              "id-ID",
+              {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+              }
+            );
+
+        }
+
+
+        meta.textContent =
+          "✍️ " +
+          (story.nickname || "Anonim") +
+          (date ? " • " + date : "");
+
+
+        card.appendChild(category);
+
+        card.appendChild(title);
+
+        card.appendChild(preview);
+
+        card.appendChild(meta);
+
+
+        storyList.appendChild(card);
+
+      }
+    );
 
   }
 
 
   /* =========================
-     FILTER
-     ========================= */
+     FILTER BUTTON
+  ========================== */
 
-  filterButtons.forEach((button) => {
+  const filterButtons =
+    document.querySelectorAll(
+      ".filter button"
+    );
 
-    button.addEventListener("click", () => {
 
-      filterButtons.forEach((btn) => {
-        btn.classList.remove("active");
-      });
+  filterButtons.forEach(
+    function(button) {
 
-      button.classList.add("active");
+      button.addEventListener(
+        "click",
+        function() {
 
-      currentCategory =
-        button.dataset.category;
+          filterButtons.forEach(
+            function(btn) {
 
-      renderStories();
+              btn.classList.remove(
+                "active"
+              );
 
-    });
+            }
+          );
 
-  });
+
+          this.classList.add("active");
+
+
+          currentCategory =
+            this.dataset.category;
+
+
+          renderStories();
+
+        }
+      );
+
+    }
+  );
 
 
   /* =========================
      START
-     ========================= */
+  ========================== */
 
   loadStories();
 
