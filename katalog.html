@@ -1,150 +1,158 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="id">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<head>
+    <meta charset="UTF-8">
 
-<title>
-    Katalog — MAUNYA WANITA ❤️❤️
-</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link
-    rel="stylesheet"
-    href="style.css"
->
+    <title>
+        Katalog — MAUNYA WANITA ❤️❤️
+    </title>
 
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-<style>
+    <style>
 
-    /* ==========================================
-       IKLAN / HUBUNGI KAMI
-       ========================================== */
-
-    .advertise-float {
-
-        position: fixed;
-
-        right: 0;
-        top: 50%;
-
-        transform:
-            translateY(-50%);
-
-        background: #e91e63;
-
-        color: white;
-
-        padding: 12px 10px;
-
-        text-decoration: none;
-
-        border-radius:
-            12px 0 0 12px;
-
-        font-size: 13px;
-
-        font-weight: bold;
-
-        text-align: center;
-
-        z-index: 9999;
-
-        box-shadow:
-            0 4px 12px
-            rgba(0, 0, 0, 0.15);
-
-        animation:
-            naikTurun
-            2.5s
-            ease-in-out
-            infinite;
-
-    }
-
-
-    .advertise-float span {
-
-        font-size: 11px;
-
-    }
-
-
-
-    /* ==========================================
-       ANIMASI NAIK TURUN
-       ========================================== */
-
-    @keyframes naikTurun {
-
-        0% {
-
-            transform:
-                translateY(-50%);
-
-        }
-
-        50% {
-
-            transform:
-                translateY(
-                    calc(-50% - 8px)
-                );
-
-        }
-
-        100% {
-
-            transform:
-                translateY(-50%);
-
-        }
-
-    }
-
-
-
-    /* ==========================================
-       EFEK SAAT DISENTUH / DIKLIK
-       ========================================== */
-
-    .advertise-float:hover {
-
-        transform:
-            translateY(-50%)
-            scale(1.03);
-
-    }
-
-
-
-    /* ==========================================
-       TAMPILAN HP
-       ========================================== */
-
-    @media (max-width: 700px) {
+        /* ==========================================
+           IKLAN / HUBUNGI KAMI
+           ========================================== */
 
         .advertise-float {
 
-            font-size: 11px;
+            position: fixed;
 
-            padding:
-                9px 7px;
+            right: 0;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            background: #e91e63;
+
+            color: white;
+
+            padding: 12px 10px;
+
+            text-decoration: none;
+
+            border-radius:
+                12px 0 0 12px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            z-index: 9999;
+
+            box-shadow:
+                0 4px 12px
+                rgba(0, 0, 0, 0.15);
+
+            animation:
+                naikTurun
+                2.5s
+                ease-in-out
+                infinite;
 
         }
 
 
         .advertise-float span {
 
-            font-size: 9px;
+            font-size: 11px;
 
         }
 
-    }
 
-</style>
 
-</head><body><!-- ==========================================
+        /* ==========================================
+           ANIMASI NAIK TURUN
+           ========================================== */
+
+        @keyframes naikTurun {
+
+            0% {
+
+                transform:
+                    translateY(-50%);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(
+                        calc(-50% - 8px)
+                    );
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(-50%);
+
+            }
+
+        }
+
+
+
+        /* ==========================================
+           EFEK SAAT DISENTUH / DIKLIK
+           ========================================== */
+
+        .advertise-float:hover {
+
+            transform:
+                translateY(-50%)
+                scale(1.03);
+
+        }
+
+
+
+        /* ==========================================
+           TAMPILAN HP
+           ========================================== */
+
+        @media (max-width: 700px) {
+
+            .advertise-float {
+
+                font-size: 11px;
+
+                padding:
+                    9px 7px;
+
+            }
+
+
+            .advertise-float span {
+
+                font-size: 9px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ==========================================
      HEADER
      ========================================== -->
 
@@ -318,7 +326,10 @@
         </p>
 
 
-        <a href="saran.html">
+        <a
+            href="#"
+            onclick="parent.goPage('saran.html'); return false;"
+        >
 
             Berikan saranmu di sini →
 
@@ -388,4 +399,6 @@
 
 <script src="script.js"></script>
 
-</body></html>
+</body>
+
+</html>
