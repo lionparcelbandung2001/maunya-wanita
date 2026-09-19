@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Review Produk ⭐ | Ruang Cewek</title>
+
+  <meta
+    name="description"
+    content="Baca review produk dari pengguna Ruang Cewek."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .category {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d92f72;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #d92f72;
+      line-height: 1.4;
+      font-size: 27px;
+    }
+
+    .meta {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .review-text {
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #3a2630;
+    }
+
+    .divider {
+      height: 1px;
+      background: #f0dce5;
+      margin: 30px 0;
+    }
+
+    .comment-title {
+      color: #d92f72;
+      margin-bottom: 10px;
+    }
+
+    .comment-info {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .loading,
+    .error,
+    .not-found {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .error {
+      color: #a52a2a;
+      background: #fff0f0;
+    }
+
+    .not-found a {
+      color: #d92f72;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 15px;
+      }
+
+      .review-card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .review-text {
+        font-size: 15px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a href="reviewproduk.html" class="back">
+    ← Kembali ke Review Produk
+  </a>
+
+  <div id="content">
+
+    <div class="loading">
+      ⏳ Memuat review...
+    </div>
+
+  </div>
+
+  <footer>
+    © CewekPedia — Ruang Cewek ❤️
+  </footer>
+
+</div>
+
+
+<script type="module">
+
+  import { initializeApp } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+  import {
+    getDatabase,
+    ref,
+    get
+  } from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  /* =========================
+     FIREBASE
+     ========================= */
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain: "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+
+  const db = getDatabase(app);
+
+  const content =
+    document.getElementById("content");
+
+
+  /* =========================
+     ECHOTHREAD
+     =========================
+
+     Masukkan API key EchoThread
+     CewekPedia yang sama seperti
+     halaman EchoThread sebelumnya.
+  */
+
+  const ECHOTHREAD_API_KEY =
+    "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+
+
+  /* =========================
+     AMBIL ID REVIEW
+     ========================= */
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const reviewId =
+    params.get("id");
+
+
+  if (!reviewId) {
+
+    showNotFound();
+
+  } else {
+
+    loadReview();
+
+  }
+
+
+  /* =========================
+     LOAD REVIEW
+     ========================= */
+
+  async function loadReview() {
+
+    try {
+
+      const reviewRef =
+        ref(
+          db,
+          "reviews/" + reviewId
+        );
+
+      const snapshot =
+        await get(reviewRef);
+
+
+      if (!snapshot.exists()) {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      const review =
+        snapshot.val();
+
+
+      /*
+        Hanya review approved
+        yang boleh tampil.
+      */
+
+      if (review.status !== "approved") {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      renderReview(review);
+
+
+    } catch (error) {
+
+      console.error(
+        "Gagal mengambil review:",
+        error
+      );
+
+      content.innerHTML = `
+
+        <div class="error">
+
+          Maaf, review belum dapat dimuat.
+
+          <br><br>
+
+          Silakan coba lagi nanti.
+
+        </div>
+
+      `;
+
+    }
+
+  }
+
+
+  /* =========================
+     RENDER REVIEW
+     ========================= */
+
+  function renderReview(review) {
+
+    const title =
+      escapeHTML(
+        review.title ||
+        "Review Produk"
+      );
+
+
+    const category =
+      escapeHTML(
+        review.category ||
+        "Lainnya"
+      );
+
+
+    const nickname =
+      escapeHTML(
+        review.nickname ||
+        "Anonim"
+      );
+
+
+    const text =
+      escapeHTML(
+        review.text ||
+        ""
+      );
+
+
+    let date = "";
+
+
+    if (review.timestamp) {
+
+      date =
+        new Date(
+          review.timestamp
+        ).toLocaleDateString(
+          "id-ID",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          }
+        );
+
+    }
+
+
+    document.title =
+      title +
+      " ⭐ | Review Produk | Ruang Cewek";
+
+
+    content.innerHTML = `
+
+      <article class="review-card">
+
+        <div class="category">
+          ⭐ ${category}
+        </div>
+
+        <h1>
+          ${title}
+        </h1>
+
+        <div class="meta">
+          ✍️ ${nickname}
+          ${date ? " • " + date : ""}
+        </div>
+
+        <div class="review-text">
+          ${text}
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="comment-title">
+          💬 Obrolan Review
+        </h2>
+
+        <div class="comment-info">
+          Pernah mencoba produk ini?
+          Kamu bisa ikut berbagi pengalaman
+          atau ngobrol di bawah ❤️
+        </div>
+
+        <!-- ECHOTHREAD -->
+
+        <div
+          id="echothread"
+
+          data-api-key="${ECHOTHREAD_API_KEY}"
+
+          data-page-url="${getCanonicalReviewURL(reviewId)}"
+
+          data-identifier="${escapeHTML(reviewId)}"
+
+          data-page-title="${title}"
+
+        ></div>
+
+      </article>
+
+    `;
+
+
+    loadEchoThread();
+
+  }
+
+
+  /* =========================
+     URL CANONICAL REVIEW
+     ========================= */
+
+  function getCanonicalReviewURL(id) {
+
+    return (
+      window.location.origin +
+      "/ruangcewek/review-detail.html?id=" +
+      encodeURIComponent(id)
+    );
+
+  }
+
+
+  /* =========================
+     LOAD ECHOTHREAD
+     ========================= */
+
+  function loadEchoThread() {
+
+    if (
+      document.querySelector(
+        'script[data-echothread="true"]'
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    const script =
+      document.createElement("script");
+
+
+    script.src =
+      "https://cdn.echothread.io/widget.js";
+
+
+    script.async = true;
+
+
+    script.dataset.echothread =
+      "true";
+
+
+    document.body.appendChild(script);
+
+  }
+
+
+  /* =========================
+     NOT FOUND
+     ========================= */
+
+  function showNotFound() {
+
+    content.innerHTML = `
+
+      <div class="not-found">
+
+        😔 Review tidak ditemukan
+        atau belum tersedia.
+
+        <br><br>
+
+        <a href="reviewproduk.html">
+          ← Kembali ke Review Produk
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =========================
+     SECURITY
+     ========================= */
+
+  function escapeHTML(value) {
+
+    return String(value)
+
+      .replace(/&/g, "&amp;")
+
+      .replace(/</g, "&lt;")
+
+      .replace(/>/g, "&gt;")
+
+      .replace(/"/g, "&quot;")
+
+      .replace(/'/g, "&#039;");
+
+  }
+
+</script>
+
+</body>
+</html>
