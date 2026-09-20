@@ -1,1162 +1,1009 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ruang Cewek — Curhat, Review Produk & Chatroom | CewekPedia</title>
-
-    <meta
-        name="description"
-        content="Ruang Cewek di CewekPedia adalah tempat untuk berbagi cerita, curhat, review produk, dan ngobrol bersama komunitas wanita."
-    >
-
-    <meta name="robots" content="index, follow">
-
-    <link
-        rel="canonical"
-        href="https://cewekpedia.com/ruangcewek/"
-    >
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: #fff7fb;
-            font-family: Arial, sans-serif;
-            color: #3a2630;
-        }
-
-        body {
-            padding: 18px 12px 30px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================== */
-
-        .header {
-            text-align: center;
-            margin-bottom: 18px;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #d92f72;
-            font-size: 25px;
-        }
-
-        .header p {
-            margin: 6px 0 0;
-            color: #765362;
-            font-size: 13px;
-        }
-
-        .seo-intro {
-            margin: 12px auto 0;
-            max-width: 600px;
-            font-size: 12px;
-            line-height: 1.6;
-            color: #765362;
-        }
-
-
-        /* =========================
-           FEATURE CARDS
-        ========================== */
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .feature-card {
-            display: block;
-            text-decoration: none;
-            text-align: center;
-
-            background: #ffffff;
-            border: 1px solid #f0dce6;
-            border-radius: 14px;
-
-            padding: 16px 10px;
-
-            color: #633f4d;
-
-            box-shadow: 0 2px 9px rgba(80, 40, 60, 0.06);
-
-            transition: 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .feature-icon {
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .feature-title {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .feature-desc {
-            margin-top: 4px;
-            font-size: 11px;
-            color: #8a6c78;
-        }
-
-
-        /* =========================
-           CHATROOM
-        ========================== */
-
-        .chat-card {
-            background: #ffffff;
-            border: 1px solid #f0dce6;
-            border-radius: 16px;
-            padding: 12px;
-
-            box-shadow: 0 2px 10px rgba(80, 40, 60, 0.07);
-        }
-
-        .chat-header {
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .chat-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #633f4d;
-        }
-
-        .online-count {
-            margin-top: 3px;
-            font-size: 11px;
-            color: #2f9e58;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           TERMS
-        ========================== */
-
-        .chat-terms {
-            margin: 8px 0 10px;
-
-            border: 1px solid #f0dce6;
-            border-radius: 10px;
-
-            background: #fff7fb;
-            font-size: 11px;
-        }
-
-        .chat-terms summary {
-            cursor: pointer;
-            padding: 8px 9px;
-            color: #765362;
-            font-weight: bold;
-        }
-
-        .terms-content {
-            padding: 0 10px 10px;
-            line-height: 1.5;
-            color: #765362;
-        }
-
-
-        /* =========================
-           FIREBASE ERROR
-        ========================== */
-
-        #firebaseError {
-            display: none;
-
-            margin-bottom: 9px;
-            padding: 8px 9px;
-
-            border-radius: 9px;
-            border: 1px solid #e8b7b7;
-
-            background: #fff1f1;
-            color: #9b3333;
-
-            font-size: 11px;
-            line-height: 1.4;
-        }
-
-
-        /* =========================
-           CHAT MESSAGES
-        ========================== */
-
-        #messages {
-            height: 300px;
-            overflow-y: auto;
-
-            padding: 9px;
-
-            background: #fffafd;
-            border: 1px solid #f0dce6;
-            border-radius: 11px;
-
-            margin-bottom: 9px;
-        }
-
-        .message-row {
-            display: flex;
-            margin-bottom: 7px;
-        }
-
-        .message-row.mine {
-            justify-content: flex-end;
-        }
-
-        .message-row.other {
-            justify-content: flex-start;
-        }
-
-        .message-bubble {
-            max-width: 78%;
-
-            padding: 7px 9px;
-
-            border-radius: 12px;
-
-            font-size: 12px;
-            line-height: 1.4;
-
-            word-wrap: break-word;
-            overflow-wrap: anywhere;
-        }
-
-        .message-row.other .message-bubble {
-            background: #ffffff;
-            border: 1px solid #f0dce6;
-            color: #4a3540;
-            border-bottom-left-radius: 4px;
-        }
-
-        .message-row.mine .message-bubble {
-            background: #f8dce9;
-            color: #4a3540;
-            border-bottom-right-radius: 4px;
-        }
-
-        .message-name {
-            font-size: 10px;
-            font-weight: bold;
-            margin-bottom: 2px;
-            color: #8a5a6c;
-        }
-
-        .message-text {
-            white-space: pre-wrap;
-        }
-
-
-        /* =========================
-           INPUT
-        ========================== */
-
-        .nickname-row {
-            margin-bottom: 7px;
-        }
-
-        .nickname-input,
-        .message-input {
-            width: 100%;
-
-            border: 1px solid #e8d3dd;
-            border-radius: 10px;
-
-            padding: 9px;
-
-            background: #ffffff;
-            color: #3a2630;
-
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-
-            outline: none;
-        }
-
-        .nickname-input:focus,
-        .message-input:focus {
-            border-color: #d92f72;
-        }
-
-        .message-row-input {
-            display: flex;
-            gap: 7px;
-            align-items: flex-end;
-        }
-
-        .message-input {
-            resize: none;
-            min-height: 40px;
-            max-height: 100px;
-        }
-
-        .send-button {
-            flex: 0 0 auto;
-
-            border: 0;
-            border-radius: 10px;
-
-            padding: 10px 13px;
-
-            background: #d92f72;
-            color: #ffffff;
-
-            font-size: 12px;
-            font-weight: bold;
-
-            cursor: pointer;
-        }
-
-        .send-button:disabled {
-            opacity: 0.55;
-            cursor: not-allowed;
-        }
-
-        .input-info {
-            margin-top: 5px;
-            font-size: 10px;
-            color: #927582;
-            text-align: right;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            text-align: center;
-            margin-top: 22px;
-
-            color: #987b87;
-            font-size: 10px;
-        }
-
-        footer a {
-            color: #a65379;
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 14px 9px 25px;
-            }
-
-            .header h1 {
-                font-size: 23px;
-            }
-
-            .feature-grid {
-                gap: 8px;
-            }
-
-            .feature-card {
-                padding: 14px 8px;
-            }
-
-            #messages {
-                height: 300px;
-            }
-
-            .message-bubble {
-                max-width: 84%;
-            }
-
-            .send-button {
-                padding: 10px 11px;
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ruang Cewek — Curhat, Review Produk & Chatroom | CewekPedia</title>
+
+  <meta name="description"
+        content="Ruang Cewek di CewekPedia adalah tempat untuk berbagi cerita, curhat, review produk, dan ngobrol bersama komunitas wanita.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cewekpedia.com/ruangcewek/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #fff7fb 0%, #fff 100%);
+      color: #4a3b43;
+    }
+
+    .container {
+      width: min(94%, 900px);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 7vw, 42px);
+      color: #8f5570;
+    }
+
+    header p {
+      margin: 0;
+      color: #806d76;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .seo-intro {
+      background: #fff;
+      border: 1px solid #f1dce7;
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      line-height: 1.7;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #f0dbe6;
+      border-radius: 20px;
+      padding: 22px 16px;
+      text-align: center;
+      color: #684b59;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(130, 80, 110, .08);
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: #8a747e;
+      line-height: 1.5;
+    }
+
+    .chat-section {
+      background: #fff;
+      border: 1px solid #f0dbe6;
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .chat-header {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .chat-header h2 {
+      margin: 0 0 5px;
+      color: #8f5570;
+      font-size: 23px;
+    }
+
+    .chat-header p {
+      margin: 0;
+      color: #8a747e;
+      font-size: 13px;
+    }
+
+    .online {
+      display: inline-block;
+      margin-top: 9px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #f8edf3;
+      color: #6f5662;
+      font-size: 13px;
+    }
+
+    .error {
+      display: none;
+      background: #fff0f0;
+      border: 1px solid #edcaca;
+      color: #a33f3f;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .login-box {
+      background: #fff9fc;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .login-box label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 7px;
+      color: #6f5963;
+    }
+
+    .login-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    input,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    .nickname {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid #e7ccd9;
+      border-radius: 12px;
+      padding: 11px 12px;
+      outline: none;
+      background: #fff;
+      color: #4a3b43;
+    }
+
+    .nickname:focus,
+    .message-input:focus {
+      border-color: #c99bb4;
+      box-shadow: 0 0 0 3px rgba(201, 155, 180, .12);
+    }
+
+    .save-name {
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 16px;
+      background: #b87899;
+      color: #fff;
+      cursor: pointer;
+      min-width: 80px;
+    }
+
+    .chat-box {
+      height: 380px;
+      overflow-y: auto;
+      background: #fffafd;
+      border: 1px solid #f0dce7;
+      border-radius: 16px;
+      padding: 12px;
+      scroll-behavior: smooth;
+    }
+
+    .empty-chat {
+      text-align: center;
+      color: #9a858e;
+      font-size: 13px;
+      padding: 30px 10px;
+    }
+
+    .message {
+      display: flex;
+      margin: 8px 0;
+    }
+
+    .message.mine {
+      justify-content: flex-end;
+    }
+
+    .bubble {
+      max-width: 82%;
+      background: #f5e8ef;
+      border-radius: 15px 15px 15px 5px;
+      padding: 9px 11px;
+      line-height: 1.45;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .mine .bubble {
+      background: #ead0dd;
+      border-radius: 15px 15px 5px 15px;
+    }
+
+    .sender {
+      font-size: 11px;
+      font-weight: bold;
+      color: #866073;
+      margin-bottom: 3px;
+    }
+
+    .time {
+      font-size: 10px;
+      color: #9a858e;
+      margin-top: 4px;
+      text-align: right;
+    }
+
+    .composer {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      align-items: flex-end;
+    }
+
+    .message-input {
+      flex: 1;
+      min-width: 0;
+      min-height: 48px;
+      max-height: 120px;
+      resize: vertical;
+      border: 1px solid #e7ccd9;
+      border-radius: 13px;
+      padding: 12px;
+      outline: none;
+      background: #fff;
+      color: #4a3b43;
+    }
+
+    .send {
+      border: 0;
+      border-radius: 13px;
+      min-height: 48px;
+      padding: 0 17px;
+      background: #b87899;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .send:disabled,
+    .save-name:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .chat-help {
+      text-align: center;
+      margin-top: 8px;
+      color: #9a858e;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    details {
+      margin-top: 15px;
+      background: #fff9fc;
+      border-radius: 14px;
+      padding: 11px 13px;
+      font-size: 13px;
+      color: #735e68;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #765266;
+    }
+
+    details p {
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 24px;
+      color: #9a858e;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer a {
+      color: #8f5570;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: 94%;
+        padding-top: 18px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 18px 14px;
+      }
+
+      .chat-section {
+        padding: 13px;
+      }
+
+      .chat-box {
+        height: 350px;
+      }
+
+      .bubble {
+        max-width: 88%;
+      }
+
+      .composer {
+        gap: 6px;
+      }
+
+      .send {
+        padding: 0 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="container">
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <header>
+      <h1>💬 RUANG CEWEK</h1>
+      <p>Cerita • Berbagi • Ngobrol ❤️</p>
+    </header>
 
-    <div class="header">
+    <div class="seo-intro">
+      <strong>Ruang Cewek</strong> adalah tempat untuk berbagi cerita,
+      curhat, pengalaman menggunakan produk, dan ngobrol bersama pengunjung
+      CewekPedia.
+    </div>
 
-        <h1>💬 RUANG CEWEK</h1>
+    <section class="feature-grid" aria-label="Menu Ruang Cewek">
 
+      <a class="feature-card" href="curhat.html">
+        <div class="feature-icon">💗</div>
+        <div class="feature-title">Curhat</div>
+        <div class="feature-desc">
+          Tempat berbagi cerita, pengalaman, dan isi hati.
+        </div>
+      </a>
+
+      <a class="feature-card" href="reviewproduk.html">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Review Produk</div>
+        <div class="feature-desc">
+          Bagikan pengalamanmu memakai produk yang pernah kamu coba.
+        </div>
+      </a>
+
+    </section>
+
+    <section class="chat-section">
+
+      <div class="chat-header">
+        <h2>💬 Chatroom</h2>
+        <p>Ngobrol santai bersama pengunjung Ruang Cewek.</p>
+        <div class="online" id="onlineCount">🟢 0 online</div>
+      </div>
+
+      <div class="error" id="firebaseError"></div>
+
+      <div class="login-box">
+        <label for="nickname">Nama panggilan</label>
+
+        <div class="login-row">
+          <input
+            id="nickname"
+            class="nickname"
+            type="text"
+            maxlength="20"
+            placeholder="Tulis nama panggilan..."
+            autocomplete="off"
+          >
+
+          <button
+            id="saveName"
+            class="save-name"
+            type="button"
+          >
+            Simpan
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="chatBox"
+        class="chat-box"
+        aria-live="polite"
+        aria-label="Pesan Chatroom"
+      >
+        <div class="empty-chat" id="emptyChat">
+          Belum ada pesan. Yuk mulai ngobrol 💕
+        </div>
+      </div>
+
+      <div class="composer">
+
+        <textarea
+          id="messageInput"
+          class="message-input"
+          maxlength="300"
+          placeholder="Tulis pesan..."
+          disabled
+        ></textarea>
+
+        <button
+          id="sendButton"
+          class="send"
+          type="button"
+          disabled
+        >
+          Kirim
+        </button>
+
+      </div>
+
+      <div class="chat-help">
+        Maksimal 300 karakter • Enter untuk kirim • Shift + Enter untuk baris baru
+      </div>
+
+      <details>
+        <summary>Ketentuan Chat — klik di sini</summary>
         <p>
-            Cerita • Berbagi • Ngobrol ❤️
+          Gunakan bahasa yang sopan dan saling menghargai. Jangan membagikan
+          data pribadi, nomor telepon, alamat, password, atau informasi
+          sensitif. Dilarang melakukan spam, penipuan, pelecehan, atau
+          mengirim konten yang melanggar hukum. Pesan dapat dihapus apabila
+          dianggap melanggar ketentuan.
         </p>
+      </details>
 
-        <p class="seo-intro">
-            Ruang Cewek adalah tempat untuk berbagi cerita,
-            curhat, pengalaman menggunakan produk, dan ngobrol
-            bersama pengunjung CewekPedia.
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         FEATURE MENU
-    ========================== -->
-
-    <div class="feature-grid">
-
-        <a
-            href="curhat.html"
-            class="feature-card">
-
-            <div class="feature-icon">
-                💭
-            </div>
-
-            <div class="feature-title">
-                Curhat
-            </div>
-
-            <div class="feature-desc">
-                Ceritakan apa yang kamu rasakan
-            </div>
-
-        </a>
-
-
-        <a
-            href="reviewproduk.html"
-            class="feature-card">
-
-            <div class="feature-icon">
-                ⭐
-            </div>
-
-            <div class="feature-title">
-                Review Produk
-            </div>
-
-            <div class="feature-desc">
-                Bagikan pengalamanmu
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- =========================
-         CHATROOM
-    ========================== -->
-
-    <div class="chat-card">
-
-        <div class="chat-header">
-
-            <div class="chat-title">
-                🟢 Chatroom
-            </div>
-
-            <div
-                id="onlineCount"
-                class="online-count">
-
-                🟢 0 online
-
-            </div>
-
-        </div>
-
-
-        <!-- KETENTUAN -->
-
-        <details class="chat-terms">
-
-            <summary>
-                ⚠️ Ketentuan Chat — klik di sini
-            </summary>
-
-            <div class="terms-content">
-
-                <strong>Ketentuan Chatroom</strong>
-
-                <br><br>
-
-                Chatroom ini merupakan ruang komunikasi
-                antar pengguna. Setiap pengguna bertanggung
-                jawab atas isi pesan yang mereka kirim.
-
-                <br><br>
-
-                Jangan membagikan data pribadi, melakukan
-                penipuan, pelecehan, ancaman, spam, atau
-                aktivitas yang melanggar hukum.
-
-                <br><br>
-
-                Pengelola berhak menghapus pesan atau
-                membatasi akses pengguna apabila ditemukan
-                pelanggaran.
-
-            </div>
-
-        </details>
-
-
-        <!-- FIREBASE ERROR -->
-
-        <div id="firebaseError"></div>
-
-
-        <!-- MESSAGES -->
-
-        <div id="messages"></div>
-
-
-        <!-- NICKNAME -->
-
-        <div class="nickname-row">
-
-            <input
-                id="nickname"
-                class="nickname-input"
-                type="text"
-                maxlength="20"
-                placeholder="Nama panggilan (maks. 20 karakter)"
-                autocomplete="off">
-
-        </div>
-
-
-        <!-- MESSAGE INPUT -->
-
-        <div class="message-row-input">
-
-            <textarea
-                id="messageInput"
-                class="message-input"
-                maxlength="300"
-                rows="1"
-                placeholder="Tulis pesan..."
-                autocomplete="off"></textarea>
-
-            <button
-                id="sendButton"
-                class="send-button">
-
-                Kirim
-
-            </button>
-
-        </div>
-
-
-        <div class="input-info">
-            Maks. 300 karakter • Enter = kirim • Shift+Enter = baris baru
-        </div>
-
-    </div>
-
+    </section>
 
     <footer>
+      <div>© 2026 CewekPedia</div>
 
-        © CewekPedia — Ruang Cewek ❤️
-
-        <div style="margin-top:8px;">
-
-            <a href="../index.html">
-                🏠 Beranda CewekPedia
-            </a>
-
-            &nbsp;•&nbsp;
-
-            <a href="../ruanglawak/">
-                😂 Ruang Lawak
-            </a>
-
-        </div>
-
+      <div>
+        <a href="../index.html">Beranda</a>
+        <a href="../ruanglawak/">Ruang Lawak</a>
+      </div>
     </footer>
 
-</div>
+  </main>
 
 
-<!-- ==================================================
-     FIREBASE
-================================================== -->
+  <!-- Firebase -->
+  <script type="module">
 
-<script type="module">
-
-    import {
-        initializeApp
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
     import {
-        getDatabase,
-        ref,
-        push,
-        onChildAdded,
-        onValue,
-        serverTimestamp,
-        onDisconnect,
-        set
+      getAuth,
+      signInAnonymously,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+    import {
+      getDatabase,
+      ref,
+      push,
+      set,
+      onValue,
+      onDisconnect,
+      serverTimestamp
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
-    import {
-        getAuth,
-        signInAnonymously
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-
-    /* =========================
+    /* =========================================================
        FIREBASE CONFIG
-    ========================== */
+       Project: ruang-cewek
+       ========================================================= */
 
     const firebaseConfig = {
-
-        apiKey:
-            "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926i8O0",
-
-        authDomain:
-            "ruang-cewek.firebaseapp.com",
-
-        databaseURL:
-            "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-        projectId:
-            "ruang-cewek",
-
-        storageBucket:
-            "ruang-cewek.firebasestorage.app",
-
-        messagingSenderId:
-            "300030693884",
-
-        appId:
-            "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
+      apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+      authDomain: "ruang-cewek.firebaseapp.com",
+      databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "ruang-cewek",
+      storageBucket: "ruang-cewek.firebasestorage.app",
+      messagingSenderId: "300030693884",
+      appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
     };
 
 
-    /* =========================
-       INIT FIREBASE
-    ========================== */
-
-    const app =
-        initializeApp(firebaseConfig);
-
-    const db =
-        getDatabase(app);
-
-    const auth =
-        getAuth(app);
-
-
-    /* =========================
+    /* =========================================================
        ELEMENTS
-    ========================== */
+       ========================================================= */
 
-    const messagesBox =
-        document.getElementById("messages");
-
-    const nicknameInput =
-        document.getElementById("nickname");
-
-    const messageInput =
-        document.getElementById("messageInput");
-
-    const sendButton =
-        document.getElementById("sendButton");
-
-    const onlineCount =
-        document.getElementById("onlineCount");
-
-    const firebaseError =
-        document.getElementById("firebaseError");
+    const nicknameInput = document.getElementById("nickname");
+    const saveNameButton = document.getElementById("saveName");
+    const messageInput = document.getElementById("messageInput");
+    const sendButton = document.getElementById("sendButton");
+    const chatBox = document.getElementById("chatBox");
+    const emptyChat = document.getElementById("emptyChat");
+    const onlineCount = document.getElementById("onlineCount");
+    const firebaseError = document.getElementById("firebaseError");
 
 
-    /* =========================
-       ERROR DISPLAY
-    ========================== */
+    let currentUser = null;
+    let currentNickname = "";
+    let messagesRef = null;
+    let presenceRef = null;
 
-    function showFirebaseError(error) {
 
-        console.error(error);
+    /* =========================================================
+       ERROR HANDLER
+       ========================================================= */
 
-        firebaseError.style.display = "block";
-
-        firebaseError.innerHTML =
-            "<strong>⚠️ Firebase Error</strong><br>" +
-            (error.code || "unknown") +
-            "<br>" +
-            (error.message || error);
-
+    function showError(message) {
+      firebaseError.textContent = "Firebase error: " + message;
+      firebaseError.style.display = "block";
     }
 
 
-    /* =========================
+    /* =========================================================
        NICKNAME
-    ========================== */
+       ========================================================= */
 
-    let nickname =
-        localStorage.getItem("ruangcewek_nickname") || "";
+    const savedNickname =
+      localStorage.getItem("ruangcewek_nickname") || "";
 
+    nicknameInput.value = savedNickname;
+    currentNickname = savedNickname.trim();
 
-    nicknameInput.value =
-        nickname;
+    function updateChatState() {
 
+      const ready =
+        !!currentUser &&
+        currentNickname.length > 0;
 
-    nicknameInput.addEventListener(
-        "input",
-        function () {
-
-            nickname =
-                nicknameInput.value.trim();
-
-            localStorage.setItem(
-                "ruangcewek_nickname",
-                nickname
-            );
-
-            updatePresence();
-
-        }
-    );
-
-
-    /* =========================
-       AUTH
-    ========================== */
-
-    signInAnonymously(auth)
-
-        .then(function () {
-
-            setupChat();
-
-            setupPresence();
-
-        })
-
-        .catch(function (error) {
-
-            showFirebaseError(error);
-
-        });
-
-
-    /* =========================
-       CHAT SETUP
-    ========================== */
-
-    function setupChat() {
-
-        const messagesRef =
-            ref(db, "messages");
-
-
-        onChildAdded(
-            messagesRef,
-            function (snapshot) {
-
-                const data =
-                    snapshot.val();
-
-                if (!data) {
-                    return;
-                }
-
-                displayMessage(data);
-
-            },
-            function (error) {
-
-                showFirebaseError(error);
-
-            }
-        );
-
-
-        sendButton.addEventListener(
-            "click",
-            sendMessage
-        );
-
-
-        messageInput.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Enter" &&
-                    !event.shiftKey
-                ) {
-
-                    event.preventDefault();
-
-                    sendMessage();
-
-                }
-
-            }
-        );
-
+      messageInput.disabled = !ready;
+      sendButton.disabled = !ready;
     }
 
 
-    /* =========================
-       DISPLAY MESSAGE
-    ========================== */
+    saveNameButton.addEventListener("click", () => {
 
-    function displayMessage(data) {
+      const name = nicknameInput.value.trim();
 
-        const row =
-            document.createElement("div");
+      if (!name) {
+        alert("Tulis nama panggilan dulu ya ❤️");
+        nicknameInput.focus();
+        return;
+      }
+
+      if (name.length > 20) {
+        alert("Nama panggilan maksimal 20 karakter.");
+        return;
+      }
+
+      currentNickname = name;
+
+      localStorage.setItem(
+        "ruangcewek_nickname",
+        currentNickname
+      );
+
+      updateChatState();
+
+      messageInput.focus();
+    });
 
 
-        const currentUid =
-            auth.currentUser
-                ? auth.currentUser.uid
-                : null;
+    nicknameInput.addEventListener("keydown", (event) => {
 
+      if (
+        event.key === "Enter" &&
+        !event.shiftKey
+      ) {
+        event.preventDefault();
+        saveNameButton.click();
+      }
+
+    });
+
+
+    /* =========================================================
+       RENDER MESSAGE
+       ========================================================= */
+
+    function renderMessages(data) {
+
+      chatBox.innerHTML = "";
+
+      const messages = [];
+
+      data.forEach((item) => {
+        messages.push({
+          id: item.key,
+          ...item.val()
+        });
+      });
+
+      messages.sort((a, b) => {
+        const timeA =
+          typeof a.timestamp === "number"
+            ? a.timestamp
+            : 0;
+
+        const timeB =
+          typeof b.timestamp === "number"
+            ? b.timestamp
+            : 0;
+
+        return timeA - timeB;
+      });
+
+
+      if (messages.length === 0) {
+
+        chatBox.innerHTML = `
+          <div class="empty-chat">
+            Belum ada pesan. Yuk mulai ngobrol 💕
+          </div>
+        `;
+
+        return;
+      }
+
+
+      messages.forEach((message) => {
 
         const isMine =
-            data.uid &&
-            currentUid &&
-            data.uid === currentUid;
+          currentUser &&
+          message.uid === currentUser.uid;
 
+        const wrapper =
+          document.createElement("div");
 
-        row.className =
-            "message-row " +
-            (isMine ? "mine" : "other");
+        wrapper.className =
+          "message" + (isMine ? " mine" : "");
 
 
         const bubble =
-            document.createElement("div");
+          document.createElement("div");
 
-        bubble.className =
-            "message-bubble";
-
-
-        const name =
-            document.createElement("div");
-
-        name.className =
-            "message-name";
+        bubble.className = "bubble";
 
 
-        name.textContent =
-            isMine
-                ? "Aku"
-                : (data.nickname || "Anonim");
+        const sender =
+          document.createElement("div");
+
+        sender.className = "sender";
+
+        sender.textContent =
+          isMine
+            ? "Aku"
+            : (message.nickname || "Pengunjung");
 
 
         const text =
-            document.createElement("div");
-
-        text.className =
-            "message-text";
-
+          document.createElement("div");
 
         text.textContent =
-            data.text || "";
+          message.text || "";
 
 
-        bubble.appendChild(name);
+        const time =
+          document.createElement("div");
 
-        bubble.appendChild(text);
-
-        row.appendChild(bubble);
-
-        messagesBox.appendChild(row);
-
-
-        messagesBox.scrollTop =
-            messagesBox.scrollHeight;
-
-    }
-
-
-    /* =========================
-       SEND MESSAGE
-    ========================== */
-
-    function sendMessage() {
+        time.className = "time";
 
         if (
-            !auth.currentUser
+          typeof message.timestamp === "number"
         ) {
 
-            firebaseError.style.display =
-                "block";
-
-            firebaseError.innerHTML =
-                "⚠️ Chat belum terhubung ke Firebase.";
-
-            return;
-
-        }
-
-
-        const name =
-            nicknameInput.value.trim();
-
-        const text =
-            messageInput.value.trim();
-
-
-        if (!name) {
-
-            nicknameInput.focus();
-
-            return;
-
-        }
-
-
-        if (!text) {
-
-            messageInput.focus();
-
-            return;
-
-        }
-
-
-        if (name.length > 20) {
-
-            alert(
-                "Nama panggilan maksimal 20 karakter."
+          time.textContent =
+            new Date(
+              message.timestamp
+            ).toLocaleTimeString(
+              "id-ID",
+              {
+                hour: "2-digit",
+                minute: "2-digit"
+              }
             );
 
-            return;
-
         }
 
 
-        if (text.length > 300) {
+        bubble.appendChild(sender);
+        bubble.appendChild(text);
+        bubble.appendChild(time);
 
-            alert(
-                "Pesan maksimal 300 karakter."
-            );
+        wrapper.appendChild(bubble);
 
-            return;
+        chatBox.appendChild(wrapper);
 
-        }
-
-
-        sendButton.disabled =
-            true;
+      });
 
 
-        const messagesRef =
-            ref(db, "messages");
-
-
-        push(
-            messagesRef,
-            {
-
-                uid:
-                    auth.currentUser.uid,
-
-                nickname:
-                    name,
-
-                text:
-                    text,
-
-                timestamp:
-                    serverTimestamp()
-
-            }
-        )
-
-        .then(function () {
-
-            messageInput.value = "";
-
-            messageInput.focus();
-
-        })
-
-        .catch(function (error) {
-
-            showFirebaseError(error);
-
-        })
-
-        .finally(function () {
-
-            sendButton.disabled =
-                false;
-
-        });
-
+      chatBox.scrollTop =
+        chatBox.scrollHeight;
     }
 
 
-    /* =========================
-       PRESENCE
-    ========================== */
+    /* =========================================================
+       SEND MESSAGE
+       ========================================================= */
 
-    function setupPresence() {
+    async function sendMessage() {
 
-        const uid =
-            auth.currentUser.uid;
+      if (!currentUser) {
+        showError("Belum terhubung ke Firebase.");
+        return;
+      }
 
-
-        const presenceRef =
-            ref(db, "presence/" + uid);
-
-
-        onDisconnect(
-            presenceRef
-        )
-        .remove();
+      if (!currentNickname) {
+        alert("Simpan nama panggilan dulu ya ❤️");
+        nicknameInput.focus();
+        return;
+      }
 
 
-        set(
-            presenceRef,
-            {
+      const text =
+        messageInput.value.trim();
 
-                online:
-                    true,
+      if (!text) return;
 
-                nickname:
-                    nicknameInput.value.trim() || "Anonim"
 
-            }
-        )
-        .catch(function (error) {
+      if (text.length > 300) {
+        alert("Pesan maksimal 300 karakter.");
+        return;
+      }
 
-            showFirebaseError(error);
 
+      try {
+
+        const newMessage =
+          push(messagesRef);
+
+        await set(newMessage, {
+          uid: currentUser.uid,
+          nickname: currentNickname,
+          text: text,
+          timestamp: serverTimestamp()
         });
 
+        messageInput.value = "";
+        messageInput.focus();
 
-        onValue(
-            ref(db, "presence"),
-            function (snapshot) {
+      } catch (error) {
 
-                const data =
-                    snapshot.val() || {};
+        console.error(error);
 
-
-                const count =
-                    Object.keys(data).length;
-
-
-                onlineCount.textContent =
-                    "🟢 " + count + " online";
-
-            },
-            function (error) {
-
-                showFirebaseError(error);
-
-            }
+        showError(
+          error.message ||
+          "Pesan gagal dikirim."
         );
 
+      }
+
     }
 
 
-    /* =========================
-       UPDATE PRESENCE
-    ========================== */
+    sendButton.addEventListener(
+      "click",
+      sendMessage
+    );
 
-    function updatePresence() {
+
+    messageInput.addEventListener(
+      "keydown",
+      (event) => {
 
         if (
-            !auth.currentUser
+          event.key === "Enter" &&
+          !event.shiftKey
         ) {
-            return;
+
+          event.preventDefault();
+          sendMessage();
+
         }
 
-
-        const uid =
-            auth.currentUser.uid;
-
-
-        const presenceRef =
-            ref(db, "presence/" + uid);
+      }
+    );
 
 
-        set(
-            presenceRef,
-            {
+    /* =========================================================
+       FIREBASE INITIALIZATION
+       ========================================================= */
 
-                online:
-                    true,
+    try {
 
-                nickname:
-                    nicknameInput.value.trim() || "Anonim"
+      const app =
+        initializeApp(firebaseConfig);
 
-            }
-        )
-        .catch(function (error) {
+      const auth =
+        getAuth(app);
 
-            showFirebaseError(error);
+      const db =
+        getDatabase(app);
+
+
+      messagesRef =
+        ref(db, "messages");
+
+
+      /* -----------------------------------------
+         MESSAGE LISTENER
+         ----------------------------------------- */
+
+      onValue(
+        messagesRef,
+        (snapshot) => {
+
+          renderMessages(
+            snapshot
+          );
+
+        },
+        (error) => {
+
+          console.error(error);
+
+          showError(
+            error.message ||
+            "Tidak dapat membaca pesan."
+          );
+
+        }
+      );
+
+
+      /* -----------------------------------------
+         AUTH
+         ----------------------------------------- */
+
+      onAuthStateChanged(
+        auth,
+        (user) => {
+
+          currentUser = user;
+
+          updateChatState();
+
+        }
+      );
+
+
+      signInAnonymously(auth)
+        .catch((error) => {
+
+          console.error(
+            "Firebase Auth Error:",
+            error
+          );
+
+          showError(
+            error.code ||
+            error.message ||
+            "Authentication gagal."
+          );
 
         });
 
-    }
+
+      /* -----------------------------------------
+         PRESENCE / ONLINE COUNT
+         ----------------------------------------- */
+
+      onAuthStateChanged(
+        auth,
+        async (user) => {
+
+          if (!user) return;
 
 
-    /* =========================
-       AUTO RESIZE TEXTAREA
-    ========================== */
+          presenceRef =
+            ref(
+              db,
+              "presence/" + user.uid
+            );
 
-    messageInput.addEventListener(
-        "input",
-        function () {
 
-            this.style.height =
-                "auto";
+          try {
 
-            this.style.height =
-                Math.min(
-                    this.scrollHeight,
-                    100
-                ) + "px";
+            await onDisconnect(
+              presenceRef
+            ).remove();
+
+
+            await set(
+              presenceRef,
+              {
+                nickname:
+                  currentNickname || "Pengunjung",
+                timestamp:
+                  serverTimestamp()
+              }
+            );
+
+          } catch (error) {
+
+            console.error(
+              "Presence Error:",
+              error
+            );
+
+          }
 
         }
-    );
+      );
 
-</script>
+
+      const allPresenceRef =
+        ref(db, "presence");
+
+
+      onValue(
+        allPresenceRef,
+        (snapshot) => {
+
+          let count = 0;
+
+          snapshot.forEach(() => {
+            count++;
+          });
+
+          onlineCount.textContent =
+            "🟢 " + count + " online";
+
+        },
+        (error) => {
+
+          console.error(
+            "Online count error:",
+            error
+          );
+
+        }
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Firebase initialization error:",
+        error
+      );
+
+      showError(
+        error.message ||
+        "Firebase gagal diinisialisasi."
+      );
+
+    }
+
+  </script>
 
 </body>
 </html>
