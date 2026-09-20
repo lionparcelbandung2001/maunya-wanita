@@ -1,102 +1,572 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Detail Curhat | Ruang Cewek</title>
+
+<title>Detail Curhat | Ruang Cewek - CewekPedia</title>
+
+<meta
+  name="description"
+  id="metaDescription"
+  content="Baca cerita dan curhat wanita di Ruang Cewek CewekPedia."
+>
+
+<meta
+  name="robots"
+  content="index, follow"
+>
+
+<link
+  rel="canonical"
+  id="canonicalUrl"
+  href="https://cewekpedia.com/ruangcewek/curhat-detail.html"
+>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;padding:18px 12px 30px;font-family:Arial,sans-serif;background:#fff7fb;color:#3a2630}
-.container{width:100%;max-width:700px;margin:auto}
-.back{display:inline-block;margin:5px 0 18px;color:#c52f68;text-decoration:none;font-weight:bold;font-size:14px}
-.card{background:#ffffff;border:1px solid #f0dce6;border-radius:18px;padding:22px;box-shadow:0 2px 9px rgba(80,40,60,.05)}
-.badge{display:inline-block;background:#fff0f6;color:#d92f72;padding:6px 10px;border-radius:10px;font-size:12px;margin-bottom:12px}
-h1{margin:0 0 12px;color:#633f4d;line-height:1.4;font-size:22px}
-.meta{color:#927582;font-size:12px;margin-bottom:20px}
-.text{white-space:pre-wrap;font-size:14px;line-height:1.9;color:#3a2630}
-.divider{height:1px;background:#f0dce6;margin:25px 0}
-.loading,.error{text-align:center;padding:30px 15px;background:white;border:1px solid #f0dce6;border-radius:16px;font-size:13px;color:#765362}
-.error{background:#fff1f1;border-color:#e8b7b7;color:#9b3333}
-footer{text-align:center;margin-top:22px;color:#987b87;font-size:10px}
+
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  padding:18px 12px 30px;
+  font-family:Arial,sans-serif;
+  background:#fff7fb;
+  color:#3a2630
+}
+
+.container{
+  width:100%;
+  max-width:700px;
+  margin:auto
+}
+
+.back{
+  display:inline-block;
+  margin:5px 0 18px;
+  color:#c52f68;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px
+}
+
+.card{
+  background:#ffffff;
+  border:1px solid #f0dce6;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 2px 9px rgba(80,40,60,.05)
+}
+
+.badge{
+  display:inline-block;
+  background:#fff0f6;
+  color:#d92f72;
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:12px;
+  margin-bottom:12px
+}
+
+h1{
+  margin:0 0 12px;
+  color:#633f4d;
+  line-height:1.4;
+  font-size:22px
+}
+
+.meta{
+  color:#927582;
+  font-size:12px;
+  margin-bottom:20px
+}
+
+.text{
+  white-space:pre-wrap;
+  font-size:14px;
+  line-height:1.9;
+  color:#3a2630
+}
+
+.divider{
+  height:1px;
+  background:#f0dce6;
+  margin:25px 0
+}
+
+.seo-note{
+  margin-top:22px;
+  padding:15px;
+  background:#fffafd;
+  border:1px solid #f0dce6;
+  border-radius:14px;
+  color:#765362;
+  font-size:12px;
+  line-height:1.7
+}
+
+.loading,
+.error{
+  text-align:center;
+  padding:30px 15px;
+  background:white;
+  border:1px solid #f0dce6;
+  border-radius:16px;
+  font-size:13px;
+  color:#765362
+}
+
+.error{
+  background:#fff1f1;
+  border-color:#e8b7b7;
+  color:#9b3333
+}
+
+footer{
+  text-align:center;
+  margin-top:22px;
+  color:#987b87;
+  font-size:10px;
+  line-height:1.8
+}
+
+footer a{
+  color:#c52f68;
+  text-decoration:none
+}
+
 </style>
+
 </head>
+
 <body>
+
 <div class="container">
-<a href="curhat.html" class="back">← Kembali ke Daftar Curhat</a>
-<div id="content"><div class="loading">💭 Memuat cerita...</div></div>
-<footer>© CewekPedia — Ruang Cewek ❤️</footer>
+
+
+<a
+  href="curhat.html"
+  class="back"
+>
+  ← Kembali ke Daftar Curhat
+</a>
+
+
+<div id="content">
+
+  <div class="loading">
+    💭 Memuat cerita...
+  </div>
+
 </div>
+
+
+<footer>
+
+  © CewekPedia — Ruang Cewek ❤️
+
+  <br>
+
+  <a href="index.html">
+    Ruang Cewek
+  </a>
+  ·
+  <a href="curhat.html">
+    Daftar Curhat
+  </a>
+  ·
+  <a href="reviewproduk.html">
+    Review Produk
+  </a>
+  ·
+  <a href="../index.html">
+    CewekPedia
+  </a>
+
+</footer>
+
+
+</div>
+
+
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  get
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+import {
+  getAuth,
+  signInAnonymously
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-  authDomain: "ruang-cewek.firebaseapp.com",
-  databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "ruang-cewek",
-  storageBucket: "ruang-cewek.firebasestorage.app",
-  messagingSenderId: "300030693884",
-  appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  apiKey:
+    "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+  authDomain:
+    "ruang-cewek.firebaseapp.com",
+
+  databaseURL:
+    "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+  projectId:
+    "ruang-cewek",
+
+  storageBucket:
+    "ruang-cewek.firebasestorage.app",
+
+  messagingSenderId:
+    "300030693884",
+
+  appId:
+    "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const auth = getAuth(app);
-const content = document.getElementById("content");
-const ECHOTHREAD_API_KEY = "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+
+const app =
+  initializeApp(firebaseConfig);
+
+const db =
+  getDatabase(app);
+
+const auth =
+  getAuth(app);
+
+const content =
+  document.getElementById("content");
+
+const metaDescription =
+  document.getElementById("metaDescription");
+
+const canonicalUrl =
+  document.getElementById("canonicalUrl");
+
+
+const ECHOTHREAD_API_KEY =
+  "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+
+const id =
+  params.get("id");
+
 
 if(!id){
-  content.innerHTML = `<div class="error">ID cerita tidak ada</div>`;
+
+  content.innerHTML = `
+
+    <div class="error">
+      ID cerita tidak ada.
+    </div>
+
+  `;
+
 }else{
+
   loadData();
+
 }
+
 
 async function loadData(){
+
   try{
+
     await signInAnonymously(auth);
-    const snap = await get(ref(db, "stories/" + id));
+
+
+    const snap =
+      await get(
+        ref(
+          db,
+          "stories/" + id
+        )
+      );
+
+
     if(!snap.exists()){
-      content.innerHTML = `<div class="error">😔 Cerita tidak ditemukan</div>`;
+
+      content.innerHTML = `
+
+        <div class="error">
+          😔 Cerita tidak ditemukan.
+        </div>
+
+      `;
+
       return;
+
     }
-    const v = snap.val();
+
+
+    const v =
+      snap.val();
+
+
     if(v.status !== "approved"){
-      content.innerHTML = `<div class="error">Cerita ini belum di-approve</div>`;
+
+      content.innerHTML = `
+
+        <div class="error">
+          Cerita ini belum di-approve.
+        </div>
+
+      `;
+
       return;
+
     }
-    const title = escapeHTML(v.title||"Tanpa Judul");
-    const cat = escapeHTML(v.category||"Lainnya");
-    const nick = escapeHTML(v.nickname||"Anonim");
-    const text = escapeHTML(v.text||"");
-    const date = v.timestamp ? new Date(v.timestamp).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"}) : "";
-    
-    document.title = v.title + " | Ruang Cewek";
+
+
+    const rawTitle =
+      v.title ||
+      "Tanpa Judul";
+
+
+    const rawCategory =
+      v.category ||
+      "Lainnya";
+
+
+    const rawNickname =
+      v.nickname ||
+      "Anonim";
+
+
+    const rawText =
+      v.text ||
+      "";
+
+
+    const title =
+      escapeHTML(rawTitle);
+
+
+    const cat =
+      escapeHTML(rawCategory);
+
+
+    const nick =
+      escapeHTML(rawNickname);
+
+
+    const text =
+      escapeHTML(rawText);
+
+
+    const date =
+      v.timestamp
+        ? new Date(v.timestamp)
+            .toLocaleDateString(
+              "id-ID",
+              {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+              }
+            )
+        : "";
+
+
+    /*
+      =========================
+      SEO DINAMIS
+      =========================
+    */
+
+
+    document.title =
+      rawTitle +
+      " | Curhat Ruang Cewek - CewekPedia";
+
+
+    const descriptionText =
+      rawText
+        .replace(/\s+/g," ")
+        .trim();
+
+
+    const shortDescription =
+      descriptionText.length > 155
+        ? descriptionText.substring(0,155) + "..."
+        : descriptionText;
+
+
+    metaDescription.setAttribute(
+      "content",
+      shortDescription ||
+      "Baca curhat dan cerita kehidupan wanita di Ruang Cewek CewekPedia."
+    );
+
+
+    const pageUrl =
+      window.location.origin +
+      window.location.pathname +
+      "?id=" +
+      encodeURIComponent(id);
+
+
+    canonicalUrl.setAttribute(
+      "href",
+      pageUrl
+    );
+
+
+    /*
+      =========================
+      TAMPILAN CERITA
+      =========================
+    */
+
+
     content.innerHTML = `
+
       <div class="card">
-        <div class="badge">💭 ${cat}</div>
-        <h1>${title}</h1>
-        <div class="meta">Oleh ${nick} ${date ? "• " + date : ""}</div>
-        <div class="text">${text}</div>
+
+        <div class="badge">
+          💭 ${cat}
+        </div>
+
+
+        <h1>
+          ${title}
+        </h1>
+
+
+        <div class="meta">
+
+          Oleh ${nick}
+
+          ${date
+            ? " • " + date
+            : ""
+          }
+
+        </div>
+
+
+        <div class="text">
+          ${text}
+        </div>
+
+
         <div class="divider"></div>
-        <h2 style="color:#d92f72;font-size:16px;margin:0 0 12px">💬 Obrolan Cerita</h2>
-        <div id="echothread" data-api-key="${ECHOTHREAD_API_KEY}" data-page-url="${window.location.origin}${window.location.pathname}?id=${encodeURIComponent(id)}" data-identifier="${escapeHTML(id)}" data-page-title="${title}"></div>
+
+
+        <h2
+          style="
+            color:#d92f72;
+            font-size:16px;
+            margin:0 0 12px
+          "
+        >
+          💬 Obrolan Cerita
+        </h2>
+
+
+        <div
+          id="echothread"
+          data-api-key="${ECHOTHREAD_API_KEY}"
+          data-page-url="${pageUrl}"
+          data-identifier="${escapeHTML(id)}"
+          data-page-title="${title}"
+        ></div>
+
+
+        <div class="seo-note">
+
+          Cerita ini merupakan bagian dari
+          <strong>Ruang Cewek</strong> di CewekPedia,
+          tempat untuk berbagi pengalaman,
+          membaca curhat, dan berdiskusi dengan
+          komunitas wanita.
+
+        </div>
+
       </div>
+
     `;
-    const s = document.createElement("script");
-    s.src = "https://cdn.echothread.io/widget.js";
-    s.async = true;
+
+
+    const s =
+      document.createElement("script");
+
+
+    s.src =
+      "https://cdn.echothread.io/widget.js";
+
+
+    s.async =
+      true;
+
+
     document.body.appendChild(s);
 
+
   }catch(e){
+
     console.error(e);
-    content.innerHTML = `<div class="error">Gagal memuat: ${e.message}</div>`;
+
+
+    content.innerHTML = `
+
+      <div class="error">
+        Gagal memuat: ${escapeHTML(e.message)}
+      </div>
+
+    `;
+
   }
+
 }
-function escapeHTML(str){ return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+
+function escapeHTML(str){
+
+  return String(str)
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    );
+
+}
+
 </script>
+
 </body>
 </html>
