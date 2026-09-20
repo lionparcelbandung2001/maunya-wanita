@@ -1,27 +1,8 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
-«»
-
-<title>
-  Ruang Lawak — Cerita Lucu, Receh & Kocak | CewekPedia
-</title><meta
-name="description"
-content="Ruang Lawak CewekPedia adalah tempat membaca dan berbagi cerita lucu, receh, kejadian kocak, serta pengalaman sehari-hari yang bikin ketawa."
-
-«»
-
-<meta
-name="robots"
-content="index, follow"
-
-«»
-
-<link
-  rel="canonical"
-  href="https://cewekpedia.com/ruanglawak/"
-><!-- Structured Data SEO --><script type="application/ld+json">
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Lawak — Cerita Lucu, Receh & Kocak | CewekPedia</title><meta name="description" content="Ruang Lawak CewekPedia adalah tempat membaca dan berbagi cerita lucu, receh, kejadian kocak, serta pengalaman sehari-hari yang bikin ketawa.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cewekpedia.com/ruanglawak/"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -35,745 +16,100 @@ content="index, follow"
   }
 }
 </script><style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#fffaf2;
-    color:#3b3028;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-
-header{
-    text-align:center;
-    padding:20px 10px 15px;
-}
-
-header h1{
-    margin:0 0 8px;
-    font-size:30px;
-    color:#e87535;
-}
-
-header p{
-    margin:0;
-    color:#765f50;
-}
-
-.intro{
-    background:#fff;
-    border:1px solid #f1dfd0;
-    border-radius:16px;
-    padding:18px;
-    margin-bottom:18px;
-    line-height:1.7;
-    color:#5e5048;
-}
-
-.intro strong{
-    color:#d96b2b;
-}
-
-.back{
-    display:inline-block;
-    margin:5px 0 20px;
-    text-decoration:none;
-    color:#d96b2b;
-    font-weight:bold;
-}
-
-.send-box{
-    background:#fff;
-    border:1px solid #f1dfd0;
-    border-radius:16px;
-    padding:18px;
-    margin-bottom:22px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.04);
-}
-
-.send-box h2{
-    margin:0 0 8px;
-    font-size:20px;
-}
-
-.send-box p{
-    margin:0 0 14px;
-    color:#765f50;
-}
-
-.send-btn{
-    display:inline-block;
-    padding:11px 18px;
-    border-radius:12px;
-    background:#e87535;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.filters{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding:4px 0 12px;
-    margin-bottom:8px;
-}
-
-.filter-btn{
-    flex:0 0 auto;
-    border:1px solid #efcdb8;
-    background:white;
-    color:#765f50;
-    padding:9px 13px;
-    border-radius:20px;
-    cursor:pointer;
-}
-
-.filter-btn.active{
-    background:#e87535;
-    color:white;
-    border-color:#e87535;
-}
-
-#storyList{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.story-card{
-    background:white;
-    border:1px solid #f1dfd0;
-    border-radius:16px;
-    padding:18px;
-    box-shadow:0 3px 10px rgba(0,0,0,.04);
-}
-
-.story-category{
-    display:inline-block;
-    font-size:12px;
-    background:#fff0e6;
-    color:#d96b2b;
-    padding:5px 9px;
-    border-radius:12px;
-    margin-bottom:8px;
-}
-
-.story-card h2{
-    margin:4px 0 8px;
-    font-size:19px;
-    line-height:1.5;
-}
-
-.story-preview{
-    line-height:1.6;
-    color:#5e5048;
-    margin:0 0 10px;
-}
-
-.story-meta{
-    font-size:12px;
-    color:#927e70;
-    margin-bottom:12px;
-}
-
-.read-btn{
-    display:inline-block;
-    color:#d96b2b;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.loading,
-.empty,
-.error{
-    text-align:center;
-    padding:30px 15px;
-    color:#765f50;
-}
-
-.error{
-    background:#fff0f0;
-    border-radius:16px;
-}
-
-.related{
-    margin-top:25px;
-    background:#fff;
-    border:1px solid #f1dfd0;
-    border-radius:16px;
-    padding:18px;
-    line-height:1.8;
-    color:#5e5048;
-}
-
-.related h2{
-    margin:0 0 8px;
-    font-size:19px;
-    color:#d96b2b;
-}
-
-.related a{
-    color:#d96b2b;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px 10px 15px;
-    font-size:13px;
-    color:#927e70;
-    line-height:1.8;
-}
-
-footer a{
-    color:#d96b2b;
-    text-decoration:none;
-}
-
-@media(max-width:600px){
-
-    .container{
-        padding:15px;
-    }
-
-    header h1{
-        font-size:26px;
-    }
-
-}
-
-</style></head><body><div class="container"><header><h1>
-    😂 RUANG LAWAK
-</h1>
-
-<p>
-    Cerita receh • Kejadian kocak • Bikin ketawa
-</p>
-
-</header><a
-class="back"
-href="../index.html"
-
-«»
-
-← Kembali ke CewekPedia
-</a>
-
-<div class="intro"><strong>Ruang Lawak CewekPedia</strong>
-adalah tempat untuk membaca dan berbagi
-cerita lucu dari kehidupan sehari-hari.
-
-<br><br>
-
-Temukan cerita receh tentang
-keseharian, keluarga, pertemanan,
-percintaan, pekerjaan, makanan,
-dan berbagai kejadian kocak lainnya.
-Kalau punya cerita yang bikin ketawa,
-kamu juga bisa membagikannya di sini. 😂
-
-</div><div class="send-box"><h2>
-    😂 Punya cerita kocak?
-</h2>
-
-<p>
-    Kirim cerita lucumu dan biarkan
-    orang lain ikut ketawa.
-</p>
-
-<a
-  class="send-btn"
-  href="kirimcerita.html"
->
-    😂 Kirim Cerita
-</a>
-
-</div><div class="filters"><button
-  class="filter-btn active"
-  data-category="Semua"
->
-    Semua
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Kehidupan Sehari-hari"
->
-    Keseharian
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Keluarga"
->
-    Keluarga
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Pertemanan"
->
-    Pertemanan
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Percintaan"
->
-    Percintaan
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Pekerjaan"
->
-    Pekerjaan
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Makanan"
->
-    Makanan
-</button>
-
-<button
-  class="filter-btn"
-  data-category="Lainnya"
->
-    Lainnya
-</button>
-
-</div><div id="storyList"><div class="loading">
-    😂 Lagi mengambil cerita lucu...
-</div>
-
-</div><div class="related"><h2>
-    💬 Jelajahi Ruang Cewek
-</h2>
-
-Selain membaca cerita lucu,
-kamu juga bisa ngobrol dan berbagi
-pengalaman di komunitas CewekPedia.
-
-<br><br>
-
-💬
-<a href="../ruangcewek/">
-    Ruang Cewek — Curhat & Ngobrol
-</a>
-
-<br>
-
-⭐
-<a href="../ruangcewek/reviewproduk.html">
-    Review Produk
-</a>
-
-<br>
-
-❤️
-<a href="../ruangcewek/curhat.html">
-    Baca Curhat & Cerita Wanita
-</a>
-
-</div><footer>© CewekPedia — Ruang Lawak 😂
-
-<br>
-
-<a href="../index.html">
-    CewekPedia
-</a>
-
-·
-
-<a href="../ruangcewek/">
-    Ruang Cewek
-</a>
-
-·
-
-<a href="kirimcerita.html">
-    Kirim Cerita
-</a>
-
-</footer></div><script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
-import {
-    getAuth,
-    signInAnonymously
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-import {
-    getDatabase,
-    ref,
-    query,
-    orderByChild,
-    equalTo,
-    get
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-
-
-/* =========================
-   FIREBASE
-   ========================= */
-
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#fffaf2;color:#3b3028;}
+.container{max-width:900px;margin:auto;padding:20px;}
+header{text-align:center;padding:20px 10px 15px;}
+header h1{margin:0 0 8px;font-size:30px;color:#e87535;}
+header p{margin:0;color:#765f50;}
+.intro{background:#fff;border:1px solid #f1dfd0;border-radius:16px;padding:18px;margin-bottom:18px;line-height:1.7;color:#5e5048;}
+.intro strong{color:#d96b2b;}
+.back{display:inline-block;margin:5px 0 20px;text-decoration:none;color:#d96b2b;font-weight:bold;}
+.send-box{background:#fff;border:1px solid #f1dfd0;border-radius:16px;padding:18px;margin-bottom:22px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.send-box h2{margin:0 0 8px;font-size:20px;}
+.send-box p{margin:0 0 14px;color:#765f50;}
+.send-btn{display:inline-block;padding:11px 18px;border-radius:12px;background:#e87535;color:white;text-decoration:none;font-weight:bold;}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;margin-bottom:8px;}
+.filter-btn{flex:0 0 auto;border:1px solid #efcdb8;background:white;color:#765f50;padding:9px 13px;border-radius:20px;cursor:pointer;}
+.filter-btn.active{background:#e87535;color:white;border-color:#e87535;}
+#storyList{display:flex;flex-direction:column;gap:14px;}
+.story-card{background:white;border:1px solid #f1dfd0;border-radius:16px;padding:18px;box-shadow:0 3px 10px rgba(0,0,0,.04);}
+.story-category{display:inline-block;font-size:12px;background:#fff0e6;color:#d96b2b;padding:5px 9px;border-radius:12px;margin-bottom:8px;}
+.story-card h2{margin:4px 0 8px;font-size:19px;line-height:1.5;}
+.story-preview{line-height:1.6;color:#5e5048;margin:0 0 10px;}
+.story-meta{font-size:12px;color:#927e70;margin-bottom:12px;}
+.read-btn{display:inline-block;color:#d96b2b;text-decoration:none;font-weight:bold;}
+.loading,.empty,.error{text-align:center;padding:30px 15px;color:#765f50;}
+.error{background:#fff0f0;border-radius:16px;}
+.related{margin-top:25px;background:#fff;border:1px solid #f1dfd0;border-radius:16px;padding:18px;line-height:1.8;color:#5e5048;}
+.related h2{margin:0 0 8px;font-size:19px;color:#d96b2b;}
+.related a{color:#d96b2b;text-decoration:none;font-weight:bold;}
+footer{text-align:center;padding:30px 10px 15px;font-size:13px;color:#927e70;line-height:1.8;}
+footer a{color:#d96b2b;text-decoration:none;}
+@media(max-width:600px){.container{padding:15px;}header h1{font-size:26px;}}
+</style></head><body><div class="container"><header><h1>😂 RUANG LAWAK</h1><p>Cerita receh • Kejadian kocak • Bikin ketawa</p></header><a class="back" href="../index.html">← Kembali ke CewekPedia</a><div class="intro"><strong>Ruang Lawak CewekPedia</strong> adalah tempat untuk membaca dan berbagi cerita lucu dari kehidupan sehari-hari.<br><br>Temukan cerita receh tentang keseharian, keluarga, pertemanan, percintaan, pekerjaan, makanan, dan berbagai kejadian kocak lainnya. Kalau punya cerita yang bikin ketawa, kamu juga bisa membagikannya di sini. 😂</div><div class="send-box"><h2>😂 Punya cerita kocak?</h2><p>Kirim cerita lucumu dan biarkan orang lain ikut ketawa.</p><a class="send-btn" href="kirimcerita.html">😂 Kirim Cerita</a></div><div class="filters"><button class="filter-btn active" data-category="Semua">Semua</button><button class="filter-btn" data-category="Kehidupan Sehari-hari">Keseharian</button><button class="filter-btn" data-category="Keluarga">Keluarga</button><button class="filter-btn" data-category="Pertemanan">Pertemanan</button><button class="filter-btn" data-category="Percintaan">Percintaan</button><button class="filter-btn" data-category="Pekerjaan">Pekerjaan</button><button class="filter-btn" data-category="Makanan">Makanan</button><button class="filter-btn" data-category="Lainnya">Lainnya</button></div><div id="storyList"><div class="loading">😂 Lagi mengambil cerita lucu...</div></div><div class="related"><h2>💬 Jelajahi Ruang Cewek</h2>Selain membaca cerita lucu, kamu juga bisa ngobrol dan berbagi pengalaman di komunitas CewekPedia.<br><br>💬 <a href="../ruangcewek/">Ruang Cewek — Curhat & Ngobrol</a><br>⭐ <a href="../ruangcewek/reviewproduk.html">Review Produk</a><br>❤️ <a href="../ruangcewek/curhat.html">Baca Curhat & Cerita Wanita</a></div><footer>© CewekPedia — Ruang Lawak 😂<br><a href="../index.html">CewekPedia</a> · <a href="../ruangcewek/">Ruang Cewek</a> · <a href="kirimcerita.html">Kirim Cerita</a></footer></div><script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { getDatabase, ref, query, orderByChild, equalTo, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 const firebaseConfig = {
-
-    apiKey:
-        "AIzaSyCnhVGlnGKoqddyLvOg7E7t4MGG926iQ8O0",
-
-    authDomain:
-        "ruang-cewek.firebaseapp.com",
-
-    databaseURL:
-        "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-    projectId:
-        "ruang-cewek",
-
-    storageBucket:
-        "ruang-cewek.firebasestorage.app",
-
-    messagingSenderId:
-        "300030693884",
-
-    appId:
-        "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOg7E7t4MGG926iQ8O0",
+    authDomain: "ruang-cewek.firebaseapp.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ruang-cewek",
+    storageBucket: "ruang-cewek.firebasestorage.app",
+    messagingSenderId: "300030693884",
+    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
 };
-
-
-const app =
-    initializeApp(firebaseConfig);
-
-const auth =
-    getAuth(app);
-
-const db =
-    getDatabase(app);
-
-
-const storyList =
-    document.getElementById("storyList");
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+const storyList = document.getElementById("storyList");
+const filterButtons = document.querySelectorAll(".filter-btn");
 let stories = [];
-
-let activeCategory =
-    "Semua";
-
-
-/* =========================
-   SECURITY
-   ========================= */
-
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        text ?? "";
-
-    return div.innerHTML;
-
-}
-
-
-/* =========================
-   DATE
-   ========================= */
-
-function formatDate(timestamp){
-
-    if(!timestamp)
-        return "";
-
-    return new Date(timestamp)
-        .toLocaleDateString(
-            "id-ID",
-            {
-                day:"numeric",
-                month:"long",
-                year:"numeric"
-            }
-        );
-
-}
-
-
-/* =========================
-   RENDER STORIES
-   ========================= */
-
+let activeCategory = "Semua";
+function escapeHTML(text){ const div = document.createElement("div"); div.textContent = text ?? ""; return div.innerHTML; }
+function formatDate(timestamp){ if(!timestamp) return ""; return new Date(timestamp).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"}); }
 function renderStories(){
-
-    let filtered =
-        stories;
-
-
-    if(activeCategory !== "Semua"){
-
-        filtered =
-            stories.filter(
-                story =>
-                    story.category ===
-                    activeCategory
-            );
-
-    }
-
-
-    if(filtered.length === 0){
-
-        storyList.innerHTML = `
-
-            <div class="empty">
-
-                😂 Belum ada cerita
-                di kategori ini.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    storyList.innerHTML =
-        filtered.map(story => {
-
-            const rawText =
-                story.text || "";
-
-            const preview =
-                rawText.length > 180
-                ? rawText.substring(0,180) + "..."
-                : rawText;
-
-
-            return `
-
-                <article class="story-card">
-
-                    <div class="story-category">
-
-                        😂
-                        ${escapeHTML(
-                            story.category ||
-                            "Lainnya"
-                        )}
-
-                    </div>
-
-
-                    <h2>
-
-                        ${escapeHTML(
-                            story.title ||
-                            "Cerita Lucu"
-                        )}
-
-                    </h2>
-
-
-                    <p class="story-preview">
-
-                        ${escapeHTML(
-                            preview
-                        )}
-
-                    </p>
-
-
-                    <div class="story-meta">
-
-                        Oleh
-                        ${escapeHTML(
-                            story.nickname ||
-                            "Anonim"
-                        )}
-
-                        ${
-                            formatDate(
-                                story.timestamp
-                            )
-                            ? " • " +
-                              formatDate(
-                                  story.timestamp
-                              )
-                            : ""
-                        }
-
-                    </div>
-
-
-                    <a
-                      class="read-btn"
-                      href="lawak-detail.html?id=${encodeURIComponent(
-                          story.id
-                      )}"
-                    >
-
-                        Baca Cerita 😂 →
-
-                    </a>
-
-                </article>
-
-            `;
-
-        }).join("");
-
+    let filtered = stories;
+    if(activeCategory !== "Semua"){ filtered = stories.filter(story => story.category === activeCategory); }
+    if(filtered.length === 0){ storyList.innerHTML = `<div class="empty">😂 Belum ada cerita di kategori ini.</div>`; return; }
+    storyList.innerHTML = filtered.map(story => {
+        const rawText = story.text || "";
+        const preview = rawText.length > 180 ? rawText.substring(0,180) + "..." : rawText;
+        return `<article class="story-card"><div class="story-category">😂 ${escapeHTML(story.category || "Lainnya")}</div><h2>${escapeHTML(story.title || "Cerita Lucu")}</h2><p class="story-preview">${escapeHTML(preview)}</p><div class="story-meta">Oleh ${escapeHTML(story.nickname || "Anonim")}${formatDate(story.timestamp) ? " • " + formatDate(story.timestamp) : ""}</div><a class="read-btn" href="lawak-detail.html?id=${encodeURIComponent(story.id)}">Baca Cerita 😂 →</a></article>`;
+    }).join("");
 }
-
-
-/* =========================
-   LOAD STORIES
-   ========================= */
-
 async function loadStories(){
-
+    storyList.innerHTML = `<div class="loading">😂 Lagi mengambil cerita lucu...</div>`;
     try{
-
-        await signInAnonymously(auth);
-
-
-        const storiesQuery =
-            query(
-                ref(db,"lawak"),
-                orderByChild("status"),
-                equalTo("approved")
-            );
-
-
-        const snapshot =
-            await get(
-                storiesQuery
-            );
-
-
+        const cred = await signInAnonymously(auth);
+        console.log("Auth OK:", cred.user.uid);
+        const storiesQuery = query(ref(db,"lawak"), orderByChild("status"), equalTo("approved"));
+        const snapshot = await get(storiesQuery);
+        console.log("exists?", snapshot.exists());
         stories = [];
-
-
         if(snapshot.exists()){
-
-            snapshot.forEach(
-                child => {
-
-                    stories.push({
-
-                        id:
-                            child.key,
-
-                        ...child.val()
-
-                    });
-
+            snapshot.forEach(child => {
+                const val = child.val();
+                if(String(val.status || "").trim().toLowerCase() === "approved"){
+                    stories.push({ id: child.key, ...val });
                 }
-            );
-
-
-            stories.sort(
-                (a,b) =>
-                    (b.timestamp || 0) -
-                    (a.timestamp || 0)
-            );
-
+            });
+            stories.sort((a,b) => (b.timestamp || 0) - (a.timestamp || 0));
         }
-
-
         renderStories();
-
-
     }catch(error){
-
-        console.error(error);
-
-
-        storyList.innerHTML = `
-
-            <div class="error">
-
-                😅 Cerita belum bisa dimuat.
-
-                <br>
-
-                Silakan coba lagi nanti.
-
-            </div>
-
-        `;
-
+        console.error("LOAD ERROR:", error.code, error.message);
+        storyList.innerHTML = `<div class="error">😅 Cerita belum bisa dimuat.<br><small>${escapeHTML(error.code || "")} - ${escapeHTML(error.message || "")}</small><br>Cek: 1. Anonymous Auth ON, 2. Rules ada .indexOn status</div>`;
     }
-
 }
-
-
-/* =========================
-   FILTER
-   ========================= */
-
-filterButtons.forEach(
-    button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                filterButtons.forEach(
-                    btn =>
-                        btn.classList.remove(
-                            "active"
-                        )
-                );
-
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                activeCategory =
-                    button.dataset.category;
-
-
-                renderStories();
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================
-   START
-   ========================= */
-
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        activeCategory = button.dataset.category;
+        renderStories();
+    });
+});
 loadStories();
-
 </script></body></html>
