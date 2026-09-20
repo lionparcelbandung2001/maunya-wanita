@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curhat | Ruang Cewek</title>
-<meta name="description" content="Baca curhat dan pengalaman dari Ruang Cewek.">
+
+<title>Curhat Wanita & Cerita Kehidupan | Ruang Cewek - CewekPedia</title>
+
+<meta name="description" content="Baca curhat wanita, cerita kehidupan, pengalaman percintaan, keluarga, pertemanan, pekerjaan, dan keseharian di Ruang Cewek CewekPedia.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://cewekpedia.com/ruangcewek/curhat.html">
+
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff7fb;font-family:Arial,sans-serif;color:#3a2630}
@@ -14,6 +21,7 @@ body{padding:18px 12px 30px}
 .header{text-align:center;margin-bottom:18px}
 .header h1{margin:0;color:#d92f72;font-size:25px}
 .header p{margin:7px 0 0;color:#765362;font-size:13px;line-height:1.5}
+.seo-intro{background:#fff;border:1px solid #f0dce6;border-radius:15px;padding:13px 14px;margin-bottom:15px;color:#765362;font-size:12px;line-height:1.6;text-align:center}
 .send-box{background:#ffffff;border:1px solid #f0dce6;border-radius:16px;padding:15px;margin-bottom:15px;text-align:center;box-shadow:0 2px 9px rgba(80,40,60,.05)}
 .send-box p{margin:0 0 10px;font-size:13px;color:#765362}
 .send-button{display:inline-block;padding:10px 16px;border-radius:10px;background:#d92f72;color:white;text-decoration:none;font-size:13px;font-weight:bold}
@@ -29,118 +37,392 @@ body{padding:18px 12px 30px}
 .empty{text-align:center;padding:35px 15px;background:#ffffff;border:1px solid #f0dce6;border-radius:15px;color:#765362;font-size:13px}
 .loading{text-align:center;padding:35px 15px;color:#765362;font-size:13px}
 .error{text-align:center;padding:25px 15px;background:#fff1f1;border:1px solid #e8b7b7;border-radius:14px;color:#9b3333;font-size:13px}
-footer{text-align:center;margin-top:22px;color:#987b87;font-size:10px}
+footer{text-align:center;margin-top:22px;color:#987b87;font-size:10px;line-height:1.8}
+footer a{color:#c52f68;text-decoration:none;margin:0 4px}
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <a class="back" href="index.html">← Kembali ke Ruang Cewek</a>
-<div class="header"><h1>💭 Curhat & Cerita</h1><p>Baca cerita dan pengalaman dari sesama pengguna Ruang Cewek ❤️</p></div>
-<div class="send-box"><p>Punya cerita yang ingin dibagikan?</p><a class="send-button" href="kirimcurhat.html">💌 Kirim Curhat</a></div>
+
+<div class="header">
+<h1>💭 Curhat & Cerita</h1>
+<p>Baca cerita dan pengalaman dari sesama pengguna Ruang Cewek ❤️</p>
+</div>
+
+<div class="seo-intro">
+<strong>Curhat Ruang Cewek</strong> adalah tempat untuk membaca dan berbagi
+cerita tentang percintaan, pernikahan, keluarga, pertemanan, pekerjaan,
+keseharian, makanan, dan berbagai pengalaman hidup.
+</div>
+
+<div class="send-box">
+<p>Punya cerita yang ingin dibagikan?</p>
+<a class="send-button" href="kirimcurhat.html">💌 Kirim Curhat</a>
+</div>
+
 <div id="filters" class="filters">
+
 <button class="filter-button active" data-category="Semua">Semua</button>
-<button class="filter-button" data-category="Percintaan">Percintaan</button>
-<button class="filter-button" data-category="Pernikahan">Pernikahan</button>
-<button class="filter-button" data-category="Pertemanan">Pertemanan</button>
-<button class="filter-button" data-category="Keluarga">Keluarga</button>
-<button class="filter-button" data-category="Pekerjaan">Pekerjaan</button>
-<button class="filter-button" data-category="Kehidupan Sehari-hari">Keseharian</button>
-<button class="filter-button" data-category="Makanan">Makanan</button>
-<button class="filter-button" data-category="Lainnya">Lainnya</button>
+
+<button class="filter-button" data-category="Percintaan">
+Percintaan
+</button>
+
+<button class="filter-button" data-category="Pernikahan">
+Pernikahan
+</button>
+
+<button class="filter-button" data-category="Pertemanan">
+Pertemanan
+</button>
+
+<button class="filter-button" data-category="Keluarga">
+Keluarga
+</button>
+
+<button class="filter-button" data-category="Pekerjaan">
+Pekerjaan
+</button>
+
+<button class="filter-button" data-category="Kehidupan Sehari-hari">
+Keseharian
+</button>
+
+<button class="filter-button" data-category="Makanan">
+Makanan
+</button>
+
+<button class="filter-button" data-category="Lainnya">
+Lainnya
+</button>
+
 </div>
-<div id="storyList" class="story-list"><div class="loading">💭 Lagi membuka curhat...</div></div>
-<footer>© CewekPedia — Ruang Cewek ❤️</footer>
+
+<div id="storyList" class="story-list">
+<div class="loading">💭 Lagi membuka curhat...</div>
 </div>
+
+<footer>
+
+<div>© CewekPedia — Ruang Cewek ❤️</div>
+
+<div>
+<a href="index.html">Ruang Cewek</a>
+<a href="reviewproduk.html">Review Produk</a>
+<a href="../index.html">CewekPedia</a>
+</div>
+
+</footer>
+
+</div>
+
+
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-import { getDatabase, ref, query, orderByChild, equalTo, onValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+getAuth,
+signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+import {
+getDatabase,
+ref,
+query,
+orderByChild,
+equalTo,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-    authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "ruang-cewek",
-    storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "300030693884",
-    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+authDomain: "ruang-cewek.firebaseapp.com",
+
+databaseURL:
+"https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+projectId: "ruang-cewek",
+
+storageBucket:
+"ruang-cewek.firebasestorage.app",
+
+messagingSenderId:
+"300030693884",
+
+appId:
+"1:300030693884:web:ec02ce2cf35646dbf3a279"
+
 };
 
+
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
+
 const db = getDatabase(app);
-const storyList = document.getElementById("storyList");
-const filterButtons = document.querySelectorAll(".filter-button");
+
+const storyList =
+document.getElementById("storyList");
+
+const filterButtons =
+document.querySelectorAll(".filter-button");
+
 let stories = [];
+
 let currentCategory = "Semua";
 
+
 function formatDate(timestamp){
-    if(!timestamp) return "";
-    return new Date(timestamp).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"});
+
+if(!timestamp) return "";
+
+return new Date(timestamp).toLocaleDateString(
+"id-ID",
+{
+day:"numeric",
+month:"long",
+year:"numeric"
 }
+);
+
+}
+
+
 function renderStories(){
-    storyList.innerHTML = "";
-    let filtered = stories.filter(function(story){
-        if(currentCategory === "Semua") return true;
-        return story.category === currentCategory;
-    });
-    if(filtered.length === 0){
-        storyList.innerHTML = `<div class="empty">💭 Belum ada curhat di kategori ini.</div>`;
-        return;
-    }
-    filtered.sort(function(a,b){ return (b.timestamp || 0) - (a.timestamp || 0); });
-    filtered.forEach(function(story){
-        const card = document.createElement("a");
-        card.className = "story-card";
-        card.href = "curhat-detail.html?id=" + encodeURIComponent(story.id);
-        const category = document.createElement("div");
-        category.className = "story-category";
-        category.textContent = "💭 " + (story.category || "Lainnya");
-        const title = document.createElement("div");
-        title.className = "story-title";
-        title.textContent = story.title || "Tanpa judul";
-        const meta = document.createElement("div");
-        meta.className = "story-meta";
-        meta.textContent = "Oleh " + (story.nickname || "Anonim") + " • " + formatDate(story.timestamp);
-        const preview = document.createElement("div");
-        preview.className = "story-preview";
-        const text = story.text || "";
-        preview.textContent = text.length > 140? text.substring(0,140) + "..." : text;
-        card.appendChild(category);
-        card.appendChild(title);
-        card.appendChild(meta);
-        card.appendChild(preview);
-        storyList.appendChild(card);
-    });
-}
-filterButtons.forEach(function(button){
-    button.addEventListener("click", function(){
-        filterButtons.forEach(function(item){ item.classList.remove("active"); });
-        button.classList.add("active");
-        currentCategory = button.dataset.category;
-        renderStories();
-    });
+
+storyList.innerHTML = "";
+
+let filtered = stories.filter(function(story){
+
+if(currentCategory === "Semua") return true;
+
+return story.category === currentCategory;
+
 });
 
-signInAnonymously(auth).then(function(){
-    const approvedStoriesQuery = query(ref(db,"stories"), orderByChild("status"), equalTo("approved"));
-    onValue(approvedStoriesQuery, function(snapshot){
-        stories = [];
-        const data = snapshot.val() || {};
-        Object.keys(data).forEach(function(id){
-            const story = data[id];
-            if(!story) return;
-            stories.push({ id:id, title:story.title, category:story.category, nickname:story.nickname, text:story.text, timestamp:story.timestamp });
-        });
-        renderStories();
-    }, function(error){
-        console.error("Firebase Curhat error:", error);
-        storyList.innerHTML = `<div class="error">😔 Curhat belum bisa dimuat.<br>Silakan coba lagi nanti.</div>`;
-    });
-}).catch(function(error){
-    console.error("Firebase Anonymous Auth error:", error);
-    storyList.innerHTML = `<div class="error">😔 Curhat belum bisa dimuat.<br>Silakan coba lagi nanti.</div>`;
+
+if(filtered.length === 0){
+
+storyList.innerHTML =
+`<div class="empty">
+💭 Belum ada curhat di kategori ini.
+</div>`;
+
+return;
+
+}
+
+
+filtered.sort(function(a,b){
+
+return (b.timestamp || 0) -
+       (a.timestamp || 0);
+
 });
+
+
+filtered.forEach(function(story){
+
+const card =
+document.createElement("a");
+
+card.className = "story-card";
+
+card.href =
+"curhat-detail.html?id=" +
+encodeURIComponent(story.id);
+
+
+const category =
+document.createElement("div");
+
+category.className =
+"story-category";
+
+category.textContent =
+"💭 " +
+(story.category || "Lainnya");
+
+
+const title =
+document.createElement("div");
+
+title.className =
+"story-title";
+
+title.textContent =
+story.title || "Tanpa judul";
+
+
+const meta =
+document.createElement("div");
+
+meta.className =
+"story-meta";
+
+meta.textContent =
+"Oleh " +
+(story.nickname || "Anonim") +
+" • " +
+formatDate(story.timestamp);
+
+
+const preview =
+document.createElement("div");
+
+preview.className =
+"story-preview";
+
+
+const text =
+story.text || "";
+
+preview.textContent =
+text.length > 140
+? text.substring(0,140) + "..."
+: text;
+
+
+card.appendChild(category);
+
+card.appendChild(title);
+
+card.appendChild(meta);
+
+card.appendChild(preview);
+
+storyList.appendChild(card);
+
+});
+
+}
+
+
+filterButtons.forEach(function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+filterButtons.forEach(
+function(item){
+item.classList.remove("active");
+}
+);
+
+button.classList.add("active");
+
+currentCategory =
+button.dataset.category;
+
+renderStories();
+
+}
+);
+
+});
+
+
+signInAnonymously(auth)
+
+.then(function(){
+
+const approvedStoriesQuery =
+query(
+ref(db,"stories"),
+orderByChild("status"),
+equalTo("approved")
+);
+
+
+onValue(
+approvedStoriesQuery,
+
+function(snapshot){
+
+stories = [];
+
+const data =
+snapshot.val() || {};
+
+
+Object.keys(data).forEach(
+function(id){
+
+const story =
+data[id];
+
+if(!story) return;
+
+stories.push({
+
+id:id,
+
+title:story.title,
+
+category:story.category,
+
+nickname:story.nickname,
+
+text:story.text,
+
+timestamp:story.timestamp
+
+});
+
+});
+
+
+renderStories();
+
+},
+
+function(error){
+
+console.error(
+"Firebase Curhat error:",
+error
+);
+
+storyList.innerHTML =
+`<div class="error">
+😔 Curhat belum bisa dimuat.<br>
+Silakan coba lagi nanti.
+</div>`;
+
+}
+
+);
+
+})
+
+.catch(function(error){
+
+console.error(
+"Firebase Anonymous Auth error:",
+error
+);
+
+storyList.innerHTML =
+`<div class="error">
+😔 Curhat belum bisa dimuat.<br>
+Silakan coba lagi nanti.
+</div>`;
+
+});
+
 </script>
+
 </body>
 </html>
