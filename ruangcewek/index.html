@@ -1,558 +1,622 @@
-<!DOCTYPE html><html lang="id"><head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ruang Cewek — Cerita, Berbagi, Ngobrol</title>
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        background: #fff7fb;
-        font-family: Arial, sans-serif;
-        color: #3a2630;
-    }
-
-    body {
-        padding: 18px 12px 30px;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-        text-align: center;
-        margin-bottom: 18px;
-    }
-
-    .header h1 {
-        margin: 0;
-        color: #d92f72;
-        font-size: 25px;
-    }
-
-    .header p {
-        margin: 6px 0 0;
-        color: #765362;
-        font-size: 13px;
-    }
-
-
-    /* =========================
-       FEATURE CARDS
-    ========================= */
-
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-bottom: 18px;
-    }
-
-    .feature-card {
-        display: block;
-        text-decoration: none;
-        text-align: center;
-
-        background: #ffffff;
-        border: 1px solid #f0dce6;
-        border-radius: 14px;
-
-        padding: 16px 10px;
-
-        color: #633f4d;
-
-        box-shadow: 0 2px 9px rgba(80, 40, 60, 0.06);
-
-        transition: 0.2s;
-    }
-
-    .feature-card:hover {
-        transform: translateY(-2px);
-    }
-
-    .feature-icon {
-        font-size: 25px;
-        margin-bottom: 5px;
-    }
-
-    .feature-title {
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .feature-desc {
-        margin-top: 4px;
-        font-size: 11px;
-        color: #8a6c78;
-    }
-
-
-    /* =========================
-       CHATROOM
-    ========================= */
-
-    .chat-card {
-        background: #ffffff;
-        border: 1px solid #f0dce6;
-        border-radius: 16px;
-        padding: 12px;
-
-        box-shadow: 0 2px 10px rgba(80, 40, 60, 0.07);
-    }
-
-    .chat-header {
-        text-align: center;
-        margin-bottom: 8px;
-    }
-
-    .chat-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #633f4d;
-    }
-
-    .online-count {
-        margin-top: 3px;
-        font-size: 11px;
-        color: #2f9e58;
-        font-weight: bold;
-    }
-
-
-    /* =========================
-       TERMS
-    ========================= */
-
-    .chat-terms {
-        margin: 8px 0 10px;
-
-        border: 1px solid #f0dce6;
-        border-radius: 10px;
-
-        background: #fff7fb;
-        font-size: 11px;
-    }
-
-    .chat-terms summary {
-        cursor: pointer;
-        padding: 8px 9px;
-        color: #765362;
-        font-weight: bold;
-    }
-
-    .terms-content {
-        padding: 0 10px 10px;
-        line-height: 1.5;
-        color: #765362;
-    }
-
-
-    /* =========================
-       FIREBASE ERROR
-    ========================= */
-
-    #firebaseError {
-        display: none;
-
-        margin-bottom: 9px;
-        padding: 8px 9px;
-
-        border-radius: 9px;
-        border: 1px solid #e8b7b7;
-
-        background: #fff1f1;
-        color: #9b3333;
-
-        font-size: 11px;
-        line-height: 1.4;
-    }
-
-
-    /* =========================
-       CHAT MESSAGES
-    ========================= */
-
-    #messages {
-        height: 300px;
-        overflow-y: auto;
-
-        padding: 9px;
-
-        background: #fffafd;
-        border: 1px solid #f0dce6;
-        border-radius: 11px;
-
-        margin-bottom: 9px;
-    }
-
-    .message-row {
-        display: flex;
-        margin-bottom: 7px;
-    }
-
-    .message-row.mine {
-        justify-content: flex-end;
-    }
-
-    .message-row.other {
-        justify-content: flex-start;
-    }
-
-    .message-bubble {
-        max-width: 78%;
-
-        padding: 7px 9px;
-
-        border-radius: 12px;
-
-        font-size: 12px;
-        line-height: 1.4;
-
-        word-wrap: break-word;
-        overflow-wrap: anywhere;
-    }
-
-    .message-row.other .message-bubble {
-        background: #ffffff;
-        border: 1px solid #f0dce6;
-        color: #4a3540;
-        border-bottom-left-radius: 4px;
-    }
-
-    .message-row.mine .message-bubble {
-        background: #f8dce9;
-        color: #4a3540;
-        border-bottom-right-radius: 4px;
-    }
-
-    .message-name {
-        font-size: 10px;
-        font-weight: bold;
-        margin-bottom: 2px;
-        color: #8a5a6c;
-    }
-
-    .message-text {
-        white-space: pre-wrap;
-    }
-
-
-    /* =========================
-       INPUT
-    ========================= */
-
-    .nickname-row {
-        margin-bottom: 7px;
-    }
-
-    .nickname-input,
-    .message-input {
-        width: 100%;
-
-        border: 1px solid #e8d3dd;
-        border-radius: 10px;
-
-        padding: 9px;
-
-        background: #ffffff;
-        color: #3a2630;
-
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-
-        outline: none;
-    }
-
-    .nickname-input:focus,
-    .message-input:focus {
-        border-color: #d92f72;
-    }
-
-    .message-row-input {
-        display: flex;
-        gap: 7px;
-        align-items: flex-end;
-    }
-
-    .message-input {
-        resize: none;
-        min-height: 40px;
-        max-height: 100px;
-    }
-
-    .send-button {
-        flex: 0 0 auto;
-
-        border: 0;
-        border-radius: 10px;
-
-        padding: 10px 13px;
-
-        background: #d92f72;
-        color: #ffffff;
-
-        font-size: 12px;
-        font-weight: bold;
-
-        cursor: pointer;
-    }
-
-    .send-button:disabled {
-        opacity: 0.55;
-        cursor: not-allowed;
-    }
-
-    .input-info {
-        margin-top: 5px;
-        font-size: 10px;
-        color: #927582;
-        text-align: right;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-        text-align: center;
-        margin-top: 22px;
-
-        color: #987b87;
-        font-size: 10px;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 600px) {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ruang Cewek — Curhat, Review Produk & Chatroom | CewekPedia</title>
+
+    <meta
+        name="description"
+        content="Ruang Cewek di CewekPedia adalah tempat untuk berbagi cerita, curhat, review produk, dan ngobrol bersama komunitas wanita."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <link
+        rel="canonical"
+        href="https://cewekpedia.com/ruangcewek/"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff7fb;
+            font-family: Arial, sans-serif;
+            color: #3a2630;
+        }
 
         body {
-            padding: 14px 9px 25px;
+            padding: 18px 12px 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
         }
 
         .header h1 {
-            font-size: 23px;
+            margin: 0;
+            color: #d92f72;
+            font-size: 25px;
         }
 
+        .header p {
+            margin: 6px 0 0;
+            color: #765362;
+            font-size: 13px;
+        }
+
+        .seo-intro {
+            margin: 12px auto 0;
+            max-width: 600px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #765362;
+        }
+
+
+        /* =========================
+           FEATURE CARDS
+        ========================== */
+
         .feature-grid {
-            gap: 8px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
         }
 
         .feature-card {
-            padding: 14px 8px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+
+            background: #ffffff;
+            border: 1px solid #f0dce6;
+            border-radius: 14px;
+
+            padding: 16px 10px;
+
+            color: #633f4d;
+
+            box-shadow: 0 2px 9px rgba(80, 40, 60, 0.06);
+
+            transition: 0.2s;
         }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .feature-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .feature-desc {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #8a6c78;
+        }
+
+
+        /* =========================
+           CHATROOM
+        ========================== */
+
+        .chat-card {
+            background: #ffffff;
+            border: 1px solid #f0dce6;
+            border-radius: 16px;
+            padding: 12px;
+
+            box-shadow: 0 2px 10px rgba(80, 40, 60, 0.07);
+        }
+
+        .chat-header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .chat-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #633f4d;
+        }
+
+        .online-count {
+            margin-top: 3px;
+            font-size: 11px;
+            color: #2f9e58;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           TERMS
+        ========================== */
+
+        .chat-terms {
+            margin: 8px 0 10px;
+
+            border: 1px solid #f0dce6;
+            border-radius: 10px;
+
+            background: #fff7fb;
+            font-size: 11px;
+        }
+
+        .chat-terms summary {
+            cursor: pointer;
+            padding: 8px 9px;
+            color: #765362;
+            font-weight: bold;
+        }
+
+        .terms-content {
+            padding: 0 10px 10px;
+            line-height: 1.5;
+            color: #765362;
+        }
+
+
+        /* =========================
+           FIREBASE ERROR
+        ========================== */
+
+        #firebaseError {
+            display: none;
+
+            margin-bottom: 9px;
+            padding: 8px 9px;
+
+            border-radius: 9px;
+            border: 1px solid #e8b7b7;
+
+            background: #fff1f1;
+            color: #9b3333;
+
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           CHAT MESSAGES
+        ========================== */
 
         #messages {
             height: 300px;
+            overflow-y: auto;
+
+            padding: 9px;
+
+            background: #fffafd;
+            border: 1px solid #f0dce6;
+            border-radius: 11px;
+
+            margin-bottom: 9px;
+        }
+
+        .message-row {
+            display: flex;
+            margin-bottom: 7px;
+        }
+
+        .message-row.mine {
+            justify-content: flex-end;
+        }
+
+        .message-row.other {
+            justify-content: flex-start;
         }
 
         .message-bubble {
-            max-width: 84%;
+            max-width: 78%;
+
+            padding: 7px 9px;
+
+            border-radius: 12px;
+
+            font-size: 12px;
+            line-height: 1.4;
+
+            word-wrap: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .message-row.other .message-bubble {
+            background: #ffffff;
+            border: 1px solid #f0dce6;
+            color: #4a3540;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-row.mine .message-bubble {
+            background: #f8dce9;
+            color: #4a3540;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-name {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: #8a5a6c;
+        }
+
+        .message-text {
+            white-space: pre-wrap;
+        }
+
+
+        /* =========================
+           INPUT
+        ========================== */
+
+        .nickname-row {
+            margin-bottom: 7px;
+        }
+
+        .nickname-input,
+        .message-input {
+            width: 100%;
+
+            border: 1px solid #e8d3dd;
+            border-radius: 10px;
+
+            padding: 9px;
+
+            background: #ffffff;
+            color: #3a2630;
+
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+
+            outline: none;
+        }
+
+        .nickname-input:focus,
+        .message-input:focus {
+            border-color: #d92f72;
+        }
+
+        .message-row-input {
+            display: flex;
+            gap: 7px;
+            align-items: flex-end;
+        }
+
+        .message-input {
+            resize: none;
+            min-height: 40px;
+            max-height: 100px;
         }
 
         .send-button {
-            padding: 10px 11px;
+            flex: 0 0 auto;
+
+            border: 0;
+            border-radius: 10px;
+
+            padding: 10px 13px;
+
+            background: #d92f72;
+            color: #ffffff;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            cursor: pointer;
         }
-    }
-</style>
 
-</head><body><div class="container"><!-- =========================
-     HEADER
-========================== -->
+        .send-button:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
 
-<div class="header">
+        .input-info {
+            margin-top: 5px;
+            font-size: 10px;
+            color: #927582;
+            text-align: right;
+        }
 
-    <h1>💬 RUANG CEWEK</h1>
 
-    <p>
-        Cerita • Berbagi • Ngobrol ❤️
-    </p>
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            margin-top: 22px;
+
+            color: #987b87;
+            font-size: 10px;
+        }
+
+        footer a {
+            color: #a65379;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 14px 9px 25px;
+            }
+
+            .header h1 {
+                font-size: 23px;
+            }
+
+            .feature-grid {
+                gap: 8px;
+            }
+
+            .feature-card {
+                padding: 14px 8px;
+            }
+
+            #messages {
+                height: 300px;
+            }
+
+            .message-bubble {
+                max-width: 84%;
+            }
+
+            .send-button {
+                padding: 10px 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="header">
+
+        <h1>💬 RUANG CEWEK</h1>
+
+        <p>
+            Cerita • Berbagi • Ngobrol ❤️
+        </p>
+
+        <p class="seo-intro">
+            Ruang Cewek adalah tempat untuk berbagi cerita,
+            curhat, pengalaman menggunakan produk, dan ngobrol
+            bersama pengunjung CewekPedia.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         FEATURE MENU
+    ========================== -->
+
+    <div class="feature-grid">
+
+        <a
+            href="curhat.html"
+            class="feature-card">
+
+            <div class="feature-icon">
+                💭
+            </div>
+
+            <div class="feature-title">
+                Curhat
+            </div>
+
+            <div class="feature-desc">
+                Ceritakan apa yang kamu rasakan
+            </div>
+
+        </a>
+
+
+        <a
+            href="reviewproduk.html"
+            class="feature-card">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <div class="feature-title">
+                Review Produk
+            </div>
+
+            <div class="feature-desc">
+                Bagikan pengalamanmu
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         CHATROOM
+    ========================== -->
+
+    <div class="chat-card">
+
+        <div class="chat-header">
+
+            <div class="chat-title">
+                🟢 Chatroom
+            </div>
+
+            <div
+                id="onlineCount"
+                class="online-count">
+
+                🟢 0 online
+
+            </div>
+
+        </div>
+
+
+        <!-- KETENTUAN -->
+
+        <details class="chat-terms">
+
+            <summary>
+                ⚠️ Ketentuan Chat — klik di sini
+            </summary>
+
+            <div class="terms-content">
+
+                <strong>Ketentuan Chatroom</strong>
+
+                <br><br>
+
+                Chatroom ini merupakan ruang komunikasi
+                antar pengguna. Setiap pengguna bertanggung
+                jawab atas isi pesan yang mereka kirim.
+
+                <br><br>
+
+                Jangan membagikan data pribadi, melakukan
+                penipuan, pelecehan, ancaman, spam, atau
+                aktivitas yang melanggar hukum.
+
+                <br><br>
+
+                Pengelola berhak menghapus pesan atau
+                membatasi akses pengguna apabila ditemukan
+                pelanggaran.
+
+            </div>
+
+        </details>
+
+
+        <!-- FIREBASE ERROR -->
+
+        <div id="firebaseError"></div>
+
+
+        <!-- MESSAGES -->
+
+        <div id="messages"></div>
+
+
+        <!-- NICKNAME -->
+
+        <div class="nickname-row">
+
+            <input
+                id="nickname"
+                class="nickname-input"
+                type="text"
+                maxlength="20"
+                placeholder="Nama panggilan (maks. 20 karakter)"
+                autocomplete="off">
+
+        </div>
+
+
+        <!-- MESSAGE INPUT -->
+
+        <div class="message-row-input">
+
+            <textarea
+                id="messageInput"
+                class="message-input"
+                maxlength="300"
+                rows="1"
+                placeholder="Tulis pesan..."
+                autocomplete="off"></textarea>
+
+            <button
+                id="sendButton"
+                class="send-button">
+
+                Kirim
+
+            </button>
+
+        </div>
+
+
+        <div class="input-info">
+            Maks. 300 karakter • Enter = kirim • Shift+Enter = baris baru
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        © CewekPedia — Ruang Cewek ❤️
+
+        <div style="margin-top:8px;">
+
+            <a href="../index.html">
+                🏠 Beranda CewekPedia
+            </a>
+
+            &nbsp;•&nbsp;
+
+            <a href="../ruanglawak/">
+                😂 Ruang Lawak
+            </a>
+
+        </div>
+
+    </footer>
 
 </div>
 
 
-<!-- =========================
-     FEATURE MENU
-========================== -->
-
-<div class="feature-grid">
-
-    <a
-        href="curhat.html"
-        class="feature-card">
-
-        <div class="feature-icon">
-            💭
-        </div>
-
-        <div class="feature-title">
-            Curhat
-        </div>
-
-        <div class="feature-desc">
-            Ceritakan apa yang kamu rasakan
-        </div>
-
-    </a>
-
-
-    <a
-        href="reviewproduk.html"
-        class="feature-card">
-
-        <div class="feature-icon">
-            ⭐
-        </div>
-
-        <div class="feature-title">
-            Review Produk
-        </div>
-
-        <div class="feature-desc">
-            Bagikan pengalamanmu
-        </div>
-
-    </a>
-
-</div>
-
-
-<!-- =========================
-     CHATROOM
-========================== -->
-
-<div class="chat-card">
-
-
-    <div class="chat-header">
-
-        <div class="chat-title">
-            🟢 Chatroom
-        </div>
-
-        <div
-            id="onlineCount"
-            class="online-count">
-
-            🟢 0 online
-
-        </div>
-
-    </div>
-
-
-    <!-- KETENTUAN -->
-
-    <details class="chat-terms">
-
-        <summary>
-            ⚠️ Ketentuan Chat — klik di sini
-        </summary>
-
-        <div class="terms-content">
-
-            <strong>Ketentuan Chatroom</strong>
-
-            <br><br>
-
-            Chatroom ini merupakan ruang komunikasi
-            antar pengguna. Setiap pengguna bertanggung
-            jawab atas isi pesan yang mereka kirim.
-
-            <br><br>
-
-            Jangan membagikan data pribadi, melakukan
-            penipuan, pelecehan, ancaman, spam, atau
-            aktivitas yang melanggar hukum.
-
-            <br><br>
-
-            Pengelola berhak menghapus pesan atau
-            membatasi akses pengguna apabila ditemukan
-            pelanggaran.
-
-        </div>
-
-    </details>
-
-
-    <!-- FIREBASE ERROR -->
-
-    <div id="firebaseError"></div>
-
-
-    <!-- MESSAGES -->
-
-    <div id="messages"></div>
-
-
-    <!-- NICKNAME -->
-
-    <div class="nickname-row">
-
-        <input
-            id="nickname"
-            class="nickname-input"
-            type="text"
-            maxlength="20"
-            placeholder="Nama panggilan (maks. 20 karakter)"
-            autocomplete="off">
-
-    </div>
-
-
-    <!-- MESSAGE INPUT -->
-
-    <div class="message-row-input">
-
-        <textarea
-            id="messageInput"
-            class="message-input"
-            maxlength="300"
-            rows="1"
-            placeholder="Tulis pesan..."
-            autocomplete="off"></textarea>
-
-        <button
-            id="sendButton"
-            class="send-button">
-
-            Kirim
-
-        </button>
-
-    </div>
-
-
-    <div class="input-info">
-        Maks. 300 karakter • Enter = kirim • Shift+Enter = baris baru
-    </div>
-
-
-</div>
-
-
-<footer>
-    © CewekPedia — Ruang Cewek ❤️
-</footer>
-
-</div><!-- ==================================================
+<!-- ==================================================
      FIREBASE
-================================================== --><script type="module">
+================================================== -->
+
+<script type="module">
 
     import {
         initializeApp
@@ -584,7 +648,7 @@
     const firebaseConfig = {
 
         apiKey:
-            "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+            "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926i8O0",
 
         authDomain:
             "ruang-cewek.firebaseapp.com",
@@ -1092,4 +1156,7 @@
         }
     );
 
-</script></body></html>
+</script>
+
+</body>
+</html>
