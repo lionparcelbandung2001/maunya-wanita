@@ -4,11 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Review Produk ⭐ | Ruang Cewek</title>
+  <title>Detail Review Produk | Ruang Cewek - CewekPedia</title>
 
   <meta
+    id="metaDescription"
     name="description"
-    content="Baca review produk dari pengguna Ruang Cewek."
+    content="Baca detail review produk, makanan, dan penginapan dari pengguna Ruang Cewek di CewekPedia."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    id="canonicalUrl"
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/review-detail.html"
   >
 
   <style>
@@ -112,11 +121,36 @@
       font-weight: bold;
     }
 
+    .seo-links {
+      margin-top: 25px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .seo-links strong {
+      color: #d92f72;
+    }
+
+    .seo-links a {
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       margin-top: 25px;
       color: #999;
       font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer a {
+      color: #d92f72;
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
@@ -159,6 +193,12 @@
 
   <footer>
     © CewekPedia — Ruang Cewek ❤️
+    <br>
+    <a href="index.html">Ruang Cewek</a>
+    ·
+    <a href="reviewproduk.html">Review Produk</a>
+    ·
+    <a href="../index.html">CewekPedia</a>
   </footer>
 
 </div>
@@ -225,6 +265,12 @@
 
   const content =
     document.getElementById("content");
+
+  const metaDescription =
+    document.getElementById("metaDescription");
+
+  const canonicalUrl =
+    document.getElementById("canonicalUrl");
 
 
   /* =========================
@@ -379,11 +425,15 @@
 
   function renderReview(review) {
 
-    const title =
-      escapeHTML(
+    const rawTitle =
+      String(
         review.title ||
         "Review Produk"
-      );
+      ).trim();
+
+
+    const title =
+      escapeHTML(rawTitle);
 
 
     const category =
@@ -400,11 +450,15 @@
       );
 
 
-    const text =
-      escapeHTML(
+    const rawText =
+      String(
         review.text ||
         ""
-      );
+      ).trim();
+
+
+    const text =
+      escapeHTML(rawText);
 
 
     let date = "";
@@ -427,9 +481,42 @@
     }
 
 
+    /* =========================
+       DYNAMIC SEO
+       ========================= */
+
     document.title =
-      title +
-      " ⭐ | Review Produk | Ruang Cewek";
+      rawTitle +
+      " ⭐ | Review Produk | Ruang Cewek - CewekPedia";
+
+
+    const cleanDescription =
+      rawText
+        .replace(/\s+/g, " ")
+        .slice(0, 155);
+
+
+    if (cleanDescription) {
+
+      metaDescription.setAttribute(
+        "content",
+        "Review " +
+        rawTitle +
+        " dari pengguna Ruang Cewek di CewekPedia. " +
+        cleanDescription
+      );
+
+    }
+
+
+    const canonical =
+      getCanonicalReviewURL(reviewId);
+
+
+    canonicalUrl.setAttribute(
+      "href",
+      canonical
+    );
 
 
     content.innerHTML = `
@@ -460,7 +547,7 @@
         </h2>
 
         <div class="comment-info">
-          Pernah mencoba produk ini?
+          Pernah mencoba produk atau tempat ini?
           Kamu bisa ikut berbagi pengalaman
           atau ngobrol di bawah ❤️
         </div>
@@ -468,12 +555,47 @@
         <div
           id="echothread"
           data-api-key="${ECHOTHREAD_API_KEY}"
-          data-page-url="${getCanonicalReviewURL(reviewId)}"
+          data-page-url="${canonical}"
           data-identifier="${escapeHTML(reviewId)}"
           data-page-title="${title}"
         ></div>
 
       </article>
+
+
+      <div class="seo-links">
+
+        <strong>Jelajahi Ruang Cewek</strong>
+
+        <br>
+
+        Temukan review produk lainnya,
+        baca curhat dari pengguna,
+        atau kembali ke halaman utama
+        Ruang Cewek di CewekPedia.
+
+        <br><br>
+
+        ⭐
+        <a href="reviewproduk.html">
+          Lihat Review Produk Lainnya
+        </a>
+
+        <br>
+
+        💬
+        <a href="curhat.html">
+          Baca Curhat & Cerita Wanita
+        </a>
+
+        <br>
+
+        ❤️
+        <a href="index.html">
+          Kembali ke Ruang Cewek
+        </a>
+
+      </div>
 
     `;
 
