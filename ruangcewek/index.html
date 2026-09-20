@@ -547,7 +547,6 @@
     const messageInput = document.getElementById("messageInput");
     const sendButton = document.getElementById("sendButton");
     const chatBox = document.getElementById("chatBox");
-    const emptyChat = document.getElementById("emptyChat");
     const onlineCount = document.getElementById("onlineCount");
     const firebaseError = document.getElementById("firebaseError");
 
@@ -555,7 +554,6 @@
     let currentUser = null;
     let currentNickname = "";
     let messagesRef = null;
-    let presenceRef = null;
 
 
     /* =========================================================
@@ -578,6 +576,7 @@
     nicknameInput.value = savedNickname;
     currentNickname = savedNickname.trim();
 
+
     function updateChatState() {
 
       const ready =
@@ -591,7 +590,8 @@
 
     saveNameButton.addEventListener("click", () => {
 
-      const name = nicknameInput.value.trim();
+      const name =
+        nicknameInput.value.trim();
 
       if (!name) {
         alert("Tulis nama panggilan dulu ya ❤️");
@@ -641,13 +641,17 @@
       const messages = [];
 
       data.forEach((item) => {
+
         messages.push({
           id: item.key,
           ...item.val()
         });
+
       });
 
+
       messages.sort((a, b) => {
+
         const timeA =
           typeof a.timestamp === "number"
             ? a.timestamp
@@ -659,6 +663,7 @@
             : 0;
 
         return timeA - timeB;
+
       });
 
 
@@ -680,11 +685,13 @@
           currentUser &&
           message.uid === currentUser.uid;
 
+
         const wrapper =
           document.createElement("div");
 
         wrapper.className =
-          "message" + (isMine ? " mine" : "");
+          "message" +
+          (isMine ? " mine" : "");
 
 
         const bubble =
@@ -715,6 +722,7 @@
           document.createElement("div");
 
         time.className = "time";
+
 
         if (
           typeof message.timestamp === "number"
@@ -747,6 +755,7 @@
 
       chatBox.scrollTop =
         chatBox.scrollHeight;
+
     }
 
 
@@ -757,12 +766,16 @@
     async function sendMessage() {
 
       if (!currentUser) {
-        showError("Belum terhubung ke Firebase.");
+        showError(
+          "Belum terhubung ke Firebase."
+        );
         return;
       }
 
       if (!currentNickname) {
-        alert("Simpan nama panggilan dulu ya ❤️");
+        alert(
+          "Simpan nama panggilan dulu ya ❤️"
+        );
         nicknameInput.focus();
         return;
       }
@@ -775,7 +788,9 @@
 
 
       if (text.length > 300) {
-        alert("Pesan maksimal 300 karakter.");
+        alert(
+          "Pesan maksimal 300 karakter."
+        );
         return;
       }
 
@@ -785,12 +800,16 @@
         const newMessage =
           push(messagesRef);
 
-        await set(newMessage, {
-          uid: currentUser.uid,
-          nickname: currentNickname,
-          text: text,
-          timestamp: serverTimestamp()
-        });
+        await set(
+          newMessage,
+          {
+            uid: currentUser.uid,
+            nickname: currentNickname,
+            text: text,
+            timestamp: serverTimestamp()
+          }
+        );
+
 
         messageInput.value = "";
         messageInput.focus();
@@ -861,9 +880,7 @@
         messagesRef,
         (snapshot) => {
 
-          renderMessages(
-            snapshot
-          );
+          renderMessages(snapshot);
 
         },
         (error) => {
@@ -916,63 +933,122 @@
          PRESENCE / ONLINE COUNT
          ----------------------------------------- */
 
-      onAuthStateChanged(
-        auth,
-        async (user) => {
-
-          if (!user) return;
-
-
-          presenceRef =
-            ref(
-              db,
-              "presence/" + user.uid
-            );
-
-
-          try {
-
-            await onDisconnect(
-              presenceRef
-            ).remove();
-
-
-            await set(
-              presenceRef,
-              {
-                nickname:
-                  currentNickname || "Pengunjung",
-                timestamp:
-                  serverTimestamp()
-              }
-            );
-
-          } catch (error) {
-
-            console.error(
-              "Presence Error:",
-              error
-            );
-
-          }
-
-        }
-      );
-
+      const connectedRef =
+        ref(db, ".info/connected");
 
       const allPresenceRef =
         ref(db, "presence");
 
 
+      /*
+       * Setiap tab / koneksi mempunyai ID
+       * presence sendiri.
+       */
+      onAuthStateChanged(
+        auth,
+        (user) => {
+
+          if (!user) return;
+
+
+          onValue(
+            connectedRef,
+            async (snapshot) => {
+
+              const connected =
+                snapshot.val() === true;
+
+
+              if (!connected) {
+                onlineCount.textContent =
+                  "🟢 0 online";
+                return;
+              }
+
+
+              /*
+               * Buat ID koneksi unik.
+               */
+              const connectionRef =
+                push(
+                  ref(
+                    db,
+                    "presence/" + user.uid
+                  )
+                );
+
+
+              try {
+
+                /*
+                 * Saat koneksi terputus,
+                 * Firebase otomatis menghapus
+                 * data presence ini.
+                 */
+                await onDisconnect(
+                  connectionRef
+                ).remove();
+
+
+                /*
+                 * Setelah onDisconnect terpasang,
+                 * baru tandai sebagai online.
+                 */
+                await set(
+                  connectionRef,
+                  {
+                    uid: user.uid,
+                    nickname:
+                      currentNickname ||
+                      "Pengunjung",
+                    timestamp:
+                      serverTimestamp()
+                  }
+                );
+
+              } catch (error) {
+
+                console.error(
+                  "Presence Error:",
+                  error
+                );
+
+                showError(
+                  error.message ||
+                  "Status online gagal diperbarui."
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+      /*
+       * Hitung seluruh koneksi aktif.
+       */
       onValue(
         allPresenceRef,
         (snapshot) => {
 
           let count = 0;
 
-          snapshot.forEach(() => {
-            count++;
-          });
+
+          snapshot.forEach(
+            (userSnapshot) => {
+
+              userSnapshot.forEach(
+                () => {
+                  count++;
+                }
+              );
+
+            }
+          );
+
 
           onlineCount.textContent =
             "🟢 " + count + " online";
@@ -983,6 +1059,11 @@
           console.error(
             "Online count error:",
             error
+          );
+
+          showError(
+            error.message ||
+            "Jumlah online tidak dapat dibaca."
           );
 
         }
