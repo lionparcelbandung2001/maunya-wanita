@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title> YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Healing, & Ruang Curhat</title>
+    <title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Pernikahan, Kuliner & Healing</title>
 
     <meta
         name="description"
-        content="Pusat informasi dan rekomendasi kebutuhan wanita: kecantikan, kuliner, tempat healing, WO pernikahan, hingga ruang curhat anonim."
+        content="CewekPedia menyediakan informasi dan rekomendasi kebutuhan wanita: kecantikan, pernikahan, kuliner, belanja, tempat healing, Ruang Cewek, hingga Ruang Lawak."
     >
 
     <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://cewekpedia.com/">
 
     <link rel="stylesheet" href="style.css">
 
@@ -22,8 +24,7 @@
            MOBILE HOMEPAGE
            Memadatkan 6 menu agar lebih banyak
            terlihat dalam satu layar.
-           Tidak mengubah top bar / music bar
-           karena file ini hanya halaman homepage.
+           Tidak mengubah top bar / music bar.
            ========================================= */
 
         @media (max-width: 600px) {
@@ -95,6 +96,77 @@
                 padding-bottom: 10px;
                 font-size: 11px;
             }
+
+            .city-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 7px;
+            }
+
+            .community-links {
+                grid-template-columns: 1fr;
+                gap: 7px;
+            }
+        }
+
+        /* =========================================
+           INTERNAL LINK SECTIONS
+           ========================================= */
+
+        .city-section,
+        .community-section {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .city-section h2,
+        .community-section h2 {
+            margin-bottom: 6px;
+        }
+
+        .city-section p,
+        .community-section p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .city-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .city-link,
+        .community-link {
+            display: block;
+            padding: 10px;
+            border-radius: 12px;
+            background: #fff;
+            color: inherit;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid rgba(180, 150, 165, 0.18);
+            box-sizing: border-box;
+        }
+
+        .city-link:hover,
+        .community-link:hover {
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .community-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .community-link strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .community-link span {
+            font-size: 12px;
         }
     </style>
 
@@ -138,7 +210,7 @@
         </h2>
 
         <p>
-            TEMUKAN VENDOR KECANTIKAN,PERNIKAHAN,KULINER
+            TEMUKAN VENDOR KECANTIKAN, PERNIKAHAN, KULINER
             DAN TEMPAT HANGOUT FAVORITMU DISINI.
         </p>
 
@@ -150,7 +222,8 @@
          6 KOTAK UTAMA — GRID 2 x 3
          ========================================= -->
 
-    <section class="category-grid">
+    <section class="category-grid"
+        aria-label="Kategori utama CewekPedia">
 
 
         <!-- PENGEN CANTIK -->
@@ -158,7 +231,10 @@
         <div
             id="cantik"
             class="category"
-            onclick="chooseCategory('Pengen Cantik')">
+            onclick="chooseCategory('Pengen Cantik')"
+            role="link"
+            tabindex="0"
+            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Cantik')}">
 
             <div class="icon">
                 💄
@@ -182,7 +258,10 @@
         <div
             id="nikah"
             class="category"
-            onclick="chooseCategory('Pengen Nikah')">
+            onclick="chooseCategory('Pengen Nikah')"
+            role="link"
+            tabindex="0"
+            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Nikah')}">
 
             <div class="icon">
                 💍
@@ -206,7 +285,10 @@
         <div
             id="makan"
             class="category"
-            onclick="chooseCategory('Pengen Makan & Belanja')">
+            onclick="chooseCategory('Pengen Makan & Belanja')"
+            role="link"
+            tabindex="0"
+            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Makan & Belanja')}">
 
             <div class="icon">
                 🛍️
@@ -230,7 +312,10 @@
         <div
             id="healing"
             class="category"
-            onclick="chooseCategory('Pengen Jalan-jalan / Healing')">
+            onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
+            role="link"
+            tabindex="0"
+            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Jalan-jalan / Healing')}">
 
             <div class="icon">
                 🌴
@@ -299,6 +384,154 @@
     </section>
 
 
+
+    <!-- =========================================
+         JELAJAHI KOTA
+         Internal linking ke 6 halaman kota SEO
+         ========================================= -->
+
+    <section class="city-section">
+
+        <h2>
+            Jelajahi CewekPedia di Kotamu 📍
+        </h2>
+
+        <p>
+            Temukan rekomendasi kecantikan, pernikahan,
+            kuliner, belanja, wisata, dan hiburan di berbagai kota.
+        </p>
+
+        <nav
+            class="city-links"
+            aria-label="Halaman kota CewekPedia">
+
+            <a class="city-link" href="bandung/">
+                Bandung
+            </a>
+
+            <a class="city-link" href="jakarta/">
+                Jakarta
+            </a>
+
+            <a class="city-link" href="medan/">
+                Medan
+            </a>
+
+            <a class="city-link" href="makassar/">
+                Makassar
+            </a>
+
+            <a class="city-link" href="semarang/">
+                Semarang
+            </a>
+
+            <a class="city-link" href="surabaya/">
+                Surabaya
+            </a>
+
+        </nav>
+
+    </section>
+
+
+
+    <!-- =========================================
+         RUANG KOMUNITAS
+         Tidak masuk ke alur kota / katalog.
+         ========================================= -->
+
+    <section class="community-section">
+
+        <h2>
+            Ruang Komunitas CewekPedia 💕
+        </h2>
+
+        <p>
+            Selain katalog, kamu juga bisa membaca cerita,
+            berbagi pengalaman, review produk, dan menikmati hiburan.
+        </p>
+
+        <nav
+            class="community-links"
+            aria-label="Ruang komunitas CewekPedia">
+
+            <a
+                class="community-link"
+                href="ruangcewek/">
+
+                <strong>💬 Ruang Cewek</strong>
+
+                <span>
+                    Curhat, Review Produk & Chatroom
+                </span>
+
+            </a>
+
+            <a
+                class="community-link"
+                href="ruangcewek/curhat.html">
+
+                <strong>💭 Curhat</strong>
+
+                <span>
+                    Baca cerita dan pengalaman wanita
+                </span>
+
+            </a>
+
+            <a
+                class="community-link"
+                href="ruangcewek/reviewproduk.html">
+
+                <strong>⭐ Review Produk</strong>
+
+                <span>
+                    Pengalaman menggunakan produk & tempat
+                </span>
+
+            </a>
+
+            <a
+                class="community-link"
+                href="ruanglawak/">
+
+                <strong>😂 Ruang Lawak</strong>
+
+                <span>
+                    Cerita lucu, receh, dan hiburan
+                </span>
+
+            </a>
+
+            <a
+                class="community-link"
+                href="ruanglawak/kirimcerita.html">
+
+                <strong>✍️ Kirim Cerita</strong>
+
+                <span>
+                    Bagikan cerita lucu kamu
+                </span>
+
+            </a>
+
+            <a
+                class="community-link"
+                href="ruangcewek/kirimreview.html">
+
+                <strong>📝 Kirim Review</strong>
+
+                <span>
+                    Bagikan pengalaman produk atau tempat
+                </span>
+
+            </a>
+
+        </nav>
+
+    </section>
+
+
 </main>
 
 
@@ -328,7 +561,7 @@
         •
 
         <a
-            href="kebijakan-privasi.html"
+            href="privacy.html"
             style="color: #927985; text-decoration: none; font-weight: bold;">
             Kebijakan Privasi
         </a>
@@ -336,7 +569,7 @@
         •
 
         <a
-            href="syarat-ketentuan.html"
+            href="ketentuan.html"
             style="color: #927985; text-decoration: none; font-weight: bold;">
             Syarat & Ketentuan
         </a>
