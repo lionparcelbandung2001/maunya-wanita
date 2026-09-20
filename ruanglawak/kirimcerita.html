@@ -1,10 +1,36 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kirim Cerita 😂 | Ruang Lawak — CewekPedia</title><meta name="description"
-content="Kirim cerita lucu, receh, dan kejadian kocak kamu ke Ruang Lawak CewekPedia.">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+  Kirim Cerita Lucu & Kocak | Ruang Lawak - CewekPedia
+</title>
+
+<meta
+  name="description"
+  content="Kirim cerita lucu, receh, kejadian kocak, dan pengalaman sehari-hari kamu ke Ruang Lawak CewekPedia. Cerita akan dimoderasi sebelum dipublikasikan."
+>
+
+<meta
+  name="robots"
+  content="index, follow"
+>
+
+<link
+  rel="canonical"
+  href="https://cewekpedia.com/ruanglawak/kirimcerita.html"
+>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -35,6 +61,20 @@ header h1{
 header p{
     margin:0;
     color:#765f50;
+}
+
+.intro{
+    background:#fff;
+    border:1px solid #f1dfd0;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:18px;
+    line-height:1.7;
+    color:#5e5048;
+}
+
+.intro strong{
+    color:#d96b2b;
 }
 
 .back{
@@ -137,6 +177,30 @@ button:disabled{
     border-radius:12px;
     background:#fff0f0;
     color:#b34a4a;
+    line-height:1.5;
+}
+
+.related{
+    margin-top:22px;
+    background:#fff;
+    border:1px solid #f1dfd0;
+    border-radius:16px;
+    padding:18px;
+    line-height:1.8;
+    font-size:14px;
+    color:#5e5048;
+}
+
+.related h2{
+    margin:0 0 8px;
+    font-size:19px;
+    color:#d96b2b;
+}
+
+.related a{
+    color:#d96b2b;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 footer{
@@ -144,208 +208,617 @@ footer{
     padding:25px 10px;
     font-size:13px;
     color:#927e70;
+    line-height:1.8;
 }
-</style></head><body><div class="container"><header>
-    <h1>😂 Kirim Cerita</h1>
-    <p>Bikin orang lain ikut ketawa 😆</p>
-</header><a class="back" href="index.html">← Kembali ke Ruang Lawak</a>
 
-<div class="form-box"><form id="storyForm"><label for="title">Judul Cerita</label>
+footer a{
+    color:#d96b2b;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<header>
+
+    <h1>
+        😂 Kirim Cerita
+    </h1>
+
+    <p>
+        Bikin orang lain ikut ketawa 😆
+    </p>
+
+</header>
+
+
+<a
+  class="back"
+  href="index.html"
+>
+    ← Kembali ke Ruang Lawak
+</a>
+
+
+<div class="intro">
+
+    <strong>Punya cerita lucu?</strong>
+
+    Bagikan kejadian receh, pengalaman kocak,
+    atau momen sehari-hari yang menurut kamu
+    bikin ketawa ke Ruang Lawak CewekPedia.
+
+    <br><br>
+
+    Cerita yang dikirim akan melalui moderasi
+    terlebih dahulu sebelum ditampilkan
+    untuk pembaca.
+
+</div>
+
+
+<div class="form-box">
+
+<form id="storyForm">
+
+
+<label for="title">
+    Judul Cerita
+</label>
+
 <input
-id="title"
-type="text"
-maxlength="100"
-required
-placeholder="Contoh: Salah Kirim Chat ke Bos 😭"
-
-«»
+    id="title"
+    type="text"
+    maxlength="100"
+    required
+    placeholder="Contoh: Salah Kirim Chat ke Bos 😭"
+>
 
 <div class="counter">
     <span id="titleCount">0</span>/100
-</div><label for="category">Kategori</label>
-<select id="category" required>
-<option value="">Pilih kategori</option>
-<option value="Kehidupan Sehari-hari">Kehidupan Sehari-hari</option>
-<option value="Keluarga">Keluarga</option>
-<option value="Pertemanan">Pertemanan</option>
-<option value="Percintaan">Percintaan</option>
-<option value="Pekerjaan">Pekerjaan</option>
-<option value="Makanan">Makanan</option>
-<option value="Lainnya">Lainnya</option>
+</div>
+
+
+<label for="category">
+    Kategori
+</label>
+
+<select
+    id="category"
+    required
+>
+
+    <option value="">
+        Pilih kategori
+    </option>
+
+    <option value="Kehidupan Sehari-hari">
+        Kehidupan Sehari-hari
+    </option>
+
+    <option value="Keluarga">
+        Keluarga
+    </option>
+
+    <option value="Pertemanan">
+        Pertemanan
+    </option>
+
+    <option value="Percintaan">
+        Percintaan
+    </option>
+
+    <option value="Pekerjaan">
+        Pekerjaan
+    </option>
+
+    <option value="Makanan">
+        Makanan
+    </option>
+
+    <option value="Lainnya">
+        Lainnya
+    </option>
+
 </select>
 
-<label for="nickname">Nama / Nickname</label>
-<input
-id="nickname"
-type="text"
-maxlength="20"
-placeholder="Nama panggilan"
 
-«»
+<label for="nickname">
+    Nama / Nickname
+</label>
+
+<input
+    id="nickname"
+    type="text"
+    maxlength="20"
+    placeholder="Nama panggilan"
+>
 
 <div class="counter">
     <span id="nicknameCount">0</span>/20
-</div><label class="anonymous">
-    <input type="checkbox" id="anonymous">
+</div>
+
+
+<label class="anonymous">
+
+    <input
+        type="checkbox"
+        id="anonymous"
+    >
+
     Kirim sebagai Anonim
-</label><label for="story">Cerita Kamu</label>
+
+</label>
+
+
+<label for="story">
+    Cerita Kamu
+</label>
 
 <textarea
     id="story"
     maxlength="2000"
     required
     placeholder="Ceritain kejadian lucu kamu di sini 😂"
-></textarea><div class="counter">
+></textarea>
+
+<div class="counter">
     <span id="storyCount">0</span>/2000
-</div><button type="submit" id="submitBtn">
+</div>
+
+
+<button
+    type="submit"
+    id="submitBtn"
+>
     😂 Kirim Cerita
-</button></form><div class="success" id="success">
-    ❤️ Cerita kamu berhasil dikirim!<br>
-    Cerita akan dicek terlebih dahulu sebelum tampil di Ruang Lawak.
-</div><div class="error" id="error"></div><div class="note">
-    🔒 Cerita akan melalui moderasi sebelum dipublikasikan.
-    Jangan memasukkan nomor HP, alamat, password, atau informasi pribadi lainnya.
-</div></div><footer>
+</button>
+
+
+</form>
+
+
+<div
+    class="success"
+    id="success"
+>
+
+    ❤️ Cerita kamu berhasil dikirim!
+
+    <br>
+
+    Cerita akan dicek terlebih dahulu
+    sebelum tampil di Ruang Lawak.
+
+</div>
+
+
+<div
+    class="error"
+    id="error"
+></div>
+
+
+<div class="note">
+
+    🔒 Cerita akan melalui moderasi
+    sebelum dipublikasikan.
+
+    <br>
+
+    Jangan memasukkan nomor HP,
+    alamat, password, atau informasi
+    pribadi lainnya.
+
+</div>
+
+</div>
+
+
+<div class="related">
+
+    <h2>
+        😂 Jelajahi Ruang Lawak
+    </h2>
+
+    Setelah mengirim cerita,
+    kamu bisa kembali membaca berbagai
+    cerita lucu dari pengguna lainnya.
+
+    <br><br>
+
+    😂
+    <a href="index.html">
+        Baca Cerita Lucu di Ruang Lawak
+    </a>
+
+    <br>
+
+    💬
+    <a href="../ruangcewek/">
+        Ruang Cewek — Curhat & Ngobrol
+    </a>
+
+</div>
+
+
+<footer>
+
     © CewekPedia — Ruang Lawak 😂
-</footer></div><script type="module">
+
+    <br>
+
+    <a href="index.html">
+        Ruang Lawak
+    </a>
+
+    ·
+
+    <a href="../index.html">
+        CewekPedia
+    </a>
+
+    ·
+
+    <a href="../ruangcewek/">
+        Ruang Cewek
+    </a>
+
+</footer>
+
+
+</div>
+
+
+<script type="module">
+
 
 import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
 
 import {
+
     getAuth,
     signInAnonymously
+
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
 import {
+
     getDatabase,
     ref,
     push
+
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+/* =========================
+   FIREBASE
+   ========================= */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-    authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "ruang-cewek",
-    storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "300030693884",
-    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+    apiKey:
+        "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain:
+        "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+        "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+        "ruang-cewek",
+
+    storageBucket:
+        "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+        "300030693884",
+
+    appId:
+        "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getDatabase(app);
 
-const form = document.getElementById("storyForm");
-const title = document.getElementById("title");
-const category = document.getElementById("category");
-const nickname = document.getElementById("nickname");
-const story = document.getElementById("story");
-const anonymous = document.getElementById("anonymous");
-const submitBtn = document.getElementById("submitBtn");
+const app =
+    initializeApp(firebaseConfig);
 
-const titleCount = document.getElementById("titleCount");
-const nicknameCount = document.getElementById("nicknameCount");
-const storyCount = document.getElementById("storyCount");
+const auth =
+    getAuth(app);
 
-const success = document.getElementById("success");
-const errorBox = document.getElementById("error");
+const db =
+    getDatabase(app);
 
-title.addEventListener("input",()=>{
-    titleCount.textContent = title.value.length;
-});
 
-nickname.addEventListener("input",()=>{
-    nicknameCount.textContent = nickname.value.length;
-});
+/* =========================
+   ELEMENTS
+   ========================= */
 
-story.addEventListener("input",()=>{
-    storyCount.textContent = story.value.length;
-});
+const form =
+    document.getElementById("storyForm");
 
-anonymous.addEventListener("change",()=>{
-    nickname.disabled = anonymous.checked;
+const title =
+    document.getElementById("title");
 
-    if(anonymous.checked){
-        nickname.value = "";
-        nicknameCount.textContent = "0";
-    }
-});
+const category =
+    document.getElementById("category");
 
-form.addEventListener("submit", async (event)=>{
+const nickname =
+    document.getElementById("nickname");
 
-    event.preventDefault();
+const story =
+    document.getElementById("story");
 
-    success.style.display = "none";
-    errorBox.style.display = "none";
+const anonymous =
+    document.getElementById("anonymous");
 
-    if(!category.value){
-        errorBox.textContent = "😅 Silakan pilih kategori cerita.";
-        errorBox.style.display = "block";
-        return;
-    }
+const submitBtn =
+    document.getElementById("submitBtn");
 
-    if(!anonymous.checked && !nickname.value.trim()){
-        errorBox.textContent = "😅 Isi nickname atau pilih Kirim sebagai Anonim.";
-        errorBox.style.display = "block";
-        return;
-    }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Mengirim...";
+const titleCount =
+    document.getElementById("titleCount");
 
-    try{
+const nicknameCount =
+    document.getElementById("nicknameCount");
 
-        await signInAnonymously(auth);
+const storyCount =
+    document.getElementById("storyCount");
 
-        await push(ref(db,"lawak"),{
 
-            title: title.value.trim(),
+const success =
+    document.getElementById("success");
 
-            category: category.value,
+const errorBox =
+    document.getElementById("error");
 
-            nickname: anonymous.checked
-                ? "Anonim"
-                : nickname.value.trim(),
 
-            text: story.value.trim(),
+/* =========================
+   COUNTERS
+   ========================= */
 
-            timestamp: Date.now(),
+title.addEventListener(
+    "input",
+    () => {
 
-            status: "pending"
-
-        });
-
-        form.reset();
-
-        titleCount.textContent = "0";
-        nicknameCount.textContent = "0";
-        storyCount.textContent = "0";
-
-        nickname.disabled = false;
-
-        success.style.display = "block";
-
-    }catch(error){
-
-        console.error(error);
-
-        errorBox.textContent =
-            "😅 Cerita belum berhasil dikirim. Silakan coba lagi.";
-
-        errorBox.style.display = "block";
-
-    }finally{
-
-        submitBtn.disabled = false;
-        submitBtn.textContent = "😂 Kirim Cerita";
+        titleCount.textContent =
+            title.value.length;
 
     }
+);
 
-});
 
-</script></body>
+nickname.addEventListener(
+    "input",
+    () => {
+
+        nicknameCount.textContent =
+            nickname.value.length;
+
+    }
+);
+
+
+story.addEventListener(
+    "input",
+    () => {
+
+        storyCount.textContent =
+            story.value.length;
+
+    }
+);
+
+
+/* =========================
+   ANONYMOUS
+   ========================= */
+
+anonymous.addEventListener(
+    "change",
+    () => {
+
+        nickname.disabled =
+            anonymous.checked;
+
+
+        if(anonymous.checked){
+
+            nickname.value =
+                "";
+
+            nicknameCount.textContent =
+                "0";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   SUBMIT
+   ========================= */
+
+form.addEventListener(
+    "submit",
+    async (event) => {
+
+        event.preventDefault();
+
+
+        success.style.display =
+            "none";
+
+        errorBox.style.display =
+            "none";
+
+
+        if(!category.value){
+
+            errorBox.textContent =
+                "😅 Silakan pilih kategori cerita.";
+
+            errorBox.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        if(
+            !anonymous.checked &&
+            !nickname.value.trim()
+        ){
+
+            errorBox.textContent =
+                "😅 Isi nickname atau pilih Kirim sebagai Anonim.";
+
+            errorBox.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        if(!title.value.trim()){
+
+            errorBox.textContent =
+                "😅 Silakan isi judul cerita.";
+
+            errorBox.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        if(!story.value.trim()){
+
+            errorBox.textContent =
+                "😅 Silakan isi cerita kamu.";
+
+            errorBox.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        submitBtn.disabled =
+            true;
+
+        submitBtn.textContent =
+            "Mengirim...";
+
+
+        try{
+
+            await signInAnonymously(
+                auth
+            );
+
+
+            await push(
+                ref(db,"lawak"),
+                {
+
+                    title:
+                        title.value.trim(),
+
+                    category:
+                        category.value,
+
+                    nickname:
+                        anonymous.checked
+                        ? "Anonim"
+                        : nickname.value.trim(),
+
+                    text:
+                        story.value.trim(),
+
+                    timestamp:
+                        Date.now(),
+
+                    status:
+                        "pending"
+
+                }
+            );
+
+
+            form.reset();
+
+
+            titleCount.textContent =
+                "0";
+
+            nicknameCount.textContent =
+                "0";
+
+            storyCount.textContent =
+                "0";
+
+
+            nickname.disabled =
+                false;
+
+
+            success.style.display =
+                "block";
+
+
+        }catch(error){
+
+            console.error(error);
+
+
+            errorBox.textContent =
+                "😅 Cerita belum berhasil dikirim. Silakan coba lagi.";
+
+            errorBox.style.display =
+                "block";
+
+
+        }finally{
+
+            submitBtn.disabled =
+                false;
+
+            submitBtn.textContent =
+                "😂 Kirim Cerita";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
 </html>
