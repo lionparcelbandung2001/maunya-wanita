@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rekomendasi Kebutuhan Wanita di Semarang | CewekPedia</title>
+
+  <meta name="description" content="Temukan rekomendasi kebutuhan wanita di Semarang mulai dari salon, skincare, fashion, parfum, wedding organizer, MUA, restoran, mall, hotel, wisata hingga hiburan.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cewekpedia.com/semarang/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff7fb, #fff);
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 15px 20px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: #b85c85;
+      font-size: 30px;
+    }
+
+    h2 {
+      color: #b85c85;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #9f4f74;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+      margin-bottom: 25px;
+    }
+
+    .category {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px;
+      margin: 18px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .subcategory {
+      background: #fff8fc;
+      border-radius: 14px;
+      padding: 15px;
+      margin: 12px 0;
+      border: 1px solid #f5dce8;
+    }
+
+    .subcategory p {
+      margin: 5px 0 12px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .listing {
+      margin: 6px 0;
+      padding: 8px 10px;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .type {
+      color: #999;
+      font-size: 12px;
+    }
+
+    button {
+      border: none;
+      background: #d979a3;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      opacity: .9;
+    }
+
+    .cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .city-link {
+      text-decoration: none;
+      background: #fff;
+      color: #a65379;
+      border: 1px solid #edc9da;
+      padding: 8px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .city-link:hover {
+      background: #fff0f6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #a65379;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .category,
+      .intro {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Rekomendasi Kebutuhan Wanita di Semarang</h1>
+  <p>Temukan berbagai pilihan kecantikan, pernikahan, kuliner, belanja, jalan-jalan, dan hiburan di Semarang ❤️</p>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>CewekPedia Semarang</h2>
+
+    <p>
+      CewekPedia membantu kamu menemukan berbagai kebutuhan wanita
+      di Semarang dalam satu tempat. Mulai dari salon dan skincare,
+      kebutuhan fashion dan parfum, persiapan pernikahan, restoran,
+      tempat belanja, hotel, wisata, hingga tempat hiburan.
+    </p>
+
+    <p>
+      Pilih kategori yang kamu butuhkan dan lihat rekomendasi yang
+      tersedia di Semarang.
+    </p>
+  </section>
+
+  <section>
+    <h2>Rekomendasi Kebutuhan di Semarang</h2>
+    <div id="catalog"></div>
+  </section>
+
+  <section class="intro">
+    <h2>Temukan Rekomendasi di Kota Lain</h2>
+
+    <p>
+      Selain Semarang, CewekPedia juga menyediakan rekomendasi
+      kebutuhan wanita di beberapa kota lainnya.
+    </p>
+
+    <div class="cities">
+      <a class="city-link" href="../bandung/">Bandung</a>
+      <a class="city-link" href="../jakarta/">Jakarta</a>
+      <a class="city-link" href="../medan/">Medan</a>
+      <a class="city-link" href="../makassar/">Makassar</a>
+      <a class="city-link" href="../surabaya/">Surabaya</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>❤️ CewekPedia — Rekomendasi kebutuhan wanita di Semarang</p>
+  <p>
+    <a href="../index.html">Kembali ke Beranda</a>
+  </p>
+</footer>
+
+<script src="../data/semarang.js"></script>
+
+<script>
+  const categoryOrder = [
+    {
+      name: "Pengen Cantik",
+      subs: [
+        "Salon",
+        "Skincare Store",
+        "Fashion",
+        "Parfum"
+      ]
+    },
+    {
+      name: "Pengen Nikah",
+      subs: [
+        "WO",
+        "MUA",
+        "Toko Pengantin"
+      ]
+    },
+    {
+      name: "Pengen Makan & Belanja",
+      subs: [
+        "Restoran & Cafe",
+        "Toko & Mall"
+      ]
+    },
+    {
+      name: "Pengen Jalan-jalan / Healing",
+      subs: [
+        "Hotel & Penginapan",
+        "Wisata",
+        "Hiburan"
+      ]
+    }
+  ];
+
+  function openCatalog(category, subcategory) {
+    localStorage.setItem("mw_category", category);
+    localStorage.setItem("mw_city", "Semarang");
+    localStorage.setItem("mw_subcategory", subcategory);
+
+    window.location.href = "../katalog.html";
+  }
+
+  function renderCatalog() {
+    const container = document.getElementById("catalog");
+
+    if (typeof semarangData === "undefined") {
+      container.innerHTML =
+        "<p>Data Semarang belum dapat dimuat.</p>";
+      return;
+    }
+
+    let html = "";
+
+    categoryOrder.forEach(category => {
+
+      let categoryHTML = "";
+
+      category.subs.forEach(subcategory => {
+
+        const items = semarangData.filter(item =>
+          item.kategori === category.name &&
+          item.subkategori === subcategory
+        );
+
+        if (items.length === 0) return;
+
+        let listings = "";
+
+        items.forEach(item => {
+          listings += `
+            <div class="listing">
+              <strong>${item.nama}</strong>
+              <div class="type">${item.jenis || ""}</div>
+            </div>
+          `;
+        });
+
+        categoryHTML += `
+          <div class="subcategory">
+            <h3>${subcategory}</h3>
+
+            <p>
+              Rekomendasi ${subcategory.toLowerCase()}
+              di Semarang.
+              ${items.length} pilihan tersedia.
+            </p>
+
+            ${listings}
+
+            <button onclick="openCatalog('${category.name}', '${subcategory}')">
+              Lihat katalog ${subcategory} Semarang →
+            </button>
+          </div>
+        `;
+      });
+
+      if (categoryHTML) {
+        html += `
+          <div class="category">
+            <h2>${category.name}</h2>
+            ${categoryHTML}
+          </div>
+        `;
+      }
+    });
+
+    container.innerHTML = html;
+  }
+
+  renderCatalog();
+</script>
+
+</body>
+</html>
