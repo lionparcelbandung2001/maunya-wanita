@@ -54,7 +54,23 @@
   </url>
 
   <url>
+    <loc>https://cewekpedia.com/ruangcewek/kirimcurhat.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/curhat-detail.html</loc>
+  </url>
+
+  <url>
     <loc>https://cewekpedia.com/ruangcewek/reviewproduk.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/kirimreview.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/review-detail.html</loc>
   </url>
 
   <!-- Ruang Lawak -->
@@ -64,6 +80,10 @@
 
   <url>
     <loc>https://cewekpedia.com/ruanglawak/kirimcerita.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruanglawak/lawak-detail.html</loc>
   </url>
 
   <!-- Informasi Website -->
