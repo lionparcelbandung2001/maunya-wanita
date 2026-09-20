@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Beranda -->
+  <url>
+    <loc>https://cewekpedia.com/</loc>
+  </url>
+
+  <!-- SEO Kota -->
+  <url>
+    <loc>https://cewekpedia.com/bandung/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/jakarta/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/medan/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/makassar/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/semarang/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/surabaya/</loc>
+  </url>
+
+  <!-- Katalog & navigasi utama -->
+  <url>
+    <loc>https://cewekpedia.com/kota.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/subkategori.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/katalog.html</loc>
+  </url>
+
+  <!-- Ruang Cewek -->
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/curhat.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/reviewproduk.html</loc>
+  </url>
+
+  <!-- Ruang Lawak -->
+  <url>
+    <loc>https://cewekpedia.com/ruanglawak/</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruanglawak/kirimcerita.html</loc>
+  </url>
+
+  <!-- Informasi Website -->
+  <url>
+    <loc>https://cewekpedia.com/tentang.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/kontak.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ketentuan.html</loc>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/saran.html</loc>
+  </url>
+
+</urlset>
