@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Curhat Wanita & Cerita Kehidupan | Ruang Cewek - CewekPedia</title>
-
-<meta name="description" content="Baca curhat wanita, cerita kehidupan, pengalaman percintaan, keluarga, pertemanan, pekerjaan, dan keseharian di Ruang Cewek CewekPedia.">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://cewekpedia.com/ruangcewek/curhat.html">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Curhat Wanita & Cerita Kehidupan | Ruang Cewek - CewekPedia</title><meta name="description" content="Baca curhat wanita, cerita kehidupan, pengalaman percintaan, keluarga, pertemanan, pekerjaan, dan keseharian di Ruang Cewek CewekPedia."><meta name="robots" content="index, follow"><link rel="canonical" href="https://cewekpedia.com/ruangcewek/curhat.html"><style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff7fb;font-family:Arial,sans-serif;color:#3a2630}
 body{padding:18px 12px 30px}
@@ -34,82 +23,59 @@ body{padding:18px 12px 30px}
 .story-title{font-size:15px;font-weight:bold;color:#633f4d;line-height:1.4}
 .story-meta{margin-top:7px;color:#927582;font-size:11px}
 .story-preview{margin-top:8px;color:#765362;font-size:12px;line-height:1.6}
+
+/* ================================
+   TOMBOL BACA CURHAT
+   ================================ */
+
+.read-button{
+display:inline-block;
+margin-top:12px;
+padding:10px 16px;
+border-radius:10px;
+background:#d92f72;
+color:#ffffff;
+font-size:13px;
+font-weight:bold;
+text-decoration:none;
+}
+
 .empty{text-align:center;padding:35px 15px;background:#ffffff;border:1px solid #f0dce6;border-radius:15px;color:#765362;font-size:13px}
 .loading{text-align:center;padding:35px 15px;color:#765362;font-size:13px}
 .error{text-align:center;padding:25px 15px;background:#fff1f1;border:1px solid #e8b7b7;border-radius:14px;color:#9b3333;font-size:13px}
 footer{text-align:center;margin-top:22px;color:#987b87;font-size:10px;line-height:1.8}
 footer a{color:#c52f68;text-decoration:none;margin:0 4px}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<a class="back" href="index.html">← Kembali ke Ruang Cewek</a>
+</style></head><body><div class="container"><a class="back" href="index.html">← Kembali ke Ruang Cewek</a>
 
 <div class="header">
 <h1>💭 Curhat Wanita</h1>
 <p>ruang curhat & berbagi cerita antar wanita ❤️</p>
-</div>
-
-<div class="seo-intro">
+</div><div class="seo-intro">
 <strong>Curhat Ruang Cewek</strong> disini ruang berbagi
 cerita tentang percintaan, pernikahan, keluarga,
 pekerjaan, pertemanan, dan kehidupan sehari-hari.
-</div>
-
-<div class="send-box">
+</div><div class="send-box">
 <p>PUNYA CURHATAN?</p>
 <a class="send-button" href="kirimcurhat.html">💌 BAGIKAN DISINI</a>
-</div>
-
-<div id="filters" class="filters">
-
-<button class="filter-button active" data-category="Semua">Semua</button>
+</div><div id="filters" class="filters"><button class="filter-button active" data-category="Semua">Semua</button>
 
 <button class="filter-button" data-category="Percintaan">
 Percintaan
-</button>
-
-<button class="filter-button" data-category="Pernikahan">
+</button><button class="filter-button" data-category="Pernikahan">
 Pernikahan
-</button>
-
-<button class="filter-button" data-category="keluarga">
+</button><button class="filter-button" data-category="keluarga">
 keluarga
-</button>
-
-<button class="filter-button" data-category="pekerjaan">
+</button><button class="filter-button" data-category="pekerjaan">
 pekerjaan
-</button>
-
-<button class="filter-button" data-category="Lainnya">
+</button><button class="filter-button" data-category="Lainnya">
 Lainnya
-</button>
-
-</div>
-
-<div id="storyList" class="story-list">
+</button></div><div id="storyList" class="story-list">
 <div class="loading">💭 Lagi membuka curhat...</div>
-</div>
-
-<footer>
-
-<div>© CewekPedia — Ruang Cewek ❤️</div>
-
-<div>
+</div><footer><div>© CewekPedia — Ruang Cewek ❤️</div><div>
 <a href="index.html">Ruang Cewek</a>
 <a href="reviewproduk.html">Review Produk</a>
 <a href="../index.html">CewekPedia</a>
-</div>
-
-</footer>
-
-</div>
-
-
-<script type="module">
+</div></footer></div><script type="module">
 
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
@@ -304,6 +270,23 @@ card.appendChild(meta);
 
 card.appendChild(preview);
 
+
+/* ================================
+   TOMBOL BACA CURHAT
+   ================================ */
+
+const readButton =
+document.createElement("span");
+
+readButton.className =
+"read-button";
+
+readButton.textContent =
+"Baca Curhat";
+
+card.appendChild(readButton);
+
+
 storyList.appendChild(card);
 
 });
@@ -440,7 +423,5 @@ Silakan coba lagi nanti.
 
 });
 
-</script>
-
-</body>
+</script></body>
 </html>
