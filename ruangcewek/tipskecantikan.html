@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Tips Kecantikan Wanita | Ruang Cewek - CewekPedia</title>
+
+  <meta name="description" content="Kumpulan tips kecantikan wanita seputar makeup, outfit, dan cara merawat tubuh di Ruang Cewek CewekPedia.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="canonical" href="https://cewekpedia.com/ruangcewek/tipskecantikan.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff69b4, #ff91c8);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 15px 40px;
+    }
+
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      color: #d63384;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 15px;
+      padding: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #d63384;
+      font-size: 21px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .filter-btn {
+      border: none;
+      background: white;
+      color: #d63384;
+      border: 1px solid #f3a6ca;
+      border-radius: 20px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .filter-btn.active {
+      background: #d63384;
+      color: white;
+    }
+
+    #loading,
+    #error,
+    #noData {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    #error {
+      color: #b00020;
+      display: none;
+    }
+
+    #noData {
+      display: none;
+      color: #777;
+    }
+
+    .tips-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .tip-category {
+      display: inline-block;
+      background: #ffe0ef;
+      color: #c21870;
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .tip-card h3 {
+      margin: 0 0 8px;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .tip-preview {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      white-space: pre-line;
+    }
+
+    .tip-meta {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .read-more {
+      display: inline-block;
+      background: #d63384;
+      color: white;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .send-box {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #fff0f7, #ffe5f1);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .send-box h2 {
+      margin-top: 0;
+      color: #d63384;
+    }
+
+    .send-box p {
+      line-height: 1.6;
+    }
+
+    .send-btn {
+      display: inline-block;
+      background: #d63384;
+      color: white;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .comments-box {
+      margin-top: 30px;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .comments-box h2 {
+      margin-top: 0;
+      color: #d63384;
+      font-size: 21px;
+    }
+
+    .comments-box p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .tip-card h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💄 Tips Kecantikan</h1>
+  <p>Tips makeup • outfit • merawat tubuh ❤️</p>
+</header>
+
+<div class="container">
+
+  <a href="index.html" class="back">← Kembali ke Ruang Cewek</a>
+
+  <div class="intro">
+    <h2>✨ Tips Kecantikan Wanita</h2>
+
+    <p>
+      Temukan berbagai tips kecantikan dari sesama wanita di Ruang Cewek.
+      Mulai dari tips makeup, memilih outfit yang sesuai, sampai tips
+      merawat tubuh agar tetap nyaman dan percaya diri.
+    </p>
+
+    <p>
+      Kamu juga bisa berbagi pengalaman dan tips kecantikanmu sendiri
+      melalui halaman kirim tips.
+    </p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-category="semua">
+      Semua
+    </button>
+
+    <button class="filter-btn" data-category="tips makeup">
+      💄 Tips Makeup
+    </button>
+
+    <button class="filter-btn" data-category="tips memilih outfit">
+      👗 Tips Outfit
+    </button>
+
+    <button class="filter-btn" data-category="tips merawat tubuh">
+      🧴 Tips Merawat Tubuh
+    </button>
+  </div>
+
+  <div id="loading">
+    Memuat tips kecantikan...
+  </div>
+
+  <div id="error"></div>
+
+  <div id="noData">
+    Belum ada tips kecantikan untuk kategori ini.
+  </div>
+
+  <div id="tipsList" class="tips-list"></div>
+
+  <div class="send-box">
+    <h2>💌 Punya Tips Kecantikan?</h2>
+
+    <p>
+      Bagikan tips makeup, outfit, atau cara merawat tubuh
+      yang menurutmu bermanfaat untuk wanita lainnya.
+    </p>
+
+    <a href="kirimtipskecantikan.html" class="send-btn">
+      ✨ Kirim Tips Kecantikan
+    </a>
+  </div>
+
+  <!--
+    EchoThread
+    -------------------------------
+    Widget komentar umum untuk halaman
+    Tips Kecantikan.
+  -->
+  <div class="comments-box">
+
+    <h2>💬 Obrolan Tips Kecantikan</h2>
+
+    <p>
+      Punya pengalaman, tambahan tips, atau pendapat tentang tips
+      kecantikan di halaman ini? Yuk ngobrol bersama ❤️
+    </p>
+
+    <div
+      id="echothread"
+      data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+      data-page-url="https://cewekpedia.com/ruangcewek/tipskecantikan.html"
+      data-identifier="tips-kecantikan"
+      data-page-title="Tips Kecantikan - Ruang Cewek - CewekPedia">
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    © CewekPedia — Ruang Cewek
+  </p>
+
+  <p>
+    <a href="index.html">Ruang Cewek</a>
+    ·
+    <a href="../index.html">CewekPedia</a>
+    ·
+    <a href="../ruanglawak/">Ruang Lawak</a>
+  </p>
+</footer>
+
+
+<!-- =========================================
+     FIREBASE
+========================================= -->
+
+<script type="module">
+
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+  import {
+    getAuth,
+    signInAnonymously
+  }
+    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+  import {
+    getDatabase,
+    ref,
+    onValue
+  }
+    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  /* =========================================
+     FIREBASE CONFIG
+  ========================================= */
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain: "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId: "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  };
+
+
+  /* =========================================
+     INITIALIZE FIREBASE
+  ========================================= */
+
+  const app = initializeApp(firebaseConfig);
+
+  const auth = getAuth(app);
+
+  const db = getDatabase(app);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const loading =
+    document.getElementById("loading");
+
+  const errorBox =
+    document.getElementById("error");
+
+  const noData =
+    document.getElementById("noData");
+
+  const tipsList =
+    document.getElementById("tipsList");
+
+  const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+
+  /* =========================================
+     DATA
+  ========================================= */
+
+  let allTips = [];
+
+  let activeCategory = "semua";
+
+
+  /* =========================================
+     ESCAPE HTML
+     Mencegah HTML berbahaya masuk ke halaman.
+  ========================================= */
+
+  function escapeHTML(value) {
+
+    if (value === undefined || value === null) {
+      return "";
+    }
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================
+     FORMAT CATEGORY
+  ========================================= */
+
+  function categoryLabel(category) {
+
+    const labels = {
+
+      "tips makeup":
+        "💄 Tips Makeup",
+
+      "tips memilih outfit":
+        "👗 Tips Outfit",
+
+      "tips merawat tubuh":
+        "🧴 Tips Merawat Tubuh",
+
+      /*
+        Kompatibilitas dengan data lama.
+        Jika sebelumnya ada data dengan kategori
+        "tips bling2", data tersebut tetap bisa
+        tampil sebagai Tips Merawat Tubuh.
+      */
+      "tips bling2":
+        "🧴 Tips Merawat Tubuh"
+
+    };
+
+    return labels[category] || category;
+
+  }
+
+
+  /* =========================================
+     FORMAT DATE
+  ========================================= */
+
+  function formatDate(timestamp) {
+
+    if (!timestamp) {
+      return "";
+    }
+
+    const date = new Date(timestamp);
+
+    if (isNaN(date.getTime())) {
+      return "";
+    }
+
+    return date.toLocaleDateString("id-ID", {
+
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+
+    });
+
+  }
+
+
+  /* =========================================
+     PREVIEW TEXT
+  ========================================= */
+
+  function makePreview(text) {
+
+    const cleanText =
+      String(text || "").trim();
+
+    if (cleanText.length <= 180) {
+      return cleanText;
+    }
+
+    return cleanText.substring(0, 180) + "...";
+
+  }
+
+
+  /* =========================================
+     DISPLAY TIPS
+  ========================================= */
+
+  function displayTips() {
+
+    tipsList.innerHTML = "";
+
+    noData.style.display = "none";
+
+
+    let filteredTips = allTips.filter(item => {
+
+      const category =
+        String(item.category || "")
+          .trim()
+          .toLowerCase();
+
+      if (activeCategory === "semua") {
+
+        return (
+          category === "tips makeup" ||
+          category === "tips memilih outfit" ||
+          category === "tips merawat tubuh" ||
+          category === "tips bling2"
+        );
+
+      }
+
+      if (
+        activeCategory === "tips merawat tubuh"
+      ) {
+
+        return (
+          category === "tips merawat tubuh" ||
+          category === "tips bling2"
+        );
+
+      }
+
+      return category === activeCategory;
+
+    });
+
+
+    /*
+      Terbaru ditampilkan terlebih dahulu.
+    */
+
+    filteredTips.sort((a, b) => {
+
+      return (
+        Number(b.timestamp || 0) -
+        Number(a.timestamp || 0)
+      );
+
+    });
+
+
+    if (filteredTips.length === 0) {
+
+      noData.style.display = "block";
+
+      return;
+
+    }
+
+
+    filteredTips.forEach(item => {
+
+      const card =
+        document.createElement("article");
+
+      card.className = "tip-card";
+
+
+      const title =
+        escapeHTML(item.title);
+
+      const category =
+        String(item.category || "")
+          .trim()
+          .toLowerCase();
+
+      const nickname =
+        escapeHTML(item.nickname || "Anonim");
+
+      const preview =
+        escapeHTML(
+          makePreview(item.text)
+        );
+
+      const date =
+        formatDate(item.timestamp);
+
+
+      /*
+        URL detail menggunakan ID Firebase.
+      */
+
+      const detailURL =
+        "tipskecantikan-detail.html?id=" +
+        encodeURIComponent(item.id);
+
+
+      card.innerHTML = `
+
+        <span class="tip-category">
+          ${escapeHTML(categoryLabel(category))}
+        </span>
+
+        <h3>
+          ${title}
+        </h3>
+
+        <div class="tip-preview">
+          ${preview}
+        </div>
+
+        <div class="tip-meta">
+          Oleh ${nickname}
+          ${date ? " · " + escapeHTML(date) : ""}
+        </div>
+
+        <a
+          href="${detailURL}"
+          class="read-more">
+          Baca Tips →
+        </a>
+
+      `;
+
+
+      tipsList.appendChild(card);
+
+    });
+
+  }
+
+
+  /* =========================================
+     FILTER
+  ========================================= */
+
+  filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach(btn => {
+
+        btn.classList.remove("active");
+
+      });
+
+      button.classList.add("active");
+
+      activeCategory =
+        button.dataset.category;
+
+      displayTips();
+
+    });
+
+  });
+
+
+  /* =========================================
+     LOAD FIREBASE STORIES
+  ========================================= */
+
+  async function loadTips() {
+
+    try {
+
+      /*
+        Anonymous authentication diperlukan
+        karena Firebase Rules menggunakan
+        auth != null.
+      */
+
+      await signInAnonymously(auth);
+
+
+      const storiesRef =
+        ref(db, "stories");
+
+
+      /*
+        Menggunakan listener realtime.
+        Jika ada tips baru yang approved,
+        halaman akan otomatis memperbarui.
+      */
+
+      onValue(
+
+        storiesRef,
+
+        snapshot => {
+
+          const data =
+            snapshot.val();
+
+
+          allTips = [];
+
+
+          if (data) {
+
+            Object.entries(data).forEach(
+              ([id, value]) => {
+
+                if (!value) {
+                  return;
+                }
+
+
+                /*
+                  Hanya mengambil konten
+                  yang sudah approved.
+                */
+
+                if (
+                  value.status !== "approved"
+                ) {
+
+                  return;
+
+                }
+
+
+                const category =
+                  String(
+                    value.category || ""
+                  )
+                  .trim()
+                  .toLowerCase();
+
+
+                /*
+                  Hanya kategori Tips Kecantikan.
+                */
+
+                if (
+
+                  category !== "tips makeup" &&
+
+                  category !== "tips memilih outfit" &&
+
+                  category !== "tips merawat tubuh" &&
+
+                  category !== "tips bling2"
+
+                ) {
+
+                  return;
+
+                }
+
+
+                allTips.push({
+
+                  id: id,
+
+                  ...value
+
+                });
+
+              }
+            );
+
+          }
+
+
+          loading.style.display = "none";
+
+          displayTips();
+
+        },
+
+        firebaseError => {
+
+          loading.style.display = "none";
+
+          errorBox.style.display = "block";
+
+          errorBox.textContent =
+            "Gagal memuat tips: " +
+            firebaseError.message;
+
+          console.error(
+            "Firebase error:",
+            firebaseError
+          );
+
+        }
+
+      );
+
+    } catch (error) {
+
+      loading.style.display = "none";
+
+      errorBox.style.display = "block";
+
+      errorBox.textContent =
+        "Gagal terhubung ke Firebase: " +
+        error.message;
+
+      console.error(
+        "Firebase authentication error:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =========================================
+     START
+  ========================================= */
+
+  loadTips();
+
+</script>
+
+
+<!-- =========================================
+     ECHOTHREAD
+========================================= -->
+
+<script
+  src="https://cdn.echothread.io/widget.js"
+  async>
+</script>
+
+</body>
+</html>
