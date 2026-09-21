@@ -705,7 +705,7 @@
 
 
   /* =========================================
-     LOAD FIREBASE STORIES
+     LOAD FIREBASE TIPS
   ========================================= */
 
   async function loadTips() {
@@ -721,8 +721,19 @@
       await signInAnonymously(auth);
 
 
-      const storiesRef =
-        ref(db, "stories");
+      /*
+        TIPS KECANTIKAN SEKARANG DISIMPAN
+        DI NODE TERPISAH DARI CURHAT.
+
+        /stories
+          = Curhat
+
+        /tipsKecantikan
+          = Tips Kecantikan
+      */
+
+      const tipsRef =
+        ref(db, "tipsKecantikan");
 
 
       /*
@@ -733,7 +744,7 @@
 
       onValue(
 
-        storiesRef,
+        tipsRef,
 
         snapshot => {
 
