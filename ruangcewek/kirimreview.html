@@ -160,6 +160,7 @@ button:disabled {
   padding: 15px;
   border-radius: 12px;
   line-height: 1.6;
+  word-break: break-word;
 }
 
 .success {
@@ -242,8 +243,8 @@ footer a {
     <strong>Bagikan pengalaman kamu.</strong>
     Kamu bisa mengirim review tentang fashion, makeup,
     makanan, atau penginapan yang pernah kamu coba.
-    Review yang memenuhi aturan akan langsung
-    ditampilkan di Ruang Cewek.
+    Review yang memenuhi aturan akan ditampilkan
+    setelah proses pemeriksaan.
 
   </div>
 
@@ -404,6 +405,7 @@ footer a {
 </footer>
 
 </div>
+
 
 <script type="module">
 
@@ -573,6 +575,7 @@ form.addEventListener(
 
     event.preventDefault();
 
+
     successMessage.style.display =
       "none";
 
@@ -723,9 +726,8 @@ form.addEventListener(
             Date.now(),
 
           /*
-           * Review baru masuk sebagai pending
-           * sesuai Firebase Rules.
-           * Setelah disetujui, status menjadi approved.
+           * Review baru masuk sebagai
+           * pending sesuai Firebase Rules.
            */
 
           status:
@@ -754,8 +756,17 @@ form.addEventListener(
       );
 
 
+      /*
+       * Tampilkan error Firebase
+       * untuk mengetahui penyebab
+       * sebenarnya jika masih gagal.
+       */
+
       showError(
-        "Maaf, review belum berhasil dikirim. Silakan coba lagi."
+        "Firebase error: " +
+        (error.code || "unknown") +
+        " — " +
+        (error.message || "Tidak diketahui")
       );
 
 
