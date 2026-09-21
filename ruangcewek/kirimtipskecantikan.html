@@ -226,8 +226,6 @@
 
     <form id="tipsForm">
 
-      <!-- JUDUL -->
-
       <label for="title">
         Judul Tips
       </label>
@@ -245,8 +243,6 @@
         0 / 100
       </div>
 
-
-      <!-- KATEGORI -->
 
       <label for="category">
         Kategori
@@ -275,8 +271,6 @@
       </select>
 
 
-      <!-- NICKNAME -->
-
       <label for="nickname">
         Nama / Nickname
       </label>
@@ -294,8 +288,6 @@
       </div>
 
 
-      <!-- ANONYMOUS -->
-
       <div class="anonymous-box">
 
         <label>
@@ -310,8 +302,6 @@
 
       </div>
 
-
-      <!-- ISI TIPS -->
 
       <label for="text">
         Isi Tips
@@ -389,10 +379,6 @@
 </footer>
 
 
-<!-- =========================================
-     FIREBASE
-========================================= -->
-
 <script type="module">
 
   import {
@@ -413,10 +399,6 @@
     set
   } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-
-  /* =========================================
-     FIREBASE CONFIG
-  ========================================= */
 
   const firebaseConfig = {
 
@@ -444,10 +426,6 @@
   };
 
 
-  /* =========================================
-     INITIALIZE FIREBASE
-  ========================================= */
-
   const app =
     initializeApp(firebaseConfig);
 
@@ -457,10 +435,6 @@
   const db =
     getDatabase(app);
 
-
-  /* =========================================
-     ELEMENTS
-  ========================================= */
 
   const form =
     document.getElementById("tipsForm");
@@ -497,21 +471,15 @@
     document.getElementById("textCounter");
 
 
-  /* =========================================
-     COUNTERS
-  ========================================= */
-
   function updateCounters() {
 
     titleCounter.textContent =
       titleInput.value.length +
       " / 100";
 
-
     nicknameCounter.textContent =
       nicknameInput.value.length +
       " / 20";
-
 
     textCounter.textContent =
       textInput.value.length +
@@ -538,10 +506,6 @@
   );
 
 
-  /* =========================================
-     ANONYMOUS
-  ========================================= */
-
   anonymousInput.addEventListener(
     "change",
     () => {
@@ -566,16 +530,11 @@
   );
 
 
-  /* =========================================
-     SUBMIT
-  ========================================= */
-
   form.addEventListener(
     "submit",
     async (event) => {
 
       event.preventDefault();
-
 
       statusBox.className = "";
 
@@ -599,10 +558,6 @@
       const text =
         textInput.value.trim();
 
-
-      /* =====================================
-         VALIDATION
-      ====================================== */
 
       if (!title) {
 
@@ -685,10 +640,6 @@
       }
 
 
-      /* =====================================
-         BUTTON
-      ====================================== */
-
       submitBtn.disabled = true;
 
       submitBtn.textContent =
@@ -697,28 +648,21 @@
 
       try {
 
-        /* ===================================
-           ANONYMOUS AUTH
-        =================================== */
-
         await signInAnonymously(auth);
 
 
-        /* ===================================
-           CREATE FIREBASE ID
-        =================================== */
+        /*
+          TIPS KECANTIKAN SEKARANG
+          DISIMPAN DI NODE SENDIRI
+        */
 
-        const storyRef =
+        const tipsRef =
           push(
-            ref(db, "stories")
+            ref(db, "tipsKecantikan")
           );
 
 
-        /* ===================================
-           DATA
-        =================================== */
-
-        const storyData = {
+        const tipsData = {
 
           title: title,
 
@@ -730,30 +674,16 @@
 
           timestamp: Date.now(),
 
-          /*
-            Sama seperti sistem Curhat
-            yang sudah berhasil:
-            langsung approved.
-          */
-
           status: "approved"
 
         };
 
 
-        /* ===================================
-           SAVE
-        =================================== */
-
         await set(
-          storyRef,
-          storyData
+          tipsRef,
+          tipsData
         );
 
-
-        /* ===================================
-           SUCCESS
-        =================================== */
 
         statusBox.className =
           "success";
@@ -769,10 +699,6 @@
           "dan bisa dilihat di halaman Tips Kecantikan. ❤️";
 
 
-        /* ===================================
-           RESET
-        =================================== */
-
         form.reset();
 
         nicknameInput.disabled = false;
@@ -787,10 +713,6 @@
           error
         );
 
-
-        /* ===================================
-           ERROR
-        =================================== */
 
         statusBox.className =
           "error";
@@ -827,10 +749,6 @@
   );
 
 
-  /* =========================================
-     ERROR DISPLAY
-  ========================================= */
-
   function showError(message) {
 
     statusBox.className =
@@ -844,10 +762,6 @@
 
   }
 
-
-  /* =========================================
-     ESCAPE HTML
-  ========================================= */
 
   function escapeHTML(value) {
 
@@ -865,10 +779,6 @@
 
   }
 
-
-  /* =========================================
-     INITIAL COUNTERS
-  ========================================= */
 
   updateCounters();
 
