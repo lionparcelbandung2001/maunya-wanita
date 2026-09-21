@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Tips Kecantikan | Ruang Cewek - CewekPedia</title>
+
+  <meta name="description" content="Baca tips kecantikan wanita seputar makeup, outfit, dan merawat tubuh di Ruang Cewek - CewekPedia.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/tipskecantikan-detail.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff69b4, #ff91c8);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 15px 40px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tip-detail {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .category {
+      display: inline-block;
+      background: #ffe0ef;
+      color: #c21870;
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .tip-detail h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.3;
+      color: #333;
+    }
+
+    .meta {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .content {
+      line-height: 1.8;
+      white-space: pre-line;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .comments-box {
+      margin-top: 25px;
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .comments-box h2 {
+      margin-top: 0;
+      color: #d63384;
+      font-size: 21px;
+    }
+
+    .comments-box p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    #loading,
+    #error {
+      background: white;
+      border-radius: 15px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    #error {
+      display: none;
+      color: #b00020;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .tip-detail h1 {
+        font-size: 23px;
+      }
+
+      .content {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💄 Tips Kecantikan</h1>
+  <p>Tips makeup • outfit • merawat tubuh ❤️</p>
+</header>
+
+
+<div class="container">
+
+  <a href="tipskecantikan.html" class="back">
+    ← Kembali ke Tips Kecantikan
+  </a>
+
+
+  <div id="loading">
+    Memuat tips kecantikan...
+  </div>
+
+
+  <div id="error"></div>
+
+
+  <article
+    id="tipDetail"
+    class="tip-detail"
+    style="display:none;">
+
+    <div
+      id="category"
+      class="category">
+    </div>
+
+    <h1 id="title"></h1>
+
+    <div
+      id="meta"
+      class="meta">
+    </div>
+
+    <div
+      id="content"
+      class="content">
+    </div>
+
+  </article>
+
+
+  <!-- =====================================
+       ECHOTHREAD COMMENTS
+  ====================================== -->
+
+  <div
+    id="commentsSection"
+    class="comments-box"
+    style="display:none;">
+
+    <h2>💬 Obrolan Tips Kecantikan</h2>
+
+    <p>
+      Punya pengalaman, tambahan tips, atau pendapat
+      tentang tips ini? Yuk ngobrol bersama ❤️
+    </p>
+
+    <div id="echothread"></div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <p>
+    © CewekPedia — Ruang Cewek
+  </p>
+
+  <p>
+    <a href="index.html">
+      Ruang Cewek
+    </a>
+
+    ·
+
+    <a href="../index.html">
+      CewekPedia
+    </a>
+
+    ·
+
+    <a href="../ruanglawak/">
+      Ruang Lawak
+    </a>
+  </p>
+
+</footer>
+
+
+<!-- =========================================
+     FIREBASE
+========================================= -->
+
+<script type="module">
+
+  import {
+    initializeApp
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+  import {
+    getAuth,
+    signInAnonymously
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+  import {
+    getDatabase,
+    ref,
+    get
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  /* =========================================
+     FIREBASE CONFIG
+  ========================================= */
+
+  const firebaseConfig = {
+
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+      "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  };
+
+
+  /* =========================================
+     INITIALIZE
+  ========================================= */
+
+  const app =
+    initializeApp(firebaseConfig);
+
+  const auth =
+    getAuth(app);
+
+  const db =
+    getDatabase(app);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const loading =
+    document.getElementById("loading");
+
+  const errorBox =
+    document.getElementById("error");
+
+  const detail =
+    document.getElementById("tipDetail");
+
+  const commentsSection =
+    document.getElementById("commentsSection");
+
+  const categoryEl =
+    document.getElementById("category");
+
+  const titleEl =
+    document.getElementById("title");
+
+  const metaEl =
+    document.getElementById("meta");
+
+  const contentEl =
+    document.getElementById("content");
+
+
+  /* =========================================
+     ESCAPE HTML
+  ========================================= */
+
+  function escapeHTML(value) {
+
+    if (
+      value === undefined ||
+      value === null
+    ) {
+      return "";
+    }
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================
+     CATEGORY LABEL
+  ========================================= */
+
+  function categoryLabel(category) {
+
+    const labels = {
+
+      "tips makeup":
+        "💄 Tips Makeup",
+
+      "tips memilih outfit":
+        "👗 Tips Outfit",
+
+      "tips merawat tubuh":
+        "🧴 Tips Merawat Tubuh",
+
+      /*
+        Kompatibilitas data lama.
+      */
+
+      "tips bling2":
+        "🧴 Tips Merawat Tubuh"
+
+    };
+
+    return labels[category] || category;
+
+  }
+
+
+  /* =========================================
+     FORMAT DATE
+  ========================================= */
+
+  function formatDate(timestamp) {
+
+    if (!timestamp) {
+      return "";
+    }
+
+    const date =
+      new Date(timestamp);
+
+    if (
+      isNaN(date.getTime())
+    ) {
+      return "";
+    }
+
+    return date.toLocaleDateString(
+      "id-ID",
+      {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }
+    );
+
+  }
+
+
+  /* =========================================
+     GET URL ID
+  ========================================= */
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const storyId =
+    params.get("id");
+
+
+  /* =========================================
+     VALIDATE ID
+  ========================================= */
+
+  if (!storyId) {
+
+    loading.style.display = "none";
+
+    errorBox.style.display = "block";
+
+    errorBox.textContent =
+      "ID tips kecantikan tidak ada.";
+
+  }
+
+
+  /* =========================================
+     LOAD TIP
+  ========================================= */
+
+  async function loadTip() {
+
+    try {
+
+      /*
+        Firebase Rules membutuhkan user
+        yang sudah authenticated.
+      */
+
+      await signInAnonymously(auth);
+
+
+      const storyRef =
+        ref(
+          db,
+          "stories/" + storyId
+        );
+
+
+      const snapshot =
+        await get(storyRef);
+
+
+      if (!snapshot.exists()) {
+
+        loading.style.display = "none";
+
+        errorBox.style.display = "block";
+
+        errorBox.textContent =
+          "Tips kecantikan tidak ditemukan.";
+
+        return;
+
+      }
+
+
+      const data =
+        snapshot.val();
+
+
+      /* =====================================
+         HANYA APPROVED
+      ====================================== */
+
+      if (
+        data.status !== "approved"
+      ) {
+
+        loading.style.display = "none";
+
+        errorBox.style.display = "block";
+
+        errorBox.textContent =
+          "Tips kecantikan ini belum di-approve.";
+
+        return;
+
+      }
+
+
+      /* =====================================
+         PASTIKAN KATEGORI ADALAH TIPS
+      ====================================== */
+
+      const category =
+        String(
+          data.category || ""
+        )
+        .trim()
+        .toLowerCase();
+
+
+      const validCategory =
+        category === "tips makeup" ||
+        category === "tips memilih outfit" ||
+        category === "tips merawat tubuh" ||
+        category === "tips bling2";
+
+
+      if (!validCategory) {
+
+        loading.style.display = "none";
+
+        errorBox.style.display = "block";
+
+        errorBox.textContent =
+          "Konten ini bukan tips kecantikan.";
+
+        return;
+
+      }
+
+
+      /* =====================================
+         DATA
+      ====================================== */
+
+      const rawTitle =
+        String(
+          data.title || "Tips Kecantikan"
+        ).trim();
+
+
+      const nickname =
+        String(
+          data.nickname || "Anonim"
+        ).trim();
+
+
+      const text =
+        String(
+          data.text || ""
+        );
+
+
+      const date =
+        formatDate(data.timestamp);
+
+
+      /* =====================================
+         DISPLAY
+      ====================================== */
+
+      categoryEl.textContent =
+        categoryLabel(category);
+
+
+      titleEl.textContent =
+        rawTitle;
+
+
+      metaEl.textContent =
+        "Oleh " +
+        nickname +
+        (date ? " · " + date : "");
+
+
+      contentEl.textContent =
+        text;
+
+
+      /* =====================================
+         SEO TITLE
+      ====================================== */
+
+      document.title =
+        rawTitle +
+        " | Tips Kecantikan - Ruang Cewek - CewekPedia";
+
+
+      /* =====================================
+         SEO DESCRIPTION
+      ====================================== */
+
+      const cleanDescription =
+        text
+          .replace(/\s+/g, " ")
+          .trim()
+          .substring(0, 155);
+
+
+      const metaDescription =
+        document.querySelector(
+          'meta[name="description"]'
+        );
+
+
+      if (metaDescription) {
+
+        metaDescription.setAttribute(
+          "content",
+          cleanDescription ||
+          "Tips kecantikan wanita seputar makeup, outfit, dan merawat tubuh di Ruang Cewek - CewekPedia."
+        );
+
+      }
+
+
+      /* =====================================
+         CANONICAL
+      ====================================== */
+
+      const canonical =
+        document.querySelector(
+          'link[rel="canonical"]'
+        );
+
+
+      const pageUrl =
+        window.location.href;
+
+
+      if (canonical) {
+
+        canonical.setAttribute(
+          "href",
+          pageUrl
+        );
+
+      }
+
+
+      loading.style.display = "none";
+
+      detail.style.display = "block";
+
+      commentsSection.style.display = "block";
+
+
+      /* =====================================
+         ECHOTHREAD
+      ====================================== */
+
+      const echo =
+        document.getElementById(
+          "echothread"
+        );
+
+
+      echo.setAttribute(
+        "data-api-key",
+        "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+      );
+
+
+      echo.setAttribute(
+        "data-page-url",
+        pageUrl
+      );
+
+
+      /*
+        ID Firebase dijadikan identifier
+        supaya komentar setiap tips terpisah.
+      */
+
+      echo.setAttribute(
+        "data-identifier",
+        storyId
+      );
+
+
+      echo.setAttribute(
+        "data-page-title",
+        rawTitle +
+        " | Tips Kecantikan - Ruang Cewek - CewekPedia"
+      );
+
+
+      /*
+        EchoThread dijalankan setelah data
+        tips berhasil dimuat.
+      */
+
+      const echoScript =
+        document.createElement("script");
+
+      echoScript.src =
+        "https://cdn.echothread.io/widget.js";
+
+      echoScript.async = true;
+
+      document.body.appendChild(
+        echoScript
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Firebase error:",
+        error
+      );
+
+      loading.style.display = "none";
+
+      errorBox.style.display = "block";
+
+      errorBox.textContent =
+        "Gagal memuat tips kecantikan: " +
+        error.message;
+
+    }
+
+  }
+
+
+  /* =========================================
+     START
+  ========================================= */
+
+  if (storyId) {
+
+    loadTip();
+
+  }
+
+</script>
+
+</body>
+</html>
