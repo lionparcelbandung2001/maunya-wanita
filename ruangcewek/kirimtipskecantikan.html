@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Kirim Tips Kecantikan | Ruang Cewek - CewekPedia</title>
+
+  <meta name="description" content="Bagikan tips kecantikan seputar makeup, outfit, dan merawat tubuh di Ruang Cewek - CewekPedia.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/kirimtipskecantikan.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff69b4, #ff91c8);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 15px 40px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .form-box {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .form-box h2 {
+      margin-top: 0;
+      color: #d63384;
+    }
+
+    .intro {
+      line-height: 1.7;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .counter {
+      text-align: right;
+      color: #888;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .anonymous-box {
+      margin-top: 18px;
+      padding: 12px;
+      background: #fff5fa;
+      border-radius: 10px;
+    }
+
+    .anonymous-box label {
+      margin: 0;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .anonymous-box input {
+      width: auto;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 14px;
+      background: #fff5fa;
+      border-radius: 10px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px;
+      border: none;
+      border-radius: 25px;
+      background: #d63384;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #status {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+
+    #status.success {
+      display: block;
+      background: #eaf8ee;
+      color: #20733a;
+    }
+
+    #status.error {
+      display: block;
+      background: #fff0f0;
+      color: #a00000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .form-box {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💌 Kirim Tips Kecantikan</h1>
+  <p>Bagikan tips bermanfaat untuk wanita lainnya ❤️</p>
+</header>
+
+
+<div class="container">
+
+  <a href="tipskecantikan.html" class="back">
+    ← Kembali ke Tips Kecantikan
+  </a>
+
+
+  <div class="form-box">
+
+    <h2>✨ Bagikan Tipsmu</h2>
+
+    <p class="intro">
+      Punya tips makeup, outfit, atau cara merawat tubuh
+      yang ingin kamu bagikan? Tulis di sini dan bagikan
+      pengalamanmu dengan wanita lainnya.
+    </p>
+
+
+    <form id="tipsForm">
+
+      <!-- JUDUL -->
+
+      <label for="title">
+        Judul Tips
+      </label>
+
+      <input
+        type="text"
+        id="title"
+        maxlength="100"
+        placeholder="Contoh: Tips makeup natural untuk sehari-hari"
+        required>
+
+      <div
+        id="titleCounter"
+        class="counter">
+        0 / 100
+      </div>
+
+
+      <!-- KATEGORI -->
+
+      <label for="category">
+        Kategori
+      </label>
+
+      <select
+        id="category"
+        required>
+
+        <option value="">
+          Pilih kategori
+        </option>
+
+        <option value="tips makeup">
+          💄 Tips Makeup
+        </option>
+
+        <option value="tips memilih outfit">
+          👗 Tips Outfit
+        </option>
+
+        <option value="tips merawat tubuh">
+          🧴 Tips Merawat Tubuh
+        </option>
+
+      </select>
+
+
+      <!-- NICKNAME -->
+
+      <label for="nickname">
+        Nama / Nickname
+      </label>
+
+      <input
+        type="text"
+        id="nickname"
+        maxlength="20"
+        placeholder="Maksimal 20 karakter">
+
+      <div
+        id="nicknameCounter"
+        class="counter">
+        0 / 20
+      </div>
+
+
+      <!-- ANONYMOUS -->
+
+      <div class="anonymous-box">
+
+        <label>
+
+          <input
+            type="checkbox"
+            id="anonymous">
+
+          Tampilkan sebagai Anonim
+
+        </label>
+
+      </div>
+
+
+      <!-- ISI TIPS -->
+
+      <label for="text">
+        Isi Tips
+      </label>
+
+      <textarea
+        id="text"
+        maxlength="5000"
+        placeholder="Tulis tips kecantikanmu di sini..."
+        required></textarea>
+
+      <div
+        id="textCounter"
+        class="counter">
+        0 / 5000
+      </div>
+
+
+      <div class="note">
+
+        ❤️ <strong>Catatan:</strong><br>
+
+        Tips yang dikirim akan diperiksa secara otomatis
+        untuk membantu menjaga kenyamanan komunitas.
+        Jangan memasukkan data pribadi, nomor telepon,
+        alamat, atau konten yang dilarang.
+
+      </div>
+
+
+      <button
+        type="submit"
+        id="submitBtn">
+
+        ✨ Kirim Tips Kecantikan
+
+      </button>
+
+    </form>
+
+
+    <div id="status"></div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <p>
+    © CewekPedia — Ruang Cewek
+  </p>
+
+  <p>
+
+    <a href="index.html">
+      Ruang Cewek
+    </a>
+
+    ·
+
+    <a href="../index.html">
+      CewekPedia
+    </a>
+
+    ·
+
+    <a href="../ruanglawak/">
+      Ruang Lawak
+    </a>
+
+  </p>
+
+</footer>
+
+
+<!-- =========================================
+     FIREBASE
+========================================= -->
+
+<script type="module">
+
+  import {
+    initializeApp
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+  import {
+    getAuth,
+    signInAnonymously
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+  import {
+    getDatabase,
+    ref,
+    push,
+    set
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+  /* =========================================
+     FIREBASE CONFIG
+  ========================================= */
+
+  const firebaseConfig = {
+
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+      "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+  };
+
+
+  /* =========================================
+     INITIALIZE FIREBASE
+  ========================================= */
+
+  const app =
+    initializeApp(firebaseConfig);
+
+  const auth =
+    getAuth(app);
+
+  const db =
+    getDatabase(app);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const form =
+    document.getElementById("tipsForm");
+
+  const titleInput =
+    document.getElementById("title");
+
+  const categoryInput =
+    document.getElementById("category");
+
+  const nicknameInput =
+    document.getElementById("nickname");
+
+  const anonymousInput =
+    document.getElementById("anonymous");
+
+  const textInput =
+    document.getElementById("text");
+
+  const submitBtn =
+    document.getElementById("submitBtn");
+
+  const statusBox =
+    document.getElementById("status");
+
+
+  const titleCounter =
+    document.getElementById("titleCounter");
+
+  const nicknameCounter =
+    document.getElementById("nicknameCounter");
+
+  const textCounter =
+    document.getElementById("textCounter");
+
+
+  /* =========================================
+     COUNTERS
+  ========================================= */
+
+  function updateCounters() {
+
+    titleCounter.textContent =
+      titleInput.value.length +
+      " / 100";
+
+
+    nicknameCounter.textContent =
+      nicknameInput.value.length +
+      " / 20";
+
+
+    textCounter.textContent =
+      textInput.value.length +
+      " / 5000";
+
+  }
+
+
+  titleInput.addEventListener(
+    "input",
+    updateCounters
+  );
+
+
+  nicknameInput.addEventListener(
+    "input",
+    updateCounters
+  );
+
+
+  textInput.addEventListener(
+    "input",
+    updateCounters
+  );
+
+
+  /* =========================================
+     ANONYMOUS
+  ========================================= */
+
+  anonymousInput.addEventListener(
+    "change",
+    () => {
+
+      if (anonymousInput.checked) {
+
+        nicknameInput.value = "Anonim";
+
+        nicknameInput.disabled = true;
+
+      } else {
+
+        nicknameInput.value = "";
+
+        nicknameInput.disabled = false;
+
+      }
+
+      updateCounters();
+
+    }
+  );
+
+
+  /* =========================================
+     SUBMIT
+  ========================================= */
+
+  form.addEventListener(
+    "submit",
+    async (event) => {
+
+      event.preventDefault();
+
+
+      statusBox.className = "";
+
+      statusBox.style.display = "none";
+
+
+      const title =
+        titleInput.value.trim();
+
+
+      const category =
+        categoryInput.value;
+
+
+      const nickname =
+        anonymousInput.checked
+          ? "Anonim"
+          : nicknameInput.value.trim();
+
+
+      const text =
+        textInput.value.trim();
+
+
+      /* =====================================
+         VALIDATION
+      ====================================== */
+
+      if (!title) {
+
+        showError(
+          "Judul tips wajib diisi."
+        );
+
+        return;
+
+      }
+
+
+      if (title.length > 100) {
+
+        showError(
+          "Judul maksimal 100 karakter."
+        );
+
+        return;
+
+      }
+
+
+      if (
+        category !== "tips makeup" &&
+        category !== "tips memilih outfit" &&
+        category !== "tips merawat tubuh"
+      ) {
+
+        showError(
+          "Silakan pilih kategori tips kecantikan."
+        );
+
+        return;
+
+      }
+
+
+      if (!nickname) {
+
+        showError(
+          "Nama / nickname wajib diisi."
+        );
+
+        return;
+
+      }
+
+
+      if (nickname.length > 20) {
+
+        showError(
+          "Nickname maksimal 20 karakter."
+        );
+
+        return;
+
+      }
+
+
+      if (!text) {
+
+        showError(
+          "Isi tips wajib diisi."
+        );
+
+        return;
+
+      }
+
+
+      if (text.length > 5000) {
+
+        showError(
+          "Isi tips maksimal 5000 karakter."
+        );
+
+        return;
+
+      }
+
+
+      /* =====================================
+         BUTTON
+      ====================================== */
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "Mengirim...";
+
+
+      try {
+
+        /* ===================================
+           ANONYMOUS AUTH
+        =================================== */
+
+        await signInAnonymously(auth);
+
+
+        /* ===================================
+           CREATE FIREBASE ID
+        =================================== */
+
+        const storyRef =
+          push(
+            ref(db, "stories")
+          );
+
+
+        /* ===================================
+           DATA
+        =================================== */
+
+        const storyData = {
+
+          title: title,
+
+          category: category,
+
+          nickname: nickname,
+
+          text: text,
+
+          timestamp: Date.now(),
+
+          /*
+            Sama seperti sistem Curhat
+            yang sudah berhasil:
+            langsung approved.
+          */
+
+          status: "approved"
+
+        };
+
+
+        /* ===================================
+           SAVE
+        =================================== */
+
+        await set(
+          storyRef,
+          storyData
+        );
+
+
+        /* ===================================
+           SUCCESS
+        =================================== */
+
+        statusBox.className =
+          "success";
+
+        statusBox.style.display =
+          "block";
+
+        statusBox.innerHTML =
+
+          "✅ <strong>Tips berhasil dikirim!</strong><br><br>" +
+
+          "Tips kamu sudah berhasil dipublikasikan " +
+          "dan bisa dilihat di halaman Tips Kecantikan. ❤️";
+
+
+        /* ===================================
+           RESET
+        =================================== */
+
+        form.reset();
+
+        nicknameInput.disabled = false;
+
+        updateCounters();
+
+
+      } catch (error) {
+
+        console.error(
+          "Firebase error:",
+          error
+        );
+
+
+        /* ===================================
+           ERROR
+        =================================== */
+
+        statusBox.className =
+          "error";
+
+        statusBox.style.display =
+          "block";
+
+
+        statusBox.innerHTML =
+
+          "❌ <strong>Tips gagal dikirim.</strong><br><br>" +
+
+          "Kode: " +
+          escapeHTML(
+            error.code || "unknown"
+          ) +
+
+          "<br>" +
+
+          escapeHTML(
+            error.message ||
+            "Terjadi kesalahan."
+          );
+
+      }
+
+
+      submitBtn.disabled = false;
+
+      submitBtn.textContent =
+        "✨ Kirim Tips Kecantikan";
+
+    }
+  );
+
+
+  /* =========================================
+     ERROR DISPLAY
+  ========================================= */
+
+  function showError(message) {
+
+    statusBox.className =
+      "error";
+
+    statusBox.style.display =
+      "block";
+
+    statusBox.textContent =
+      "❌ " + message;
+
+  }
+
+
+  /* =========================================
+     ESCAPE HTML
+  ========================================= */
+
+  function escapeHTML(value) {
+
+    return String(value || "")
+
+      .replace(/&/g, "&amp;")
+
+      .replace(/</g, "&lt;")
+
+      .replace(/>/g, "&gt;")
+
+      .replace(/"/g, "&quot;")
+
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================
+     INITIAL COUNTERS
+  ========================================= */
+
+  updateCounters();
+
+</script>
+
+</body>
+</html>
