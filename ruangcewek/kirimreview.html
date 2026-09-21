@@ -246,8 +246,8 @@ footer a {
     <strong>Bagikan pengalaman kamu.</strong>
     Kamu bisa mengirim review tentang fashion, makeup,
     makanan, atau penginapan yang pernah kamu coba.
-    Review yang dikirim akan diperiksa terlebih dahulu
-    sebelum ditampilkan di Ruang Cewek.
+    Review yang memenuhi aturan akan langsung
+    ditampilkan di Ruang Cewek.
 
   </div>
 
@@ -366,13 +366,8 @@ footer a {
     class="message success"
   >
 
-    ❤️ Review kamu sudah berhasil dikirim
-    dan sedang menunggu moderasi.
-
-    <br><br>
-
-    Setelah disetujui, review akan muncul
-    di halaman Review Produk.
+    ❤️ Review kamu berhasil dikirim
+    dan langsung ditampilkan di Review Produk.
 
   </div>
 
@@ -385,8 +380,9 @@ footer a {
 
   <div class="note">
 
-    🔒 Review akan diperiksa terlebih dahulu
-    sebelum ditampilkan secara publik.
+    🔒 Review akan diperiksa otomatis oleh sistem.
+    Review yang mengandung kata atau konten terlarang
+    akan ditolak.
 
     <br>
 
@@ -745,7 +741,7 @@ form.addEventListener(
             Date.now(),
 
           status:
-            "pending"
+            "approved"
 
         }
       );
