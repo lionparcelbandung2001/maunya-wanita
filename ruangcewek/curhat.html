@@ -171,6 +171,20 @@ let stories = [];
 let currentCategory = "Semua";
 
 
+/* =========================================
+   KATEGORI KHUSUS CURHAT
+   Tips Kecantikan TIDAK BOLEH MASUK DI SINI
+========================================= */
+
+const curhatCategories = [
+"Percintaan",
+"Pernikahan",
+"keluarga",
+"pekerjaan",
+"Lainnya"
+];
+
+
 function formatDate(timestamp){
 
 if(!timestamp) return "";
@@ -352,6 +366,22 @@ const story =
 data[id];
 
 if(!story) return;
+
+
+/* =====================================
+   PENTING:
+   HANYA MASUKKAN DATA KATEGORI CURHAT
+   Tips Kecantikan DIABAIKAN
+====================================== */
+
+if(
+!curhatCategories.includes(
+story.category
+)
+){
+return;
+}
+
 
 stories.push({
 
