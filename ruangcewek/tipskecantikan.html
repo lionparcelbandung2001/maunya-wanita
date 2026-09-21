@@ -308,12 +308,6 @@
     </a>
   </div>
 
-  <!--
-    EchoThread
-    -------------------------------
-    Widget komentar umum untuk halaman
-    Tips Kecantikan.
-  -->
   <div class="comments-box">
 
     <h2>💬 Obrolan Tips Kecantikan</h2>
@@ -368,6 +362,9 @@
   import {
     getDatabase,
     ref,
+    query,
+    orderByChild,
+    equalTo,
     onValue
   }
     from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
@@ -441,7 +438,6 @@
 
   /* =========================================
      ESCAPE HTML
-     Mencegah HTML berbahaya masuk ke halaman.
   ========================================= */
 
   function escapeHTML(value) {
@@ -477,12 +473,6 @@
       "tips merawat tubuh":
         "🧴 Tips Merawat Tubuh",
 
-      /*
-        Kompatibilitas dengan data lama.
-        Jika sebelumnya ada data dengan kategori
-        "tips bling2", data tersebut tetap bisa
-        tampil sebagai Tips Merawat Tubuh.
-      */
       "tips bling2":
         "🧴 Tips Merawat Tubuh"
 
@@ -583,10 +573,6 @@
     });
 
 
-    /*
-      Terbaru ditampilkan terlebih dahulu.
-    */
-
     filteredTips.sort((a, b) => {
 
       return (
@@ -633,10 +619,6 @@
       const date =
         formatDate(item.timestamp);
 
-
-      /*
-        URL detail menggunakan ID Firebase.
-      */
 
       const detailURL =
         "tipskecantikan-detail.html?id=" +
@@ -712,18 +694,12 @@
 
     try {
 
-      /*
-        Anonymous authentication diperlukan
-        karena Firebase Rules menggunakan
-        auth != null.
-      */
-
       await signInAnonymously(auth);
 
 
       /*
-        TIPS KECANTIKAN SEKARANG DISIMPAN
-        DI NODE TERPISAH DARI CURHAT.
+        TIPS KECANTIKAN DISIMPAN DI NODE
+        TERPISAH DARI CURHAT.
 
         /stories
           = Curhat
@@ -737,14 +713,27 @@
 
 
       /*
-        Menggunakan listener realtime.
-        Jika ada tips baru yang approved,
-        halaman akan otomatis memperbarui.
+        PENTING:
+        Firebase Rules mengharuskan pembacaan
+        menggunakan query status = approved.
+      */
+
+      const tipsQuery =
+        query(
+          tipsRef,
+          orderByChild("status"),
+          equalTo("approved")
+        );
+
+
+      /*
+        Listener realtime.
+        Hanya data approved yang diambil.
       */
 
       onValue(
 
-        tipsRef,
+        tipsQuery,
 
         snapshot => {
 
@@ -766,8 +755,8 @@
 
 
                 /*
-                  Hanya mengambil konten
-                  yang sudah approved.
+                  Query Firebase sudah memastikan
+                  status = approved.
                 */
 
                 if (
@@ -875,10 +864,6 @@
 
 </script>
 
-
-<!-- =========================================
-     ECHOTHREAD
-========================================= -->
 
 <script
   src="https://cdn.echothread.io/widget.js"
