@@ -480,15 +480,26 @@
       await signInAnonymously(auth);
 
 
-      const storyRef =
+      /*
+        TIPS KECANTIKAN SEKARANG DISIMPAN
+        DI NODE TERPISAH DARI CURHAT.
+
+        /stories
+          = Curhat
+
+        /tipsKecantikan
+          = Tips Kecantikan
+      */
+
+      const tipRef =
         ref(
           db,
-          "stories/" + storyId
+          "tipsKecantikan/" + storyId
         );
 
 
       const snapshot =
-        await get(storyRef);
+        await get(tipRef);
 
 
       if (!snapshot.exists()) {
