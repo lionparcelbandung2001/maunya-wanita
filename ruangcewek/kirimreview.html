@@ -219,7 +219,6 @@ footer a {
 
 <div class="container">
 
-
 <a
   href="reviewproduk.html"
   class="back"
@@ -227,11 +226,9 @@ footer a {
   ← Kembali ke Review Produk
 </a>
 
-
 <div class="card">
 
   <h1>⭐ Kirim Review</h1>
-
 
   <div class="intro">
 
@@ -239,7 +236,6 @@ footer a {
     Ceritakan pengalaman kamu supaya bisa membantu cewek lain ❤️
 
   </div>
-
 
   <div class="seo-intro">
 
@@ -251,9 +247,7 @@ footer a {
 
   </div>
 
-
   <form id="reviewForm">
-
 
     <!-- JUDUL -->
 
@@ -272,7 +266,6 @@ footer a {
     <div class="counter">
       <span id="titleCount">0</span>/100
     </div>
-
 
     <!-- KATEGORI -->
 
@@ -300,7 +293,6 @@ footer a {
 
     </select>
 
-
     <!-- NICKNAME -->
 
     <label for="nickname">
@@ -318,7 +310,6 @@ footer a {
       <span id="nicknameCount">0</span>/20
     </div>
 
-
     <!-- ANONIM -->
 
     <label class="anonymous">
@@ -331,7 +322,6 @@ footer a {
       Kirim sebagai Anonim ❤️
 
     </label>
-
 
     <!-- REVIEW -->
 
@@ -350,7 +340,6 @@ footer a {
       <span id="reviewCount">0</span>/2000
     </div>
 
-
     <button
       type="submit"
       id="submitButton"
@@ -360,23 +349,20 @@ footer a {
 
   </form>
 
-
   <div
     id="successMessage"
     class="message success"
   >
 
     ❤️ Review kamu berhasil dikirim
-    dan langsung ditampilkan di Review Produk.
+    dan akan ditampilkan setelah proses pemeriksaan.
 
   </div>
-
 
   <div
     id="errorMessage"
     class="message error"
   ></div>
-
 
   <div class="note">
 
@@ -392,7 +378,6 @@ footer a {
   </div>
 
 </div>
-
 
 <footer>
 
@@ -418,9 +403,7 @@ footer a {
 
 </footer>
 
-
 </div>
-
 
 <script type="module">
 
@@ -590,7 +573,6 @@ form.addEventListener(
 
     event.preventDefault();
 
-
     successMessage.style.display =
       "none";
 
@@ -740,8 +722,14 @@ form.addEventListener(
           timestamp:
             Date.now(),
 
+          /*
+           * Review baru masuk sebagai pending
+           * sesuai Firebase Rules.
+           * Setelah disetujui, status menjadi approved.
+           */
+
           status:
-            "approved"
+            "pending"
 
         }
       );
