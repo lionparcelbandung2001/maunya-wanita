@@ -10,7 +10,7 @@
 
 <meta
     name="description"
-    content="Kirim curhat dan cerita kehidupan kamu ke Ruang Cewek CewekPedia. Cerita akan dimoderasi sebelum dipublikasikan."
+    content="Kirim curhat dan cerita kehidupan kamu ke Ruang Cewek CewekPedia. Curhat akan langsung dipublikasikan jika memenuhi aturan."
 >
 
 <meta name="robots" content="index, follow">
@@ -253,8 +253,8 @@ footer a{
     <strong>Bagikan cerita kamu di Ruang Cewek.</strong>
     Kamu bisa menulis curhat tentang percintaan, pernikahan,
     keluarga, pekerjaan, kehidupan sehari-hari,tips and trik buat wanita agar tampil kece.
-    Setiap postingan akan melalui moderasi terlebih dahulu sebelum
-    dipublikasikan.
+    Curhat yang memenuhi aturan akan langsung dipublikasikan
+    di Ruang Cewek.
 
 </div>
 
@@ -387,8 +387,7 @@ footer a{
     id="success"
     class="success"
 >
-    ❤️ Curhat kamu berhasil dikirim!<br>
-    Curhat akan diperiksa terlebih dahulu sebelum tampil di Ruang Cewek.
+    ❤️ Curhat kamu berhasil dikirim dan langsung dipublikasikan di Ruang Cewek.
 </div>
 
 
@@ -400,7 +399,8 @@ footer a{
 
 <div class="note">
 
-    🔒 Curhat akan melalui moderasi sebelum dipublikasikan.
+    🔒 Curhat yang dikirim akan diperiksa otomatis oleh sistem.
+    Kiriman yang mengandung kata atau konten terlarang akan ditolak.
     Jangan memasukkan nomor HP, alamat rumah, password,
     atau informasi pribadi yang sensitif.
 
@@ -684,7 +684,7 @@ form.addEventListener(
                         Date.now(),
 
                     status:
-                        "pending"
+                        "approved"
 
                 }
             );
