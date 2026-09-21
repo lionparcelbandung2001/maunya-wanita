@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
 
-  gtag('config', 'G-F9LX0ZNCJ7');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-F9LX0ZNCJ7');
+  </script>
+
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ruang Cewek — Curhat, Review Produk & Chatroom | CewekPedia</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description"
-        content="Ruang Cewek di CewekPedia adalah tempat curhat&berbagi tips kecantikan, review produk, dan ngobrol bersama komunitas wanita.">
 
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://cewekpedia.com/ruangcewek/">
+  <!-- ================================
+       SEO
+  ================================= -->
+
+  <title>
+    Ruang Cewek — Curhat, Tips Kecantikan & Review Produk | CewekPedia
+  </title>
+
+  <meta
+    name="description"
+    content="Ruang Cewek di CewekPedia adalah tempat berbagi curhat, tips kecantikan, review produk, dan ngobrol bersama komunitas wanita."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/"
+  >
+
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #fff7fb 0%, #fff 100%);
+      background: linear-gradient(
+        180deg,
+        #fff7fb 0%,
+        #fff 100%
+      );
       color: #4a3b43;
     }
+
 
     .container {
       width: min(94%, 900px);
@@ -38,10 +75,12 @@
       padding: 24px 0 40px;
     }
 
+
     header {
       text-align: center;
       margin-bottom: 20px;
     }
+
 
     header h1 {
       margin: 0 0 8px;
@@ -49,12 +88,14 @@
       color: #8f5570;
     }
 
+
     header p {
       margin: 0;
       color: #806d76;
       font-size: 15px;
       line-height: 1.6;
     }
+
 
     .seo-intro {
       background: #fff;
@@ -67,12 +108,20 @@
       text-align: center;
     }
 
+
+    /* =================================
+       3 KATEGORI RUANG CEWEK
+    ================================= */
+
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
       gap: 14px;
       margin-bottom: 20px;
     }
+
 
     .feature-card {
       display: block;
@@ -83,30 +132,42 @@
       padding: 22px 16px;
       text-align: center;
       color: #684b59;
-      transition: transform .15s ease, box-shadow .15s ease;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
     }
+
 
     .feature-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(130, 80, 110, .08);
+
+      box-shadow:
+        0 8px 20px
+        rgba(130, 80, 110, .08);
     }
+
 
     .feature-icon {
       font-size: 34px;
       margin-bottom: 8px;
     }
 
+
     .feature-title {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 17px;
       margin-bottom: 6px;
+      line-height: 1.3;
     }
+
 
     .feature-desc {
       font-size: 13px;
       color: #8a747e;
       line-height: 1.5;
     }
+
 
     .chat-section {
       background: #fff;
@@ -115,10 +176,12 @@
       padding: 18px;
     }
 
+
     .chat-header {
       text-align: center;
       margin-bottom: 14px;
     }
+
 
     .chat-header h2 {
       margin: 0 0 5px;
@@ -126,11 +189,13 @@
       font-size: 23px;
     }
 
+
     .chat-header p {
       margin: 0;
       color: #8a747e;
       font-size: 13px;
     }
+
 
     .online {
       display: inline-block;
@@ -141,6 +206,7 @@
       color: #6f5662;
       font-size: 13px;
     }
+
 
     .error {
       display: none;
@@ -154,12 +220,14 @@
       line-height: 1.5;
     }
 
+
     .login-box {
       background: #fff9fc;
       border-radius: 16px;
       padding: 14px;
       margin-bottom: 14px;
     }
+
 
     .login-box label {
       display: block;
@@ -168,16 +236,19 @@
       color: #6f5963;
     }
 
+
     .login-row {
       display: flex;
       gap: 8px;
     }
+
 
     input,
     textarea,
     button {
       font: inherit;
     }
+
 
     .nickname {
       flex: 1;
@@ -190,11 +261,16 @@
       color: #4a3b43;
     }
 
+
     .nickname:focus,
     .message-input:focus {
       border-color: #c99bb4;
-      box-shadow: 0 0 0 3px rgba(201, 155, 180, .12);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(201, 155, 180, .12);
     }
+
 
     .save-name {
       border: 0;
@@ -206,6 +282,7 @@
       min-width: 80px;
     }
 
+
     .chat-box {
       height: 380px;
       overflow-y: auto;
@@ -216,6 +293,7 @@
       scroll-behavior: smooth;
     }
 
+
     .empty-chat {
       text-align: center;
       color: #9a858e;
@@ -223,29 +301,38 @@
       padding: 30px 10px;
     }
 
+
     .message {
       display: flex;
       margin: 8px 0;
     }
 
+
     .message.mine {
       justify-content: flex-end;
     }
 
+
     .bubble {
       max-width: 82%;
       background: #f5e8ef;
-      border-radius: 15px 15px 15px 5px;
+      border-radius:
+        15px 15px 15px 5px;
+
       padding: 9px 11px;
       line-height: 1.45;
       font-size: 14px;
       overflow-wrap: anywhere;
     }
 
+
     .mine .bubble {
       background: #ead0dd;
-      border-radius: 15px 15px 5px 15px;
+
+      border-radius:
+        15px 15px 5px 15px;
     }
+
 
     .sender {
       font-size: 11px;
@@ -254,6 +341,7 @@
       margin-bottom: 3px;
     }
 
+
     .time {
       font-size: 10px;
       color: #9a858e;
@@ -261,12 +349,14 @@
       text-align: right;
     }
 
+
     .composer {
       display: flex;
       gap: 8px;
       margin-top: 12px;
       align-items: flex-end;
     }
+
 
     .message-input {
       flex: 1;
@@ -282,6 +372,7 @@
       color: #4a3b43;
     }
 
+
     .send {
       border: 0;
       border-radius: 13px;
@@ -293,11 +384,13 @@
       font-weight: bold;
     }
 
+
     .send:disabled,
     .save-name:disabled {
       opacity: .55;
       cursor: not-allowed;
     }
+
 
     .chat-help {
       text-align: center;
@@ -306,6 +399,7 @@
       font-size: 11px;
       line-height: 1.5;
     }
+
 
     details {
       margin-top: 15px;
@@ -316,16 +410,19 @@
       color: #735e68;
     }
 
+
     summary {
       cursor: pointer;
       font-weight: bold;
       color: #765266;
     }
 
+
     details p {
       line-height: 1.6;
       margin-bottom: 0;
     }
+
 
     footer {
       text-align: center;
@@ -335,17 +432,15 @@
       line-height: 1.7;
     }
 
+
     footer a {
       color: #8f5570;
       text-decoration: none;
       margin: 0 5px;
     }
 
-    @media (max-width: 560px) {
-      .container {
-        width: 94%;
-        padding-top: 18px;
-      }
+
+    @media (max-width: 700px) {
 
       .feature-grid {
         grid-template-columns: 1fr;
@@ -353,6 +448,16 @@
 
       .feature-card {
         padding: 18px 14px;
+      }
+
+    }
+
+
+    @media (max-width: 560px) {
+
+      .container {
+        width: 94%;
+        padding-top: 18px;
       }
 
       .chat-section {
@@ -374,59 +479,176 @@
       .send {
         padding: 0 13px;
       }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
   <main class="container">
 
+
+    <!-- =================================
+         HEADER
+    ================================= -->
+
     <header>
+
       <h1>💬 RUANG CEWEK</h1>
-      <p>Cerita • Berbagi • Ngobrol ❤️</p>
+
+      <p>
+        Curhat • Tips Kecantikan • Review Produk • Ngobrol ❤️
+      </p>
+
     </header>
 
+
+    <!-- =================================
+         SEO INTRO
+    ================================= -->
+
     <div class="seo-intro">
-      <strong>Ruang Cewek</strong> adalah tempat untuk berbagi curhat,
-      berbagi tips kecantikan, review produk terbaik, dan ngobrol bersama pengunjung
-      CewekPedia.
+
+      <strong>Ruang Cewek</strong> di CewekPedia adalah ruang
+      untuk berbagi cerita dan pengalaman antar wanita.
+      Kamu bisa membaca dan mengirim
+      <strong>curhat</strong>,
+      berbagi <strong>tips kecantikan</strong>,
+      memberikan <strong>review produk</strong>,
+      serta ngobrol santai bersama pengunjung lainnya.
+
     </div>
 
-    <section class="feature-grid" aria-label="Menu Ruang Cewek">
 
-      <a class="feature-card" href="curhat.html">
-        <div class="feature-icon">💗</div>
-        <div class="feature-title">CURHAT & TIPS KECANTIKAN</div>
-        <div class="feature-desc">
-          Tempat berbagi cerita, pengalaman, dan isi hati.
+    <!-- =================================
+         3 KATEGORI UTAMA
+    ================================= -->
+
+    <section
+      class="feature-grid"
+      aria-label="Kategori Ruang Cewek"
+    >
+
+
+      <!-- CURHAT -->
+
+      <a
+        class="feature-card"
+        href="curhat.html"
+        aria-label="Curhat Wanita"
+      >
+
+        <div class="feature-icon">
+          💗
         </div>
+
+        <div class="feature-title">
+          CURHAT
+        </div>
+
+        <div class="feature-desc">
+          Tempat berbagi cerita, pengalaman,
+          dan isi hati bersama wanita lainnya.
+        </div>
+
       </a>
 
-      <a class="feature-card" href="reviewproduk.html">
-        <div class="feature-icon">⭐</div>
-        <div class="feature-title">REVIEW PRODUK TERBAIK</div>
-        <div class="feature-desc">
-          Bagikan pengalamanmu memakai produk yang pernah kamu coba.
+
+      <!-- TIPS KECANTIKAN -->
+
+      <a
+        class="feature-card"
+        href="tipskecantikan.html"
+        aria-label="Tips Kecantikan"
+      >
+
+        <div class="feature-icon">
+          💄
         </div>
+
+        <div class="feature-title">
+          TIPS KECANTIKAN
+        </div>
+
+        <div class="feature-desc">
+          Temukan dan bagikan tips makeup,
+          outfit, dan cara merawat tubuh.
+        </div>
+
       </a>
+
+
+      <!-- REVIEW PRODUK -->
+
+      <a
+        class="feature-card"
+        href="reviewproduk.html"
+        aria-label="Review Produk"
+      >
+
+        <div class="feature-icon">
+          ⭐
+        </div>
+
+        <div class="feature-title">
+          REVIEW PRODUK
+        </div>
+
+        <div class="feature-desc">
+          Bagikan pengalamanmu menggunakan
+          produk yang pernah kamu coba.
+        </div>
+
+      </a>
+
 
     </section>
 
+
+    <!-- =================================
+         CHATROOM
+    ================================= -->
+
     <section class="chat-section">
 
+
       <div class="chat-header">
-        <h2>💬 Chatroom</h2>
-        <p>Ngobrol santai bersama pengunjung Ruang Cewek.</p>
-        <div class="online" id="onlineCount">🟢 0 online</div>
+
+        <h2>
+          💬 Chatroom
+        </h2>
+
+        <p>
+          Ngobrol santai bersama pengunjung Ruang Cewek.
+        </p>
+
+        <div
+          class="online"
+          id="onlineCount"
+        >
+          🟢 0 online
+        </div>
+
       </div>
 
-      <div class="error" id="firebaseError"></div>
+
+      <div
+        class="error"
+        id="firebaseError"
+      ></div>
+
 
       <div class="login-box">
-        <label for="nickname">Nama panggilan</label>
+
+        <label for="nickname">
+          Nama panggilan
+        </label>
 
         <div class="login-row">
+
           <input
             id="nickname"
             class="nickname"
@@ -443,8 +665,11 @@
           >
             Simpan
           </button>
+
         </div>
+
       </div>
+
 
       <div
         id="chatBox"
@@ -452,10 +677,16 @@
         aria-live="polite"
         aria-label="Pesan Chatroom"
       >
-        <div class="empty-chat" id="emptyChat">
+
+        <div
+          class="empty-chat"
+          id="emptyChat"
+        >
           Belum ada pesan. Yuk mulai ngobrol 💕
         </div>
+
       </div>
+
 
       <div class="composer">
 
@@ -466,6 +697,7 @@
           placeholder="Tulis pesan..."
           disabled
         ></textarea>
+
 
         <button
           id="sendButton"
@@ -478,46 +710,94 @@
 
       </div>
 
+
       <div class="chat-help">
-        Maksimal 300 karakter • Enter untuk kirim • Shift + Enter untuk baris baru
+        Maksimal 300 karakter • Enter untuk kirim •
+        Shift + Enter untuk baris baru
       </div>
 
+
       <details>
-        <summary>Ketentuan Chat — klik di sini</summary>
+
+        <summary>
+          Ketentuan Chat — klik di sini
+        </summary>
+
         <p>
-          Gunakan bahasa yang sopan dan saling menghargai. Jangan membagikan
-          data pribadi, nomor telepon, alamat, password, atau informasi
-          sensitif. Dilarang melakukan spam, penipuan, pelecehan, atau
-          mengirim konten yang melanggar hukum. Pesan dapat dihapus apabila
-          dianggap melanggar ketentuan.
+          Gunakan bahasa yang sopan dan saling menghargai.
+          Jangan membagikan data pribadi, nomor telepon,
+          alamat, password, atau informasi sensitif.
+          Dilarang melakukan spam, penipuan, pelecehan,
+          atau mengirim konten yang melanggar hukum.
+          Pesan dapat dihapus apabila dianggap melanggar
+          ketentuan.
         </p>
+
       </details>
+
 
     </section>
 
+
+    <!-- =================================
+         FOOTER
+    ================================= -->
+
     <footer>
-      <div>© 2026 CewekPedia</div>
 
       <div>
-        <a href="../index.html">Beranda</a>
-        <a href="../ruanglawak/">Ruang Lawak</a>
+        © 2026 CewekPedia
       </div>
+
+      <div>
+
+        <a href="../index.html">
+          Beranda
+        </a>
+
+        <a href="curhat.html">
+          Curhat
+        </a>
+
+        <a href="tipskecantikan.html">
+          Tips Kecantikan
+        </a>
+
+        <a href="reviewproduk.html">
+          Review Produk
+        </a>
+
+        <a href="../ruanglawak/">
+          Ruang Lawak
+        </a>
+
+      </div>
+
     </footer>
+
 
   </main>
 
 
-  <!-- Firebase -->
+  <!-- =================================
+       FIREBASE
+       CHATROOM + ONLINE COUNTER
+       LOGIKA DIPERTAHANKAN
+  ================================= -->
+
   <script type="module">
 
-    import { initializeApp }
-      from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
 
     import {
       getAuth,
       signInAnonymously,
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
 
     import {
       getDatabase,
@@ -536,13 +816,28 @@
        ========================================================= */
 
     const firebaseConfig = {
-      apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-      authDomain: "ruang-cewek.firebaseapp.com",
-      databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "ruang-cewek",
-      storageBucket: "ruang-cewek.firebasestorage.app",
-      messagingSenderId: "300030693884",
-      appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
+      apiKey:
+        "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+      authDomain:
+        "ruang-cewek.firebaseapp.com",
+
+      databaseURL:
+        "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+      projectId:
+        "ruang-cewek",
+
+      storageBucket:
+        "ruang-cewek.firebasestorage.app",
+
+      messagingSenderId:
+        "300030693884",
+
+      appId:
+        "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
     };
 
 
@@ -550,17 +845,32 @@
        ELEMENTS
        ========================================================= */
 
-    const nicknameInput = document.getElementById("nickname");
-    const saveNameButton = document.getElementById("saveName");
-    const messageInput = document.getElementById("messageInput");
-    const sendButton = document.getElementById("sendButton");
-    const chatBox = document.getElementById("chatBox");
-    const onlineCount = document.getElementById("onlineCount");
-    const firebaseError = document.getElementById("firebaseError");
+    const nicknameInput =
+      document.getElementById("nickname");
+
+    const saveNameButton =
+      document.getElementById("saveName");
+
+    const messageInput =
+      document.getElementById("messageInput");
+
+    const sendButton =
+      document.getElementById("sendButton");
+
+    const chatBox =
+      document.getElementById("chatBox");
+
+    const onlineCount =
+      document.getElementById("onlineCount");
+
+    const firebaseError =
+      document.getElementById("firebaseError");
 
 
     let currentUser = null;
+
     let currentNickname = "";
+
     let messagesRef = null;
 
 
@@ -569,8 +879,13 @@
        ========================================================= */
 
     function showError(message) {
-      firebaseError.textContent = "Firebase error: " + message;
-      firebaseError.style.display = "block";
+
+      firebaseError.textContent =
+        "Firebase error: " + message;
+
+      firebaseError.style.display =
+        "block";
+
     }
 
 
@@ -579,10 +894,17 @@
        ========================================================= */
 
     const savedNickname =
-      localStorage.getItem("ruangcewek_nickname") || "";
+      localStorage.getItem(
+        "ruangcewek_nickname"
+      ) || "";
 
-    nicknameInput.value = savedNickname;
-    currentNickname = savedNickname.trim();
+
+    nicknameInput.value =
+      savedNickname;
+
+
+    currentNickname =
+      savedNickname.trim();
 
 
     function updateChatState() {
@@ -591,51 +913,84 @@
         !!currentUser &&
         currentNickname.length > 0;
 
-      messageInput.disabled = !ready;
-      sendButton.disabled = !ready;
+
+      messageInput.disabled =
+        !ready;
+
+
+      sendButton.disabled =
+        !ready;
+
     }
 
 
-    saveNameButton.addEventListener("click", () => {
+    saveNameButton.addEventListener(
+      "click",
+      () => {
 
-      const name =
-        nicknameInput.value.trim();
+        const name =
+          nicknameInput.value.trim();
 
-      if (!name) {
-        alert("Tulis nama panggilan dulu ya ❤️");
-        nicknameInput.focus();
-        return;
+
+        if (!name) {
+
+          alert(
+            "Tulis nama panggilan dulu ya ❤️"
+          );
+
+          nicknameInput.focus();
+
+          return;
+
+        }
+
+
+        if (name.length > 20) {
+
+          alert(
+            "Nama panggilan maksimal 20 karakter."
+          );
+
+          return;
+
+        }
+
+
+        currentNickname =
+          name;
+
+
+        localStorage.setItem(
+          "ruangcewek_nickname",
+          currentNickname
+        );
+
+
+        updateChatState();
+
+        messageInput.focus();
+
       }
+    );
 
-      if (name.length > 20) {
-        alert("Nama panggilan maksimal 20 karakter.");
-        return;
+
+    nicknameInput.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Enter" &&
+          !event.shiftKey
+        ) {
+
+          event.preventDefault();
+
+          saveNameButton.click();
+
+        }
+
       }
-
-      currentNickname = name;
-
-      localStorage.setItem(
-        "ruangcewek_nickname",
-        currentNickname
-      );
-
-      updateChatState();
-
-      messageInput.focus();
-    });
-
-
-    nicknameInput.addEventListener("keydown", (event) => {
-
-      if (
-        event.key === "Enter" &&
-        !event.shiftKey
-      ) {
-        event.preventDefault();
-        saveNameButton.click();
-      }
-
-    });
+    );
 
 
     /* =========================================================
@@ -646,13 +1001,18 @@
 
       chatBox.innerHTML = "";
 
+
       const messages = [];
+
 
       data.forEach((item) => {
 
         messages.push({
+
           id: item.key,
+
           ...item.val()
+
         });
 
       });
@@ -665,10 +1025,12 @@
             ? a.timestamp
             : 0;
 
+
         const timeB =
           typeof b.timestamp === "number"
             ? b.timestamp
             : 0;
+
 
         return timeA - timeB;
 
@@ -678,12 +1040,15 @@
       if (messages.length === 0) {
 
         chatBox.innerHTML = `
+
           <div class="empty-chat">
             Belum ada pesan. Yuk mulai ngobrol 💕
           </div>
+
         `;
 
         return;
+
       }
 
 
@@ -697,6 +1062,7 @@
         const wrapper =
           document.createElement("div");
 
+
         wrapper.className =
           "message" +
           (isMine ? " mine" : "");
@@ -705,22 +1071,31 @@
         const bubble =
           document.createElement("div");
 
-        bubble.className = "bubble";
+
+        bubble.className =
+          "bubble";
 
 
         const sender =
           document.createElement("div");
 
-        sender.className = "sender";
+
+        sender.className =
+          "sender";
+
 
         sender.textContent =
           isMine
             ? "Aku"
-            : (message.nickname || "Pengunjung");
+            : (
+                message.nickname ||
+                "Pengunjung"
+              );
 
 
         const text =
           document.createElement("div");
+
 
         text.textContent =
           message.text || "";
@@ -729,7 +1104,9 @@
         const time =
           document.createElement("div");
 
-        time.className = "time";
+
+        time.className =
+          "time";
 
 
         if (
@@ -751,7 +1128,9 @@
 
 
         bubble.appendChild(sender);
+
         bubble.appendChild(text);
+
         bubble.appendChild(time);
 
         wrapper.appendChild(bubble);
@@ -774,32 +1153,44 @@
     async function sendMessage() {
 
       if (!currentUser) {
+
         showError(
           "Belum terhubung ke Firebase."
         );
+
         return;
+
       }
 
+
       if (!currentNickname) {
+
         alert(
           "Simpan nama panggilan dulu ya ❤️"
         );
+
         nicknameInput.focus();
+
         return;
+
       }
 
 
       const text =
         messageInput.value.trim();
 
+
       if (!text) return;
 
 
       if (text.length > 300) {
+
         alert(
           "Pesan maksimal 300 karakter."
         );
+
         return;
+
       }
 
 
@@ -808,18 +1199,29 @@
         const newMessage =
           push(messagesRef);
 
+
         await set(
           newMessage,
           {
-            uid: currentUser.uid,
-            nickname: currentNickname,
-            text: text,
-            timestamp: serverTimestamp()
+
+            uid:
+              currentUser.uid,
+
+            nickname:
+              currentNickname,
+
+            text:
+              text,
+
+            timestamp:
+              serverTimestamp()
+
           }
         );
 
 
         messageInput.value = "";
+
         messageInput.focus();
 
       } catch (error) {
@@ -852,6 +1254,7 @@
         ) {
 
           event.preventDefault();
+
           sendMessage();
 
         }
@@ -867,30 +1270,42 @@
     try {
 
       const app =
-        initializeApp(firebaseConfig);
+        initializeApp(
+          firebaseConfig
+        );
+
 
       const auth =
         getAuth(app);
+
 
       const db =
         getDatabase(app);
 
 
       messagesRef =
-        ref(db, "messages");
+        ref(
+          db,
+          "messages"
+        );
 
 
       /* -----------------------------------------
          MESSAGE LISTENER
-         ----------------------------------------- */
+      ----------------------------------------- */
 
       onValue(
+
         messagesRef,
+
         (snapshot) => {
 
-          renderMessages(snapshot);
+          renderMessages(
+            snapshot
+          );
 
         },
+
         (error) => {
 
           console.error(error);
@@ -901,18 +1316,20 @@
           );
 
         }
+
       );
 
 
       /* -----------------------------------------
          AUTH
-         ----------------------------------------- */
+      ----------------------------------------- */
 
       onAuthStateChanged(
         auth,
         (user) => {
 
-          currentUser = user;
+          currentUser =
+            user;
 
           updateChatState();
 
@@ -928,6 +1345,7 @@
             error
           );
 
+
           showError(
             error.code ||
             error.message ||
@@ -939,19 +1357,22 @@
 
       /* -----------------------------------------
          PRESENCE / ONLINE COUNT
-         ----------------------------------------- */
+      ----------------------------------------- */
 
       const connectedRef =
-        ref(db, ".info/connected");
+        ref(
+          db,
+          ".info/connected"
+        );
+
 
       const allPresenceRef =
-        ref(db, "presence");
+        ref(
+          db,
+          "presence"
+        );
 
 
-      /*
-       * Setiap tab / koneksi mempunyai ID
-       * presence sendiri.
-       */
       onAuthStateChanged(
         auth,
         (user) => {
@@ -960,7 +1381,9 @@
 
 
           onValue(
+
             connectedRef,
+
             async (snapshot) => {
 
               const connected =
@@ -968,51 +1391,49 @@
 
 
               if (!connected) {
+
                 onlineCount.textContent =
                   "🟢 0 online";
+
                 return;
+
               }
 
 
-              /*
-               * Buat ID koneksi unik.
-               */
               const connectionRef =
                 push(
                   ref(
                     db,
-                    "presence/" + user.uid
+                    "presence/" +
+                    user.uid
                   )
                 );
 
 
               try {
 
-                /*
-                 * Saat koneksi terputus,
-                 * Firebase otomatis menghapus
-                 * data presence ini.
-                 */
                 await onDisconnect(
                   connectionRef
                 ).remove();
 
 
-                /*
-                 * Setelah onDisconnect terpasang,
-                 * baru tandai sebagai online.
-                 */
                 await set(
                   connectionRef,
                   {
-                    uid: user.uid,
+
+                    uid:
+                      user.uid,
+
                     nickname:
                       currentNickname ||
                       "Pengunjung",
+
                     timestamp:
                       serverTimestamp()
+
                   }
                 );
+
 
               } catch (error) {
 
@@ -1020,6 +1441,7 @@
                   "Presence Error:",
                   error
                 );
+
 
                 showError(
                   error.message ||
@@ -1029,17 +1451,22 @@
               }
 
             }
+
           );
 
         }
+
       );
 
 
-      /*
-       * Hitung seluruh koneksi aktif.
-       */
+      /* -----------------------------------------
+         ONLINE COUNT
+      ----------------------------------------- */
+
       onValue(
+
         allPresenceRef,
+
         (snapshot) => {
 
           let count = 0;
@@ -1050,7 +1477,9 @@
 
               userSnapshot.forEach(
                 () => {
+
                   count++;
+
                 }
               );
 
@@ -1059,9 +1488,12 @@
 
 
           onlineCount.textContent =
-            "🟢 " + count + " online";
+            "🟢 " +
+            count +
+            " online";
 
         },
+
         (error) => {
 
           console.error(
@@ -1069,12 +1501,14 @@
             error
           );
 
+
           showError(
             error.message ||
             "Jumlah online tidak dapat dibaca."
           );
 
         }
+
       );
 
 
@@ -1084,6 +1518,7 @@
         "Firebase initialization error:",
         error
       );
+
 
       showError(
         error.message ||
