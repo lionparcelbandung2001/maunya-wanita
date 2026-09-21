@@ -713,11 +713,28 @@ form.addEventListener(
 
         }catch(error){
 
-            console.error(error);
+            console.error("Firebase Error:", error);
 
 
-            errorBox.textContent =
-                "😔 Curhat belum berhasil dikirim. Silakan coba lagi.";
+            let firebaseMessage =
+                error && error.message
+                    ? error.message
+                    : "Tidak ada pesan error dari Firebase.";
+
+            let firebaseCode =
+                error && error.code
+                    ? error.code
+                    : "unknown";
+
+
+            errorBox.innerHTML =
+                "😔 Curhat belum berhasil dikirim.<br><br>" +
+                "<strong>Kode error:</strong> " +
+                firebaseCode +
+                "<br>" +
+                "<strong>Pesan:</strong> " +
+                firebaseMessage;
+
 
             errorBox.style.display =
                 "block";
