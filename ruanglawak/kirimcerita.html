@@ -16,7 +16,7 @@
 
 <meta
   name="description"
-  content="Kirim cerita lucu, receh, kejadian kocak, dan pengalaman sehari-hari kamu ke Ruang Lawak CewekPedia. Cerita akan dimoderasi sebelum dipublikasikan."
+  content="Kirim cerita lucu, receh, kejadian kocak, dan pengalaman sehari-hari kamu ke Ruang Lawak CewekPedia."
 >
 
 <meta
@@ -257,9 +257,8 @@ footer a{
 
     <br><br>
 
-    Cerita yang dikirim akan melalui moderasi
-    terlebih dahulu sebelum ditampilkan
-    untuk pembaca.
+    Cerita yang dikirim akan langsung ditampilkan
+    di Ruang Lawak setelah berhasil dikirim.
 
 </div>
 
@@ -394,8 +393,8 @@ footer a{
 
     <br>
 
-    Cerita akan dicek terlebih dahulu
-    sebelum tampil di Ruang Lawak.
+    Cerita sudah masuk ke Ruang Lawak
+    dan dapat langsung dilihat oleh pembaca.
 
 </div>
 
@@ -408,8 +407,8 @@ footer a{
 
 <div class="note">
 
-    🔒 Cerita akan melalui moderasi
-    sebelum dipublikasikan.
+    💡 Cerita akan langsung ditampilkan
+    setelah berhasil dikirim.
 
     <br>
 
@@ -681,6 +680,10 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
+            alert(
+                "😅 Cerita belum dapat dikirim.\n\nSilakan pilih kategori cerita terlebih dahulu."
+            );
+
             return;
 
         }
@@ -697,6 +700,10 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
+            alert(
+                "😅 Cerita belum dapat dikirim.\n\nIsi nickname atau pilih Kirim sebagai Anonim."
+            );
+
             return;
 
         }
@@ -710,6 +717,10 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
+            alert(
+                "😅 Cerita belum dapat dikirim.\n\nSilakan isi judul cerita."
+            );
+
             return;
 
         }
@@ -722,6 +733,10 @@ form.addEventListener(
 
             errorBox.style.display =
                 "block";
+
+            alert(
+                "😅 Cerita belum dapat dikirim.\n\nSilakan isi cerita kamu."
+            );
 
             return;
 
@@ -764,7 +779,7 @@ form.addEventListener(
                         Date.now(),
 
                     status:
-                        "pending"
+                        "approved"
 
                 }
             );
@@ -801,6 +816,11 @@ form.addEventListener(
 
             errorBox.style.display =
                 "block";
+
+
+            alert(
+                "❌ Gagal mengirim cerita.\n\nSilakan cek koneksi internet atau coba lagi beberapa saat."
+            );
 
 
         }finally{
