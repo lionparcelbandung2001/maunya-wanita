@@ -1,110 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Beranda -->
   <url>
-    <loc>https://cewekpedia.com/</loc>
-  </url>
-
-  <!-- SEO Kota -->
-  <url>
-    <loc>https://cewekpedia.com/bandung/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/jakarta/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/medan/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/makassar/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/semarang/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/surabaya/</loc>
-  </url>
-
-  <!-- Katalog & navigasi utama -->
-  <url>
-    <loc>https://cewekpedia.com/kota.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/subkategori.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/katalog.html</loc>
-  </url>
-
-  <!-- Ruang Cewek -->
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/curhat.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/kirimcurhat.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/curhat-detail.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/reviewproduk.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/kirimreview.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruangcewek/review-detail.html</loc>
-  </url>
-
-  <!-- Ruang Lawak -->
-  <url>
-    <loc>https://cewekpedia.com/ruanglawak/</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruanglawak/kirimcerita.html</loc>
-  </url>
-
-  <url>
-    <loc>https://cewekpedia.com/ruanglawak/lawak-detail.html</loc>
-  </url>
-
-  <!-- Informasi Website -->
-  <url>
-    <loc>https://cewekpedia.com/tentang.html</loc>
+    <loc>https://cewekpedia.com/ketentuan.html</loc>
+    <lastmod>2026-09-20T08:46:27+07:00</lastmod>
   </url>
 
   <url>
     <loc>https://cewekpedia.com/kontak.html</loc>
+    <lastmod>2026-09-20T08:43:37+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/kota.html</loc>
+    <lastmod>2026-09-17T20:53:04+07:00</lastmod>
   </url>
 
   <url>
     <loc>https://cewekpedia.com/privacy.html</loc>
+    <lastmod>2026-09-20T08:45:08+07:00</lastmod>
   </url>
 
   <url>
-    <loc>https://cewekpedia.com/ketentuan.html</loc>
+    <loc>https://cewekpedia.com/ruangcewek/curhat.html</loc>
+    <lastmod>2026-09-22T06:41:39+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/reviewproduk-makanan&amp;penginapan.html</loc>
+    <lastmod>2026-09-19T08:57:40+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/reviewproduk-makeup.html</loc>
+    <lastmod>2026-09-19T08:54:24+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/reviewproduk.html</loc>
+    <lastmod>2026-09-22T07:01:38+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/ruangcewek/tipskecantikan.html</loc>
+    <lastmod>2026-09-22T06:19:06+07:00</lastmod>
   </url>
 
   <url>
     <loc>https://cewekpedia.com/saran.html</loc>
+    <lastmod>2026-09-19T12:00:38+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/subkategori.html</loc>
+    <lastmod>2026-09-17T20:56:07+07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cewekpedia.com/tentang.html</loc>
+    <lastmod>2026-09-20T08:42:21+07:00</lastmod>
   </url>
 
 </urlset>
