@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pengen Jalan-jalan & Healing — Hotel & Penginapan | CewekPedia</title>
+
+  <meta
+    name="description"
+    content="Temukan rekomendasi hotel, penginapan, dan berbagai pilihan tempat untuk jalan-jalan dan healing di berbagai kota Indonesia bersama CewekPedia."
+  >
+
+  <meta
+    name="keywords"
+    content="hotel, penginapan, jalan-jalan, healing, tempat liburan, rekomendasi hotel, rekomendasi penginapan, CewekPedia"
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://cewekpedia.com/pengenhealing/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pengen Jalan-jalan & Healing — CewekPedia">
+  <meta
+    property="og:description"
+    content="Cari rekomendasi hotel, penginapan, dan berbagai pilihan untuk jalan-jalan dan healing."
+  >
+  <meta property="og:url" content="https://cewekpedia.com/pengenhealing/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff7eb3, #ff4f91);
+      color: white;
+      padding: 35px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      background: white;
+      margin-top: -20px;
+      border-radius: 18px;
+      padding: 25px 22px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #e83e7d;
+      font-size: 23px;
+    }
+
+    .intro p {
+      margin-bottom: 0;
+    }
+
+    .categories {
+      padding: 30px 0 15px;
+    }
+
+    .categories h2 {
+      text-align: center;
+      color: #d93672;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 5px 0 8px;
+      color: #d93672;
+      font-size: 19px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff4f91;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #e83e7d;
+    }
+
+    .city-section {
+      background: white;
+      margin: 30px 0;
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    .city-section h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #d93672;
+    }
+
+    .city-section p {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .city {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d93672;
+      text-decoration: none;
+      padding: 9px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .info {
+      padding: 10px 0 30px;
+    }
+
+    .info h2 {
+      color: #d93672;
+      font-size: 22px;
+    }
+
+    .info p {
+      color: #555;
+    }
+
+    .back {
+      text-align: center;
+      padding: 10px 0 30px;
+    }
+
+    .back a {
+      color: #d93672;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2d2d2d;
+      color: #ddd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #ff9bc2;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <h1>YANG WANITA MAU ❤️❤️</h1>
+
+      <p>
+        Pengen jalan-jalan atau healing?
+        Temukan rekomendasi hotel dan penginapan untuk
+        menemani waktu istirahat dan liburanmu.
+      </p>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+
+      <h2>Pengen Jalan-jalan & Healing? 🌿💕</h2>
+
+      <p>
+        Kadang kita hanya butuh waktu untuk beristirahat,
+        jalan-jalan, atau menikmati suasana baru.
+        CewekPedia membantu kamu menemukan berbagai pilihan
+        hotel dan penginapan sesuai kebutuhan dan kota pilihanmu.
+      </p>
+
+    </section>
+
+    <section class="categories">
+
+      <h2>Pilih yang Kamu Cari ✨</h2>
+
+      <div class="grid">
+
+        <article class="card">
+
+          <div class="icon">🏨</div>
+
+          <h3>Hotel & Penginapan</h3>
+
+          <p>
+            Temukan rekomendasi hotel dan penginapan untuk
+            staycation, liburan, perjalanan, atau sekadar
+            mencari tempat beristirahat.
+          </p>
+
+          <a class="btn" href="../subkategori.html">
+            Cari Hotel & Penginapan
+          </a>
+
+        </article>
+
+        <article class="card">
+
+          <div class="icon">🌿</div>
+
+          <h3>Jalan-jalan & Healing</h3>
+
+          <p>
+            Temukan berbagai pilihan tempat dan aktivitas
+            yang dapat menjadi bagian dari rencana jalan-jalan
+            dan waktu santaimu.
+          </p>
+
+          <a class="btn" href="../subkategori.html">
+            Cari Tempat
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="city-section">
+
+      <h2>Cari Berdasarkan Kota 📍</h2>
+
+      <p>
+        Pilih kota untuk melanjutkan pencarian rekomendasi
+        hotel, penginapan, dan kebutuhan jalan-jalan
+        di CewekPedia.
+      </p>
+
+      <div class="city-list">
+
+        <a class="city" href="../kota.html">Bandung</a>
+        <a class="city" href="../kota.html">Jakarta</a>
+        <a class="city" href="../kota.html">Surabaya</a>
+        <a class="city" href="../kota.html">Medan</a>
+        <a class="city" href="../kota.html">Semarang</a>
+        <a class="city" href="../kota.html">Makassar</a>
+
+      </div>
+
+    </section>
+
+    <section class="info">
+
+      <h2>Tentang Pengen Healing di CewekPedia</h2>
+
+      <p>
+        Pengen Jalan-jalan & Healing adalah bagian dari
+        CewekPedia yang dibuat untuk membantu wanita menemukan
+        berbagai rekomendasi yang berkaitan dengan perjalanan,
+        waktu santai, dan kebutuhan penginapan.
+      </p>
+
+      <p>
+        Kamu dapat mencari hotel dan penginapan sesuai kebutuhan.
+        Pencarian kemudian dapat dilanjutkan berdasarkan kota
+        melalui sistem katalog CewekPedia.
+      </p>
+
+      <p>
+        CewekPedia saat ini mencakup Bandung, Jakarta, Surabaya,
+        Medan, Semarang, dan Makassar.
+      </p>
+
+    </section>
+
+    <div class="back">
+
+      <a href="../index.html">
+        ← Kembali ke CewekPedia
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <p>
+      © 2026 CewekPedia — YANG WANITA MAU ❤️❤️
+    </p>
+
+    <p>
+      <a href="../tentang.html">Tentang</a>
+      &nbsp;•&nbsp;
+      <a href="../kontak.html">Kontak</a>
+      &nbsp;•&nbsp;
+      <a href="../kebijakan-privasi.html">Kebijakan Privasi</a>
+      &nbsp;•&nbsp;
+      <a href="../ketentuan-penggunaan.html">Ketentuan Penggunaan</a>
+    </p>
+
+  </footer>
+
+</body>
+</html>
