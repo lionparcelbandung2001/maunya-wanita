@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pengen Makan & Belanja — Restoran, Cafe, Toko & Mall | CewekPedia</title>
+
+  <meta
+    name="description"
+    content="Temukan rekomendasi restoran, cafe, toko, dan mall untuk makan dan belanja di berbagai kota Indonesia bersama CewekPedia."
+  >
+
+  <meta
+    name="keywords"
+    content="restoran, cafe, toko, mall, tempat makan, tempat belanja, rekomendasi kuliner, rekomendasi belanja, CewekPedia"
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://cewekpedia.com/pengenmakan&belanja/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pengen Makan & Belanja — CewekPedia">
+  <meta
+    property="og:description"
+    content="Cari rekomendasi restoran, cafe, toko, dan mall untuk kebutuhan makan dan belanja."
+  >
+  <meta property="og:url" content="https://cewekpedia.com/pengenmakan&belanja/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff7eb3, #ff4f91);
+      color: white;
+      padding: 35px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      background: white;
+      margin-top: -20px;
+      border-radius: 18px;
+      padding: 25px 22px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #e83e7d;
+      font-size: 23px;
+    }
+
+    .intro p {
+      margin-bottom: 0;
+    }
+
+    .categories {
+      padding: 30px 0 15px;
+    }
+
+    .categories h2 {
+      text-align: center;
+      color: #d93672;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 5px 0 8px;
+      color: #d93672;
+      font-size: 19px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff4f91;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #e83e7d;
+    }
+
+    .city-section {
+      background: white;
+      margin: 30px 0;
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    .city-section h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #d93672;
+    }
+
+    .city-section p {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .city {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d93672;
+      text-decoration: none;
+      padding: 9px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .info {
+      padding: 10px 0 30px;
+    }
+
+    .info h2 {
+      color: #d93672;
+      font-size: 22px;
+    }
+
+    .info p {
+      color: #555;
+    }
+
+    .back {
+      text-align: center;
+      padding: 10px 0 30px;
+    }
+
+    .back a {
+      color: #d93672;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2d2d2d;
+      color: #ddd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #ff9bc2;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <h1>YANG WANITA MAU ❤️❤️</h1>
+
+      <p>
+        Pengen makan atau belanja? Temukan rekomendasi restoran,
+        cafe, toko, dan mall yang bisa kamu cari berdasarkan
+        kota pilihanmu.
+      </p>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+
+      <h2>Pengen Makan & Belanja? 🍽️🛍️</h2>
+
+      <p>
+        Mau cari tempat makan untuk nongkrong, makan bersama,
+        atau sekadar ingin jalan-jalan sambil belanja?
+        CewekPedia membantu kamu menemukan berbagai pilihan
+        sesuai kebutuhanmu.
+      </p>
+
+    </section>
+
+    <section class="categories">
+
+      <h2>Pilih yang Kamu Cari ✨</h2>
+
+      <div class="grid">
+
+        <article class="card">
+
+          <div class="icon">🍽️</div>
+
+          <h3>Restoran & Cafe</h3>
+
+          <p>
+            Temukan rekomendasi restoran dan cafe untuk makan,
+            nongkrong, ngobrol, atau menghabiskan waktu bersama.
+          </p>
+
+          <a class="btn" href="../subkategori.html">
+            Cari Restoran & Cafe
+          </a>
+
+        </article>
+
+        <article class="card">
+
+          <div class="icon">🛍️</div>
+
+          <h3>Toko & Mall</h3>
+
+          <p>
+            Cari berbagai pilihan toko dan mall untuk belanja
+            kebutuhan sehari-hari maupun kebutuhan lainnya.
+          </p>
+
+          <a class="btn" href="../subkategori.html">
+            Cari Toko & Mall
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="city-section">
+
+      <h2>Cari Berdasarkan Kota 📍</h2>
+
+      <p>
+        Pilih kota untuk melanjutkan pencarian rekomendasi
+        tempat makan dan belanja di CewekPedia.
+      </p>
+
+      <div class="city-list">
+
+        <a class="city" href="../kota.html">Bandung</a>
+        <a class="city" href="../kota.html">Jakarta</a>
+        <a class="city" href="../kota.html">Surabaya</a>
+        <a class="city" href="../kota.html">Medan</a>
+        <a class="city" href="../kota.html">Semarang</a>
+        <a class="city" href="../kota.html">Makassar</a>
+
+      </div>
+
+    </section>
+
+    <section class="info">
+
+      <h2>Tentang Pengen Makan & Belanja di CewekPedia</h2>
+
+      <p>
+        Pengen Makan & Belanja adalah bagian dari CewekPedia
+        yang dibuat untuk membantu wanita menemukan berbagai
+        rekomendasi tempat makan dan tempat belanja.
+      </p>
+
+      <p>
+        Kamu dapat mencari restoran, cafe, toko, dan mall
+        sesuai kebutuhan. Setelah memilih kebutuhanmu,
+        pencarian dapat dilanjutkan berdasarkan kota melalui
+        sistem katalog CewekPedia.
+      </p>
+
+      <p>
+        CewekPedia saat ini mencakup Bandung, Jakarta, Surabaya,
+        Medan, Semarang, dan Makassar.
+      </p>
+
+    </section>
+
+    <div class="back">
+
+      <a href="../index.html">
+        ← Kembali ke CewekPedia
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <p>
+      © 2026 CewekPedia — YANG WANITA MAU ❤️❤️
+    </p>
+
+    <p>
+      <a href="../tentang.html">Tentang</a>
+      &nbsp;•&nbsp;
+      <a href="../kontak.html">Kontak</a>
+      &nbsp;•&nbsp;
+      <a href="../kebijakan-privasi.html">Kebijakan Privasi</a>
+      &nbsp;•&nbsp;
+      <a href="../ketentuan-penggunaan.html">Ketentuan Penggunaan</a>
+    </p>
+
+  </footer>
+
+</body>
+</html>
