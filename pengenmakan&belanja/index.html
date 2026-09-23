@@ -4,29 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pengen Makan & Belanja — Restoran, Cafe, Toko & Mall | CewekPedia</title>
+  <title>Pengen Nikah — WO, MUA & Toko Pengantin | CewekPedia</title>
 
   <meta
     name="description"
-    content="Temukan rekomendasi restoran, cafe, toko, dan mall untuk makan dan belanja di berbagai kota Indonesia bersama CewekPedia."
+    content="Temukan rekomendasi wedding organizer, MUA, dan toko pengantin untuk mempersiapkan kebutuhan pernikahanmu di Bandung, Jakarta, Surabaya, Medan, Semarang, dan Makassar bersama CewekPedia."
   >
 
   <meta
     name="keywords"
-    content="restoran, cafe, toko, mall, tempat makan, tempat belanja, rekomendasi kuliner, rekomendasi belanja, CewekPedia"
+    content="wedding organizer, WO, MUA, makeup pengantin, toko pengantin, rekomendasi pernikahan, Bandung, Jakarta, Surabaya, Medan, Semarang, Makassar, CewekPedia"
   >
 
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://cewekpedia.com/pengenmakan&belanja/">
+  <link rel="canonical" href="https://cewekpedia.com/pengennikah/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Pengen Makan & Belanja — CewekPedia">
+  <meta property="og:title" content="Pengen Nikah — CewekPedia">
   <meta
     property="og:description"
-    content="Cari rekomendasi restoran, cafe, toko, dan mall untuk kebutuhan makan dan belanja."
+    content="Cari rekomendasi WO, MUA, dan toko pengantin untuk kebutuhan pernikahanmu di berbagai kota."
   >
-  <meta property="og:url" content="https://cewekpedia.com/pengenmakan&belanja/">
+  <meta property="og:url" content="https://cewekpedia.com/pengennikah/">
 
   <style>
     * {
@@ -97,7 +97,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
 
@@ -140,6 +140,8 @@
       border-radius: 25px;
       font-weight: bold;
       font-size: 14px;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -183,6 +185,10 @@
       font-weight: bold;
     }
 
+    .city:hover {
+      background: #ffe1ee;
+    }
+
     .info {
       padding: 10px 0 30px;
     }
@@ -220,7 +226,7 @@
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       header h1 {
         font-size: 26px;
       }
@@ -240,71 +246,88 @@
 
   <header>
     <div class="container">
-
       <h1>YANG WANITA MAU ❤️❤️</h1>
 
       <p>
-        Pengen makan atau belanja? Temukan rekomendasi restoran,
-        cafe, toko, dan mall yang bisa kamu cari berdasarkan
-        kota pilihanmu.
+        Pengen nikah? Temukan rekomendasi wedding organizer,
+        MUA, dan toko pengantin untuk membantu mempersiapkan
+        hari spesialmu.
       </p>
-
     </div>
   </header>
 
   <main class="container">
 
     <section class="intro">
-
-      <h2>Pengen Makan & Belanja? 🍽️🛍️</h2>
+      <h2>Pengen Nikah? 💍💕</h2>
 
       <p>
-        Mau cari tempat makan untuk nongkrong, makan bersama,
-        atau sekadar ingin jalan-jalan sambil belanja?
+        Persiapan pernikahan punya banyak kebutuhan.
+        Mulai dari mengatur acara, memilih makeup artist,
+        sampai mencari perlengkapan pengantin.
         CewekPedia membantu kamu menemukan berbagai pilihan
-        sesuai kebutuhanmu.
+        berdasarkan kebutuhan dan kota.
       </p>
-
     </section>
 
     <section class="categories">
 
-      <h2>Pilih yang Kamu Cari ✨</h2>
+      <h2>Cari Kebutuhan Pernikahanmu ✨</h2>
 
       <div class="grid">
 
         <article class="card">
+          <div class="icon">💐</div>
 
-          <div class="icon">🍽️</div>
-
-          <h3>Restoran & Cafe</h3>
+          <h3>Wedding Organizer</h3>
 
           <p>
-            Temukan rekomendasi restoran dan cafe untuk makan,
-            nongkrong, ngobrol, atau menghabiskan waktu bersama.
+            Temukan rekomendasi wedding organizer untuk membantu
+            merencanakan dan mengatur acara pernikahanmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
-            Cari Restoran & Cafe
-          </a>
-
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'WO')"
+          >
+            Cari WO
+          </button>
         </article>
 
         <article class="card">
+          <div class="icon">💄</div>
 
-          <div class="icon">🛍️</div>
-
-          <h3>Toko & Mall</h3>
+          <h3>MUA</h3>
 
           <p>
-            Cari berbagai pilihan toko dan mall untuk belanja
-            kebutuhan sehari-hari maupun kebutuhan lainnya.
+            Cari makeup artist untuk kebutuhan makeup pengantin
+            dan acara spesialmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
-            Cari Toko & Mall
-          </a>
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'MUA')"
+          >
+            Cari MUA
+          </button>
+        </article>
 
+        <article class="card">
+          <div class="icon">👰</div>
+
+          <h3>Toko Pengantin</h3>
+
+          <p>
+            Temukan toko yang menyediakan berbagai kebutuhan
+            dan perlengkapan pengantin.
+          </p>
+
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'Toko Pengantin')"
+          >
+            Cari Toko
+          </button>
         </article>
 
       </div>
@@ -316,38 +339,36 @@
       <h2>Cari Berdasarkan Kota 📍</h2>
 
       <p>
-        Pilih kota untuk melanjutkan pencarian rekomendasi
-        tempat makan dan belanja di CewekPedia.
+        Pilih kota untuk melihat kategori dan rekomendasi
+        kebutuhan pernikahan yang tersedia di katalog CewekPedia.
       </p>
 
       <div class="city-list">
-
-        <a class="city" href="../kota.html">Bandung</a>
-        <a class="city" href="../kota.html">Jakarta</a>
-        <a class="city" href="../kota.html">Surabaya</a>
-        <a class="city" href="../kota.html">Medan</a>
-        <a class="city" href="../kota.html">Semarang</a>
-        <a class="city" href="../kota.html">Makassar</a>
-
+        <a class="city" href="../bandung/">Bandung</a>
+        <a class="city" href="../jakarta/">Jakarta</a>
+        <a class="city" href="../surabaya/">Surabaya</a>
+        <a class="city" href="../medan/">Medan</a>
+        <a class="city" href="../semarang/">Semarang</a>
+        <a class="city" href="../makassar/">Makassar</a>
       </div>
 
     </section>
 
     <section class="info">
 
-      <h2>Tentang Pengen Makan & Belanja di CewekPedia</h2>
+      <h2>Tentang Pengen Nikah di CewekPedia</h2>
 
       <p>
-        Pengen Makan & Belanja adalah bagian dari CewekPedia
-        yang dibuat untuk membantu wanita menemukan berbagai
-        rekomendasi tempat makan dan tempat belanja.
+        Pengen Nikah adalah bagian dari CewekPedia yang dibuat
+        untuk membantu wanita menemukan berbagai rekomendasi
+        yang berkaitan dengan persiapan pernikahan.
       </p>
 
       <p>
-        Kamu dapat mencari restoran, cafe, toko, dan mall
-        sesuai kebutuhan. Setelah memilih kebutuhanmu,
-        pencarian dapat dilanjutkan berdasarkan kota melalui
-        sistem katalog CewekPedia.
+        Kamu dapat mencari wedding organizer, makeup artist,
+        dan toko pengantin sesuai kebutuhan. Kamu juga dapat
+        memilih kota untuk melihat rekomendasi yang tersedia
+        di katalog CewekPedia.
       </p>
 
       <p>
@@ -358,11 +379,9 @@
     </section>
 
     <div class="back">
-
       <a href="../index.html">
         ← Kembali ke CewekPedia
       </a>
-
     </div>
 
   </main>
@@ -384,6 +403,20 @@
     </p>
 
   </footer>
+
+  <script>
+    function openCatalog(category, subcategory) {
+      /*
+        Memakai mekanisme katalog CewekPedia yang sudah ada.
+        Tidak membuat database atau data baru.
+      */
+      localStorage.setItem("mw_category", category);
+      localStorage.removeItem("mw_city");
+      localStorage.setItem("mw_subcategory", subcategory);
+
+      window.location.href = "../katalog.html";
+    }
+  </script>
 
 </body>
 </html>
