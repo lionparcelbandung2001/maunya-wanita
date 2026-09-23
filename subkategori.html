@@ -5,436 +5,520 @@
     content="width=device-width, initial-scale=1.0">
 
 <title>
-    Pilih Kebutuhan — MAUNYA WANITA ❤️❤️
+    Pilih Kebutuhan — YANG WANITA MAU ❤️❤️
 </title>
 
 <link
     rel="stylesheet"
     href="style.css">
 
+<style>
+
+    /* =========================================
+       INTERNAL LINKING
+       ========================================= */
+
+    .community-section {
+        margin-top: 35px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .community-section h2 {
+        margin-bottom: 6px;
+    }
+
+    .community-section p {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .seo-category-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 700px;
+        margin: 15px auto 0;
+    }
+
+    .seo-category-link {
+        display: block;
+        padding: 12px;
+        border-radius: 12px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+        border: 1px solid rgba(180, 150, 165, 0.18);
+        box-sizing: border-box;
+    }
+
+    .seo-category-link:hover {
+        text-decoration: none;
+        opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+
+        .seo-category-links {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+
 </head><body><!-- =========================================
      HEADER
+     ========================================= --><header class="container"><h1>
+    YANG WANITA MAU ❤️❤️
+</h1>
+
+<p>
+    Lagi pengen apa hari ini??
+</p>
+
+</header><!-- =========================================
+     KONTEN
+     ========================================= --><main class="container"><!-- =========================================
+     JUDUL
      ========================================= -->
 
-<header class="container">
+<section class="intro">
 
-    <h1>
-        MAUNYA WANITA ❤️❤️
-    </h1>
+    <h2 id="subcategoryTitle">
+
+        Pilih kebutuhanmu ❤️
+
+    </h2>
 
     <p>
-        Lagi pengen apa hari ini??
+
+        Tinggal pilih yang kamu cari.
+
     </p>
 
-</header>
+</section>
 
 
 
 <!-- =========================================
-     KONTEN
+     PENGEN CANTIK
      ========================================= -->
 
-<main class="container">
+<section
+    class="category-grid"
+    id="cantikSubcategories"
+    style="display:none;">
 
-
-    <!-- JUDUL -->
-
-    <section class="intro">
-
-        <h2 id="subcategoryTitle">
-
-            Pilih kebutuhanmu ❤️
-
-        </h2>
-
-        <p>
-
-            Tinggal pilih yang kamu cari.
-
-        </p>
-
-    </section>
-
-
-
-    <!-- =========================================
-         PENGEN CANTIK
-         ========================================= -->
-
-    <section
-        class="category-grid"
-        id="cantikSubcategories"
-        style="display:none;">
-
-        
-        <div
-            class="category"
-            onclick="chooseSubcategory('Salon')">
-
-            <div class="icon">
-                💇‍♀️
-            </div>
-
-            <h3>
-                SALON
-            </h3>
-
-            <p>
-                Salon, nail art, lash, brow,
-                spa, body treatment, dan beauty clinic.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Skincare Store')">
-
-            <div class="icon">
-                🧴
-            </div>
-
-            <h3>
-                SKINCARE STORE
-            </h3>
-
-            <p>
-                Tempat mencari skincare
-                dan berbagai kebutuhan perawatan kulit.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Fashion')">
-
-            <div class="icon">
-                👗
-            </div>
-
-            <h3>
-                FASHION
-            </h3>
-
-            <p>
-                Fashion wanita, hijab,
-                pakaian, sepatu, dan aksesori.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Parfum')">
-
-            <div class="icon">
-                🌸
-            </div>
-
-            <h3>
-                PARFUM
-            </h3>
-
-            <p>
-                Cari parfum dan berbagai
-                kebutuhan wewangian.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         PENGEN NIKAH
-         ========================================= -->
-
-    <section
-        class="category-grid"
-        id="nikahSubcategories"
-        style="display:none;">
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('WO')">
-
-            <div class="icon">
-                💐
-            </div>
-
-            <h3>
-                WO
-            </h3>
-
-            <p>
-                Wedding Organizer dan berbagai
-                kebutuhan pendukung acara pernikahan.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('MUA')">
-
-            <div class="icon">
-                💄
-            </div>
-
-            <h3>
-                MUA
-            </h3>
-
-            <p>
-                Makeup artist, bridal makeup,
-                dan kebutuhan makeup pengantin.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Toko Pengantin')">
-
-            <div class="icon">
-                👰
-            </div>
-
-            <h3>
-                TOKO PENGANTIN
-            </h3>
-
-            <p>
-                Gaun, kebaya, jas, aksesori,
-                serta kebutuhan pengantin lainnya.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         PENGEN MAKAN & BELANJA
-         ========================================= -->
-
-    <section
-        class="category-grid"
-        id="makanBelanjaSubcategories"
-        style="display:none;">
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Restoran & Cafe')">
-
-            <div class="icon">
-                🍽️
-            </div>
-
-            <h3>
-                RESTORAN & CAFE
-            </h3>
-
-            <p>
-                Cari tempat makan, nongkrong,
-                ngopi, dan kuliner lainnya.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Toko & Mall')">
-
-            <div class="icon">
-                🛍️
-            </div>
-
-            <h3>
-                TOKO & MALL
-            </h3>
-
-            <p>
-                Tempat belanja, toko,
-                pusat perbelanjaan, dan mall.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         PENGEN JALAN-JALAN / HEALING
-         ========================================= -->
-
-    <section
-        class="category-grid"
-        id="jalanSubcategories"
-        style="display:none;">
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Hotel & Penginapan')">
-
-            <div class="icon">
-                🏨
-            </div>
-
-            <h3>
-                HOTEL & PENGINAPAN
-            </h3>
-
-            <p>
-                Hotel, villa, resort,
-                guest house, dan penginapan lainnya.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Wisata')">
-
-            <div class="icon">
-                🌴
-            </div>
-
-            <h3>
-                WISATA
-            </h3>
-
-            <p>
-                Tempat wisata, alam,
-                taman, dan destinasi untuk jalan-jalan.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category"
-            onclick="chooseSubcategory('Hiburan')">
-
-            <div class="icon">
-                🎡
-            </div>
-
-            <h3>
-                HIBURAN
-            </h3>
-
-            <p>
-                Tempat hiburan, rekreasi,
-                dan aktivitas seru lainnya.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         JIKA KATEGORI TIDAK DIKENALI
-         ========================================= -->
-
-    <section
-        id="wrongCategory"
-        class="intro"
-        style="display:none;">
-
-        <h2>
-            Oops 😅
-        </h2>
-
-        <p>
-            Pilihan kategori belum ditemukan.
-        </p>
-
-        <a
-            href="home.html"
-            class="button">
-
-            ← Kembali ke awal
-
-        </a>
-
-    </section>
-
-
-
-    <!-- =========================================
-         KEMBALI
-         ========================================= -->
 
     <div
-        style="
-            text-align:center;
-            margin-top:35px;
-        ">
+        class="category"
+        onclick="chooseSubcategory('Salon')">
 
-        <a
-            href="home.html"
-            style="
-                text-decoration:none;
-                color:inherit;
-            ">
+        <div class="icon">
+            💇‍♀️
+        </div>
 
-            ← Kembali ke halaman awal
+        <h3>
+            SALON
+        </h3>
 
-        </a>
+        <p>
+            Salon, nail art, lash, brow,
+            spa, body treatment, dan beauty clinic.
+        </p>
 
     </div>
 
 
-</main>
+    <div
+        class="category"
+        onclick="chooseSubcategory('Skincare Store')">
+
+        <div class="icon">
+            🧴
+        </div>
+
+        <h3>
+            SKINCARE STORE
+        </h3>
+
+        <p>
+            Tempat mencari skincare
+            dan berbagai kebutuhan perawatan kulit.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Fashion')">
+
+        <div class="icon">
+            👗
+        </div>
+
+        <h3>
+            FASHION
+        </h3>
+
+        <p>
+            Fashion wanita, hijab,
+            pakaian, sepatu, dan aksesori.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Parfum')">
+
+        <div class="icon">
+            🌸
+        </div>
+
+        <h3>
+            PARFUM
+        </h3>
+
+        <p>
+            Cari parfum dan berbagai
+            kebutuhan wewangian.
+        </p>
+
+    </div>
+
+</section>
 
 
 
 <!-- =========================================
+     PENGEN NIKAH
+     ========================================= -->
+
+<section
+    class="category-grid"
+    id="nikahSubcategories"
+    style="display:none;">
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('WO')">
+
+        <div class="icon">
+            💐
+        </div>
+
+        <h3>
+            WO
+        </h3>
+
+        <p>
+            Wedding Organizer dan berbagai
+            kebutuhan pendukung acara pernikahan.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('MUA')">
+
+        <div class="icon">
+            💄
+        </div>
+
+        <h3>
+            MUA
+        </h3>
+
+        <p>
+            Makeup artist, bridal makeup,
+            dan kebutuhan makeup pengantin.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Toko Pengantin')">
+
+        <div class="icon">
+            👰
+        </div>
+
+        <h3>
+            TOKO PENGANTIN
+        </h3>
+
+        <p>
+            Gaun, kebaya, jas, aksesori,
+            serta kebutuhan pengantin lainnya.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PENGEN MAKAN & BELANJA
+     ========================================= -->
+
+<section
+    class="category-grid"
+    id="makanBelanjaSubcategories"
+    style="display:none;">
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Restoran & Cafe')">
+
+        <div class="icon">
+            🍽️
+        </div>
+
+        <h3>
+            RESTORAN & CAFE
+        </h3>
+
+        <p>
+            Cari tempat makan, nongkrong,
+            ngopi, dan kuliner lainnya.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Toko & Mall')">
+
+        <div class="icon">
+            🛍️
+        </div>
+
+        <h3>
+            TOKO & MALL
+        </h3>
+
+        <p>
+            Tempat belanja, toko,
+            pusat perbelanjaan, dan mall.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PENGEN JALAN-JALAN / HEALING
+     ========================================= -->
+
+<section
+    class="category-grid"
+    id="jalanSubcategories"
+    style="display:none;">
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Hotel & Penginapan')">
+
+        <div class="icon">
+            🏨
+        </div>
+
+        <h3>
+            HOTEL & PENGINAPAN
+        </h3>
+
+        <p>
+            Hotel, villa, resort,
+            guest house, dan penginapan lainnya.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Wisata')">
+
+        <div class="icon">
+            🌴
+        </div>
+
+        <h3>
+            WISATA
+        </h3>
+
+        <p>
+            Tempat wisata, alam,
+            taman, dan destinasi untuk jalan-jalan.
+        </p>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="chooseSubcategory('Hiburan')">
+
+        <div class="icon">
+            🎡
+        </div>
+
+        <h3>
+            HIBURAN
+        </h3>
+
+        <p>
+            Tempat hiburan, rekreasi,
+            dan aktivitas seru lainnya.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     JIKA KATEGORI TIDAK DIKENALI
+     ========================================= -->
+
+<section
+    id="wrongCategory"
+    class="intro"
+    style="display:none;">
+
+    <h2>
+        Oops 😅
+    </h2>
+
+    <p>
+        Pilihan kategori belum ditemukan.
+    </p>
+
+    <a
+        href="home.html"
+        class="button">
+
+        ← Kembali ke awal
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================================
+     INTERNAL LINKING — LANDING PAGE SEO
+     ========================================= -->
+
+<section
+    class="community-section">
+
+    <h2>
+        Jelajahi Kategori CewekPedia ✨
+    </h2>
+
+    <p>
+        Lihat halaman khusus untuk berbagai kebutuhan wanita
+        sebelum memilih subkategori.
+    </p>
+
+    <nav
+        class="seo-category-links"
+        aria-label="Landing page kategori CewekPedia">
+
+        <a
+            class="seo-category-link"
+            href="pengencantik/">
+
+            💄 <strong>Pengen Cantik</strong>
+
+        </a>
+
+
+        <a
+            class="seo-category-link"
+            href="pengennikah/">
+
+            💍 <strong>Pengen Nikah</strong>
+
+        </a>
+
+
+        <a
+            class="seo-category-link"
+            href="pengenmakan&belanja/">
+
+            🛍️ <strong>Pengen Makan & Belanja</strong>
+
+        </a>
+
+
+        <a
+            class="seo-category-link"
+            href="pengenhealing/">
+
+            🌿 <strong>Pengen Jalan-jalan & Healing</strong>
+
+        </a>
+
+    </nav>
+
+</section>
+
+
+
+<!-- =========================================
+     KEMBALI
+     ========================================= -->
+
+<div
+    style="
+        text-align:center;
+        margin-top:35px;
+    ">
+
+    <a
+        href="home.html"
+        style="
+            text-decoration:none;
+            color:inherit;
+        ">
+
+        ← Kembali ke halaman awal
+
+    </a>
+
+</div>
+
+</main><!-- =========================================
      FOOTER
-     ========================================= -->
+     ========================================= --><footer>YANG WANITA MAU ❤️❤️
 
-<footer>
+<br>
 
-    MAUNYA WANITA ❤️❤️
+Cari yang kamu mau. Tanpa ribet.
 
-    <br>
-
-    Cari yang kamu mau. Tanpa ribet.
-
-</footer>
-
-
-
-<!-- =========================================
+</footer><!-- =========================================
      SCRIPT UTAMA
-     ========================================= -->
-
-<script src="script.js"></script>
-
-
-
-<!-- =========================================
+     ========================================= --><script src="script.js"></script><!-- =========================================
      SCRIPT KHUSUS SUBKATEGORI
-     ========================================= -->
-
-<script>
+     ========================================= --><script>
 
     document.addEventListener(
         "DOMContentLoaded",
@@ -537,6 +621,4 @@
         }
     );
 
-</script>
-
-</body></html>
+</script></body></html>
