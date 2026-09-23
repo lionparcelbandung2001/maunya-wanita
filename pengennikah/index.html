@@ -8,12 +8,12 @@
 
   <meta
     name="description"
-    content="Temukan rekomendasi wedding organizer, MUA, dan toko pengantin untuk mempersiapkan kebutuhan pernikahanmu bersama CewekPedia."
+    content="Temukan rekomendasi wedding organizer, MUA, dan toko pengantin untuk mempersiapkan kebutuhan pernikahanmu di Bandung, Jakarta, Surabaya, Medan, Semarang, dan Makassar bersama CewekPedia."
   >
 
   <meta
     name="keywords"
-    content="wedding organizer, WO, MUA, makeup pengantin, toko pengantin, rekomendasi pernikahan, CewekPedia"
+    content="wedding organizer, WO, MUA, makeup pengantin, toko pengantin, rekomendasi pernikahan, Bandung, Jakarta, Surabaya, Medan, Semarang, Makassar, CewekPedia"
   >
 
   <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Pengen Nikah — CewekPedia">
   <meta
     property="og:description"
-    content="Cari rekomendasi WO, MUA, dan toko pengantin untuk kebutuhan pernikahanmu."
+    content="Cari rekomendasi WO, MUA, dan toko pengantin untuk kebutuhan pernikahanmu di berbagai kota."
   >
   <meta property="og:url" content="https://cewekpedia.com/pengennikah/">
 
@@ -140,6 +140,8 @@
       border-radius: 25px;
       font-weight: bold;
       font-size: 14px;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -181,6 +183,10 @@
       border-radius: 20px;
       font-size: 14px;
       font-weight: bold;
+    }
+
+    .city:hover {
+      background: #ffe1ee;
     }
 
     .info {
@@ -280,9 +286,12 @@
             merencanakan dan mengatur acara pernikahanmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'WO')"
+          >
             Cari WO
-          </a>
+          </button>
         </article>
 
         <article class="card">
@@ -295,9 +304,12 @@
             dan acara spesialmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'MUA')"
+          >
             Cari MUA
-          </a>
+          </button>
         </article>
 
         <article class="card">
@@ -310,9 +322,12 @@
             dan perlengkapan pengantin.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Nikah', 'Toko Pengantin')"
+          >
             Cari Toko
-          </a>
+          </button>
         </article>
 
       </div>
@@ -324,17 +339,17 @@
       <h2>Cari Berdasarkan Kota 📍</h2>
 
       <p>
-        Pilih kota untuk melanjutkan pencarian rekomendasi
-        kebutuhan pernikahan di CewekPedia.
+        Pilih kota untuk melihat kategori dan rekomendasi
+        kebutuhan pernikahan yang tersedia di katalog CewekPedia.
       </p>
 
       <div class="city-list">
-        <a class="city" href="../kota.html">Bandung</a>
-        <a class="city" href="../kota.html">Jakarta</a>
-        <a class="city" href="../kota.html">Surabaya</a>
-        <a class="city" href="../kota.html">Medan</a>
-        <a class="city" href="../kota.html">Semarang</a>
-        <a class="city" href="../kota.html">Makassar</a>
+        <a class="city" href="../bandung/">Bandung</a>
+        <a class="city" href="../jakarta/">Jakarta</a>
+        <a class="city" href="../surabaya/">Surabaya</a>
+        <a class="city" href="../medan/">Medan</a>
+        <a class="city" href="../semarang/">Semarang</a>
+        <a class="city" href="../makassar/">Makassar</a>
       </div>
 
     </section>
@@ -351,9 +366,9 @@
 
       <p>
         Kamu dapat mencari wedding organizer, makeup artist,
-        dan toko pengantin sesuai kebutuhan. Setelah itu,
-        pencarian dapat dilanjutkan berdasarkan kota melalui
-        sistem katalog CewekPedia.
+        dan toko pengantin sesuai kebutuhan. Kamu juga dapat
+        memilih kota untuk melihat rekomendasi yang tersedia
+        di katalog CewekPedia.
       </p>
 
       <p>
@@ -388,6 +403,20 @@
     </p>
 
   </footer>
+
+  <script>
+    function openCatalog(category, subcategory) {
+      /*
+        Memakai mekanisme katalog CewekPedia yang sudah ada.
+        Tidak membuat database atau data baru.
+      */
+      localStorage.setItem("mw_category", category);
+      localStorage.removeItem("mw_city");
+      localStorage.setItem("mw_subcategory", subcategory);
+
+      window.location.href = "../katalog.html";
+    }
+  </script>
 
 </body>
 </html>
