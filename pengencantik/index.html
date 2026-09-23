@@ -8,12 +8,12 @@
 
   <meta
     name="description"
-    content="Temukan rekomendasi salon, skincare store, fashion, dan parfum untuk wanita di berbagai kota Indonesia bersama CewekPedia."
+    content="Temukan rekomendasi salon, skincare store, fashion, dan parfum untuk wanita di Bandung, Jakarta, Surabaya, Medan, Semarang, dan Makassar bersama CewekPedia."
   >
 
   <meta
     name="keywords"
-    content="salon wanita, skincare store, fashion wanita, parfum wanita, rekomendasi kecantikan, CewekPedia"
+    content="salon wanita, skincare store, fashion wanita, parfum wanita, rekomendasi kecantikan, Bandung, Jakarta, Surabaya, Medan, Semarang, Makassar, CewekPedia"
   >
 
   <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Pengen Cantik — CewekPedia">
   <meta
     property="og:description"
-    content="Cari rekomendasi salon, skincare, fashion, dan parfum untuk wanita."
+    content="Cari rekomendasi salon, skincare, fashion, dan parfum untuk wanita di berbagai kota Indonesia."
   >
   <meta property="og:url" content="https://cewekpedia.com/pengencantik/">
 
@@ -140,6 +140,8 @@
       border-radius: 25px;
       font-weight: bold;
       font-size: 14px;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -181,6 +183,10 @@
       border-radius: 20px;
       font-size: 14px;
       font-weight: bold;
+    }
+
+    .city:hover {
+      background: #ffe1ee;
     }
 
     .info {
@@ -241,6 +247,7 @@
   <header>
     <div class="container">
       <h1>YANG WANITA MAU ❤️❤️</h1>
+
       <p>
         Pengen cantik? Temukan rekomendasi salon, skincare, fashion,
         dan parfum yang bisa kamu cari berdasarkan kota pilihanmu.
@@ -256,7 +263,7 @@
       <p>
         Dari perawatan rambut dan wajah sampai fashion dan parfum,
         CewekPedia membantu kamu menemukan berbagai pilihan yang
-        sesuai dengan kebutuhanmu.
+        sesuai dengan kebutuhanmu di berbagai kota.
       </p>
     </section>
 
@@ -276,9 +283,12 @@
             kecantikan, dan kebutuhan perawatan wanita lainnya.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Cantik', 'Salon')"
+          >
             Cari Salon
-          </a>
+          </button>
         </article>
 
         <article class="card">
@@ -291,9 +301,12 @@
             perawatan kulit untuk kebutuhanmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Cantik', 'Skincare Store')"
+          >
             Cari Skincare
-          </a>
+          </button>
         </article>
 
         <article class="card">
@@ -306,9 +319,12 @@
             gaya dan kebutuhan.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Cantik', 'Fashion')"
+          >
             Cari Fashion
-          </a>
+          </button>
         </article>
 
         <article class="card">
@@ -321,9 +337,12 @@
             yang bisa melengkapi penampilanmu.
           </p>
 
-          <a class="btn" href="../subkategori.html">
+          <button
+            class="btn"
+            onclick="openCatalog('Pengen Cantik', 'Parfum')"
+          >
             Cari Parfum
-          </a>
+          </button>
         </article>
 
       </div>
@@ -335,17 +354,17 @@
       <h2>Cari Rekomendasi Berdasarkan Kota 📍</h2>
 
       <p>
-        CewekPedia saat ini menyediakan katalog di beberapa kota
-        pilihan di Indonesia.
+        Pilih kota untuk melihat kategori dan rekomendasi yang
+        tersedia di katalog CewekPedia.
       </p>
 
       <div class="city-list">
-        <a class="city" href="../kota.html">Bandung</a>
-        <a class="city" href="../kota.html">Jakarta</a>
-        <a class="city" href="../kota.html">Surabaya</a>
-        <a class="city" href="../kota.html">Medan</a>
-        <a class="city" href="../kota.html">Semarang</a>
-        <a class="city" href="../kota.html">Makassar</a>
+        <a class="city" href="../bandung/">Bandung</a>
+        <a class="city" href="../jakarta/">Jakarta</a>
+        <a class="city" href="../surabaya/">Surabaya</a>
+        <a class="city" href="../medan/">Medan</a>
+        <a class="city" href="../semarang/">Semarang</a>
+        <a class="city" href="../makassar/">Makassar</a>
       </div>
 
     </section>
@@ -363,8 +382,8 @@
       <p>
         Di sini kamu bisa menemukan pilihan berdasarkan kebutuhan,
         mulai dari salon, skincare store, fashion, hingga parfum.
-        Setelah memilih kebutuhanmu, kamu dapat melanjutkan pencarian
-        berdasarkan kota melalui sistem katalog CewekPedia.
+        Kamu juga dapat memilih kota untuk melihat rekomendasi
+        yang tersedia di katalog CewekPedia.
       </p>
 
       <p>
@@ -397,6 +416,23 @@
       <a href="../ketentuan-penggunaan.html">Ketentuan Penggunaan</a>
     </p>
   </footer>
+
+  <script>
+    function openCatalog(category, subcategory) {
+      /*
+        Tombol kategori memakai mekanisme katalog yang
+        sudah berjalan di CewekPedia.
+
+        Kota dikosongkan agar pengguna tetap dapat memilih
+        kota melalui sistem katalog.
+      */
+      localStorage.setItem("mw_category", category);
+      localStorage.removeItem("mw_city");
+      localStorage.setItem("mw_subcategory", subcategory);
+
+      window.location.href = "../katalog.html";
+    }
+  </script>
 
 </body>
 </html>
