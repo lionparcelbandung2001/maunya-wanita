@@ -269,13 +269,13 @@ var surabayaData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // ======================================
 
     // ---------- RESTORAN & CAFE ----------
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Tunjungan Street",
         jenis: "Kuliner & Lifestyle",
@@ -284,7 +284,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Food Junction Grand Pakuwon",
         jenis: "Kuliner & Lifestyle",
@@ -293,7 +293,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "G-Walk Citraland",
         jenis: "Kuliner",
@@ -302,7 +302,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Kawasan Kuliner Jalan Tunjungan",
         jenis: "Kuliner",
@@ -311,7 +311,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Kawasan Kuliner Pakuwon",
         jenis: "Kuliner",
@@ -323,7 +323,7 @@ var surabayaData = [
     // ---------- TOKO & MALL ----------
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Pakuwon Mall Surabaya",
         jenis: "Mall & Lifestyle",
@@ -332,7 +332,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Tunjungan Plaza",
         jenis: "Mall & Shopping",
@@ -341,7 +341,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Galaxy Mall Surabaya",
         jenis: "Mall & Lifestyle",
@@ -350,7 +350,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Ciputra World Surabaya",
         jenis: "Mall & Lifestyle",
@@ -359,7 +359,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Grand City Surabaya",
         jenis: "Mall & Shopping",
@@ -368,7 +368,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Pakuwon City Mall",
         jenis: "Mall & Lifestyle",
@@ -377,7 +377,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "BG Junction",
         jenis: "Mall & Shopping",
@@ -386,7 +386,7 @@ var surabayaData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Pasar Atom",
         jenis: "Shopping Center & Market",
