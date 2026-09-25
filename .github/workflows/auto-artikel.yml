@@ -1,0 +1,45 @@
+name: Auto Generate Artikel Folders
+
+on:
+  push:
+    paths:
+      - 'ruangcewek/tipskecantikan/*.html'
+
+jobs:
+  generate-artikel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate Folder Artikel
+        run: |
+          # Loop semua file .html di folder ruangcewek/tipskecantikan/
+          for file in ruangcewek/tipskecantikan/*.html; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file" .html)
+              
+              # Abaikan file bawaan/template utama jika ada
+              if [ "$filename" != "index" ] && [ "$filename" != "tipskecantikan-detail" ]; then
+                echo "Memproses artikel: $filename"
+                
+                # 1. Buat folder baru di /artikel/[nama-file]
+                mkdir -p "artikel/$filename"
+                
+                # 2. Salin isi file menjadi index.html di dalam folder baru
+                cp "$file" "artikel/$filename/index.html"
+                
+                # 3. Sesuaikan path CSS/JS relatif agar tidak broken link
+                sed -i 's/href="\.\.\//href="\.\.\/\.\.\//g' "artikel/$filename/index.html"
+                sed -i 's/src="\.\.\//src="\.\.\/\.\.\//g' "artikel/$filename/index.html"
+              fi
+            fi
+          done
+
+      - name: Commit dan Push Otomatis ke GitHub
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add artikel/
+          git status
+          git diff-index --quiet HEAD || (git commit -m "auto: buat folder artikel baru" && git push)
