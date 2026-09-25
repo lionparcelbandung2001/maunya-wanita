@@ -269,13 +269,13 @@ var semarangData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // ======================================
 
     // ---------- RESTORAN & CAFE ----------
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Toko Oen Semarang",
         jenis: "Restoran & Kuliner",
@@ -284,7 +284,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Pasar Semawis",
         jenis: "Kuliner",
@@ -293,7 +293,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Lawang Sewu Kuliner & Kawasan Sekitar",
         jenis: "Kuliner",
@@ -302,7 +302,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Kawasan Kuliner Kota Lama Semarang",
         jenis: "Kuliner",
@@ -311,7 +311,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         nama: "Mie Kopyok Pak Dhuwur",
         jenis: "Kuliner Semarang",
@@ -323,7 +323,7 @@ var semarangData = [
     // ---------- TOKO & MALL ----------
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Paragon City Mall Semarang",
         jenis: "Mall",
@@ -332,7 +332,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "DP Mall Semarang",
         jenis: "Mall",
@@ -341,7 +341,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Java Mall Semarang",
         jenis: "Mall",
@@ -350,7 +350,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Queen City Mall Semarang",
         jenis: "Mall",
@@ -359,7 +359,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Tentrem Mall Semarang",
         jenis: "Mall",
@@ -368,7 +368,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Semarang Town Square",
         jenis: "Mall & Lifestyle",
@@ -377,7 +377,7 @@ var semarangData = [
     },
 
     {
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         nama: "Pasar Johar Semarang",
         jenis: "Pasar",
