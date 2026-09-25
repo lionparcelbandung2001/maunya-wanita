@@ -167,13 +167,13 @@ var jakartaData = [
 
 
     // ======================================
-    // 🍽️ PENGEN MAKAN & BELANJA
+    // 🍽️ PENGEN MAKAN -dan-belanja
     // RESTORAN & CAFE
     // ======================================
 
     {
         nama: "Café Batavia",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restaurant & Cafe",
         deskripsi: "Restoran dan kafe bersejarah di kawasan Kota Tua Jakarta.",
@@ -182,7 +182,7 @@ var jakartaData = [
 
     {
         nama: "Al-Jazeerah Signature Restaurant & Lounge",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restaurant & Lounge",
         deskripsi: "Restoran dan lounge dengan pilihan kuliner Timur Tengah di kawasan Menteng.",
@@ -191,7 +191,7 @@ var jakartaData = [
 
     {
         nama: "Ajwad Resto",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restaurant",
         deskripsi: "Restoran dengan pilihan kuliner Timur Tengah di Jakarta Timur.",
@@ -200,7 +200,7 @@ var jakartaData = [
 
     {
         nama: "Abunawas Restaurant",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restaurant",
         deskripsi: "Restoran dengan pilihan kuliner Timur Tengah di kawasan Kemang.",
@@ -209,7 +209,7 @@ var jakartaData = [
 
     {
         nama: "PIK Avenue Dining",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner",
         deskripsi: "Kawasan dengan berbagai pilihan restoran dan cafe di PIK Avenue.",
@@ -218,13 +218,13 @@ var jakartaData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // TOKO & MALL
     // ======================================
 
     {
         nama: "Grand Indonesia",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan dengan berbagai pilihan fashion, kuliner, hiburan, dan lifestyle.",
@@ -233,7 +233,7 @@ var jakartaData = [
 
     {
         nama: "Plaza Indonesia",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat perbelanjaan di kawasan pusat Jakarta dengan berbagai brand dan kebutuhan lifestyle.",
@@ -242,7 +242,7 @@ var jakartaData = [
 
     {
         nama: "Central Park Jakarta",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan, kuliner, hiburan, dan lifestyle.",
@@ -251,7 +251,7 @@ var jakartaData = [
 
     {
         nama: "Kota Kasablanka",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat belanja, kuliner, dan hiburan di Jakarta Selatan.",
@@ -260,7 +260,7 @@ var jakartaData = [
 
     {
         nama: "AEON Mall Jakarta Garden City",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat perbelanjaan dengan berbagai pilihan toko, kuliner, dan kebutuhan sehari-hari.",
