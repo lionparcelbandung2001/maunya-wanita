@@ -230,13 +230,13 @@ var medanData = [
 
 
     // ======================================
-    // 🍽️ PENGEN MAKAN & BELANJA
+    // 🍽️ PENGEN MAKAN -dan-belanja
     // RESTORAN & CAFE
     // ======================================
 
     {
         nama: "Merdeka Walk",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner & Lifestyle",
         deskripsi: "Kawasan kuliner dan tempat nongkrong yang populer di pusat Kota Medan.",
@@ -245,7 +245,7 @@ var medanData = [
 
     {
         nama: "Kesawan City Walk",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner & Lifestyle",
         deskripsi: "Kawasan kuliner dan ruang publik di area heritage Kota Medan.",
@@ -254,7 +254,7 @@ var medanData = [
 
     {
         nama: "Tip Top Restaurant",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restaurant & Bakery",
         deskripsi: "Restoran legendaris di kawasan Kesawan dengan suasana heritage.",
@@ -263,7 +263,7 @@ var medanData = [
 
     {
         nama: "Ucok Durian Medan",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner",
         deskripsi: "Tempat menikmati durian dan berbagai olahan kuliner khas Medan.",
@@ -272,7 +272,7 @@ var medanData = [
 
     {
         nama: "Bika Ambon Zulaikha",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner & Oleh-oleh",
         deskripsi: "Salah satu pilihan untuk mencari bika ambon dan oleh-oleh khas Medan.",
@@ -281,13 +281,13 @@ var medanData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // TOKO & MALL
     // ======================================
 
     {
         nama: "Sun Plaza Medan",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan dengan berbagai pilihan fashion, kuliner, dan kebutuhan keluarga.",
@@ -296,7 +296,7 @@ var medanData = [
 
     {
         nama: "Centre Point Mall Medan",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat perbelanjaan dan lifestyle di pusat Kota Medan.",
@@ -305,7 +305,7 @@ var medanData = [
 
     {
         nama: "Delipark Medan",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan, kuliner, dan lifestyle di Kota Medan.",
@@ -314,7 +314,7 @@ var medanData = [
 
     {
         nama: "Plaza Medan Fair",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat belanja dengan berbagai pilihan toko, makanan, dan kebutuhan sehari-hari.",
@@ -323,7 +323,7 @@ var medanData = [
 
     {
         nama: "Pajak Ikan Lama",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Shopping & Market",
         deskripsi: "Kawasan belanja yang dikenal dengan berbagai pilihan produk dan kebutuhan.",
@@ -332,7 +332,7 @@ var medanData = [
 
     {
         nama: "Pasar Petisah",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Market & Shopping",
         deskripsi: "Pasar tradisional dengan berbagai pilihan kebutuhan sehari-hari.",
