@@ -230,13 +230,13 @@ var makassarData = [
 
 
     // ======================================
-    // 🍽️ PENGEN MAKAN & BELANJA
+    // 🍽️ PENGEN MAKAN -dan-belanja
     // RESTORAN & CAFE
     // ======================================
 
     {
         nama: "Coto Nusantara",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Kuliner",
         deskripsi: "Pilihan kuliner khas Makassar yang terkenal.",
@@ -245,7 +245,7 @@ var makassarData = [
 
     {
         nama: "RM Konro Karebosi",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restoran",
         deskripsi: "Restoran yang menyajikan berbagai kuliner khas Makassar.",
@@ -254,7 +254,7 @@ var makassarData = [
 
     {
         nama: "Rumah Makan Ulu Juku",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Restoran",
         deskripsi: "Restoran dengan berbagai pilihan makanan khas Makassar.",
@@ -263,7 +263,7 @@ var makassarData = [
 
     {
         nama: "Kios La Galigo",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Cafe & Kuliner",
         deskripsi: "Pilihan tempat makan dan menikmati kuliner di Makassar.",
@@ -272,7 +272,7 @@ var makassarData = [
 
     {
         nama: "Phinisi Point",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Mall & Kuliner",
         deskripsi: "Kawasan lifestyle dengan berbagai pilihan restoran dan kuliner.",
@@ -281,13 +281,13 @@ var makassarData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // TOKO & MALL
     // ======================================
 
     {
         nama: "Trans Studio Mall Makassar",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall",
         deskripsi: "Pusat belanja, kuliner dan hiburan di Makassar.",
@@ -296,7 +296,7 @@ var makassarData = [
 
     {
         nama: "Mall Panakkukang",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall",
         deskripsi: "Pusat perbelanjaan dan kuliner di kawasan Panakkukang.",
@@ -305,7 +305,7 @@ var makassarData = [
 
     {
         nama: "Nipah Mall Makassar",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall",
         deskripsi: "Pusat belanja, kuliner dan hiburan.",
@@ -314,7 +314,7 @@ var makassarData = [
 
     {
         nama: "Mall Ratu Indah",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall",
         deskripsi: "Pusat perbelanjaan dengan berbagai kebutuhan dan pilihan kuliner.",
@@ -323,7 +323,7 @@ var makassarData = [
 
     {
         nama: "Pasar Terong Makassar",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Pasar",
         deskripsi: "Pasar tradisional dengan berbagai kebutuhan masyarakat.",
@@ -332,7 +332,7 @@ var makassarData = [
 
     {
         nama: "Pasar Butung",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Pasar",
         deskripsi: "Salah satu kawasan perdagangan dan belanja di Makassar.",
