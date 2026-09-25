@@ -23,11 +23,11 @@
            HOMEPAGE UTAMA
 
            PC:
-           Ruang Cewek = 1x1 / full width
+           Ruang Cewek = full width
            4 kategori = 4x1
 
            HP:
-           Ruang Cewek = 1x1 / full width
+           Ruang Cewek = full width
            4 kategori = 2x2
            ========================================= */
 
@@ -35,12 +35,16 @@
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 10px;
+            width: 100%;
         }
 
         .main-category-grid .category {
             min-height: 125px;
-            text-align: center;
+            min-width: 0;
+            width: 100%;
+            max-width: 100%;
             box-sizing: border-box;
+            text-align: center;
         }
 
         /* RUANG CEWEK MEMANJANG */
@@ -53,6 +57,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            min-width: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .main-category-grid .ruang-cewek-card .icon {
@@ -64,6 +71,16 @@
         .main-category-grid .category .icon,
         .main-category-grid .category h3,
         .main-category-grid .category p {
+            text-align: center;
+        }
+
+        /* Judul panjang tetap berada di dalam kartunya */
+
+        .main-category-grid .category h3 {
+            font-size: 14px;
+            line-height: 1.15;
+            overflow-wrap: anywhere;
+            word-break: normal;
             text-align: center;
         }
 
@@ -189,8 +206,12 @@
 
             .main-category-grid .category {
                 min-height: 91px;
+                min-width: 0;
+                width: 100%;
+                max-width: 100%;
                 padding: 7px 6px;
                 text-align: center;
+                box-sizing: border-box;
             }
 
             .main-category-grid .ruang-cewek-card {
@@ -211,6 +232,7 @@
                 font-size: 12px;
                 line-height: 1.1;
                 text-align: center;
+                overflow-wrap: anywhere;
             }
 
             .main-category-grid .category p {
