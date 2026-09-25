@@ -275,13 +275,13 @@ var bandungData = [
 
 
     // ======================================
-    // 🍽️ PENGEN MAKAN & BELANJA
+    // 🍽️ PENGEN MAKAN -dan-belanja
     // RESTORAN & CAFE
     // ======================================
 
     {
         nama: "Kartika Sari",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Bakery & Oleh-oleh",
         deskripsi: "Pusat oleh-oleh dan aneka kue khas Bandung.",
@@ -290,7 +290,7 @@ var bandungData = [
 
     {
         nama: "Prima Rasa",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Restoran & Cafe",
         jenis: "Bakery & Oleh-oleh",
         deskripsi: "Bakery dan pusat oleh-oleh khas Bandung.",
@@ -299,13 +299,13 @@ var bandungData = [
 
 
     // ======================================
-    // 🛍️ PENGEN MAKAN & BELANJA
+    // 🛍️ PENGEN MAKAN -dan-belanja
     // TOKO & MALL
     // ======================================
 
     {
         nama: "Paris Van Java",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan dan lifestyle di Bandung.",
@@ -314,7 +314,7 @@ var bandungData = [
 
     {
         nama: "23 PASKAL Shopping Center",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat perbelanjaan dengan pilihan toko, makanan, dan hiburan.",
@@ -323,7 +323,7 @@ var bandungData = [
 
     {
         nama: "Cihampelas Walk",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat perbelanjaan, kuliner, dan hiburan di kawasan Cihampelas.",
@@ -332,7 +332,7 @@ var bandungData = [
 
     {
         nama: "Bandung Indah Plaza",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Shopping",
         deskripsi: "Pusat perbelanjaan dengan pilihan fashion, makanan, dan kebutuhan lainnya.",
@@ -341,7 +341,7 @@ var bandungData = [
 
     {
         nama: "Braga CityWalk",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Mall & Lifestyle",
         deskripsi: "Pusat lifestyle, kuliner, dan belanja di kawasan Braga.",
@@ -350,7 +350,7 @@ var bandungData = [
 
     {
         nama: "Rumah Mode Factory Outlet",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Fashion & Factory Outlet",
         deskripsi: "Tempat belanja fashion dan produk factory outlet di Bandung.",
@@ -359,7 +359,7 @@ var bandungData = [
 
     {
         nama: "Setiabudhi Supermarket",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Supermarket",
         deskripsi: "Tempat belanja makanan dan kebutuhan sehari-hari.",
@@ -368,7 +368,7 @@ var bandungData = [
 
     {
         nama: "Toserba Griya Setiabudi",
-        kategori: "Pengen Makan & Belanja",
+        kategori: "Pengen Makan -dan-belanja",
         subkategori: "Toko & Mall",
         jenis: "Supermarket",
         deskripsi: "Tempat belanja berbagai kebutuhan sehari-hari.",
