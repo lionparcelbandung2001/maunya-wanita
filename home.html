@@ -1,787 +1,348 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Pernikahan, Kuliner & Healing</title>
 
-    <title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Pernikahan, Kuliner & Healing</title>
+<meta name="description" content="CewekPedia menyediakan informasi dan rekomendasi kebutuhan wanita: kecantikan, pernikahan, kuliner, belanja, tempat healing, serta Ruang Cewek untuk curhat, tips, review, dan ngobrol bersama.">
 
-    <meta
-        name="description"
-        content="CewekPedia menyediakan informasi dan rekomendasi kebutuhan wanita: kecantikan, pernikahan, kuliner, belanja, tempat healing, serta Ruang Cewek untuk curhat, tips, review, dan ngobrol bersama."
-    >
+<meta name="robots" content="index, follow">
 
-    <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cewekpedia.com/">
 
-    <link rel="canonical" href="https://cewekpedia.com/">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin: 25px auto;
+        max-width: 900px;
+    }
 
-    <style>
+    .main-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        background: #fff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        /* =========================================
-           HOMEPAGE UTAMA
+    .main-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
 
-           PC:
-           Ruang Cewek = 1x1 / full width
-           3 kategori = 1x3
-           Healing = 1x1 / full width
+    .main-card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 
-           HP:
-           Ruang Cewek = 1x1 / full width
-           4 kategori = 2x2
-           ========================================= */
+    .main-card p {
+        margin-bottom: 0;
+        line-height: 1.6;
+    }
 
-        .main-category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-            width: 100%;
+    .seo-links {
+        max-width: 900px;
+        margin: 35px auto;
+        padding: 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .seo-links a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding: 12px 0;
+    }
+
+    .city-section,
+    .community-section {
+        max-width: 900px;
+        margin: 30px auto;
+    }
+
+    .city-section a,
+    .community-section a {
+        display: inline-block;
+        margin: 5px;
+        padding: 9px 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        background: #fff;
+        color: inherit;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    @media (max-width: 700px) {
+        .main-grid {
+            grid-template-columns: 1fr;
+            padding: 0 12px;
         }
 
-        .main-category-grid .category {
-            min-height: 125px;
-            min-width: 0;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        /* RUANG CEWEK
-           Full width = 1x1 */
-
-        .main-category-grid .ruang-cewek-card {
-            grid-column: 1 / -1;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-width: 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .main-category-grid .ruang-cewek-card .icon {
-            margin-bottom: 3px;
-        }
-
-        /* PENGEN JALAN-JALAN / HEALING
-           Full width = 1x1 */
-
-        .main-category-grid #healing {
-            grid-column: 1 / -1;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-width: 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Semua isi kartu utama rata tengah */
-
-        .main-category-grid .category .icon,
-        .main-category-grid .category h3,
-        .main-category-grid .category p {
-            text-align: center;
-        }
-
-        /* Judul kartu */
-
-        .main-category-grid .category h3 {
-            font-size: 14px;
-            line-height: 1.15;
-            overflow-wrap: anywhere;
-            word-break: normal;
-            text-align: center;
-        }
-
-
-        /* =========================================
-           INTERNAL LINK SECTIONS
-           ========================================= */
-
+        .seo-links,
         .city-section,
         .community-section {
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-left: 12px;
+            margin-right: 12px;
         }
+    }
+</style>
 
-        .city-section h2,
-        .community-section h2 {
-            margin-bottom: 6px;
-        }
+</head><body><main>
 
-        .city-section p,
-        .community-section p {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
+    <header style="text-align:center; padding:30px 15px 10px;">
+        <h1>YANG WANITA MAU ❤️❤️</h1>
 
-        .city-links {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-
-        .city-link,
-        .community-link {
-            display: block;
-            padding: 10px;
-            border-radius: 12px;
-            background: #fff;
-            color: inherit;
-            text-decoration: none;
-            text-align: center;
-            border: 1px solid rgba(180, 150, 165, 0.18);
-            box-sizing: border-box;
-        }
-
-        .city-link:hover,
-        .community-link:hover {
-            text-decoration: none;
-            opacity: 0.85;
-        }
-
-        .community-links {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-
-        .community-link strong {
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .community-link span {
-            font-size: 12px;
-        }
+        <p>
+            Lagi pengen apa hari ini??
+        </p>
+    </header>
 
 
-        /* =========================================
-           MOBILE
-           TETAP SAMA SEPERTI KODE AWAL
-           ========================================= */
-
-        @media (max-width: 600px) {
-
-            .container {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-
-            header {
-                margin-top: 8px;
-                margin-bottom: 5px;
-            }
-
-            header h1 {
-                margin-bottom: 2px;
-                font-size: 24px;
-            }
-
-            header p {
-                margin-top: 0;
-                margin-bottom: 4px;
-                font-size: 13px;
-            }
-
-            .intro {
-                margin-top: 4px;
-                margin-bottom: 6px;
-            }
-
-            .intro h2 {
-                margin-bottom: 2px;
-                font-size: 17px;
-            }
-
-            .intro p {
-                margin-top: 0;
-                margin-bottom: 5px;
-                font-size: 11px;
-                line-height: 1.25;
-            }
-
-
-            /* =====================================
-               5 KARTU UTAMA
-
-               Ruang Cewek = full width
-               4 kategori = 2 x 2
-               ===================================== */
-
-            .main-category-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 6px;
-            }
-
-            .main-category-grid .category {
-                min-height: 91px;
-                min-width: 0;
-                width: 100%;
-                max-width: 100%;
-                padding: 7px 6px;
-                text-align: center;
-                box-sizing: border-box;
-            }
-
-            .main-category-grid .ruang-cewek-card {
-                grid-column: 1 / -1;
-                min-height: 76px;
-                padding: 7px 10px;
-            }
-
-            /* Healing kembali menjadi kartu biasa di HP,
-               sehingga layout HP tetap 2x2 */
-
-            .main-category-grid #healing {
-                grid-column: auto;
-                min-height: 91px;
-                padding: 7px 6px;
-                display: block;
-                text-align: center;
-            }
-
-            .main-category-grid .category .icon {
-                font-size: 23px;
-                margin-bottom: 2px;
-                text-align: center;
-            }
-
-            .main-category-grid .category h3 {
-                margin-top: 1px;
-                margin-bottom: 2px;
-                font-size: 12px;
-                line-height: 1.1;
-                text-align: center;
-                overflow-wrap: anywhere;
-            }
-
-            .main-category-grid .category p {
-                margin-top: 0;
-                margin-bottom: 0;
-                font-size: 9.5px;
-                line-height: 1.2;
-                text-align: center;
-            }
-
-
-            /* =====================================
-               SECTION SEO DI BAWAH
-               ===================================== */
-
-            .city-section,
-            .community-section {
-                margin-top: 15px;
-                margin-bottom: 8px;
-            }
-
-            .city-section h2,
-            .community-section h2 {
-                margin-bottom: 4px;
-                font-size: 17px;
-            }
-
-            .city-section p,
-            .community-section p {
-                margin-top: 0;
-                margin-bottom: 7px;
-                font-size: 11px;
-                line-height: 1.3;
-            }
-
-            .city-links {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
-            }
-
-            .community-links {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
-            }
-
-            .city-link,
-            .community-link {
-                padding: 8px 6px;
-                border-radius: 10px;
-            }
-
-            .community-link strong {
-                margin-bottom: 2px;
-                font-size: 11px;
-            }
-
-            .community-link span {
-                font-size: 9.5px;
-                line-height: 1.2;
-            }
-
-            footer {
-                margin-top: 12px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                font-size: 11px;
-            }
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-<!-- =========================================
-     HEADER
-     ========================================= -->
-
-<header
-    class="container"
-    id="header">
-
-    <h1>
-        YANG WANITA MAU ❤️❤️
-    </h1>
-
-    <p>
-        Lagi pengen apa hari ini??
-    </p>
-
-</header>
-
-
-<!-- =========================================
-     MAIN CONTENT
-     ========================================= -->
-
-<main class="container">
-
-    <!-- INTRO -->
-
-    <section class="intro">
+    <section style="text-align:center; padding:0 15px;">
 
         <h2>
             KATALOG Kebutuhanmu ada di bawah ini 💕
         </h2>
 
         <p>
-            TEMUKAN VENDOR KECANTIKAN, PERNIKAHAN, KULINER
-            DAN TEMPAT HANGOUT FAVORITMU DISINI.
+            TEMUKAN VENDOR KECANTIKAN, PERNIKAHAN,
+            KULINER DAN TEMPAT HANGOUT FAVORITMU DISINI.
         </p>
 
     </section>
 
 
-    <!-- =========================================
-         RUANG CEWEK + 4 KATEGORI UTAMA
-         ========================================= -->
-
-    <section
-        class="main-category-grid"
-        aria-label="Kategori utama CewekPedia">
-
+    <section class="main-grid">
 
         <!-- RUANG CEWEK -->
-
-        <a
-            class="category ruang-cewek-card"
-            href="ruangcewek/"
-            style="text-decoration: none; color: inherit;">
-
-            <div class="icon">
-                💬
-            </div>
-
-            <h3>
-                RUANG CEWEK
-            </h3>
+        <a href="ruangcewek/" class="main-card">
+            <h3>💬 RUANG CEWEK</h3>
 
             <p>
-                Tempat cewek curhat, berbagi tips,
-                review produk, pengalaman, dan ngobrol bareng.
+                Tempat curhat, tips kecantikan,
+                review produk dan ngobrol bersama.
             </p>
-
         </a>
 
 
         <!-- PENGEN CANTIK -->
-
-        <div
-            id="cantik"
-            class="category"
-            onclick="chooseCategory('Pengen Cantik')"
-            role="link"
-            tabindex="0"
-            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Cantik')}">
-
-            <div class="icon">
-                💄
-            </div>
+        <a href="javascript:void(0)"
+           onclick="chooseCategory('Pengen Cantik')"
+           class="main-card">
 
             <h3>
-                PENGEN CANTIK
+                💄 PENGEN CANTIK
             </h3>
 
             <p>
-                Salon, skincare store, fashion,
-                parfum, dan kebutuhan kecantikan lainnya.
+                Salon, skincare store, fashion
+                dan parfum.
             </p>
 
-        </div>
+        </a>
 
 
         <!-- PENGEN NIKAH -->
-
-        <div
-            id="nikah"
-            class="category"
-            onclick="chooseCategory('Pengen Nikah')"
-            role="link"
-            tabindex="0"
-            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Nikah')}">
-
-            <div class="icon">
-                💍
-            </div>
+        <a href="javascript:void(0)"
+           onclick="chooseCategory('Pengen Nikah')"
+           class="main-card">
 
             <h3>
-                PENGEN NIKAH
+                💍 PENGEN NIKAH
             </h3>
 
             <p>
-                WO, MUA, toko pengantin,
-                dan berbagai kebutuhan pernikahan.
+                Wedding organizer, MUA
+                dan toko pengantin.
             </p>
 
-        </div>
+        </a>
 
 
         <!-- PENGEN MAKAN DAN BELANJA -->
-
-        <div
-            id="makan"
-            class="category"
-            onclick="chooseCategory('Pengen Makan -dan-belanja')"
-            role="link"
-            tabindex="0"
-            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Makan -dan-belanja')}">
-
-            <div class="icon">
-                🛍️
-            </div>
+        <a href="javascript:void(0)"
+           onclick="chooseCategory('Pengen Makan -dan-belanja')"
+           class="main-card">
 
             <h3>
-                PENGEN MAKAN -dan-belanja
+                PENGEN MAKAN DAN BELANJA
             </h3>
 
             <p>
-                Restoran & cafe, toko & mall,
+                Restoran dan cafe, toko dan mall,
                 serta tempat makan dan belanja.
             </p>
 
-        </div>
+        </a>
 
 
         <!-- PENGEN JALAN-JALAN / HEALING -->
-
-        <div
-            id="healing"
-            class="category"
-            onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
-            role="link"
-            tabindex="0"
-            onkeydown="if(event.key==='Enter'||event.key===' '){chooseCategory('Pengen Jalan-jalan / Healing')}">
-
-            <div class="icon">
-                🌴
-            </div>
+        <a href="javascript:void(0)"
+           onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
+           class="main-card">
 
             <h3>
-                PENGEN<br>
-                JALAN-JALAN / HEALING
+                🌿 PENGEN JALAN-JALAN / HEALING
             </h3>
 
             <p>
-                Hotel & penginapan, wisata,
-                hiburan, dan tempat untuk healing.
+                Hotel, penginapan, wisata
+                dan hiburan.
             </p>
 
-        </div>
+        </a>
 
     </section>
 
 
-    <!-- =========================================
-         INTERNAL LINKING — 4 LANDING PAGE SEO
-         ========================================= -->
+    <!-- SEO LANDING PAGES -->
 
-    <section class="community-section">
+    <section class="seo-links">
 
         <h2>
-            Jelajahi Kategori CewekPedia ✨
+            Jelajahi CewekPedia
         </h2>
 
-        <p>
-            Temukan halaman khusus untuk berbagai kebutuhan wanita
-            di CewekPedia.
-        </p>
+        <a href="pengencantik/">
+            <strong>💄 Pengen Cantik</strong>
 
-        <nav
-            class="community-links"
-            aria-label="Kategori utama CewekPedia">
-
-            <a
-                class="community-link"
-                href="pengencantik/">
-
-                <strong>💄 Pengen Cantik</strong>
-
-                <span>
-                    Salon, skincare, fashion & parfum
-                </span>
-
-            </a>
+            <span>
+                Salon, skincare, fashion dan parfum
+            </span>
+        </a>
 
 
-            <a
-                class="community-link"
-                href="pengennikah/">
+        <a href="pengennikah/">
+            <strong>💍 Pengen Nikah</strong>
 
-                <strong>💍 Pengen Nikah</strong>
-
-                <span>
-                    WO, MUA & kebutuhan pernikahan
-                </span>
-
-            </a>
+            <span>
+                Wedding organizer, MUA dan kebutuhan pengantin
+            </span>
+        </a>
 
 
-            <a
-                class="community-link"
-                href="pengenmakan-dan-belanja/">
+        <a href="pengenmakan-dan-belanja/">
+            <strong>🛍️ Pengen Makan dan Belanja</strong>
 
-                <strong>🛍️ Pengen Makan -dan-belanja</strong>
-
-                <span>
-                    Restoran, cafe, toko & mall
-                </span>
-
-            </a>
+            <span>
+                Restoran, cafe, toko dan mall
+            </span>
+        </a>
 
 
-            <a
-                class="community-link"
-                href="pengenhealing/">
+        <a href="pengenhealing/">
+            <strong>🌿 Pengen Healing</strong>
 
-                <strong>🌿 Pengen Jalan-jalan & Healing</strong>
-
-                <span>
-                    Hotel, penginapan & tempat jalan-jalan
-                </span>
-
-            </a>
-
-        </nav>
+            <span>
+                Hotel, penginapan, wisata dan hiburan
+            </span>
+        </a>
 
     </section>
 
 
-    <!-- =========================================
-         JELAJAHI KOTA
-         ========================================= -->
+    <!-- KOTA -->
 
     <section class="city-section">
 
         <h2>
-            Jelajahi CewekPedia di Kotamu 📍
+            Temukan Rekomendasi Berdasarkan Kota
         </h2>
 
         <p>
-            Temukan rekomendasi kecantikan, pernikahan,
-            kuliner, belanja, wisata, dan hiburan di berbagai kota.
+            Jelajahi rekomendasi tempat dan kebutuhan wanita
+            berdasarkan kota.
         </p>
 
-        <nav
-            class="city-links"
-            aria-label="Halaman kota CewekPedia">
-
-            <a class="city-link" href="bandung/">
-                Bandung
-            </a>
-
-            <a class="city-link" href="jakarta/">
-                Jakarta
-            </a>
-
-            <a class="city-link" href="medan/">
-                Medan
-            </a>
-
-            <a class="city-link" href="makassar/">
-                Makassar
-            </a>
-
-            <a class="city-link" href="semarang/">
-                Semarang
-            </a>
-
-            <a class="city-link" href="surabaya/">
-                Surabaya
-            </a>
-
-        </nav>
+        <a href="bandung/">Bandung</a>
+        <a href="jakarta/">Jakarta</a>
+        <a href="surabaya/">Surabaya</a>
+        <a href="medan/">Medan</a>
+        <a href="semarang/">Semarang</a>
+        <a href="makassar/">Makassar</a>
 
     </section>
 
 
-    <!-- =========================================
-         RUANG KOMUNITAS
-         HANYA RUANG CEWEK
-         ========================================= -->
+    <!-- RUANG KOMUNITAS -->
 
     <section class="community-section">
 
         <h2>
-            Ruang CewekPedia 💕
+            Ruang Komunitas CewekPedia
         </h2>
 
         <p>
-            Selain katalog, kamu juga bisa membaca cerita,
-            berbagi pengalaman, tips kecantikan, review produk,
-            dan ngobrol bersama.
+            Tempat berbagi cerita, pengalaman,
+            tips dan rekomendasi.
         </p>
 
-        <nav
-            class="community-links"
-            aria-label="Ruang CewekPedia">
+        <a href="ruangcewek/">
+            💬 Ruang Cewek
+        </a>
 
-            <a
-                class="community-link"
-                href="ruangcewek/">
+        <a href="ruangcewek/curhat.html">
+            ❤️ Curhat
+        </a>
 
-                <strong>💬 Ruang Cewek</strong>
+        <a href="ruangcewek/reviewproduk.html">
+            ⭐ Review Produk
+        </a>
 
-                <span>
-                    Curhat, Tips, Review Produk & Chatroom
-                </span>
+        <a href="ruangcewek/kirimreview.html">
+            ✍️ Kirim Review
+        </a>
 
-            </a>
-
-
-            <a
-                class="community-link"
-                href="ruangcewek/curhat.html">
-
-                <strong>💭 Curhat</strong>
-
-                <span>
-                    Baca cerita dan pengalaman wanita
-                </span>
-
-            </a>
-
-
-            <a
-                class="community-link"
-                href="ruangcewek/reviewproduk.html">
-
-                <strong>⭐ Review Produk</strong>
-
-                <span>
-                    Pengalaman menggunakan produk & tempat
-                </span>
-
-            </a>
-
-
-            <a
-                class="community-link"
-                href="ruangcewek/kirimreview.html">
-
-                <strong>📝 Kirim Review</strong>
-
-                <span>
-                    Bagikan pengalaman produk atau tempat
-                </span>
-
-            </a>
-
-        </nav>
+        <a href="ruanglawak/">
+            😂 Ruang Lawak
+        </a>
 
     </section>
+
+
+    <!-- FOOTER -->
+
+    <footer style="text-align:center; padding:30px 15px;">
+
+        <p>
+            Tentang CewekPedia:
+        </p>
+
+        <p>
+            <a href="tentang.html">Tentang</a> |
+            <a href="kontak.html">Kontak</a> |
+            <a href="privacy.html">Kebijakan Privasi</a> |
+            <a href="ketentuan.html">Ketentuan</a>
+        </p>
+
+        <p>
+            © CewekPedia
+        </p>
+
+    </footer>
 
 </main>
 
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
+<script>
 
-<footer>
+    function chooseCategory(category) {
 
-    <div style="margin-bottom: 12px;">
+        localStorage.setItem("mw_category", category);
 
-        <a
-            href="tentang.html"
-            style="color: #927985; text-decoration: none; font-weight: bold;">
-            Tentang Kami
-        </a>
+        window.location.href = "kota.html";
 
-        •
+    }
 
-        <a
-            href="kontak.html"
-            style="color: #927985; text-decoration: none; font-weight: bold;">
-            Kontak
-        </a>
-
-        •
-
-        <a
-            href="privacy.html"
-            style="color: #927985; text-decoration: none; font-weight: bold;">
-            Kebijakan Privasi
-        </a>
-
-        •
-
-        <a
-            href="ketentuan.html"
-            style="color: #927985; text-decoration: none; font-weight: bold;">
-            Syarat & Ketentuan
-        </a>
-
-    </div>
-
-
-    <strong>
-        YG WANITA BUTUH ❤️❤️
-    </strong>
-
-    — Cari yang kamu mau. Tanpa ribet.
-
-
-    <br>
-
-
-    <small
-        style="opacity: 0.8; display: block; margin-top: 5px;">
-
-        © 2026 cewekpedia.com All rights reserved.
-
-    </small>
-
-</footer>
-
-
-<script src="script.js"></script>
+</script>
 
 </body>
 </html>
