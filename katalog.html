@@ -1,418 +1,450 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8">
 
-<head>
-    <meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>
+    Katalog CewekPedia — Rekomendasi Sesuai Kebutuhan dan Kota
+</title>
 
-    <title>
-        Katalog — MAUNYA WANITA ❤️❤️
-    </title>
+<meta
+    name="description"
+    content="Temukan rekomendasi salon, skincare, fashion, pernikahan, restoran, toko, hotel, wisata dan berbagai kebutuhan wanita berdasarkan kota dan kategori pilihanmu di CewekPedia."
+>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+<meta
+    name="robots"
+    content="index, follow"
+>
 
-    <style>
+<link
+    rel="canonical"
+    href="https://cewekpedia.com/katalog.html"
+>
 
-        /* ==========================================
-           IKLAN / HUBUNGI KAMI
-           ========================================== */
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 
-        .advertise-float {
 
-            position: fixed;
+<style>
 
-            right: 0;
-            top: 50%;
+    /* ==========================================
+       IKLAN / HUBUNGI KAMI
+       ========================================== */
+
+    .advertise-float {
+
+        position: fixed;
+
+        right: 0;
+        top: 50%;
+
+        transform:
+            translateY(-50%);
+
+        background: #e91e63;
+
+        color: white;
+
+        padding: 12px 10px;
+
+        text-decoration: none;
+
+        border-radius:
+            12px 0 0 12px;
+
+        font-size: 13px;
+
+        font-weight: bold;
+
+        text-align: center;
+
+        z-index: 9999;
+
+        box-shadow:
+            0 4px 12px
+            rgba(0, 0, 0, 0.15);
+
+        animation:
+            naikTurun
+            2.5s
+            ease-in-out
+            infinite;
+
+    }
+
+
+    .advertise-float span {
+
+        font-size: 11px;
+
+    }
+
+
+    /* ==========================================
+       PILIHAN EMAIL & WHATSAPP
+       ========================================== */
+
+    .advertise-float a {
+
+        display: block;
+
+        margin-top: 7px;
+
+        padding: 6px 8px;
+
+        background: rgba(255, 255, 255, 0.18);
+
+        color: white;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+
+        font-size: 11px;
+
+    }
+
+
+    .advertise-float a:hover {
+
+        background:
+            rgba(255, 255, 255, 0.30);
+
+    }
+
+
+    /* ==========================================
+       ANIMASI NAIK TURUN
+       ========================================== */
+
+    @keyframes naikTurun {
+
+        0% {
 
             transform:
                 translateY(-50%);
 
-            background: #e91e63;
+        }
 
-            color: white;
+        50% {
 
-            padding: 12px 10px;
+            transform:
+                translateY(
+                    calc(-50% - 8px)
+                );
 
-            text-decoration: none;
+        }
 
-            border-radius:
-                12px 0 0 12px;
+        100% {
 
-            font-size: 13px;
+            transform:
+                translateY(-50%);
 
-            font-weight: bold;
+        }
 
-            text-align: center;
+    }
 
-            z-index: 9999;
 
-            box-shadow:
-                0 4px 12px
-                rgba(0, 0, 0, 0.15);
+    /* ==========================================
+       EFEK SAAT DISENTUH / DIKLIK
+       ========================================== */
 
-            animation:
-                naikTurun
-                2.5s
-                ease-in-out
-                infinite;
+    .advertise-float:hover {
+
+        transform:
+            translateY(-50%)
+            scale(1.03);
+
+    }
+
+
+    /* ==========================================
+       TAMPILAN HP
+       ========================================== */
+
+    @media (max-width: 700px) {
+
+        .advertise-float {
+
+            font-size: 11px;
+
+            padding:
+                9px 7px;
 
         }
 
 
         .advertise-float span {
 
-            font-size: 11px;
+            font-size: 9px;
 
         }
 
-
-        /* ==========================================
-           PILIHAN EMAIL & WHATSAPP
-           ========================================== */
 
         .advertise-float a {
 
-            display: block;
+            font-size: 9px;
 
-            margin-top: 7px;
-
-            padding: 6px 8px;
-
-            background: rgba(255, 255, 255, 0.18);
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            font-size: 11px;
+            padding:
+                5px 6px;
 
         }
 
+    }
 
-        .advertise-float a:hover {
+</style>
 
-            background:
-                rgba(255, 255, 255, 0.30);
-
-        }
-
-
-
-        /* ==========================================
-           ANIMASI NAIK TURUN
-           ========================================== */
-
-        @keyframes naikTurun {
-
-            0% {
-
-                transform:
-                    translateY(-50%);
-
-            }
-
-            50% {
-
-                transform:
-                    translateY(
-                        calc(-50% - 8px)
-                    );
-
-            }
-
-            100% {
-
-                transform:
-                    translateY(-50%);
-
-            }
-
-        }
-
-
-
-        /* ==========================================
-           EFEK SAAT DISENTUH / DIKLIK
-           ========================================== */
-
-        .advertise-float:hover {
-
-            transform:
-                translateY(-50%)
-                scale(1.03);
-
-        }
-
-
-
-        /* ==========================================
-           TAMPILAN HP
-           ========================================== */
-
-        @media (max-width: 700px) {
-
-            .advertise-float {
-
-                font-size: 11px;
-
-                padding:
-                    9px 7px;
-
-            }
-
-
-            .advertise-float span {
-
-                font-size: 9px;
-
-            }
-
-
-            .advertise-float a {
-
-                font-size: 9px;
-
-                padding:
-                    5px 6px;
-
-            }
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-
-<!-- ==========================================
+</head><body><!-- ==========================================
      HEADER
-     ========================================== -->
+     ========================================== --><header class="container"><h1>
+    YANG WANITA MAU ❤️❤️
+</h1>
 
-<header class="container">
+<p>
+    Temukan pilihan yang sesuai dengan kebutuhanmu.
+</p>
 
-    <h1>
-        MAUNYA WANITA ❤️❤️
-    </h1>
-
-    <p>
-        Lagi pengen apa hari ini??
-    </p>
-
-</header>
-
-
-
-<!-- ==========================================
+</header><!-- ==========================================
      KONTEN UTAMA
-     ========================================== -->
+     ========================================== --><main class="container"><!-- ======================================
+     KEMBALI KE SUBKATEGORI
+     ====================================== -->
 
-<main class="container">
+<a
+    class="back"
+    href="subkategori.html"
+>
 
+    ← Pilih kebutuhan lain
 
-    <!-- ======================================
-         KEMBALI KE SUBKATEGORI
-         ====================================== -->
+</a>
 
-    <a
-        class="back"
-        href="subkategori.html"
-    >
 
-        ← Pilih kebutuhan lain
 
-    </a>
+<!-- ======================================
+     NOTICE
+     ====================================== -->
 
+<div class="notice">
 
+    🔗 DAFTAR INI TERHUBUNG
+    KE LINK RESMI
 
-    <!-- ======================================
-         NOTICE
-         ====================================== -->
+    <small>
 
-    <div class="notice">
+        Informasi dalam katalog disusun untuk
+        membantu pengunjung menemukan pilihan
+        usaha atau layanan berdasarkan kategori
+        dan kota.
 
-        🔗 DAFTAR INI AKAN TERHUBUNG
-        KE LINK RESMI
+        <br><br>
 
-        <small>
+        Jika Anda pemilik usaha dan ingin
+        memperbarui informasi atau meminta
+        penghapusan data, silakan hubungi kami.
 
-            Jika Anda pemilik usaha dan ingin
-            keluar dari daftar, silakan hubungi kami.
-
-        </small>
-
-    </div>
-
-
-
-    <!-- ======================================
-         HASIL KATALOG
-         ====================================== -->
-
-    <section class="results">
-
-
-        <!-- JUDUL OTOMATIS -->
-
-        <h2 id="catalogTitle">
-
-            Pilihan untukmu ❤️
-
-        </h2>
-
-
-        <p class="result-note">
-
-            Daftar pilihan berdasarkan
-            kebutuhan dan kota yang kamu pilih.
-
-        </p>
-
-
-
-        <!-- ==================================
-             KARTU USAHA
-             ================================== -->
-
-        <div
-            class="cards"
-            id="catalogCards"
-        ></div>
-
-
-
-        <!-- ==================================
-             JIKA DATA TIDAK DITEMUKAN
-             ================================== -->
-
-        <p
-            id="noData"
-            style="display:none;"
-        >
-
-            Maaf, data untuk pilihan ini
-            belum tersedia. ❤️
-
-        </p>
-
-
-    </section>
-
-
-
-    <!-- ======================================
-         SARAN & MASUKAN
-         ====================================== -->
-
-    <section class="feedback">
-
-        <h2>
-            ❤️ Apakah kami membantu?
-        </h2>
-
-
-        <p>
-
-            Ada yang sedang kamu cari tetapi
-            belum kami sediakan?
-
-        </p>
-
-
-        <a
-            href="#"
-            onclick="parent.goPage('saran.html'); return false;"
-        >
-
-            BERIKAN SARAN DAN MASUKANMU DISINI yaaa →
-
-        </a>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- ==========================================
-     IKLAN / HUBUNGI KAMI
-     ========================================== -->
-
-<div class="advertise-float">
-
-    📢 Ingin beriklan?
-
-    <br>
-
-    <span>
-        Hubungi kami ❤️
-    </span>
-
-
-    <a
-        href="mailto:iklancewekpedia@gmail.com"
-    >
-        📧 Email
-    </a>
-
-
-    <a
-        href="https://wa.me/6285183090486?text=Halo%20MAUNYA%20WANITA,%20saya%20tertarik%20untuk%20beriklan%20di%20website%20MAUNYA%20WANITA."
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        💬 WhatsApp
-    </a>
+    </small>
 
 </div>
 
 
 
-<!-- ==========================================
+<!-- ======================================
+     PENJELASAN KATALOG
+     ====================================== -->
+
+<section>
+
+    <h2>
+        Katalog Pilihan untukmu
+    </h2>
+
+    <p>
+
+        CewekPedia menyediakan katalog informasi
+        berdasarkan kebutuhan dan kota yang kamu pilih.
+
+        Mulai dari kecantikan, pernikahan,
+        makanan dan belanja, hingga jalan-jalan
+        dan healing.
+
+    </p>
+
+    <p>
+
+        Pilih informasi yang sesuai dengan kebutuhanmu,
+        lalu gunakan link resmi yang tersedia untuk
+        melihat informasi lebih lanjut dari pihak
+        terkait.
+
+    </p>
+
+</section>
+
+
+
+<!-- ======================================
+     HASIL KATALOG
+     ====================================== -->
+
+<section class="results">
+
+
+    <!-- JUDUL OTOMATIS -->
+
+    <h2 id="catalogTitle">
+
+        Pilihan untukmu ❤️
+
+    </h2>
+
+
+    <p class="result-note">
+
+        Daftar pilihan berdasarkan
+        kebutuhan dan kota yang kamu pilih.
+
+    </p>
+
+
+
+    <!-- ==================================
+         KARTU USAHA
+         ================================== -->
+
+    <div
+        class="cards"
+        id="catalogCards"
+    ></div>
+
+
+
+    <!-- ==================================
+         JIKA DATA TIDAK DITEMUKAN
+         ================================== -->
+
+    <p
+        id="noData"
+        style="display:none;"
+    >
+
+        Maaf, data untuk pilihan ini
+        belum tersedia. ❤️
+
+    </p>
+
+
+</section>
+
+
+
+<!-- ======================================
+     SARAN & MASUKAN
+     ====================================== -->
+
+<section class="feedback">
+
+    <h2>
+        ❤️ Apakah kami membantu?
+    </h2>
+
+
+    <p>
+
+        Ada yang sedang kamu cari tetapi
+        belum kami sediakan?
+
+    </p>
+
+
+    <a
+        href="#"
+        onclick="parent.goPage('saran.html'); return false;"
+    >
+
+        BERIKAN SARAN DAN MASUKANMU DISINI yaaa →
+
+    </a>
+
+</section>
+
+</main><!-- ==========================================
+     IKLAN / HUBUNGI KAMI
+     ========================================== --><div class="advertise-float">📢 Ingin beriklan?
+
+<br>
+
+<span>
+    Hubungi kami ❤️
+</span>
+
+
+<a
+    href="mailto:iklancewekpedia@gmail.com"
+>
+    📧 Email
+</a>
+
+
+<a
+    href="https://wa.me/6285183090486?text=Halo%20CewekPedia,%20saya%20tertarik%20untuk%20beriklan%20di%20website%20CewekPedia."
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    💬 WhatsApp
+</a>
+
+</div><!-- ==========================================
      FOOTER
-     ========================================== -->
+     ========================================== --><footer><strong>
+    YANG WANITA MAU ❤️❤️
+</strong>
 
-<footer>
+<br>
 
-    <strong>
-        MAUNYA WANITA ❤️❤️
-    </strong>
+Cari yang kamu mau. Tanpa ribet.
 
-    <br>
+<br><br>
 
-    Cari yang kamu mau. Tanpa ribet.
+<span>
 
-    <br><br>
+    CewekPedia adalah katalog informasi
+    dan rekomendasi untuk wanita.
 
-    <span>
+    Link yang tersedia dapat mengarah ke
+    website atau kanal resmi pihak terkait.
 
-        MAUNYA WANITA adalah katalog informasi.
-        Link yang tersedia akan mengarah ke website
-        atau kanal resmi pihak terkait.
+</span>
 
-    </span>
+<br><br>
 
-</footer>
+<a href="tentang.html">
+    Tentang
+</a>
 
+|
 
+<a href="kontak.html">
+    Kontak
+</a>
 
-<!-- ==========================================
+|
+
+<a href="privacy.html">
+    Kebijakan Privasi
+</a>
+
+|
+
+<a href="ketentuan.html">
+    Ketentuan
+</a>
+
+</footer><!-- ==========================================
      SCRIPT UTAMA
-     ========================================== -->
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+     ========================================== --><script src="script.js"></script></body></html>
