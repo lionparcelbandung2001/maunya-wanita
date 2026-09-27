@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8">
-
-  <title>Kirim Tips Kecantikan | Ruang Cewek - CewekPedia</title>
-
-  <meta name="description" content="Bagikan tips kecantikan seputar makeup, outfit, dan merawat tubuh di Ruang Cewek - CewekPedia.">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link
+  <meta charset="UTF-8">  <title>Kirim Tips Kecantikan | Ruang Cewek - CewekPedia</title>  <meta name="description" content="Bagikan tips kecantikan seputar makeup, outfit, dan merawat tubuh di Ruang Cewek - CewekPedia.">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="robots" content="index, follow">  <link
     rel="canonical"
-    href="https://cewekpedia.com/ruangcewek/kirimtipskecantikan.html">
-
-  <style>
+    href="https://cewekpedia.com/ruangcewek/kirimtipskecantikan.html">  <style>
     * {
       box-sizing: border-box;
     }
@@ -132,7 +121,44 @@
       border-radius: 10px;
       color: #666;
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .related {
+      margin-top: 25px;
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .related h2 {
+      margin-top: 0;
+      color: #d63384;
+      font-size: 21px;
+    }
+
+    .related p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .related-links a {
+      display: inline-block;
+      padding: 9px 13px;
+      background: #fff1f7;
+      color: #c21870;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     button {
@@ -178,6 +204,7 @@
       padding: 25px 15px;
       color: #777;
       font-size: 13px;
+      line-height: 1.8;
     }
 
     footer a {
@@ -194,192 +221,266 @@
       .form-box {
         padding: 18px;
       }
+
+      .related-links {
+        display: block;
+      }
+
+      .related-links a {
+        margin: 4px 3px;
+      }
     }
-  </style>
-</head>
-
-<body>
-
-<header>
+  </style></head><body><header>
   <h1>💌 Kirim Tips Kecantikan</h1>
-  <p>Bagikan tips bermanfaat untuk wanita lainnya ❤️</p>
-</header>
-
-
-<div class="container">
-
-  <a href="tipskecantikan.html" class="back">
+  <p>Bagikan pengalaman dan tips bermanfaat untuk wanita lainnya ❤️</p>
+</header><div class="container">  <a href="tipskecantikan.html" class="back">
     ← Kembali ke Tips Kecantikan
-  </a>
+  </a>  <div class="form-box"><h2>✨ Bagikan Tipsmu</h2>
+
+<p class="intro">
+  Punya tips makeup, outfit, atau cara merawat tubuh
+  yang ingin kamu bagikan? Tulis pengalamanmu dengan
+  jelas dan bermanfaat untuk pembaca Ruang Cewek lainnya.
+</p>
+
+<p class="intro">
+  Tips yang dikirim dapat langsung ditampilkan setelah
+  berhasil dikirim. Konten tetap dapat dikelola oleh
+  CewekPedia apabila ditemukan materi yang tidak sesuai
+  dengan aturan komunitas.
+</p>
 
 
-  <div class="form-box">
+<form id="tipsForm">
 
-    <h2>✨ Bagikan Tipsmu</h2>
+  <label for="title">
+    Judul Tips
+  </label>
 
-    <p class="intro">
-      Punya tips makeup, outfit, atau cara merawat tubuh
-      yang ingin kamu bagikan? Tulis di sini dan bagikan
-      pengalamanmu dengan wanita lainnya.
-    </p>
+  <input
+    type="text"
+    id="title"
+    maxlength="100"
+    placeholder="Contoh: Tips makeup natural untuk sehari-hari"
+    required>
+
+  <div
+    id="titleCounter"
+    class="counter">
+    0 / 100
+  </div>
 
 
-    <form id="tipsForm">
+  <label for="category">
+    Kategori
+  </label>
 
-      <label for="title">
-        Judul Tips
-      </label>
+  <select
+    id="category"
+    required>
+
+    <option value="">
+      Pilih kategori
+    </option>
+
+    <option value="tips makeup">
+      💄 Tips Makeup
+    </option>
+
+    <option value="tips memilih outfit">
+      👗 Tips Outfit
+    </option>
+
+    <option value="tips merawat tubuh">
+      🧴 Tips Merawat Tubuh
+    </option>
+
+  </select>
+
+
+  <label for="nickname">
+    Nama / Nickname
+  </label>
+
+  <input
+    type="text"
+    id="nickname"
+    maxlength="20"
+    placeholder="Maksimal 20 karakter">
+
+  <div
+    id="nicknameCounter"
+    class="counter">
+    0 / 20
+  </div>
+
+
+  <div class="anonymous-box">
+
+    <label>
 
       <input
-        type="text"
-        id="title"
-        maxlength="100"
-        placeholder="Contoh: Tips makeup natural untuk sehari-hari"
-        required>
+        type="checkbox"
+        id="anonymous">
 
-      <div
-        id="titleCounter"
-        class="counter">
-        0 / 100
-      </div>
+      Tampilkan sebagai Anonim
 
-
-      <label for="category">
-        Kategori
-      </label>
-
-      <select
-        id="category"
-        required>
-
-        <option value="">
-          Pilih kategori
-        </option>
-
-        <option value="tips makeup">
-          💄 Tips Makeup
-        </option>
-
-        <option value="tips memilih outfit">
-          👗 Tips Outfit
-        </option>
-
-        <option value="tips merawat tubuh">
-          🧴 Tips Merawat Tubuh
-        </option>
-
-      </select>
-
-
-      <label for="nickname">
-        Nama / Nickname
-      </label>
-
-      <input
-        type="text"
-        id="nickname"
-        maxlength="20"
-        placeholder="Maksimal 20 karakter">
-
-      <div
-        id="nicknameCounter"
-        class="counter">
-        0 / 20
-      </div>
-
-
-      <div class="anonymous-box">
-
-        <label>
-
-          <input
-            type="checkbox"
-            id="anonymous">
-
-          Tampilkan sebagai Anonim
-
-        </label>
-
-      </div>
-
-
-      <label for="text">
-        Isi Tips
-      </label>
-
-      <textarea
-        id="text"
-        maxlength="5000"
-        placeholder="Tulis tips kecantikanmu di sini..."
-        required></textarea>
-
-      <div
-        id="textCounter"
-        class="counter">
-        0 / 5000
-      </div>
-
-
-      <div class="note">
-
-        ❤️ <strong>Catatan:</strong><br>
-
-        Tips yang dikirim akan diperiksa secara otomatis
-        untuk membantu menjaga kenyamanan komunitas.
-        Jangan memasukkan data pribadi, nomor telepon,
-        alamat, atau konten yang dilarang.
-
-      </div>
-
-
-      <button
-        type="submit"
-        id="submitBtn">
-
-        ✨ Kirim Tips Kecantikan
-
-      </button>
-
-    </form>
-
-
-    <div id="status"></div>
+    </label>
 
   </div>
 
+
+  <label for="text">
+    Isi Tips
+  </label>
+
+  <textarea
+    id="text"
+    maxlength="5000"
+    placeholder="Tulis tips kecantikanmu di sini..."
+    required></textarea>
+
+  <div
+    id="textCounter"
+    class="counter">
+    0 / 5000
+  </div>
+
+
+  <div class="note">
+
+    ❤️ <strong>Sebelum mengirim:</strong><br><br>
+
+    Tulis tips berdasarkan pengalaman atau informasi
+    yang ingin dibagikan kepada pembaca. Jangan
+    memasukkan password, nomor telepon, alamat rumah,
+    data pribadi orang lain, atau informasi sensitif.<br><br>
+
+    Hindari spam, promosi berlebihan, ujaran kebencian,
+    konten yang melanggar hukum, atau materi yang tidak
+    berhubungan dengan tips kecantikan.<br><br>
+
+    Tips yang dikirim dapat ditampilkan di Ruang Cewek
+    dan tetap dapat dihapus oleh pengelola apabila
+    ditemukan konten yang tidak sesuai.
+
+  </div>
+
+
+  <button
+    type="submit"
+    id="submitBtn">
+
+    ✨ Kirim Tips Kecantikan
+
+  </button>
+
+</form>
+
+
+<div id="status"></div>
+
+  </div>  <div class="related"><h2>🌸 Setelah Mengirim Tips</h2>
+
+<p>
+  Kamu juga bisa membaca tips lainnya, berbagi cerita
+  di Ruang Cewek, atau menjelajahi berbagai kategori
+  di CewekPedia.
+</p>
+
+<div class="related-links">
+
+  <a href="tipskecantikan.html">
+    Tips Kecantikan
+  </a>
+
+  <a href="curhat.html">
+    Curhat
+  </a>
+
+  <a href="reviewproduk.html">
+    Review Produk
+  </a>
+
+  <a href="index.html">
+    Ruang Cewek
+  </a>
+
+  <a href="../pengencantik/">
+    Pengen Cantik
+  </a>
+
+  <a href="../pengennikah/">
+    Pengen Nikah
+  </a>
+
+  <a href="../pengenmakan-dan-belanja/">
+    Pengen Makan dan Belanja
+  </a>
+
+  <a href="../pengenhealing/">
+    Pengen Healing
+  </a>
+
+  <a href="../ruanglawak/">
+    Ruang Lawak
+  </a>
+
 </div>
 
-
-<footer>
-
-  <p>
+  </div></div><footer>  <p>
     © CewekPedia — Ruang Cewek
-  </p>
+  </p>  <p><a href="index.html">
+  Ruang Cewek
+</a>
 
-  <p>
+·
 
-    <a href="index.html">
-      Ruang Cewek
-    </a>
+<a href="curhat.html">
+  Curhat
+</a>
 
-    ·
+·
 
-    <a href="../index.html">
-      CewekPedia
-    </a>
+<a href="tipskecantikan.html">
+  Tips Kecantikan
+</a>
 
-    ·
+·
 
-    <a href="../ruanglawak/">
-      Ruang Lawak
-    </a>
+<a href="reviewproduk.html">
+  Review Produk
+</a>
 
-  </p>
+·
 
-</footer>
+<a href="../ruanglawak/">
+  Ruang Lawak
+</a>
 
+  </p>  <p><a href="../tentang.html">
+  Tentang
+</a>
 
-<script type="module">
+·
+
+<a href="../kontak.html">
+  Kontak
+</a>
+
+·
+
+<a href="../privacy.html">
+  Privacy
+</a>
+
+·
+
+<a href="../ketentuan.html">
+  Ketentuan
+</a>
+
+  </p></footer><script type="module">
 
   import {
     initializeApp
@@ -674,6 +775,12 @@
 
           timestamp: Date.now(),
 
+          /*
+            Tips otomatis tampil.
+            Penghapusan tetap dapat dilakukan
+            manual oleh pengelola Firebase.
+          */
+
           status: "approved"
 
         };
@@ -782,7 +889,5 @@
 
   updateCounters();
 
-</script>
-
-</body>
+</script></body>
 </html>
