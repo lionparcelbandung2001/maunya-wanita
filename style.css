@@ -10,13 +10,13 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 
-    /* BACKGROUND SOFT PINK */
+    /* BACKGROUND PINK SOFT - PINK TETAP TERLIHAT */
     background:
         linear-gradient(
             180deg,
-            #fff0f6 0%,
-            #fff7fb 45%,
-            #fdeff6 100%
+            #f8c6d8 0%,
+            #f9cede 50%,
+            #f7c1d5 100%
         );
 
     color: #3a2630;
@@ -56,11 +56,10 @@ body {
     gap: 8px;
     overflow-x: auto;
     white-space: nowrap;
-    scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
-    -ms-overflow-style: none; /* Sembunyikan scrollbar di IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* Sembunyikan scrollbar di Chrome, Safari, dan Opera */
 .top-category-container::-webkit-scrollbar {
     display: none;
 }
@@ -179,10 +178,9 @@ header p {
 .category .icon {
     font-size: 38px;
     line-height: 1;
-    flex-shrink: 0; /* Mencegah ikon tergencet saat ruang sempit */
+    flex-shrink: 0;
 }
 
-/* Mengatur ukuran jika ikon berupa tag img atau svg */
 .category .icon img,
 .category .icon svg {
     width: 38px;
@@ -514,7 +512,7 @@ textarea:focus {
 
 
 /* =========================
-   FOOTER & LEGAL LINKS (SYARAT ADSENSE)
+   FOOTER & LEGAL LINKS
 ========================= */
 
 footer {
@@ -544,7 +542,7 @@ footer a:hover {
 
 
 /* =========================
-   OPTIMASI TAMPILAN PC / LAPTOP (MINIM SCROLL)
+   OPTIMASI TAMPILAN PC / LAPTOP
 ========================= */
 
 @media (min-width: 769px) {
@@ -573,7 +571,6 @@ footer a:hover {
         font-size: 14px;
     }
 
-    /* Grid 4 kolom dasar di PC */
     .category-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
@@ -586,7 +583,6 @@ footer a:hover {
         border-radius: 18px;
     }
 
-    /* Item ke-5 dan ke-6 (Ruang Cewek & Ruang Lawak) dibuat 2 kolom & rata tengah */
     .category:nth-child(5),
     .category:nth-child(6) {
         grid-column: span 2;
@@ -594,7 +590,6 @@ footer a:hover {
         align-items: center;
     }
 
-    /* Ukuran gambar/svg ikon di PC */
     .category .icon img,
     .category .icon svg {
         width: 30px;
@@ -614,7 +609,6 @@ footer a:hover {
         font-size: 12px;
     }
 
-    /* List kota menjadi 6 kolom di PC */
     .city-list {
         grid-template-columns: repeat(6, 1fr);
         gap: 10px;
@@ -627,7 +621,6 @@ footer a:hover {
         border-radius: 14px;
     }
 
-    /* Katalog menjadi 4 kolom di PC */
     .cards {
         grid-template-columns: repeat(4, 1fr);
         gap: 14px;
@@ -642,7 +635,6 @@ footer a:hover {
         padding: 12px;
     }
 
-    /* Area Feedback & Komentar ringkas di PC */
     .feedback {
         margin: 25px auto 15px;
         padding: 18px;
