@@ -257,8 +257,15 @@ footer a{
 
     <br><br>
 
-    Cerita yang dikirim akan langsung ditampilkan
-    di Ruang Lawak setelah berhasil dikirim.
+    Cerita yang dikirim melalui halaman ini
+    akan langsung masuk ke Ruang Lawak setelah
+    berhasil dikirim dan dapat dibaca oleh pengunjung.
+
+    <br><br>
+
+    Sebelum mengirim, pastikan cerita tidak berisi
+    data pribadi, informasi rahasia, atau konten yang
+    dapat merugikan orang lain.
 
 </div>
 
@@ -416,6 +423,11 @@ footer a{
     alamat, password, atau informasi
     pribadi lainnya.
 
+    <br>
+
+    Dengan mengirim cerita, kamu memahami bahwa
+    isi cerita dapat dibaca oleh pengunjung CewekPedia.
+
 </div>
 
 </div>
@@ -445,6 +457,20 @@ footer a{
         Ruang Cewek — Curhat & Ngobrol
     </a>
 
+    <br>
+
+    💄
+    <a href="../ruangcewek/tipskecantikan.html">
+        Tips Kecantikan
+    </a>
+
+    <br>
+
+    🌸
+    <a href="../pengencantik/">
+        Pengen Cantik
+    </a>
+
 </div>
 
 
@@ -468,6 +494,12 @@ footer a{
 
     <a href="../ruangcewek/">
         Ruang Cewek
+    </a>
+
+    ·
+
+    <a href="../kontak.html">
+        Kontak
     </a>
 
 </footer>
@@ -680,10 +712,6 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
-            alert(
-                "😅 Cerita belum dapat dikirim.\n\nSilakan pilih kategori cerita terlebih dahulu."
-            );
-
             return;
 
         }
@@ -700,10 +728,6 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
-            alert(
-                "😅 Cerita belum dapat dikirim.\n\nIsi nickname atau pilih Kirim sebagai Anonim."
-            );
-
             return;
 
         }
@@ -717,10 +741,6 @@ form.addEventListener(
             errorBox.style.display =
                 "block";
 
-            alert(
-                "😅 Cerita belum dapat dikirim.\n\nSilakan isi judul cerita."
-            );
-
             return;
 
         }
@@ -733,10 +753,6 @@ form.addEventListener(
 
             errorBox.style.display =
                 "block";
-
-            alert(
-                "😅 Cerita belum dapat dikirim.\n\nSilakan isi cerita kamu."
-            );
 
             return;
 
@@ -808,19 +824,17 @@ form.addEventListener(
 
         }catch(error){
 
-            console.error(error);
+            console.error(
+                "Ruang Lawak submit error:",
+                error
+            );
 
 
             errorBox.textContent =
-                "😅 Cerita belum berhasil dikirim. Silakan coba lagi.";
+                "😅 Cerita belum berhasil dikirim. Silakan coba lagi beberapa saat kemudian.";
 
             errorBox.style.display =
                 "block";
-
-
-            alert(
-                "❌ Gagal mengirim cerita.\n\nSilakan cek koneksi internet atau coba lagi beberapa saat."
-            );
 
 
         }finally{
