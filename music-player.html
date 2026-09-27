@@ -6,34 +6,55 @@
 <title>CewekPedia Music</title>
 <style>
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Arial,sans-serif;}
-.music-box{width:100%;height:100%;padding:5px;display:flex;flex-direction:column;gap:5px;background:#fff7fb;overflow:hidden;}
-.music-title{flex-shrink:0;text-align:center;color:#d92f72;font-size:14px;font-weight:bold;}
-.playlist{flex-shrink:0;display:flex;justify-content:center;align-items:center;gap:5px;overflow-x:auto;scrollbar-width:none;}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:'Segoe UI',Arial,sans-serif;}
+.music-box{
+  width:100%;height:100%;padding:8px;display:flex;flex-direction:column;gap:8px;
+  background:linear-gradient(135deg,#ff2e88 0%,#ff6ab5 30%,#a855f7 70%,#6366f1 100%);
+  overflow:hidden;box-shadow:inset 0 0 30px rgba(255,255,255,.15);
+}
+.music-title{
+  flex-shrink:0;text-align:center;color:#fff;font-size:16px;font-weight:900;
+  text-shadow:0 2px 8px rgba(0,0,0,.35),0 0 15px rgba(255,255,255,.6);
+  letter-spacing:1px;
+}
+.playlist{flex-shrink:0;display:flex;justify-content:center;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px;}
 .playlist::-webkit-scrollbar{display:none;}
-.playlist button{flex-shrink:0;border:none;border-radius:16px;padding:6px 10px;background:#f9dce8;color:#6d4051;font-size:10px;font-weight:bold;white-space:nowrap;cursor:pointer;}
-.playlist button.active{background:#d92f72;color:white;}
-.soundcloud-wrap{flex:1;min-height:0;width:100%;overflow:hidden;border-radius:10px;position:relative;}
+.playlist button{
+  flex-shrink:0;border:2px solid rgba(255,255,255,.8);border-radius:20px;padding:8px 14px;
+  background:rgba(255,255,255,.2);backdrop-filter:blur(10px);
+  color:#fff;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer;
+  text-shadow:0 1px 3px rgba(0,0,0,.3);transition:all .25s ease;
+  box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+.playlist button:hover{transform:translateY(-2px) scale(1.05);background:rgba(255,255,255,.35);box-shadow:0 5px 15px rgba(0,0,0,.3);}
+.playlist button.active{
+  background:linear-gradient(135deg,#ffeb3b,#ff9800);
+  color:#7a2000;border-color:#fff;
+  text-shadow:none;
+  box-shadow:0 0 15px rgba(255,235,59,.8),0 4px 12px rgba(0,0,0,.3);
+  transform:scale(1.08);
+}
+.soundcloud-wrap{flex:1;min-height:0;width:100%;overflow:hidden;border-radius:12px;position:relative;background:rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.6);}
 .soundcloud{width:100%;height:166px;border:none;display:block;}
-.mini .music-box{position:relative;flex-direction:row;align-items:center;gap:5px;padding:3px 5px;overflow:hidden;}
-.mini .music-title{flex-shrink:0;width:18px;font-size:10px;text-align:center;}
+.mini .music-box{position:relative;flex-direction:row;align-items:center;gap:6px;padding:5px 8px;overflow:hidden;}
+.mini .music-title{flex-shrink:0;width:24px;font-size:14px;text-align:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));}
 .mini .playlist{flex:1;min-width:0;justify-content:flex-start;overflow-x:auto;}
-.mini .playlist button{padding:5px 7px;font-size:8px;}
-.mini .music-hint{display:block;position:absolute;right:7px;top:-1px;z-index:20;font-size:7px;font-weight:bold;color:#d92f72;background:rgba(255,247,251,.95);padding:1px 4px;border-radius:6px;pointer-events:none;}
-.mini .soundcloud-wrap{flex-shrink:0;width:110px;height:48px;overflow:hidden;border-radius:9px;position:relative;}
-.mini .soundcloud{position:absolute;left:-2px;top:-8px;width:120px;height:68px;border:none;}
+.mini .playlist button{padding:6px 10px;font-size:9px;}
+.mini .music-hint{display:block;position:absolute;right:7px;top:2px;z-index:20;font-size:8px;font-weight:900;color:#fff;background:linear-gradient(135deg,#ff2e88,#a855f7);padding:2px 7px;border-radius:10px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.3);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+.mini .soundcloud-wrap{flex-shrink:0;width:115px;height:52px;}
+.mini .soundcloud{position:absolute;left:-2px;top:-8px;width:125px;height:70px;border:none;}
 .music-hint{display:none;}
 @media(max-width:600px){
-.mini .playlist button{padding:5px 6px;font-size:8px;}
-.mini .soundcloud-wrap{width:95px;height:46px;}
-.mini .soundcloud{width:105px;height:65px;top:-7px;left:-2px;}
-.mini .music-hint{right:5px;top:-1px;font-size:7px;}
+.mini .playlist button{padding:6px 8px;font-size:8px;}
+.mini .soundcloud-wrap{width:100px;height:48px;}
+.mini .soundcloud{width:110px;height:66px;top:-7px;left:-2px;}
 }
 </style>
 </head>
 <body>
 <div class="music-box">
-<div class="music-title">🎵</div>
+<div class="music-title">🎵 CEWEKPEDIA MUSIC 🎵</div>
 <div class="playlist">
 <button id="btnIndonesia" class="active" onclick="changeMusic('indonesia')">🇮🇩 Indo</button>
 <button id="btnKorea" onclick="changeMusic('korea')">🇰🇷 Korea</button>
@@ -42,7 +63,7 @@ html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:t
 <div class="soundcloud-wrap">
 <iframe id="soundcloudPlayer" class="soundcloud" title="CewekPedia Music Player" scrolling="no" frameborder="no" allow="autoplay" src=""></iframe>
 </div>
-<div class="music-hint"></div>
+<div class="music-hint">▶ TAP PLAY</div>
 </div>
 <script src="https://w.soundcloud.com/player/api.js"></script>
 <script>
@@ -58,7 +79,7 @@ korea: [
 "https://soundcloud.com/rennieology/sets/k-pop-hits-lagu-k-pop-terbaik",
 "https://soundcloud.com/dana-cell-106037944/sets/lagu-korea-drama",
 "https://soundcloud.com/imam-syaifuddin-826248748/sets/lagu-korea-sedih",
-  "https://soundcloud.com/aiszue/sets/korean-soundtrack"
+"https://soundcloud.com/aiszue/sets/korean-soundtrack"
 ],
 barat: [
 "https://soundcloud.com/user-707735355/2019-slow-rock-barat-terbaik-sepanjang-masa",
@@ -68,97 +89,62 @@ barat: [
 "https://soundcloud.com/adhi-padma-365781635/scorpions-aerosmith-bon-jovi"
 ]
 };
-
 let currentCategory = 'indonesia';
-let userHasPlayed = false; // Menandai jika user pernah menekan play
+let userHasPlayed = false;
 let scWidget = null;
-
 function getRandom(arr){return arr[Math.floor(Math.random()*arr.length)];}
 function getRandomIndonesiaPlaylist(){return getRandom(indonesiaPlaylists);}
-
 function loadSoundCloud(url, forceAutoPlay = false){
 const player = document.getElementById("soundcloudPlayer");
 const shouldAutoPlay = forceAutoPlay || userHasPlayed;
-
 if(!scWidget){
   const encodedUrl = encodeURIComponent(url);
-  player.src = "https://w.soundcloud.com/player/?url=" + encodedUrl + "&color=%23d92f72&auto_play=" + shouldAutoPlay + "&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
-
+  player.src = "https://w.soundcloud.com/player/?url=" + encodedUrl + "&color=%23ff2e88&auto_play=" + shouldAutoPlay + "&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
   try{
     scWidget = SC.Widget(player);
     scWidget.bind(SC.Widget.Events.READY, function(){
-      // Catat ketika lagu diputar pertama kali oleh user
-      scWidget.bind(SC.Widget.Events.PLAY, function(){
-        userHasPlayed = true;
-      });
-
-      // Pindah playlist otomatis saat playlist selesai
+      scWidget.bind(SC.Widget.Events.PLAY, function(){ userHasPlayed = true; });
       scWidget.bind(SC.Widget.Events.FINISH, function(){
         scWidget.getSounds(function(sounds){
           scWidget.getCurrentSoundIndex(function(index){
-            if(!sounds || index === sounds.length - 1){
-              changeMusic(currentCategory, true);
-            }
+            if(!sounds || index === sounds.length - 1){ changeMusic(currentCategory, true); }
           });
         });
       });
-
-      // Acak lagu awal jika belum pernah play
       if(!shouldAutoPlay){
         scWidget.getSounds(function(sounds){
           if(sounds && sounds.length > 1){
             let randomIndex = Math.floor(Math.random()*sounds.length);
-            scWidget.skip(randomIndex);
-            scWidget.pause();
+            scWidget.skip(randomIndex); scWidget.pause();
           }
         });
       }
     });
   }catch(e){}
 } else {
-  // Transisi halus ke lagu/playlist baru menggunakan API load
   try{
-    scWidget.load(url, {
-      color: '#d92f72',
-      auto_play: shouldAutoPlay,
-      hide_related: true,
-      show_comments: false,
-      show_user: false,
-      show_reposts: false,
-      visual: false
-    });
-
-    if(shouldAutoPlay){
-      setTimeout(function(){
-        try{ scWidget.play(); }catch(err){}
-      }, 500);
-    }
+    scWidget.load(url,{color:'#ff2e88',auto_play:shouldAutoPlay,hide_related:true,show_comments:false,show_user:false,show_reposts:false,visual:false});
+    if(shouldAutoPlay){ setTimeout(function(){ try{ scWidget.play(); }catch(err){} }, 500); }
   }catch(e){
     const encodedUrl = encodeURIComponent(url);
-    player.src = "https://w.soundcloud.com/player/?url=" + encodedUrl + "&color=%23d92f72&auto_play=" + shouldAutoPlay + "&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
+    player.src = "https://w.soundcloud.com/player/?url=" + encodedUrl + "&color=%23ff2e88&auto_play=" + shouldAutoPlay + "&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
   }
 }
 }
-
 function changeMusic(type, forceAutoPlay = false){
-currentCategory = type;
-let selectedUrl;
+currentCategory = type; let selectedUrl;
 if(type==="indonesia"){selectedUrl=getRandomIndonesiaPlaylist();}
 if(type==="korea"){selectedUrl=getRandom(musicLinks.korea);}
 if(type==="barat"){selectedUrl=getRandom(musicLinks.barat);}
 loadSoundCloud(selectedUrl, forceAutoPlay);
-
 document.querySelectorAll(".playlist button").forEach(function(button){button.classList.remove("active");});
 if(type==="indonesia"){document.getElementById("btnIndonesia").classList.add("active");}
 if(type==="korea"){document.getElementById("btnKorea").classList.add("active");}
 if(type==="barat"){document.getElementById("btnBarat").classList.add("active");}
 }
-
 function loadDefaultIndonesia(){const randomIndonesia=getRandomIndonesiaPlaylist();loadSoundCloud(randomIndonesia);}
 function detectPlayerMode(){if(window.innerHeight<120){document.body.classList.add("mini");}else{document.body.classList.remove("mini");}}
-loadDefaultIndonesia();
-detectPlayerMode();
-window.addEventListener("resize",detectPlayerMode);
+loadDefaultIndonesia(); detectPlayerMode(); window.addEventListener("resize",detectPlayerMode);
 </script>
 </body>
 </html>
