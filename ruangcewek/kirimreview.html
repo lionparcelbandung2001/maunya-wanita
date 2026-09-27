@@ -1,799 +1,315 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirim Review Produk | Ruang Cewek - CewekPedia</title>
 
-<title>Kirim Review Produk & Tempat | Ruang Cewek - CewekPedia</title>
+  <meta name="description"
+        content="Kirim pengalaman dan review kamu tentang fashion, makeup, makanan, atau penginapan melalui Ruang Cewek CewekPedia.">
 
-<meta
-  name="description"
-  content="Bagikan pengalaman kamu tentang fashion, makeup, makanan, atau penginapan melalui Review Produk di Ruang Cewek CewekPedia."
->
+  <meta name="robots" content="index, follow">
 
-<meta
-  name="robots"
-  content="index, follow"
->
+  <link rel="canonical"
+        href="https://cewekpedia.com/ruangcewek/kirimreview.html">
 
-<link
-  rel="canonical"
-  href="https://cewekpedia.com/ruangcewek/kirimreview.html"
->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
 
-<style>
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    h1 {
+      color: #d63384;
+      text-align: center;
+    }
 
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background: #fff7fb;
-  color: #3a2630;
-}
+    .intro,
+    form,
+    .rules,
+    .links {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
 
-.container {
-  max-width: 700px;
-  margin: auto;
-}
+    p {
+      line-height: 1.7;
+    }
 
-.back {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #d92f72;
-  text-decoration: none;
-  font-weight: bold;
-}
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
 
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-}
+    input,
+    select,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 11px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
 
-h1 {
-  margin-top: 0;
-  color: #d92f72;
-  font-size: 27px;
-}
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
 
-.intro {
-  color: #777;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #d63384;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-.seo-intro {
-  margin: -8px 0 22px;
-  padding: 14px 15px;
-  background: #fffafd;
-  border: 1px solid #f0dce6;
-  border-radius: 12px;
-  color: #765362;
-  font-size: 13px;
-  line-height: 1.7;
-}
+    button:hover {
+      opacity: .9;
+    }
 
-label {
-  display: block;
-  margin: 18px 0 8px;
-  font-weight: bold;
-}
+    .rules {
+      font-size: 14px;
+      line-height: 1.7;
+      background: #fff0f6;
+    }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ead6df;
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  background: #fffafd;
-  color: #3a2630;
-}
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
 
-textarea {
-  min-height: 180px;
-  resize: vertical;
-  line-height: 1.6;
-}
+    .links {
+      line-height: 1.8;
+    }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #d92f72;
-}
+    .links a {
+      color: #d63384;
+      text-decoration: none;
+    }
 
-.counter {
-  text-align: right;
-  color: #999;
-  font-size: 12px;
-  margin-top: 5px;
-}
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px 10px;
+      color: #777;
+      font-size: 13px;
+      line-height: 1.7;
+    }
 
-.anonymous {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  color: #555;
-  font-size: 14px;
-}
-
-.anonymous input {
-  width: auto;
-}
-
-button {
-  width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  background: #d92f72;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.message {
-  display: none;
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 12px;
-  line-height: 1.6;
-  word-break: break-word;
-}
-
-.success {
-  background: #f0fff5;
-  color: #287343;
-}
-
-.error {
-  background: #fff0f0;
-  color: #a52a2a;
-}
-
-.note {
-  margin-top: 20px;
-  padding: 14px;
-  background: #fff4f8;
-  border-radius: 12px;
-  color: #777;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  margin-top: 25px;
-  color: #999;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-footer a {
-  color: #d92f72;
-  text-decoration: none;
-}
-
-@media (max-width: 600px) {
-
-  body {
-    padding: 15px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 23px;
-  }
-
-}
-
-</style>
-
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<a
-  href="reviewproduk.html"
-  class="back"
->
-  ← Kembali ke Review Produk
-</a>
-
-<div class="card">
-
-  <h1>⭐ Kirim Review</h1>
+  <h1>✍️ Kirim Review Produk</h1>
 
   <div class="intro">
+    <p>
+      Punya pengalaman menarik tentang fashion, makeup, makanan,
+      atau penginapan?
+    </p>
 
-    Pernah mencoba produk, makanan, atau tempat yang menarik?
-    Ceritakan pengalaman kamu supaya bisa membantu cewek lain ❤️
+    <p>
+      Kamu bisa membagikannya melalui Ruang Cewek agar pengalamanmu
+      dapat menjadi informasi bagi pembaca lainnya.
+    </p>
 
+    <p>
+      Review akan diperiksa terlebih dahulu sebelum ditampilkan.
+    </p>
   </div>
 
-  <div class="seo-intro">
+  <div class="rules">
+    <strong>Sebelum mengirim review:</strong>
 
-    <strong>Bagikan pengalaman kamu.</strong>
-    Kamu bisa mengirim review tentang produk fashion, makeup,
-    makanan, atau penginapan yang pernah kamu coba.
-    REVIEW AKAN MELALUI CEK ADMIN DULU YA BESTIE....
-
+    <ul>
+      <li>Tulis pengalaman berdasarkan pengalaman pribadi.</li>
+      <li>Gunakan bahasa yang sopan dan mudah dipahami.</li>
+      <li>Jangan memasukkan data pribadi atau informasi sensitif.</li>
+      <li>Jangan membuat tuduhan yang tidak dapat dipertanggungjawabkan.</li>
+      <li>Hindari spam, promosi berlebihan, dan konten yang melanggar hukum.</li>
+    </ul>
   </div>
 
   <form id="reviewForm">
 
-    <!-- JUDUL -->
-
-    <label for="title">
-      Nama Produk / Judul Review
-    </label>
-
+    <label for="title">Judul Review</label>
     <input
       type="text"
       id="title"
       maxlength="100"
-      placeholder="Contoh: Lipstik XYZ yang ternyata bagus banget"
       required
-    >
+      placeholder="Contoh: Makeup ini cocok untuk kulitku">
 
-    <div class="counter">
-      <span id="titleCount">0</span>/100
-    </div>
-
-    <!-- KATEGORI -->
-
-    <label for="category">
-      Kategori
-    </label>
+    <label for="category">Kategori</label>
 
     <select id="category" required>
-
-      <option value="">
-        Pilih kategori
-      </option>
-
-      <option value="Fashion">
-        👗 Fashion
-      </option>
-
-      <option value="Makeup">
-        💄 Makeup
-      </option>
-
+      <option value="">Pilih kategori</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Makeup">Makeup</option>
       <option value="Makanan & Penginapan">
-        🍽️ Makanan & Penginapan
+        Makanan & Penginapan
       </option>
-
     </select>
 
-    <!-- NICKNAME -->
-
-    <label for="nickname">
-      Nama / Nickname
-    </label>
+    <label for="nickname">Nama / Nickname</label>
 
     <input
       type="text"
       id="nickname"
-      maxlength="20"
-      placeholder="Contoh: Alya"
-    >
+      maxlength="30"
+      placeholder="Boleh menggunakan nama samaran">
 
-    <div class="counter">
-      <span id="nicknameCount">0</span>/20
-    </div>
-
-    <!-- ANONIM -->
-
-    <label class="anonymous">
-
-      <input
-        type="checkbox"
-        id="anonymous"
-      >
-
-      Kirim sebagai Anonim ❤️
-
-    </label>
-
-    <!-- REVIEW -->
-
-    <label for="review">
-      Ceritakan pengalaman kamu
-    </label>
+    <label for="review">Isi Review</label>
 
     <textarea
       id="review"
-      maxlength="2000"
-      placeholder="Ceritakan pengalaman kamu menggunakan produk atau tempat ini..."
+      maxlength="3000"
       required
-    ></textarea>
+      placeholder="Ceritakan pengalamanmu..."></textarea>
 
-    <div class="counter">
-      <span id="reviewCount">0</span>/2000
-    </div>
-
-    <button
-      type="submit"
-      id="submitButton"
-    >
-      ⭐ Kirim Review
+    <button type="submit">
+      Kirim Review
     </button>
+
+    <div id="message" class="message"></div>
 
   </form>
 
-  <div
-    id="successMessage"
-    class="message success"
-  >
+  <div class="links">
+    <strong>Menu Ruang Cewek:</strong><br>
 
-    ❤️ Review kamu berhasil dikirim
-    dan akan ditampilkan setelah proses pemeriksaan.
-
+    <a href="reviewproduk.html">← Kembali ke Review Produk</a><br>
+    <a href="curhat.html">Curhat</a><br>
+    <a href="tipskecantikan.html">Tips Kecantikan</a><br>
+    <a href="index.html">Ruang Cewek</a>
   </div>
 
-  <div
-    id="errorMessage"
-    class="message error"
-  ></div>
+  <footer>
+    <strong>CewekPedia ❤️</strong><br>
+    Ruang informasi, rekomendasi, pengalaman, dan komunitas untuk wanita.
 
-  <div class="note">
+    <br><br>
 
-    🔒 Review akan diperiksa otomatis oleh sistem.
-    Review yang mengandung kata atau konten terlarang
-    akan ditolak.
-
-    <br>
-
-    Jangan memasukkan nomor HP, alamat rumah,
-    password, atau data pribadi lainnya.
-
-  </div>
+    <a href="../">Beranda</a> ·
+    <a href="../tentang.html">Tentang</a> ·
+    <a href="../kontak.html">Kontak</a> ·
+    <a href="../privacy.html">Privasi</a> ·
+    <a href="../ketentuan.html">Ketentuan</a>
+  </footer>
 
 </div>
-
-<footer>
-
-  © CewekPedia — Ruang Cewek ❤️
-
-  <br>
-
-  <a href="index.html">
-    Ruang Cewek
-  </a>
-  ·
-  <a href="reviewproduk.html">
-    Review Produk
-  </a>
-  ·
-  <a href="curhat.html">
-    Curhat
-  </a>
-  ·
-  <a href="../index.html">
-    CewekPedia
-  </a>
-
-</footer>
-
-</div>
-
 
 <script type="module">
 
-import {
-  initializeApp
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-import {
-  getDatabase,
-  ref,
-  push
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+  import {
+    getDatabase,
+    ref,
+    push
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-import {
-  getAuth,
-  signInAnonymously
-} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  import {
+    getAuth,
+    signInAnonymously
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyDUMMY-REPLACE-WITH-YOUR-EXISTING-KEY",
+    authDomain: "ruang-cewek.firebaseapp.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.firebaseio.com",
+    projectId: "ruang-cewek",
+    storageBucket: "ruang-cewek.firebasestorage.app",
+    messagingSenderId: "YOUR_EXISTING_MESSAGING_SENDER_ID",
+    appId: "YOUR_EXISTING_APP_ID"
+  };
 
-/* =========================
-   FIREBASE
-   ========================= */
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const auth = getAuth(app);
 
-const firebaseConfig = {
+  const form = document.getElementById("reviewForm");
+  const message = document.getElementById("message");
 
-  apiKey:
-    "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-
-  authDomain:
-    "ruang-cewek.firebaseapp.com",
-
-  databaseURL:
-    "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-  projectId:
-    "ruang-cewek",
-
-  storageBucket:
-    "ruang-cewek.firebasestorage.app",
-
-  messagingSenderId:
-    "300030693884",
-
-  appId:
-    "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
-};
-
-
-const app =
-  initializeApp(firebaseConfig);
-
-const db =
-  getDatabase(app);
-
-const auth =
-  getAuth(app);
-
-
-/* =========================
-   ELEMENT
-   ========================= */
-
-const form =
-  document.getElementById("reviewForm");
-
-const titleInput =
-  document.getElementById("title");
-
-const categoryInput =
-  document.getElementById("category");
-
-const nicknameInput =
-  document.getElementById("nickname");
-
-const anonymousInput =
-  document.getElementById("anonymous");
-
-const reviewInput =
-  document.getElementById("review");
-
-const submitButton =
-  document.getElementById("submitButton");
-
-const successMessage =
-  document.getElementById("successMessage");
-
-const errorMessage =
-  document.getElementById("errorMessage");
-
-
-/* =========================
-   COUNTER
-   ========================= */
-
-titleInput.addEventListener(
-  "input",
-  function() {
-
-    document.getElementById(
-      "titleCount"
-    ).textContent =
-      this.value.length;
-
-  }
-);
-
-
-nicknameInput.addEventListener(
-  "input",
-  function() {
-
-    document.getElementById(
-      "nicknameCount"
-    ).textContent =
-      this.value.length;
-
-  }
-);
-
-
-reviewInput.addEventListener(
-  "input",
-  function() {
-
-    document.getElementById(
-      "reviewCount"
-    ).textContent =
-      this.value.length;
-
-  }
-);
-
-
-/* =========================
-   ANONIM
-   ========================= */
-
-anonymousInput.addEventListener(
-  "change",
-  function() {
-
-    nicknameInput.disabled =
-      this.checked;
-
-    if (this.checked) {
-
-      nicknameInput.value = "";
-
-      document.getElementById(
-        "nicknameCount"
-      ).textContent = "0";
-
-    }
-
-  }
-);
-
-
-/* =========================
-   SUBMIT
-   ========================= */
-
-form.addEventListener(
-  "submit",
-  async function(event) {
+  form.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-
-    successMessage.style.display =
-      "none";
-
-    errorMessage.style.display =
-      "none";
-
-
-    const title =
-      titleInput.value.trim();
-
-    const category =
-      categoryInput.value;
-
-    const nickname =
-      nicknameInput.value.trim();
-
-    const review =
-      reviewInput.value.trim();
-
-    const anonymous =
-      anonymousInput.checked;
-
-
-    /* =========================
-       VALIDASI
-       ========================= */
-
-    if (!title) {
-
-      showError(
-        "Judul review belum diisi."
-      );
-
-      return;
-
-    }
-
-
-    if (!category) {
-
-      showError(
-        "Silakan pilih kategori."
-      );
-
-      return;
-
-    }
-
-
-    if (
-      !anonymous &&
-      !nickname
-    ) {
-
-      showError(
-        "Silakan isi nama/nickname atau pilih Kirim sebagai Anonim."
-      );
-
-      return;
-
-    }
-
-
-    if (!review) {
-
-      showError(
-        "Isi review belum ditulis."
-      );
-
-      return;
-
-    }
-
-
-    if (title.length > 100) {
-
-      showError(
-        "Judul maksimal 100 karakter."
-      );
-
-      return;
-
-    }
-
-
-    if (nickname.length > 20) {
-
-      showError(
-        "Nickname maksimal 20 karakter."
-      );
-
-      return;
-
-    }
-
-
-    if (review.length > 2000) {
-
-      showError(
-        "Review maksimal 2000 karakter."
-      );
-
-      return;
-
-    }
-
+    message.textContent = "Mengirim review...";
 
     try {
 
-      submitButton.disabled =
-        true;
+      await signInAnonymously(auth);
 
-      submitButton.textContent =
-        "⏳ Mengirim...";
+      const title =
+        document.getElementById("title").value.trim();
 
+      const category =
+        document.getElementById("category").value;
 
-      /* =========================
-         LOGIN ANONIM
-         ========================= */
+      const nickname =
+        document.getElementById("nickname").value.trim() || "Anonim";
 
-      if (!auth.currentUser) {
+      const text =
+        document.getElementById("review").value.trim();
 
-        await signInAnonymously(auth);
+      await push(ref(db, "reviews"), {
 
-      }
+        title: title,
+        category: category,
+        nickname: nickname,
+        text: text,
+        timestamp: Date.now(),
 
+        // Tetap menggunakan sistem moderasi yang sudah ada.
+        status: "pending"
 
-      /* =========================
-         SIMPAN KE FIREBASE
-         ========================= */
+      });
 
-      await push(
-        ref(db, "reviews"),
-        {
+      form.reset();
 
-          title: title,
-
-          category: category,
-
-          nickname:
-            anonymous
-              ? "Anonim"
-              : nickname,
-
-          text: review,
-
-          timestamp:
-            Date.now(),
-
-          /*
-           * Review baru masuk sebagai
-           * pending sesuai Firebase Rules.
-           */
-
-          status:
-            "pending"
-
-        }
-      );
-
-
-      /* =========================
-         SUKSES
-         ========================= */
-
-      form.style.display =
-        "none";
-
-      successMessage.style.display =
-        "block";
-
+      message.textContent =
+        "Review berhasil dikirim dan akan diperiksa sebelum ditampilkan.";
 
     } catch (error) {
 
-      console.error(
-        "Gagal mengirim review:",
-        error
-      );
+      console.error(error);
 
-
-      /*
-       * Tampilkan error Firebase
-       * untuk mengetahui penyebab
-       * sebenarnya jika masih gagal.
-       */
-
-      showError(
-        "Firebase error: " +
-        (error.code || "unknown") +
-        " — " +
-        (error.message || "Tidak diketahui")
-      );
-
-
-      submitButton.disabled =
-        false;
-
-      submitButton.textContent =
-        "⭐ Kirim Review";
+      message.textContent =
+        "Review gagal dikirim. Silakan coba lagi.";
 
     }
 
-  }
-);
-
-
-/* =========================
-   ERROR
-   ========================= */
-
-function showError(message) {
-
-  errorMessage.textContent =
-    message;
-
-  errorMessage.style.display =
-    "block";
-
-}
+  });
 
 </script>
 
