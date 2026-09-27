@@ -62,44 +62,63 @@ korea: [
 ],
 barat: [
 "https://soundcloud.com/user-707735355/2019-slow-rock-barat-terbaik-sepanjang-masa",
-"hhttps://soundcloud.com/user-674020508/slow-rock-barat-90an",
+"https://soundcloud.com/user-674020508/slow-rock-barat-90an",
 "https://soundcloud.com/i-gusti-sabda-langit/lagu-barat-rock-of-the-2000s",
 "https://soundcloud.com/fariz-teknisi/sets/barat-terbaik-1",
 "https://soundcloud.com/adhi-padma-365781635/scorpions-aerosmith-bon-jovi"
 ]
 };
+
+let currentCategory = 'indonesia';
 function getRandom(arr){return arr[Math.floor(Math.random()*arr.length)];}
 function getRandomIndonesiaPlaylist(){return getRandom(indonesiaPlaylists);}
 let scWidget = null;
-function loadSoundCloud(url){
+
+function loadSoundCloud(url, autoPlay = false){
 const player=document.getElementById("soundcloudPlayer");
 const encodedUrl=encodeURIComponent(url);
-player.src="https://w.soundcloud.com/player/?url="+encodedUrl+"&color=%23d92f72&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
-// Tambahan acak awal lagu - tanpa ubah setting lain
+player.src="https://w.soundcloud.com/player/?url="+encodedUrl+"&color=%23d92f72&auto_play="+autoPlay+"&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false";
+
 try{
   scWidget = SC.Widget(player);
+  
   scWidget.bind(SC.Widget.Events.READY, function(){
     scWidget.getSounds(function(sounds){
-      if(sounds && sounds.length > 1){
+      if(sounds && sounds.length > 1 && !autoPlay){
         let randomIndex = Math.floor(Math.random()*sounds.length);
         scWidget.skip(randomIndex);
         scWidget.pause();
       }
     });
   });
+
+  // Deteksi ketika lagu/playlist selesai untuk memutar playlist berikutnya secara otomatis
+  scWidget.bind(SC.Widget.Events.FINISH, function(){
+    scWidget.getSounds(function(sounds){
+      scWidget.getCurrentSoundIndex(function(index){
+        if(sounds && index === sounds.length - 1){
+          changeMusic(currentCategory, true);
+        }
+      });
+    });
+  });
+
 }catch(e){}
 }
-function changeMusic(type){
+
+function changeMusic(type, autoPlay = false){
+currentCategory = type;
 let selectedUrl;
 if(type==="indonesia"){selectedUrl=getRandomIndonesiaPlaylist();}
 if(type==="korea"){selectedUrl=getRandom(musicLinks.korea);}
 if(type==="barat"){selectedUrl=getRandom(musicLinks.barat);}
-loadSoundCloud(selectedUrl);
+loadSoundCloud(selectedUrl, autoPlay);
 document.querySelectorAll(".playlist button").forEach(function(button){button.classList.remove("active");});
 if(type==="indonesia"){document.getElementById("btnIndonesia").classList.add("active");}
 if(type==="korea"){document.getElementById("btnKorea").classList.add("active");}
 if(type==="barat"){document.getElementById("btnBarat").classList.add("active");}
 }
+
 function loadDefaultIndonesia(){const randomIndonesia=getRandomIndonesiaPlaylist();loadSoundCloud(randomIndonesia);}
 function detectPlayerMode(){if(window.innerHeight<120){document.body.classList.add("mini");}else{document.body.classList.remove("mini");}}
 loadDefaultIndonesia();
