@@ -1,108 +1,171 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Pernikahan, Kuliner & Healing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="CewekPedia menyediakan informasi dan rekomendasi kebutuhan wanita: kecantikan, pernikahan, kuliner, belanja, tempat healing, serta Ruang Cewek untuk curhat, tips, review, dan ngobrol bersama.">
+    <title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Pernikahan, Kuliner & Healing</title>
 
-<meta name="robots" content="index, follow">
+    <meta name="description" content="CewekPedia menyediakan informasi dan rekomendasi kebutuhan wanita: kecantikan, pernikahan, kuliner, belanja, tempat healing, serta Ruang Cewek untuk curhat, tips, review, dan ngobrol bersama.">
 
-<link rel="canonical" href="https://cewekpedia.com/">
+    <meta name="robots" content="index, follow">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://cewekpedia.com/">
 
-<style>
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-        margin: 25px auto;
-        max-width: 900px;
-    }
+    <link rel="stylesheet" href="style.css">
 
-    .main-card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        border-radius: 16px;
-        padding: 22px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        background: #fff;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    <style>
+        /* ================================
+           GRID UTAMA HOMEPAGE
+           ================================ */
 
-    .main-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-
-    .main-card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .main-card p {
-        margin-bottom: 0;
-        line-height: 1.6;
-    }
-
-    .seo-links {
-        max-width: 900px;
-        margin: 35px auto;
-        padding: 20px;
-        border-radius: 16px;
-        background: #fff;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-    }
-
-    .seo-links a {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        padding: 12px 0;
-    }
-
-    .city-section,
-    .community-section {
-        max-width: 900px;
-        margin: 30px auto;
-    }
-
-    .city-section a,
-    .community-section a {
-        display: inline-block;
-        margin: 5px;
-        padding: 9px 14px;
-        border-radius: 10px;
-        text-decoration: none;
-        background: #fff;
-        color: inherit;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-
-    @media (max-width: 700px) {
         .main-grid {
-            grid-template-columns: 1fr;
-            padding: 0 12px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin: 25px auto;
+            max-width: 1000px;
+            justify-items: stretch;
         }
 
-        .seo-links,
+        .main-card {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        .main-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .main-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .main-card p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Ruang Cewek dan Healing dibuat 1 kartu di tengah pada PC */
+        .main-card.single-card {
+            grid-column: 2;
+        }
+
+        /* ================================
+           SEO LINKS
+           ================================ */
+
+        .seo-links {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 20px;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+
+        .seo-links a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 12px 0;
+        }
+
+        /* ================================
+           KOTA & KOMUNITAS
+           ================================ */
+
         .city-section,
         .community-section {
-            margin-left: 12px;
-            margin-right: 12px;
+            max-width: 900px;
+            margin: 30px auto;
+            text-align: center;
         }
-    }
-</style>
 
-</head><body><main>
+        .city-section a,
+        .community-section a {
+            display: inline-block;
+            margin: 5px;
+            padding: 9px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            background: #fff;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        /* ================================
+           TAMPILAN HP
+           ================================ */
+
+        @media (max-width: 700px) {
+
+            .main-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+                padding: 0 12px;
+            }
+
+            /* Ruang Cewek 1x1 di tengah */
+            .main-card.single-card {
+                grid-column: 1 / -1;
+                width: 50%;
+                justify-self: center;
+            }
+
+            /* 4 kategori lainnya menjadi 2x2 */
+            .main-card.category-card {
+                grid-column: auto;
+                width: 100%;
+            }
+
+            .main-card {
+                padding: 18px 14px;
+            }
+
+            .main-card h3 {
+                font-size: 17px;
+            }
+
+            .main-card p {
+                font-size: 14px;
+            }
+
+            .seo-links,
+            .city-section,
+            .community-section {
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<main>
 
     <header style="text-align:center; padding:30px 15px 10px;">
+
         <h1>YANG WANITA MAU ❤️❤️</h1>
 
         <p>
             Lagi pengen apa hari ini??
         </p>
+
     </header>
 
 
@@ -120,23 +183,28 @@
     </section>
 
 
+    <!-- KARTU UTAMA -->
+
     <section class="main-grid">
 
         <!-- RUANG CEWEK -->
-        <a href="ruangcewek/" class="main-card">
+        <a href="ruangcewek/"
+           class="main-card single-card">
+
             <h3>💬 RUANG CEWEK</h3>
 
             <p>
                 Tempat curhat, tips kecantikan,
                 review produk dan ngobrol bersama.
             </p>
+
         </a>
 
 
         <!-- PENGEN CANTIK -->
         <a href="javascript:void(0)"
            onclick="chooseCategory('Pengen Cantik')"
-           class="main-card">
+           class="main-card category-card">
 
             <h3>
                 💄 PENGEN CANTIK
@@ -153,7 +221,7 @@
         <!-- PENGEN NIKAH -->
         <a href="javascript:void(0)"
            onclick="chooseCategory('Pengen Nikah')"
-           class="main-card">
+           class="main-card category-card">
 
             <h3>
                 💍 PENGEN NIKAH
@@ -170,10 +238,10 @@
         <!-- PENGEN MAKAN DAN BELANJA -->
         <a href="javascript:void(0)"
            onclick="chooseCategory('Pengen Makan -dan-belanja')"
-           class="main-card">
+           class="main-card category-card">
 
             <h3>
-                PENGEN MAKAN DAN BELANJA
+                🛍️ PENGEN MAKAN DAN BELANJA
             </h3>
 
             <p>
@@ -187,7 +255,7 @@
         <!-- PENGEN JALAN-JALAN / HEALING -->
         <a href="javascript:void(0)"
            onclick="chooseCategory('Pengen Jalan-jalan / Healing')"
-           class="main-card">
+           class="main-card single-card">
 
             <h3>
                 🌿 PENGEN JALAN-JALAN / HEALING
