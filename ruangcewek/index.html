@@ -17,7 +17,6 @@
     gtag('config', 'G-F9LX0ZNCJ7');
   </script>
 
-
   <meta charset="UTF-8">
 
   <meta
@@ -25,18 +24,13 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-
-  <!-- ================================
-       SEO
-  ================================= -->
-
   <title>
     Ruang Cewek — Curhat, Tips Kecantikan & Review Produk | CewekPedia
   </title>
 
   <meta
     name="description"
-    content="Ruang Cewek di CewekPedia adalah tempat berbagi curhat, tips kecantikan, review produk, dan ngobrol bersama komunitas wanita."
+    content="Ruang Cewek di CewekPedia adalah ruang komunitas untuk berbagi curhat, tips kecantikan, review produk, pengalaman, dan ngobrol santai bersama pengunjung."
   >
 
   <meta
@@ -49,13 +43,11 @@
     href="https://cewekpedia.com/ruangcewek/"
   >
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
-
 
     body {
       margin: 0;
@@ -68,26 +60,22 @@
       color: #4a3b43;
     }
 
-
     .container {
       width: min(94%, 900px);
       margin: 0 auto;
       padding: 24px 0 40px;
     }
 
-
     header {
       text-align: center;
       margin-bottom: 20px;
     }
-
 
     header h1 {
       margin: 0 0 8px;
       font-size: clamp(28px, 7vw, 42px);
       color: #8f5570;
     }
-
 
     header p {
       margin: 0;
@@ -96,32 +84,35 @@
       line-height: 1.6;
     }
 
-
     .seo-intro {
       background: #fff;
       border: 1px solid #f1dce7;
       border-radius: 18px;
-      padding: 16px 18px;
+      padding: 18px;
       margin-bottom: 18px;
       line-height: 1.7;
       font-size: 14px;
-      text-align: center;
     }
 
+    .seo-intro p {
+      margin: 8px 0;
+    }
 
-    /* =================================
-       3 KATEGORI RUANG CEWEK
-    ================================= */
+    .seo-intro p:first-child {
+      margin-top: 0;
+    }
+
+    .seo-intro p:last-child {
+      margin-bottom: 0;
+    }
 
     .feature-grid {
       display: grid;
       grid-template-columns:
         repeat(3, minmax(0, 1fr));
-
       gap: 14px;
       margin-bottom: 20px;
     }
-
 
     .feature-card {
       display: block;
@@ -138,7 +129,6 @@
         box-shadow .15s ease;
     }
 
-
     .feature-card:hover {
       transform: translateY(-2px);
 
@@ -147,12 +137,10 @@
         rgba(130, 80, 110, .08);
     }
 
-
     .feature-icon {
       font-size: 34px;
       margin-bottom: 8px;
     }
-
 
     .feature-title {
       font-weight: bold;
@@ -161,13 +149,11 @@
       line-height: 1.3;
     }
 
-
     .feature-desc {
       font-size: 13px;
       color: #8a747e;
       line-height: 1.5;
     }
-
 
     .chat-section {
       background: #fff;
@@ -176,12 +162,10 @@
       padding: 18px;
     }
 
-
     .chat-header {
       text-align: center;
       margin-bottom: 14px;
     }
-
 
     .chat-header h2 {
       margin: 0 0 5px;
@@ -189,13 +173,11 @@
       font-size: 23px;
     }
 
-
     .chat-header p {
       margin: 0;
       color: #8a747e;
       font-size: 13px;
     }
-
 
     .online {
       display: inline-block;
@@ -206,7 +188,6 @@
       color: #6f5662;
       font-size: 13px;
     }
-
 
     .error {
       display: none;
@@ -220,14 +201,12 @@
       line-height: 1.5;
     }
 
-
     .login-box {
       background: #fff9fc;
       border-radius: 16px;
       padding: 14px;
       margin-bottom: 14px;
     }
-
 
     .login-box label {
       display: block;
@@ -236,19 +215,16 @@
       color: #6f5963;
     }
 
-
     .login-row {
       display: flex;
       gap: 8px;
     }
-
 
     input,
     textarea,
     button {
       font: inherit;
     }
-
 
     .nickname {
       flex: 1;
@@ -261,7 +237,6 @@
       color: #4a3b43;
     }
 
-
     .nickname:focus,
     .message-input:focus {
       border-color: #c99bb4;
@@ -270,7 +245,6 @@
         0 0 0 3px
         rgba(201, 155, 180, .12);
     }
-
 
     .save-name {
       border: 0;
@@ -282,7 +256,6 @@
       min-width: 80px;
     }
 
-
     .chat-box {
       height: 380px;
       overflow-y: auto;
@@ -293,7 +266,6 @@
       scroll-behavior: smooth;
     }
 
-
     .empty-chat {
       text-align: center;
       color: #9a858e;
@@ -301,17 +273,14 @@
       padding: 30px 10px;
     }
 
-
     .message {
       display: flex;
       margin: 8px 0;
     }
 
-
     .message.mine {
       justify-content: flex-end;
     }
-
 
     .bubble {
       max-width: 82%;
@@ -325,14 +294,12 @@
       overflow-wrap: anywhere;
     }
 
-
     .mine .bubble {
       background: #ead0dd;
 
       border-radius:
         15px 15px 5px 15px;
     }
-
 
     .sender {
       font-size: 11px;
@@ -341,7 +308,6 @@
       margin-bottom: 3px;
     }
 
-
     .time {
       font-size: 10px;
       color: #9a858e;
@@ -349,14 +315,12 @@
       text-align: right;
     }
 
-
     .composer {
       display: flex;
       gap: 8px;
       margin-top: 12px;
       align-items: flex-end;
     }
-
 
     .message-input {
       flex: 1;
@@ -372,7 +336,6 @@
       color: #4a3b43;
     }
 
-
     .send {
       border: 0;
       border-radius: 13px;
@@ -384,13 +347,11 @@
       font-weight: bold;
     }
 
-
     .send:disabled,
     .save-name:disabled {
       opacity: .55;
       cursor: not-allowed;
     }
-
 
     .chat-help {
       text-align: center;
@@ -399,7 +360,6 @@
       font-size: 11px;
       line-height: 1.5;
     }
-
 
     details {
       margin-top: 15px;
@@ -410,19 +370,53 @@
       color: #735e68;
     }
 
-
     summary {
       cursor: pointer;
       font-weight: bold;
       color: #765266;
     }
 
-
     details p {
       line-height: 1.6;
       margin-bottom: 0;
     }
 
+    .related-section {
+      background: #fff;
+      border: 1px solid #f0dbe6;
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .related-section h2 {
+      margin: 0 0 8px;
+      color: #8f5570;
+      font-size: 20px;
+    }
+
+    .related-section p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #806d76;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .related-links a {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 18px;
+      background: #fff0f6;
+      color: #8f5570;
+      text-decoration: none;
+      font-size: 13px;
+    }
 
     footer {
       text-align: center;
@@ -432,13 +426,11 @@
       line-height: 1.7;
     }
 
-
     footer a {
       color: #8f5570;
       text-decoration: none;
       margin: 0 5px;
     }
-
 
     @media (max-width: 700px) {
 
@@ -451,7 +443,6 @@
       }
 
     }
-
 
     @media (max-width: 560px) {
 
@@ -491,9 +482,7 @@
   <main class="container">
 
 
-    <!-- =================================
-         HEADER
-    ================================= -->
+    <!-- HEADER -->
 
     <header>
 
@@ -506,32 +495,40 @@
     </header>
 
 
-    <!-- =================================
-         SEO INTRO
-    ================================= -->
+    <!-- SEO INTRO -->
 
     <div class="seo-intro">
 
-      <strong>Ruang Cewek</strong> di CewekPedia adalah ruang
-      untuk berbagi cerita dan pengalaman antar wanita.
-      Kamu bisa membaca dan mengirim
-      <strong>curhat</strong>,
-      berbagi <strong>tips kecantikan</strong>,
-      memberikan <strong>review produk</strong>,
-      serta ngobrol santai bersama pengunjung lainnya.
+      <p>
+        <strong>Ruang Cewek</strong> di CewekPedia adalah ruang
+        komunitas untuk berbagi cerita, pengalaman, tips,
+        dan rekomendasi yang berkaitan dengan kehidupan wanita.
+      </p>
+
+      <p>
+        Di sini kamu bisa membaca dan mengirim
+        <strong>curhat</strong>, berbagi
+        <strong>tips kecantikan</strong>, memberikan
+        <strong>review produk</strong>, serta ngobrol santai
+        bersama pengunjung lainnya.
+      </p>
+
+      <p>
+        Konten yang dibagikan oleh pengunjung merupakan pengalaman,
+        cerita, atau pendapat pribadi masing-masing penulis.
+        Gunakan informasi tersebut sebagai bahan pertimbangan
+        dan tetap lakukan pengecekan sebelum mengambil keputusan.
+      </p>
 
     </div>
 
 
-    <!-- =================================
-         3 KATEGORI UTAMA
-    ================================= -->
+    <!-- 3 KATEGORI UTAMA -->
 
     <section
       class="feature-grid"
       aria-label="Kategori Ruang Cewek"
     >
-
 
       <!-- CURHAT -->
 
@@ -550,8 +547,9 @@
         </div>
 
         <div class="feature-desc">
-          Tempat berbagi cerita, pengalaman,
-          dan isi hati bersama wanita lainnya.
+          Tempat membaca dan berbagi cerita,
+          pengalaman, serta isi hati bersama
+          pengunjung Ruang Cewek.
         </div>
 
       </a>
@@ -575,13 +573,14 @@
 
         <div class="feature-desc">
           Temukan dan bagikan tips makeup,
-          outfit, dan cara merawat tubuh.
+          perawatan diri, outfit, dan pengalaman
+          seputar kecantikan.
         </div>
 
       </a>
 
 
-      <!-- REVIEW PRODUK TERBAIK -->
+      <!-- REVIEW PRODUK -->
 
       <a
         class="feature-card"
@@ -594,26 +593,23 @@
         </div>
 
         <div class="feature-title">
-          REVIEW PRODUK TERBAIK
+          REVIEW PRODUK
         </div>
 
         <div class="feature-desc">
-          Bagikan pengalamanmu menggunakan
-          produk yang pernah kamu coba.
+          Bagikan pengalaman menggunakan
+          produk makanan, makeup, penginapan,
+          atau produk lain yang pernah kamu coba.
         </div>
 
       </a>
 
-
     </section>
 
 
-    <!-- =================================
-         CHATROOM
-    ================================= -->
+    <!-- CHATROOM -->
 
     <section class="chat-section">
-
 
       <div class="chat-header">
 
@@ -735,13 +731,48 @@
 
       </details>
 
+    </section>
+
+
+    <!-- LINK INTERNAL -->
+
+    <section class="related-section">
+
+      <h2>🌸 Jelajahi CewekPedia</h2>
+
+      <p>
+        Selain Ruang Cewek, kamu juga bisa menjelajahi
+        berbagai kategori dan informasi lain di CewekPedia.
+      </p>
+
+      <div class="related-links">
+
+        <a href="../pengencantik/">
+          💄 Pengen Cantik
+        </a>
+
+        <a href="../pengennikah/">
+          💍 Pengen Nikah
+        </a>
+
+        <a href="../pengenmakan-dan-belanja/">
+          🍜 Pengen Makan dan Belanja
+        </a>
+
+        <a href="../pengenhealing/">
+          🌿 Pengen Jalan-jalan dan Healing
+        </a>
+
+        <a href="../ruanglawak/">
+          😂 Ruang Lawak
+        </a>
+
+      </div>
 
     </section>
 
 
-    <!-- =================================
-         FOOTER
-    ================================= -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -773,17 +804,35 @@
 
       </div>
 
+      <div>
+
+        <a href="../tentang.html">
+          Tentang
+        </a>
+
+        <a href="../kontak.html">
+          Kontak
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
+        <a href="../ketentuan.html">
+          Ketentuan
+        </a>
+
+      </div>
+
     </footer>
 
 
   </main>
 
 
-  <!-- =================================
-       FIREBASE
+  <!-- FIREBASE
        CHATROOM + ONLINE COUNTER
-       LOGIKA DIPERTAHANKAN
-  ================================= -->
+       LOGIKA DIPERTAHANKAN -->
 
   <script type="module">
 
@@ -995,7 +1044,7 @@
 
     /* =========================================================
        RENDER MESSAGE
-       ========================================================= */
+    ========================================================= */
 
     function renderMessages(data) {
 
@@ -1148,7 +1197,7 @@
 
     /* =========================================================
        SEND MESSAGE
-       ========================================================= */
+    ========================================================= */
 
     async function sendMessage() {
 
@@ -1265,7 +1314,7 @@
 
     /* =========================================================
        FIREBASE INITIALIZATION
-       ========================================================= */
+    ========================================================= */
 
     try {
 
@@ -1290,9 +1339,7 @@
         );
 
 
-      /* -----------------------------------------
-         MESSAGE LISTENER
-      ----------------------------------------- */
+      /* MESSAGE LISTENER */
 
       onValue(
 
@@ -1320,9 +1367,7 @@
       );
 
 
-      /* -----------------------------------------
-         AUTH
-      ----------------------------------------- */
+      /* AUTH */
 
       onAuthStateChanged(
         auth,
@@ -1355,9 +1400,7 @@
         });
 
 
-      /* -----------------------------------------
-         PRESENCE / ONLINE COUNT
-      ----------------------------------------- */
+      /* PRESENCE / ONLINE COUNT */
 
       const connectedRef =
         ref(
@@ -1459,9 +1502,7 @@
       );
 
 
-      /* -----------------------------------------
-         ONLINE COUNT
-      ----------------------------------------- */
+      /* ONLINE COUNT */
 
       onValue(
 
