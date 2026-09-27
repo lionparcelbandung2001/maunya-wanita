@@ -17,36 +17,35 @@ html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:t
   text-shadow:0 2px 8px rgba(0,0,0,.35),0 0 15px rgba(255,255,255,.6);
   letter-spacing:1px;
 }
-.playlist{flex-shrink:0;display:flex;justify-content:center;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px;}
+.playlist{flex-shrink:0;display:flex;justify-content:center;align-items:center;gap:10px;overflow-x:auto;scrollbar-width:none;padding:4px;}
 .playlist::-webkit-scrollbar{display:none;}
 .playlist button{
-  flex-shrink:0;border:2px solid rgba(255,255,255,.8);border-radius:20px;padding:8px 14px;
-  background:rgba(255,255,255,.2);backdrop-filter:blur(10px);
-  color:#fff;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer;
-  text-shadow:0 1px 3px rgba(0,0,0,.3);transition:all .25s ease;
-  box-shadow:0 3px 10px rgba(0,0,0,.2);
+  flex-shrink:0;border:2px solid rgba(255,255,255,.9);border-radius:20px;padding:10px 18px;
+  background:rgba(255,255,255,.92);
+  color:#111;font-size:14px;font-weight:900;white-space:nowrap;cursor:pointer;
+  transition:all .25s ease;box-shadow:0 3px 10px rgba(0,0,0,.2);
+  min-width:90px;text-align:center;
 }
-.playlist button:hover{transform:translateY(-2px) scale(1.05);background:rgba(255,255,255,.35);box-shadow:0 5px 15px rgba(0,0,0,.3);}
+.playlist button:hover{transform:translateY(-2px) scale(1.05);background:#ffffff;box-shadow:0 5px 15px rgba(0,0,0,.3);}
 .playlist button.active{
   background:linear-gradient(135deg,#ffeb3b,#ff9800);
-  color:#7a2000;border-color:#fff;
-  text-shadow:none;
-  box-shadow:0 0 15px rgba(255,235,59,.8),0 4px 12px rgba(0,0,0,.3);
+  color:#111;border-color:#fff;
+  box-shadow:0 0 15px rgba(255,235,59,.9),0 4px 12px rgba(0,0,0,.3);
   transform:scale(1.08);
 }
 .soundcloud-wrap{flex:1;min-height:0;width:100%;overflow:hidden;border-radius:12px;position:relative;background:rgba(255,255,255,.95);box-shadow:0 4px 15px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.6);}
 .soundcloud{width:100%;height:166px;border:none;display:block;}
-.mini .music-box{position:relative;flex-direction:row;align-items:center;gap:6px;padding:5px 8px;overflow:hidden;}
+.mini .music-box{position:relative;flex-direction:row;align-items:center;gap:8px;padding:5px 8px;overflow:hidden;}
 .mini .music-title{flex-shrink:0;width:24px;font-size:14px;text-align:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));}
-.mini .playlist{flex:1;min-width:0;justify-content:flex-start;overflow-x:auto;}
-.mini .playlist button{padding:6px 10px;font-size:9px;}
+.mini .playlist{flex:1;min-width:0;justify-content:flex-start;overflow-x:auto;gap:8px;}
+.mini .playlist button{padding:8px 12px;font-size:12px;min-width:70px;}
 .mini .music-hint{display:block;position:absolute;right:7px;top:2px;z-index:20;font-size:8px;font-weight:900;color:#fff;background:linear-gradient(135deg,#ff2e88,#a855f7);padding:2px 7px;border-radius:10px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.3);animation:pulse 1.5s infinite;}
 @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
 .mini .soundcloud-wrap{flex-shrink:0;width:115px;height:52px;}
 .mini .soundcloud{position:absolute;left:-2px;top:-8px;width:125px;height:70px;border:none;}
 .music-hint{display:none;}
 @media(max-width:600px){
-.mini .playlist button{padding:6px 8px;font-size:8px;}
+.mini .playlist button{padding:7px 10px;font-size:11px;min-width:65px;}
 .mini .soundcloud-wrap{width:100px;height:48px;}
 .mini .soundcloud{width:110px;height:66px;top:-7px;left:-2px;}
 }
