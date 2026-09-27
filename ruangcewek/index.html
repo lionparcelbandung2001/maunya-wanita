@@ -118,7 +118,7 @@
       display: block;
       text-decoration: none;
       background: #fff;
-      border: 1px solid #f0dbe6;
+      border: 1.5px solid #f0dbe6;
       border-radius: 20px;
       padding: 22px 16px;
       text-align: center;
@@ -432,14 +432,41 @@
       margin: 0 5px;
     }
 
+    /* =========================================================
+       TAMPILAN HP (MOBILE VIEW)
+       ========================================================= */
+
     @media (max-width: 700px) {
 
       .feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr); /* Tetap 1 baris (3 kolom) di HP */
+        gap: 8px; /* Jarak antar kotak dibuat lebih presisi di HP */
       }
 
       .feature-card {
-        padding: 18px 14px;
+        padding: 14px 6px;
+        border: 1.5px solid #e7ccd9; /* Border tegas & seimbang */
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .feature-icon {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+
+      .feature-title {
+        font-size: 11px;
+        margin-bottom: 4px;
+      }
+
+      .feature-desc {
+        font-size: 10px;
+        line-height: 1.35;
       }
 
     }
