@@ -41,63 +41,51 @@
         }
 
         /* ================================
-           GRID UTAMA
+           GRID UTAMA (TAMPILAN PC)
            ================================ */
 
         .main-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
             margin: 25px auto;
             max-width: 1000px;
-            justify-items: stretch;
-            align-items: center;
         }
 
         .main-card {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             box-sizing: border-box;
-            padding: 25px 15px;
+            padding: 22px 15px;
             border-radius: 15px;
             text-decoration: none;
             text-align: center;
             font-weight: bold;
-            min-height: 110px;
+            min-height: 100px;
         }
 
-        /* ================================
-           RUANG CEWEK
-           PANJANG DI PC
-           ================================ */
-
+        /* 1x1 Memanjang di PC (Ruang Cewek) */
         .main-card.ruangcewek-card {
-            grid-column: 2;
-            width: 150%;
-            justify-self: center;
+            grid-column: 1 / -1;
+            width: 100%;
         }
 
-        /* ================================
-           HEALING
-           PANJANG KHUSUS PC
-           ================================ */
-
-        .main-card.healing-card {
-            grid-column: 2;
-            width: 150%;
-            justify-self: center;
-        }
-
-        /* ================================
-           KATEGORI 4 KARTU
-           ================================ */
-
+        /* 1x3 untuk 3 Kartu (Pengen Cantik, Pengen Nikah, Pengen Makan & Belanja) */
         .main-card.category-card {
             width: 100%;
         }
 
+        /* 1x2 / Full Memanjang di PC (Pengen Jalan-jalan / Healing) */
+        .main-card.healing-card {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
         /* ================================
-           TAMPILAN HP
+           TAMPILAN HP (MOBILE VIEW)
            ================================ */
 
         @media (max-width: 700px) {
@@ -112,39 +100,20 @@
             }
 
             .main-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 14px;
                 padding: 0 8px;
             }
 
-            /* ----------------
-               RUANG CEWEK
-               Tetap panjang di HP
-               ---------------- */
-
+            /* Ruang Cewek tetap 1x1 memanjang di HP */
             .main-card.ruangcewek-card {
                 grid-column: 1 / -1;
-                width: 90%;
-                justify-self: center;
+                width: 100%;
             }
 
-            /* ----------------
-               HEALING
-               Kembali 1x1 di HP
-               ---------------- */
-
+            /* 4 Kartu Lainnya menjadi Grid 2x2 Presisi di HP */
+            .main-card.category-card,
             .main-card.healing-card {
-                grid-column: 1 / -1;
-                width: 50%;
-                justify-self: center;
-            }
-
-            /* ----------------
-               4 kategori lainnya
-               Tetap 2x2
-               ---------------- */
-
-            .main-card.category-card {
                 grid-column: auto;
                 width: 100%;
             }
