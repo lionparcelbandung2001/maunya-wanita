@@ -6,227 +6,145 @@
 
   <title>Review Produk Wanita, Makanan & Penginapan | Ruang Cewek - CewekPedia</title>
 
-  <meta
-    name="description"
-    content="Baca review produk wanita, fashion, makeup, makanan, dan penginapan dari pengalaman pengguna di Ruang Cewek, CewekPedia."
-  >
+  <meta name="description"
+        content="Baca review produk dan pengalaman pengguna tentang fashion, makeup, makanan, serta penginapan di Ruang Cewek CewekPedia.">
 
   <meta name="robots" content="index, follow">
 
-  <link
-    rel="canonical"
-    href="https://cewekpedia.com/ruangcewek/reviewproduk.html"
-  >
+  <link rel="canonical"
+        href="https://cewekpedia.com/ruangcewek/reviewproduk.html">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      padding: 20px;
       font-family: Arial, sans-serif;
       background: #fff7fb;
-      color: #3a2630;
+      margin: 0;
+      padding: 20px;
+      color: #333;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: #d92f72;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
     h1 {
-      margin: 0 0 8px;
-      color: #d92f72;
-      font-size: 29px;
-    }
-
-    .tagline {
-      color: #777;
-      line-height: 1.6;
-    }
-
-    .seo-intro {
-      background: #fff;
-      border-radius: 16px;
-      padding: 17px 18px;
-      margin-bottom: 22px;
-      color: #555;
-      line-height: 1.7;
-      font-size: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    }
-
-    .send-box {
-      background: white;
-      border-radius: 18px;
-      padding: 20px;
-      margin-bottom: 25px;
+      color: #d63384;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    .send-box p {
-      margin-top: 0;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .send-button {
-      display: inline-block;
-      padding: 12px 20px;
+    .intro {
+      background: #fff;
+      padding: 18px;
       border-radius: 12px;
-      background: #d92f72;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+
+    .notice {
+      background: #fff0f6;
+      padding: 14px;
+      border-radius: 10px;
+      margin: 15px 0;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     .filters {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 22px;
       justify-content: center;
+      margin: 20px 0;
     }
 
-    .filter-button {
-      border: 1px solid #edcbd9;
-      background: white;
-      color: #d92f72;
-      padding: 9px 13px;
+    .filters button,
+    .send-button {
+      border: none;
+      background: #d63384;
+      color: white;
+      padding: 10px 15px;
       border-radius: 20px;
       cursor: pointer;
-      font-size: 13px;
-    }
-
-    .filter-button.active {
-      background: #d92f72;
-      color: white;
-      border-color: #d92f72;
-    }
-
-    #reviewList {
-      display: grid;
-      gap: 15px;
-    }
-
-    .review-card {
-      display: block;
-      background: white;
-      border-radius: 17px;
-      padding: 20px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.15s ease;
-    }
-
-    .review-card:hover {
-      transform: translateY(-2px);
-    }
-
-    .category {
-      display: inline-block;
-      background: #fff0f6;
-      color: #d92f72;
-      padding: 5px 9px;
-      border-radius: 9px;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .review-title {
-      margin: 0 0 9px;
-      color: #d92f72;
-      font-size: 20px;
-      line-height: 1.4;
-    }
-
-    .preview {
-      margin: 0 0 12px;
-      color: #555;
-      line-height: 1.6;
       font-size: 14px;
     }
 
-    .meta {
-      color: #999;
-      font-size: 12px;
+    .filters button:hover,
+    .send-button:hover {
+      opacity: .9;
     }
 
-    .read-more {
-      margin-top: 12px;
-      color: #d92f72;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .loading,
-    .empty,
-    .error {
-      background: white;
-      border-radius: 16px;
-      padding: 25px;
+    .send-area {
       text-align: center;
-      line-height: 1.7;
+      margin: 20px 0;
     }
 
-    .error {
-      background: #fff0f0;
-      color: #a52a2a;
+    .review-card {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+
+    .review-card h3 {
+      margin-top: 0;
+      color: #d63384;
+    }
+
+    .category {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .review-text {
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .review-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      color: #777;
+    }
+
+    .links {
+      margin-top: 30px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 12px;
+      line-height: 1.8;
+    }
+
+    .links a {
+      color: #d63384;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      margin-top: 30px;
-      color: #999;
+      margin-top: 35px;
+      padding: 20px 10px;
+      color: #777;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     footer a {
-      color: #d92f72;
+      color: #d63384;
       text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-
-      body {
-        padding: 15px;
-      }
-
-      h1 {
-        font-size: 25px;
-      }
-
-      .filter-button {
-        font-size: 12px;
-        padding: 8px 11px;
-      }
-
-      .review-card {
-        padding: 17px;
-      }
-
-      .review-title {
-        font-size: 18px;
-      }
-
     }
   </style>
 </head>
@@ -235,526 +153,213 @@
 
 <div class="container">
 
-  <a href="index.html" class="back">
-    ← Kembali ke Ruang Cewek
-  </a>
+  <h1>Review Produk Ruang Cewek</h1>
 
-  <header>
-
-    <h1>⭐ Review Produk Terbaik</h1>
-
-    <div class="tagline">
-      Cerita pengalaman • Berbagi pendapat • Bantu yang lain ❤️
-    </div>
-
-  </header>
-
-
-  <!-- SEO INTRO -->
-
-  <div class="seo-intro">
-    <strong>Review Produk Ruang Cewek</strong> adalah tempat untuk
-    membaca dan berbagi pengalaman tentang berbagai produk dan tempat,
-    mulai dari fashion, makeup, makanan, hingga penginapan.
-    ( REVIEW NEGATIF DILARANG MENCANTUMKAN NAMA/PRODUK SECARA JELAS.
-    REVIEW AKAN MELEWATI FILTERING ADMIN DULU YA BESTIEEEE
-  </div>
-
-
-  <!-- KIRIM REVIEW -->
-
-  <div class="send-box">
-
+  <div class="intro">
     <p>
-      Pernah mencoba produk, makanan, atau penginapan?
-      Bagikan pengalaman kamu di sini.
+      Selamat datang di <strong>Review Produk Ruang Cewek</strong> dari
+      <strong>CewekPedia</strong>.
     </p>
 
-    <a
-      href="kirimreview.html"
-      class="send-button"
-    >
-      ⭐ Kirim Review
-    </a>
+    <p>
+      Di halaman ini kamu bisa membaca pengalaman dan pendapat pengguna
+      mengenai berbagai produk dan tempat, mulai dari fashion, makeup,
+      makanan, hingga penginapan.
+    </p>
 
+    <p>
+      Review yang muncul berasal dari kontribusi pengguna dan dapat
+      menggambarkan pengalaman pribadi masing-masing penulis.
+    </p>
+
+    <div class="notice">
+      <strong>Catatan:</strong>
+      Review merupakan pengalaman atau pendapat pribadi pengguna.
+      CewekPedia tidak menjamin bahwa pengalaman tersebut akan sama
+      untuk setiap orang. Gunakan informasi sebagai bahan pertimbangan
+      dan lakukan pengecekan tambahan sebelum membeli produk atau
+      menggunakan suatu layanan.
+    </div>
   </div>
-
-
-  <!-- FILTER -->
 
   <div class="filters">
-
-    <button
-      class="filter-button active"
-      data-category="Semua"
-    >
-      Semua
+    <button onclick="filterReviews('Semua')">Semua</button>
+    <button onclick="filterReviews('Fashion')">Fashion</button>
+    <button onclick="filterReviews('Makeup')">Makeup</button>
+    <button onclick="filterReviews('Makanan & Penginapan')">
+      Makanan & Penginapan
     </button>
-
-    <button
-      class="filter-button"
-      data-category="Fashion"
-    >
-      👗 Fashion
-    </button>
-
-    <button
-      class="filter-button"
-      data-category="Makeup"
-    >
-      💄 Makeup
-    </button>
-
-    <button
-      class="filter-button"
-      data-category="Makanan & Penginapan"
-    >
-      🍽️ Makanan & Penginapan
-    </button>
-
   </div>
 
-
-  <!-- DAFTAR REVIEW -->
+  <div class="send-area">
+    <a href="kirimreview.html">
+      <button class="send-button">✍️ Kirim Review</button>
+    </a>
+  </div>
 
   <div id="reviewList">
-
-    <div class="loading">
-      ⏳ Memuat review...
-    </div>
-
+    <div class="empty">Memuat review...</div>
   </div>
 
+  <div class="links">
+    <strong>Jelajahi Ruang Cewek:</strong><br>
+
+    <a href="index.html">Ruang Cewek</a><br>
+    <a href="curhat.html">Curhat</a><br>
+    <a href="tipskecantikan.html">Tips Kecantikan</a><br>
+    <a href="../ruanglawak/">Ruang Lawak</a>
+  </div>
 
   <footer>
+    <strong>CewekPedia ❤️</strong><br>
+    Ruang informasi, rekomendasi, pengalaman, dan komunitas untuk wanita.
 
-    © CewekPedia — Ruang Cewek ❤️
+    <br><br>
 
-    <br>
-
-    <a href="index.html">
-      Ruang Cewek
-    </a>
-    ·
-    <a href="../index.html">
-      CewekPedia
-    </a>
-    ·
-    <a href="curhat.html">
-      Curhat
-    </a>
-
+    <a href="../">Beranda</a> ·
+    <a href="../tentang.html">Tentang</a> ·
+    <a href="../kontak.html">Kontak</a> ·
+    <a href="../privacy.html">Privasi</a> ·
+    <a href="../ketentuan.html">Ketentuan</a>
   </footer>
 
 </div>
 
-
 <script type="module">
-
-  import { initializeApp } from
-    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
   import {
     getDatabase,
     ref,
-    get,
     query,
     orderByChild,
-    equalTo
-  } from
-    "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+    equalTo,
+    get
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
   import {
     getAuth,
     signInAnonymously
-  } from
-    "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-
-  /* =========================
-     FIREBASE CONFIG
-     ========================= */
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
   const firebaseConfig = {
-
-    apiKey:
-      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-
-    authDomain:
-      "ruang-cewek.firebaseapp.com",
-
-    databaseURL:
-      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-    projectId:
-      "ruang-cewek",
-
-    storageBucket:
-      "ruang-cewek.firebasestorage.app",
-
-    messagingSenderId:
-      "300030693884",
-
-    appId:
-      "1:300030693884:web:ec02ce2cf35646dbf3a279"
-
+    apiKey: "AIzaSyDUMMY-REPLACE-WITH-YOUR-EXISTING-KEY",
+    authDomain: "ruang-cewek.firebaseapp.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.firebaseio.com",
+    projectId: "ruang-cewek",
+    storageBucket: "ruang-cewek.firebasestorage.app",
+    messagingSenderId: "YOUR_EXISTING_MESSAGING_SENDER_ID",
+    appId: "YOUR_EXISTING_APP_ID"
   };
 
-
-  const app =
-    initializeApp(firebaseConfig);
-
-  const db =
-    getDatabase(app);
-
-  const auth =
-    getAuth(app);
-
-
-  const reviewList =
-    document.getElementById("reviewList");
-
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const auth = getAuth(app);
 
   let allReviews = [];
 
-  let currentCategory = "Semua";
-
-
-  /* =========================
-     LOGIN ANONIM
-     ========================= */
-
-  async function start() {
-
-    try {
-
-      if (!auth.currentUser) {
-
-        await signInAnonymously(auth);
-
-      }
-
-      await loadReviews();
-
-    } catch (error) {
-
-      console.error(
-        "Firebase authentication error:",
-        error
-      );
-
-      reviewList.innerHTML = `
-
-        <div class="error">
-          Maaf, halaman review belum dapat
-          terhubung ke server.
-          <br><br>
-          Silakan coba lagi nanti.
-        </div>
-
-      `;
-
-    }
-
-  }
-
-
-  /* =========================
-     LOAD APPROVED REVIEWS
-     ========================= */
-
-  async function loadReviews() {
-
-    try {
-
-      const reviewsRef =
-        ref(db, "reviews");
-
-
-      const reviewsQuery =
-        query(
-          reviewsRef,
-          orderByChild("status"),
-          equalTo("approved")
-        );
-
-
-      const snapshot =
-        await get(reviewsQuery);
-
-
-      allReviews = [];
-
-
-      if (snapshot.exists()) {
-
-        snapshot.forEach(
-          (childSnapshot) => {
-
-            allReviews.push({
-
-              id:
-                childSnapshot.key,
-
-              ...childSnapshot.val()
-
-            });
-
-          }
-        );
-
-      }
-
-
-      allReviews.sort(
-        (a, b) =>
-          (b.timestamp || 0) -
-          (a.timestamp || 0)
-      );
-
-
-      renderReviews();
-
-
-    } catch (error) {
-
-      console.error(
-        "Gagal memuat review:",
-        error
-      );
-
-      reviewList.innerHTML = `
-
-        <div class="error">
-
-          Maaf, review belum dapat dimuat.
-
-          <br><br>
-
-          Silakan coba lagi nanti.
-
-        </div>
-
-      `;
-
-    }
-
-  }
-
-
-  /* =========================
-     RENDER
-     ========================= */
-
-  function renderReviews() {
-
-    let reviews =
-      allReviews;
-
-
-    if (
-      currentCategory !== "Semua"
-    ) {
-
-      reviews =
-        allReviews.filter(
-          review =>
-            review.category ===
-            currentCategory
-        );
-
-    }
-
-
-    if (reviews.length === 0) {
-
-      reviewList.innerHTML = `
-
-        <div class="empty">
-
-          💕 Belum ada review
-          untuk kategori ini.
-
-          <br><br>
-
-          Kamu bisa menjadi
-          yang pertama berbagi pengalaman.
-
-        </div>
-
-      `;
-
-      return;
-
-    }
-
-
-    reviewList.innerHTML =
-      reviews
-        .map(createReviewCard)
-        .join("");
-
-  }
-
-
-  /* =========================
-     REVIEW CARD
-     ========================= */
-
-  function createReviewCard(review) {
-
-    const title =
-      escapeHTML(
-        review.title ||
-        "Review Produk"
-      );
-
-
-    const category =
-      escapeHTML(
-        review.category ||
-        "Lainnya"
-      );
-
-
-    const nickname =
-      escapeHTML(
-        review.nickname ||
-        "Anonim"
-      );
-
-
-    const text =
-      escapeHTML(
-        review.text ||
-        ""
-      );
-
-
-    const preview =
-      text.length > 160
-        ? text.substring(0, 160) + "..."
-        : text;
-
-
-    const date =
-      formatDate(review.timestamp);
-
-
-    return `
-
-      <a
-        class="review-card"
-        href="review-detail.html?id=${encodeURIComponent(review.id)}"
-      >
-
-        <div class="category">
-          ⭐ ${category}
-        </div>
-
-        <h2 class="review-title">
-          ${title}
-        </h2>
-
-        <p class="preview">
-          ${preview}
-        </p>
-
-        <div class="meta">
-          ✍️ ${nickname}
-          ${date ? " • " + date : ""}
-        </div>
-
-        <div class="read-more">
-          Baca Review →
-        </div>
-
-      </a>
-
-    `;
-
-  }
-
-
-  /* =========================
-     FILTER
-     ========================= */
-
-  document
-    .querySelectorAll(".filter-button")
-    .forEach(button => {
-
-      button.addEventListener(
-        "click",
-        function() {
-
-          document
-            .querySelectorAll(".filter-button")
-            .forEach(btn =>
-              btn.classList.remove("active")
-            );
-
-
-          this.classList.add("active");
-
-
-          currentCategory =
-            this.dataset.category;
-
-
-          renderReviews();
-
-        }
-      );
-
-    });
-
-
-  /* =========================
-     DATE
-     ========================= */
-
-  function formatDate(timestamp) {
-
-    if (!timestamp) {
-      return "";
-    }
-
-    return new Date(timestamp)
-      .toLocaleDateString(
-        "id-ID",
-        {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        }
-      );
-
-  }
-
-
-  /* =========================
-     SECURITY
-     ========================= */
+  const reviewList = document.getElementById("reviewList");
 
   function escapeHTML(value) {
-
-    return String(value)
+    return String(value || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
-
   }
 
+  function renderReviews(reviews) {
+    if (!reviews.length) {
+      reviewList.innerHTML = `
+        <div class="empty">
+          Belum ada review untuk kategori ini.
+        </div>
+      `;
+      return;
+    }
 
-  /* =========================
-     START
-     ========================= */
+    reviewList.innerHTML = reviews.map(review => {
+      const id = escapeHTML(review.id);
+      const title = escapeHTML(review.title || "Review Produk");
+      const category = escapeHTML(review.category || "");
+      const text = escapeHTML(review.text || "");
+      const nickname = escapeHTML(review.nickname || "Anonim");
 
-  start();
+      return `
+        <div class="review-card">
+          <h3>${title}</h3>
 
+          <div class="category">
+            ${category} · oleh ${nickname}
+          </div>
+
+          <div class="review-text">
+            ${text}
+          </div>
+
+          <a class="review-link"
+             href="review-detail.html?id=${encodeURIComponent(review.id)}">
+            Baca review lengkap →
+          </a>
+        </div>
+      `;
+    }).join("");
+  }
+
+  window.filterReviews = function(category) {
+    if (category === "Semua") {
+      renderReviews(allReviews);
+      return;
+    }
+
+    renderReviews(
+      allReviews.filter(review => review.category === category)
+    );
+  };
+
+  async function loadReviews() {
+    try {
+      await signInAnonymously(auth);
+
+      const reviewsQuery = query(
+        ref(db, "reviews"),
+        orderByChild("status"),
+        equalTo("approved")
+      );
+
+      const snapshot = await get(reviewsQuery);
+
+      allReviews = [];
+
+      if (snapshot.exists()) {
+        snapshot.forEach(child => {
+          allReviews.push({
+            id: child.key,
+            ...child.val()
+          });
+        });
+      }
+
+      allReviews.sort((a, b) => {
+        return (b.timestamp || 0) - (a.timestamp || 0);
+      });
+
+      renderReviews(allReviews);
+
+    } catch (error) {
+      console.error(error);
+
+      reviewList.innerHTML = `
+        <div class="empty">
+          Review belum dapat dimuat. Silakan coba lagi nanti.
+        </div>
+      `;
+    }
+  }
+
+  loadReviews();
 </script>
 
 </body>
