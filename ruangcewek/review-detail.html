@@ -6,103 +6,169 @@
 
   <title>Detail Review Produk | Ruang Cewek - CewekPedia</title>
 
-  <meta name="description"
-        content="Baca detail pengalaman pengguna mengenai produk, makanan, penginapan, fashion, dan makeup di Ruang Cewek CewekPedia.">
+  <meta
+    id="metaDescription"
+    name="description"
+    content="Baca detail review produk, makanan, dan penginapan dari pengguna Ruang Cewek di CewekPedia."
+  >
 
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical"
-        href="https://cewekpedia.com/ruangcewek/review-detail.html">
+  <link
+    id="canonicalUrl"
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/review-detail.html"
+  >
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
       margin: 0;
       padding: 20px;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 750px;
       margin: auto;
-    }
-
-    article {
-      background: white;
-      padding: 22px;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    }
-
-    h1 {
-      color: #d63384;
-      line-height: 1.4;
-    }
-
-    .meta {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .content {
-      line-height: 1.8;
-      white-space: pre-wrap;
-    }
-
-    .notice {
-      background: #fff0f6;
-      padding: 14px;
-      border-radius: 10px;
-      margin: 20px 0;
-      font-size: 14px;
-      line-height: 1.6;
     }
 
     .back {
       display: inline-block;
-      margin-top: 20px;
-      color: #d63384;
+      margin-bottom: 18px;
+      color: #d92f72;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .links {
+    .review-card {
       background: white;
-      padding: 18px;
-      border-radius: 12px;
-      margin-top: 25px;
-      line-height: 1.8;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     }
 
-    .links a {
-      color: #d63384;
+    .category {
+      display: inline-block;
+      background: #fff0f6;
+      color: #d92f72;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #d92f72;
+      line-height: 1.4;
+      font-size: 27px;
+    }
+
+    .meta {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .review-text {
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #3a2630;
+    }
+
+    .divider {
+      height: 1px;
+      background: #f0dce5;
+      margin: 30px 0;
+    }
+
+    .comment-title {
+      color: #d92f72;
+      margin-bottom: 10px;
+    }
+
+    .comment-info {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .loading,
+    .error,
+    .not-found {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .error {
+      color: #a52a2a;
+      background: #fff0f0;
+    }
+
+    .not-found a {
+      color: #d92f72;
+      font-weight: bold;
+    }
+
+    .seo-links {
+      margin-top: 25px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .seo-links strong {
+      color: #d92f72;
+    }
+
+    .seo-links a {
+      color: #d92f72;
       text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
-      margin-top: 35px;
-      padding: 20px 10px;
-      color: #777;
+      margin-top: 25px;
+      color: #999;
       font-size: 13px;
       line-height: 1.7;
     }
 
     footer a {
-      color: #d63384;
+      color: #d92f72;
       text-decoration: none;
     }
 
-    #comments {
-      margin-top: 30px;
-    }
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
 
-    .loading {
-      text-align: center;
-      padding: 30px;
-      color: #777;
+      .review-card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .review-text {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -111,200 +177,540 @@
 
 <div class="container">
 
-  <article>
+  <a href="reviewproduk.html" class="back">
+    ← Kembali ke Review Produk
+  </a>
 
-    <div id="reviewContent" class="loading">
-      Memuat review...
+  <div id="content">
+
+    <div class="loading">
+      ⏳ Memuat review...
     </div>
 
-    <div id="comments"></div>
-
-  </article>
-
-  <div class="links">
-    <strong>Jelajahi Ruang Cewek:</strong><br>
-
-    <a href="reviewproduk.html">Semua Review Produk</a><br>
-    <a href="curhat.html">Curhat</a><br>
-    <a href="tipskecantikan.html">Tips Kecantikan</a><br>
-    <a href="index.html">Ruang Cewek</a>
   </div>
 
   <footer>
-    <strong>CewekPedia ❤️</strong><br>
-    Ruang informasi, rekomendasi, pengalaman, dan komunitas untuk wanita.
+    © CewekPedia — Ruang Cewek ❤️
+    <br>
 
-    <br><br>
+    <a href="index.html">
+      Ruang Cewek
+    </a>
 
-    <a href="../">Beranda</a> ·
-    <a href="../tentang.html">Tentang</a> ·
-    <a href="../kontak.html">Kontak</a> ·
-    <a href="../privacy.html">Privasi</a> ·
-    <a href="../ketentuan.html">Ketentuan</a>
+    ·
+
+    <a href="reviewproduk.html">
+      Review Produk
+    </a>
+
+    ·
+
+    <a href="../index.html">
+      CewekPedia
+    </a>
   </footer>
 
 </div>
 
+
 <script type="module">
 
   import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
   import {
     getDatabase,
     ref,
     get
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+  import {
+    getAuth,
+    signInAnonymously
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+  /* =========================
+     FIREBASE
+     ========================= */
 
   const firebaseConfig = {
-    apiKey: "AIzaSyDUMMY-REPLACE-WITH-YOUR-EXISTING-KEY",
-    authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.firebaseio.com",
-    projectId: "ruang-cewek",
-    storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "YOUR_EXISTING_MESSAGING_SENDER_ID",
-    appId: "YOUR_EXISTING_APP_ID"
+
+    apiKey:
+      "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+
+    authDomain:
+      "ruang-cewek.firebaseapp.com",
+
+    databaseURL:
+      "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId:
+      "ruang-cewek",
+
+    storageBucket:
+      "ruang-cewek.firebasestorage.app",
+
+    messagingSenderId:
+      "300030693884",
+
+    appId:
+      "1:300030693884:web:ec02ce2cf35646dbf3a279"
+
   };
 
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
+  const app =
+    initializeApp(firebaseConfig);
 
-  const reviewContent = document.getElementById("reviewContent");
+  const db =
+    getDatabase(app);
+
+  const auth =
+    getAuth(app);
+
+
+  const content =
+    document.getElementById("content");
+
+  const metaDescription =
+    document.getElementById("metaDescription");
+
+  const canonicalUrl =
+    document.getElementById("canonicalUrl");
+
+
+  /* =========================
+     ECHOTHREAD
+     ========================= */
+
+  const ECHOTHREAD_API_KEY =
+    "7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI";
+
+
+  /* =========================
+     REVIEW ID
+     ========================= */
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const reviewId =
+    params.get("id");
+
+
+  if (!reviewId) {
+
+    showNotFound();
+
+  } else {
+
+    start();
+
+  }
+
+
+  /* =========================
+     LOGIN + LOAD
+     ========================= */
+
+  async function start() {
+
+    try {
+
+      if (!auth.currentUser) {
+
+        await signInAnonymously(auth);
+
+      }
+
+      await loadReview();
+
+    } catch (error) {
+
+      console.error(
+        "Firebase authentication error:",
+        error
+      );
+
+      content.innerHTML = `
+
+        <div class="error">
+
+          Maaf, review belum dapat dimuat.
+
+          <br><br>
+
+          Silakan coba lagi nanti.
+
+        </div>
+
+      `;
+
+    }
+
+  }
+
+
+  /* =========================
+     LOAD REVIEW
+     ========================= */
+
+  async function loadReview() {
+
+    try {
+
+      const reviewRef =
+        ref(
+          db,
+          "reviews/" + reviewId
+        );
+
+
+      const snapshot =
+        await get(reviewRef);
+
+
+      if (!snapshot.exists()) {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      const review =
+        snapshot.val();
+
+
+      if (
+        review.status !== "approved"
+      ) {
+
+        showNotFound();
+
+        return;
+
+      }
+
+
+      renderReview(review);
+
+
+    } catch (error) {
+
+      console.error(
+        "Gagal mengambil review:",
+        error
+      );
+
+      content.innerHTML = `
+
+        <div class="error">
+
+          Maaf, review belum dapat dimuat.
+
+          <br><br>
+
+          Silakan coba lagi nanti.
+
+        </div>
+
+      `;
+
+    }
+
+  }
+
+
+  /* =========================
+     RENDER REVIEW
+     ========================= */
+
+  function renderReview(review) {
+
+    const rawTitle =
+      String(
+        review.title ||
+        "Review Produk"
+      ).trim();
+
+
+    const title =
+      escapeHTML(rawTitle);
+
+
+    const category =
+      escapeHTML(
+        review.category ||
+        "Lainnya"
+      );
+
+
+    const nickname =
+      escapeHTML(
+        review.nickname ||
+        "Anonim"
+      );
+
+
+    const rawText =
+      String(
+        review.text ||
+        ""
+      ).trim();
+
+
+    const text =
+      escapeHTML(rawText);
+
+
+    let date = "";
+
+
+    if (review.timestamp) {
+
+      date =
+        new Date(
+          review.timestamp
+        ).toLocaleDateString(
+          "id-ID",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          }
+        );
+
+    }
+
+
+    /* =========================
+       DYNAMIC SEO
+       ========================= */
+
+    document.title =
+      rawTitle +
+      " ⭐ | Review Produk | Ruang Cewek - CewekPedia";
+
+
+    const cleanDescription =
+      rawText
+        .replace(/\s+/g, " ")
+        .slice(0, 155);
+
+
+    if (cleanDescription) {
+
+      metaDescription.setAttribute(
+        "content",
+        "Review " +
+        rawTitle +
+        " dari pengguna Ruang Cewek di CewekPedia. " +
+        cleanDescription
+      );
+
+    }
+
+
+    const canonical =
+      getCanonicalReviewURL(reviewId);
+
+
+    canonicalUrl.setAttribute(
+      "href",
+      canonical
+    );
+
+
+    content.innerHTML = `
+
+      <article class="review-card">
+
+        <div class="category">
+          ⭐ ${category}
+        </div>
+
+        <h1>
+          ${title}
+        </h1>
+
+        <div class="meta">
+          ✍️ ${nickname}
+          ${date ? " • " + date : ""}
+        </div>
+
+        <div class="review-text">
+          ${text}
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="comment-title">
+          💬 Obrolan Review
+        </h2>
+
+        <div class="comment-info">
+          Pernah mencoba produk atau tempat ini?
+          Kamu bisa ikut berbagi pengalaman
+          atau ngobrol di bawah ❤️
+        </div>
+
+        <div
+          id="echothread"
+          data-api-key="${ECHOTHREAD_API_KEY}"
+          data-page-url="${canonical}"
+          data-identifier="${escapeHTML(reviewId)}"
+          data-page-title="${title}"
+        ></div>
+
+      </article>
+
+
+      <div class="seo-links">
+
+        <strong>Jelajahi Ruang Cewek</strong>
+
+        <br>
+
+        Temukan review produk lainnya,
+        baca curhat dari pengguna,
+        atau lihat Tips Kecantikan
+        di Ruang Cewek CewekPedia.
+
+        <br><br>
+
+        ⭐
+        <a href="reviewproduk.html">
+          Lihat Review Produk Lainnya
+        </a>
+
+        <br>
+
+        💬
+        <a href="curhat.html">
+          Baca Curhat & Cerita Wanita
+        </a>
+
+        <br>
+
+        💄
+        <a href="tipskecantikan.html">
+          Baca Tips Kecantikan
+        </a>
+
+        <br>
+
+        ❤️
+        <a href="index.html">
+          Kembali ke Ruang Cewek
+        </a>
+
+      </div>
+
+    `;
+
+
+    loadEchoThread();
+
+  }
+
+
+  /* =========================
+     CANONICAL URL
+     ========================= */
+
+  function getCanonicalReviewURL(id) {
+
+    return (
+      window.location.origin +
+      "/ruangcewek/review-detail.html?id=" +
+      encodeURIComponent(id)
+    );
+
+  }
+
+
+  /* =========================
+     ECHOTHREAD
+     ========================= */
+
+  function loadEchoThread() {
+
+    if (
+      document.querySelector(
+        'script[data-echothread="true"]'
+      )
+    ) {
+
+      return;
+
+    }
+
+
+    const script =
+      document.createElement("script");
+
+
+    script.src =
+      "https://cdn.echothread.io/widget.js";
+
+
+    script.async = true;
+
+
+    script.dataset.echothread =
+      "true";
+
+
+    document.body.appendChild(script);
+
+  }
+
+
+  /* =========================
+     NOT FOUND
+     ========================= */
+
+  function showNotFound() {
+
+    content.innerHTML = `
+
+      <div class="not-found">
+
+        😔 Review tidak ditemukan
+        atau belum tersedia.
+
+        <br><br>
+
+        <a href="reviewproduk.html">
+          ← Kembali ke Review Produk
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =========================
+     SECURITY
+     ========================= */
 
   function escapeHTML(value) {
-    return String(value || "")
+
+    return String(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+
   }
-
-  function setPageSEO(review) {
-    const title = review.title || "Review Produk";
-
-    document.title =
-      `${title} | Review Produk | Ruang Cewek - CewekPedia`;
-
-    const description =
-      (review.text || "Review produk dari Ruang Cewek CewekPedia.")
-        .replace(/\s+/g, " ")
-        .slice(0, 155);
-
-    let descriptionMeta =
-      document.querySelector('meta[name="description"]');
-
-    if (descriptionMeta) {
-      descriptionMeta.setAttribute("content", description);
-    }
-
-    const canonical =
-      document.querySelector('link[rel="canonical"]');
-
-    if (canonical) {
-      canonical.setAttribute(
-        "href",
-        window.location.href.split("#")[0]
-      );
-    }
-  }
-
-  async function loadReview() {
-
-    if (!id) {
-      reviewContent.innerHTML = `
-        <div class="loading">
-          Review tidak ditemukan.
-        </div>
-      `;
-      return;
-    }
-
-    try {
-
-      const snapshot =
-        await get(ref(db, "reviews/" + id));
-
-      if (!snapshot.exists()) {
-        reviewContent.innerHTML = `
-          <div class="loading">
-            Review tidak ditemukan.
-          </div>
-        `;
-        return;
-      }
-
-      const review = snapshot.val();
-
-      if (review.status !== "approved") {
-        reviewContent.innerHTML = `
-          <div class="loading">
-            Review tidak tersedia.
-          </div>
-        `;
-        return;
-      }
-
-      setPageSEO(review);
-
-      const title =
-        escapeHTML(review.title || "Review Produk");
-
-      const category =
-        escapeHTML(review.category || "Review");
-
-      const nickname =
-        escapeHTML(review.nickname || "Anonim");
-
-      const text =
-        escapeHTML(review.text || "");
-
-      reviewContent.className = "";
-
-      reviewContent.innerHTML = `
-        <h1>${title}</h1>
-
-        <div class="meta">
-          ${category} · oleh ${nickname}
-        </div>
-
-        <div class="notice">
-          <strong>Catatan:</strong>
-          Review ini merupakan pengalaman atau pendapat pribadi
-          penulis. Pengalaman setiap orang dapat berbeda.
-        </div>
-
-        <div class="content">
-          ${text}
-        </div>
-
-        <a class="back" href="reviewproduk.html">
-          ← Kembali ke semua review
-        </a>
-      `;
-
-      /*
-       * EchoThread tetap dapat digunakan di sini.
-       * Gunakan konfigurasi EchoThread yang sudah ada
-       * pada file lama agar tidak mengubah sistem komentar.
-       */
-
-    } catch (error) {
-
-      console.error(error);
-
-      reviewContent.innerHTML = `
-        <div class="loading">
-          Review belum dapat dimuat. Silakan coba lagi nanti.
-        </div>
-      `;
-    }
-  }
-
-  loadReview();
 
 </script>
 
