@@ -4,23 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kirim Review Produk | Ruang Cewek - CewekPedia</title>
+  <title>Kirim Review Produk & Tempat | Ruang Cewek - CewekPedia</title>
 
-  <meta name="description"
-        content="Kirim pengalaman dan review kamu tentang fashion, makeup, makanan, atau penginapan melalui Ruang Cewek CewekPedia.">
+  <meta
+    name="description"
+    content="Bagikan pengalaman kamu tentang fashion, makeup, makanan, atau penginapan melalui Review Produk di Ruang Cewek CewekPedia."
+  >
 
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical"
-        href="https://cewekpedia.com/ruangcewek/kirimreview.html">
+  <link
+    rel="canonical"
+    href="https://cewekpedia.com/ruangcewek/kirimreview.html"
+  >
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
       margin: 0;
       padding: 20px;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #3a2630;
     }
 
     .container {
@@ -28,30 +36,38 @@
       margin: auto;
     }
 
-    h1 {
-      color: #d63384;
-      text-align: center;
-    }
-
-    .intro,
-    form,
-    .rules,
-    .links {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
+    .back {
+      display: inline-block;
       margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      color: #d92f72;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    p {
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    h1 {
+      color: #d92f72;
+      line-height: 1.4;
+      margin-top: 0;
+    }
+
+    .intro {
+      color: #666;
       line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     label {
       display: block;
-      margin-top: 15px;
-      margin-bottom: 6px;
+      margin-top: 18px;
+      margin-bottom: 7px;
       font-weight: bold;
     }
 
@@ -59,67 +75,107 @@
     select,
     textarea {
       width: 100%;
-      box-sizing: border-box;
-      padding: 11px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 15px;
+      padding: 12px;
+      border: 1px solid #e6ccd8;
+      border-radius: 10px;
+      font: inherit;
+      background: #fff;
     }
 
     textarea {
       min-height: 180px;
       resize: vertical;
+      line-height: 1.6;
+    }
+
+    .counter {
+      text-align: right;
+      color: #999;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .anonymous {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .anonymous input {
+      width: auto;
     }
 
     button {
-      margin-top: 18px;
       width: 100%;
-      padding: 12px;
+      margin-top: 25px;
+      padding: 13px;
       border: none;
-      border-radius: 25px;
-      background: #d63384;
+      border-radius: 12px;
+      background: #d92f72;
       color: white;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    button:hover {
-      opacity: .9;
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
-    .rules {
-      font-size: 14px;
+    .note {
+      margin-top: 20px;
+      background: #fff7fb;
+      border-radius: 12px;
+      padding: 15px;
+      color: #666;
+      font-size: 13px;
       line-height: 1.7;
-      background: #fff0f6;
     }
 
     .message {
-      margin-top: 15px;
-      text-align: center;
-      font-weight: bold;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      display: none;
+      line-height: 1.6;
     }
 
-    .links {
-      line-height: 1.8;
+    .success {
+      display: block;
+      background: #eefaf2;
+      color: #246b3a;
     }
 
-    .links a {
-      color: #d63384;
-      text-decoration: none;
+    .error {
+      display: block;
+      background: #fff0f0;
+      color: #a52a2a;
     }
 
     footer {
       text-align: center;
-      margin-top: 30px;
-      padding: 20px 10px;
-      color: #777;
+      margin-top: 25px;
+      color: #999;
       font-size: 13px;
       line-height: 1.7;
     }
 
     footer a {
-      color: #d63384;
+      color: #d92f72;
       text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -128,188 +184,402 @@
 
 <div class="container">
 
-  <h1>✍️ Kirim Review Produk</h1>
+  <a href="reviewproduk.html" class="back">
+    ← Kembali ke Review Produk
+  </a>
 
-  <div class="intro">
-    <p>
-      Punya pengalaman menarik tentang fashion, makeup, makanan,
-      atau penginapan?
-    </p>
+  <div class="card">
 
-    <p>
-      Kamu bisa membagikannya melalui Ruang Cewek agar pengalamanmu
-      dapat menjadi informasi bagi pembaca lainnya.
-    </p>
+    <h1>Kirim Review Produk & Tempat</h1>
 
-    <p>
-      Review akan diperiksa terlebih dahulu sebelum ditampilkan.
-    </p>
-  </div>
+    <div class="intro">
+      Bagikan pengalaman kamu tentang fashion, makeup,
+      makanan, atau penginapan. Ceritakan pengalaman dengan
+      bahasa yang sopan dan sesuai pengalaman pribadi.
+    </div>
 
-  <div class="rules">
-    <strong>Sebelum mengirim review:</strong>
+    <form id="reviewForm">
 
-    <ul>
-      <li>Tulis pengalaman berdasarkan pengalaman pribadi.</li>
-      <li>Gunakan bahasa yang sopan dan mudah dipahami.</li>
-      <li>Jangan memasukkan data pribadi atau informasi sensitif.</li>
-      <li>Jangan membuat tuduhan yang tidak dapat dipertanggungjawabkan.</li>
-      <li>Hindari spam, promosi berlebihan, dan konten yang melanggar hukum.</li>
-    </ul>
-  </div>
+      <label for="title">
+        Judul Review
+      </label>
 
-  <form id="reviewForm">
+      <input
+        type="text"
+        id="title"
+        maxlength="100"
+        required
+        placeholder="Contoh: Pengalaman memakai produk ini"
+      >
 
-    <label for="title">Judul Review</label>
-    <input
-      type="text"
-      id="title"
-      maxlength="100"
-      required
-      placeholder="Contoh: Makeup ini cocok untuk kulitku">
+      <div class="counter">
+        <span id="titleCount">0</span>/100
+      </div>
 
-    <label for="category">Kategori</label>
 
-    <select id="category" required>
-      <option value="">Pilih kategori</option>
-      <option value="Fashion">Fashion</option>
-      <option value="Makeup">Makeup</option>
-      <option value="Makanan & Penginapan">
-        Makanan & Penginapan
-      </option>
-    </select>
+      <label for="category">
+        Kategori
+      </label>
 
-    <label for="nickname">Nama / Nickname</label>
+      <select id="category" required>
+        <option value="">Pilih kategori</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Makeup">Makeup</option>
+        <option value="Makanan & Penginapan">
+          Makanan & Penginapan
+        </option>
+      </select>
 
-    <input
-      type="text"
-      id="nickname"
-      maxlength="30"
-      placeholder="Boleh menggunakan nama samaran">
 
-    <label for="review">Isi Review</label>
+      <label for="nickname">
+        Nama / Panggilan
+      </label>
 
-    <textarea
-      id="review"
-      maxlength="3000"
-      required
-      placeholder="Ceritakan pengalamanmu..."></textarea>
+      <input
+        type="text"
+        id="nickname"
+        maxlength="20"
+        placeholder="Nama atau panggilan"
+      >
 
-    <button type="submit">
-      Kirim Review
-    </button>
+      <div class="counter">
+        <span id="nicknameCount">0</span>/20
+      </div>
+
+
+      <label class="anonymous">
+        <input
+          type="checkbox"
+          id="anonymous"
+        >
+        Kirim sebagai Anonim
+      </label>
+
+
+      <label for="review">
+        Isi Review
+      </label>
+
+      <textarea
+        id="review"
+        maxlength="2000"
+        required
+        placeholder="Ceritakan pengalaman kamu..."
+      ></textarea>
+
+      <div class="counter">
+        <span id="reviewCount">0</span>/2000
+      </div>
+
+
+      <button
+        type="submit"
+        id="submitBtn"
+      >
+        Kirim Review
+      </button>
+
+    </form>
+
+
+    <div class="note">
+      Review akan diperiksa terlebih dahulu sebelum ditampilkan
+      di halaman Review Produk. Hindari spam, promosi berlebihan,
+      penghinaan, informasi pribadi, atau konten yang tidak sesuai.
+    </div>
+
 
     <div id="message" class="message"></div>
 
-  </form>
-
-  <div class="links">
-    <strong>Menu Ruang Cewek:</strong><br>
-
-    <a href="reviewproduk.html">← Kembali ke Review Produk</a><br>
-    <a href="curhat.html">Curhat</a><br>
-    <a href="tipskecantikan.html">Tips Kecantikan</a><br>
-    <a href="index.html">Ruang Cewek</a>
   </div>
 
+
   <footer>
-    <strong>CewekPedia ❤️</strong><br>
-    Ruang informasi, rekomendasi, pengalaman, dan komunitas untuk wanita.
-
-    <br><br>
-
-    <a href="../">Beranda</a> ·
-    <a href="../tentang.html">Tentang</a> ·
-    <a href="../kontak.html">Kontak</a> ·
-    <a href="../privacy.html">Privasi</a> ·
-    <a href="../ketentuan.html">Ketentuan</a>
+    © CewekPedia — Ruang Cewek ❤️
+    <br>
+    <a href="index.html">Ruang Cewek</a>
+    ·
+    <a href="reviewproduk.html">Review Produk</a>
+    ·
+    <a href="../index.html">CewekPedia</a>
   </footer>
 
 </div>
 
+
 <script type="module">
 
   import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
   import {
     getDatabase,
     ref,
     push
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
   import {
     getAuth,
     signInAnonymously
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+  /* =========================
+     FIREBASE
+     ========================= */
 
   const firebaseConfig = {
-    apiKey: "AIzaSyDUMMY-REPLACE-WITH-YOUR-EXISTING-KEY",
+    apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
     authDomain: "ruang-cewek.firebaseapp.com",
-    databaseURL: "https://ruang-cewek-default-rtdb.firebaseio.com",
+    databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "ruang-cewek",
     storageBucket: "ruang-cewek.firebasestorage.app",
-    messagingSenderId: "YOUR_EXISTING_MESSAGING_SENDER_ID",
-    appId: "YOUR_EXISTING_APP_ID"
+    messagingSenderId: "300030693884",
+    appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
   };
+
 
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   const auth = getAuth(app);
 
-  const form = document.getElementById("reviewForm");
-  const message = document.getElementById("message");
 
-  form.addEventListener("submit", async function(event) {
+  /* =========================
+     ELEMENTS
+     ========================= */
 
-    event.preventDefault();
+  const form =
+    document.getElementById("reviewForm");
 
-    message.textContent = "Mengirim review...";
+  const title =
+    document.getElementById("title");
 
-    try {
+  const category =
+    document.getElementById("category");
 
-      await signInAnonymously(auth);
+  const nickname =
+    document.getElementById("nickname");
 
-      const title =
-        document.getElementById("title").value.trim();
+  const anonymous =
+    document.getElementById("anonymous");
 
-      const category =
-        document.getElementById("category").value;
+  const review =
+    document.getElementById("review");
 
-      const nickname =
-        document.getElementById("nickname").value.trim() || "Anonim";
+  const titleCount =
+    document.getElementById("titleCount");
 
-      const text =
-        document.getElementById("review").value.trim();
+  const nicknameCount =
+    document.getElementById("nicknameCount");
 
-      await push(ref(db, "reviews"), {
+  const reviewCount =
+    document.getElementById("reviewCount");
 
-        title: title,
-        category: category,
-        nickname: nickname,
-        text: text,
-        timestamp: Date.now(),
+  const submitBtn =
+    document.getElementById("submitBtn");
 
-        // Tetap menggunakan sistem moderasi yang sudah ada.
-        status: "pending"
+  const message =
+    document.getElementById("message");
 
-      });
 
-      form.reset();
+  /* =========================
+     COUNTERS
+     ========================= */
 
-      message.textContent =
-        "Review berhasil dikirim dan akan diperiksa sebelum ditampilkan.";
+  title.addEventListener("input", () => {
+    titleCount.textContent =
+      title.value.length;
+  });
 
-    } catch (error) {
 
-      console.error(error);
+  nickname.addEventListener("input", () => {
+    nicknameCount.textContent =
+      nickname.value.length;
+  });
 
-      message.textContent =
-        "Review gagal dikirim. Silakan coba lagi.";
+
+  review.addEventListener("input", () => {
+    reviewCount.textContent =
+      review.value.length;
+  });
+
+
+  /* =========================
+     ANONYMOUS
+     ========================= */
+
+  anonymous.addEventListener("change", () => {
+
+    if (anonymous.checked) {
+
+      nickname.value = "";
+
+      nickname.disabled = true;
+
+      nicknameCount.textContent = "0";
+
+    } else {
+
+      nickname.disabled = false;
 
     }
 
   });
+
+
+  /* =========================
+     SUBMIT
+     ========================= */
+
+  form.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+
+    const titleValue =
+      title.value.trim();
+
+    const categoryValue =
+      category.value;
+
+    const nicknameValue =
+      nickname.value.trim();
+
+    const reviewValue =
+      review.value.trim();
+
+
+    if (!titleValue) {
+
+      showMessage(
+        "Judul review wajib diisi.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!categoryValue) {
+
+      showMessage(
+        "Silakan pilih kategori.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (
+      !anonymous.checked &&
+      !nicknameValue
+    ) {
+
+      showMessage(
+        "Silakan isi nama/panggilan atau pilih Anonim.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    if (!reviewValue) {
+
+      showMessage(
+        "Isi review wajib diisi.",
+        "error"
+      );
+
+      return;
+    }
+
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent =
+      "Mengirim...";
+
+
+    try {
+
+      if (!auth.currentUser) {
+        await signInAnonymously(auth);
+      }
+
+
+      await push(
+        ref(db, "reviews"),
+        {
+          title: titleValue,
+          category: categoryValue,
+          nickname:
+            anonymous.checked
+              ? "Anonim"
+              : nicknameValue,
+          text: reviewValue,
+          timestamp: Date.now(),
+          status: "pending"
+        }
+      );
+
+
+      form.reset();
+
+      nickname.disabled = false;
+
+      titleCount.textContent = "0";
+      nicknameCount.textContent = "0";
+      reviewCount.textContent = "0";
+
+
+      showMessage(
+        "Review berhasil dikirim dan akan diperiksa terlebih dahulu sebelum ditampilkan.",
+        "success"
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Gagal mengirim review:",
+        error
+      );
+
+
+      showMessage(
+        "Review belum berhasil dikirim. Silakan coba lagi nanti.",
+        "error"
+      );
+
+    } finally {
+
+      submitBtn.disabled = false;
+
+      submitBtn.textContent =
+        "Kirim Review";
+
+    }
+
+  });
+
+
+  /* =========================
+     MESSAGE
+     ========================= */
+
+  function showMessage(
+    text,
+    type
+  ) {
+
+    message.textContent = text;
+
+    message.className =
+      "message " + type;
+
+  }
 
 </script>
 
