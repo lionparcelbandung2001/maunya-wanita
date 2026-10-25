@@ -284,7 +284,7 @@
       <p>Dengerin musik, ngobrol, dan temukan teman baru.</p>
     </header>
 
-    <!-- MUSIC PLAYER -->
+    <!-- MUSIC PLAYER: FILE INI TIDAK PERLU DIUBAH -->
     <section class="music-card">
       <h2 class="section-title">🎵 Music Player</h2>
 
@@ -323,7 +323,7 @@
         aria-live="polite"
         aria-label="Pesan chat"
       >
-        <div class="empty-message">Memuat pesan chat...</div>
+        <div class="empty-message">Menghubungkan ke chat...</div>
       </div>
 
       <form id="chatForm" class="composer">
@@ -351,7 +351,7 @@
 
   </main>
 
-  <!-- FIREBASE CHAT UMUM -->
+  <!-- FIREBASE CHAT -->
   <script type="module">
     import {
       initializeApp,
@@ -361,8 +361,7 @@
 
     import {
       getAuth,
-      signInAnonymously,
-      onAuthStateChanged
+      signInAnonymously
     } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
     import {
@@ -396,10 +395,15 @@
     const notice = document.getElementById("notice");
 
     let currentUser = null;
-    let messagesRef = null;
+    let messagesPathRef = null;
     let sending = false;
 
-    nicknameInput.value = localStorage.getItem("cewekpedia_chat_name") || "";
+    try {
+      nicknameInput.value =
+        localStorage.getItem("cewekpedia_chat_name") || "";
+    } catch (error) {
+      console.warn("Penyimpanan nama tidak tersedia:", error);
+    }
 
     function setNotice(message) {
       notice.textContent = message;
@@ -420,12 +424,18 @@
       }
 
       nicknameInput.value = name;
-      localStorage.setItem("cewekpedia_chat_name", name);
-      setNotice("Nama panggilan disimpan di perangkat ini.");
+
+      try {
+        localStorage.setItem("cewekpedia_chat_name", name);
+      } catch (error) {
+        console.warn("Nama tidak dapat disimpan:", error);
+      }
+
+      setNotice("Nama panggilan disimpan.");
     });
 
     function formatTime(value) {
-      if (!value || typeof value !== "number") return "";
+      if (typeof value !== "number") return "";
 
       return new Date(value).toLocaleTimeString("id-ID", {
         hour: "2-digit",
@@ -439,21 +449,15 @@
       if (!snapshot.exists()) {
         const empty = document.createElement("div");
         empty.className = "empty-message";
-        empty.textContent = "Belum ada pesan. Jadilah yang pertama menyapa! ❤️";
+        empty.textContent =
+          "Belum ada pesan. Jadilah yang pertama menyapa! ❤️";
         messagesBox.appendChild(empty);
         return;
       }
 
-      const rows = [];
-
       snapshot.forEach((child) => {
-        rows.push({
-          key: child.key,
-          ...child.val()
-        });
-      });
+        const item = child.val();
 
-      rows.forEach((item) => {
         const message = document.createElement("article");
         message.className = "message";
 
@@ -463,11 +467,13 @@
         const name = document.createElement("span");
         name.className = "message-name";
         name.textContent =
-          typeof item.nickname === "string" ? item.nickname : "Pengunjung";
+          typeof item.nickname === "string"
+            ? item.nickname
+            : "Pengunjung";
 
         const time = document.createElement("span");
         time.className = "message-time";
-        time.textContent = formatTime(item.createdAt);
+        time.textContent = formatTime(item.timestamp);
 
         const body = document.createElement("div");
         body.className = "message-text";
@@ -496,8 +502,8 @@
 
       if (!messageText) return;
 
-      if (!currentUser) {
-        setNotice("Chat belum siap. Tunggu beberapa saat lalu coba lagi.");
+      if (!currentUser || !messagesPathRef) {
+        setNotice("Chat belum siap. Tunggu sebentar lalu coba lagi.");
         return;
       }
 
@@ -508,72 +514,117 @@
       setNotice("Mengirim pesan...");
 
       try {
-        localStorage.setItem("cewekpedia_chat_name", nickname);
+        try {
+          localStorage.setItem("cewekpedia_chat_name", nickname);
+        } catch (error) {
+          console.warn("Nama tidak dapat disimpan:", error);
+        }
 
-        await set(push(messagesRef), {
-          nickname,
+        // Gunakan referensi database langsung untuk push().
+        await set(push(messagesPathRef), {
+          nickname: nickname,
           text: messageText,
           uid: currentUser.uid,
-          createdAt: serverTimestamp()
+          timestamp: serverTimestamp()
         });
 
         messageInput.value = "";
         setNotice("Pesan terkirim.");
         messageInput.focus();
+
       } catch (error) {
         console.error("Gagal mengirim pesan:", error);
-        setNotice("Pesan gagal dikirim. Periksa koneksi atau aturan Firebase.");
+
+        if (error.code === "PERMISSION_DENIED" ||
+            error.code === "permission-denied") {
+          setNotice(
+            "Firebase menolak pesan. Periksa Rules publicChat/messages."
+          );
+        } else if (error.code === "NETWORK_ERROR") {
+          setNotice("Koneksi bermasalah. Coba kirim kembali.");
+        } else {
+          setNotice(
+            "Pesan gagal dikirim. Periksa koneksi dan Firebase."
+          );
+        }
+
       } finally {
         sending = false;
         sendButton.disabled = false;
       }
     });
 
-    try {
-      const app = getApps().length
-        ? getApp()
-        : initializeApp(firebaseConfig);
+    async function startChat() {
+      try {
+        const app = getApps().length
+          ? getApp()
+          : initializeApp(firebaseConfig);
 
-      const auth = getAuth(app);
-      const db = getDatabase(app);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
 
-      // Jalur baru agar tidak bercampur dengan chat Ruang Cewek.
-      messagesRef = query(
-        ref(db, "publicChat/messages"),
-        limitToLast(100)
-      );
+        // Referensi untuk menulis pesan.
+        messagesPathRef = ref(db, "publicChat/messages");
 
-      onValue(
-        messagesRef,
-        renderMessages,
-        (error) => {
-          console.error("Gagal membaca chat:", error);
-          setStatus("Chat bermasalah");
-          setNotice("Pesan tidak dapat dimuat. Periksa aturan Firebase Realtime Database.");
+        // Login anonim harus berhasil sebelum membaca atau mengirim pesan.
+        setStatus("Login ke chat...");
+
+        const credential = await signInAnonymously(auth);
+        currentUser = credential.user;
+
+        if (!currentUser) {
+          throw new Error("Login anonim belum berhasil.");
         }
-      );
 
-      onAuthStateChanged(auth, (user) => {
-        currentUser = user;
+        setStatus("Terhubung", true);
+        setNotice(
+          "Terhubung ke chat. Gunakan bahasa yang sopan."
+        );
 
-        if (user) {
-          setStatus("Terhubung", true);
-        } else {
-          setStatus("Menghubungkan...");
-        }
-      });
+        // Query hanya digunakan untuk membaca 100 pesan terakhir.
+        const messagesQuery = query(
+          messagesPathRef,
+          limitToLast(100)
+        );
 
-      signInAnonymously(auth).catch((error) => {
-        console.error("Firebase Auth Error:", error);
+        onValue(
+          messagesQuery,
+          renderMessages,
+          (error) => {
+            console.error("Gagal membaca chat:", error);
+            setStatus("Chat bermasalah");
+            setNotice(
+              "Pesan tidak dapat dimuat. Periksa Rules Firebase."
+            );
+          }
+        );
+
+      } catch (error) {
+        console.error("Firebase Chat Error:", error);
+        currentUser = null;
         setStatus("Belum terhubung");
-        setNotice("Login anonim gagal. Pastikan Anonymous Authentication aktif di Firebase.");
-      });
 
-    } catch (error) {
-      console.error("Firebase initialization error:", error);
-      setStatus("Chat belum siap");
-      setNotice("Konfigurasi Firebase perlu diperiksa.");
+        if (
+          error.code === "auth/operation-not-allowed"
+        ) {
+          setNotice(
+            "Login anonim belum aktif. Aktifkan Anonymous di Firebase Authentication."
+          );
+        } else if (
+          error.code === "auth/unauthorized-domain"
+        ) {
+          setNotice(
+            "Domain belum diizinkan. Periksa Authorized domains di Firebase Authentication."
+          );
+        } else {
+          setNotice(
+            "Chat gagal terhubung. Periksa koneksi, konfigurasi, dan Firebase Authentication."
+          );
+        }
+      }
     }
+
+    startChat();
   </script>
 </body>
 </html>
