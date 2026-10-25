@@ -43,7 +43,6 @@
       min-height: 100vh;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--ink);
-      /* Perpaduan warna cerah yang hidup dan dinamis */
       background: linear-gradient(135deg, #fff0f6 0%, #ffe3f0 35%, #fff4e6 75%, #eef3ff 100%);
     }
 
@@ -108,7 +107,6 @@
       min-width: 0;
       overflow: hidden;
       background: var(--paper);
-      /* Border yang lebih nyata dan tegas pada setiap kotak menu/panel */
       border: 2px solid #d790b3;
       border-radius: 16px;
       box-shadow: 0 6px 22px rgba(134, 50, 91, .12);
@@ -117,20 +115,53 @@
     .panel-heading {
       padding: 12px 14px 10px;
       border-bottom: 2px solid #f2d2e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
     }
 
-    .panel-heading h2 {
+    .panel-heading div h2 {
       margin: 0;
       font-size: 17px;
       line-height: 1.35;
       color: var(--pink-dark);
     }
 
-    .panel-heading p {
+    .panel-heading div p {
       margin: 4px 0 0;
       color: var(--muted);
       font-size: 12px;
       line-height: 1.5;
+    }
+
+    /* Badge counter orang online live */
+    .online-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 9px;
+      background: #ffe0ed;
+      border: 1px solid #e879ad;
+      border-radius: 20px;
+      color: var(--pink-dark);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .online-dot {
+      width: 6px;
+      height: 6px;
+      background: #25a66a;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
     }
 
     .music-frame {
@@ -317,7 +348,6 @@
     .article-card {
       min-width: 0;
       padding: 14px;
-      /* Border nyata pada setiap kotak kartu artikel */
       border: 2px solid #dfa5c3;
       border-radius: 13px;
       background: #fffafd;
@@ -431,7 +461,8 @@
     <nav class="nav-links" aria-label="Navigasi utama">
       <a href="#musik">🎵 Musik</a>
       <a href="#chat">💬 Chatbox</a>
-      <a href="#artikel">📚 Artikel</a>
+      <!-- Diubah langsung menautkan ke folder artikel -->
+      <a href="/artikel/">📚 Artikel</a>
       <a href="/tentang.html">Tentang</a>
       <a href="/saran.html">Saran</a>
       <a href="/privacy.html">Privasi</a>
@@ -443,8 +474,10 @@
     <!-- MUSIC PLAYER -->
     <section id="musik" class="panel" aria-labelledby="music-title">
       <div class="panel-heading">
-        <h2 id="music-title">🎵 Music Player</h2>
-        <p>Pilih playlist SoundCloud favoritmu dan nikmati waktu santai.</p>
+        <div>
+          <h2 id="music-title">🎵 Music Player</h2>
+          <p>Pilih playlist SoundCloud favoritmu dan nikmati waktu santai.</p>
+        </div>
       </div>
 
       <iframe
@@ -460,8 +493,15 @@
     <!-- PUBLIC CHATBOX -->
     <section id="chat" class="panel" aria-labelledby="chat-title">
       <div class="panel-heading">
-        <h2 id="chat-title">💬 Chat Bareng</h2>
-        <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
+        <div>
+          <h2 id="chat-title">💬 Chat Bareng</h2>
+          <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
+        </div>
+        <!-- Badge Jumlah Orang Online Real-time -->
+        <div id="online-counter-badge" class="online-badge" title="Pengunjung yang sedang online">
+          <span class="online-dot"></span>
+          <span id="online-count">0 online</span>
+        </div>
       </div>
 
       <div class="chat-content">
@@ -516,8 +556,10 @@
     <!-- ARTICLE LINKS -->
     <section id="artikel" class="panel" aria-labelledby="article-title">
       <div class="panel-heading">
-        <h2 id="article-title">📚 Artikel dan Bacaan Santai</h2>
-        <p>Baca tips ringan dan hiburan saat ingin beristirahat.</p>
+        <div>
+          <h2 id="article-title">📚 Artikel dan Bacaan Santai</h2>
+          <p>Baca tips ringan dan hiburan saat ingin beristirahat.</p>
+        </div>
       </div>
 
       <div class="article-grid">
@@ -572,7 +614,7 @@
     <p>© <span id="currentYear"></span> CewekPedia. Hak cipta dilindungi.</p>
   </footer>
 
-  <!-- FIREBASE PUBLIC CHAT -->
+  <!-- FIREBASE PUBLIC CHAT & PRESENCE (ONLINE COUNTER) -->
   <script type="module">
     import { initializeApp, getApps, getApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
     import {
@@ -587,6 +629,7 @@
       onValue,
       push,
       set,
+      onDisconnect,
       serverTimestamp
     } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js';
 
@@ -610,6 +653,7 @@
     const statusText = $('connection-status');
     const statusDot = $('status-dot');
     const counter = $('counter');
+    const onlineCountEl = $('online-count');
 
     let db;
     let currentUid = null;
@@ -768,7 +812,6 @@
       try {
         const newMessage = push(ref(db, 'publicChat/messages'));
 
-        // Sesuai Firebase Rules: nickname, text, timestamp.
         await set(newMessage, {
           nickname: name,
           text: text,
@@ -805,6 +848,32 @@
 
         const credential = await signInAnonymously(auth);
         currentUid = credential.user.uid;
+
+        // --- SISTEM PRESENCE (JUMLAH ORANG ONLINE REAL-TIME) ---
+        const connectedRef = ref(db, '.info/connected');
+        const onlineUsersRef = ref(db, 'publicChat/presence');
+
+        onValue(connectedRef, snap => {
+          if (snap.val() === true) {
+            const userPresenceRef = push(onlineUsersRef);
+            
+            // Hapus otomatis dari database saat user menutup tab/koneksi terputus
+            onDisconnect(userPresenceRef).remove();
+            
+            // Set data kehadiran user ini
+            set(userPresenceRef, {
+              uid: currentUid,
+              onlineAt: serverTimestamp()
+            });
+          }
+        });
+
+        // Dengarkan jumlah node di presence untuk menghitung total orang online
+        onValue(onlineUsersRef, snapshot => {
+          const totalOnline = snapshot.exists() ? Object.keys(snapshot.val()).length : 1;
+          onlineCountEl.textContent = `${totalOnline} online`;
+        });
+        // --------------------------------------------------------
 
         const messagesQuery = query(
           ref(db, 'publicChat/messages'),
