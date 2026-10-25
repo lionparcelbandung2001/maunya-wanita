@@ -22,14 +22,14 @@
   <meta property="og:title" content="[GANTI JUDUL ARTIKEL] | CewekPedia">
   <meta property="og:description" content="[GANTI DESKRIPSI ARTIKEL]">
   <meta property="og:url" content="https://cewekpedia.com/artikel/[NAMA-FILE].html">
-  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpg">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg">
   <meta property="og:locale" content="id_ID">
 
   <!-- TWITTER / SOCIAL PREVIEW -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="[GANTI JUDUL ARTIKEL] | CewekPedia">
   <meta name="twitter:description" content="[GANTI DESKRIPSI ARTIKEL]">
-  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpg">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg">
 
   <!-- SCHEMA ARTIKEL -->
   <script type="application/ld+json" id="article-schema">
@@ -38,7 +38,7 @@
     "@type": "BlogPosting",
     "headline": "[GANTI JUDUL ARTIKEL]",
     "description": "[GANTI DESKRIPSI ARTIKEL]",
-    "image": "https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpg",
+    "image": "https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg",
     "datePublished": "2026-10-25T08:00:00+07:00",
     "dateModified": "2026-10-25T08:00:00+07:00",
     "inLanguage": "id-ID",
@@ -173,16 +173,18 @@
       font-size: 12px;
     }
 
+    /* Gambar artikel dibuat proporsional dan tidak menutupi isi */
     .article-image {
       display: block;
       width: 100%;
       max-width: 700px;
       height: auto;
-      max-height: 420px;
-      object-fit: contain;
+      max-height: 400px;
+      object-fit: cover;
       margin: 18px auto 24px;
       border-radius: 14px;
       background: #fff7fb;
+      border: 1px solid #f2dbe6;
     }
 
     .article-content h2 {
@@ -264,6 +266,7 @@
       text-decoration: none !important;
       font-size: 14px;
       font-weight: bold;
+      margin: 4px;
     }
 
     .cta-button:hover {
@@ -328,7 +331,7 @@
       }
 
       .article-image {
-        max-height: 280px;
+        max-height: 250px;
         margin: 14px auto 20px;
       }
 
@@ -380,13 +383,13 @@
       </time>
     </div>
 
-    <!-- GAMBAR UTAMA -->
+    <!-- GAMBAR UTAMA (.jpeg) -->
     <img
-      src="images/[NAMA-GAMBAR].jpg"
+      src="images/[NAMA-GAMBAR].jpeg"
       alt="[DESKRIPSI GAMBAR YANG SESUAI DENGAN ISI ARTIKEL]"
       class="article-image"
       width="700"
-      height="420"
+      height="400"
       fetchpriority="high"
       decoding="async">
 
@@ -481,10 +484,10 @@
 
 <!-- DATA ARTIKEL DAN REKOMENDASI -->
 <script src="/artikel/data.js"></script>
-<script src="/related.js"></script>
+<script src="/artikel/related.js"></script>
 
 <!-- TANGGAL OTOMATIS DAN TAHUN FOOTER -->
-<script src="/auto-date.js"></script>
+<script src="/artikel/auto-date.js"></script>
 
 </body>
 </html>
