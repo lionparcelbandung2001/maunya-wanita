@@ -2,25 +2,32 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f9">
 
-  <title>CewekPedia ❤️ | Musik, Chat & Artikel</title>
-  <meta name="description" content="CewekPedia, tempat santai untuk mendengarkan musik, ngobrol bersama, dan membaca artikel menarik.">
-  <meta name="keywords" content="CewekPedia, chat cewek, musik online, artikel wanita, ruang ngobrol">
-  <meta name="author" content="CewekPedia">
-  <meta name="theme-color" content="#ec4899">
+  <title>CewekPedia ❤️ — Musik, Chat, dan Hiburan Santai</title>
+  <meta name="description" content="Dengarkan musik, ngobrol santai bersama komunitas, dan baca hiburan ringan di CewekPedia.">
   <link rel="canonical" href="https://cewekpedia.com/">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F9LX0ZNCJ7');
+  </script>
 
   <style>
     :root {
-      --pink: #ec4899;
-      --pink-dark: #be185d;
-      --pink-light: #fce7f3;
-      --background: #fff7fb;
-      --text: #3f2634;
-      --muted: #826b78;
-      --white: #ffffff;
-      --border: #f3d5e5;
+      color-scheme: light;
+      --pink: #e83e86;
+      --pink-dark: #b92d68;
+      --ink: #422b38;
+      --muted: #846c79;
+      --line: #f0d7e3;
+      --paper: #ffffff;
+      --bg: #fff6fa;
     }
 
     * {
@@ -29,15 +36,21 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 76px;
+      scroll-padding-top: 110px;
+      background: var(--bg);
     }
 
     body {
       margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(
+        180deg,
+        #fff0f7 0,
+        #fff9fc 240px,
+        var(--bg) 100%
+      );
     }
 
     a {
@@ -49,244 +62,279 @@
       text-decoration: underline;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.97);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(190, 24, 93, 0.06);
-    }
-
-    .nav {
-      max-width: 900px;
-      margin: auto;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+    .site-header {
+      padding: 16px 14px 12px;
+      text-align: center;
     }
 
     .brand {
+      margin: 0;
+      font-size: clamp(25px, 5vw, 34px);
+      font-weight: 900;
+      letter-spacing: -0.8px;
       color: var(--pink-dark);
-      font-size: 19px;
-      font-weight: 800;
-      white-space: nowrap;
+    }
+
+    .tagline {
+      margin: 5px auto 12px;
+      max-width: 600px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 13px;
-      font-size: 13px;
-      font-weight: 700;
+      flex-wrap: wrap;
+      gap: 7px;
     }
 
     .nav-links a {
-      color: var(--text);
-    }
-
-    .hero {
-      max-width: 900px;
-      margin: auto;
-      padding: 24px 16px 12px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 8px;
+      display: inline-block;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.8);
       color: var(--pink-dark);
-      font-size: clamp(25px, 5vw, 36px);
-      line-height: 1.25;
-    }
-
-    .hero p {
-      max-width: 550px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
+      font-weight: 700;
     }
 
     main {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      padding: 10px 12px 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+      gap: 12px;
+      width: min(100% - 24px, 1050px);
+      margin: 0 auto 24px;
     }
 
-    .section {
-      margin: 14px 0 22px;
-      padding: 16px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 4px 18px rgba(190, 24, 93, 0.045);
+    .panel {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(134, 50, 91, .06);
     }
 
-    .section-heading {
-      margin: 0 0 5px;
+    .panel-heading {
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid #f7e7ef;
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.35;
       color: var(--pink-dark);
-      font-size: 21px;
     }
 
-    .section-description {
-      margin: 0 0 15px;
+    .panel-heading p {
+      margin: 4px 0 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
     .music-frame {
-      width: 100%;
-      height: 225px;
       display: block;
+      width: 100%;
+      height: 270px;
       border: 0;
-      border-radius: 12px;
-      background: #fff0f7;
+      background: #fff;
+    }
+
+    .chat-content {
+      padding: 12px;
     }
 
     .chat-status {
-      margin: 8px 0 12px;
-      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0 0 9px;
       font-size: 12px;
-    }
-
-    .chat-messages {
-      height: 310px;
-      overflow-y: auto;
-      padding: 12px;
-      background: #fff8fc;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow-wrap: anywhere;
-    }
-
-    .chat-empty {
-      padding: 24px 8px;
       color: var(--muted);
-      text-align: center;
+    }
+
+    .status-dot {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c7b9c1;
+    }
+
+    .status-dot.ready {
+      background: #25a66a;
+    }
+
+    .status-dot.error {
+      background: #d34c58;
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 220px;
+      min-height: 160px;
+      overflow-y: auto;
+      padding: 9px;
+      border: 1px solid #f2e1e9;
+      border-radius: 12px;
+      background: #fffafd;
+      scroll-behavior: smooth;
+    }
+
+    .empty {
+      max-width: 250px;
+      margin: auto;
+      padding: 15px 8px;
+      color: #9b8791;
       font-size: 13px;
+      line-height: 1.6;
+      text-align: center;
     }
 
     .message {
-      margin: 0 0 12px;
-      padding: 10px 12px;
-      background: white;
-      border: 1px solid #f7e2ed;
-      border-radius: 12px;
+      align-self: flex-start;
+      max-width: 94%;
+      padding: 8px 10px;
+      overflow-wrap: anywhere;
+      background: #f9eaf2;
+      border-radius: 12px 12px 12px 4px;
     }
 
-    .message:last-child {
-      margin-bottom: 0;
+    .message.mine {
+      align-self: flex-end;
+      background: #ffe0ed;
+      border-radius: 12px 12px 4px 12px;
     }
 
-    .message-top {
+    .message-meta {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px 10px;
-      margin-bottom: 4px;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+      font-size: 11px;
+      color: #9b456d;
     }
 
     .message-name {
-      color: var(--pink-dark);
-      font-weight: 700;
-      font-size: 13px;
+      max-width: 150px;
+      overflow: hidden;
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .message-time {
-      color: var(--muted);
+      color: #a48e99;
       font-size: 10px;
     }
 
     .message-text {
       font-size: 14px;
+      line-height: 1.45;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
 
     .chat-form {
       display: grid;
-      gap: 9px;
-      margin-top: 12px;
+      gap: 8px;
+      margin-top: 9px;
     }
 
     .chat-form input,
     .chat-form textarea {
       width: 100%;
-      padding: 11px 12px;
-      color: var(--text);
-      background: white;
-      border: 1px solid var(--border);
+      padding: 10px 11px;
+      border: 1px solid #e9d4df;
       border-radius: 10px;
       outline: none;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
     }
 
     .chat-form input:focus,
     .chat-form textarea:focus {
-      border-color: var(--pink);
-      box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.1);
+      border-color: #e783ae;
+      box-shadow: 0 0 0 3px rgba(232, 62, 134, .1);
     }
 
     .chat-form textarea {
-      min-height: 78px;
+      min-height: 60px;
+      max-height: 120px;
       resize: vertical;
+      line-height: 1.45;
     }
 
-    .send-button,
-    .article-button {
-      display: inline-block;
-      padding: 11px 16px;
-      color: white;
-      background: var(--pink);
-      border: 0;
-      border-radius: 10px;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
+    .send-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .send-button:hover,
-    .article-button:hover {
-      background: var(--pink-dark);
-      text-decoration: none;
-    }
-
-    .send-button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .chat-note {
-      margin: 10px 0 0;
-      color: var(--muted);
+    .counter {
+      color: #9b8791;
       font-size: 11px;
     }
 
-    .articles-grid {
+    .send-button {
+      min-width: 100px;
+      padding: 10px 15px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .send-button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .notice {
+      min-height: 16px;
+      margin: 0 2px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .notice.error {
+      color: #b42335;
+    }
+
+    #artikel {
+      grid-column: 1 / -1;
+    }
+
+    .article-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+      padding: 13px;
     }
 
     .article-card {
       min-width: 0;
       padding: 14px;
-      background: #fff8fc;
-      border: 1px solid var(--border);
+      border: 1px solid #f2dce7;
       border-radius: 13px;
-    }
-
-    .article-icon {
-      margin-bottom: 5px;
-      font-size: 24px;
+      background: #fffafd;
     }
 
     .article-card h3 {
@@ -296,459 +344,545 @@
     }
 
     .article-card p {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
+      line-height: 1.6;
     }
 
     .article-link {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .all-articles {
+      padding: 0 13px 14px;
       font-size: 13px;
       font-weight: 700;
     }
 
-    .article-empty {
-      padding: 18px;
-      color: var(--muted);
-      background: #fff8fc;
-      border: 1px dashed var(--border);
-      border-radius: 12px;
-      font-size: 13px;
-    }
-
     footer {
-      padding: 22px 14px;
+      padding: 18px 14px 24px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
       color: var(--muted);
-      background: white;
-      border-top: 1px solid var(--border);
-      text-align: center;
       font-size: 12px;
+      line-height: 1.8;
+      text-align: center;
     }
 
     footer p {
       margin: 4px 0;
     }
 
-    @media (max-width: 480px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-      }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px 13px;
+      margin: 8px 0;
+    }
 
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
-        font-size: 12px;
-      }
+    .footer-links a {
+      font-weight: 650;
+    }
 
-      .hero {
-        padding-top: 20px;
-      }
-
-      .section {
-        padding: 13px;
-        border-radius: 14px;
+    @media (min-width: 900px) {
+      main {
+        gap: 16px;
       }
 
       .music-frame {
-        height: 225px;
+        height: 285px;
       }
 
-      .chat-messages {
+      .messages {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .site-header {
+        padding: 14px 12px 10px;
+      }
+
+      .tagline {
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+
+      .nav-links a {
+        padding: 6px 9px;
+        font-size: 11px;
+      }
+
+      main {
+        grid-template-columns: minmax(0, 1fr);
+        width: min(100% - 20px, 480px);
+        gap: 12px;
+      }
+
+      #musik,
+      #chat,
+      #artikel {
+        grid-column: 1;
+      }
+
+      .music-frame {
+        height: 245px;
+      }
+
+      .messages {
         height: 300px;
+        min-height: 220px;
       }
 
-      .articles-grid {
-        grid-template-columns: 1fr;
+      .chat-form textarea {
+        min-height: 68px;
+      }
+
+      .article-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
       }
     }
   </style>
-
-  <!-- Google Analytics CewekPedia -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F9LX0ZNCJ7');
-  </script>
 </head>
 
 <body>
-  <header class="topbar">
-    <nav class="nav" aria-label="Navigasi utama">
-      <a class="brand" href="https://cewekpedia.com/">CewekPedia ❤️</a>
+  <header class="site-header">
+    <h1 class="brand">CewekPedia ❤️</h1>
+    <p class="tagline">
+      Musik, obrolan, dan bacaan santai dalam satu tempat.
+    </p>
 
-      <div class="nav-links">
-        <a href="#musik">🎵 Musik</a>
-        <a href="#chat">💬 Chatbox</a>
-        <a href="#artikel">📚 Artikel</a>
-      </div>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#musik">🎵 Musik</a>
+      <a href="#chat">💬 Chatbox</a>
+      <a href="#artikel">📚 Artikel</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/saran.html">Saran</a>
+      <a href="/privacy.html">Privasi</a>
+      <a href="/kontak.html">Kontak</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h1>YANG WANITA MAU ❤️</h1>
-    <p>
-      Tempat santai untuk menikmati musik, ngobrol bareng,
-      dan membaca artikel menarik kapan saja.
-    </p>
-  </div>
-
   <main>
-    <!-- BAGIAN 1: MUSIC PLAYER -->
-    <section class="section" id="musik">
-      <h2 class="section-heading">🎵 Musik Santai</h2>
-      <p class="section-description">
-        Temani waktumu dengan musik favorit.
-      </p>
+    <!-- MUSIC PLAYER -->
+    <section id="musik" class="panel" aria-labelledby="music-title">
+      <div class="panel-heading">
+        <h2 id="music-title">🎵 Music Player</h2>
+        <p>Pilih playlist SoundCloud favoritmu dan nikmati waktu santai.</p>
+      </div>
 
-      <!-- File music-player.html tetap terpisah dan tidak perlu diubah -->
       <iframe
         class="music-frame"
-        src="music-player.html"
-        title="Music Player CewekPedia"
+        src="/music-player.html"
+        title="CewekPedia Music Player"
         loading="eager"
-        allow="autoplay; encrypted-media"
-        referrerpolicy="strict-origin-when-cross-origin">
+        allow="autoplay"
+        scrolling="no">
       </iframe>
     </section>
 
-    <!-- BAGIAN 2: CHATBOX REAL-TIME -->
-    <section class="section" id="chat">
-      <h2 class="section-heading">💬 Chatbox CewekPedia</h2>
-      <p class="section-description">
-        Sapa pengunjung lain dan ngobrol dengan sopan.
-      </p>
-
-      <div id="chatStatus" class="chat-status" role="status" aria-live="polite">
-        Menghubungkan ke chat...
+    <!-- PUBLIC CHATBOX -->
+    <section id="chat" class="panel" aria-labelledby="chat-title">
+      <div class="panel-heading">
+        <h2 id="chat-title">💬 Chat Bareng</h2>
+        <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
       </div>
 
-      <div
-        id="chatMessages"
-        class="chat-messages"
-        role="log"
-        aria-live="polite"
-        aria-label="Pesan chat">
-        <div class="chat-empty">Memuat percakapan...</div>
+      <div class="chat-content">
+        <p class="chat-status">
+          <span id="status-dot" class="status-dot"></span>
+          <span id="connection-status" role="status" aria-live="polite">
+            Menghubungkan chat…
+          </span>
+        </p>
+
+        <div
+          id="messages"
+          class="messages"
+          role="log"
+          aria-live="polite"
+          aria-relevant="additions text">
+          <p class="empty">Chat akan muncul di sini setelah koneksi berhasil.</p>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <input
+            id="nickname"
+            name="nickname"
+            maxlength="20"
+            autocomplete="nickname"
+            placeholder="Nama panggilan (maks. 20 karakter)"
+            aria-label="Nama panggilan"
+            required>
+
+          <textarea
+            id="message-input"
+            name="message"
+            maxlength="300"
+            placeholder="Tulis pesan… (maks. 300 karakter)"
+            aria-label="Pesan chat"
+            required></textarea>
+
+          <div class="send-row">
+            <span id="counter" class="counter">0/300</span>
+            <button id="send-button" class="send-button" type="submit" disabled>
+              Kirim pesan
+            </button>
+          </div>
+
+          <p id="notice" class="notice" aria-live="polite">
+            Chat sedang disiapkan.
+          </p>
+        </form>
       </div>
-
-      <form id="chatForm" class="chat-form">
-        <input
-          id="nickname"
-          type="text"
-          maxlength="20"
-          placeholder="Nama panggilan"
-          autocomplete="nickname"
-          required>
-
-        <textarea
-          id="messageText"
-          maxlength="300"
-          placeholder="Tulis pesanmu di sini..."
-          aria-label="Isi pesan"
-          required></textarea>
-
-        <button id="sendButton" class="send-button" type="submit" disabled>
-          Kirim Pesan
-        </button>
-      </form>
-
-      <p class="chat-note">
-        Maksimal 300 karakter. Jangan membagikan kata sandi,
-        nomor identitas, atau informasi pribadi. Pesan dapat dibaca pengunjung lain.
-      </p>
     </section>
 
-    <!-- BAGIAN 3: ARTIKEL -->
-    <section class="section" id="artikel">
-      <h2 class="section-heading">📚 Artikel CewekPedia</h2>
-      <p class="section-description">
-        Bacaan santai untuk menemani waktu luang.
-      </p>
+    <!-- ARTICLE LINKS -->
+    <section id="artikel" class="panel" aria-labelledby="article-title">
+      <div class="panel-heading">
+        <h2 id="article-title">📚 Artikel dan Bacaan Santai</h2>
+        <p>Baca tips ringan dan hiburan saat ingin beristirahat.</p>
+      </div>
 
-      <!--
-        NANTI:
-        1. Buat folder "artikel" di GitHub.
-        2. Buat file artikel di dalam folder tersebut.
-        3. Ganti judul, ringkasan, dan href kartu di bawah.
-        Jangan biarkan href mengarah ke file yang belum dibuat.
-      -->
-
-      <div class="articles-grid">
+      <div class="article-grid">
         <article class="article-card">
-          <div class="article-icon" aria-hidden="true">🌷</div>
-          <h3>Tips Merawat Diri dan Menjaga Semangat</h3>
+          <h3>Tips Merawat Diri agar Tetap Cantik dan Percaya Diri</h3>
           <p>
-            Ide bacaan ringan tentang kebiasaan baik,
-            perawatan diri, dan waktu untuk diri sendiri.
+            Tips sederhana merawat diri, menjaga penampilan, dan membangun
+            rasa percaya diri setiap hari.
           </p>
-          <a class="article-link" href="artikel/tips-merawat-diri.html">
+          <a class="article-link" href="/artikel/tips-merawat-diri.html">
             Baca artikel →
           </a>
         </article>
 
         <article class="article-card">
-          <div class="article-icon" aria-hidden="true">☕</div>
-          <h3>Cerita Santai untuk Mengisi Waktu Luang</h3>
+          <h3>Cerita Santai untuk Menemani Waktu Luang</h3>
           <p>
-            Bacaan santai untuk menemani waktu istirahat
-            sambil menikmati musik.
+            Temukan cerita ringan dan hiburan santai untuk menemani
+            waktu istirahatmu.
           </p>
-          <a class="article-link" href="artikel/cerita-santai.html">
+          <a class="article-link" href="/artikel/cerita-santai.html">
             Baca artikel →
           </a>
         </article>
       </div>
 
-      <p class="chat-note">
-        Artikel di atas masih berupa contoh tampilan.
-        Tautannya baru aktif setelah file artikelnya dibuat.
-      </p>
+      <div class="all-articles">
+        <a href="/artikel/">Lihat semua artikel →</a>
+      </div>
     </section>
   </main>
 
+  <!-- FOOTER & IMPORTANT PAGES -->
   <footer>
     <p><strong>CewekPedia ❤️</strong></p>
     <p>Musik, obrolan, dan bacaan santai dalam satu tempat.</p>
-    <p>© <span id="currentYear"></span> CewekPedia</p>
-    <p><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Kembali ke atas ↑</a></p>
+
+    <nav class="footer-links" aria-label="Informasi situs">
+      <a href="/tentang.html">Tentang Kami</a>
+      <a href="/saran.html">Saran</a>
+      <a href="/privacy.html">Kebijakan Privasi</a>
+      <a href="/kontak.html">Kontak</a>
+    </nav>
+
+    <nav class="footer-links" aria-label="Navigasi tambahan">
+      <a href="/artikel/">Semua Artikel</a>
+      <a href="#musik">Musik</a>
+      <a href="#chat">Chatbox</a>
+      <a href="#artikel">Artikel</a>
+    </nav>
+
+    <p>© <span id="currentYear"></span> CewekPedia. Hak cipta dilindungi.</p>
   </footer>
 
-  <!-- FIREBASE CHATBOX -->
+  <!-- FIREBASE PUBLIC CHAT -->
   <script type="module">
-    import { initializeApp, getApps, getApp }
-      from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
     import {
       getAuth,
       signInAnonymously
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
+    } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
     import {
       getDatabase,
       ref,
-      push,
-      set,
-      onValue,
       query,
       limitToLast,
+      onValue,
+      push,
+      set,
       serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+    } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js';
 
     const firebaseConfig = {
-      apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
-      authDomain: "ruang-cewek.firebaseapp.com",
-      databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "ruang-cewek",
-      storageBucket: "ruang-cewek.firebasestorage.app",
-      messagingSenderId: "300030693884",
-      appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+      apiKey: 'AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0',
+      authDomain: 'ruang-cewek.firebaseapp.com',
+      databaseURL: 'https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app',
+      projectId: 'ruang-cewek',
+      storageBucket: 'ruang-cewek.firebasestorage.app',
+      messagingSenderId: '300030693884',
+      appId: '1:300030693884:web:ec02ce2cf35646dbf3a279'
     };
 
-    const statusEl = document.getElementById("chatStatus");
-    const messagesEl = document.getElementById("chatMessages");
-    const formEl = document.getElementById("chatForm");
-    const nicknameEl = document.getElementById("nickname");
-    const messageEl = document.getElementById("messageText");
-    const sendButton = document.getElementById("sendButton");
+    const $ = (id) => document.getElementById(id);
 
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
+    const form = $('chat-form');
+    const nickname = $('nickname');
+    const input = $('message-input');
+    const messagesEl = $('messages');
+    const sendButton = $('send-button');
+    const notice = $('notice');
+    const statusText = $('connection-status');
+    const statusDot = $('status-dot');
+    const counter = $('counter');
 
     let db;
-    let currentUser = null;
-    let chatReady = false;
-    let sending = false;
+    let currentUid = null;
+    let connected = false;
+    let lastRenderedSignature = '';
 
-    function setStatus(message) {
-      statusEl.textContent = message;
+    $('currentYear').textContent = new Date().getFullYear();
+
+    function setStatus(text, kind = '') {
+      statusText.textContent = text;
+      statusDot.className = 'status-dot' + (kind ? ' ' + kind : '');
     }
 
-    function showEmpty(message) {
+    function setNotice(text, isError = false) {
+      notice.textContent = text;
+      notice.className = 'notice' + (isError ? ' error' : '');
+    }
+
+    function updateButton() {
+      sendButton.disabled =
+        !connected ||
+        !currentUid ||
+        !nickname.value.trim() ||
+        !input.value.trim();
+    }
+
+    function safeText(value, max) {
+      return String(value ?? '')
+        .trim()
+        .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '')
+        .slice(0, max);
+    }
+
+    function formatTime(value) {
+      if (!Number.isFinite(value)) return '';
+
+      try {
+        return new Intl.DateTimeFormat('id-ID', {
+          hour: '2-digit',
+          minute: '2-digit'
+        }).format(new Date(value));
+      } catch {
+        return '';
+      }
+    }
+
+    function renderMessages(data) {
+      const entries = Object.entries(data || {})
+        .map(([key, value]) => ({ key, ...(value || {}) }))
+        .filter(
+          message =>
+            typeof message.text === 'string' &&
+            typeof message.name === 'string'
+        )
+        .sort(
+          (a, b) =>
+            (Number(a.createdAt) || 0) -
+            (Number(b.createdAt) || 0)
+        );
+
+      const signature = entries
+        .map(message => `${message.key}:${message.text}`)
+        .join('|');
+
+      if (signature === lastRenderedSignature) return;
+
+      const nearBottom =
+        messagesEl.scrollHeight -
+        messagesEl.scrollTop -
+        messagesEl.clientHeight < 70;
+
+      lastRenderedSignature = signature;
       messagesEl.replaceChildren();
-      const empty = document.createElement("div");
-      empty.className = "chat-empty";
-      empty.textContent = message;
-      messagesEl.appendChild(empty);
-    }
 
-    function formatTime(timestamp) {
-      if (typeof timestamp !== "number") return "";
-
-      return new Date(timestamp).toLocaleTimeString("id-ID", {
-        hour: "2-digit",
-        minute: "2-digit"
-      });
-    }
-
-    function renderMessages(snapshot) {
-      const items = [];
-
-      snapshot.forEach((child) => {
-        items.push({
-          id: child.key,
-          ...child.val()
-        });
-      });
-
-      messagesEl.replaceChildren();
-
-      if (items.length === 0) {
-        showEmpty("Belum ada pesan. Jadilah yang pertama menyapa! 💗");
+      if (!entries.length) {
+        const empty = document.createElement('p');
+        empty.className = 'empty';
+        empty.textContent =
+          'Belum ada pesan. Jadilah yang pertama menyapa 😊';
+        messagesEl.append(empty);
         return;
       }
 
-      for (const item of items) {
-        const message = document.createElement("div");
-        message.className = "message";
+      for (const item of entries) {
+        const article = document.createElement('article');
+        article.className =
+          'message' + (item.uid === currentUid ? ' mine' : '');
 
-        const top = document.createElement("div");
-        top.className = "message-top";
+        const meta = document.createElement('div');
+        meta.className = 'message-meta';
 
-        const name = document.createElement("span");
-        name.className = "message-name";
+        const name = document.createElement('span');
+        name.className = 'message-name';
         name.textContent =
-          typeof item.nickname === "string" ? item.nickname : "Pengunjung";
+          safeText(item.name, 20) || 'Teman CewekPedia';
 
-        const time = document.createElement("time");
-        time.className = "message-time";
-        time.textContent = formatTime(item.timestamp);
+        const time = document.createElement('time');
+        time.className = 'message-time';
+        time.textContent = formatTime(Number(item.createdAt));
 
-        const body = document.createElement("div");
-        body.className = "message-text";
-        body.textContent =
-          typeof item.text === "string" ? item.text : "";
+        meta.append(name, time);
 
-        top.append(name, time);
-        message.append(top, body);
-        messagesEl.appendChild(message);
+        const text = document.createElement('div');
+        text.className = 'message-text';
+        text.textContent = safeText(item.text, 300);
+
+        article.append(meta, text);
+        messagesEl.append(article);
       }
 
-      messagesEl.scrollTop = messagesEl.scrollHeight;
+      if (nearBottom) {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
     }
+
+    nickname.addEventListener('input', updateButton);
+
+    input.addEventListener('input', () => {
+      counter.textContent = `${input.value.length}/300`;
+      updateButton();
+    });
+
+    input.addEventListener('keydown', event => {
+      if (
+        event.key === 'Enter' &&
+        !event.shiftKey &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+
+        if (!sendButton.disabled) {
+          form.requestSubmit();
+        }
+      }
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+
+      const name = safeText(nickname.value, 20);
+      const text = safeText(input.value, 300);
+
+      if (!name || !text || !db || !currentUid || !connected) {
+        return;
+      }
+
+      sendButton.disabled = true;
+      setNotice('Mengirim pesan…');
+
+      try {
+        const newMessage = push(ref(db, 'publicChat/messages'));
+
+        await set(newMessage, {
+          name,
+          text,
+          uid: currentUid,
+          createdAt: serverTimestamp()
+        });
+
+        input.value = '';
+        counter.textContent = '0/300';
+
+        setNotice(
+          'Pesan terkirim. Tetap sopan dan jaga privasi, ya.'
+        );
+      } catch (error) {
+        console.error('Chat send failed:', error);
+
+        setNotice(
+          'Pesan belum terkirim. Periksa aturan akses Firebase Realtime Database.',
+          true
+        );
+      } finally {
+        updateButton();
+      }
+    });
 
     async function startChat() {
       try {
-        const app = getApps().length
-          ? getApp()
-          : initializeApp(firebaseConfig);
+        const app = initializeApp(
+          firebaseConfig,
+          'cewekpediaPublicChat'
+        );
 
         const auth = getAuth(app);
         db = getDatabase(app);
 
-        setStatus("Menghubungkan ke chat...");
-
         const credential = await signInAnonymously(auth);
-        currentUser = credential.user;
+        currentUid = credential.user.uid;
 
-        const messagesRef = ref(db, "publicChat/messages");
-        const messagesQuery = query(messagesRef, limitToLast(100));
+        const messagesQuery = query(
+          ref(db, 'publicChat/messages'),
+          limitToLast(80)
+        );
 
         onValue(
           messagesQuery,
-          (snapshot) => {
-            renderMessages(snapshot);
-            chatReady = true;
-            sendButton.disabled = false;
-            setStatus("Terhubung — chat siap digunakan 💗");
-          },
-          (error) => {
-            console.error("Gagal membaca chat:", error);
-            chatReady = false;
-            sendButton.disabled = true;
-            setStatus(
-              "Tidak dapat membaca chat. Periksa aturan Firebase Database."
+          snapshot => {
+            connected = true;
+            setStatus('Chat terhubung', 'ready');
+
+            setNotice(
+              'Terhubung. Pesan terbaru akan muncul otomatis.'
             );
+
+            renderMessages(snapshot.val());
+            updateButton();
+          },
+          error => {
+            console.error('Chat read failed:', error);
+
+            connected = false;
+            setStatus('Akses chat belum tersedia', 'error');
+
+            setNotice(
+              'Firebase menolak akses chat. Periksa aturan Realtime Database untuk publicChat/messages.',
+              true
+            );
+
+            updateButton();
           }
         );
       } catch (error) {
-        console.error("Inisialisasi chat gagal:", error);
-        chatReady = false;
-        sendButton.disabled = true;
+        console.error('Firebase init/auth failed:', error);
 
-        if (error.code === "auth/operation-not-allowed") {
-          setStatus(
-            "Login anonim belum aktif. Aktifkan Anonymous di Firebase Authentication."
-          );
-        } else if (error.code === "auth/unauthorized-domain") {
-          setStatus(
-            "Domain belum diizinkan. Periksa Authorized domains di Firebase."
-          );
-        } else {
-          setStatus(
-            "Chat belum terhubung. Periksa koneksi dan konfigurasi Firebase."
-          );
-        }
+        setStatus('Belum tersambung', 'error');
 
-        showEmpty("Chat belum dapat dimuat.");
+        setNotice(
+          'Koneksi chat gagal. Pastikan Anonymous Authentication aktif di Firebase.',
+          true
+        );
       }
     }
-
-    formEl.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      if (!chatReady || !currentUser || sending) {
-        setStatus("Chat belum siap. Coba lagi sebentar.");
-        return;
-      }
-
-      const nickname = nicknameEl.value.trim();
-      const text = messageEl.value.trim();
-
-      if (!nickname || !text) {
-        setStatus("Isi nama panggilan dan pesan terlebih dahulu.");
-        return;
-      }
-
-      if (nickname.length > 20 || text.length > 300) {
-        setStatus("Nama maksimal 20 karakter dan pesan maksimal 300 karakter.");
-        return;
-      }
-
-      sending = true;
-      sendButton.disabled = true;
-      setStatus("Mengirim pesan...");
-
-      try {
-        const messagesRef = ref(db, "publicChat/messages");
-        const newMessageRef = push(messagesRef);
-
-        await set(newMessageRef, {
-          nickname,
-          text,
-          uid: currentUser.uid,
-          timestamp: serverTimestamp()
-        });
-
-        messageEl.value = "";
-        setStatus("Pesan berhasil dikirim 💗");
-        messageEl.focus();
-      } catch (error) {
-        console.error("Pesan gagal dikirim:", error);
-
-        if (error.code === "PERMISSION_DENIED") {
-          setStatus(
-            "Pesan ditolak aturan Firebase. Periksa Rules publicChat/messages."
-          );
-        } else {
-          setStatus("Pesan gagal dikirim. Coba lagi sebentar.");
-        }
-      } finally {
-        sending = false;
-        sendButton.disabled = !chatReady;
-      }
-    });
-
-    // Enter untuk mengirim; Shift+Enter untuk baris baru.
-    messageEl.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" && !event.shiftKey) {
-        event.preventDefault();
-        formEl.requestSubmit();
-      }
-    });
 
     startChat();
   </script>
