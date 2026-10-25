@@ -310,7 +310,6 @@
       box-shadow: 0 9px 24px rgba(185, 67, 123, 0.12);
     }
 
-    /* Ukuran gambar diperkecil dan proporsional (tidak terlalu tinggi) */
     .artikel-card img {
       display: block;
       width: 100%;
@@ -553,7 +552,7 @@
 
       .artikel-card {
         display: grid;
-        grid-template-columns: 95px minmax(0, 1fr); /* Lebar gambar mobile lebih proporsional & kecil */
+        grid-template-columns: 95px minmax(0, 1fr);
         align-items: stretch;
       }
 
@@ -561,7 +560,7 @@
       .artikel-no-image {
         width: 95px;
         height: 100%;
-        min-height: 130px; /* Tinggi min disesuaikan agar compact */
+        min-height: 130px;
       }
 
       .artikel-no-image {
@@ -691,7 +690,8 @@
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
-    const artikelPerHalaman = 9;
+    // Diubah menjadi 12 artikel per halaman
+    const artikelPerHalaman = 12;
     const artikelList = document.getElementById("artikelList");
     const pagination = document.getElementById("pagination");
 
@@ -803,11 +803,14 @@
         return;
       }
 
-      const totalHalaman = Math.ceil(data.length / artikelPerHalaman);
+      // Membalik urutan array data agar artikel paling baru di data.js muncul di paling atas
+      const sortedData = data.slice().reverse();
+
+      const totalHalaman = Math.ceil(sortedData.length / artikelPerHalaman);
       halaman = Math.min(halaman, totalHalaman);
 
       const mulai = (halaman - 1) * artikelPerHalaman;
-      const artikelHalaman = data.slice(mulai, mulai + artikelPerHalaman);
+      const artikelHalaman = sortedData.slice(mulai, mulai + artikelPerHalaman);
 
       artikelList.replaceChildren();
 
