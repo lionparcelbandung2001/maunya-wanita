@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "memilih jenis shampo untuk remaja",
+    deskripsi: "cara memilih jenis shampo",
+    tanggal: "26 oktober 2026",
+    gambar: "images/ccara-memilih-shampo-yang-tepat.jpeg",
+    link: "cara-memilih-shampo-yang-tepat.html"
+  }, 
+    {
     judul: "merawat rambut agar tidak rontok",
     deskripsi: "merawat rambut dan kulit kepala",
     tanggal: "25 oktober 2026",
