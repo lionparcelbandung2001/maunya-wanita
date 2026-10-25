@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,8 +13,7 @@
   <meta name="author" content="CewekPedia">
 
   <link rel="canonical" href="https://cewekpedia.com/artikel/[SLUG_URL].html">
-  
-  <!-- FAVICON -->
+
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
 
@@ -289,7 +289,7 @@
       background: var(--pink-dark);
     }
 
-    /* KOTAK PROMOSI CEWEPEDIA */
+    /* KOTAK INGIN BERIKLAN */
     .advertising-box {
       position: relative;
       background: linear-gradient(145deg, #ff6ab2, #a855f7);
@@ -362,7 +362,7 @@
       justify-content: center;
     }
 
-    /* AREA IKLAN MONETAG DI BAWAH KOTAK PROMOSI */
+    /* AREA MONETAG */
     #monetag-ad-slot {
       width: 100%;
       min-width: 0;
@@ -373,6 +373,11 @@
     #monetag-ad-slot iframe,
     #monetag-ad-slot img {
       max-width: 100%;
+    }
+
+    /* Titik lokasi khusus HP, tidak menampilkan kotak kosong */
+    #monetag-mobile-anchor {
+      display: none;
     }
 
     .site-footer {
@@ -397,13 +402,14 @@
       text-decoration: none;
     }
 
+    /* TABLET DAN LAYAR KECIL */
     @media (max-width: 900px) {
-      body {
-        padding-bottom: 20px;
-      }
-
       .layout-wrapper {
         flex-direction: column;
+      }
+
+      .main-content {
+        width: 100%;
       }
 
       .sidebar-right {
@@ -430,6 +436,7 @@
       }
     }
 
+    /* KHUSUS HP */
     @media (max-width: 600px) {
       .site-header {
         padding: 20px 12px;
@@ -450,6 +457,49 @@
 
       .article-title {
         font-size: 24px;
+      }
+
+      /*
+        Monetag diletakkan setelah judul dan tanggal.
+        Elemen mengikuti alur halaman saat scroll,
+        bukan menempel menutupi isi artikel.
+      */
+      #monetag-mobile-anchor {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        margin: 10px 0 16px;
+        scroll-margin-top: 12px;
+      }
+
+      #monetag-ad-slot {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        overflow-wrap: anywhere;
+      }
+
+      #monetag-ad-slot iframe,
+      #monetag-ad-slot img {
+        max-width: 100%;
+      }
+
+      /*
+        Kotak Ingin Beriklan tetap di bawah,
+        setelah konten artikel dan tidak sticky.
+      */
+      .advertising-box {
+        position: relative;
+        width: 100%;
+      }
+
+      .sidebar-right {
+        position: static;
+        width: 100%;
       }
     }
   </style>
@@ -479,7 +529,7 @@
 
   <div class="layout-wrapper">
 
-    <!-- KOLOM KIRI: ARTIKEL -->
+    <!-- KOLOM ARTIKEL -->
     <div class="main-content">
       <article class="article-card">
 
@@ -496,6 +546,9 @@
           Diperbarui:
           <time id="article-updated-date" datetime="2026-10-25">25 Oktober 2026</time>
         </div>
+
+        <!-- SLOT MONETAG KHUSUS HP -->
+        <div id="monetag-mobile-anchor"></div>
 
         <img
           src="images/[NAMA_GAMBAR].jpeg"
@@ -515,7 +568,6 @@
           <h2>[SUBJUDUL_1]</h2>
           <p>[ISI_SUBJUDUL_1]</p>
 
-          <!-- CONTOH LIST / POIN -->
           <ul>
             <li><strong>[POIN_1]:</strong> [PENJELASAN_POIN_1]</li>
             <li><strong>[POIN_2]:</strong> [PENJELASAN_POIN_2]</li>
@@ -530,7 +582,7 @@
           <p>[ISI_SUBJUDUL_2]</p>
 
           <h2>Penutup</h2>
-          <p>[PARAGRAF_ KESIMPULAN]</p>
+          <p>[PARAGRAF_KESIMPULAN]</p>
 
         </div>
 
@@ -551,10 +603,9 @@
       </article>
     </div>
 
-    <!-- KOLOM KANAN: PROMOSI DAN MONETAG -->
+    <!-- SIDEBAR PC: INGIN BERIKLAN DAN MONETAG -->
     <aside class="sidebar-right" id="advertising-sidebar">
 
-      <!-- KOTAK INGIN BERIKLAN -->
       <div class="advertising-box" id="advertising-box">
 
         <button
@@ -625,7 +676,7 @@
 </footer>
 
 <script>
-  // Tombol untuk menutup kotak promosi
+  // Tombol tutup kotak promosi
   (function () {
     var box = document.getElementById("advertising-box");
     var closeButton = document.getElementById("advertising-close");
@@ -645,6 +696,43 @@
     yearElements.forEach(function (element) {
       element.textContent = currentYear;
     });
+  })();
+
+  // Pindahkan slot Monetag sesuai ukuran layar.
+  // Script iklan tidak disalin atau dijalankan ulang.
+  (function () {
+    var adSlot = document.getElementById("monetag-ad-slot");
+    var mobileAnchor = document.getElementById("monetag-mobile-anchor");
+    var sidebar = document.getElementById("advertising-sidebar");
+    var advertisingBox = document.getElementById("advertising-box");
+
+    if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
+      return;
+    }
+
+    var mobileQuery = window.matchMedia("(max-width: 600px)");
+
+    function positionMonetag() {
+      if (mobileQuery.matches) {
+        // HP: setelah tanggal artikel, sebelum gambar artikel.
+        if (mobileAnchor.nextElementSibling !== adSlot) {
+          mobileAnchor.insertAdjacentElement("afterend", adSlot);
+        }
+      } else {
+        // PC: sidebar kanan, di bawah kotak promosi.
+        if (advertisingBox.nextElementSibling !== adSlot) {
+          advertisingBox.insertAdjacentElement("afterend", adSlot);
+        }
+      }
+    }
+
+    positionMonetag();
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", positionMonetag);
+    } else {
+      mobileQuery.addListener(positionMonetag);
+    }
   })();
 </script>
 
