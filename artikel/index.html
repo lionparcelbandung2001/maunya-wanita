@@ -14,7 +14,6 @@
   <link rel="canonical" href="https://cewekpedia.com/artikel/">
   <meta name="theme-color" content="#f8b9d5">
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/jpeg" href="../logo.jpeg">
   <link rel="apple-touch-icon" href="../logo.jpeg">
 
@@ -113,7 +112,6 @@
       text-decoration: underline;
     }
 
-    /* TOP BAR DIPERKECIL & LEBIH PADAT */
     .topbar {
       position: sticky;
       top: 0;
@@ -158,7 +156,6 @@
       color: var(--pink-dark);
     }
 
-    /* HERO SECTION DIPERKECIL AGAR TIDAK MAKAN TEMPAT */
     .hero {
       position: relative;
       overflow: hidden;
@@ -299,7 +296,6 @@
       gap: 18px;
     }
 
-    /* KOTAK ARTIKEL DENGAN BORDER & SHADING JELAS SERTA BISA DIKLIK */
     .artikel-card {
       display: block;
       color: inherit;
@@ -337,11 +333,7 @@
       justify-content: center;
       width: 100%;
       height: 115px;
-      background: linear-gradient(
-        135deg,
-        #ffe5f0,
-        #f2edff
-      );
+      background: linear-gradient(135deg, #ffe5f0, #f2edff);
       font-size: 32px;
     }
 
@@ -642,6 +634,7 @@
       <h2 class="section-title" id="judulArtikel">
         🌸 Artikel Pilihan
       </h2>
+
       <p class="section-subtitle">
         Bacaan santai untuk menemani waktu luangmu.
       </p>
@@ -691,20 +684,21 @@
 
     const params = new URLSearchParams(window.location.search);
     const halamanDiminta = parseInt(params.get("page"), 10);
-    let halaman = Number.isFinite(halamanDiminta) && halamanDiminta > 0
-      ? halamanDiminta
-      : 1;
 
-    function tampilkanKosong() {
+    let halaman =
+      Number.isFinite(halamanDiminta) && halamanDiminta > 0
+        ? halamanDiminta
+        : 1;
+
+    function tampilkanKosong(pesan) {
       artikelList.innerHTML = `
         <div class="kosong">
           <div class="kosong-icon">🌷</div>
-          <h3>Artikel sedang disiapkan</h3>
-          <p>
-            Belum ada artikel yang diterbitkan. Silakan mampir lagi nanti, ya! 💗
-          </p>
+          <h3>Artikel belum dapat ditampilkan</h3>
+          <p>${pesan || "Silakan mampir lagi nanti, ya! 💗"}</p>
         </div>
       `;
+
       pagination.replaceChildren();
     }
 
@@ -718,13 +712,15 @@
         img.src = artikel.gambar;
         img.alt = artikel.judul || "Ilustrasi artikel CewekPedia";
         img.loading = "lazy";
-        img.onerror = () => {
+
+        img.onerror = function () {
           const placeholder = document.createElement("div");
           placeholder.className = "artikel-no-image";
           placeholder.textContent = "🌷";
           placeholder.setAttribute("aria-hidden", "true");
           img.replaceWith(placeholder);
         };
+
         card.appendChild(img);
       } else {
         const placeholder = document.createElement("div");
@@ -747,11 +743,11 @@
       const deskripsi = document.createElement("p");
       deskripsi.textContent = artikel.deskripsi || "";
 
-      const btnSpan = document.createElement("span");
-      btnSpan.className = "btn";
-      btnSpan.textContent = "Baca Artikel →";
+      const tombol = document.createElement("span");
+      tombol.className = "btn";
+      tombol.textContent = "Baca Artikel →";
 
-      content.append(tanggal, judul, deskripsi, btnSpan);
+      content.append(tanggal, judul, deskripsi, tombol);
       card.appendChild(content);
 
       return card;
@@ -763,22 +759,22 @@
       if (totalHalaman <= 1) return;
 
       function tambahTombol(label, nomor, aktif, disabled) {
-        const el = document.createElement(disabled ? "span" : "a");
-        el.textContent = label;
+        const elemen = document.createElement(disabled ? "span" : "a");
+        elemen.textContent = label;
 
         if (disabled) {
-          el.className = "disabled";
-          el.setAttribute("aria-disabled", "true");
+          elemen.className = "disabled";
+          elemen.setAttribute("aria-disabled", "true");
         } else {
-          el.href = nomor === 1 ? "./" : "?page=" + nomor;
+          elemen.href = nomor === 1 ? "./" : "?page=" + nomor;
         }
 
         if (aktif) {
-          el.className = "active";
-          el.setAttribute("aria-current", "page");
+          elemen.className = "active";
+          elemen.setAttribute("aria-current", "page");
         }
 
-        pagination.appendChild(el);
+        pagination.appendChild(elemen);
       }
 
       tambahTombol("←", halaman - 1, false, halaman === 1);
@@ -787,42 +783,65 @@
         tambahTombol(String(i), i, i === halaman, false);
       }
 
-      tambahTombol("→", halaman + 1, false, halaman === totalHalaman);
+      tambahTombol(
+        "→",
+        halaman + 1,
+        false,
+        halaman === totalHalaman
+      );
     }
 
     function tampilkanArtikel(data) {
       if (!Array.isArray(data) || data.length === 0) {
-        tampilkanKosong();
+        tampilkanKosong(
+          "Belum ada data artikel yang tersedia. Periksa file artikel/data.js."
+        );
         return;
       }
-      const totalHalaman = Math.ceil(sortedData.length / artikelPerHalaman);
+
+      // Perbaikan: gunakan data yang diterima dari artikelData.
+      // sortedData sebelumnya dipakai tanpa didefinisikan.
+      const sortedData = [...data];
+
+      const totalHalaman = Math.ceil(
+        sortedData.length / artikelPerHalaman
+      );
+
       halaman = Math.min(halaman, totalHalaman);
 
       const mulai = (halaman - 1) * artikelPerHalaman;
-      const artikelHalaman = sortedData.slice(mulai, mulai + artikelPerHalaman);
+      const artikelHalaman = sortedData.slice(
+        mulai,
+        mulai + artikelPerHalaman
+      );
 
       artikelList.replaceChildren();
 
-      artikelHalaman.forEach((artikel) => {
+      artikelHalaman.forEach(function (artikel) {
         artikelList.appendChild(buatKartuArtikel(artikel));
       });
 
       buatPagination(totalHalaman);
     }
 
+    // Memuat data dari artikel/data.js.
     const dataScript = document.createElement("script");
     dataScript.src = "./data.js";
 
-    dataScript.onload = () => {
+    dataScript.onload = function () {
       if (typeof artikelData !== "undefined") {
         tampilkanArtikel(artikelData);
       } else {
-        tampilkanKosong();
+        tampilkanKosong(
+          "File data.js berhasil dimuat, tetapi variabel artikelData tidak ditemukan."
+        );
       }
     };
 
-    dataScript.onerror = () => {
-      tampilkanKosong();
+    dataScript.onerror = function () {
+      tampilkanKosong(
+        "File artikel/data.js tidak ditemukan atau gagal dimuat."
+      );
     };
 
     document.head.appendChild(dataScript);
