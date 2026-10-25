@@ -795,9 +795,6 @@
         tampilkanKosong();
         return;
       }
-
-      const sortedData = data.slice().reverse();
-
       const totalHalaman = Math.ceil(sortedData.length / artikelPerHalaman);
       halaman = Math.min(halaman, totalHalaman);
 
