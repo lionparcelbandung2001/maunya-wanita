@@ -76,6 +76,7 @@
 
     body {
       margin: 0;
+      padding-bottom: 105px;
       font-family: Arial, Helvetica, sans-serif;
       background: #fffafd;
       color: var(--text);
@@ -173,7 +174,6 @@
       font-size: 12px;
     }
 
-    /* Gambar artikel dibuat proporsional dan tidak menutupi isi */
     .article-image {
       display: block;
       width: 100%;
@@ -295,6 +295,107 @@
       text-decoration: none;
     }
 
+    /* BANNER INGIN BERIKLAN - MELAYANG SAAT SCROLL */
+    .advertising-float {
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      width: min(460px, calc(100% - 24px));
+      padding: 12px 14px;
+      background: #ffffff;
+      border: 1px solid #f0c8dc;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(80, 30, 60, 0.18);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .advertising-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .advertising-copy {
+      min-width: 0;
+    }
+
+    .advertising-title {
+      margin: 0;
+      color: var(--pink-dark);
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .advertising-description {
+      margin: 3px 0 0;
+      color: #76616f;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .advertising-actions {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      gap: 5px;
+    }
+
+    .advertising-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 7px 11px;
+      border-radius: 20px;
+      color: #ffffff !important;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none !important;
+      white-space: nowrap;
+    }
+
+    .advertising-whatsapp {
+      background: #168b50;
+    }
+
+    .advertising-email {
+      background: var(--pink-dark);
+    }
+
+    .advertising-button:hover {
+      opacity: 0.88;
+    }
+
+    .advertising-close {
+      position: absolute;
+      top: -9px;
+      right: -7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      border: 1px solid #ead4df;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #725566;
+      font-size: 17px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .advertising-close:focus-visible,
+    .advertising-button:focus-visible {
+      outline: 2px solid var(--purple);
+      outline-offset: 3px;
+    }
+
     @media (max-width: 600px) {
       .site-header {
         padding: 20px 12px;
@@ -338,6 +439,39 @@
       .tip-box,
       .article-cta {
         padding: 15px;
+      }
+
+      .advertising-float {
+        bottom: 8px;
+        width: calc(100% - 16px);
+        padding: 10px 11px;
+        border-radius: 13px;
+      }
+
+      .advertising-inner {
+        gap: 8px;
+      }
+
+      .advertising-title {
+        font-size: 13px;
+      }
+
+      .advertising-description {
+        font-size: 10px;
+      }
+
+      .advertising-button {
+        min-height: 30px;
+        padding: 6px 9px;
+        font-size: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -383,7 +517,7 @@
       </time>
     </div>
 
-    <!-- GAMBAR UTAMA (.jpeg) -->
+    <!-- GAMBAR UTAMA -->
     <img
       src="images/[NAMA-GAMBAR].jpeg"
       alt="[DESKRIPSI GAMBAR YANG SESUAI DENGAN ISI ARTIKEL]"
@@ -482,11 +616,80 @@
   </div>
 </footer>
 
+<!-- BANNER PROMOSI: INGIN BERIKLAN -->
+<aside
+  class="advertising-float"
+  id="advertising-float"
+  aria-label="Informasi pemasangan iklan">
+
+  <button
+    class="advertising-close"
+    type="button"
+    id="advertising-close"
+    aria-label="Tutup banner iklan"
+    title="Tutup">
+    ×
+  </button>
+
+  <div class="advertising-inner">
+
+    <div class="advertising-copy">
+      <p class="advertising-title">📢 Ingin Beriklan?</p>
+      <p class="advertising-description">
+        Promosikan bisnis Anda di CewekPedia.
+      </p>
+    </div>
+
+    <div class="advertising-actions">
+      <a
+        class="advertising-button advertising-whatsapp"
+        href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hubungi CewekPedia melalui WhatsApp untuk beriklan">
+        WhatsApp
+      </a>
+
+      <a
+        class="advertising-button advertising-email"
+        href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia"
+        aria-label="Kirim email kepada CewekPedia untuk beriklan">
+        Email
+      </a>
+    </div>
+
+  </div>
+</aside>
+
+<script>
+  // Tombol untuk menyembunyikan banner pada halaman yang sedang dibuka.
+  (function () {
+    var banner = document.getElementById("advertising-float");
+    var closeButton = document.getElementById("advertising-close");
+
+    if (banner && closeButton) {
+      closeButton.addEventListener("click", function () {
+        banner.hidden = true;
+      });
+    }
+  })();
+
+  // Tahun footer otomatis.
+  (function () {
+    var yearElements = document.querySelectorAll(".current-year");
+    var currentYear = new Date().getFullYear();
+
+    yearElements.forEach(function (element) {
+      element.textContent = currentYear;
+    });
+  })();
+</script>
+
 <!-- DATA ARTIKEL DAN REKOMENDASI -->
 <script src="/artikel/data.js"></script>
 <script src="/artikel/related.js"></script>
 
-<!-- TANGGAL OTOMATIS DAN TAHUN FOOTER -->
+<!-- TANGGAL OTOMATIS -->
 <script src="/artikel/auto-date.js"></script>
 
 </body>
