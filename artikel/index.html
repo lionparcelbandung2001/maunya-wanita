@@ -310,10 +310,11 @@
       box-shadow: 0 9px 24px rgba(185, 67, 123, 0.12);
     }
 
+    /* Ukuran gambar diperkecil dan proporsional (tidak terlalu tinggi) */
     .artikel-card img {
       display: block;
       width: 100%;
-      height: 175px;
+      height: 120px;
       object-fit: cover;
       background: var(--pink-soft);
     }
@@ -323,13 +324,13 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 130px;
+      height: 120px;
       background: linear-gradient(
         135deg,
         #ffe5f0,
         #f2edff
       );
-      font-size: 43px;
+      font-size: 36px;
     }
 
     .artikel-content {
@@ -552,19 +553,19 @@
 
       .artikel-card {
         display: grid;
-        grid-template-columns: 110px minmax(0, 1fr);
+        grid-template-columns: 95px minmax(0, 1fr); /* Lebar gambar mobile lebih proporsional & kecil */
         align-items: stretch;
       }
 
       .artikel-card img,
       .artikel-no-image {
-        width: 110px;
+        width: 95px;
         height: 100%;
-        min-height: 165px;
+        min-height: 130px; /* Tinggi min disesuaikan agar compact */
       }
 
       .artikel-no-image {
-        font-size: 34px;
+        font-size: 30px;
       }
 
       .artikel-content {
@@ -587,12 +588,12 @@
 
     @media (max-width: 350px) {
       .artikel-card {
-        grid-template-columns: 85px minmax(0, 1fr);
+        grid-template-columns: 75px minmax(0, 1fr);
       }
 
       .artikel-card img,
       .artikel-no-image {
-        width: 85px;
+        width: 75px;
       }
     }
   </style>
@@ -686,22 +687,6 @@
     <p>&copy; <span id="currentYear"></span> CewekPedia. All rights reserved.</p>
   </footer>
 
-  <!--
-    DATA ARTIKEL
-    File data.js dibuat menyusul di folder artikel yang sama.
-
-    Format setiap artikel:
-    {
-      judul: "Judul artikel",
-      tanggal: "25 Oktober 2026",
-      deskripsi: "Ringkasan singkat artikel",
-      gambar: "gambar-artikel.jpg",
-      link: "judul-artikel.html"
-    }
-
-    Jika belum ada data.js, halaman tetap menampilkan pesan
-    bahwa artikel belum tersedia.
-  -->
   <script>
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
@@ -833,8 +818,6 @@
       buatPagination(totalHalaman);
     }
 
-    // Memuat data.js secara opsional agar halaman tetap bisa
-    // dibuka sebelum file data artikel dibuat.
     const dataScript = document.createElement("script");
     dataScript.src = "./data.js";
 
