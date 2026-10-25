@@ -293,21 +293,28 @@
       gap: 20px;
     }
 
+    /* KOTAK ARTIKEL DENGAN BORDER DAN SHADING JELAS SERTA BISA DIKLIK */
     .artikel-card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
       min-width: 0;
       overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--pink-border);
-      border-radius: 17px;
-      box-shadow: 0 4px 15px rgba(110, 64, 92, 0.055);
+      background: #ffffff;
+      border: 2px solid #e89bc5;
+      border-radius: 18px;
+      box-shadow: 0 6px 22px rgba(185, 67, 123, 0.16);
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .artikel-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 9px 24px rgba(185, 67, 123, 0.12);
+      border-color: var(--pink-dark);
+      box-shadow: 0 10px 28px rgba(185, 67, 123, 0.24);
+      text-decoration: none;
     }
 
     .artikel-card img {
@@ -368,10 +375,8 @@
       transition: background 0.2s;
     }
 
-    .btn:hover {
-      color: white;
+    .artikel-card:hover .btn {
       background: var(--pink-dark);
-      text-decoration: none;
     }
 
     .pagination {
@@ -420,9 +425,10 @@
       padding: 35px 20px;
       color: var(--muted);
       background: white;
-      border: 1px dashed var(--pink-border);
-      border-radius: 17px;
+      border: 2px dashed var(--pink-border);
+      border-radius: 18px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(185, 67, 123, 0.05);
     }
 
     .kosong-icon {
@@ -497,7 +503,7 @@
     @media (max-width: 800px) {
       .artikel-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
+        gap: 16px;
       }
 
       .hero {
@@ -690,7 +696,6 @@
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
-    // Diubah menjadi 12 artikel per halaman
     const artikelPerHalaman = 12;
     const artikelList = document.getElementById("artikelList");
     const pagination = document.getElementById("pagination");
@@ -716,8 +721,10 @@
     }
 
     function buatKartuArtikel(artikel) {
-      const card = document.createElement("article");
+      // Mengubah elemen container card menjadi tag <a> agar seluruh kotak bisa diklik menuju link artikel
+      const card = document.createElement("a");
       card.className = "artikel-card";
+      card.href = artikel.link || "#";
 
       if (artikel.gambar) {
         const img = document.createElement("img");
@@ -753,12 +760,11 @@
       const deskripsi = document.createElement("p");
       deskripsi.textContent = artikel.deskripsi || "";
 
-      const link = document.createElement("a");
-      link.className = "btn";
-      link.href = artikel.link || "#";
-      link.textContent = "Baca Artikel →";
+      const btnSpan = document.createElement("span");
+      btnSpan.className = "btn";
+      btnSpan.textContent = "Baca Artikel →";
 
-      content.append(tanggal, judul, deskripsi, link);
+      content.append(tanggal, judul, deskripsi, btnSpan);
       card.appendChild(content);
 
       return card;
@@ -803,7 +809,6 @@
         return;
       }
 
-      // Membalik urutan array data agar artikel paling baru di data.js muncul di paling atas
       const sortedData = data.slice().reverse();
 
       const totalHalaman = Math.ceil(sortedData.length / artikelPerHalaman);
