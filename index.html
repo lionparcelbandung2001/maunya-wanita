@@ -407,7 +407,7 @@
       .messages { height: 220px; }
     }
 
-    /* KHUSUS TAMPILAN HP: Header, Musik diperkecil & digeser ke atas agar chatbox langsung terlihat */
+    /* KHUSUS TAMPILAN HP: Header dan musik disesuaikan agar tombol play tetap aman dan bisa diklik */
     @media (max-width: 599px) {
       .site-header { padding: 8px 10px 4px; }
       .brand { font-size: 22px; }
@@ -444,8 +444,8 @@
         margin-top: 2px;
       }
 
-      /* Musik diperkecil tingginya */
-      .music-frame { height: 130px; }
+      /* Tinggi musik diset 166px agar tombol play SoundCloud tidak terpotong */
+      .music-frame { height: 166px; }
 
       .messages {
         height: 220px;
@@ -495,7 +495,12 @@
     <!-- MUSIC PLAYER -->
     <section id="musik" class="panel" aria-labelledby="music-title">
       <div class="panel-heading">
+        <div>
+          <h2 id="music-title">🎵 Music Player</h2>
+          <p>Pilih playlist SoundCloud favoritmu dan nikmati waktu santai.</p>
+        </div>
       </div>
+
       <iframe
         class="music-frame"
         src="/music-player.html"
