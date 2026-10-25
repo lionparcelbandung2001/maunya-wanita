@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff4f9">
-  <title>CewekPedia — Musik & Chat Bareng</title>
-  <meta name="description" content="Dengarkan musik dari SoundCloud dan ngobrol santai bersama komunitas CewekPedia.">
+
+  <title>CewekPedia ❤️ — Musik, Chat, dan Hiburan Santai</title>
+  <meta name="description" content="Dengarkan musik, ngobrol santai bersama komunitas, dan baca hiburan ringan di CewekPedia.">
   <link rel="canonical" href="https://cewekpedia.com/">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,97 +17,572 @@
     gtag('js', new Date());
     gtag('config', 'G-F9LX0ZNCJ7');
   </script>
+
   <style>
-    :root{color-scheme:light;--pink:#e83e86;--pink-dark:#b92d68;--ink:#422b38;--muted:#846c79;--line:#f0d7e3;--paper:#fff;--bg:#fff6fa;}
-    *{box-sizing:border-box}
-    html{min-height:100%;background:var(--bg)}
-    body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff0f7 0,#fff9fc 240px,var(--bg) 100%)}
-    .site-header{padding:17px 14px 12px;text-align:center}
-    .brand{margin:0;font-size:clamp(25px,6vw,34px);font-weight:900;letter-spacing:-.8px;color:var(--pink-dark)}
-    .tagline{margin:5px auto 0;max-width:520px;font-size:13px;line-height:1.5;color:var(--muted)}
-    main{width:min(100% - 20px,760px);margin:0 auto 28px;display:grid;gap:14px}
-    .panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(134,50,91,.07)}
-    .panel-heading{padding:13px 15px 10px;border-bottom:1px solid #f7e7ef}
-    .panel-heading h2{margin:0;font-size:17px;line-height:1.3;color:var(--pink-dark)}
-    .panel-heading p{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
-    .music-frame{display:block;width:100%;height:285px;border:0;background:#fff}
-    .chat-content{padding:12px}
-    .chat-status{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);margin:0 0 10px}
-    .status-dot{width:8px;height:8px;border-radius:50%;background:#c7b9c1;display:inline-block;flex:0 0 auto}
-    .status-dot.ready{background:#25a66a}
-    .status-dot.error{background:#d34c58}
-    .messages{height:min(43vh,390px);min-height:220px;overflow:auto;border:1px solid #f2e1e9;border-radius:13px;background:#fffafd;padding:10px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}
-    .empty{margin:auto;text-align:center;max-width:250px;color:#9b8791;font-size:13px;line-height:1.6;padding:20px 8px}
-    .message{max-width:92%;align-self:flex-start;background:#f9eaf2;border-radius:13px 13px 13px 4px;padding:8px 10px;overflow-wrap:anywhere}
-    .message.mine{align-self:flex-end;background:#ffe0ed;border-radius:13px 13px 4px 13px}
-    .message-meta{display:flex;gap:8px;align-items:center;margin-bottom:3px;font-size:11px;color:#9b456d}
-    .message-name{font-weight:800;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .message-time{color:#a48e99;font-size:10px}
-    .message-text{font-size:14px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
-    .chat-form{display:grid;gap:8px;margin-top:10px}
-    .name-row{display:grid;grid-template-columns:1fr;gap:8px}
-    .chat-form input,.chat-form textarea{width:100%;font:inherit;font-size:14px;color:var(--ink);border:1px solid #e9d4df;border-radius:11px;background:#fff;padding:11px 12px;outline:none}
-    .chat-form input:focus,.chat-form textarea:focus{border-color:#e783ae;box-shadow:0 0 0 3px rgba(232,62,134,.1)}
-    .chat-form textarea{min-height:76px;max-height:150px;resize:vertical;line-height:1.45}
-    .send-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .counter{font-size:11px;color:#9b8791}
-    .send-button{border:0;border-radius:12px;background:var(--pink);color:#fff;font-weight:800;padding:11px 18px;font-size:14px;cursor:pointer;min-width:112px}
-    .send-button:disabled{opacity:.55;cursor:not-allowed}
-    .notice{min-height:17px;margin:1px 2px 0;font-size:12px;line-height:1.4;color:var(--muted)}
-    .notice.error{color:#b42335}
-    .footnote{text-align:center;padding:0 10px 22px;color:#a18b96;font-size:11px;line-height:1.6}
-    @media(min-width:600px){main{width:min(100% - 32px,760px);gap:17px}.site-header{padding-top:22px}.music-frame{height:300px}.chat-content{padding:15px}.name-row{grid-template-columns:1fr 1fr}.messages{height:390px}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+    :root {
+      color-scheme: light;
+      --pink: #e83e86;
+      --pink-dark: #b92d68;
+      --ink: #422b38;
+      --muted: #846c79;
+      --line: #f0d7e3;
+      --paper: #ffffff;
+      --bg: #fff6fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fff0f7 0, #fff9fc 240px, var(--bg) 100%);
+    }
+
+    a {
+      color: var(--pink-dark);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .site-header {
+      padding: 16px 14px 12px;
+      text-align: center;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: clamp(25px, 5vw, 34px);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      color: var(--pink-dark);
+    }
+
+    .tagline {
+      margin: 5px auto 12px;
+      max-width: 600px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.8);
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+      gap: 12px;
+      width: min(100% - 24px, 1050px);
+      margin: 0 auto 24px;
+    }
+
+    .panel {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(134, 50, 91, .06);
+    }
+
+    .panel-heading {
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid #f7e7ef;
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.35;
+      color: var(--pink-dark);
+    }
+
+    .panel-heading p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .music-frame {
+      display: block;
+      width: 100%;
+      height: 270px;
+      border: 0;
+      background: #fff;
+    }
+
+    .chat-content { padding: 12px; }
+
+    .chat-status {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0 0 9px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c7b9c1;
+    }
+
+    .status-dot.ready { background: #25a66a; }
+    .status-dot.error { background: #d34c58; }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 220px;
+      min-height: 160px;
+      overflow-y: auto;
+      padding: 9px;
+      border: 1px solid #f2e1e9;
+      border-radius: 12px;
+      background: #fffafd;
+      scroll-behavior: smooth;
+    }
+
+    .empty {
+      max-width: 250px;
+      margin: auto;
+      padding: 15px 8px;
+      color: #9b8791;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .message {
+      align-self: flex-start;
+      max-width: 94%;
+      padding: 8px 10px;
+      overflow-wrap: anywhere;
+      background: #f9eaf2;
+      border-radius: 12px 12px 12px 4px;
+    }
+
+    .message.mine {
+      align-self: flex-end;
+      background: #ffe0ed;
+      border-radius: 12px 12px 4px 12px;
+    }
+
+    .message-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 3px;
+      font-size: 11px;
+      color: #9b456d;
+    }
+
+    .message-name {
+      max-width: 150px;
+      overflow: hidden;
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .message-time {
+      color: #a48e99;
+      font-size: 10px;
+    }
+
+    .message-text {
+      font-size: 14px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .chat-form {
+      display: grid;
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .chat-form input,
+    .chat-form textarea {
+      width: 100%;
+      padding: 10px 11px;
+      border: 1px solid #e9d4df;
+      border-radius: 10px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .chat-form input:focus,
+    .chat-form textarea:focus {
+      border-color: #e783ae;
+      box-shadow: 0 0 0 3px rgba(232, 62, 134, .1);
+    }
+
+    .chat-form textarea {
+      min-height: 60px;
+      max-height: 120px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .send-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .counter {
+      color: #9b8791;
+      font-size: 11px;
+    }
+
+    .send-button {
+      min-width: 100px;
+      padding: 10px 15px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .send-button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .notice {
+      min-height: 16px;
+      margin: 0 2px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .notice.error { color: #b42335; }
+
+    #artikel { grid-column: 1 / -1; }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 13px;
+    }
+
+    .article-card {
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid #f2dce7;
+      border-radius: 13px;
+      background: #fffafd;
+    }
+
+    .article-card h3 {
+      margin: 0 0 7px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .article-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .article-link {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .all-articles {
+      padding: 0 13px 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 18px 14px 24px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer p { margin: 4px 0; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px 13px;
+      margin: 8px 0;
+    }
+
+    .footer-links a { font-weight: 650; }
+
+    @media (min-width: 900px) {
+      main { gap: 16px; }
+      .music-frame { height: 285px; }
+      .messages { height: 220px; }
+    }
+
+    @media (max-width: 599px) {
+      .site-header { padding: 14px 12px 10px; }
+      .tagline { margin-bottom: 10px; }
+      .nav-links { gap: 6px; }
+
+      .nav-links a {
+        padding: 6px 9px;
+        font-size: 11px;
+      }
+
+      main {
+        grid-template-columns: minmax(0, 1fr);
+        width: min(100% - 20px, 480px);
+        gap: 12px;
+      }
+
+      #musik,
+      #chat,
+      #artikel { grid-column: 1; }
+
+      .music-frame { height: 245px; }
+
+      .messages {
+        height: 300px;
+        min-height: 220px;
+      }
+
+      .chat-form textarea { min-height: 68px; }
+
+      .article-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="site-header">
-    <h1 class="brand">CewekPedia 💗</h1>
-    <p class="tagline">Dengerin musik, santai sebentar, dan ngobrol bareng.</p>
+    <h1 class="brand">CewekPedia ❤️</h1>
+    <p class="tagline">
+      Musik, obrolan, dan bacaan santai dalam satu tempat.
+    </p>
+
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#musik">🎵 Musik</a>
+      <a href="#chat">💬 Chatbox</a>
+      <a href="#artikel">📚 Artikel</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/saran.html">Saran</a>
+      <a href="/privacy.html">Privasi</a>
+      <a href="/kontak.html">Kontak</a>
+    </nav>
   </header>
 
   <main>
-    <section class="panel" aria-labelledby="music-title">
+    <!-- MUSIC PLAYER -->
+    <section id="musik" class="panel" aria-labelledby="music-title">
       <div class="panel-heading">
         <h2 id="music-title">🎵 Music Player</h2>
-        <p>Pilih playlist SoundCloud favoritmu. Pemutaran mengikuti dukungan browser dan SoundCloud.</p>
+        <p>Pilih playlist SoundCloud favoritmu dan nikmati waktu santai.</p>
       </div>
-      <iframe class="music-frame" src="music-player.html" title="CewekPedia SoundCloud Music Player" loading="eager" allow="autoplay" scrolling="no"></iframe>
+
+      <iframe
+        class="music-frame"
+        src="/music-player.html"
+        title="CewekPedia Music Player"
+        loading="eager"
+        allow="autoplay"
+        scrolling="no">
+      </iframe>
     </section>
 
-    <section class="panel" aria-labelledby="chat-title">
+    <!-- PUBLIC CHATBOX -->
+    <section id="chat" class="panel" aria-labelledby="chat-title">
       <div class="panel-heading">
         <h2 id="chat-title">💬 Chat Bareng</h2>
-        <p>Ngobrol santai dan tetap saling menghormati. Jangan kirim data pribadi atau informasi rahasia.</p>
+        <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
       </div>
+
       <div class="chat-content">
-        <p class="chat-status"><span id="status-dot" class="status-dot"></span><span id="connection-status" role="status" aria-live="polite">Menghubungkan chat…</span></p>
-        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions text">
+        <p class="chat-status">
+          <span id="status-dot" class="status-dot"></span>
+          <span id="connection-status" role="status" aria-live="polite">
+            Menghubungkan chat…
+          </span>
+        </p>
+
+        <div
+          id="messages"
+          class="messages"
+          role="log"
+          aria-live="polite"
+          aria-relevant="additions text">
           <p class="empty">Chat akan muncul di sini setelah koneksi berhasil.</p>
         </div>
+
         <form id="chat-form" class="chat-form">
-          <div class="name-row">
-            <input id="nickname" name="nickname" maxlength="20" autocomplete="nickname" placeholder="Nama panggilan (maks. 20)" aria-label="Nama panggilan" required>
-          </div>
-          <textarea id="message-input" name="message" maxlength="300" placeholder="Tulis pesan… (maks. 300 karakter)" aria-label="Pesan chat" required></textarea>
+          <input
+            id="nickname"
+            name="nickname"
+            maxlength="20"
+            autocomplete="nickname"
+            placeholder="Nama panggilan (maks. 20 karakter)"
+            aria-label="Nama panggilan"
+            required>
+
+          <textarea
+            id="message-input"
+            name="message"
+            maxlength="300"
+            placeholder="Tulis pesan… (maks. 300 karakter)"
+            aria-label="Pesan chat"
+            required></textarea>
+
           <div class="send-row">
             <span id="counter" class="counter">0/300</span>
-            <button id="send-button" class="send-button" type="submit" disabled>Kirim pesan</button>
+            <button id="send-button" class="send-button" type="submit" disabled>
+              Kirim pesan
+            </button>
           </div>
-          <p id="notice" class="notice" aria-live="polite">Chat sedang disiapkan.</p>
+
+          <p id="notice" class="notice" aria-live="polite">
+            Chat sedang disiapkan.
+          </p>
         </form>
       </div>
     </section>
+
+    <!-- ARTICLE LINKS -->
+    <section id="artikel" class="panel" aria-labelledby="article-title">
+      <div class="panel-heading">
+        <h2 id="article-title">📚 Artikel dan Bacaan Santai</h2>
+        <p>Baca tips ringan dan hiburan saat ingin beristirahat.</p>
+      </div>
+
+      <div class="article-grid">
+        <article class="article-card">
+          <h3>Tips Merawat Diri agar Tetap Cantik dan Percaya Diri</h3>
+          <p>
+            Tips sederhana merawat diri, menjaga penampilan, dan membangun
+            rasa percaya diri setiap hari.
+          </p>
+          <a class="article-link" href="/artikel/tips-merawat-diri.html">
+            Baca artikel →
+          </a>
+        </article>
+
+        <article class="article-card">
+          <h3>Cerita Santai untuk Menemani Waktu Luang</h3>
+          <p>
+            Temukan cerita ringan dan hiburan santai untuk menemani
+            waktu istirahatmu.
+          </p>
+          <a class="article-link" href="/artikel/cerita-santai.html">
+            Baca artikel →
+          </a>
+        </article>
+      </div>
+
+      <div class="all-articles">
+        <a href="/artikel/">Lihat semua artikel →</a>
+      </div>
+    </section>
   </main>
-  <footer class="footnote">CewekPedia · Gunakan ruang chat dengan bijak.</footer>
 
+  <!-- FOOTER & IMPORTANT PAGES -->
+  <footer>
+    <p><strong>CewekPedia ❤️</strong></p>
+    <p>Musik, obrolan, dan bacaan santai dalam satu tempat.</p>
+
+    <nav class="footer-links" aria-label="Informasi situs">
+      <a href="/tentang.html">Tentang Kami</a>
+      <a href="/saran.html">Saran</a>
+      <a href="/privacy.html">Kebijakan Privasi</a>
+      <a href="/kontak.html">Kontak</a>
+    </nav>
+
+    <nav class="footer-links" aria-label="Navigasi tambahan">
+      <a href="/artikel/">Semua Artikel</a>
+      <a href="#musik">Musik</a>
+      <a href="#chat">Chatbox</a>
+      <a href="#artikel">Artikel</a>
+    </nav>
+
+    <p>© <span id="currentYear"></span> CewekPedia. Hak cipta dilindungi.</p>
+  </footer>
+
+  <!-- FIREBASE PUBLIC CHAT -->
   <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
-    import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
-    import { getDatabase, ref, query, limitToLast, onValue, push, set, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js';
+    import { initializeApp, getApps, getApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
+    import {
+      getAuth,
+      signInAnonymously
+    } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+    import {
+      getDatabase,
+      ref,
+      query,
+      limitToLast,
+      onValue,
+      push,
+      set,
+      serverTimestamp
+    } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js';
 
-    // Menggunakan proyek Firebase Ruang Cewek yang ditemukan pada ZIP.
-    // Pesan publik menggunakan node terpisah: publicChat/messages.
     const firebaseConfig = {
       apiKey: 'AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0',
       authDomain: 'ruang-cewek.firebaseapp.com',
@@ -115,7 +593,7 @@
       appId: '1:300030693884:web:ec02ce2cf35646dbf3a279'
     };
 
-    const $ = (id) => document.getElementById(id);
+    const $ = id => document.getElementById(id);
     const form = $('chat-form');
     const nickname = $('nickname');
     const input = $('message-input');
@@ -125,114 +603,247 @@
     const statusText = $('connection-status');
     const statusDot = $('status-dot');
     const counter = $('counter');
+
     let db;
     let currentUid = null;
     let connected = false;
     let lastRenderedSignature = '';
 
+    $('currentYear').textContent = new Date().getFullYear();
+
     function setStatus(text, kind = '') {
       statusText.textContent = text;
       statusDot.className = 'status-dot' + (kind ? ' ' + kind : '');
     }
+
     function setNotice(text, isError = false) {
       notice.textContent = text;
       notice.className = 'notice' + (isError ? ' error' : '');
     }
+
     function updateButton() {
-      sendButton.disabled = !connected || !currentUid || !nickname.value.trim() || !input.value.trim();
+      sendButton.disabled =
+        !connected ||
+        !currentUid ||
+        !nickname.value.trim() ||
+        !input.value.trim();
     }
+
     function safeText(value, max) {
-      return String(value ?? '').trim().replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').slice(0, max);
+      return String(value ?? '')
+        .trim()
+        .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '')
+        .slice(0, max);
     }
+
     function formatTime(value) {
-      if (!Number.isFinite(value)) return '';
-      try { return new Intl.DateTimeFormat('id-ID', {hour:'2-digit', minute:'2-digit'}).format(new Date(value)); }
-      catch { return ''; }
+      if (!Number.isFinite(value) || value <= 0) return '';
+
+      try {
+        return new Intl.DateTimeFormat('id-ID', {
+          hour: '2-digit',
+          minute: '2-digit'
+        }).format(new Date(value));
+      } catch {
+        return '';
+      }
     }
+
     function renderMessages(data) {
-      const entries = Object.entries(data || {}).map(([key, value]) => ({ key, ...(value || {}) }))
-        .filter(m => typeof m.text === 'string' && (typeof m.nickname === 'string' || typeof m.name === 'string'))
-        .sort((a,b) => (Number(a.timestamp ?? a.createdAt) || 0) - (Number(b.timestamp ?? b.createdAt) || 0));
-      const signature = entries.map(m => `${m.key}:${m.text}`).join('|');
+      const entries = Object.entries(data || {})
+        .map(([key, value]) => ({ key, ...(value || {}) }))
+        .filter(message =>
+          typeof message.text === 'string' &&
+          (
+            typeof message.nickname === 'string' ||
+            typeof message.name === 'string'
+          )
+        )
+        .sort((a, b) =>
+          (Number(a.timestamp ?? a.createdAt) || 0) -
+          (Number(b.timestamp ?? b.createdAt) || 0)
+        );
+
+      const signature = entries
+        .map(message =>
+          `${message.key}:${message.nickname ?? message.name}:${message.text}:${message.timestamp ?? message.createdAt}`
+        )
+        .join('|');
+
       if (signature === lastRenderedSignature) return;
-      const nearBottom = messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight < 70;
+
+      const nearBottom =
+        messagesEl.scrollHeight -
+        messagesEl.scrollTop -
+        messagesEl.clientHeight < 70;
+
       lastRenderedSignature = signature;
       messagesEl.replaceChildren();
+
       if (!entries.length) {
         const empty = document.createElement('p');
         empty.className = 'empty';
-        empty.textContent = 'Belum ada pesan. Jadilah yang pertama menyapa 😊';
+        empty.textContent =
+          'Belum ada pesan. Jadilah yang pertama menyapa 😊';
         messagesEl.append(empty);
         return;
       }
+
       for (const item of entries) {
         const article = document.createElement('article');
-        article.className = 'message' + (item.uid === currentUid ? ' mine' : '');
-        const meta = document.createElement('div'); meta.className = 'message-meta';
-        const name = document.createElement('span'); name.className = 'message-name'; name.textContent = safeText(item.nickname ?? item.name, 20) || 'Teman CewekPedia';
-        const time = document.createElement('time'); time.className = 'message-time'; time.textContent = formatTime(Number(item.timestamp ?? item.createdAt));
+        article.className =
+          'message' + (item.uid === currentUid ? ' mine' : '');
+
+        const meta = document.createElement('div');
+        meta.className = 'message-meta';
+
+        const name = document.createElement('span');
+        name.className = 'message-name';
+        name.textContent =
+          safeText(item.nickname ?? item.name, 20) ||
+          'Teman CewekPedia';
+
+        const time = document.createElement('time');
+        time.className = 'message-time';
+        time.textContent = formatTime(
+          Number(item.timestamp ?? item.createdAt)
+        );
+
         meta.append(name, time);
-        const text = document.createElement('div'); text.className = 'message-text'; text.textContent = safeText(item.text, 300);
-        article.append(meta, text); messagesEl.append(article);
+
+        const messageText = document.createElement('div');
+        messageText.className = 'message-text';
+        messageText.textContent = safeText(item.text, 300);
+
+        article.append(meta, messageText);
+        messagesEl.append(article);
       }
-      if (nearBottom) messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      if (nearBottom) {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
     }
 
     nickname.addEventListener('input', updateButton);
-    input.addEventListener('input', () => { counter.textContent = `${input.value.length}/300`; updateButton(); });
-    input.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+
+    input.addEventListener('input', () => {
+      counter.textContent = `${input.value.length}/300`;
+      updateButton();
+    });
+
+    input.addEventListener('keydown', event => {
+      if (
+        event.key === 'Enter' &&
+        !event.shiftKey &&
+        !event.isComposing
+      ) {
         event.preventDefault();
-        if (!sendButton.disabled) form.requestSubmit();
+
+        if (!sendButton.disabled) {
+          form.requestSubmit();
+        }
       }
     });
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener('submit', async event => {
       event.preventDefault();
+
       const name = safeText(nickname.value, 20);
       const text = safeText(input.value, 300);
-      if (!name || !text || !db || !currentUid || !connected) return;
+
+      if (!name || !text || !db || !currentUid || !connected) {
+        return;
+      }
+
       sendButton.disabled = true;
       setNotice('Mengirim pesan…');
+
       try {
         const newMessage = push(ref(db, 'publicChat/messages'));
-        await set(newMessage, { nickname: name, text, uid: currentUid, timestamp: serverTimestamp() });
+
+        // Sesuai Firebase Rules: nickname, text, timestamp.
+        await set(newMessage, {
+          nickname: name,
+          text: text,
+          uid: currentUid,
+          timestamp: serverTimestamp()
+        });
+
         input.value = '';
         counter.textContent = '0/300';
+
         setNotice('Pesan terkirim. Tetap sopan dan jaga privasi, ya.');
       } catch (error) {
         console.error('Chat send failed:', error);
-        setNotice('Pesan belum terkirim. Periksa aturan akses Firebase Realtime Database.', true);
-      } finally { updateButton(); }
+
+        setNotice(
+          'Pesan gagal dikirim. Periksa rules Firebase dan isi pesan.',
+          true
+        );
+      } finally {
+        updateButton();
+      }
     });
 
     async function startChat() {
       try {
-        const app = initializeApp(firebaseConfig, 'cewekpediaPublicChat');
+        const appName = 'cewekpediaPublicChat';
+
+        const app = getApps().some(item => item.name === appName)
+          ? getApp(appName)
+          : initializeApp(firebaseConfig, appName);
+
         const auth = getAuth(app);
         db = getDatabase(app);
+
         const credential = await signInAnonymously(auth);
         currentUid = credential.user.uid;
-        const messagesQuery = query(ref(db, 'publicChat/messages'), limitToLast(80));
-        onValue(messagesQuery, (snapshot) => {
-          connected = true;
-          setStatus('Chat terhubung', 'ready');
-          setNotice('Terhubung. Pesan terbaru akan muncul otomatis.');
-          renderMessages(snapshot.val());
-          updateButton();
-        }, (error) => {
-          console.error('Chat read failed:', error);
-          connected = false;
-          setStatus('Akses chat belum tersedia', 'error');
-          setNotice('Firebase menolak akses chat. Aturan Realtime Database untuk publicChat/messages perlu diperiksa.', true);
-          updateButton();
-        });
+
+        const messagesQuery = query(
+          ref(db, 'publicChat/messages'),
+          limitToLast(80)
+        );
+
+        onValue(
+          messagesQuery,
+          snapshot => {
+            connected = true;
+            setStatus('Chat terhubung', 'ready');
+            setNotice('Terhubung. Pesan terbaru akan muncul otomatis.');
+
+            renderMessages(snapshot.val());
+            updateButton();
+          },
+          error => {
+            console.error('Chat read failed:', error);
+
+            connected = false;
+            setStatus('Akses chat belum tersedia', 'error');
+
+            setNotice(
+              'Firebase menolak akses chat. Periksa rules publicChat/messages.',
+              true
+            );
+
+            updateButton();
+          }
+        );
       } catch (error) {
         console.error('Firebase init/auth failed:', error);
+
+        connected = false;
+        currentUid = null;
+
         setStatus('Belum tersambung', 'error');
-        setNotice('Koneksi chat gagal. Pastikan Anonymous Authentication aktif di Firebase.', true);
+        setNotice(
+          'Koneksi chat gagal. Pastikan Anonymous Authentication aktif di Firebase.',
+          true
+        );
+
+        updateButton();
       }
     }
+
     startChat();
   </script>
 </body>
