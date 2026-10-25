@@ -3,35 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65b99">
 
-  <!-- ==================== SEO META TAGS ==================== -->
   <title>Cerita Santai untuk Menemani Waktu Luang | CewekPedia</title>
   <meta name="description" content="Nikmati cerita santai dan inspirasi ringan untuk menemani waktu luang. Tempat membaca, tersenyum, dan menikmati momen sederhana bersama CewekPedia.">
   <meta name="keywords" content="cerita santai, cerita ringan, hiburan perempuan, cerita sehari-hari, CewekPedia">
   <meta name="robots" content="index, follow">
   <meta name="author" content="CewekPedia">
-  <meta name="theme-color" content="#d65b99">
 
-  <!-- CANONICAL URL -->
   <link rel="canonical" href="https://cewekpedia.com/artikel/cerita-santai.html">
   <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/logo.jpeg">
 
-  <!-- OPEN GRAPH (UNTUK SOSMED / FACEBOOK / WHATSAPP) -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CewekPedia">
   <meta property="og:title" content="Cerita Santai untuk Menemani Waktu Luang | CewekPedia">
-  <meta property="og:description" content="Cerita ringan untuk menemani waktu istirahatmu dengan suasana santai dan menyenangkan.">
+  <meta property="og:description" content="Cerita ringan dan inspirasi sederhana untuk menemani waktu luang dengan suasana santai dan menyenangkan.">
   <meta property="og:url" content="https://cewekpedia.com/artikel/cerita-santai.html">
   <meta property="og:image" content="https://cewekpedia.com/artikel/images/cerita-santai.jpeg">
   <meta property="og:locale" content="id_ID">
 
-  <!-- TWITTER PREVIEW -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cerita Santai untuk Menemani Waktu Luang | CewekPedia">
   <meta name="twitter:description" content="Temukan hiburan ringan untuk menemani waktu luang bersama CewekPedia.">
   <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/cerita-santai.jpeg">
 
-  <!-- SCHEMA ARTIKEL (JSON-LD) -->
   <script type="application/ld+json" id="article-schema">
   {
     "@context": "https://schema.org",
@@ -59,7 +55,6 @@
   }
   </script>
 
-  <!-- ==================== CSS STYLING ==================== -->
   <style>
     * {
       box-sizing: border-box;
@@ -127,7 +122,6 @@
       text-decoration: none;
     }
 
-    /* LAYOUT UTAMA: KIRI ARTIKEL, KANAN SIDEBAR IKLAN */
     .container {
       width: 100%;
       max-width: 1140px;
@@ -150,7 +144,7 @@
       width: 240px;
       flex-shrink: 0;
       position: sticky;
-      top: 20px; /* Ikut naik-turun saat discroll di desktop */
+      top: 20px;
     }
 
     .back-link {
@@ -293,7 +287,6 @@
       background: var(--pink-dark);
     }
 
-    /* KOTAK KECIL "INGIN BERIKLAN" */
     .advertising-box {
       position: relative;
       background: linear-gradient(145deg, #ff6ab2, #a855f7);
@@ -371,6 +364,12 @@
       justify-content: center;
     }
 
+    #monetag-ad-slot {
+      width: 100%;
+      margin-top: 14px;
+      min-height: 1px;
+    }
+
     .site-footer {
       margin-top: 35px;
       padding: 25px 15px;
@@ -393,63 +392,42 @@
       text-decoration: none;
     }
 
-    /* RESPONSIVE UNTUK HP */
+    /* RESPONSIVE: SIDEBAR MENGIKUTI ALUR HALAMAN DI HP */
     @media (max-width: 900px) {
-      body {
-        padding-bottom: 75px;
-      }
-
       .layout-wrapper {
         flex-direction: column;
       }
 
       .sidebar-right {
         width: 100%;
-        position: fixed;
-        top: auto;
-        bottom: 8px;
-        left: 0;
-        right: 0;
-        padding: 0 10px;
-        z-index: 9999;
+        position: static;
+        padding: 0;
       }
 
       .advertising-box {
-        padding: 8px 12px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        text-align: left;
+        padding: 14px 12px;
+        display: block;
+        text-align: center;
       }
 
       .advertising-title {
-        font-size: 12px;
-        margin-bottom: 1px;
+        font-size: 14px;
+        margin-bottom: 4px;
       }
 
       .advertising-description {
-        display: none;
+        display: block;
       }
 
       .advertising-actions {
         flex-direction: row;
-        gap: 6px;
-        flex-shrink: 0;
+        justify-content: center;
+        flex-wrap: wrap;
       }
 
       .advertising-button {
-        padding: 5px 9px;
-        font-size: 10px;
-      }
-
-      .advertising-close {
-        top: -5px;
-        right: -5px;
-        width: 20px;
-        height: 20px;
-        font-size: 12px;
+        padding: 7px 10px;
+        font-size: 11px;
       }
     }
 
@@ -457,18 +435,45 @@
       .site-header {
         padding: 20px 12px;
       }
+
       .brand {
         font-size: 22px;
       }
+
       .container {
         padding: 15px 10px;
       }
+
       .article-card {
         padding: 17px;
         border-radius: 14px;
       }
+
       .article-title {
         font-size: 24px;
+      }
+
+      .article-content h2 {
+        font-size: 20px;
+      }
+
+      .article-content h3 {
+        font-size: 17px;
+      }
+
+      .article-content p,
+      .article-content li {
+        font-size: 15px;
+      }
+
+      .article-image {
+        max-height: 250px;
+        margin: 14px auto 20px;
+      }
+
+      .tip-box,
+      .article-cta {
+        padding: 15px;
       }
     }
   </style>
@@ -476,7 +481,6 @@
 
 <body>
 
-<!-- HEADER UTAMA -->
 <header class="site-header">
   <a class="brand" href="/">CewekPedia ♡</a>
   <p class="tagline">
@@ -484,7 +488,6 @@
   </p>
 </header>
 
-<!-- NAVIGASI ATAS -->
 <nav class="top-nav" aria-label="Navigasi utama">
   <a href="/">Beranda</a>
   <a href="/#musik">Musik</a>
@@ -500,19 +503,15 @@
 
   <div class="layout-wrapper">
 
-    <!-- ==================== KOLOM KIRI: ISI ARTIKEL ==================== -->
     <div class="main-content">
       <article class="article-card">
 
-        <!-- KATEGORI ARTIKEL -->
         <span class="article-category">Cerita Santai</span>
 
-        <!-- JUDUL ARTIKEL -->
         <h1 class="article-title">
           Cerita Santai untuk Menemani Waktu Luang
         </h1>
 
-        <!-- TANGGAL (OTOMATIS) -->
         <div class="article-date">
           Dipublikasikan:
           <time id="article-published-date" datetime="2026-10-25">25 Oktober 2026</time>
@@ -521,7 +520,6 @@
           <time id="article-updated-date" datetime="2026-10-25">25 Oktober 2026</time>
         </div>
 
-        <!-- GAMBAR UTAMA ARTIKEL -->
         <img
           src="images/cerita-santai.jpeg"
           alt="Suasana santai untuk menikmati waktu luang"
@@ -531,85 +529,114 @@
           fetchpriority="high"
           decoding="async">
 
-        <!-- ISI KONTEN ARTIKEL -->
         <div class="article-content">
 
           <p>
-            Ada kalanya kita ingin berhenti sejenak dari kesibukan sehari-hari. Tidak harus pergi jauh atau melakukan sesuatu yang istimewa. Terkadang, duduk santai, mendengarkan musik, dan membaca cerita ringan sudah cukup untuk membuat suasana hati terasa lebih nyaman.
+            Ada kalanya kita ingin berhenti sejenak dari kesibukan sehari-hari.
+            Tidak harus pergi jauh atau melakukan sesuatu yang istimewa.
+            Terkadang, duduk santai, mendengarkan musik, dan membaca cerita
+            ringan sudah cukup untuk membuat suasana terasa lebih nyaman.
           </p>
 
           <p>
-            CewekPedia hadir sebagai teman untuk menikmati waktu luang melalui cerita, hiburan, musik, dan obrolan santai. Kamu bisa mampir sebentar ketika sedang beristirahat atau saat ingin mencari suasana yang berbeda.
+            CewekPedia hadir sebagai teman untuk menikmati waktu luang melalui
+            cerita, hiburan, musik, dan obrolan santai. Kamu bisa mampir
+            sebentar ketika sedang beristirahat atau saat ingin mencari
+            suasana yang berbeda.
           </p>
 
           <h2>Menikmati Hal-Hal Kecil dalam Kehidupan</h2>
+
           <p>
-            Pernahkah kamu merasa senang hanya karena menikmati minuman favorit, melihat langit sore, atau mendengarkan lagu yang sudah lama disukai? Hal-hal sederhana seperti itu sering kali menjadi bagian menyenangkan dari keseharian kita.
-          </p>
-          <p>
-            Kita tidak harus selalu produktif setiap saat. Memberi diri sendiri kesempatan untuk beristirahat juga merupakan bagian penting dari menjaga keseimbangan aktivitas.
+            Pernahkah kamu merasa senang hanya karena menikmati minuman
+            favorit, melihat langit sore, atau mendengarkan lagu yang sudah
+            lama disukai? Hal-hal sederhana seperti itu sering kali menjadi
+            bagian menyenangkan dari keseharian kita.
           </p>
 
-          <!-- KOTAK TIPS -->
+          <p>
+            Kita tidak harus selalu produktif setiap saat. Memberi diri
+            sendiri kesempatan untuk beristirahat juga merupakan bagian
+            penting dari menjaga keseimbangan aktivitas.
+          </p>
+
           <aside class="tip-box">
             <h3>♡ Tips untuk Kamu</h3>
             <p>
-              Putar lagu favorit, siapkan minuman kesukaan, jauhkan diri sejenak dari kesibukan, lalu nikmati waktu tanpa perlu terburu-buru.
+              Putar lagu favorit, siapkan minuman kesukaan, jauhkan diri
+              sejenak dari kesibukan, lalu nikmati waktu tanpa perlu
+              terburu-buru.
             </p>
           </aside>
 
           <h2>Musik dan Obrolan Bisa Menemani Hari</h2>
+
           <p>
-            Musik dapat menjadi teman ketika sedang bersantai, mengerjakan pekerjaan ringan, atau sekadar menikmati suasana. Sementara itu, obrolan sederhana dengan orang lain bisa memberi warna tersendiri pada hari kita.
+            Musik dapat menjadi teman ketika sedang bersantai, mengerjakan
+            pekerjaan ringan, atau sekadar menikmati suasana. Sementara itu,
+            obrolan sederhana dengan orang lain bisa memberi warna tersendiri
+            pada hari kita.
           </p>
+
           <p>
-            Kalau kamu ingin menikmati musik atau ikut mengobrol, kunjungi bagian musik dan chatbox di halaman utama CewekPedia. Tetap jaga sopan santun dan jangan membagikan informasi pribadi yang sensitif di ruang obrolan publik.
+            Kalau kamu ingin menikmati musik atau ikut mengobrol, kunjungi
+            bagian musik dan chatbox di halaman utama CewekPedia. Tetap jaga
+            sopan santun dan jangan membagikan informasi pribadi yang sensitif
+            di ruang obrolan publik.
           </p>
 
           <h2>Tidak Perlu Menunggu Hari Istimewa untuk Bahagia</h2>
+
           <p>
-            Kita sering menunggu liburan atau momen tertentu untuk bersenang-senang. Padahal, waktu singkat yang kita luangkan untuk diri sendiri juga bisa menjadi momen berharga.
+            Kita sering menunggu liburan atau momen tertentu untuk bersenang-senang.
+            Padahal, waktu singkat yang kita luangkan untuk diri sendiri juga
+            bisa menjadi momen berharga.
           </p>
+
           <p>
-            Mulailah dari hal yang sederhana: beristirahat ketika lelah, menikmati hiburan yang disukai, atau menghubungi teman untuk bertukar cerita. Setiap orang punya cara sendiri untuk menikmati waktunya.
+            Mulailah dari hal yang sederhana: beristirahat ketika lelah,
+            menikmati hiburan yang disukai, atau menghubungi teman untuk
+            bertukar cerita. Setiap orang punya cara sendiri untuk menikmati
+            waktunya.
           </p>
 
           <h2>Penutup</h2>
+
           <p>
-            Semoga cerita ringan ini bisa menemani waktu luangmu. Tidak perlu melakukan banyak hal untuk menikmati hari. Kadang, momen sederhana justru menjadi bagian yang paling berkesan.
+            Semoga cerita ringan ini bisa menemani waktu luangmu. Tidak perlu
+            melakukan banyak hal untuk menikmati hari. Kadang, momen sederhana
+            justru menjadi bagian yang paling berkesan.
           </p>
+
           <p>
-            Terima kasih sudah berkunjung ke CewekPedia. Selamat bersantai, nikmati musik favoritmu, dan semoga harimu menyenangkan!
+            Terima kasih sudah berkunjung ke CewekPedia. Selamat bersantai,
+            nikmati musik favoritmu, dan semoga harimu menyenangkan!
           </p>
 
         </div>
 
-        <!-- CALL TO ACTION (CTA) BAWAH ARTIKEL -->
         <section class="article-cta">
           <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
           <p>
-            Sudah selesai membaca? Kamu bisa menikmati musik atau bergabung dalam obrolan santai bersama pengunjung lainnya.
+            Sudah selesai membaca? Kamu bisa menikmati musik atau bergabung
+            dalam obrolan santai bersama pengunjung lainnya.
           </p>
-          <a class="cta-button" href="/#chat">
-            💬 Buka Ruang Chat
-          </a>
-          <a class="cta-button" href="/#musik">
-            ♫ Dengarkan Musik
-          </a>
+          <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+          <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
         </section>
 
       </article>
     </div>
 
-    <!-- ==================== KOLOM KANAN: SIDEBAR IKLAN (KOTAK KECIL STICKY) ==================== -->
     <aside class="sidebar-right" id="advertising-sidebar">
+
       <div class="advertising-box" id="advertising-box">
 
         <button
           class="advertising-close"
           type="button"
           id="advertising-close"
-          aria-label="Tutup banner iklan"
+          aria-label="Tutup kotak promosi"
           title="Tutup">
           ×
         </button>
@@ -638,13 +665,22 @@
         </div>
 
       </div>
+
+      <!-- SLOT IKLAN MONETAG -->
+      <div id="monetag-ad-slot">
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="12120983"
+          async
+          data-cfasync="false"></script>
+      </div>
+
     </aside>
 
   </div>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <p>
     &copy; <span class="current-year">2026</span>
@@ -663,9 +699,8 @@
   </div>
 </footer>
 
-<!-- SCRIPT UTAMA -->
 <script>
-  // Tombol X untuk menutup kotak iklan
+  // Menutup sidebar promosi dan slot iklan di sidebar.
   (function () {
     var sidebar = document.getElementById("advertising-sidebar");
     var closeButton = document.getElementById("advertising-close");
@@ -677,7 +712,7 @@
     }
   })();
 
-  // Tahun footer otomatis
+  // Tahun footer otomatis.
   (function () {
     var yearElements = document.querySelectorAll(".current-year");
     var currentYear = new Date().getFullYear();
@@ -688,7 +723,6 @@
   })();
 </script>
 
-<!-- SCRIPT PENDUKUNG SITUS -->
 <script src="/artikel/data.js"></script>
 <script src="/artikel/related.js"></script>
 <script src="/artikel/auto-date.js"></script>
