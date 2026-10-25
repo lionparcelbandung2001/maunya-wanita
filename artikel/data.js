@@ -10,7 +10,7 @@ const artikelData = [
     judul: "Cerita Santai untuk Menemani Waktu Luang",
     deskripsi: "Temukan cerita ringan dan hiburan santai untuk menemani waktu istirahatmu.",
     tanggal: "25 oktober 2026",
-    gambar: "images/cerita-santai.jpg",
+    gambar: "images/cerita-santai.jpeg",
     link: "cerita-santai.html"
   }
 
