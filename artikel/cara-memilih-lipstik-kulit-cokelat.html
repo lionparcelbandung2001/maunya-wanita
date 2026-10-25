@@ -76,7 +76,7 @@
 
     body {
       margin: 0;
-      padding-bottom: 105px;
+      padding-bottom: 20px;
       font-family: Arial, Helvetica, sans-serif;
       background: #fffafd;
       color: var(--text);
@@ -126,11 +126,30 @@
       text-decoration: none;
     }
 
+    /* KONTEN UTAMA & SIDEBAR (LAYOUT DUA KOLOM) */
     .container {
       width: 100%;
-      max-width: 850px;
+      max-width: 1180px;
       margin: auto;
       padding: 22px 16px;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sidebar-right {
+      width: 280px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px; /* Ikut naik-turun saat discroll */
     }
 
     .back-link {
@@ -273,8 +292,110 @@
       background: var(--pink-dark);
     }
 
+    /* BOX INGIN BERIKLAN (CERAH & MENARIK) */
+    .advertising-box {
+      position: relative;
+      background: linear-gradient(145deg, #ff6ab2, #ff8ec2, #a855f7);
+      border-radius: 20px;
+      padding: 20px;
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(214, 91, 153, 0.35);
+      border: 2px solid #ffffff;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .advertising-box:hover {
+      transform: translateY(-3px);
+    }
+
+    .advertising-badge {
+      display: inline-block;
+      background: #ffe600;
+      color: #631238;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .advertising-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+
+    .advertising-description {
+      margin: 0 0 16px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #fff0f7;
+    }
+
+    .advertising-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .advertising-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .advertising-whatsapp {
+      background: #25d366;
+      color: #ffffff !important;
+    }
+
+    .advertising-whatsapp:hover {
+      background: #1eb856;
+    }
+
+    .advertising-email {
+      background: #ffffff;
+      color: #a83270 !important;
+    }
+
+    .advertising-email:hover {
+      background: #fff0f6;
+    }
+
+    .advertising-close {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 26px;
+      height: 26px;
+      border: none;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #725566;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .site-footer {
-      margin-top: 25px;
+      margin-top: 35px;
       padding: 25px 15px;
       text-align: center;
       background: #fff0f6;
@@ -295,99 +416,59 @@
       text-decoration: none;
     }
 
-    /* BANNER INGIN BERIKLAN */
-    .advertising-float {
-      position: fixed;
-      z-index: 9999;
-      left: 50%;
-      bottom: 12px;
-      transform: translateX(-50%);
-      width: min(460px, calc(100% - 24px));
-      padding: 12px 14px;
-      background: #ffffff;
-      border: 1px solid #f0c8dc;
-      border-radius: 16px;
-      box-shadow: 0 5px 25px rgba(80, 30, 60, 0.18);
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    /* RESPONSIVE DESIGN (TAMPILAN HP) */
+    @media (max-width: 900px) {
+      body {
+        padding-bottom: 90px;
+      }
 
-    .advertising-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+      .layout-wrapper {
+        flex-direction: column;
+      }
 
-    .advertising-copy {
-      min-width: 0;
-    }
+      /* Di HP, ubah box iklan jadi melayang di bawah layar */
+      .sidebar-right {
+        width: 100%;
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        padding: 0 12px;
+        z-index: 9999;
+      }
 
-    .advertising-title {
-      margin: 0;
-      color: var(--pink-dark);
-      font-size: 15px;
-      line-height: 1.4;
-      font-weight: 800;
-    }
+      .advertising-box {
+        padding: 12px 16px;
+        border-radius: 16px;
+      }
 
-    .advertising-description {
-      margin: 3px 0 0;
-      color: #76616f;
-      font-size: 11px;
-      line-height: 1.4;
-    }
+      .advertising-badge {
+        display: none;
+      }
 
-    .advertising-actions {
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
-      gap: 5px;
-    }
+      .advertising-title {
+        font-size: 14px;
+        margin-bottom: 2px;
+        text-align: left;
+      }
 
-    .advertising-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 32px;
-      padding: 7px 11px;
-      border-radius: 20px;
-      color: #ffffff !important;
-      font-size: 11px;
-      font-weight: bold;
-      text-decoration: none !important;
-      white-space: nowrap;
-    }
+      .advertising-description {
+        font-size: 11px;
+        margin-bottom: 8px;
+        text-align: left;
+      }
 
-    .advertising-whatsapp {
-      background: #168b50;
-    }
+      .advertising-actions {
+        flex-direction: row;
+        gap: 8px;
+      }
 
-    .advertising-email {
-      background: var(--pink-dark);
-    }
-
-    .advertising-button:hover {
-      opacity: 0.88;
-    }
-
-    .advertising-close {
-      position: absolute;
-      top: -9px;
-      right: -7px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 25px;
-      height: 25px;
-      padding: 0;
-      border: 1px solid #ead4df;
-      border-radius: 50%;
-      background: #ffffff;
-      color: #725566;
-      font-size: 17px;
-      line-height: 1;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      .advertising-button {
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 11px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -434,31 +515,6 @@
       .article-cta {
         padding: 15px;
       }
-
-      .advertising-float {
-        bottom: 8px;
-        width: calc(100% - 16px);
-        padding: 10px 11px;
-        border-radius: 13px;
-      }
-
-      .advertising-inner {
-        gap: 8px;
-      }
-
-      .advertising-title {
-        font-size: 13px;
-      }
-
-      .advertising-description {
-        font-size: 10px;
-      }
-
-      .advertising-button {
-        min-height: 30px;
-        padding: 6px 9px;
-        font-size: 10px;
-      }
     }
   </style>
 </head>
@@ -485,313 +541,360 @@
     ← Kembali ke Daftar Artikel
   </a>
 
-  <article class="article-card">
+  <div class="layout-wrapper">
 
-    <span class="article-category">Kecantikan &amp; Makeup</span>
+    <!-- KOLOM KIRI: KONTEN ARTIKEL -->
+    <div class="main-content">
+      <article class="article-card">
 
-    <h1 class="article-title">
-      Cara Memilih Lipstik untuk Kulit Wajah Cokelat agar Tampil Menawan
-    </h1>
+        <span class="article-category">Kecantikan &amp; Makeup</span>
 
-    <div class="article-date">
-      Dipublikasikan:
-      <time id="article-published-date" datetime="2026-10-25">
-        25 Oktober 2026
-      </time>
-      <span aria-hidden="true"> · </span>
-      Diperbarui:
-      <time id="article-updated-date" datetime="2026-10-25">
-        25 Oktober 2026
-      </time>
+        <h1 class="article-title">
+          Cara Memilih Lipstik untuk Kulit Wajah Cokelat agar Tampil Menawan
+        </h1>
+
+        <div class="article-date">
+          Dipublikasikan:
+          <time id="article-published-date" datetime="2026-10-25">
+            25 Oktober 2026
+          </time>
+          <span aria-hidden="true"> · </span>
+          Diperbarui:
+          <time id="article-updated-date" datetime="2026-10-25">
+            25 Oktober 2026
+          </time>
+        </div>
+
+        <!-- GAMBAR UTAMA -->
+        <img
+          src="images/cara-memilih-lipstik-kulit-cokelat.jpeg"
+          alt="Pilihan warna lipstik nude, pink, mauve, coral, dan merah untuk riasan kulit cokelat"
+          class="article-image"
+          width="700"
+          height="400"
+          fetchpriority="high"
+          decoding="async">
+
+        <div class="article-content">
+
+          <p>
+            Memilih lipstik yang cocok untuk kulit wajah cokelat terkadang
+            membuat bingung, apalagi ketika melihat banyak pilihan warna
+            di toko kosmetik. Ada warna nude, pink, merah, coral, hingga
+            cokelat yang masing-masing memberikan kesan berbeda.
+          </p>
+
+          <p>
+            Kabar baiknya, kulit cokelat atau sawo matang bisa terlihat
+            cantik dengan berbagai pilihan warna lipstik. Kuncinya bukan
+            mengikuti aturan warna yang kaku, melainkan menemukan warna
+            yang membuat kamu merasa nyaman dan percaya diri.
+          </p>
+
+          <p>
+            Yuk, kenali cara memilih lipstik untuk kulit wajah cokelat
+            agar hasil riasan terlihat serasi, segar, dan sesuai dengan
+            aktivitas sehari-hari.
+          </p>
+
+          <h2>1. Kenali Undertone Kulit Terlebih Dahulu</h2>
+
+          <p>
+            Selain warna permukaan kulit, perhatikan juga undertone atau
+            rona dasar kulit. Secara umum, undertone sering dikelompokkan
+            menjadi warm, cool, dan neutral. Informasi ini bisa membantu
+            kamu mencoba warna lipstik yang terasa paling serasi.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Warm:</strong> warna dengan nuansa peach, coral,
+              terracotta, dan merah bata bisa menjadi pilihan untuk dicoba.
+            </li>
+            <li>
+              <strong>Cool:</strong> warna berry, mauve, rose, atau merah
+              dengan nuansa kebiruan dapat terlihat menarik.
+            </li>
+            <li>
+              <strong>Neutral:</strong> kamu bisa bereksperimen dengan
+              beragam warna hangat maupun dingin.
+            </li>
+          </ul>
+
+          <p>
+            Cara sederhana untuk mulai mengenali undertone adalah mencoba
+            membandingkan beberapa warna lipstik dalam pencahayaan alami.
+            Warna pembuluh darah atau kecocokan dengan perhiasan hanya
+            petunjuk kasar dan tidak selalu akurat untuk semua orang.
+          </p>
+
+          <aside class="tip-box">
+            <h3>♡ Tips untuk Kamu</h3>
+            <p>
+              Jangan langsung membeli lipstik hanya karena warnanya terlihat
+              bagus di kemasan. Jika memungkinkan, coba swatch pada bibir
+              atau gunakan tester yang higienis, lalu lihat hasilnya dalam
+              pencahayaan yang berbeda.
+            </p>
+          </aside>
+
+          <h2>2. Pilih Warna Nude yang Tidak Membuat Wajah Pucat</h2>
+
+          <p>
+            Lipstik nude cocok untuk kuliah, bekerja, jalan santai, atau
+            makeup natural. Namun, warna nude yang terlalu pucat atau
+            terlalu mirip warna concealer bisa membuat bibir terlihat
+            kurang berdimensi.
+          </p>
+
+          <p>
+            Untuk kulit cokelat, kamu bisa mencoba nude dengan sentuhan
+            caramel, rose brown, peach brown, atau warm beige. Pilih
+            warna yang tetap memberi perbedaan lembut antara bibir dan
+            warna kulit di sekitarnya.
+          </p>
+
+          <p>
+            Jika suka tampilan natural, aplikasikan lipstik tipis terlebih
+            dahulu. Kamu bisa menambahkan lapisan kedua bila menginginkan
+            warna yang lebih jelas.
+          </p>
+
+          <h2>3. Coba Warna Pink dan Mauve untuk Tampilan Segar</h2>
+
+          <p>
+            Pink tidak hanya cocok untuk kulit terang. Kulit cokelat juga
+            bisa terlihat segar dengan pilihan dusty pink, rose pink,
+            mauve, atau pink kecokelatan.
+          </p>
+
+          <p>
+            Dusty pink memberikan kesan lembut, sedangkan mauve cenderung
+            menghadirkan nuansa yang lebih kalem dan dewasa. Untuk tampilan
+            sehari-hari, pilih intensitas warna yang membuatmu nyaman.
+          </p>
+
+          <p>
+            Apabila warna pink tertentu terlihat terlalu pucat, cobalah
+            pilihan yang sedikit lebih pekat atau memiliki unsur cokelat.
+            Kamu juga bisa memadukannya dengan riasan mata yang sederhana.
+          </p>
+
+          <h2>4. Gunakan Coral atau Terracotta untuk Kesan Hangat</h2>
+
+          <p>
+            Coral dan terracotta dapat menjadi pilihan menarik bagi kamu
+            yang menyukai riasan bernuansa hangat. Coral biasanya memberi
+            kesan cerah, sedangkan terracotta memiliki nuansa merah bata
+            atau tanah yang lebih dalam.
+          </p>
+
+          <p>
+            Kedua warna ini cocok untuk dicoba saat ingin memberikan
+            sentuhan warna pada wajah tanpa selalu menggunakan lipstik
+            merah yang mencolok.
+          </p>
+
+          <p>
+            Perlu diingat, hasil akhir juga dipengaruhi oleh formula
+            lipstik, pigmentasi bibir asli, pencahayaan, serta makeup
+            yang digunakan. Jadi, jangan ragu mencoba beberapa variasi.
+          </p>
+
+          <h2>5. Lipstik Merah Bisa Menjadi Pilihan untuk Acara Spesial</h2>
+
+          <p>
+            Ingin tampilan yang lebih tegas untuk pesta, acara keluarga,
+            atau makan malam? Lipstik merah bisa menjadi pilihan yang
+            menarik untuk kulit cokelat.
+          </p>
+
+          <p>
+            Merah bata dan merah bernuansa hangat dapat memberikan kesan
+            klasik, sedangkan merah berry atau merah dengan undertone
+            dingin menghadirkan karakter berbeda. Tidak ada satu warna
+            merah yang wajib dipakai semua orang.
+          </p>
+
+          <p>
+            Jika lipstik sudah cukup mencolok, kamu bisa menjaga riasan
+            mata tetap sederhana agar keseluruhan makeup terlihat seimbang.
+          </p>
+
+          <h2>6. Sesuaikan Hasil Akhir Lipstik dengan Kebutuhan</h2>
+
+          <p>
+            Selain warna, pertimbangkan juga tekstur dan hasil akhir
+            lipstik. Pilihan yang berbeda dapat memberikan tampilan dan
+            kenyamanan yang berbeda pula.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Matte:</strong> biasanya memberikan tampilan yang
+              lebih tegas. Jika bibir mudah kering, gunakan pelembap bibir
+              terlebih dahulu dan perhatikan kenyamanannya.
+            </li>
+            <li>
+              <strong>Satin atau creamy:</strong> dapat memberikan kesan
+              lembut dengan sedikit kilau.
+            </li>
+            <li>
+              <strong>Glossy:</strong> memberikan efek berkilau dan cocok
+              untuk kamu yang menyukai tampilan bibir segar.
+            </li>
+            <li>
+              <strong>Tinted lip balm:</strong> bisa menjadi pilihan untuk
+              warna ringan saat aktivitas santai.
+            </li>
+          </ul>
+
+          <p>
+            Perhatikan juga daya tahan, rasa nyaman, dan petunjuk pemakaian
+            produk. Hentikan pemakaian jika muncul iritasi atau reaksi
+            yang tidak diinginkan.
+          </p>
+
+          <h2>7. Cara Mencoba Lipstik Sebelum Membeli</h2>
+
+          <p>
+            Agar tidak salah memilih warna, lakukan beberapa langkah
+            sederhana sebelum membeli lipstik baru.
+          </p>
+
+          <ol>
+            <li>
+              Tentukan kebutuhan, misalnya untuk penggunaan sehari-hari
+              atau acara tertentu.
+            </li>
+            <li>
+              Pilih dua atau tiga warna yang ingin dibandingkan.
+            </li>
+            <li>
+              Coba warna menggunakan tester yang higienis atau aplikator
+              sekali pakai sesuai aturan toko.
+            </li>
+            <li>
+              Periksa hasil warna di pencahayaan alami dan di dalam ruangan.
+            </li>
+            <li>
+              Perhatikan apakah warna menyatu dengan gaya makeup dan
+              membuatmu merasa percaya diri.
+            </li>
+            <li>
+              Periksa label produk, bahan yang perlu dihindari, dan
+              informasi kedaluwarsa sebelum membeli.
+            </li>
+          </ol>
+
+          <h2>Kesalahan yang Sebaiknya Dihindari</h2>
+
+          <p>
+            Ada beberapa hal yang sebaiknya tidak dijadikan patokan
+            mutlak ketika memilih lipstik.
+          </p>
+
+          <ul>
+            <li>
+              Menganggap kulit cokelat hanya cocok dengan warna gelap.
+            </li>
+            <li>
+              Memilih warna hanya karena sedang populer tanpa mencoba
+              kecocokannya.
+            </li>
+            <li>
+              Menganggap semua warna nude akan memberikan hasil yang sama.
+            </li>
+            <li>
+              Membeli produk tanpa memeriksa kondisi, label, dan
+              kenyamanan saat digunakan.
+            </li>
+          </ul>
+
+          <p>
+            Makeup merupakan cara untuk berekspresi, bukan aturan yang
+            membatasi pilihan warna berdasarkan warna kulit. Kamu bebas
+            mencoba warna yang disukai selama nyaman digunakan.
+          </p>
+
+          <h2>Penutup</h2>
+
+          <p>
+            Cara memilih lipstik untuk kulit wajah cokelat dimulai dengan
+            mengenali warna yang disukai, mencoba beberapa pilihan, dan
+            menyesuaikannya dengan kebutuhan. Nude caramel, rose brown,
+            mauve, coral, terracotta, hingga merah bisa menjadi pilihan
+            untuk dicoba.
+          </p>
+
+          <p>
+            Tidak ada warna lipstik yang wajib atau terlarang untuk warna
+            kulit tertentu. Yang paling penting adalah kenyamanan,
+            kecocokan dengan gaya pribadi, serta rasa percaya diri saat
+            menggunakannya.
+          </p>
+
+        </div>
+
+        <!-- AJAKAN KE RUANG CHAT -->
+        <section class="article-cta">
+          <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+          <p>
+            Sudah selesai membaca? Kamu bisa menikmati musik atau
+            bergabung dalam obrolan santai bersama pengunjung lainnya.
+          </p>
+          <a class="cta-button" href="/#chat">
+            💬 Buka Ruang Chat
+          </a>
+          <a class="cta-button" href="/#musik">
+            ♫ Dengarkan Musik
+          </a>
+        </section>
+
+      </article>
     </div>
 
-    <!-- GAMBAR UTAMA -->
-    <img
-      src="images/cara-memilih-lipstik-kulit-cokelat.jpeg"
-      alt="Pilihan warna lipstik nude, pink, mauve, coral, dan merah untuk riasan kulit cokelat"
-      class="article-image"
-      width="700"
-      height="400"
-      fetchpriority="high"
-      decoding="async">
+    <!-- KOLOM KANAN: BOX INGIN BERIKLAN (STICKY DI KANAN) -->
+    <aside class="sidebar-right" id="advertising-sidebar">
+      <div class="advertising-box" id="advertising-box">
 
-    <div class="article-content">
+        <button
+          class="advertising-close"
+          type="button"
+          id="advertising-close"
+          aria-label="Tutup banner iklan"
+          title="Tutup">
+          ×
+        </button>
 
-      <p>
-        Memilih lipstik yang cocok untuk kulit wajah cokelat terkadang
-        membuat bingung, apalagi ketika melihat banyak pilihan warna
-        di toko kosmetik. Ada warna nude, pink, merah, coral, hingga
-        cokelat yang masing-masing memberikan kesan berbeda.
-      </p>
-
-      <p>
-        Kabar baiknya, kulit cokelat atau sawo matang bisa terlihat
-        cantik dengan berbagai pilihan warna lipstik. Kuncinya bukan
-        mengikuti aturan warna yang kaku, melainkan menemukan warna
-        yang membuat kamu merasa nyaman dan percaya diri.
-      </p>
-
-      <p>
-        Yuk, kenali cara memilih lipstik untuk kulit wajah cokelat
-        agar hasil riasan terlihat serasi, segar, dan sesuai dengan
-        aktivitas sehari-hari.
-      </p>
-
-      <h2>1. Kenali Undertone Kulit Terlebih Dahulu</h2>
-
-      <p>
-        Selain warna permukaan kulit, perhatikan juga undertone atau
-        rona dasar kulit. Secara umum, undertone sering dikelompokkan
-        menjadi warm, cool, dan neutral. Informasi ini bisa membantu
-        kamu mencoba warna lipstik yang terasa paling serasi.
-      </p>
-
-      <ul>
-        <li>
-          <strong>Warm:</strong> warna dengan nuansa peach, coral,
-          terracotta, dan merah bata bisa menjadi pilihan untuk dicoba.
-        </li>
-        <li>
-          <strong>Cool:</strong> warna berry, mauve, rose, atau merah
-          dengan nuansa kebiruan dapat terlihat menarik.
-        </li>
-        <li>
-          <strong>Neutral:</strong> kamu bisa bereksperimen dengan
-          beragam warna hangat maupun dingin.
-        </li>
-      </ul>
-
-      <p>
-        Cara sederhana untuk mulai mengenali undertone adalah mencoba
-        membandingkan beberapa warna lipstik dalam pencahayaan alami.
-        Warna pembuluh darah atau kecocokan dengan perhiasan hanya
-        petunjuk kasar dan tidak selalu akurat untuk semua orang.
-      </p>
-
-      <aside class="tip-box">
-        <h3>♡ Tips untuk Kamu</h3>
-        <p>
-          Jangan langsung membeli lipstik hanya karena warnanya terlihat
-          bagus di kemasan. Jika memungkinkan, coba swatch pada bibir
-          atau gunakan tester yang higienis, lalu lihat hasilnya dalam
-          pencahayaan yang berbeda.
+        <span class="advertising-badge">Partner / Ad</span>
+        <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+        <p class="advertising-description">
+          Jangkau ribuan pembaca setia CewekPedia! Promosikan produk atau bisnismu di sini.
         </p>
-      </aside>
 
-      <h2>2. Pilih Warna Nude yang Tidak Membuat Wajah Pucat</h2>
+        <div class="advertising-actions">
+          <a
+            class="advertising-button advertising-whatsapp"
+            href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hubungi CewekPedia melalui WhatsApp untuk beriklan">
+            💬 Via WhatsApp
+          </a>
 
-      <p>
-        Lipstik nude cocok untuk kuliah, bekerja, jalan santai, atau
-        makeup natural. Namun, warna nude yang terlalu pucat atau
-        terlalu mirip warna concealer bisa membuat bibir terlihat
-        kurang berdimensi.
-      </p>
+          <a
+            class="advertising-button advertising-email"
+            href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia"
+            aria-label="Kirim email kepada CewekPedia untuk beriklan">
+            ✉️ Via Email
+          </a>
+        </div>
 
-      <p>
-        Untuk kulit cokelat, kamu bisa mencoba nude dengan sentuhan
-        caramel, rose brown, peach brown, atau warm beige. Pilih
-        warna yang tetap memberi perbedaan lembut antara bibir dan
-        warna kulit di sekitarnya.
-      </p>
+      </div>
+    </aside>
 
-      <p>
-        Jika suka tampilan natural, aplikasikan lipstik tipis terlebih
-        dahulu. Kamu bisa menambahkan lapisan kedua bila menginginkan
-        warna yang lebih jelas.
-      </p>
-
-      <h2>3. Coba Warna Pink dan Mauve untuk Tampilan Segar</h2>
-
-      <p>
-        Pink tidak hanya cocok untuk kulit terang. Kulit cokelat juga
-        bisa terlihat segar dengan pilihan dusty pink, rose pink,
-        mauve, atau pink kecokelatan.
-      </p>
-
-      <p>
-        Dusty pink memberikan kesan lembut, sedangkan mauve cenderung
-        menghadirkan nuansa yang lebih kalem dan dewasa. Untuk tampilan
-        sehari-hari, pilih intensitas warna yang membuatmu nyaman.
-      </p>
-
-      <p>
-        Apabila warna pink tertentu terlihat terlalu pucat, cobalah
-        pilihan yang sedikit lebih pekat atau memiliki unsur cokelat.
-        Kamu juga bisa memadukannya dengan riasan mata yang sederhana.
-      </p>
-
-      <h2>4. Gunakan Coral atau Terracotta untuk Kesan Hangat</h2>
-
-      <p>
-        Coral dan terracotta dapat menjadi pilihan menarik bagi kamu
-        yang menyukai riasan bernuansa hangat. Coral biasanya memberi
-        kesan cerah, sedangkan terracotta memiliki nuansa merah bata
-        atau tanah yang lebih dalam.
-      </p>
-
-      <p>
-        Kedua warna ini cocok untuk dicoba saat ingin memberikan
-        sentuhan warna pada wajah tanpa selalu menggunakan lipstik
-        merah yang mencolok.
-      </p>
-
-      <p>
-        Perlu diingat, hasil akhir juga dipengaruhi oleh formula
-        lipstik, pigmentasi bibir asli, pencahayaan, serta makeup
-        yang digunakan. Jadi, jangan ragu mencoba beberapa variasi.
-      </p>
-
-      <h2>5. Lipstik Merah Bisa Menjadi Pilihan untuk Acara Spesial</h2>
-
-      <p>
-        Ingin tampilan yang lebih tegas untuk pesta, acara keluarga,
-        atau makan malam? Lipstik merah bisa menjadi pilihan yang
-        menarik untuk kulit cokelat.
-      </p>
-
-      <p>
-        Merah bata dan merah bernuansa hangat dapat memberikan kesan
-        klasik, sedangkan merah berry atau merah dengan undertone
-        dingin menghadirkan karakter berbeda. Tidak ada satu warna
-        merah yang wajib dipakai semua orang.
-      </p>
-
-      <p>
-        Jika lipstik sudah cukup mencolok, kamu bisa menjaga riasan
-        mata tetap sederhana agar keseluruhan makeup terlihat seimbang.
-      </p>
-
-      <h2>6. Sesuaikan Hasil Akhir Lipstik dengan Kebutuhan</h2>
-
-      <p>
-        Selain warna, pertimbangkan juga tekstur dan hasil akhir
-        lipstik. Pilihan yang berbeda dapat memberikan tampilan dan
-        kenyamanan yang berbeda pula.
-      </p>
-
-      <ul>
-        <li>
-          <strong>Matte:</strong> biasanya memberikan tampilan yang
-          lebih tegas. Jika bibir mudah kering, gunakan pelembap bibir
-          terlebih dahulu dan perhatikan kenyamanannya.
-        </li>
-        <li>
-          <strong>Satin atau creamy:</strong> dapat memberikan kesan
-          lembut dengan sedikit kilau.
-        </li>
-        <li>
-          <strong>Glossy:</strong> memberikan efek berkilau dan cocok
-          untuk kamu yang menyukai tampilan bibir segar.
-        </li>
-        <li>
-          <strong>Tinted lip balm:</strong> bisa menjadi pilihan untuk
-          warna ringan saat aktivitas santai.
-        </li>
-      </ul>
-
-      <p>
-        Perhatikan juga daya tahan, rasa nyaman, dan petunjuk pemakaian
-        produk. Hentikan pemakaian jika muncul iritasi atau reaksi
-        yang tidak diinginkan.
-      </p>
-
-      <h2>7. Cara Mencoba Lipstik Sebelum Membeli</h2>
-
-      <p>
-        Agar tidak salah memilih warna, lakukan beberapa langkah
-        sederhana sebelum membeli lipstik baru.
-      </p>
-
-      <ol>
-        <li>
-          Tentukan kebutuhan, misalnya untuk penggunaan sehari-hari
-          atau acara tertentu.
-        </li>
-        <li>
-          Pilih dua atau tiga warna yang ingin dibandingkan.
-        </li>
-        <li>
-          Coba warna menggunakan tester yang higienis atau aplikator
-          sekali pakai sesuai aturan toko.
-        </li>
-        <li>
-          Periksa hasil warna di pencahayaan alami dan di dalam ruangan.
-        </li>
-        <li>
-          Perhatikan apakah warna menyatu dengan gaya makeup dan
-          membuatmu merasa percaya diri.
-        </li>
-        <li>
-          Periksa label produk, bahan yang perlu dihindari, dan
-          informasi kedaluwarsa sebelum membeli.
-        </li>
-      </ol>
-
-      <h2>Kesalahan yang Sebaiknya Dihindari</h2>
-
-      <p>
-        Ada beberapa hal yang sebaiknya tidak dijadikan patokan
-        mutlak ketika memilih lipstik.
-      </p>
-
-      <ul>
-        <li>
-          Menganggap kulit cokelat hanya cocok dengan warna gelap.
-        </li>
-        <li>
-          Memilih warna hanya karena sedang populer tanpa mencoba
-          kecocokannya.
-        </li>
-        <li>
-          Menganggap semua warna nude akan memberikan hasil yang sama.
-        </li>
-        <li>
-          Membeli produk tanpa memeriksa kondisi, label, dan
-          kenyamanan saat digunakan.
-        </li>
-      </ul>
-
-      <p>
-        Makeup merupakan cara untuk berekspresi, bukan aturan yang
-        membatasi pilihan warna berdasarkan warna kulit. Kamu bebas
-        mencoba warna yang disukai selama nyaman digunakan.
-      </p>
-
-      <h2>Penutup</h2>
-
-      <p>
-        Cara memilih lipstik untuk kulit wajah cokelat dimulai dengan
-        mengenali warna yang disukai, mencoba beberapa pilihan, dan
-        menyesuaikannya dengan kebutuhan. Nude caramel, rose brown,
-        mauve, coral, terracotta, hingga merah bisa menjadi pilihan
-        untuk dicoba.
-      </p>
-
-      <p>
-        Tidak ada warna lipstik yang wajib atau terlarang untuk warna
-        kulit tertentu. Yang paling penting adalah kenyamanan,
-        kecocokan dengan gaya pribadi, serta rasa percaya diri saat
-        menggunakannya.
-      </p>
-
-    </div>
-
-    <!-- AJAKAN KE RUANG CHAT -->
-    <section class="article-cta">
-      <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
-      <p>
-        Sudah selesai membaca? Kamu bisa menikmati musik atau
-        bergabung dalam obrolan santai bersama pengunjung lainnya.
-      </p>
-      <a class="cta-button" href="/#chat">
-        💬 Buka Ruang Chat
-      </a>
-      <a class="cta-button" href="/#musik">
-        ♫ Dengarkan Musik
-      </a>
-    </section>
-
-  </article>
+  </div>
 
 </main>
 
@@ -813,56 +916,15 @@
   </div>
 </footer>
 
-<!-- BANNER PROMOSI: INGIN BERIKLAN -->
-<aside
-  class="advertising-float"
-  id="advertising-float"
-  aria-label="Informasi pemasangan iklan">
-
-  <button
-    class="advertising-close"
-    type="button"
-    id="advertising-close"
-    aria-label="Tutup banner iklan"
-    title="Tutup">
-    ×
-  </button>
-
-  <div class="advertising-inner">
-    <div class="advertising-copy">
-      <p class="advertising-title">📢 Ingin Beriklan?</p>
-      <p class="advertising-description">
-        Promosikan bisnis Anda di CewekPedia.
-      </p>
-    </div>
-
-    <div class="advertising-actions">
-      <a
-        class="advertising-button advertising-whatsapp"
-        href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
-        target="_blank"
-        rel="noopener noreferrer">
-        WhatsApp
-      </a>
-
-      <a
-        class="advertising-button advertising-email"
-        href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">
-        Email
-      </a>
-    </div>
-  </div>
-</aside>
-
 <script>
-  // Menutup banner pada halaman yang sedang dibuka.
+  // Tombol untuk menyembunyikan banner iklan
   (function () {
-    var banner = document.getElementById("advertising-float");
+    var sidebar = document.getElementById("advertising-sidebar");
     var closeButton = document.getElementById("advertising-close");
 
-    if (banner && closeButton) {
+    if (sidebar && closeButton) {
       closeButton.addEventListener("click", function () {
-        banner.hidden = true;
+        sidebar.style.display = "none";
       });
     }
   })();
