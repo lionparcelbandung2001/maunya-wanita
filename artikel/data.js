@@ -3,7 +3,7 @@ const artikelData = [
     judul: "Tips Merawat Diri agar Tetap Cantik dan Percaya Diri",
     deskripsi: "Tips sederhana merawat diri, menjaga penampilan, dan membangun rasa percaya diri setiap hari.",
     tanggal: "25 oktober 2026",
-    gambar: "images/tips-merawat-diri.jpg",
+    gambar: "images/tips-merawat-diri.jpeg",
     link: "tips-merawat-diri.html"
   },
   {
