@@ -1,385 +1,249 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Saran & Masukan — CewekPedia</title>
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="description"
+        content="Kirim saran, kritik, ide konten, dan masukan untuk membantu CewekPedia mengembangkan fitur musik, chatbox, dan artikel."
+    >
 
-<title>💌 Saran & Masukan | CewekPedia</title>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cewekpedia.com/saran.html">
+    <meta name="theme-color" content="#d92f72">
 
-<meta
-    name="description"
-    content="Sampaikan saran, kritik, ide, dan masukan untuk membantu CewekPedia berkembang menjadi platform yang lebih bermanfaat."
->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<meta
-    name="robots"
-    content="index, follow"
->
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #3a2630;
+            line-height: 1.7;
+        }
 
-<link
-    rel="canonical"
-    href="https://cewekpedia.com/saran.html"
->
+        .container {
+            width: min(700px, 100%);
+            margin: auto;
+        }
 
-<style>
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #d92f72;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-*{
-    box-sizing:border-box;
-}
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
 
-body{
-    margin:0;
-    padding:20px;
-    font-family:Arial,sans-serif;
-    background:#fff7fb;
-    color:#3a2630;
-}
+        h1 {
+            margin: 0 0 8px;
+            color: #d92f72;
+            font-size: clamp(25px, 5vw, 32px);
+        }
 
-.container{
-    max-width:700px;
-    margin:auto;
-}
+        .tagline {
+            color: #6b4d59;
+        }
 
-.back{
-    display:inline-block;
-    margin-bottom:18px;
-    color:#d92f72;
-    text-decoration:none;
-    font-weight:bold;
-}
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
 
-h1{
-    margin:0 0 8px;
-    color:#d92f72;
-    text-align:center;
-}
+        .intro {
+            text-align: center;
+        }
 
-.tagline{
-    text-align:center;
-    margin-bottom:25px;
-    color:#6b4d59;
-    line-height:1.6;
-}
+        .intro strong {
+            color: #d92f72;
+        }
 
-.intro{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.06);
-    margin-bottom:20px;
-    line-height:1.7;
-    text-align:center;
-}
+        h2 {
+            margin: 0 0 10px;
+            color: #d92f72;
+            font-size: 21px;
+        }
 
-.intro strong{
-    color:#d92f72;
-}
+        .form-desc {
+            margin-bottom: 20px;
+            color: #6b4d59;
+        }
 
-.form-box{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.06);
-}
+        #echothread {
+            min-height: 100px;
+        }
 
-.form-title{
-    text-align:center;
-    color:#d92f72;
-    margin-top:0;
-    margin-bottom:8px;
-}
+        .info {
+            margin-top: 18px;
+            padding: 14px;
+            border-radius: 12px;
+            background: #fff7fb;
+            color: #6b4d59;
+            font-size: 14px;
+        }
 
-.form-desc{
-    text-align:center;
-    color:#6b4d59;
-    margin-bottom:20px;
-    line-height:1.6;
-}
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
 
-.info{
-    margin-top:18px;
-    padding:15px;
-    border-radius:12px;
-    background:#fff7fb;
-    color:#6b4d59;
-    font-size:14px;
-    line-height:1.7;
-}
+        .links a {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #fff0f6;
+            color: #c52b68;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.related{
-    margin-top:22px;
-    background:#fff;
-    border-radius:16px;
-    padding:18px;
-    box-shadow:0 3px 12px rgba(0,0,0,.06);
-    line-height:1.8;
-    font-size:14px;
-    color:#5d4650;
-}
+        .links a:hover {
+            background: #ffe2ee;
+        }
 
-.related h2{
-    margin:0 0 8px;
-    color:#d92f72;
-    font-size:19px;
-}
+        footer {
+            text-align: center;
+            padding: 24px 8px 10px;
+            color: #806572;
+            font-size: 13px;
+            line-height: 2;
+        }
 
-.related a{
-    color:#d92f72;
-    text-decoration:none;
-    font-weight:bold;
-}
+        footer a {
+            color: #d92f72;
+            text-decoration: none;
+        }
 
-.back-katalog{
-    display:block;
-    text-align:center;
-    margin-top:25px;
-    color:#d92f72;
-    text-decoration:none;
-    font-weight:bold;
-}
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
 
-footer{
-    text-align:center;
-    padding:28px 10px 10px;
-    color:#8a6c78;
-    font-size:13px;
-    line-height:1.8;
-}
-
-footer a{
-    color:#d92f72;
-    text-decoration:none;
-}
-
-@media(max-width:600px){
-
-    body{
-        padding:15px;
-    }
-
-    h1{
-        font-size:25px;
-    }
-
-    .intro,
-    .form-box,
-    .related{
-        padding:16px;
-    }
-
-}
-
-</style>
-
+            .card {
+                padding: 17px;
+            }
+        }
+    </style>
 </head>
 
-
 <body>
-
-<div class="container">
-
-
-<a
-    href="#"
-    class="back"
-    onclick="parent.goPage('home.html'); return false;"
->
-    ← Kembali ke Beranda
-</a>
-
-
-<h1>
-    💌 Saran & Masukan
-</h1>
-
-
-<div class="tagline">
-    Suara kamu membantu CewekPedia berkembang ❤️
-</div>
-
-
-<div class="intro">
-
-    <strong>Punya saran, kritik, ide, atau masukan?</strong>
-
-    <br><br>
-
-    Tulis pendapat kamu tentang CewekPedia
-    melalui halaman ini. Masukan dapat berupa
-    ide konten, pengalaman menggunakan website,
-    saran fitur, atau hal lain yang menurut kamu
-    bisa membuat CewekPedia menjadi lebih bermanfaat.
-
-    <br><br>
-
-    Masukan yang dikirim dapat ditinjau terlebih dahulu
-    sebelum ditampilkan di halaman CewekPedia.
-
-</div>
-
-
-<div class="form-box">
-
-    <h2 class="form-title">
-        💌 Tulis Saran & Masukanmu
-    </h2>
-
-
-    <div class="form-desc">
-        Semua masukan kamu sangat berarti buat kami ❤️
-    </div>
-
-
-    <div
-        id="echothread"
-        data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
-        data-page-url=""
-        data-identifier="saran-cewekpedia"
-        data-page-title="Saran & Masukan — CewekPedia">
-    </div>
-
-
-    <div class="info">
-
-        💡 Jangan memasukkan password,
-        nomor rekening, informasi pembayaran,
-        atau data pribadi yang bersifat rahasia
-        ke dalam kolom saran.
-
-    </div>
-
-</div>
-
-
-<div class="related">
-
-    <h2>
-        🌸 Jelajahi CewekPedia
-    </h2>
-
-    Kamu juga bisa menjelajahi berbagai bagian
-    CewekPedia lainnya.
-
-    <br><br>
-
-    🏠
-    <a
-        href="#"
-        onclick="parent.goPage('home.html'); return false;"
-    >
-        Beranda CewekPedia
-    </a>
-
-    <br>
-
-    📖
-    <a
-        href="#"
-        onclick="parent.goPage('katalog.html'); return false;"
-    >
-        Katalog Rekomendasi
-    </a>
-
-    <br>
-
-    💬
-    <a href="ruangcewek/">
-        Ruang Cewek
-    </a>
-
-    <br>
-
-    😂
-    <a href="ruanglawak/">
-        Ruang Lawak
-    </a>
-
-    <br>
-
-    💄
-    <a href="pengencantik/">
-        Pengen Cantik
-    </a>
-
-    <br>
-
-    🌿
-    <a href="pengenhealing/">
-        Pengen Healing
-    </a>
-
-</div>
-
-
-<a
-    href="#"
-    class="back-katalog"
-    onclick="parent.goPage('katalog.html'); return false;"
->
-    ← Kembali ke Katalog
-</a>
-
-
-<footer>
-
-    © CewekPedia ❤️
-
-    <br>
-
-    <a href="tentang.html">
-        Tentang
-    </a>
-    ·
-    <a href="kontak.html">
-        Kontak
-    </a>
-    ·
-    <a href="privacy.html">
-        Kebijakan Privasi
-    </a>
-    ·
-    <a href="ketentuan.html">
-        Ketentuan
-    </a>
-
-</footer>
-
-
-</div>
-
-
-<script>
-
-const echoThread =
-    document.getElementById("echothread");
-
-
-echoThread.dataset.pageUrl =
-    window.location.origin + "/saran.html";
-
-
-const script =
-    document.createElement("script");
-
-
-script.src =
-    "https://cdn.echothread.io/widget.js";
-
-script.async =
-    true;
-
-
-document.body.appendChild(script);
-
-</script>
-
-
+    <main class="container">
+
+        <a href="index.html" class="back">
+            ← Kembali ke Beranda
+        </a>
+
+        <header>
+            <h1>💌 Saran & Masukan</h1>
+            <div class="tagline">
+                Suara kamu membantu CewekPedia berkembang ❤️
+            </div>
+        </header>
+
+        <section class="card intro">
+            <p>
+                <strong>Punya saran, kritik, atau ide menarik?</strong>
+            </p>
+
+            <p>
+                Kami ingin membuat CewekPedia menjadi tempat yang
+                nyaman untuk menikmati musik, berbincang melalui
+                chatbox, dan membaca artikel.
+            </p>
+
+            <p>
+                Kamu bisa menyampaikan pengalaman menggunakan website,
+                ide artikel, usulan fitur, atau masukan lainnya.
+                Setiap masukan akan menjadi bahan pertimbangan untuk
+                pengembangan CewekPedia.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>💌 Tulis Saran & Masukanmu</h2>
+
+            <p class="form-desc">
+                Terima kasih sudah meluangkan waktu untuk membantu
+                CewekPedia menjadi lebih baik.
+            </p>
+
+            <div
+                id="echothread"
+                data-api-key="7nFTuMCqVbTn9YUzUJeB491qwNxk7slcZs0cRVbFuKI"
+                data-page-url="https://cewekpedia.com/saran.html"
+                data-identifier="saran-cewekpedia"
+                data-page-title="Saran & Masukan — CewekPedia">
+            </div>
+
+            <div class="info">
+                💡 Demi keamanan, jangan masukkan password,
+                informasi pembayaran, nomor rekening, atau data
+                pribadi rahasia ke dalam kolom masukan.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🌸 Jelajahi CewekPedia</h2>
+
+            <p>
+                Setelah menyampaikan masukan, kamu bisa kembali
+                menikmati fitur dan konten yang tersedia.
+            </p>
+
+            <div class="links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#chatbox">💬 Chatbox</a>
+            </div>
+
+            <p style="margin-top: 16px;">
+                Untuk membaca artikel, silakan kunjungi halaman
+                artikel yang tersedia di CewekPedia.
+            </p>
+        </section>
+
+        <footer>
+            © 2026 CewekPedia. Semua hak dilindungi.
+            <br>
+
+            <a href="tentang.html">Tentang Kami</a>
+            ·
+            <a href="kontak.html">Kontak</a>
+            ·
+            <a href="privacy.html">Kebijakan Privasi</a>
+            ·
+            <a href="ketentuan.html">Ketentuan Penggunaan</a>
+        </footer>
+
+    </main>
+
+    <script>
+        const echoThread = document.getElementById("echothread");
+
+        echoThread.dataset.pageUrl =
+            window.location.origin + "/saran.html";
+
+        const script = document.createElement("script");
+        script.src = "https://cdn.echothread.io/widget.js";
+        script.async = true;
+
+        document.body.appendChild(script);
+    </script>
 </body>
-
 </html>
