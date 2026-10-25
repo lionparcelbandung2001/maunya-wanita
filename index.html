@@ -1,492 +1,579 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F9LX0ZNCJ7');
-</script>
-
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>YANG WANITA MAU ❤️❤️ — Rekomendasi Kecantikan, Healing, &amp; Ruang Curhat</title>
-
-<meta
-  name="description"
-  content="CewekPedia adalah ruang informasi dan rekomendasi untuk wanita, mulai dari kecantikan, pernikahan, makan &amp; belanja, healing, hingga ruang curhat dan lawak."
->
-
-<link
-  rel="canonical"
-  href="https://cewekpedia.com/"
->
-
-<link
-  rel="stylesheet"
-  href="style.css"
->
-
-<style>
-
-/* =========================================
-   DASAR
-   ========================================= */
-
-*{
-    box-sizing:border-box;
-}
-
-html,
-body{
-    margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
-    background:#fff7fb;
-}
-
-.shell{
-    position:relative;
-    width:100%;
-    min-height:100vh;
-    background:#fff7fb;
-}
-
-
-/* =========================================
-   TOP BAR 1 — KATEGORI
-   ========================================= */
-
-.category-bar{
-
-    position:sticky;
-    top:0;
-
-    z-index:9999;
-
-    width:100%;
-
-    min-height:42px;
-
-    padding:3px 8px;
-
-    display:flex;
-    align-items:center;
-
-    gap:5px;
-
-    background:rgba(255,247,251,.98);
-
-    border-bottom:1px solid #f1d2df;
-
-    box-shadow:
-        0 2px 9px rgba(217,47,114,.08);
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
-}
-
-.category-bar::-webkit-scrollbar{
-    display:none;
-}
-
-
-/* HOME BUTTON */
-
-.home-button{
-
-    flex:0 0 auto;
-
-    border:none;
-
-    background:#ff4f91;
-
-    color:#fff;
-
-    font-weight:bold;
-
-    padding:8px 12px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    white-space:nowrap;
-
-    box-shadow:
-        0 2px 7px rgba(255,79,145,.25);
-}
-
-.home-button:hover{
-    opacity:.9;
-}
-
-
-/* CATEGORY BUTTON */
-
-.category-button{
-
-    flex:0 0 auto;
-
-    border:1px solid #f2bfd2;
-
-    background:#fff;
-
-    color:#d93672;
-
-    font-weight:bold;
-
-    padding:7px 10px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    white-space:nowrap;
-}
-
-.category-button:hover{
-    background:#fff0f6;
-}
-
-
-/* =========================================
-   TOP BAR 2 — KOTA
-   ========================================= */
-
-.city-bar{
-
-    position:sticky;
-    top:42px;
-
-    z-index:9998;
-
-    width:100%;
-
-    min-height:38px;
-
-    padding:3px 8px;
-
-    display:flex;
-    align-items:center;
-
-    gap:5px;
-
-    background:rgba(255,255,255,.97);
-
-    border-bottom:1px solid #f1d2df;
-
-    box-shadow:
-        0 2px 7px rgba(0,0,0,.05);
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
-}
-
-.city-bar::-webkit-scrollbar{
-    display:none;
-}
-
-
-/* CITY BUTTON */
-
-.city-button{
-
-    flex:0 0 auto;
-
-    border:1px solid #e5d1da;
-
-    background:#fff;
-
-    color:#555;
-
-    font-size:13px;
-
-    padding:6px 10px;
-
-    border-radius:9px;
-
-    cursor:pointer;
-
-    white-space:nowrap;
-}
-
-.city-button:hover{
-    background:#fff3f8;
-}
-
-
-/* =========================================
-   CONTENT
-   ========================================= */
-
-.content-frame{
-
-    width:100%;
-
-    min-height:calc(100vh - 80px);
-
-    border:none;
-
-    display:block;
-
-    background:#fff7fb;
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media(max-width:600px){
-
-    .category-bar{
-        min-height:40px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CewekPedia ❤️ Musik & Chat Bareng</title>
+  <meta name="description" content="Dengarkan musik dan ngobrol bareng komunitas CewekPedia.">
+  <link rel="canonical" href="https://cewekpedia.com/">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LX0ZNCJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F9LX0ZNCJ7');
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .city-bar{
-        top:40px;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #333;
     }
 
-    .home-button{
-        padding:7px 10px;
-        font-size:13px;
+    body {
+      min-height: 100dvh;
     }
 
-    .category-button{
-        padding:6px 9px;
-        font-size:13px;
+    .page {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 12px;
     }
 
-    .city-button{
-        padding:5px 9px;
-        font-size:12px;
+    .brand {
+      text-align: center;
+      padding: 8px 4px 14px;
     }
 
-}
-
-
-/* =========================================
-   MUSIK
-   ========================================= */
-
-.music-frame{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    height:72px;
-    border:none;
-    z-index:10000;
-    background:transparent;
-}
-
-
-/* =========================================
-   MOBILE MUSIC
-   ========================================= */
-
-@media(max-width:600px){
-
-    .music-frame{
-        height:70px;
+    .brand h1 {
+      margin: 0;
+      color: #d93672;
+      font-size: clamp(22px, 5vw, 30px);
     }
 
-}
+    .brand p {
+      margin: 6px 0 0;
+      color: #777;
+      font-size: 13px;
+    }
 
-</style>
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 17px;
+      color: #c72d68;
+    }
+
+    .music-card,
+    .chat-card {
+      background: #fff;
+      border: 1px solid #f0d5e1;
+      border-radius: 16px;
+      padding: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 3px 12px rgba(190, 55, 112, .07);
+    }
+
+    .music-frame {
+      display: block;
+      width: 100%;
+      height: 225px;
+      border: 0;
+      border-radius: 10px;
+      background: #fff0f6;
+    }
+
+    .chat-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+
+    .chat-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .chat-heading .section-title {
+      margin: 0;
+    }
+
+    .status {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .status.online {
+      color: #18864b;
+    }
+
+    .name-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    input, textarea, button {
+      font: inherit;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #e8cbd8;
+      border-radius: 10px;
+      padding: 11px;
+      outline: none;
+      background: #fff;
+      color: #333;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ed6b9e;
+    }
+
+    .name-row input {
+      min-width: 0;
+    }
+
+    .name-row button,
+    .send-button {
+      flex-shrink: 0;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: #e83e83;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .messages {
+      flex: 1;
+      min-height: 210px;
+      max-height: 42vh;
+      overflow-y: auto;
+      padding: 10px;
+      border-radius: 12px;
+      background: #fff8fb;
+      border: 1px solid #f5e2eb;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+      padding: 24px 8px;
+    }
+
+    .message {
+      padding: 9px 10px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #f2dce6;
+      overflow-wrap: anywhere;
+    }
+
+    .message:last-child {
+      margin-bottom: 0;
+    }
+
+    .message-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .message-name {
+      color: #c72d68;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .message-time {
+      color: #999;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .message-text {
+      font-size: 14px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+    }
+
+    .composer {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      margin-top: 10px;
+    }
+
+    .composer textarea {
+      resize: vertical;
+      min-height: 44px;
+      max-height: 120px;
+    }
+
+    .send-button {
+      min-height: 44px;
+    }
+
+    .notice {
+      min-height: 17px;
+      margin: 8px 2px 0;
+      color: #777;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2px 8px 12px;
+      color: #999;
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 8px;
+      }
+
+      .music-card, .chat-card {
+        padding: 10px;
+        border-radius: 13px;
+      }
+
+      .music-frame {
+        height: 220px;
+      }
+
+      .chat-card {
+        min-height: 430px;
+      }
+
+      .messages {
+        max-height: 38vh;
+      }
+
+      .name-row button,
+      .send-button {
+        padding: 10px 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="page">
 
-<div class="shell">
+    <header class="brand">
+      <h1>CewekPedia ❤️</h1>
+      <p>Dengerin musik, ngobrol, dan temukan teman baru.</p>
+    </header>
 
-    <!-- TOP BAR KATEGORI -->
-    <div class="category-bar">
+    <!-- MUSIC PLAYER -->
+    <section class="music-card">
+      <h2 class="section-title">🎵 Music Player</h2>
 
-        <button
-            class="home-button"
-            onclick="goHome()"
-        >
-            ❤️ HOME
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goCategory('cantik')"
-        >
-            💄 Pengen Cantik
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goCategory('nikah')"
-        >
-            💍 Pengen Nikah
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goCategory('makan')"
-        >
-            🍜 Makan &amp; Belanja
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goCategory('healing')"
-        >
-            🌴 Healing
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goPage('ruangcewek/index.html')"
-        >
-            💬 Ruang Cewek
-        </button>
-
-        <button
-            class="category-button"
-            onclick="goPage('ruanglawak/index.html')"
-        >
-            😂 Ruang Lawak
-        </button>
-
-    </div>
-
-
-    <!-- TOP BAR KOTA -->
-    <div class="city-bar">
-
-        <button
-            class="city-button"
-            onclick="goCity('bandung')"
-        >
-            Bandung
-        </button>
-
-        <button
-            class="city-button"
-            onclick="goCity('jakarta')"
-        >
-            Jakarta
-        </button>
-
-        <button
-            class="city-button"
-            onclick="goCity('surabaya')"
-        >
-            Surabaya
-        </button>
-
-        <button
-            class="city-button"
-            onclick="goCity('medan')"
-        >
-            Medan
-        </button>
-
-        <button
-            class="city-button"
-            onclick="goCity('semarang')"
-        >
-            Semarang
-        </button>
-
-        <button
-            class="city-button"
-            onclick="goCity('makassar')"
-        >
-            Makassar
-        </button>
-
-    </div>
-
-
-    <!-- CONTENT -->
-    <iframe
-        id="contentFrame"
-        class="content-frame"
-        src="home.html"
-        title="CewekPedia"
-        loading="eager"
-    ></iframe>
-
-
-    <!-- MUSIC -->
-    <iframe
+      <iframe
         class="music-frame"
         src="music-player.html"
-        title="Music Player"
-        loading="lazy"
-    ></iframe>
+        title="CewekPedia Music Player"
+        loading="eager"
+        allow="autoplay"
+      ></iframe>
+    </section>
 
-</div>
+    <!-- CHAT UMUM -->
+    <section class="chat-card">
+      <div class="chat-heading">
+        <h2 class="section-title">💬 Chat Bareng</h2>
+        <span id="chatStatus" class="status">Menghubungkan...</span>
+      </div>
 
+      <div class="name-row">
+        <input
+          id="nickname"
+          type="text"
+          maxlength="20"
+          placeholder="Nama panggilan"
+          autocomplete="nickname"
+          aria-label="Nama panggilan"
+        >
+        <button id="saveName" type="button">Simpan</button>
+      </div>
 
-<script>
+      <div
+        id="messages"
+        class="messages"
+        role="log"
+        aria-live="polite"
+        aria-label="Pesan chat"
+      >
+        <div class="empty-message">Memuat pesan chat...</div>
+      </div>
 
-function goHome(){
+      <form id="chatForm" class="composer">
+        <textarea
+          id="messageInput"
+          maxlength="300"
+          rows="2"
+          placeholder="Tulis pesan..."
+          aria-label="Tulis pesan"
+          required
+        ></textarea>
+        <button id="sendButton" class="send-button" type="submit">
+          Kirim
+        </button>
+      </form>
 
-    localStorage.removeItem("mw_category");
-    localStorage.removeItem("mw_city");
-    localStorage.removeItem("mw_subcategory");
+      <p id="notice" class="notice">
+        Gunakan bahasa yang sopan dan jangan bagikan data pribadi.
+      </p>
+    </section>
 
-    document.getElementById("contentFrame").src =
-        "home.html";
+    <footer class="footer">
+      CewekPedia ❤️ Musik & Chat Bareng
+    </footer>
 
-}
+  </main>
 
+  <!-- FIREBASE CHAT UMUM -->
+  <script type="module">
+    import {
+      initializeApp,
+      getApp,
+      getApps
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-function goPage(page){
+    import {
+      getAuth,
+      signInAnonymously,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
-    document.getElementById("contentFrame").src =
-        page;
+    import {
+      getDatabase,
+      ref,
+      push,
+      set,
+      onValue,
+      query,
+      limitToLast,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-}
+    const firebaseConfig = {
+      apiKey: "AIzaSyCnhVGlnGKoqddyLvOgE7t4MGG926iQ8O0",
+      authDomain: "ruang-cewek.firebaseapp.com",
+      databaseURL: "https://ruang-cewek-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "ruang-cewek",
+      storageBucket: "ruang-cewek.firebasestorage.app",
+      messagingSenderId: "300030693884",
+      appId: "1:300030693884:web:ec02ce2cf35646dbf3a279"
+    };
 
+    const nicknameInput = document.getElementById("nickname");
+    const saveNameButton = document.getElementById("saveName");
+    const messageInput = document.getElementById("messageInput");
+    const chatForm = document.getElementById("chatForm");
+    const sendButton = document.getElementById("sendButton");
+    const messagesBox = document.getElementById("messages");
+    const chatStatus = document.getElementById("chatStatus");
+    const notice = document.getElementById("notice");
 
-function goCategory(category){
+    let currentUser = null;
+    let messagesRef = null;
+    let sending = false;
 
-    localStorage.setItem(
-        "mw_category",
-        category
-    );
+    nicknameInput.value = localStorage.getItem("cewekpedia_chat_name") || "";
 
-    localStorage.removeItem("mw_subcategory");
+    function setNotice(message) {
+      notice.textContent = message;
+    }
 
-    document.getElementById("contentFrame").src =
-        "subkategori.html";
+    function setStatus(message, online = false) {
+      chatStatus.textContent = message;
+      chatStatus.classList.toggle("online", online);
+    }
 
-}
+    saveNameButton.addEventListener("click", () => {
+      const name = nicknameInput.value.trim().slice(0, 20);
 
+      if (!name) {
+        setNotice("Isi nama panggilan terlebih dahulu.");
+        nicknameInput.focus();
+        return;
+      }
 
-function goCity(city){
+      nicknameInput.value = name;
+      localStorage.setItem("cewekpedia_chat_name", name);
+      setNotice("Nama panggilan disimpan di perangkat ini.");
+    });
 
-    localStorage.setItem(
-        "mw_city",
-        city
-    );
+    function formatTime(value) {
+      if (!value || typeof value !== "number") return "";
 
-    document.getElementById("contentFrame").src =
-        "kota.html";
+      return new Date(value).toLocaleTimeString("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
 
-}
+    function renderMessages(snapshot) {
+      messagesBox.replaceChildren();
 
-</script>
+      if (!snapshot.exists()) {
+        const empty = document.createElement("div");
+        empty.className = "empty-message";
+        empty.textContent = "Belum ada pesan. Jadilah yang pertama menyapa! ❤️";
+        messagesBox.appendChild(empty);
+        return;
+      }
 
+      const rows = [];
+
+      snapshot.forEach((child) => {
+        rows.push({
+          key: child.key,
+          ...child.val()
+        });
+      });
+
+      rows.forEach((item) => {
+        const message = document.createElement("article");
+        message.className = "message";
+
+        const top = document.createElement("div");
+        top.className = "message-top";
+
+        const name = document.createElement("span");
+        name.className = "message-name";
+        name.textContent =
+          typeof item.nickname === "string" ? item.nickname : "Pengunjung";
+
+        const time = document.createElement("span");
+        time.className = "message-time";
+        time.textContent = formatTime(item.createdAt);
+
+        const body = document.createElement("div");
+        body.className = "message-text";
+        body.textContent =
+          typeof item.text === "string" ? item.text : "";
+
+        top.append(name, time);
+        message.append(top, body);
+        messagesBox.appendChild(message);
+      });
+
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    chatForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const nickname = nicknameInput.value.trim().slice(0, 20);
+      const messageText = messageInput.value.trim().slice(0, 300);
+
+      if (!nickname) {
+        setNotice("Isi nama panggilan sebelum mengirim pesan.");
+        nicknameInput.focus();
+        return;
+      }
+
+      if (!messageText) return;
+
+      if (!currentUser) {
+        setNotice("Chat belum siap. Tunggu beberapa saat lalu coba lagi.");
+        return;
+      }
+
+      if (sending) return;
+
+      sending = true;
+      sendButton.disabled = true;
+      setNotice("Mengirim pesan...");
+
+      try {
+        localStorage.setItem("cewekpedia_chat_name", nickname);
+
+        await set(push(messagesRef), {
+          nickname,
+          text: messageText,
+          uid: currentUser.uid,
+          createdAt: serverTimestamp()
+        });
+
+        messageInput.value = "";
+        setNotice("Pesan terkirim.");
+        messageInput.focus();
+      } catch (error) {
+        console.error("Gagal mengirim pesan:", error);
+        setNotice("Pesan gagal dikirim. Periksa koneksi atau aturan Firebase.");
+      } finally {
+        sending = false;
+        sendButton.disabled = false;
+      }
+    });
+
+    try {
+      const app = getApps().length
+        ? getApp()
+        : initializeApp(firebaseConfig);
+
+      const auth = getAuth(app);
+      const db = getDatabase(app);
+
+      // Jalur baru agar tidak bercampur dengan chat Ruang Cewek.
+      messagesRef = query(
+        ref(db, "publicChat/messages"),
+        limitToLast(100)
+      );
+
+      onValue(
+        messagesRef,
+        renderMessages,
+        (error) => {
+          console.error("Gagal membaca chat:", error);
+          setStatus("Chat bermasalah");
+          setNotice("Pesan tidak dapat dimuat. Periksa aturan Firebase Realtime Database.");
+        }
+      );
+
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+
+        if (user) {
+          setStatus("Terhubung", true);
+        } else {
+          setStatus("Menghubungkan...");
+        }
+      });
+
+      signInAnonymously(auth).catch((error) => {
+        console.error("Firebase Auth Error:", error);
+        setStatus("Belum terhubung");
+        setNotice("Login anonim gagal. Pastikan Anonymous Authentication aktif di Firebase.");
+      });
+
+    } catch (error) {
+      console.error("Firebase initialization error:", error);
+      setStatus("Chat belum siap");
+      setNotice("Konfigurasi Firebase perlu diperiksa.");
+    }
+  </script>
 </body>
 </html>
