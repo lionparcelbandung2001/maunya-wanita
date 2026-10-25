@@ -1,7 +1,14 @@
 const artikelData = [
 {
+    judul: "merawat rambut agar tidak rontok",
+    deskripsi: "merawat rambut dan kulit kepala",
+    tanggal: "25 oktober 2026",
+    gambar: "images/cara-merawat-rambut-agar-tidak-rontok.jpeg",
+    link: "cara-merawat-rambut-agar-tidak-rontok.html"
+  }, 
+    {
     judul: "cara menghilangkan jerawat",
-    deskripsi: "tips menghilangkan jerawat di kulit muka berminyak.",
+    deskripsi: "tips menghilangkan jerawat di kulit muka berminyak",
     tanggal: "25 oktober 2026",
     gambar: "images/cara-menghilangkan-jerawat-di-muka-berminyak.jpeg",
     link: "cara-menghilangkan-jerawat-di-muka-berminyak.html"
