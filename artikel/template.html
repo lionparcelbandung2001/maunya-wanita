@@ -4,47 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO META TAGS -->
-  <title>[GANTI JUDUL ARTIKEL] | CewekPedia</title>
-  <meta name="description" content="[GANTI DESKRIPSI ARTIKEL, RINGKAS DAN RELEVAN]">
-  <meta name="keywords" content="[GANTI KATA KUNCI ARTIKEL]">
+  <!-- ==================== SEO META TAGS ==================== -->
+  <title>[GANTI JUDUL ARTIKEL DI SINI] | CewekPedia</title>
+  <meta name="description" content="[Ganti dengan ringkasan/deskripsi artikel yang singkat dan relevan]">
+  <meta name="keywords" content="[ganti, kata, kunci, artikel, dipisahkan, koma]">
   <meta name="robots" content="index, follow">
   <meta name="author" content="CewekPedia">
   <meta name="theme-color" content="#d65b99">
 
   <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://cewekpedia.com/artikel/[NAMA-FILE].html">
+  <link rel="canonical" href="https://cewekpedia.com/artikel/[nama-file-artikel].html">
   <link rel="icon" href="/favicon.ico">
 
-  <!-- OPEN GRAPH -->
+  <!-- OPEN GRAPH (UNTUK SOSMED / FACEBOOK / WHATSAPP) -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CewekPedia">
-  <meta property="og:title" content="[GANTI JUDUL ARTIKEL] | CewekPedia">
-  <meta property="og:description" content="[GANTI DESKRIPSI ARTIKEL]">
-  <meta property="og:url" content="https://cewekpedia.com/artikel/[NAMA-FILE].html">
-  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg">
+  <meta property="og:title" content="[GANTI JUDUL ARTIKEL DI SINI] | CewekPedia">
+  <meta property="og:description" content="[Ganti dengan deskripsi artikel]">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/[nama-file-artikel].html">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[nama-gambar].jpeg">
   <meta property="og:locale" content="id_ID">
 
-  <!-- TWITTER / SOCIAL PREVIEW -->
+  <!-- TWITTER PREVIEW -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="[GANTI JUDUL ARTIKEL] | CewekPedia">
-  <meta name="twitter:description" content="[GANTI DESKRIPSI ARTIKEL]">
-  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg">
+  <meta name="twitter:title" content="[GANTI JUDUL ARTIKEL DI SINI] | CewekPedia">
+  <meta name="twitter:description" content="[Ganti dengan deskripsi artikel]">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[nama-gambar].jpeg">
 
-  <!-- SCHEMA ARTIKEL -->
+  <!-- SCHEMA ARTIKEL (JSON-LD) -->
   <script type="application/ld+json" id="article-schema">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "[GANTI JUDUL ARTIKEL]",
-    "description": "[GANTI DESKRIPSI ARTIKEL]",
-    "image": "https://cewekpedia.com/artikel/images/[NAMA-GAMBAR].jpeg",
+    "headline": "[GANTI JUDUL ARTIKEL DI SINI]",
+    "description": "[Ganti dengan deskripsi artikel]",
+    "image": "https://cewekpedia.com/artikel/images/[nama-gambar].jpeg",
     "datePublished": "2026-10-25T08:00:00+07:00",
     "dateModified": "2026-10-25T08:00:00+07:00",
     "inLanguage": "id-ID",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://cewekpedia.com/artikel/[NAMA-FILE].html"
+      "@id": "https://cewekpedia.com/artikel/[nama-file-artikel].html"
     },
     "author": {
       "@type": "Organization",
@@ -59,6 +59,7 @@
   }
   </script>
 
+  <!-- ==================== CSS STYLING ==================== -->
   <style>
     * {
       box-sizing: border-box;
@@ -126,17 +127,17 @@
       text-decoration: none;
     }
 
-    /* KONTEN UTAMA & SIDEBAR (LAYOUT DUA KOLOM) */
+    /* LAYOUT UTAMA: KIRI ARTIKEL, KANAN SIDEBAR IKLAN */
     .container {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1140px;
       margin: auto;
       padding: 22px 16px;
     }
 
     .layout-wrapper {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       align-items: flex-start;
     }
 
@@ -146,10 +147,10 @@
     }
 
     .sidebar-right {
-      width: 280px;
+      width: 240px;
       flex-shrink: 0;
       position: sticky;
-      top: 20px; /* Ikut naik-turun saat discroll */
+      top: 20px; /* Ikut naik-turun saat discroll di desktop */
     }
 
     .back-link {
@@ -292,69 +293,53 @@
       background: var(--pink-dark);
     }
 
-    /* BOX INGIN BERIKLAN (CERAH, STICKY / MEMBANTU SCROLLING) */
+    /* KOTAK KECIL "INGIN BERIKLAN" */
     .advertising-box {
       position: relative;
-      background: linear-gradient(145deg, #ff6ab2, #ff8ec2, #a855f7);
-      border-radius: 20px;
-      padding: 20px;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border-radius: 14px;
+      padding: 14px 12px;
       color: #ffffff;
-      box-shadow: 0 10px 25px rgba(214, 91, 153, 0.35);
-      border: 2px solid #ffffff;
+      box-shadow: 0 6px 18px rgba(214, 91, 153, 0.25);
+      border: 1.5px solid #ffffff;
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .advertising-box:hover {
-      transform: translateY(-3px);
-    }
-
-    .advertising-badge {
-      display: inline-block;
-      background: #ffe600;
-      color: #631238;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
     }
 
     .advertising-title {
-      margin: 0 0 6px;
-      font-size: 18px;
+      margin: 0 0 4px;
+      font-size: 14px;
       font-weight: 800;
       color: #ffffff;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
 
     .advertising-description {
-      margin: 0 0 16px;
-      font-size: 13px;
-      line-height: 1.4;
+      margin: 0 0 10px;
+      font-size: 11px;
+      line-height: 1.35;
       color: #fff0f7;
     }
 
     .advertising-actions {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 6px;
     }
 
     .advertising-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 30px;
-      font-size: 13px;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 11px;
       font-weight: bold;
       text-decoration: none !important;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: opacity 0.2s ease;
+    }
+
+    .advertising-button:hover {
+      opacity: 0.9;
     }
 
     .advertising-whatsapp {
@@ -362,33 +347,25 @@
       color: #ffffff !important;
     }
 
-    .advertising-whatsapp:hover {
-      background: #1eb856;
-    }
-
     .advertising-email {
       background: #ffffff;
       color: #a83270 !important;
     }
 
-    .advertising-email:hover {
-      background: #fff0f6;
-    }
-
     .advertising-close {
       position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 26px;
-      height: 26px;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
       border: none;
       border-radius: 50%;
       background: #ffffff;
       color: #725566;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -416,58 +393,63 @@
       text-decoration: none;
     }
 
-    /* RESPONSIVE DESIGN (TAMPILAN HP) */
+    /* RESPONSIVE UNTUK HP */
     @media (max-width: 900px) {
       body {
-        padding-bottom: 90px;
+        padding-bottom: 75px;
       }
 
       .layout-wrapper {
         flex-direction: column;
       }
 
-      /* Di HP, ubah box iklan jadi melayang di bawah layar */
       .sidebar-right {
         width: 100%;
         position: fixed;
         top: auto;
-        bottom: 10px;
+        bottom: 8px;
         left: 0;
         right: 0;
-        padding: 0 12px;
+        padding: 0 10px;
         z-index: 9999;
       }
 
       .advertising-box {
-        padding: 12px 16px;
-        border-radius: 16px;
-      }
-
-      .advertising-badge {
-        display: none;
+        padding: 8px 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        text-align: left;
       }
 
       .advertising-title {
-        font-size: 14px;
-        margin-bottom: 2px;
-        text-align: left;
+        font-size: 12px;
+        margin-bottom: 1px;
       }
 
       .advertising-description {
-        font-size: 11px;
-        margin-bottom: 8px;
-        text-align: left;
+        display: none;
       }
 
       .advertising-actions {
         flex-direction: row;
-        gap: 8px;
+        gap: 6px;
+        flex-shrink: 0;
       }
 
       .advertising-button {
-        flex: 1;
-        padding: 8px 10px;
-        font-size: 11px;
+        padding: 5px 9px;
+        font-size: 10px;
+      }
+
+      .advertising-close {
+        top: -5px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
       }
     }
 
@@ -475,45 +457,18 @@
       .site-header {
         padding: 20px 12px;
       }
-
       .brand {
         font-size: 22px;
       }
-
       .container {
         padding: 15px 10px;
       }
-
       .article-card {
         padding: 17px;
         border-radius: 14px;
       }
-
       .article-title {
         font-size: 24px;
-      }
-
-      .article-content h2 {
-        font-size: 20px;
-      }
-
-      .article-content h3 {
-        font-size: 17px;
-      }
-
-      .article-content p,
-      .article-content li {
-        font-size: 15px;
-      }
-
-      .article-image {
-        max-height: 250px;
-        margin: 14px auto 20px;
-      }
-
-      .tip-box,
-      .article-cta {
-        padding: 15px;
       }
     }
   </style>
@@ -521,6 +476,7 @@
 
 <body>
 
+<!-- HEADER UTAMA -->
 <header class="site-header">
   <a class="brand" href="/">CewekPedia ♡</a>
   <p class="tagline">
@@ -528,6 +484,7 @@
   </p>
 </header>
 
+<!-- NAVIGASI ATAS -->
 <nav class="top-nav" aria-label="Navigasi utama">
   <a href="/">Beranda</a>
   <a href="/#musik">Musik</a>
@@ -542,99 +499,81 @@
   </a>
 
   <div class="layout-wrapper">
-    
-    <!-- KOLOM KIRI: ISI ARTIKEL -->
+
+    <!-- ==================== KOLOM KIRI: ISI ARTIKEL ==================== -->
     <div class="main-content">
       <article class="article-card">
 
-        <span class="article-category">[KATEGORI ARTIKEL]</span>
+        <!-- KATEGORI ARTIKEL -->
+        <span class="article-category">[Nama Kategori, Cth: Kecantikan]</span>
 
-        <h1 class="article-title">[JUDUL UTAMA ARTIKEL]</h1>
+        <!-- JUDUL ARTIKEL -->
+        <h1 class="article-title">
+          [Judul Lengkap Artikel Kamu di Sini]
+        </h1>
 
+        <!-- TANGGAL (OTOMATIS) -->
         <div class="article-date">
           Dipublikasikan:
-          <time id="article-published-date" datetime="2026-10-25">
-            25 Oktober 2026
-          </time>
+          <time id="article-published-date" datetime="2026-10-25">25 Oktober 2026</time>
           <span aria-hidden="true"> · </span>
           Diperbarui:
-          <time id="article-updated-date" datetime="2026-10-25">
-            25 Oktober 2026
-          </time>
+          <time id="article-updated-date" datetime="2026-10-25">25 Oktober 2026</time>
         </div>
 
-        <!-- GAMBAR UTAMA -->
+        <!-- GAMBAR UTAMA ARTIKEL -->
         <img
-          src="images/[NAMA-GAMBAR].jpeg"
-          alt="[DESKRIPSI GAMBAR YANG SESUAI DENGAN ISI ARTIKEL]"
+          src="images/[nama-file-gambar].jpeg"
+          alt="[Deskripsi singkat gambar untuk SEO]"
           class="article-image"
           width="700"
           height="400"
           fetchpriority="high"
           decoding="async">
 
+        <!-- ISI KONTEN ARTIKEL -->
         <div class="article-content">
 
-          <!-- PEMBUKA -->
           <p>
-            [TULIS PARAGRAF PEMBUKA. Jelaskan topik artikel dengan bahasa
-            yang ramah, alami, dan mudah dipahami pembaca.]
+            [Paragraf pembuka artikel. Jelaskan topik artikel dengan bahasa yang ramah dan alami.]
           </p>
 
-          <!-- SUBTOPIK 1 -->
-          <h2>[SUBJUDUL PERTAMA]</h2>
-
+          <h2>[Subjudul Pertama]</h2>
           <p>
-            [Tulis penjelasan lengkap untuk subjudul pertama.]
+            [Penjelasan untuk subjudul pertama.]
           </p>
 
+          <!-- CONTOH LIST / POIN-POIN -->
           <ul>
-            <li><strong>[Poin pertama]:</strong> [Penjelasannya.]</li>
-            <li><strong>[Poin kedua]:</strong> [Penjelasannya.]</li>
-            <li><strong>[Poin ketiga]:</strong> [Penjelasannya.]</li>
+            <li><strong>[Poin 1]:</strong> [Penjelasan poin 1]</li>
+            <li><strong>[Poin 2]:</strong> [Penjelasan poin 2]</li>
           </ul>
 
-          <!-- KOTAK TIPS OPSIONAL -->
+          <!-- KOTAK TIPS (OPSIONAL) -->
           <aside class="tip-box">
             <h3>♡ Tips untuk Kamu</h3>
             <p>
-              [Tulis tips singkat yang benar-benar bermanfaat dan
-              berkaitan dengan topik artikel.]
+              [Tulis tips singkat atau catatan menarik di sini.]
             </p>
           </aside>
 
-          <!-- SUBTOPIK 2 -->
-          <h2>[SUBJUDUL KEDUA]</h2>
-
+          <h2>[Subjudul Kedua]</h2>
           <p>
-            [Tulis penjelasan subjudul kedua. Tambahkan contoh atau
-            langkah praktis jika sesuai dengan topik.]
+            [Penjelasan subjudul kedua.]
           </p>
 
-          <!-- SUBTOPIK 3 OPSIONAL -->
-          <h2>[SUBJUDUL KETIGA]</h2>
-
-          <p>
-            [Tambahkan informasi pendukung yang relevan. Hapus bagian ini
-            jika tidak diperlukan.]
-          </p>
-
-          <!-- KESIMPULAN -->
           <h2>Penutup</h2>
-
           <p>
-            [Rangkum poin penting artikel dengan singkat. Akhiri dengan
-            kalimat hangat yang sesuai dengan isi tulisan.]
+            [Paragraf kesimpulan artikel, ditutup dengan kalimat yang hangat.]
           </p>
 
         </div>
 
-        <!-- AJAKAN KE RUANG CHAT -->
+        <!-- CALL TO ACTION (CTA) BAWAH ARTIKEL -->
         <section class="article-cta">
           <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
           <p>
-            Sudah selesai membaca? Kamu bisa menikmati musik atau
-            bergabung dalam obrolan santai bersama pengunjung lainnya.
+            Sudah selesai membaca? Kamu bisa menikmati musik atau bergabung dalam obrolan santai.
           </p>
           <a class="cta-button" href="/#chat">
             💬 Buka Ruang Chat
@@ -647,7 +586,7 @@
       </article>
     </div>
 
-    <!-- KOLOM KANAN: BOX INGIN BERIKLAN (STICKY DAN MENGIKUTI SCROLL) -->
+    <!-- ==================== KOLOM KANAN: SIDEBAR IKLAN (KOTAK KECIL STICKY) ==================== -->
     <aside class="sidebar-right" id="advertising-sidebar">
       <div class="advertising-box" id="advertising-box">
 
@@ -660,10 +599,9 @@
           ×
         </button>
 
-        <span class="advertising-badge">Partner / Ad</span>
         <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
         <p class="advertising-description">
-          Jangkau ribuan pembaca setia CewekPedia! Promosikan produk atau bisnismu di sini.
+          Promosikan bisnismu di CewekPedia.
         </p>
 
         <div class="advertising-actions">
@@ -672,15 +610,15 @@
             href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Hubungi CewekPedia melalui WhatsApp untuk beriklan">
-            💬 Via WhatsApp
+            aria-label="WhatsApp untuk beriklan">
+            💬 WhatsApp
           </a>
 
           <a
             class="advertising-button advertising-email"
             href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia"
-            aria-label="Kirim email kepada CewekPedia untuk beriklan">
-            ✉️ Via Email
+            aria-label="Email untuk beriklan">
+            ✉️ Email
           </a>
         </div>
 
@@ -691,6 +629,7 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <p>
     &copy; <span class="current-year">2026</span>
@@ -702,11 +641,16 @@
     <a href="/artikel/">Artikel</a>
     <a href="/#musik">Musik</a>
     <a href="/#chat">Ruang Chat</a>
+    <a href="/tentang.html">Tentang</a>
+    <a href="/kontak.html">Kontak</a>
+    <a href="/privacy.html">Kebijakan Privasi</a>
+    <a href="/ketentuan.html">Ketentuan Penggunaan</a>
   </div>
 </footer>
 
+<!-- SCRIPT UTAMA -->
 <script>
-  // Tombol untuk menyembunyikan banner iklan
+  // Tombol X untuk menutup kotak iklan
   (function () {
     var sidebar = document.getElementById("advertising-sidebar");
     var closeButton = document.getElementById("advertising-close");
@@ -729,11 +673,9 @@
   })();
 </script>
 
-<!-- DATA ARTIKEL DAN REKOMENDASI -->
+<!-- SCRIPT PENDUKUNG SITUS -->
 <script src="/artikel/data.js"></script>
 <script src="/artikel/related.js"></script>
-
-<!-- TANGGAL OTOMATIS -->
 <script src="/artikel/auto-date.js"></script>
 
 </body>
