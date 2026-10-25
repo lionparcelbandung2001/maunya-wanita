@@ -135,7 +135,7 @@
       line-height: 1.5;
     }
 
-    /* Badge counter orang online live */
+    /* Badge jumlah orang online */
     .online-badge {
       display: inline-flex;
       align-items: center;
@@ -461,7 +461,6 @@
     <nav class="nav-links" aria-label="Navigasi utama">
       <a href="#musik">🎵 Musik</a>
       <a href="#chat">💬 Chatbox</a>
-      <!-- Diubah langsung menautkan ke folder artikel -->
       <a href="/artikel/">📚 Artikel</a>
       <a href="/tentang.html">Tentang</a>
       <a href="/saran.html">Saran</a>
@@ -497,10 +496,11 @@
           <h2 id="chat-title">💬 Chat Bareng</h2>
           <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
         </div>
-        <!-- Badge Jumlah Orang Online Real-time -->
+
+        <!-- Badge jumlah orang online -->
         <div id="online-counter-badge" class="online-badge" title="Pengunjung yang sedang online">
           <span class="online-dot"></span>
-          <span id="online-count">0 online</span>
+          <span id="online-count">Memuat...</span>
         </div>
       </div>
 
@@ -592,7 +592,7 @@
     </section>
   </main>
 
-  <!-- FOOTER & IMPORTANT PAGES -->
+  <!-- FOOTER -->
   <footer>
     <p><strong>CewekPedia ❤️</strong></p>
     <p>Musik, obrolan, dan bacaan santai dalam satu tempat.</p>
@@ -614,13 +614,19 @@
     <p>© <span id="currentYear"></span> CewekPedia. Hak cipta dilindungi.</p>
   </footer>
 
-  <!-- FIREBASE PUBLIC CHAT & PRESENCE (ONLINE COUNTER) -->
+  <!-- FIREBASE PUBLIC CHAT & PRESENCE -->
   <script type="module">
-    import { initializeApp, getApps, getApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
+    import {
+      initializeApp,
+      getApps,
+      getApp
+    } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
+
     import {
       getAuth,
       signInAnonymously
     } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+
     import {
       getDatabase,
       ref,
@@ -644,6 +650,7 @@
     };
 
     const $ = id => document.getElementById(id);
+
     const form = $('chat-form');
     const nickname = $('nickname');
     const input = $('message-input');
@@ -849,31 +856,53 @@
         const credential = await signInAnonymously(auth);
         currentUid = credential.user.uid;
 
-        // --- SISTEM PRESENCE (JUMLAH ORANG ONLINE REAL-TIME) ---
+        // --- PRESENCE: JUMLAH PENGUNJUNG ONLINE ---
         const connectedRef = ref(db, '.info/connected');
         const onlineUsersRef = ref(db, 'publicChat/presence');
 
-        onValue(connectedRef, snap => {
-          if (snap.val() === true) {
-            const userPresenceRef = push(onlineUsersRef);
-            
-            // Hapus otomatis dari database saat user menutup tab/koneksi terputus
-            onDisconnect(userPresenceRef).remove();
-            
-            // Set data kehadiran user ini
-            set(userPresenceRef, {
+        onValue(connectedRef, async snap => {
+          if (snap.val() !== true || !currentUid) return;
+
+          // Satu node per koneksi. Node dibersihkan otomatis
+          // oleh Firebase ketika koneksi ini terputus.
+          const connectionRef = push(onlineUsersRef);
+
+          try {
+            // Daftarkan pembersihan sebelum menulis status online.
+            await onDisconnect(connectionRef).remove();
+
+            await set(connectionRef, {
               uid: currentUid,
               onlineAt: serverTimestamp()
             });
+          } catch (error) {
+            console.error('Presence update failed:', error);
           }
         });
 
-        // Dengarkan jumlah node di presence untuk menghitung total orang online
-        onValue(onlineUsersRef, snapshot => {
-          const totalOnline = snapshot.exists() ? Object.keys(snapshot.val()).length : 1;
-          onlineCountEl.textContent = `${totalOnline} online`;
-        });
-        // --------------------------------------------------------
+        // Hitung UID unik agar koneksi ulang tidak dihitung
+        // sebagai orang yang berbeda.
+        onValue(
+          onlineUsersRef,
+          snapshot => {
+            const presenceData = snapshot.val() || {};
+
+            const uniqueUsers = new Set(
+              Object.values(presenceData)
+                .map(entry => entry && entry.uid)
+                .filter(uid =>
+                  typeof uid === 'string' && uid.length > 0
+                )
+            );
+
+            onlineCountEl.textContent = `${uniqueUsers.size} online`;
+          },
+          error => {
+            console.error('Presence read failed:', error);
+            onlineCountEl.textContent = 'Online tidak tersedia';
+          }
+        );
+        // ------------------------------------------
 
         const messagesQuery = query(
           ref(db, 'publicChat/messages'),
