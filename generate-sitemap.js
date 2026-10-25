@@ -1,32 +1,44 @@
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 
 const BASE_URL = "https://cewekpedia.com";
-
 const ROOT_DIR = __dirname;
 const OUTPUT_FILE = path.join(ROOT_DIR, "sitemap.xml");
 
-// File yang tidak dimasukkan ke sitemap
+// Halaman utama dan halaman informasi yang boleh masuk sitemap.
+const ALLOWED_ROOT_PAGES = new Set([
+  "index.html",
+  "tentang.html",
+  "saran.html",
+  "privacy.html",
+  "kontak.html"
+]);
+
+// Hanya bagian artikel yang dipindai secara otomatis.
+const ARTICLE_DIR = "artikel";
+
+// File artikel yang bukan halaman publik.
 const EXCLUDED_FILES = new Set([
-  "home.html",
-  "shell.html",
+  "template.html",
   "music-player.html",
+  "shell.html",
+  "home.html",
   "katalog.html"
 ]);
 
-// Halaman formulir tidak dimasukkan ke sitemap
+// Halaman formulir tidak dimasukkan.
 function isFormPage(fileName) {
-  return fileName.startsWith("kirim") && fileName.endsWith(".html");
+  return fileName.startsWith("kirim") &&
+         fileName.endsWith(".html");
 }
 
-// Template detail Firebase tidak dimasukkan sebagai URL kosong.
-// URL detail sebenarnya menggunakan ?id=...
+// Halaman detail dinamis tidak dimasukkan sebagai URL kosong.
 function isDynamicDetailPage(fileName) {
   return fileName.endsWith("-detail.html");
 }
 
-// Folder teknis/data yang tidak perlu dipindai
+// Folder teknis dan aset yang tidak perlu dipindai.
 const EXCLUDED_DIRS = new Set([
   ".git",
   ".github",
@@ -35,9 +47,13 @@ const EXCLUDED_DIRS = new Set([
   "data"
 ]);
 
-// Mencari semua file HTML secara otomatis
+// Mencari file HTML di folder artikel.
 function findHtmlFiles(dir) {
   const results = [];
+
+  if (!fs.existsSync(dir)) {
+    return results;
+  }
 
   const entries = fs.readdirSync(dir, {
     withFileTypes: true
@@ -65,16 +81,21 @@ function findHtmlFiles(dir) {
   return results;
 }
 
-// Mengambil tanggal commit terakhir dari Git
+// Mengambil tanggal commit terakhir dari Git.
 function getLastModified(filePath) {
   try {
-    const relativePath = path.relative(ROOT_DIR, filePath);
+    const relativePath = path
+      .relative(ROOT_DIR, filePath)
+      .split(path.sep)
+      .join("/");
 
-    const date = execSync(
-      `git log -1 --format=%cI -- "${relativePath}"`,
+    const date = execFileSync(
+      "git",
+      ["log", "-1", "--format=%cI", "--", relativePath],
       {
         cwd: ROOT_DIR,
-        encoding: "utf8"
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"]
       }
     ).trim();
 
@@ -84,29 +105,30 @@ function getLastModified(filePath) {
   }
 }
 
-// Mengubah lokasi file menjadi URL website
+// Mengubah lokasi file menjadi URL website.
 function fileToUrl(filePath) {
-  let relative = path.relative(ROOT_DIR, filePath);
+  const relative = path
+    .relative(ROOT_DIR, filePath)
+    .split(path.sep)
+    .join("/");
 
-  relative = relative.split(path.sep).join("/");
-
-  // Homepage
   if (relative === "index.html") {
     return `${BASE_URL}/`;
   }
 
-  // index.html di dalam folder
   if (relative.endsWith("/index.html")) {
-    const folder = relative.slice(0, -"/index.html".length);
+    const folder = relative.slice(
+      0,
+      -"/index.html".length
+    );
 
     return `${BASE_URL}/${folder}/`;
   }
 
-  // HTML biasa
   return `${BASE_URL}/${relative}`;
 }
 
-// Escape karakter khusus XML
+// Escape karakter khusus XML.
 function escapeXml(value) {
   return value
     .replace(/&/g, "&amp;")
@@ -116,25 +138,40 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
-// Cari semua HTML
-const htmlFiles = findHtmlFiles(ROOT_DIR);
+// Mengambil halaman root yang diizinkan.
+const rootFiles = [];
+
+for (const fileName of ALLOWED_ROOT_PAGES) {
+  const filePath = path.join(ROOT_DIR, fileName);
+
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    rootFiles.push(filePath);
+  }
+}
+
+// Mengambil artikel secara otomatis.
+const articlePath = path.join(ROOT_DIR, ARTICLE_DIR);
+const articleFiles = findHtmlFiles(articlePath);
+
+// Gabungkan file yang boleh diproses.
+const candidateFiles = [
+  ...rootFiles,
+  ...articleFiles
+];
 
 const urls = [];
 
-for (const filePath of htmlFiles) {
+for (const filePath of candidateFiles) {
   const fileName = path.basename(filePath).toLowerCase();
 
-  // File yang dikecualikan
   if (EXCLUDED_FILES.has(fileName)) {
     continue;
   }
 
-  // Halaman kirim/form
   if (isFormPage(fileName)) {
     continue;
   }
 
-  // Template detail Firebase
   if (isDynamicDetailPage(fileName)) {
     continue;
   }
@@ -148,36 +185,34 @@ for (const filePath of htmlFiles) {
   });
 }
 
-// Hilangkan URL duplikat
+// Hilangkan URL duplikat dan urutkan.
 const uniqueUrls = Array.from(
   new Map(urls.map(item => [item.url, item])).values()
-);
+).sort((a, b) => a.url.localeCompare(b.url));
 
-// Urutkan URL agar sitemap stabil
-uniqueUrls.sort((a, b) => a.url.localeCompare(b.url));
-
-// Membuat XML sitemap
-let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-sitemap += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+// Membuat XML sitemap.
+let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
 for (const item of uniqueUrls) {
-  sitemap += `  <url>\n`;
+  sitemap += "  <url>\n";
   sitemap += `    <loc>${escapeXml(item.url)}</loc>\n`;
 
   if (item.lastModified) {
     sitemap += `    <lastmod>${escapeXml(item.lastModified)}</lastmod>\n`;
   }
 
-  sitemap += `  </url>\n`;
+  sitemap += "  </url>\n";
 }
 
-sitemap += `</urlset>\n`;
+sitemap += "</urlset>\n";
 
-// Menulis sitemap.xml
+// Simpan sitemap.xml.
 fs.writeFileSync(OUTPUT_FILE, sitemap, "utf8");
 
 console.log("=================================");
-console.log("Sitemap berhasil dibuat.");
+console.log("Sitemap CewekPedia berhasil dibuat.");
 console.log(`Jumlah URL: ${uniqueUrls.length}`);
 console.log("File: sitemap.xml");
+console.log("Domain: " + BASE_URL);
 console.log("=================================");
