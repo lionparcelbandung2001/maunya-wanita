@@ -135,7 +135,7 @@
       line-height: 1.5;
     }
 
-    /* Badge jumlah orang online */
+    /* Badge jumlah pengunjung online */
     .online-badge {
       display: inline-flex;
       align-items: center;
@@ -497,8 +497,8 @@
           <p>Ngobrol santai, saling menghormati, dan jangan bagikan data pribadi.</p>
         </div>
 
-        <!-- Badge jumlah orang online -->
-        <div id="online-counter-badge" class="online-badge" title="Pengunjung yang sedang online">
+        <div id="online-counter-badge" class="online-badge"
+             title="Pengunjung yang sedang online">
           <span class="online-dot"></span>
           <span id="online-count">Memuat...</span>
         </div>
@@ -819,6 +819,8 @@
       try {
         const newMessage = push(ref(db, 'publicChat/messages'));
 
+        // Format disesuaikan dengan Firebase Rules:
+        // nickname, text, dan timestamp.
         await set(newMessage, {
           nickname: name,
           text: text,
@@ -856,54 +858,60 @@
         const credential = await signInAnonymously(auth);
         currentUid = credential.user.uid;
 
-        // --- PRESENCE: JUMLAH PENGUNJUNG ONLINE ---
+        // PRESENCE:
+        // Struktur mengikuti Rules yang sudah ada:
+        // /presence/$uid/$connectionId
         const connectedRef = ref(db, '.info/connected');
-        const onlineUsersRef = ref(db, 'publicChat/presence');
+        const onlineUsersRef = ref(db, 'presence');
 
         onValue(connectedRef, async snap => {
           if (snap.val() !== true || !currentUid) return;
 
-          // Satu node per koneksi. Node dibersihkan otomatis
-          // oleh Firebase ketika koneksi ini terputus.
-          const connectionRef = push(onlineUsersRef);
+          // Setiap koneksi mendapat ID tersendiri di bawah UID.
+          const userPresenceRef = ref(db, `presence/${currentUid}`);
+          const connectionRef = push(userPresenceRef);
 
           try {
-            // Daftarkan pembersihan sebelum menulis status online.
+            // Daftarkan penghapusan sebelum menulis data online.
             await onDisconnect(connectionRef).remove();
 
+            // Field wajib mengikuti Rules presence:
+            // uid, nickname, timestamp.
             await set(connectionRef, {
               uid: currentUid,
-              onlineAt: serverTimestamp()
+              nickname: safeText(nickname.value, 20) || 'Pengunjung',
+              timestamp: serverTimestamp()
             });
           } catch (error) {
             console.error('Presence update failed:', error);
           }
         });
 
-        // Hitung UID unik agar koneksi ulang tidak dihitung
-        // sebagai orang yang berbeda.
+        // Hitung UID unik, bukan jumlah koneksi.
+        // Beberapa tab dari pengunjung yang sama dihitung satu.
         onValue(
           onlineUsersRef,
           snapshot => {
             const presenceData = snapshot.val() || {};
 
-            const uniqueUsers = new Set(
-              Object.values(presenceData)
-                .map(entry => entry && entry.uid)
-                .filter(uid =>
-                  typeof uid === 'string' && uid.length > 0
-                )
-            );
+            const uniqueUsers = Object.entries(presenceData)
+              .filter(([uid, connections]) =>
+                typeof uid === 'string' &&
+                connections &&
+                typeof connections === 'object' &&
+                Object.keys(connections).length > 0
+              )
+              .length;
 
-            onlineCountEl.textContent = `${uniqueUsers.size} online`;
+            onlineCountEl.textContent = `${uniqueUsers} online`;
           },
           error => {
             console.error('Presence read failed:', error);
             onlineCountEl.textContent = 'Online tidak tersedia';
           }
         );
-        // ------------------------------------------
 
+        // Baca maksimal 80 pesan terbaru.
         const messagesQuery = query(
           ref(db, 'publicChat/messages'),
           limitToLast(80)
@@ -926,7 +934,7 @@
             setStatus('Akses chat belum tersedia', 'error');
 
             setNotice(
-              'Firebase menolak akses chat. Periksa rules publicChat/messages.',
+              'Firebase menolak akses chat. Periksa Rules publicChat/messages.',
               true
             );
 
