@@ -1,4 +1,11 @@
 const artikelData = [
+ {
+    judul: "Tips memilih lipstik untuk wajah sawo matang-coklat",
+    deskripsi: "Tips sederhana membangun rasa percaya diri setiap hari.",
+    tanggal: "25 oktober 2026",
+    gambar: "images/cara-memilih-lipstik-kulit-cokelat.jpeg",
+    link: "cara-memilih-lipstik-kulit-cokelat.html"
+  },
   {
     judul: "Tips Merawat Diri agar Tetap Cantik dan Percaya Diri",
     deskripsi: "Tips sederhana merawat diri, menjaga penampilan, dan membangun rasa percaya diri setiap hari.",
