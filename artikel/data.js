@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "mengenali pasangan yang redflag sebelum menikah",
+    deskripsi: "kenali pasangan redflagmu sebelum memutuskan menikah",
+    tanggal: "26 oktober 2026",
+    gambar: "images/stop-the-wedding-red-flag.jpeg",
+    link: "stop-the-wedding-red-flag.html"
+  }, 
+    {
     judul: "apa itu hustle culture",
     deskripsi: "hustle culture bikin burnout",
     tanggal: "26 oktober 2026",
