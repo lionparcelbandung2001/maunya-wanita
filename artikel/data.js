@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "apa itu hustle culture",
+    deskripsi: "hustle culture bikin burnout",
+    tanggal: "26 oktober 2026",
+    gambar: "images/hustle-culture-bikin-burnout.jpeg",
+    link: "hustle-culture-bikin-burnout.html"
+  }, 
+    {
     judul: "memilih jenis shampo untuk remaja",
     deskripsi: "cara memilih jenis shampo",
     tanggal: "26 oktober 2026",
