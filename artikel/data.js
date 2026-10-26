@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "drama korea september-oktober 2026",
+    deskripsi: "daftar drakor bulan september-oktober 2026 yang wajib di tonton ",
+    tanggal: "26 oktober 2026",
+    gambar: "images/drama-korea-september-oktober-2026.jpeg",
+    link: "drama-korea-september-oktober-2026.html"
+  }, 
+    {
+    judul: "drachin terbaik september-oktober 2026",
+    deskripsi: "daftar drama china terbaik bulan september-oktober 2026",
+    tanggal: "26 oktober 2026",
+    gambar: "images/drama-china-september-oktober-2026.jpeg",
+    link: "drama-china-september-oktober-2026.html"
+  }, 
+    {
     judul: "mengenali pasangan yang redflag sebelum menikah",
     deskripsi: "kenali pasangan redflagmu sebelum memutuskan menikah",
     tanggal: "26 oktober 2026",
