@@ -1,5 +1,26 @@
 const artikelData = [
 {
+    judul: "3 drama korea netflix terpopuler akhir oktober 2026",
+    deskripsi: "3 drama korea netflix di oktober 2026 yang wajib di tonton ",
+    tanggal: "27 oktober 2026",
+    gambar: "images/3-drakor-populer-netflix-oktober-2026.jpeg",
+    link: "3-drakor-populer-netflix-oktober-2026.html"
+  }, 
+    {
+    judul: "drakor terbaru akhir oktober 2026",
+    deskripsi: "drama korea terbaru akhir oktober 2026",
+    tanggal: "27 oktober 2026",
+    gambar: "images/drakor-terbaru-akhir-oktober-2026.jpeg",
+    link: "drakor-terbaru-akhir-oktober-2026"
+  }, 
+    {
+    judul: "foto video ai ingatan palsu",
+    deskripsi: "ingatan palsu foto dan video ai ",
+    tanggal: "27 oktober 2026",
+    gambar: "images/foto-video-ai-ingatan-palsu-2026.jpeg",
+    link: "foto-video-ai-ingatan-palsu-2026.html"
+  }, 
+    {
     judul: "drama korea september-oktober 2026",
     deskripsi: "daftar drakor bulan september-oktober 2026 yang wajib di tonton ",
     tanggal: "26 oktober 2026",
