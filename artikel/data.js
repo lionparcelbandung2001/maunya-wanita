@@ -1,5 +1,47 @@
 const artikelData = [
 {
+    judul: "cara merawat tubuh agar selalu wangi",
+    deskripsi: "ladys, ini cara agar badan wangi setiap hari",
+    tanggal: "27 oktober 2026",
+    gambar: "images/cara-agar-badan-wangi-seharian-2026.jpeg",
+    link: "cara-agar-badan-wangi-seharian-2026.html"
+  }, 
+    {
+    judul: "cara cewek memilih weton pasangan sebelum menikah",
+    deskripsi: "cara-cewek-memilih-weton-pasangan-sebelum-menikah",
+    tanggal: "27 oktober 2026",
+    gambar: "images/cara-cewek-memilih-weton-pasangan-sebelum-menikah.jpeg",
+    link: "cara-cewek-memilih-weton-pasangan-sebelum-menikah.html"
+  }, 
+    {
+    judul: "doctor x drakor terbaru 2026 sinopsis-rating pemain",
+    deskripsi: "doctor-x-drakor-terbaru-2026-sinopsis-rating-pemain",
+    tanggal: "27 oktober 2026",
+    gambar: "images/doctor-x-drakor-terbaru-2026-sinopsis-rating-pemain.jpeg",
+    link: "doctor-x-drakor-terbaru-2026-sinopsis-rating-pemain.html"
+  }, 
+    {
+    judul: "ramalan zodiak minggu ini 26 oktober - 1 november 2026",
+    deskripsi: "ramalan-zodiak-minggu-ini-26-oktober-1-november-2026",
+    tanggal: "27 oktober 2026",
+    gambar: "images/ramalan-zodiak-minggu-ini-26-oktober-1-november-2026.jpeg",
+    link: "ramalan-zodiak-minggu-ini-26-oktober-1-november-2026.html"
+  }, 
+    {
+    judul: "small town remedy xiao zhan-2026",
+    deskripsi: "small-town-remedy-xiao-zhan-2026",
+    tanggal: "27 oktober 2026",
+    gambar: "images/small-town-remedy-xiao-zhan-2026.jpeg",
+    link: "small-town-remedy-xiao-zhan-2026.html"
+  }, 
+    {
+    judul: "terikat-janji-bryan-2026",
+    deskripsi: "terikat-janji-bryan-2026",
+    tanggal: "27 oktober 2026",
+    gambar: "images/terikat-janji-bryan-2026.jpeg",
+    link: "terikat-janji-bryan-2026.html"
+  }, 
+    {
     judul: "cara menabung sebelum menikah",
     deskripsi: "cara wanita mengatur tabungan sebelum menikah",
     tanggal: "27 oktober 2026",
