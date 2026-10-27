@@ -1,5 +1,26 @@
 const artikelData = [
 {
+    judul: "chat room",
+    deskripsi: "chatroom anonim tanpa daftar,yok berkenalan ke semua orang",
+    tanggal: "27 oktober 2026",
+    gambar: "images/chatbox-anonim-cewekpedia.jpeg",
+    link: "chatbox-anonim-cewekpedia.html"
+  }, 
+    {
+    judul: "cewekpedia",
+    deskripsi: "cewekpedia.com",
+    tanggal: "27 oktober 2026",
+    gambar: "images/kenalan-dengan-cewekpedia.jpeg",
+    link: "kenalan-dengan-cewekpedia.html"
+  }, 
+    {
+    judul: "musik player lagu indonesia",
+    deskripsi: "gratis dengerin lagu tanpa iklan",
+    tanggal: "27 oktober 2026",
+    gambar: "images/musik-santai-cewekpedia.jpeg",
+    link: "musik-santai-cewekpedia.html"
+  }, 
+    {
     judul: "body serum dna salmon",
     deskripsi: "body serum untuk mencerahkan kulit tubuh",
     tanggal: "27 oktober 2026",
