@@ -1,5 +1,26 @@
 const artikelData = [
 {
+    judul: "body serum dna salmon",
+    deskripsi: "body serum untuk mencerahkan kulit tubuh",
+    tanggal: "27 oktober 2026",
+    gambar: "images/body-serum-pdrn-dna-salmon-viral-mencerahkan-kulit-badan.jpeg",
+    link: "body-serum-pdrn-dna-salmon-viral-mencerahkan-kulit-badan.html"
+  }, 
+    {
+    judul: "cara mencerahkan ketiak",
+    deskripsi: "cara mencerahkan ketiak yang hitam ",
+    tanggal: "27 oktober 2026",
+    gambar: "images/cara-mencerahkan-ketiak-hitam-dan-atasi-bau-badan.jpeg",
+    link: "cara-mencerahkan-ketiak-hitam-dan-atasi-bau-badan.html"
+  }, 
+    {
+    judul: "tren outfit chocolate brown",
+    deskripsi: "ikuti tren cantik pakai outfit chocolate brown",
+    tanggal: "27 oktober 2026",
+    gambar: "images/tren-chocolate-brown-outfit-2026.jpeg",
+    link: "tren-chocolate-brown-outfit-2026.html"
+  }, 
+    {
     judul: "3 drama korea netflix terpopuler akhir oktober 2026",
     deskripsi: "3 drama korea netflix di oktober 2026 yang wajib di tonton ",
     tanggal: "27 oktober 2026",
