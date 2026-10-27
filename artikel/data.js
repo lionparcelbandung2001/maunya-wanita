@@ -1,5 +1,47 @@
 const artikelData = [
 {
+    judul: "cara menabung sebelum menikah",
+    deskripsi: "cara wanita mengatur tabungan sebelum menikah",
+    tanggal: "27 oktober 2026",
+    gambar: "images/cara-mengatur-tabungan-sebelum-menikah.jpeg",
+    link: "cara-mengatur-tabungan-sebelum-menikah.html"
+  }, 
+    {
+    judul: "mencegah stres setelah lama menganggur",
+    deskripsi: "cara mengatasi stres setelah lama menganggur",
+    tanggal: "27 oktober 2026",
+    gambar: "images/mengatasi-krisis-mental-saat-menganggur.jpeg",
+    link: "mengatasi-krisis-mental-saat-menganggur.html"
+  }, 
+    {
+    judul: "cara menjaga kesehatan mental ibu muda setelah melahirkan",
+    deskripsi: "cara suami menjaga mental istri setelah melahirkan",
+    tanggal: "27 oktober 2026",
+    gambar: "images/menjaga-mental-health-ibu-setelah-melahirkan.jpeg",
+    link: "menjaga-mental-health-ibu-setelah-melahirkan.html"
+  }, 
+    {
+    judul: "cara mengetahui kesehatan pasangan",
+    deskripsi: "cara mengetahui pasangan yang sehat untuk di ajak pacaran atau menikah",
+    tanggal: "27 oktober 2026",
+    gambar: "images/pentingnya-emotional-safety-dalam-hubungan.jpeg",
+    link: "pentingnya-emotional-safety-dalam-hubungan.html"
+  }, 
+    {
+    judul: "merawat gigi veneer dan behel",
+    deskripsi: "cara merawat gigi setelah melakukan veneer dan behel",
+    tanggal: "27 oktober 2026",
+    gambar: "images/perawatan-gigi-behel-veneer.jpeg",
+    link: "perawatan-gigi-behel-veneer.html"
+  }, 
+    {
+    judul: "tren fashion satin polkadot",
+    deskripsi: "memilih satin polkadot untuk fashion",
+    tanggal: "27 oktober 2026",
+    gambar: "images/tren-fashion-satin-polkadot.jpeg",
+    link: "tren-fashion-satin-polkadot.html"
+  }, 
+    {
     judul: "chat room",
     deskripsi: "chatroom anonim tanpa daftar,yok berkenalan ke semua orang",
     tanggal: "27 oktober 2026",
