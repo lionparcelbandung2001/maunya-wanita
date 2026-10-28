@@ -1,5 +1,47 @@
 const artikelData = [
 {
+    judul: "drachin november-desember 2026",
+    deskripsi: "daftar drama china yang akan tayang di bulan november-desember 2026",
+    tanggal: "28 oktober 2026",
+    gambar: "images/drachin-november-desember-2026.jpeg",
+    link: "drachin-november-desember-2026.html"
+  }, 
+    {
+    judul: "drama korea yang akan tayang di bulan november-desember 2026",
+    deskripsi: "drakor yang rencana tayang di bulan november-desember 2026",
+    tanggal: "28 oktober 2026",
+    gambar: "images/drakor-november-desember-2026.jpeg",
+    link: "drakor-november-desember-2026.html"
+  }, 
+    {
+    judul: "film romantis tahun 2026",
+    deskripsi: "daftar film romantis yang tayang di tahun 2026",
+    tanggal: "28 oktober 2026",
+    gambar: "images/film-romantis-terbaik-2026.jpeg",
+    link: "film-romantis-terbaik-2026.html"
+  }, 
+    {
+    judul: "cara memilih outfit yang kece",
+    deskripsi: "cara memilih outfit agar telihat mahal dan cantik",
+    tanggal: "28 oktober 2026",
+    gambar: "images/outfit-cewek-terlihat-mahal.jpeg",
+    link: "outfit-cewek-terlihat-mahal.html"
+  }, 
+    {
+    judul: "perempuan sebagai tulang punggung umkm dan doyan belanja",
+    deskripsi: "perempuan-tulang-punggung-umkm",
+    tanggal: "28 oktober 2026",
+    gambar: "images/perempuan-tulang-punggung-umkm.jpeg",
+    link: "perempuan-tulang-punggung-umkm.html"
+  }, 
+    {
+    judul: "tren body serum perawatan tubuh 2026",
+    deskripsi: "tren-body-serum-perawatan-tubuh-2026",
+    tanggal: "28 oktober 2026",
+    gambar: "images/tren-body-serum-perawatan-tubuh-2026.jpeg",
+    link: "tren-body-serum-perawatan-tubuh-2026.html"
+  }, 
+    {
     judul: "cara merawat tubuh agar selalu wangi",
     deskripsi: "ladys, ini cara agar badan wangi setiap hari",
     tanggal: "27 oktober 2026",
