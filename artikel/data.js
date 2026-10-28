@@ -1,5 +1,33 @@
 const artikelData = [
 {
+    judul: "cara melupakan mantan?",
+    deskripsi: "cara-melupakan-mantan",
+    tanggal: "28 oktober 2026",
+    gambar: "images/cara-melupakan-mantan.jpeg",
+    link: "cara-melupakan-mantan.html"
+  }, 
+    {
+    judul: "curhat,ngobrol ringan,tanya jawab disini aja",
+    deskripsi: "chattingan anonim tanpa di ketahui identitas aslinya",
+    tanggal: "28 oktober 2026",
+    gambar: "images/chat-anonim-cewek.jpeg",
+    link: "chat-anonim-cewek.html"
+  }, 
+    {
+    judul: "musik menemani gabut",
+    deskripsi: "gabut,dengerin musik disini aja",
+    tanggal: "28 oktober 2026",
+    gambar: "images/musik-online-saat-gabut.jpeg",
+    link: "musik-online-saat-gabut.html"
+  }, 
+    {
+    judul: "pengen cari pacar,chat disini",
+    deskripsi: "pengen-cari-pacar,chat disini aja siapa tau ada yang balas",
+    tanggal: "28 oktober 2026",
+    gambar: "images/pengen-cari-pacar.jpeg",
+    link: "pengen-cari-pacar.html"
+  }, 
+    {
     judul: "drachin november-desember 2026",
     deskripsi: "daftar drama china yang akan tayang di bulan november-desember 2026",
     tanggal: "28 oktober 2026",
