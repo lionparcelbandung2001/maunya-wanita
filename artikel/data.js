@@ -1,5 +1,61 @@
 const artikelData = [
 {
+    judul: "cara mengecilkan perut pasca melahirkan?",
+    deskripsi: "cara-mengecilkan-perut-setelah-melahirkan",
+    tanggal: "28 oktober 2026",
+    gambar: "images/cara-mengecilkan-perut-setelah-melahirkan.jpeg",
+    link: "cara-mengecilkan-perut-setelah-melahirkan.html"
+  }, 
+    {
+    judul: "hamil muda?ini ciri-cirinya",
+    deskripsi: "ciri-ciri hamil muda",
+    tanggal: "28 oktober 2026",
+    gambar: "images/ciri-ciri-hamil-muda.jpeg",
+    link: "ciri-ciri-hamil-muda.html"
+  }, 
+    {
+    judul: "seputar haid bagi remaja?",
+    deskripsi: "panduan mengatasi nyeri haid,cara menjaga kebersihan ketika haid,dll",
+    tanggal: "28 oktober 2026",
+    gambar: "images/haid-untuk-gadis-remaja.jpeg",
+    link: "haid-untuk-gadis-remaja.html"
+  }, 
+    {
+    judul: "kapan atau umur berapa haid pertama kali?",
+    deskripsi: "hal apa yang perlu di siapkan remaja menjelang haid pertama kali",
+    tanggal: "28 oktober 2026",
+    gambar: "images/kapan-cewek-haid-pertama-kali.jpeg",
+    link: "kapan-cewek-haid-pertama-kali.html"
+  }, 
+    {
+    judul: "kenapa bisa telat haid?",
+    deskripsi: "berikut ini kenapa remaja sering telat haid",
+    tanggal: "28 oktober 2026",
+    gambar: "images/kenapa-aku-telat-haid.jpeg",
+    link: "kenapa-aku-telat-haid.html"
+  }, 
+    {
+    judul: "telat haid hamil atau tidak ya?",
+    deskripsi: "berikut ini ciri telat haid karena hamil atau tidak",
+    tanggal: "28 oktober 2026",
+    gambar: "images/kenapa-telat-haid.jpeg",
+    link: "kenapa-telat-haid.html"
+  }, 
+    {
+    judul: "keputihan yang normal atau tidak?",
+    deskripsi: "berikut ini ciri-ciri keputihan normal atau tidak",
+    tanggal: "28 oktober 2026",
+    gambar: "images/keputihan-normal.jpeg",
+    link: "keputihan-normal.html"
+  }, 
+    {
+    judul: "telat haid karena hamil atau siklus normal ya?",
+    deskripsi: "cir-ciri telat haid karena hamil dan ciri2 telat haid karena siklus normal",
+    tanggal: "28 oktober 2026",
+    gambar: "images/telat-haid-hamil-atau-wajar.jpeg",
+    link: "telat-haid-hamil-atau-wajar.html"
+  }, 
+    {
     judul: "cara melupakan mantan?",
     deskripsi: "cara-melupakan-mantan",
     tanggal: "28 oktober 2026",
