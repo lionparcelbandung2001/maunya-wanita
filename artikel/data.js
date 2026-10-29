@@ -1,5 +1,75 @@
 const artikelData = [
 {
+    judul: "drama korea romantis?berikut daftarnya",
+    deskripsi: "berikut daftar drama china romantis yang wajib di tonton",
+    tanggal: "29 oktober 2026",
+    gambar: "images/10-drama-china-romantis.jpeg",
+    link: "10-drama-china-romantis.html"
+  }, 
+    {
+    judul: "cara mencerahkan muka kusam?",
+    deskripsi: "mau mencerahkan kulit muka,berikut caranya ya ladys",
+    tanggal: "29 oktober 2026",
+    gambar: "images/cara-mencerahkan-kulit-wajah.jpeg",
+    link: "cara-mencerahkan-kulit-wajah.html"
+  }, 
+    {
+    judul: "mengatasi gugup?",
+    deskripsi: "cara mengatasi gugup saat di depan umum,pidato atau interview",
+    tanggal: "29 oktober 2026",
+    gambar: "images/cara-mengatasi-gugup-public-speaking.jpeg",
+    link: "cara-mengatasi-gugup-public-speaking.html"
+  }, 
+    {
+    judul: "drakor romantis di 2026?",
+    deskripsi: "daftar-10-drama-korea-romantis-2026",
+    tanggal: "29 oktober 2026",
+    gambar: "images/daftar-10-drama-korea-romantis-2026.jpeg",
+    link: "daftar-10-drama-korea-romantis-2026.html"
+  }, 
+    {
+    judul: "kenapa bau miss v khas?",
+    deskripsi: "kenapa miss v mempunyai aroma yang khas,berikut penjelasannya",
+    tanggal: "29 oktober 2026",
+    gambar: "images/kenapa-miss-v-bau-khas.jpeg",
+    link: "kenapa-miss-v-bau-khas.html"
+  }, 
+    {
+    judul: "mau tau pemain dracin tercantik?berikut daftarnya",
+    deskripsi: "pemain-drama-china-tercantik",
+    tanggal: "29 oktober 2026",
+    gambar: "images/pemain-drama-china-tercantik.jpeg",
+    link: "pemain-drama-china-tercantik.html"
+  }, 
+    {
+    judul: "mau tau pemain drakor tercantik?berikut ini daftarnya",
+    deskripsi: "pemain-drama-korea-tercantik",
+    tanggal: "29 oktober 2026",
+    gambar: "images/pemain-drama-korea-tercantik.jpeg",
+    link: "pemain-drama-korea-tercantik.html"
+  }, 
+    {
+    judul: "cara merawat selangkangan?berikut caranya ya ladyss",
+    deskripsi: "perawatan-selangkangan-dan-area-intim",
+    tanggal: "29 oktober 2026",
+    gambar: "images/perawatan-selangkangan-dan-area-intim.jpeg",
+    link: "perawatan-selangkangan-dan-area-intim.html"
+  }, 
+    {
+    judul: "jerawatan?berikut skincare yang cocok untukmu",
+    deskripsi: "skincare-untuk-muka-berjerawat",
+    tanggal: "29 oktober 2026",
+    gambar: "images/skincare-untuk-muka-berjerawat.jpeg",
+    link: "skincare-untuk-muka-berjerawat.html"
+  }, 
+    {
+    judul: "tanda tanda kamu wanita yang introvert?",
+    deskripsi: "tanda-tanda-introvert-suka-perhatian",
+    tanggal: "29 oktober 2026",
+    gambar: "images/tanda-tanda-introvert-suka-perhatian.jpeg",
+    link: "tanda-tanda-introvert-suka-perhatian.html"
+  }, 
+    {
     judul: "cara mengecilkan perut pasca melahirkan?",
     deskripsi: "cara-mengecilkan-perut-setelah-melahirkan",
     tanggal: "28 oktober 2026",
