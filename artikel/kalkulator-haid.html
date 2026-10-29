@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65b99">
+
+  <title>Kalkulator Haid Online: Hitung Jadwal Menstruasi | CewekPedia</title>
+  <meta name="description" content="Gunakan kalkulator haid CewekPedia untuk memperkirakan jadwal menstruasi berikutnya. Pilih siklus dan lama haid yang biasa kamu alami.">
+  <meta name="keywords" content="kalkulator haid, kalkulator menstruasi, hitung jadwal haid, siklus menstruasi, lama haid, kalender haid">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CewekPedia">
+
+  <link rel="canonical" href="https://cewekpedia.com/artikel/kalkulator-haid.html">
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg">
+  <link rel="apple-touch-icon" href="/logo.jpeg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CewekPedia">
+  <meta property="og:title" content="Kalkulator Haid Online | CewekPedia">
+  <meta property="og:description" content="Hitung perkiraan jadwal menstruasi dengan kalkulator haid gratis CewekPedia.">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/kalkulator-haid.html">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/kalkulator-haid.jpeg">
+  <meta property="og:locale" content="id_ID">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kalkulator Haid Online | CewekPedia">
+  <meta name="twitter:description" content="Hitung perkiraan jadwal menstruasi dengan mudah.">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/kalkulator-haid.jpeg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kalkulator Haid CewekPedia",
+    "url": "https://cewekpedia.com/artikel/kalkulator-haid.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "id",
+    "description": "Kalkulator sederhana untuk memperkirakan jadwal menstruasi berdasarkan tanggal hari pertama haid terakhir dan panjang siklus yang dipilih. Hasilnya bukan diagnosis medis."
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --pink: #d65b99;
+      --pink-dark: #a83270;
+      --pink-light: #fff0f6;
+      --purple: #8663a8;
+      --text: #443541;
+      --muted: #806f7c;
+      --white: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffafd;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a { -webkit-tap-highlight-color: transparent; }
+
+    .site-header {
+      padding: 24px 16px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe2ef, #f4e8ff);
+      border-bottom: 1px solid #f5d8e8;
+    }
+
+    .brand {
+      display: inline-block;
+      color: var(--pink-dark);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin: 5px 0 0;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 12px;
+      background: #fff;
+      border-bottom: 1px solid #f4e3ec;
+    }
+
+    .top-nav a {
+      color: var(--pink-dark);
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+      padding: 22px 16px;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .main-content { flex: 1; min-width: 0; }
+
+    .sidebar-right {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .article-card {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid #f4e3ec;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(173, 87, 132, .07);
+      overflow-wrap: anywhere;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 5px 12px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .article-title {
+      margin: 13px 0 10px;
+      color: #663c58;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .article-date {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .article-image {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      margin: 18px auto 24px;
+      border-radius: 14px;
+      background: #fff7fb;
+      border: 1px solid #f2dbe6;
+    }
+
+    .article-content h2 {
+      color: var(--pink-dark);
+      line-height: 1.4;
+      margin-top: 28px;
+    }
+
+    .article-content ul,
+    .article-content ol { padding-left: 24px; }
+
+    .article-content li { margin-bottom: 8px; }
+
+    .article-content a {
+      color: var(--pink-dark);
+      font-weight: bold;
+    }
+
+    /* KALKULATOR HAID */
+    .calculator {
+      margin: 18px 0 28px;
+      padding: 22px;
+      background: linear-gradient(145deg, #fff1f8, #faf4ff);
+      border: 1px solid #f0cde0;
+      border-radius: 18px;
+    }
+
+    .calculator-heading {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .calculator-icon {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .calculator-heading h2 {
+      margin: 8px 0;
+      color: var(--pink-dark);
+      font-size: 24px;
+    }
+
+    .calculator-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .field-label {
+      display: block;
+      margin: 16px 0 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .calculator input,
+    .calculator select {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 12px;
+      font-size: 16px;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid #e8c5d8;
+      border-radius: 11px;
+    }
+
+    .calculator input:focus,
+    .calculator select:focus {
+      outline: 2px solid #efafd0;
+      border-color: var(--pink);
+    }
+
+    .field-hint {
+      margin: 5px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .calculate-button,
+    .copy-button {
+      width: 100%;
+      display: block;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 16px;
+      margin-top: 20px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .calculate-button:hover,
+    .copy-button:hover { background: var(--pink-dark); }
+
+    .result-box {
+      display: none;
+      margin-top: 22px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #edc4da;
+      border-radius: 14px;
+    }
+
+    .result-box h3 {
+      margin: 0 0 8px;
+      color: var(--pink-dark);
+    }
+
+    .result-date {
+      margin: 5px 0 15px;
+      color: var(--pink-dark);
+      font-size: 21px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    .result-item {
+      padding: 11px;
+      margin-top: 9px;
+      background: #fff5fa;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .result-item strong {
+      display: block;
+      color: var(--pink-dark);
+    }
+
+    .result-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .qa-box {
+      margin: 26px 0;
+      padding: 20px;
+      background: #fff9fc;
+      border: 1px solid #f5d8e8;
+      border-radius: 14px;
+    }
+
+    .question-title {
+      margin: 0 0 10px;
+      color: var(--pink-dark);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .answer-content p { margin: 10px 0; font-size: 16px; }
+
+    .tip-box {
+      margin: 20px 0;
+      padding: 16px;
+      background: #fff2f8;
+      border-left: 4px solid var(--pink);
+      border-radius: 10px;
+    }
+
+    .tip-box h4 {
+      margin: 0 0 6px;
+      color: var(--pink-dark);
+    }
+
+    .tip-box p { margin: 0; }
+
+    .article-cta {
+      margin: 28px 0 8px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff0f6, #f5efff);
+      border: 1px solid #f1d9e9;
+      border-radius: 15px;
+    }
+
+    .article-cta h3 {
+      margin: 0 0 8px;
+      color: var(--pink-dark);
+    }
+
+    .article-cta p { margin: 8px 0 14px; font-size: 14px; }
+
+    .cta-button {
+      display: inline-block;
+      padding: 11px 20px;
+      color: #fff !important;
+      background: var(--pink);
+      border-radius: 30px;
+      text-decoration: none !important;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px;
+    }
+
+    .advertising-box {
+      position: relative;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border-radius: 14px;
+      padding: 14px 12px;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(214, 91, 153, .25);
+      border: 1.5px solid #fff;
+      text-align: center;
+    }
+
+    .advertising-title {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .advertising-description {
+      margin: 0 0 10px;
+      font-size: 11px;
+      line-height: 1.35;
+      color: #fff0f7;
+    }
+
+    .advertising-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .advertising-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none !important;
+    }
+
+    .advertising-whatsapp { background: #25d366; color: #fff !important; }
+    .advertising-email { background: #fff; color: #a83270 !important; }
+
+    .advertising-close {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: #725566;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #monetag-ad-slot {
+      width: 100%;
+      min-width: 0;
+      margin-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    #monetag-ad-slot iframe,
+    #monetag-ad-slot img { max-width: 100%; }
+
+    #monetag-mobile-anchor { display: none; }
+
+    .site-footer {
+      margin-top: 35px;
+      padding: 25px 15px;
+      text-align: center;
+      background: #fff0f6;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--pink-dark);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .layout-wrapper { flex-direction: column; }
+      .main-content { width: 100%; }
+      .sidebar-right { width: 100%; position: static; }
+      .advertising-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 20px 12px; }
+      .brand { font-size: 22px; }
+      .container { padding: 15px 10px; }
+      .article-card { padding: 17px; border-radius: 14px; }
+      .article-title { font-size: 24px; }
+      .calculator { padding: 16px; }
+
+      #monetag-mobile-anchor {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        margin: 10px 0 16px;
+      }
+
+      #monetag-ad-slot {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+      }
+
+      .sidebar-right { position: static; width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <a class="brand" href="/">CewekPedia ♡</a>
+  <p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p>
+</header>
+
+<nav class="top-nav" aria-label="Navigasi utama">
+  <a href="/">Beranda</a>
+  <a href="/#musik">Musik</a>
+  <a href="/#chat">Ruang Chat</a>
+  <a href="/artikel/">Semua Artikel</a>
+</nav>
+
+<main class="container">
+  <a class="back-link" href="/artikel/">← Kembali ke Daftar Artikel</a>
+
+  <div class="layout-wrapper">
+    <main class="main-content">
+      <article class="article-card">
+        <span class="article-category">Kalkulator Kesehatan Perempuan</span>
+
+        <h1 class="article-title">Kalkulator Haid Online: Hitung Perkiraan Jadwal Menstruasi</h1>
+
+        <div class="article-date">
+          Dipublikasikan:
+          <time id="article-published-date" datetime="2026-10-29">29 Oktober 2026</time>
+          <span aria-hidden="true"> · </span>
+          Diperbarui:
+          <time id="article-updated-date" datetime="2026-10-29">29 Oktober 2026</time>
+        </div>
+
+        <!-- SLOT MONETAG KHUSUS HP -->
+        <div id="monetag-mobile-anchor"></div>
+
+        <!-- KALKULATOR DITEMPATKAN DI BAGIAN PALING ATAS -->
+        <section class="calculator" aria-labelledby="calculator-title">
+          <div class="calculator-heading">
+            <div class="calculator-icon" aria-hidden="true">🌷</div>
+            <h2 id="calculator-title">Kalkulator Haid CewekPedia</h2>
+            <p>Isi kebiasaan menstruasimu untuk melihat perkiraan jadwal haid berikutnya.</p>
+          </div>
+
+          <form id="periodForm">
+            <label class="field-label" for="lastPeriod">1. Tanggal hari pertama haid terakhir</label>
+            <input type="date" id="lastPeriod" required>
+            <p class="field-hint">Pilih hari pertama darah menstruasi mulai keluar.</p>
+
+            <label class="field-label" for="cycleLength">2. Biasanya jarak antara haid berapa hari?</label>
+            <select id="cycleLength" required>
+              <option value="21">21 hari</option>
+              <option value="22">22 hari</option>
+              <option value="23">23 hari</option>
+              <option value="24">24 hari</option>
+              <option value="25">25 hari</option>
+              <option value="26">26 hari</option>
+              <option value="27">27 hari</option>
+              <option value="28" selected>28 hari</option>
+              <option value="29">29 hari</option>
+              <option value="30">30 hari</option>
+              <option value="31">31 hari</option>
+              <option value="32">32 hari</option>
+              <option value="33">33 hari</option>
+              <option value="34">34 hari</option>
+              <option value="35">35 hari</option>
+            </select>
+            <p class="field-hint">Siklus dihitung dari hari pertama haid sampai hari pertama haid berikutnya. Pilih rata-rata kebiasaanmu.</p>
+
+            <label class="field-label" for="periodLength">3. Biasanya menstruasi berlangsung berapa hari?</label>
+            <select id="periodLength" required>
+              <option value="1">1 hari</option>
+              <option value="2">2 hari</option>
+              <option value="3">3 hari</option>
+              <option value="4">4 hari</option>
+              <option value="5" selected>5 hari</option>
+              <option value="6">6 hari</option>
+              <option value="7">7 hari</option>
+              <option value="8">8 hari</option>
+              <option value="9">9 hari</option>
+              <option value="10">10 hari</option>
+            </select>
+            <p class="field-hint">Pilih lama perdarahan yang biasanya kamu alami.</p>
+
+            <button class="calculate-button" type="submit">Hitung Jadwal Haid ♡</button>
+          </form>
+
+          <div class="result-box" id="result" aria-live="polite">
+            <h3>Hasil Perkiraanmu 💗</h3>
+            <p>Perkiraan hari pertama haid berikutnya:</p>
+            <div class="result-date" id="nextDate"></div>
+
+            <div class="result-item">
+              <strong>Perkiraan hari terakhir haid</strong>
+              <span id="endDate"></span>
+              <p class="field-hint">Perhitungan ini mengasumsikan lama haid sesuai pilihanmu.</p>
+            </div>
+
+            <div class="result-item">
+              <strong>Kebiasaan yang dipilih</strong>
+              <span id="cycleInfo"></span>
+            </div>
+
+            <p class="result-note" id="statusInfo"></p>
+            <button class="copy-button" type="button" id="copyResult">Salin Hasil 📋</button>
+          </div>
+        </section>
+
+        <div class="article-content">
+          <p>
+            Menstruasi merupakan bagian alami dari siklus tubuh perempuan.
+            Mencatat tanggal haid dapat membantu kamu mengenali pola siklus
+            sendiri dan memperkirakan kapan menstruasi berikutnya mungkin datang.
+            Kalkulator di atas dibuat sederhana agar mudah digunakan lewat HP.
+          </p>
+
+          <img
+            src="images/kalkulator-haid.jpeg"
+            alt="Ilustrasi kalender menstruasi dan pencatatan siklus haid"
+            class="article-image"
+            width="700"
+            height="400"
+            loading="lazy"
+            decoding="async">
+
+          <h2>Bagaimana cara kerja kalkulator haid?</h2>
+          <p>
+            Kalkulator menggunakan tanggal hari pertama haid terakhir dan
+            panjang siklus yang kamu pilih. Contohnya, jika hari pertama haid
+            terakhir adalah tanggal 1 dan siklus yang dipilih 28 hari, tanggal
+            perkiraan haid berikutnya dihitung 28 hari setelah tanggal tersebut.
+          </p>
+
+          <p>
+            Pilihan lama menstruasi digunakan untuk memperkirakan hari terakhir
+            haid berdasarkan kebiasaan yang kamu masukkan. Hasilnya bukan
+            kepastian karena siklus dapat berubah dari bulan ke bulan.
+          </p>
+
+          <section class="qa-box">
+            <h2 class="question-title">1. Apa perbedaan siklus haid dan lama haid?</h2>
+            <div class="answer-content">
+              <p>
+                Siklus haid adalah jarak dari hari pertama satu menstruasi
+                ke hari pertama menstruasi berikutnya. Lama haid adalah
+                berapa hari perdarahan berlangsung dalam satu periode.
+                Keduanya berbeda, jadi pilih berdasarkan kebiasaanmu masing-masing.
+              </p>
+            </div>
+          </section>
+
+          <section class="qa-box">
+            <h2 class="question-title">2. Apakah tanggal perkiraan haid pasti tepat?</h2>
+            <div class="answer-content">
+              <p>
+                Tidak. Hasil kalkulator hanya perkiraan berdasarkan siklus
+                yang dipilih. Stres, perubahan pola tidur atau berat badan,
+                kondisi hormonal, penggunaan obat, dan kehamilan dapat
+                memengaruhi jadwal menstruasi.
+              </p>
+            </div>
+          </section>
+
+          <aside class="tip-box">
+            <h4>♡ Catatan Penting</h4>
+            <p>
+              Kalkulator ini tidak menyimpan tanggal yang kamu masukkan ke
+              server dan bukan alat diagnosis. Jangan mengandalkan kalender
+              menstruasi sebagai satu-satunya cara untuk mencegah kehamilan.
+              Jika haid sering tidak teratur, perdarahan berlangsung lebih
+              dari tujuh hari, atau nyeri mengganggu aktivitas, pertimbangkan
+              untuk berkonsultasi dengan tenaga kesehatan.
+            </p>
+          </aside>
+
+          <section class="qa-box">
+            <h2 class="question-title">3. Bagaimana jika haid terlambat?</h2>
+            <div class="answer-content">
+              <p>
+                Haid terlambat dapat disebabkan oleh variasi siklus, stres,
+                perubahan berat badan, faktor hormonal, atau kehamilan.
+                Jika ada kemungkinan hamil, pertimbangkan tes kehamilan sesuai
+                petunjuknya. Jika haid tidak datang selama sekitar tiga bulan
+                tanpa alasan yang jelas atau kamu merasa khawatir, hubungi
+                tenaga kesehatan.
+              </p>
+            </div>
+          </section>
+
+          <h2>Kesimpulan</h2>
+          <p>
+            Kalkulator haid CewekPedia membantu memperkirakan jadwal menstruasi
+            berdasarkan tanggal haid terakhir, panjang siklus, dan lama haid
+            yang biasa kamu alami. Catat siklus secara berkala agar kamu dapat
+            mengenali pola tubuh sendiri, sambil mengingat bahwa hasil hitungan
+            kalender tidak selalu sesuai dengan tanggal haid sebenarnya.
+          </p>
+        </div>
+
+        <section class="article-cta">
+          <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+          <p>Punya unek-unek atau ingin berbincang santai? Kamu bisa mampir ke ruang chat atau mendengarkan musik.</p>
+          <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+          <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
+        </section>
+      </article>
+    </main>
+
+    <aside class="sidebar-right" id="advertising-sidebar">
+      <div class="advertising-box" id="advertising-box">
+        <button class="advertising-close" type="button" id="advertising-close" aria-label="Tutup kotak promosi" title="Tutup">×</button>
+        <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+        <p class="advertising-description">Promosikan bisnismu di CewekPedia.</p>
+        <div class="advertising-actions">
+          <a class="advertising-button advertising-whatsapp"
+             href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+             target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          <a class="advertising-button advertising-email"
+             href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">✉️ Email</a>
+        </div>
+      </div>
+
+      <!-- MONETAG ZONE 12120983 -->
+      <div id="monetag-ad-slot">
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="12120983"
+          async
+          data-cfasync="false"></script>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span class="current-year">2026</span> CewekPedia. Teman santai setiap hari ♡</p>
+  <div class="footer-links">
+    <a href="/">Beranda</a>
+    <a href="/artikel/">Artikel</a>
+    <a href="/#musik">Musik</a>
+    <a href="/#chat">Ruang Chat</a>
+    <a href="/tentang.html">Tentang</a>
+    <a href="/kontak.html">Kontak</a>
+    <a href="/privacy.html">Kebijakan Privasi</a>
+    <a href="/ketentuan.html">Ketentuan Penggunaan</a>
+  </div>
+</footer>
+
+<script>
+  // Tombol tutup kotak promosi
+  (function () {
+    var box = document.getElementById("advertising-box");
+    var closeButton = document.getElementById("advertising-close");
+
+    if (box && closeButton) {
+      closeButton.addEventListener("click", function () {
+        box.style.display = "none";
+      });
+    }
+  })();
+
+  // Tahun footer otomatis
+  (function () {
+    var yearElements = document.querySelectorAll(".current-year");
+    var currentYear = new Date().getFullYear();
+
+    yearElements.forEach(function (element) {
+      element.textContent = currentYear;
+    });
+  })();
+
+  // Kalkulator menstruasi
+  (function () {
+    var form = document.getElementById("periodForm");
+    var dateInput = document.getElementById("lastPeriod");
+    var result = document.getElementById("result");
+    var copyButton = document.getElementById("copyResult");
+
+    function localDateString(date) {
+      return [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, "0"),
+        String(date.getDate()).padStart(2, "0")
+      ].join("-");
+    }
+
+    function parseLocalDate(value) {
+      var parts = value.split("-").map(Number);
+      return new Date(parts[0], parts[1] - 1, parts[2], 12, 0, 0);
+    }
+
+    function addDays(date, days) {
+      var copy = new Date(date);
+      copy.setDate(copy.getDate() + days);
+      return copy;
+    }
+
+    function formatDate(date) {
+      return date.toLocaleDateString("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    function dayDifference(fromDate, toDate) {
+      var fromUTC = Date.UTC(
+        fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate()
+      );
+      var toUTC = Date.UTC(
+        toDate.getFullYear(), toDate.getMonth(), toDate.getDate()
+      );
+      return Math.round((toUTC - fromUTC) / 86400000);
+    }
+
+    var today = new Date();
+    dateInput.max = localDateString(today);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!dateInput.value) {
+        alert("Silakan pilih tanggal hari pertama haid terakhir.");
+        return;
+      }
+
+      var lastDate = parseLocalDate(dateInput.value);
+      var currentDate = parseLocalDate(localDateString(new Date()));
+
+      if (lastDate > currentDate) {
+        alert("Tanggal haid terakhir tidak boleh melewati hari ini.");
+        return;
+      }
+
+      var cycle = Number(document.getElementById("cycleLength").value);
+      var duration = Number(document.getElementById("periodLength").value);
+
+      var nextPeriod = addDays(lastDate, cycle);
+      var periodEnd = addDays(lastDate, duration - 1);
+      var daysUntil = dayDifference(currentDate, nextPeriod);
+
+      document.getElementById("nextDate").textContent = formatDate(nextPeriod);
+      document.getElementById("endDate").textContent = formatDate(periodEnd);
+      document.getElementById("cycleInfo").textContent =
+        "Siklus " + cycle + " hari; lama haid " + duration + " hari.";
+
+      var status;
+
+      if (daysUntil > 0) {
+        status = "Perkiraan haid berikutnya sekitar " + daysUntil + " hari lagi.";
+      } else if (daysUntil === 0) {
+        status = "Menurut hitungan kalender, perkiraan haid berikutnya jatuh hari ini.";
+      } else {
+        status = "Tanggal perkiraan tersebut sudah lewat. Jika haid belum datang, " +
+          "siklusmu mungkin berubah. Jika ada kemungkinan hamil, pertimbangkan tes kehamilan.";
+      }
+
+      document.getElementById("statusInfo").textContent =
+        status + " Hasil ini hanya perkiraan dan bukan kepastian medis.";
+
+      result.style.display = "block";
+      result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    copyButton.addEventListener("click", async function () {
+      var text = [
+        "Kalkulator Haid CewekPedia",
+        "Perkiraan haid berikutnya: " + document.getElementById("nextDate").textContent,
+        "Perkiraan akhir haid: " + document.getElementById("endDate").textContent,
+        document.getElementById("cycleInfo").textContent,
+        "Catatan: hasil hanya perkiraan."
+      ].join("\n");
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          var textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+
+          var copied = document.execCommand("copy");
+          textarea.remove();
+
+          if (!copied) throw new Error("Penyalinan tidak tersedia");
+        }
+
+        copyButton.textContent = "Berhasil Disalin ✓";
+      } catch (error) {
+        window.prompt("Salin hasil berikut:", text);
+      }
+    });
+  })();
+
+  // Pindahkan slot Monetag sesuai ukuran layar
+  (function () {
+    var adSlot = document.getElementById("monetag-ad-slot");
+    var mobileAnchor = document.getElementById("monetag-mobile-anchor");
+    var sidebar = document.getElementById("advertising-sidebar");
+    var advertisingBox = document.getElementById("advertising-box");
+
+    if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) return;
+
+    var mobileQuery = window.matchMedia("(max-width: 600px)");
+
+    function positionMonetag() {
+      if (mobileQuery.matches) {
+        if (mobileAnchor.nextElementSibling !== adSlot) {
+          mobileAnchor.insertAdjacentElement("afterend", adSlot);
+        }
+      } else {
+        if (advertisingBox.nextElementSibling !== adSlot) {
+          advertisingBox.insertAdjacentElement("afterend", adSlot);
+        }
+      }
+    }
+
+    positionMonetag();
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", positionMonetag);
+    } else {
+      mobileQuery.addListener(positionMonetag);
+    }
+  })();
+</script>
+
+<!-- Script pendukung daftar artikel CewekPedia -->
+<script src="/artikel/data.js"></script>
+<script src="/artikel/related.js"></script>
+<script src="/artikel/auto-date.js"></script>
+</body>
+</html>
