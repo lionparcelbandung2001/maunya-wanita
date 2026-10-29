@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65b99">
+
+  <title>Kalkulator Masa Subur Wanita dan Ovulasi | CewekPedia</title>
+  <meta name="description" content="Hitung perkiraan masa subur dan ovulasi dengan kalkulator CewekPedia. Masukkan tanggal haid terakhir dan panjang siklus menstruasi.">
+  <meta name="keywords" content="kalkulator masa subur, cara menghitung masa subur, kalender ovulasi, masa subur wanita, siklus menstruasi">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CewekPedia">
+
+  <link rel="canonical" href="https://cewekpedia.com/artikel/kalkulator-masa-subur.html">
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg">
+  <link rel="apple-touch-icon" href="/logo.jpeg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CewekPedia">
+  <meta property="og:title" content="Kalkulator Masa Subur Wanita | CewekPedia">
+  <meta property="og:description" content="Perkirakan masa subur dan ovulasi dengan kalkulator sederhana CewekPedia.">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/kalkulator-masa-subur.html">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/kalkulator-masa-subur.jpeg">
+  <meta property="og:locale" content="id_ID">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kalkulator Masa Subur Wanita | CewekPedia">
+  <meta name="twitter:description" content="Hitung perkiraan masa subur berdasarkan siklus menstruasi.">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/kalkulator-masa-subur.jpeg">
+
+  <script type="application/ld+json" id="article-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara menghitung masa subur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kalkulator kalender memperkirakan ovulasi sekitar 14 hari sebelum menstruasi berikutnya. Perkiraan masa subur biasanya mencakup lima hari sebelum ovulasi hingga hari ovulasi, tetapi waktunya dapat berubah."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah kalkulator masa subur selalu akurat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Kalkulator hanya memberikan perkiraan berdasarkan panjang siklus menstruasi. Ovulasi dapat bergeser, terutama pada siklus yang tidak teratur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah kalkulator masa subur digunakan untuk mencegah kehamilan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kalkulator kalender saja tidak cukup andal untuk mencegah kehamilan. Gunakan metode kontrasepsi yang sesuai dan konsultasikan dengan tenaga kesehatan jika membutuhkan panduan."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --pink: #d65b99;
+      --pink-dark: #a83270;
+      --pink-light: #fff0f6;
+      --purple: #8663a8;
+      --text: #443541;
+      --muted: #806f7c;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffafd;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a { -webkit-tap-highlight-color: transparent; }
+
+    .site-header {
+      padding: 24px 16px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe2ef, #f4e8ff);
+      border-bottom: 1px solid #f5d8e8;
+    }
+
+    .brand {
+      display: inline-block;
+      color: var(--pink-dark);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin: 5px 0 0;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 12px;
+      background: #fff;
+      border-bottom: 1px solid #f4e3ec;
+    }
+
+    .top-nav a {
+      color: var(--pink-dark);
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+      padding: 22px 16px;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sidebar-right {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .article-card {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid #f4e3ec;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(173, 87, 132, .07);
+      overflow-wrap: anywhere;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 5px 12px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .article-title {
+      margin: 13px 0 10px;
+      color: #663c58;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .article-date {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .article-image {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      margin: 18px auto 24px;
+      border-radius: 14px;
+      background: #fff7fb;
+      border: 1px solid #f2dbe6;
+    }
+
+    .article-content h2 {
+      color: var(--pink-dark);
+      line-height: 1.4;
+      margin-top: 28px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 24px;
+    }
+
+    .article-content li { margin-bottom: 8px; }
+
+    .article-content a {
+      color: var(--pink-dark);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* KALKULATOR MASA SUBUR */
+    .calculator {
+      margin: 20px 0 28px;
+      padding: 22px;
+      background: linear-gradient(145deg, #fff0f7, #f8f1ff);
+      border: 1px solid #f0cde0;
+      border-radius: 18px;
+    }
+
+    .calculator-heading {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .calculator-icon {
+      font-size: 44px;
+      line-height: 1.4;
+    }
+
+    .calculator-heading h2 {
+      margin: 7px 0;
+      color: var(--pink-dark);
+      font-size: 24px;
+    }
+
+    .calculator-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .field-label {
+      display: block;
+      margin: 16px 0 6px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .calculator input,
+    .calculator select {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 12px;
+      border: 1px solid #e8c5d8;
+      border-radius: 11px;
+      background: #fff;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .calculator input:focus,
+    .calculator select:focus {
+      outline: 2px solid #efafd0;
+      border-color: var(--pink);
+    }
+
+    .field-hint {
+      margin: 5px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .calculate-button,
+    .copy-button {
+      display: block;
+      width: 100%;
+      padding: 13px 16px;
+      margin-top: 20px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--pink);
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .calculate-button:hover,
+    .copy-button:hover {
+      background: var(--pink-dark);
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 22px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #edc4da;
+      border-radius: 14px;
+    }
+
+    .result-box h3 {
+      margin: 0 0 8px;
+      color: var(--pink-dark);
+    }
+
+    .result-highlight {
+      margin: 5px 0 15px;
+      color: var(--pink-dark);
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .result-item {
+      padding: 11px;
+      margin-top: 9px;
+      background: #fff5fa;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .result-item strong {
+      display: block;
+      color: var(--pink-dark);
+    }
+
+    .result-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .qa-box {
+      margin: 26px 0;
+      padding: 20px;
+      background: #fff9fc;
+      border: 1px solid #f5d8e8;
+      border-radius: 14px;
+    }
+
+    .question-title {
+      margin: 0 0 10px;
+      color: var(--pink-dark);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .answer-content p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .tip-box {
+      margin: 20px 0;
+      padding: 16px;
+      background: #fff2f8;
+      border-left: 4px solid var(--pink);
+      border-radius: 10px;
+    }
+
+    .tip-box h4 {
+      margin: 0 0 6px;
+      color: var(--pink-dark);
+    }
+
+    .tip-box p { margin: 0; }
+
+    .article-cta {
+      margin: 28px 0 8px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff0f6, #f5efff);
+      border: 1px solid #f1d9e9;
+      border-radius: 15px;
+    }
+
+    .article-cta h3 {
+      margin: 0 0 8px;
+      color: var(--pink-dark);
+    }
+
+    .article-cta p {
+      margin: 8px 0 14px;
+      font-size: 14px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 11px 20px;
+      color: #fff !important;
+      background: var(--pink);
+      border-radius: 30px;
+      text-decoration: none !important;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px;
+    }
+
+    .advertising-box {
+      position: relative;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border-radius: 14px;
+      padding: 14px 12px;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(214, 91, 153, .25);
+      border: 1.5px solid #fff;
+      text-align: center;
+    }
+
+    .advertising-title {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .advertising-description {
+      margin: 0 0 10px;
+      font-size: 11px;
+      line-height: 1.35;
+      color: #fff0f7;
+    }
+
+    .advertising-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .advertising-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none !important;
+    }
+
+    .advertising-whatsapp {
+      background: #25d366;
+      color: #fff !important;
+    }
+
+    .advertising-email {
+      background: #fff;
+      color: #a83270 !important;
+    }
+
+    .advertising-close {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: #725566;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #monetag-ad-slot {
+      width: 100%;
+      min-width: 0;
+      margin-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    #monetag-ad-slot iframe,
+    #monetag-ad-slot img {
+      max-width: 100%;
+    }
+
+    #monetag-mobile-anchor { display: none; }
+
+    .site-footer {
+      margin-top: 35px;
+      padding: 25px 15px;
+      text-align: center;
+      background: #fff0f6;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--pink-dark);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .layout-wrapper { flex-direction: column; }
+      .main-content { width: 100%; }
+      .sidebar-right {
+        width: 100%;
+        position: static;
+      }
+
+      .advertising-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 20px 12px; }
+      .brand { font-size: 22px; }
+      .container { padding: 15px 10px; }
+      .article-card {
+        padding: 17px;
+        border-radius: 14px;
+      }
+      .article-title { font-size: 24px; }
+      .calculator { padding: 16px; }
+
+      #monetag-mobile-anchor {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        margin: 10px 0 16px;
+      }
+
+      #monetag-ad-slot {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+      }
+
+      .sidebar-right {
+        position: static;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <a class="brand" href="/">CewekPedia ♡</a>
+  <p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p>
+</header>
+
+<nav class="top-nav" aria-label="Navigasi utama">
+  <a href="/">Beranda</a>
+  <a href="/#musik">Musik</a>
+  <a href="/#chat">Ruang Chat</a>
+  <a href="/artikel/">Semua Artikel</a>
+</nav>
+
+<main class="container">
+  <a class="back-link" href="/artikel/">← Kembali ke Daftar Artikel</a>
+
+  <div class="layout-wrapper">
+    <main class="main-content">
+      <article class="article-card">
+        <span class="article-category">Kalkulator Kesehatan Perempuan</span>
+
+        <h1 class="article-title">
+          Kalkulator Masa Subur Wanita: Hitung Perkiraan Ovulasi
+        </h1>
+
+        <div class="article-date">
+          Dipublikasikan:
+          <time id="article-published-date" datetime="2026-10-29">29 Oktober 2026</time>
+          <span aria-hidden="true"> · </span>
+          Diperbarui:
+          <time id="article-updated-date" datetime="2026-10-29">29 Oktober 2026</time>
+        </div>
+
+        <!-- SLOT MONETAG KHUSUS HP -->
+        <div id="monetag-mobile-anchor"></div>
+
+        <!-- KALKULATOR DI BAGIAN PALING ATAS -->
+        <section class="calculator" aria-labelledby="calculator-title">
+          <div class="calculator-heading">
+            <div class="calculator-icon" aria-hidden="true">🌸</div>
+            <h2 id="calculator-title">Kalkulator Masa Subur</h2>
+            <p>Masukkan tanggal haid terakhir dan pilih panjang siklus menstruasimu.</p>
+          </div>
+
+          <form id="fertilityForm">
+            <label class="field-label" for="lastPeriod">
+              1. Tanggal hari pertama haid terakhir
+            </label>
+            <input type="date" id="lastPeriod" required>
+            <p class="field-hint">
+              Gunakan hari pertama menstruasi mulai keluar, bukan hari terakhir.
+            </p>
+
+            <label class="field-label" for="cycleLength">
+              2. Biasanya siklus haidmu berapa hari?
+            </label>
+            <select id="cycleLength" required>
+              <option value="21">21 hari</option>
+              <option value="22">22 hari</option>
+              <option value="23">23 hari</option>
+              <option value="24">24 hari</option>
+              <option value="25">25 hari</option>
+              <option value="26">26 hari</option>
+              <option value="27">27 hari</option>
+              <option value="28" selected>28 hari</option>
+              <option value="29">29 hari</option>
+              <option value="30">30 hari</option>
+              <option value="31">31 hari</option>
+              <option value="32">32 hari</option>
+              <option value="33">33 hari</option>
+              <option value="34">34 hari</option>
+              <option value="35">35 hari</option>
+            </select>
+            <p class="field-hint">
+              Hitung jarak dari hari pertama haid ke hari pertama haid berikutnya.
+              Pilih rata-rata siklus yang biasanya kamu alami.
+            </p>
+
+            <button type="submit" class="calculate-button">
+              Hitung Perkiraan Masa Subur ♡
+            </button>
+          </form>
+
+          <div class="result-box" id="fertilityResult" aria-live="polite" aria-atomic="true">
+            <h3>Hasil Perkiraanmu 💗</h3>
+
+            <div class="result-item">
+              <strong>Perkiraan rentang masa subur</strong>
+              <div class="result-highlight" id="fertileWindow"></div>
+            </div>
+
+            <div class="result-item">
+              <strong>Perkiraan hari ovulasi</strong>
+              <div class="result-highlight" id="ovulationDate"></div>
+            </div>
+
+            <div class="result-item">
+              <strong>Perkiraan haid berikutnya</strong>
+              <span id="nextPeriodDate"></span>
+            </div>
+
+            <p class="result-note" id="fertilityNote"></p>
+
+            <button type="button" class="copy-button" id="copyResult">
+              Salin Hasil 📋
+            </button>
+          </div>
+        </section>
+
+        <div class="article-content">
+          <p>
+            Ingin mengenali pola siklus menstruasi sendiri? Kalkulator masa subur
+            CewekPedia membantu memberikan perkiraan rentang masa subur, waktu
+            ovulasi, dan jadwal haid berikutnya berdasarkan tanggal haid terakhir
+            serta panjang siklus yang kamu pilih.
+          </p>
+
+          <img
+            src="images/kalkulator-masa-subur.jpeg"
+            alt="Ilustrasi kalender menstruasi untuk memperkirakan masa subur wanita"
+            class="article-image"
+            width="700"
+            height="400"
+            loading="lazy"
+            decoding="async">
+
+          <h2>Bagaimana cara menghitung masa subur?</h2>
+          <p>
+            Dalam siklus menstruasi, ovulasi adalah proses ketika ovarium
+            melepaskan sel telur. Pada perkiraan kalender, ovulasi sering
+            diperkirakan terjadi sekitar 14 hari sebelum menstruasi berikutnya.
+            Namun, waktunya bisa berbeda pada setiap orang dan setiap siklus.
+          </p>
+
+          <p>
+            Rentang masa subur umumnya diperkirakan mencakup lima hari sebelum
+            ovulasi hingga hari ovulasi. Kalkulator menggunakan pendekatan
+            kalender tersebut, bukan pengukuran langsung terhadap ovulasi.
+          </p>
+
+          <h2>Contoh perhitungan siklus 28 hari</h2>
+          <p>
+            Jika hari pertama menstruasi adalah tanggal 1 dan siklusmu biasanya
+            28 hari, kalkulator memperkirakan haid berikutnya sekitar 28 hari
+            setelah tanggal tersebut. Ovulasi kemudian diperkirakan sekitar
+            14 hari sebelum haid berikutnya, sedangkan rentang masa subur
+            dihitung dari lima hari sebelumnya sampai hari ovulasi.
+          </p>
+
+          <p>
+            Contoh ini hanya ilustrasi. Tanggal sebenarnya dapat maju atau
+            mundur, bahkan pada orang yang biasanya memiliki siklus teratur.
+          </p>
+
+          <section class="qa-box">
+            <h2 class="question-title">1. Apakah kalkulator masa subur selalu akurat?</h2>
+            <div class="answer-content">
+              <p>
+                Tidak. Kalkulator kalender hanya memberikan perkiraan berdasarkan
+                panjang siklus. Stres, perubahan pola tidur, kondisi hormonal,
+                penyakit, dan faktor lain dapat menggeser waktu ovulasi.
+                Pada siklus tidak teratur, perkiraan kalender menjadi lebih sulit.
+              </p>
+            </div>
+          </section>
+
+          <section class="qa-box">
+            <h2 class="question-title">2. Apakah masa subur hanya satu hari?</h2>
+            <div class="answer-content">
+              <p>
+                Tidak selalu. Peluang kehamilan dapat muncul selama beberapa hari
+                di sekitar ovulasi karena sperma bisa bertahan di saluran reproduksi
+                selama beberapa hari, sementara sel telur biasanya dapat dibuahi
+                dalam waktu yang lebih singkat setelah dilepaskan. Karena itu,
+                masa subur sering dijelaskan sebagai rentang beberapa hari, bukan
+                satu tanggal pasti.
+              </p>
+            </div>
+          </section>
+
+          <aside class="tip-box">
+            <h4>♡ Catatan Penting</h4>
+            <p>
+              Hasil kalkulator bukan konfirmasi ovulasi dan bukan alat kontrasepsi.
+              Jangan mengandalkan perkiraan kalender saja untuk mencegah kehamilan.
+              Jika sedang merencanakan kehamilan atau membutuhkan cara mengenali
+              ovulasi yang lebih sesuai, konsultasikan dengan tenaga kesehatan.
+            </p>
+          </aside>
+
+          <section class="qa-box">
+            <h2 class="question-title">3. Bagaimana jika siklus haid tidak teratur?</h2>
+            <div class="answer-content">
+              <p>
+                Jika panjang siklus sering berubah, hasil kalkulator mungkin
+                tidak menggambarkan waktu ovulasi yang sebenarnya. Mencatat
+                tanggal menstruasi selama beberapa bulan bisa membantu mengenali
+                pola, tetapi tidak memastikan ovulasi. Pertimbangkan berkonsultasi
+                dengan tenaga kesehatan jika siklus sangat tidak teratur atau
+                kamu mengalami keluhan yang mengkhawatirkan.
+              </p>
+            </div>
+          </section>
+
+          <h2>Kesimpulan</h2>
+          <p>
+            Kalkulator masa subur CewekPedia bisa menjadi langkah awal untuk
+            memahami siklus menstruasi. Gunakan hasilnya sebagai perkiraan saja,
+            karena kalender tidak dapat memastikan hari ovulasi secara tepat.
+          </p>
+        </div>
+
+        <section class="article-cta">
+          <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+          <p>
+            Punya unek-unek atau ingin berbincang santai?
+            Kamu bisa mampir ke ruang chat atau mendengarkan musik.
+          </p>
+          <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+          <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
+        </section>
+      </article>
+    </main>
+
+    <!-- SIDEBAR PC: PROMOSI DAN MONETAG -->
+    <aside class="sidebar-right" id="advertising-sidebar">
+      <div class="advertising-box" id="advertising-box">
+        <button
+          class="advertising-close"
+          type="button"
+          id="advertising-close"
+          aria-label="Tutup kotak promosi"
+          title="Tutup">×</button>
+
+        <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+        <p class="advertising-description">
+          Promosikan bisnismu di CewekPedia.
+        </p>
+
+        <div class="advertising-actions">
+          <a
+            class="advertising-button advertising-whatsapp"
+            href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+            target="_blank"
+            rel="noopener noreferrer">💬 WhatsApp</a>
+
+          <a
+            class="advertising-button advertising-email"
+            href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">✉️ Email</a>
+        </div>
+      </div>
+
+      <!-- MONETAG ZONE 12120983 -->
+      <div id="monetag-ad-slot">
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="12120983"
+          async
+          data-cfasync="false"></script>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>
+    &copy; <span class="current-year">2026</span>
+    CewekPedia. Teman santai setiap hari ♡
+  </p>
+
+  <div class="footer-links">
+    <a href="/">Beranda</a>
+    <a href="/artikel/">Artikel</a>
+    <a href="/#musik">Musik</a>
+    <a href="/#chat">Ruang Chat</a>
+    <a href="/tentang.html">Tentang</a>
+    <a href="/kontak.html">Kontak</a>
+    <a href="/privacy.html">Kebijakan Privasi</a>
+    <a href="/ketentuan.html">Ketentuan Penggunaan</a>
+  </div>
+</footer>
+
+<script>
+  // Tombol tutup kotak promosi
+  (function () {
+    var box = document.getElementById("advertising-box");
+    var closeButton = document.getElementById("advertising-close");
+
+    if (box && closeButton) {
+      closeButton.addEventListener("click", function () {
+        box.style.display = "none";
+      });
+    }
+  })();
+
+  // Tahun footer otomatis
+  (function () {
+    var yearElements = document.querySelectorAll(".current-year");
+    var currentYear = new Date().getFullYear();
+
+    yearElements.forEach(function (element) {
+      element.textContent = currentYear;
+    });
+  })();
+
+  // Kalkulator masa subur
+  (function () {
+    var form = document.getElementById("fertilityForm");
+    var dateInput = document.getElementById("lastPeriod");
+    var result = document.getElementById("fertilityResult");
+    var copyButton = document.getElementById("copyResult");
+
+    function localDateString(date) {
+      return [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, "0"),
+        String(date.getDate()).padStart(2, "0")
+      ].join("-");
+    }
+
+    function parseLocalDate(value) {
+      var parts = value.split("-").map(Number);
+      return new Date(parts[0], parts[1] - 1, parts[2], 12, 0, 0);
+    }
+
+    function addDays(date, days) {
+      var copy = new Date(date);
+      copy.setDate(copy.getDate() + days);
+      return copy;
+    }
+
+    function formatDate(date) {
+      return date.toLocaleDateString("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    var today = new Date();
+    dateInput.max = localDateString(today);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!dateInput.value) {
+        alert("Silakan pilih tanggal hari pertama haid terakhir.");
+        return;
+      }
+
+      var lastPeriod = parseLocalDate(dateInput.value);
+      var currentDate = parseLocalDate(localDateString(new Date()));
+
+      if (lastPeriod > currentDate) {
+        alert("Tanggal haid terakhir tidak boleh melewati hari ini.");
+        return;
+      }
+
+      var cycleLength = Number(
+        document.getElementById("cycleLength").value
+      );
+
+      /*
+        Perkiraan sederhana:
+        Haid berikutnya = hari pertama haid terakhir + panjang siklus.
+        Ovulasi = perkiraan haid berikutnya - 14 hari.
+        Rentang masa subur = 5 hari sebelum ovulasi sampai hari ovulasi.
+        Ini bukan prediksi medis yang pasti.
+      */
+      var nextPeriod = addDays(lastPeriod, cycleLength);
+      var ovulation = addDays(nextPeriod, -14);
+      var fertileStart = addDays(ovulation, -5);
+      var fertileEnd = new Date(ovulation);
+
+      document.getElementById("fertileWindow").textContent =
+        formatDate(fertileStart) + " – " + formatDate(fertileEnd);
+
+      document.getElementById("ovulationDate").textContent =
+        formatDate(ovulation);
+
+      document.getElementById("nextPeriodDate").textContent =
+        formatDate(nextPeriod);
+
+      document.getElementById("fertilityNote").textContent =
+        "Siklus pilihan: " + cycleLength +
+        " hari. Semua tanggal adalah perkiraan kalender; ovulasi dapat bergeser.";
+
+      result.style.display = "block";
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    });
+
+    copyButton.addEventListener("click", async function () {
+      var text = [
+        "Kalkulator Masa Subur CewekPedia",
+        "Perkiraan masa subur: " +
+          document.getElementById("fertileWindow").textContent,
+        "Perkiraan ovulasi: " +
+          document.getElementById("ovulationDate").textContent,
+        "Perkiraan haid berikutnya: " +
+          document.getElementById("nextPeriodDate").textContent,
+        document.getElementById("fertilityNote").textContent,
+        "Hasil hanya perkiraan dan tidak memastikan ovulasi."
+      ].join("\n");
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          var textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+
+          var copied = document.execCommand("copy");
+          textarea.remove();
+
+          if (!copied) {
+            throw new Error("Penyalinan tidak tersedia");
+          }
+        }
+
+        copyButton.textContent = "Berhasil Disalin ✓";
+      } catch (error) {
+        window.prompt("Salin hasil berikut:", text);
+      }
+    });
+  })();
+
+  // Pindahkan slot Monetag mengikuti ukuran layar
+  (function () {
+    var adSlot = document.getElementById("monetag-ad-slot");
+    var mobileAnchor = document.getElementById("monetag-mobile-anchor");
+    var sidebar = document.getElementById("advertising-sidebar");
+    var advertisingBox = document.getElementById("advertising-box");
+
+    if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
+      return;
+    }
+
+    var mobileQuery = window.matchMedia("(max-width: 600px)");
+
+    function positionMonetag() {
+      if (mobileQuery.matches) {
+        if (mobileAnchor.nextElementSibling !== adSlot) {
+          mobileAnchor.insertAdjacentElement("afterend", adSlot);
+        }
+      } else {
+        if (advertisingBox.nextElementSibling !== adSlot) {
+          advertisingBox.insertAdjacentElement("afterend", adSlot);
+        }
+      }
+    }
+
+    positionMonetag();
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", positionMonetag);
+    } else {
+      mobileQuery.addListener(positionMonetag);
+    }
+  })();
+</script>
+
+<script src="/artikel/data.js"></script>
+<script src="/artikel/related.js"></script>
+<script src="/artikel/auto-date.js"></script>
+</body>
+</html>
