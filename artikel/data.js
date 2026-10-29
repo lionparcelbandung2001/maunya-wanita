@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "kalkulator masa subur",
+    deskripsi: "mau tau kamu lagi di masa subur atau tidak? yuk cek disini",
+    tanggal: "29 oktober 2026",
+    gambar: "images/kalkulator-masa-subur.jpeg",
+    link: "kalkulator-masa-subur.html"
+  }, 
+    {
+    judul: "kalkulator haid",
+    deskripsi: "mau tau cara simpel hitung siklus haidmu?yuk cek disini",
+    tanggal: "29 oktober 2026",
+    gambar: "images/kalkulator-haid.jpeg",
+    link: "kalkulator-haid.html"
+  }, 
+    {
     judul: "drama korea romantis?berikut daftarnya",
     deskripsi: "berikut daftar drama china romantis yang wajib di tonton",
     tanggal: "29 oktober 2026",
