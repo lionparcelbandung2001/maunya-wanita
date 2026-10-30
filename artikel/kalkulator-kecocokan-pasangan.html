@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65b99">
+
+  <title>Kalkulator Kecocokan Pasangan Berdasarkan Nama dan Zodiak | CewekPedia</title>
+  <meta name="description" content="Coba kalkulator kecocokan pasangan berdasarkan nama dan zodiak secara gratis. Cari tahu gambaran kecocokan kamu dengan gebetan untuk seru-seruan di CewekPedia.">
+  <meta name="keywords" content="kalkulator kecocokan pasangan, kalkulator cinta, tes kecocokan pasangan, kecocokan zodiak, cek kecocokan gebetan">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CewekPedia">
+
+  <link rel="canonical" href="https://cewekpedia.com/artikel/kalkulator-kecocokan-pasangan.html">
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg">
+  <link rel="apple-touch-icon" href="/logo.jpeg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CewekPedia">
+  <meta property="og:title" content="Kalkulator Kecocokan Pasangan | CewekPedia">
+  <meta property="og:description" content="Masukkan nama dan zodiak kamu bersama gebetan untuk melihat skor kecocokan cinta versi hiburan.">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/kalkulator-kecocokan-pasangan.html">
+  <meta property="og:locale" content="id_ID">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kalkulator Kecocokan Pasangan | CewekPedia">
+  <meta name="twitter:description" content="Yuk, cek kecocokan kamu dan gebetan untuk seru-seruan!">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kalkulator Kecocokan Pasangan CewekPedia",
+    "url": "https://cewekpedia.com/artikel/kalkulator-kecocokan-pasangan.html",
+    "description": "Kalkulator hiburan untuk melihat gambaran kecocokan pasangan berdasarkan nama dan zodiak.",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "id-ID",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CewekPedia",
+      "url": "https://cewekpedia.com/"
+    }
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --pink: #d65b99;
+      --dark: #a83270;
+      --light: #fff0f6;
+      --purple: #8663a8;
+      --text: #443541;
+      --muted: #806f7c;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffafd;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a { -webkit-tap-highlight-color: transparent; }
+
+    .site-header {
+      padding: 24px 16px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe2ef, #f4e8ff);
+      border-bottom: 1px solid #f5d8e8;
+    }
+
+    .brand {
+      color: var(--dark);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin: 5px 0 0;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 12px;
+      background: #fff;
+      border-bottom: 1px solid #f4e3ec;
+    }
+
+    .top-nav a, .back-link {
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+      padding: 22px 16px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .main-content { flex: 1; min-width: 0; }
+
+    .sidebar-right {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+    }
+
+    .article-card {
+      padding: 26px;
+      background: #fff;
+      border: 1px solid #f4e3ec;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(173, 87, 132, .07);
+      overflow-wrap: anywhere;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 5px 12px;
+      color: var(--dark);
+      background: var(--light);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 13px 0 10px;
+      color: #663c58;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: var(--dark);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+
+    h3 { color: #754b68; }
+
+    .article-date {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .calculator {
+      margin: 24px 0;
+      padding: 22px;
+      background: linear-gradient(145deg, #fff0f6, #f6f0ff);
+      border: 1px solid #f0d7e8;
+      border-radius: 18px;
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .calculator-intro {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .form-group { margin: 18px 0; }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 12px;
+      border: 1px solid #e5c9dc;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 15px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: 2px solid #e8a5c9;
+      outline-offset: 1px;
+    }
+
+    .love-button {
+      display: block;
+      width: 100%;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .love-button:hover { background: var(--dark); }
+
+    .result {
+      display: none;
+      margin-top: 22px;
+      padding: 20px 15px;
+      background: #fff;
+      border: 1px solid #f0d7e8;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .result:focus { outline: 2px solid #e8a5c9; }
+
+    .result-heart { font-size: 38px; }
+
+    .score {
+      margin: 5px 0;
+      color: var(--dark);
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .score-label {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .progress {
+      height: 12px;
+      margin: 16px 0;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f5e5ef;
+    }
+
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #ed8bb9, #a855f7);
+      border-radius: 20px;
+      transition: width .5s ease;
+    }
+
+    .result-description { font-size: 15px; }
+
+    .share-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: 0;
+      font-size: 14px;
+    }
+
+    .tip-box {
+      margin: 24px 0;
+      padding: 18px;
+      background: #fff2f8;
+      border-left: 4px solid var(--pink);
+      border-radius: 10px;
+    }
+
+    .tip-box h3 { margin-top: 0; }
+
+    .tip-box p { margin-bottom: 0; }
+
+    .article-cta {
+      margin: 28px 0 8px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff0f6, #f5efff);
+      border: 1px solid #f1d9e9;
+      border-radius: 15px;
+    }
+
+    .article-cta h3 { margin-top: 0; }
+
+    .cta-button {
+      display: inline-block;
+      padding: 11px 20px;
+      margin: 4px;
+      color: #fff;
+      background: var(--pink);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .advertising-box {
+      position: relative;
+      padding: 14px 12px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(214, 91, 153, .25);
+    }
+
+    .advertising-title {
+      margin: 0 0 4px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .advertising-description {
+      margin: 0 0 10px;
+      color: #fff0f7;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .advertising-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .advertising-button {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .advertising-whatsapp {
+      color: #fff;
+      background: #25d366;
+    }
+
+    .advertising-email {
+      color: var(--dark);
+      background: #fff;
+    }
+
+    .advertising-close {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    #monetag-ad-slot {
+      width: 100%;
+      margin-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    #monetag-ad-slot iframe,
+    #monetag-ad-slot img { max-width: 100%; }
+
+    #monetag-mobile-anchor { display: none; }
+
+    .site-footer {
+      margin-top: 35px;
+      padding: 25px 15px;
+      text-align: center;
+      background: #fff0f6;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .layout-wrapper { flex-direction: column; }
+      .main-content, .sidebar-right { width: 100%; }
+      .sidebar-right { position: static; }
+      .advertising-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 20px 12px; }
+      .brand { font-size: 22px; }
+      .container { padding: 15px 10px; }
+      .article-card { padding: 17px; border-radius: 14px; }
+      h1 { font-size: 24px; }
+      .calculator { padding: 16px; }
+
+      #monetag-mobile-anchor {
+        display: block;
+        width: 100%;
+        margin: 10px 0 16px;
+      }
+
+      #monetag-ad-slot {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+      }
+
+      .sidebar-right { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">CewekPedia ♡</a>
+  <p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p>
+</header>
+
+<nav class="top-nav" aria-label="Navigasi utama">
+  <a href="/">Beranda</a>
+  <a href="/#musik">Musik</a>
+  <a href="/#chat">Ruang Chat</a>
+  <a href="/artikel/">Semua Artikel</a>
+</nav>
+
+<main class="container">
+  <a class="back-link" href="/artikel/">← Kembali ke Daftar Artikel</a>
+
+  <div class="layout-wrapper">
+    <div class="main-content">
+      <article class="article-card">
+
+        <span class="article-category">Cinta dan Hubungan</span>
+
+        <h1>Kalkulator Kecocokan Pasangan Berdasarkan Nama dan Zodiak</h1>
+
+        <div class="article-date">
+          Dipublikasikan:
+          <time datetime="2026-10-30" id="article-published-date">30 Oktober 2026</time>
+          · Diperbarui:
+          <time datetime="2026-10-30" id="article-updated-date">30 Oktober 2026</time>
+        </div>
+
+        <div id="monetag-mobile-anchor"></div>
+
+        <p>
+          Penasaran seberapa cocok kamu dengan gebetan atau pasangan?
+          Coba kalkulator kecocokan pasangan CewekPedia berikut ini.
+          Masukkan nama dan zodiak kalian, lalu lihat hasilnya untuk
+          seru-seruan bersama!
+        </p>
+
+        <section class="calculator" aria-labelledby="calculator-title">
+          <h2 id="calculator-title">💗 Tes Kecocokan Cinta</h2>
+          <p class="calculator-intro">
+            Isi data kalian untuk melihat skor kecocokan versi hiburan.
+          </p>
+
+          <form id="love-form">
+            <div class="form-group">
+              <label for="name1">Nama kamu</label>
+              <input
+                id="name1"
+                name="name1"
+                type="text"
+                maxlength="40"
+                placeholder="Contoh: Ayu"
+                autocomplete="given-name"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="zodiac1">Zodiak kamu</label>
+              <select id="zodiac1" name="zodiac1" required>
+                <option value="">-- Pilih zodiak --</option>
+                <option value="aries">Aries (21 Maret–19 April)</option>
+                <option value="taurus">Taurus (20 April–20 Mei)</option>
+                <option value="gemini">Gemini (21 Mei–20 Juni)</option>
+                <option value="cancer">Cancer (21 Juni–22 Juli)</option>
+                <option value="leo">Leo (23 Juli–22 Agustus)</option>
+                <option value="virgo">Virgo (23 Agustus–22 September)</option>
+                <option value="libra">Libra (23 September–22 Oktober)</option>
+                <option value="scorpio">Scorpio (23 Oktober–21 November)</option>
+                <option value="sagittarius">Sagittarius (22 November–21 Desember)</option>
+                <option value="capricorn">Capricorn (22 Desember–19 Januari)</option>
+                <option value="aquarius">Aquarius (20 Januari–18 Februari)</option>
+                <option value="pisces">Pisces (19 Februari–20 Maret)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="name2">Nama pasangan atau gebetan</label>
+              <input
+                id="name2"
+                name="name2"
+                type="text"
+                maxlength="40"
+                placeholder="Contoh: Dimas"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="zodiac2">Zodiak pasangan atau gebetan</label>
+              <select id="zodiac2" name="zodiac2" required>
+                <option value="">-- Pilih zodiak --</option>
+                <option value="aries">Aries (21 Maret–19 April)</option>
+                <option value="taurus">Taurus (20 April–20 Mei)</option>
+                <option value="gemini">Gemini (21 Mei–20 Juni)</option>
+                <option value="cancer">Cancer (21 Juni–22 Juli)</option>
+                <option value="leo">Leo (23 Juli–22 Agustus)</option>
+                <option value="virgo">Virgo (23 Agustus–22 September)</option>
+                <option value="libra">Libra (23 September–22 Oktober)</option>
+                <option value="scorpio">Scorpio (23 Oktober–21 November)</option>
+                <option value="sagittarius">Sagittarius (22 November–21 Desember)</option>
+                <option value="capricorn">Capricorn (22 Desember–19 Januari)</option>
+                <option value="aquarius">Aquarius (20 Januari–18 Februari)</option>
+                <option value="pisces">Pisces (19 Februari–20 Maret)</option>
+              </select>
+            </div>
+
+            <button class="love-button" type="submit">
+              💕 Hitung Kecocokan Kami
+            </button>
+          </form>
+
+          <section class="result" id="love-result" tabindex="-1" aria-live="polite">
+            <div class="result-heart" aria-hidden="true">💖</div>
+            <h3 id="result-heading">Hasil Kecocokan</h3>
+            <div class="score" id="result-score">0%</div>
+            <p class="score-label">Skor hiburan, bukan ukuran ilmiah</p>
+            <div class="progress" aria-hidden="true">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="result-description" id="result-description"></p>
+            <button type="button" class="share-button" id="share-result">
+              💚 Bagikan Hasil
+            </button>
+          </section>
+        </section>
+
+        <h2>Bagaimana cara kerja kalkulator kecocokan pasangan?</h2>
+        <p>
+          Kalkulator ini mengolah pilihan zodiak dan nama yang kamu masukkan
+          untuk menghasilkan skor hiburan. Hasilnya dilengkapi gambaran
+          hubungan dan saran sederhana untuk membangun komunikasi yang sehat.
+        </p>
+
+        <h2>Apakah kecocokan zodiak menentukan hubungan berhasil?</h2>
+        <p>
+          Tidak. Zodiak tidak dapat memastikan apakah dua orang akan cocok
+          atau bertahan dalam hubungan. Setiap orang memiliki kepribadian,
+          pengalaman, kebutuhan, dan cara berkomunikasi yang berbeda.
+        </p>
+        <p>
+          Gunakan hasil kalkulator ini sebagai hiburan ringan, bukan dasar
+          untuk memutuskan menerima, menolak, atau mengakhiri suatu hubungan.
+        </p>
+
+        <aside class="tip-box">
+          <h3>♡ Tips untuk Kamu</h3>
+          <p>
+            Hubungan yang sehat dibangun melalui rasa hormat, komunikasi
+            terbuka, kejujuran, batasan yang saling dihargai, dan usaha dari
+            kedua pihak. Kamu tidak harus mengubah diri demi mendapatkan
+            skor kecocokan yang tinggi.
+          </p>
+        </aside>
+
+        <h2>Pertanyaan yang sering ditanyakan</h2>
+
+        <h3>Apakah kalkulator ini gratis?</h3>
+        <p>
+          Ya, kalkulator kecocokan pasangan CewekPedia bisa digunakan gratis
+          tanpa membuat akun.
+        </p>
+
+        <h3>Apakah nama dan zodiak saya disimpan?</h3>
+        <p>
+          Kalkulator ini memproses masukan di browser. Fitur ini tidak
+          mengirim nama atau zodiak yang dimasukkan ke server dan tidak
+          menyimpan hasilnya secara permanen.
+        </p>
+
+        <h3>Bisakah saya mencoba dengan gebetan?</h3>
+        <p>
+          Tentu! Masukkan nama dan zodiak kalian untuk mendapatkan hasil
+          hiburan yang bisa dibagikan. Ingat, hasilnya bukan prediksi
+          perasaan atau kesetiaan seseorang.
+        </p>
+
+        <section class="article-cta">
+          <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+          <p>
+            Selesai cek kecocokan? Kamu bisa menikmati musik atau bergabung
+            dalam obrolan santai.
+          </p>
+          <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+          <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
+        </section>
+      </article>
+    </div>
+
+    <aside class="sidebar-right" id="advertising-sidebar">
+      <div class="advertising-box" id="advertising-box">
+        <button
+          class="advertising-close"
+          type="button"
+          id="advertising-close"
+          aria-label="Tutup kotak promosi">×</button>
+
+        <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+        <p class="advertising-description">
+          Promosikan bisnismu di CewekPedia.
+        </p>
+
+        <div class="advertising-actions">
+          <a
+            class="advertising-button advertising-whatsapp"
+            href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+            target="_blank"
+            rel="noopener noreferrer">💬 WhatsApp</a>
+
+          <a
+            class="advertising-button advertising-email"
+            href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">✉️ Email</a>
+        </div>
+      </div>
+
+      <div id="monetag-ad-slot">
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="12120983"
+          async
+          data-cfasync="false"></script>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span class="current-year">2026</span> CewekPedia. Teman santai setiap hari ♡</p>
+  <div class="footer-links">
+    <a href="/">Beranda</a>
+    <a href="/artikel/">Artikel</a>
+    <a href="/#musik">Musik</a>
+    <a href="/#chat">Ruang Chat</a>
+    <a href="/tentang.html">Tentang</a>
+    <a href="/kontak.html">Kontak</a>
+    <a href="/privacy.html">Kebijakan Privasi</a>
+    <a href="/ketentuan.html">Ketentuan Penggunaan</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const form = document.getElementById("love-form");
+  const result = document.getElementById("love-result");
+  const scoreElement = document.getElementById("result-score");
+  const headingElement = document.getElementById("result-heading");
+  const descriptionElement = document.getElementById("result-description");
+  const progressFill = document.getElementById("progress-fill");
+  const shareButton = document.getElementById("share-result");
+
+  let shareText = "";
+
+  /*
+    Elemen zodiak digunakan untuk membuat skor hiburan yang konsisten.
+    Skor bukan hasil penelitian ilmiah atau prediksi hubungan.
+  */
+  const elements = {
+    aries: "fire",
+    leo: "fire",
+    sagittarius: "fire",
+    taurus: "earth",
+    virgo: "earth",
+    capricorn: "earth",
+    gemini: "air",
+    libra: "air",
+    aquarius: "air",
+    cancer: "water",
+    scorpio: "water",
+    pisces: "water"
+  };
+
+  const descriptions = {
+    high: [
+      "Kalian bisa menjadikan hasil ini sebagai alasan untuk mengenal satu sama lain lebih jauh. Tetap bangun komunikasi dan saling menghargai.",
+      "Versi hiburan kalkulator ini memberikan skor tinggi. Nikmati saja hasilnya sambil mengenal karakter masing-masing.",
+      "Skor kalian terlihat manis untuk seru-seruan! Hubungan nyata tetap membutuhkan usaha dari kedua pihak."
+    ],
+    medium: [
+      "Setiap pasangan punya perbedaan. Keterbukaan dan kesediaan mendengarkan bisa membantu kalian saling memahami.",
+      "Anggap hasil ini sebagai hiburan. Cobalah mengenali kebutuhan dan kebiasaan satu sama lain tanpa terburu-buru.",
+      "Perbedaan tidak otomatis menjadi masalah. Yang penting adalah cara kalian berkomunikasi dan menyelesaikan persoalan."
+    ],
+    low: [
+      "Jangan berkecil hati! Skor ini bukan ukuran kecocokan nyata. Hubungan tidak bisa dinilai hanya dari nama dan zodiak.",
+      "Hasil kalkulator tidak menentukan masa depan kalian. Kenali satu sama lain berdasarkan sikap dan tindakan nyata.",
+      "Tidak ada skor yang bisa mengukur seluruh cerita cinta. Tetap jadi diri sendiri dan hargai batasan masing-masing."
+    ]
+  };
+
+  function hashText(text) {
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+      hash = (hash * 31 + text.charCodeAt(i)) | 0;
+    }
+    return Math.abs(hash);
+  }
+
+  function calculateScore(name1, zodiac1, name2, zodiac2) {
+    const pair = [zodiac1, zodiac2].sort().join("|");
+    const namePair = [name1.trim().toLowerCase(), name2.trim().toLowerCase()]
+      .sort()
+      .join("|");
+
+    const e1 = elements[zodiac1];
+    const e2 = elements[zodiac2];
+
+    let base;
+
+    if (zodiac1 === zodiac2) {
+      base = 78;
+    } else if (e1 === e2) {
+      base = 82;
+    } else if (
+      (e1 === "fire" && e2 === "air") ||
+      (e1 === "air" && e2 === "fire") ||
+      (e1 === "earth" && e2 === "water") ||
+      (e1 === "water" && e2 === "earth")
+    ) {
+      base = 85;
+    } else {
+      base = 70;
+    }
+
+    const variation = hashText(pair + "|" + namePair) % 16;
+    return Math.min(99, base + variation);
+  }
+
+  function getResult(score) {
+    if (score >= 85) {
+      return {
+        heading: "Wah, Skor Kalian Tinggi! 💕",
+        description: descriptions.high[score % descriptions.high.length]
+      };
+    }
+
+    if (score >= 70) {
+      return {
+        heading: "Potensi Cerita yang Menarik 🌷",
+        description: descriptions.medium[score % descriptions.medium.length]
+      };
+    }
+
+    return {
+      heading: "Jangan Menyerah pada Angka 💗",
+      description: descriptions.low[score % descriptions.low.length]
+    };
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const name1 = document.getElementById("name1").value.trim();
+    const name2 = document.getElementById("name2").value.trim();
+    const zodiac1 = document.getElementById("zodiac1").value;
+    const zodiac2 = document.getElementById("zodiac2").value;
+
+    if (!name1 || !name2 || !zodiac1 || !zodiac2) return;
+
+    const score = calculateScore(name1, zodiac1, name2, zodiac2);
+    const resultData = getResult(score);
+
+    scoreElement.textContent = score + "%";
+    headingElement.textContent = name1 + " ♡ " + name2;
+    descriptionElement.textContent =
+      resultData.heading + " " + resultData.description;
+    progressFill.style.width = score + "%";
+
+    shareText =
+      "💕 Hasil Kalkulator Kecocokan Pasangan CewekPedia\n" +
+      name1 + " ♡ " + name2 + "\n" +
+      "Skor hiburan: " + score + "%\n\n" +
+      "Coba juga di https://cewekpedia.com/artikel/kalkulator-kecocokan-pasangan.html\n\n" +
+      "Catatan: skor ini hanya hiburan, bukan ukuran ilmiah kecocokan hubungan.";
+
+    result.style.display = "block";
+    result.focus();
+  });
+
+  shareButton.addEventListener("click", async function () {
+    if (!shareText) return;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Kalkulator Kecocokan Pasangan CewekPedia",
+          text: shareText
+        });
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(shareText);
+      shareButton.textContent = "✓ Hasil berhasil disalin";
+    } catch (error) {
+      window.prompt("Salin teks hasil ini:", shareText);
+    }
+  });
+})();
+
+// Tombol tutup kotak promosi
+(function () {
+  const box = document.getElementById("advertising-box");
+  const closeButton = document.getElementById("advertising-close");
+
+  if (box && closeButton) {
+    closeButton.addEventListener("click", function () {
+      box.style.display = "none";
+    });
+  }
+})();
+
+// Tahun footer otomatis
+document.querySelectorAll(".current-year").forEach(function (element) {
+  element.textContent = new Date().getFullYear();
+});
+
+// Pindahkan slot Monetag tanpa menyalin script iklan.
+(function () {
+  const adSlot = document.getElementById("monetag-ad-slot");
+  const mobileAnchor = document.getElementById("monetag-mobile-anchor");
+  const sidebar = document.getElementById("advertising-sidebar");
+  const advertisingBox = document.getElementById("advertising-box");
+
+  if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) return;
+
+  const mobileQuery = window.matchMedia("(max-width: 600px)");
+
+  function positionMonetag() {
+    if (mobileQuery.matches) {
+      if (mobileAnchor.nextElementSibling !== adSlot) {
+        mobileAnchor.insertAdjacentElement("afterend", adSlot);
+      }
+    } else if (advertisingBox.nextElementSibling !== adSlot) {
+      advertisingBox.insertAdjacentElement("afterend", adSlot);
+    }
+  }
+
+  positionMonetag();
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener("change", positionMonetag);
+  } else {
+    mobileQuery.addListener(positionMonetag);
+  }
+})();
+</script>
+
+<script src="/artikel/data.js"></script>
+<script src="/artikel/related.js"></script>
+<script src="/artikel/auto-date.js"></script>
+
+</body>
+</html>
