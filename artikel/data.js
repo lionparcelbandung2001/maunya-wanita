@@ -1,5 +1,68 @@
 const artikelData = [
 {
+    judul: "drama korea 100 days of deception 2026",
+    deskripsi: "100-days-of-deception",
+    tanggal: "30 oktober 2026",
+    gambar: "images/100-days-of-deception.jpeg",
+    link: "100-days-of-deception.html"
+  }, 
+    {
+    judul: "gigi kekuningan?berikut cara agar kembali putih berseri",
+    deskripsi: "cara memutihkan gigi yang kekuningan secara aman",
+    tanggal: "30 oktober 2026",
+    gambar: "images/cara-memutihkan-gigi-kekuningan.jpeg",
+    link: "cara-memutihkan-gigi-kekuningan.html"
+  }, 
+    {
+    judul: "punya jerawat membandel? berikut cara menghilangkannya",
+    deskripsi: "cara menghilangkan jerawat yang membandel dan gatal di muka",
+    tanggal: "30 oktober 2026",
+    gambar: "images/cara-menghilangkan-jerawat-membandel.jpeg",
+    link: "cara-menghilangkan-jerawat-membandel.html"
+  }, 
+    {
+    judul: "ciri wanita yang sedang memasuki menopause",
+    deskripsi: "ciri-ciri menapause dan penjelasannya",
+    tanggal: "30 oktober 2026",
+    gambar: "images/ciri-ciri-menopause.jpeg",
+    link: "ciri-ciri-menopause.html"
+  }, 
+    {
+    judul: "dead end job drama korea",
+    deskripsi: "sinopsis drakor dead-end-job-netflix 2026",
+    tanggal: "30 oktober 2026",
+    gambar: "images/dead-end-job-netflix.jpeg",
+    link: "dead-end-job-netflix.html"
+  }, 
+    {
+    judul: "doctor x mafia in white",
+    deskripsi: "sinopsis drakor doctor-x-mafia-in-white 30 oktober 2026",
+    tanggal: "30 oktober 2026",
+    gambar: "images/doctor-x-mafia-in-white.jpeg",
+    link: "doctor-x-mafia-in-white.html"
+  }, 
+    {
+    judul: "kalkulator pasangan",
+    deskripsi: "kalkulator kecocokan dalam memilih pasangan buat seru-seruan",
+    tanggal: "30 oktober 2026",
+    gambar: "images/kalkulator-kecocokan-pasangan.jpeg",
+    link: "kalkulator-kecocokan-pasangan.html"
+  }, 
+    {
+    judul: "make up halloween ang simpel dan seram",
+    deskripsi: "makeup-halloween-simpel",
+    tanggal: "30 oktober 2026",
+    gambar: "images/makeup-halloween-simpel.jpeg",
+    link: "makeup-halloween-simpel.html"
+  }, 
+    {
+    judul: "drakor the perfect lie",
+    deskripsi: "the-perfect-lie-drakor sinopsis dan jadwal tayang",
+    tanggal: "30 oktober 2026",
+    gambar: "images/the-perfect-lie-drakor.jpeg",
+    link: "the-perfect-lie-drakor.html"
+  }, 
+    {
     judul: "kalkulator masa subur",
     deskripsi: "mau tau kamu lagi di masa subur atau tidak? yuk cek disini",
     tanggal: "29 oktober 2026",
