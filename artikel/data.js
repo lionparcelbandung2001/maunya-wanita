@@ -3,8 +3,8 @@ const artikelData = [
     judul: "cara mencerahkan miss v?",
     deskripsi: "cara mencerahkan area miss v",
     tanggal: "31 oktober 2026",
-    gambar: "images/artikelcara-mencerahkan-miss-v.jpeg",
-    link: "artikelcara-mencerahkan-miss-v.html"
+    gambar: "images/cara-mencerahkan-miss-v.jpeg",
+    link: "cara-mencerahkan-miss-v.html"
   }, 
     {
     judul: "cara merawat payudara?",
