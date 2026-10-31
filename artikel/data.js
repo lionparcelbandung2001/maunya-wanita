@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "download kalender 2027",
+    deskripsi: "download kalender 2027",
+    tanggal: "01 november 2026",
+    gambar: "images/kalender2027.jpeg",
+    link: "kalender-2027.html"
+  }, 
+    {
     judul: "bayi dan anak rewel? mungkin gejala mau masuk angin, yuk cek ya",
     deskripsi: "cara mengatasi gejala masuk angin dan pilek pada bayi dan anak-anak",
     tanggal: "31 oktober 2026",
