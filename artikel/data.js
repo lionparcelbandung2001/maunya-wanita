@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "bayi dan anak rewel? mungkin gejala mau masuk angin, yuk cek ya",
+    deskripsi: "cara mengatasi gejala masuk angin dan pilek pada bayi dan anak-anak",
+    tanggal: "31 oktober 2026",
+    gambar: "images/cara-mengatasi-gejala-masuk-angin-pada-anak-dan-bayi.jpeg",
+    link: "cara-mengatasi-gejala-masuk-angin-pada-anak-dan-bayi.html"
+  }, 
+    {
     judul: "ingin pipi terlihat merah merona? cek ya",
     deskripsi: "cara agar terlihat pipi merah merona",
     tanggal: "31 oktober 2026",
