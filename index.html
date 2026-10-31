@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff4f9">
+
   <title>CewekPedia ❤️ — Musik, Chat, dan Hiburan Santai</title>
   <meta name="description" content="Dengarkan musik, ngobrol santai bersama komunitas, dan baca hiburan ringan di CewekPedia.">
   <link rel="canonical" href="https://cewekpedia.com/">
+
+  <!-- FAVICON -->
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
 
   <!-- Monetag Verification - JANGAN DIHAPUS -->
   <meta name="monetag" content="909d0dd158478b3b3f09219cc829a568">
-  <!-- Monetag Multitag - GANTI KE VIGNETTE BIAR MUNCUL -->
+  <!-- Monetag Multitag CPM - CPM BANNER -->
   <script src="https://quge5.com/88/tag.min.js" data-zone="12120984" async data-cfasync="false"></script>
 
   <!-- Google Analytics -->
@@ -23,11 +26,31 @@
     gtag('js', new Date());
     gtag('config', 'G-F9LX0ZNCJ7');
   </script>
+
   <style>
-    :root { color-scheme: light; --pink: #e83e86; --pink-dark: #b92d68; --ink: #422b38; --muted: #846c79; --line: #f0d7e3; --paper: #ffffff; --bg: #fff6fa; }
+    :root {
+      color-scheme: light;
+      --pink: #e83e86;
+      --pink-dark: #b92d68;
+      --ink: #422b38;
+      --muted: #846c79;
+      --line: #f0d7e3;
+      --paper: #ffffff;
+      --bg: #fff6fa;
+    }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 110px; background: var(--bg); }
-    body { margin: 0; min-height: 100vh; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: linear-gradient(135deg, #fff0f6 0%, #ffe3f0 35%, #fff4e6 75%, #eef3ff 100%); }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      background: var(--bg);
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, #fff0f6 0%, #ffe3f0 35%, #fff4e6 75%, #eef3ff 100%);
+    }
     a { color: var(--pink-dark); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .site-header { padding: 16px 14px 12px; text-align: center; }
@@ -142,7 +165,6 @@
       <div class="all-articles"><a href="/artikel/">Lihat semua artikel →</a></div>
     </section>
   </main>
-
   <!-- Iklan Banner Adsterra 160x300 - CUMA 1X -->
   <div id="adsterra-ad-slot" style="text-align:center; margin: 20px auto;">
     <script>
@@ -176,7 +198,7 @@
     function setStatus(text, kind = '') { statusText.textContent = text; statusDot.className = 'status-dot' + (kind ? ' ' + kind : ''); }
     function setNotice(text, isError = false) { notice.textContent = text; notice.className = 'notice' + (isError ? ' error' : ''); }
     function updateButton() { sendButton.disabled = !connected || !currentUid || !nickname.value.trim() || !input.value.trim(); }
-    function safeText(value, max) { return String(value ?? '').trim().replace(/[\u0000-\u0008\u000B\u000C\u000E-\u0001F\u007F]/g, '').slice(0, max); }
+    function safeText(value, max) { return String(value ?? '').trim().replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').slice(0, max); }
     function formatTime(value) { if (!Number.isFinite(value) || value <= 0) return ''; try { return new Intl.DateTimeFormat('id-ID', { hour: '2-digit', minute: '2-digit' }).format(new Date(value)); } catch { return ''; } }
     function renderMessages(data) {
       const entries = Object.entries(data || {}).map(([key, value]) => ({ key, ...(value || {}) })).filter(message => typeof message.text === 'string' && (typeof message.nickname === 'string' || typeof message.name === 'string')).sort((a, b) => (Number(a.timestamp ?? a.createdAt) || 0) - (Number(b.timestamp ?? b.createdAt) || 0));
