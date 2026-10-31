@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,10 +12,10 @@
   <meta name="author" content="CewekPedia">
 
   <link rel="canonical" href="https://cewekpedia.com/artikel/[SLUG_URL].html">
-
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
 
+  <!-- OPEN GRAPH -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CewekPedia">
   <meta property="og:title" content="[JUDUL_ARTIKEL] | CewekPedia">
@@ -25,11 +24,21 @@
   <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
   <meta property="og:locale" content="id_ID">
 
+  <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="[JUDUL_ARTIKEL] | CewekPedia">
   <meta name="twitter:description" content="[DESKRIPSI_ARTIKEL]">
   <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
 
+  <!-- MONETAG: PASANG SATU KALI SAJA -->
+  <script
+    src="https://quge5.com/88/tag.min.js"
+    data-zone="12120983"
+    async
+    data-cfasync="false">
+  </script>
+
+  <!-- DATA TERSTRUKTUR ARTIKEL -->
   <script type="application/ld+json" id="article-schema">
   {
     "@context": "https://schema.org",
@@ -37,8 +46,8 @@
     "headline": "[JUDUL_ARTIKEL]",
     "description": "[DESKRIPSI_ARTIKEL]",
     "image": "https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg",
-    "datePublished": "2026-10-25T08:00:00+07:00",
-    "dateModified": "2026-10-25T08:00:00+07:00",
+    "datePublished": "[TANGGAL_PUBLIKASI_ISO]",
+    "dateModified": "[TANGGAL_UPDATE_ISO]",
     "inLanguage": "id-ID",
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -66,7 +75,6 @@
       --pink: #d65b99;
       --pink-dark: #a83270;
       --pink-light: #fff0f6;
-      --purple: #8663a8;
       --text: #443541;
       --muted: #806f7c;
       --white: #ffffff;
@@ -74,7 +82,7 @@
 
     body {
       margin: 0;
-      padding-bottom: 20px;
+      padding: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #fffafd;
       color: var(--text);
@@ -98,7 +106,6 @@
       font-size: 25px;
       font-weight: 800;
       text-decoration: none;
-      letter-spacing: 0.3px;
     }
 
     .tagline {
@@ -133,8 +140,8 @@
 
     .layout-wrapper {
       display: flex;
-      gap: 22px;
       align-items: flex-start;
+      gap: 22px;
     }
 
     .main-content {
@@ -214,7 +221,6 @@
       margin: 22px 0 8px;
       color: #754b68;
       font-size: 18px;
-      line-height: 1.5;
     }
 
     .article-content p {
@@ -276,43 +282,43 @@
     .cta-button {
       display: inline-block;
       padding: 11px 20px;
+      margin: 4px;
       color: #fff !important;
       background: var(--pink);
       border-radius: 30px;
       text-decoration: none !important;
       font-size: 14px;
       font-weight: bold;
-      margin: 4px;
     }
 
     .cta-button:hover {
       background: var(--pink-dark);
     }
 
-    /* KOTAK INGIN BERIKLAN */
+    /* KOTAK PROMOSI */
     .advertising-box {
       position: relative;
-      background: linear-gradient(145deg, #ff6ab2, #a855f7);
-      border-radius: 14px;
       padding: 14px 12px;
       color: #fff;
-      box-shadow: 0 6px 18px rgba(214, 91, 153, 0.25);
-      border: 1.5px solid #fff;
       text-align: center;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border: 1.5px solid #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(214, 91, 153, 0.25);
     }
 
     .advertising-title {
       margin: 0 0 4px;
+      color: #fff;
       font-size: 14px;
       font-weight: 800;
-      color: #fff;
     }
 
     .advertising-description {
       margin: 0 0 10px;
-      font-size: 11px;
-      line-height: 1.35;
       color: #fff0f7;
+      font-size: 11px;
+      line-height: 1.5;
     }
 
     .advertising-actions {
@@ -326,7 +332,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 7px 10px;
+      padding: 8px 10px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: bold;
@@ -334,50 +340,45 @@
     }
 
     .advertising-whatsapp {
-      background: #25d366;
       color: #fff !important;
+      background: #25d366;
     }
 
     .advertising-email {
-      background: #fff;
       color: #a83270 !important;
+      background: #fff;
     }
 
     .advertising-close {
       position: absolute;
-      top: -6px;
-      right: -6px;
-      width: 22px;
-      height: 22px;
+      top: -7px;
+      right: -7px;
+      width: 23px;
+      height: 23px;
       border: none;
       border-radius: 50%;
       background: #fff;
       color: #725566;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,.2);
     }
 
-    /* AREA MONETAG */
-    #monetag-ad-slot {
+    /* SLOT ADSTERRA 160 x 300 */
+    #adsterra-ad-slot {
       width: 100%;
-      min-width: 0;
-      margin-top: 12px;
-      overflow-wrap: anywhere;
+      max-width: 160px;
+      min-height: 300px;
+      margin: 18px auto;
+      text-align: center;
+      overflow: hidden;
     }
 
-    #monetag-ad-slot iframe,
-    #monetag-ad-slot img {
+    #adsterra-ad-slot iframe {
+      display: block;
       max-width: 100%;
-    }
-
-    /* Titik lokasi khusus HP, tidak menampilkan kotak kosong */
-    #monetag-mobile-anchor {
-      display: none;
+      margin: 0 auto;
     }
 
     .site-footer {
@@ -402,27 +403,33 @@
       text-decoration: none;
     }
 
-    /* TABLET DAN LAYAR KECIL */
+    /* TABLET DAN HP */
     @media (max-width: 900px) {
       .layout-wrapper {
         flex-direction: column;
       }
 
-      .main-content {
-        width: 100%;
-      }
-
+      .main-content,
       .sidebar-right {
         width: 100%;
+      }
+
+      /* Sidebar diposisikan static agar ikut terscroll naik-turun bersama halaman */
+      .sidebar-right {
         position: static;
+        display: flex;
+        flex-direction: column;
       }
 
+      /* Mengatur urutan di HP: Kotak promosi di atas, Adsterra khusus dipindah ke posisi paling bawah */
       .advertising-box {
-        padding: 12px;
+        order: 1;
       }
 
-      .advertising-description {
-        display: block;
+      #adsterra-ad-slot {
+        order: 2;
+        margin: 25px auto 10px auto;
+        position: static; /* Memastikan iklan ikut scroll naik-turun secara natural */
       }
 
       .advertising-actions {
@@ -432,11 +439,10 @@
       }
 
       .advertising-button {
-        padding: 7px 10px;
+        flex: 1 1 120px;
       }
     }
 
-    /* KHUSUS HP */
     @media (max-width: 600px) {
       .site-header {
         padding: 20px 12px;
@@ -459,46 +465,11 @@
         font-size: 24px;
       }
 
-      /*
-        Monetag diletakkan setelah judul dan tanggal.
-        Elemen mengikuti alur halaman saat scroll,
-        bukan menempel menutupi isi artikel.
-      */
-      #monetag-mobile-anchor {
-        display: block;
-        width: 100%;
-        min-height: 0;
-        margin: 10px 0 16px;
-        scroll-margin-top: 12px;
+      .article-content h2 {
+        font-size: 20px;
       }
 
-      #monetag-ad-slot {
-        position: static;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        margin: 0;
-        padding: 0;
-        overflow: visible;
-        overflow-wrap: anywhere;
-      }
-
-      #monetag-ad-slot iframe,
-      #monetag-ad-slot img {
-        max-width: 100%;
-      }
-
-      /*
-        Kotak Ingin Beriklan tetap di bawah,
-        setelah konten artikel dan tidak sticky.
-      */
       .advertising-box {
-        position: relative;
-        width: 100%;
-      }
-
-      .sidebar-right {
-        position: static;
         width: 100%;
       }
     }
@@ -529,29 +500,30 @@
 
   <div class="layout-wrapper">
 
-    <!-- KOLOM ARTIKEL -->
+    <!-- KONTEN ARTIKEL -->
     <div class="main-content">
       <article class="article-card">
 
         <span class="article-category">[NAMA_KATEGORI]</span>
 
-        <h1 class="article-title">
-          [JUDUL_ARTIKEL]
-        </h1>
+        <h1 class="article-title">[JUDUL_ARTIKEL]</h1>
 
         <div class="article-date">
           Dipublikasikan:
-          <time id="article-published-date" datetime="2026-10-25">25 Oktober 2026</time>
+          <time id="article-published-date"
+                datetime="[TANGGAL_PUBLIKASI]">
+            [TANGGAL_PUBLIKASI_TAMPILAN]
+          </time>
           <span aria-hidden="true"> · </span>
           Diperbarui:
-          <time id="article-updated-date" datetime="2026-10-25">25 Oktober 2026</time>
+          <time id="article-updated-date"
+                datetime="[TANGGAL_UPDATE]">
+            [TANGGAL_UPDATE_TAMPILAN]
+          </time>
         </div>
 
-        <!-- SLOT MONETAG KHUSUS HP -->
-        <div id="monetag-mobile-anchor"></div>
-
         <img
-          src="images/[NAMA_GAMBAR].jpeg"
+          src="/artikel/images/[NAMA_GAMBAR].jpeg"
           alt="[DESKRIPSI_GAMBAR]"
           class="article-image"
           width="700"
@@ -561,16 +533,20 @@
 
         <div class="article-content">
 
-          <p>
-            [PARAGRAF_PEMBUKA_ARTIKEL]
-          </p>
+          <p>[PARAGRAF_PEMBUKA_ARTIKEL]</p>
 
           <h2>[SUBJUDUL_1]</h2>
           <p>[ISI_SUBJUDUL_1]</p>
 
           <ul>
-            <li><strong>[POIN_1]:</strong> [PENJELASAN_POIN_1]</li>
-            <li><strong>[POIN_2]:</strong> [PENJELASAN_POIN_2]</li>
+            <li>
+              <strong>[POIN_1]:</strong>
+              [PENJELASAN_POIN_1]
+            </li>
+            <li>
+              <strong>[POIN_2]:</strong>
+              [PENJELASAN_POIN_2]
+            </li>
           </ul>
 
           <aside class="tip-box">
@@ -586,15 +562,18 @@
 
         </div>
 
+        <!-- CTA CEWEKPEDIA -->
         <section class="article-cta">
           <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
           <p>
-            Sudah selesai membaca? Kamu bisa menikmati musik
-            atau bergabung dalam obrolan santai.
+            Sudah selesai membaca? Nikmati musik atau
+            bergabung dalam obrolan santai bersama pengunjung lain.
           </p>
+
           <a class="cta-button" href="/#chat">
             💬 Buka Ruang Chat
           </a>
+
           <a class="cta-button" href="/#musik">
             ♫ Dengarkan Musik
           </a>
@@ -603,9 +582,10 @@
       </article>
     </div>
 
-    <!-- SIDEBAR PC: INGIN BERIKLAN DAN MONETAG -->
-    <aside class="sidebar-right" id="advertising-sidebar">
+    <!-- SIDEBAR IKLAN -->
+    <aside class="sidebar-right">
 
+      <!-- PROMOSI LANGSUNG -->
       <div class="advertising-box" id="advertising-box">
 
         <button
@@ -638,35 +618,28 @@
             ✉️ Email
           </a>
         </div>
-
       </div>
 
-      <!-- MONETAG ZONE 12120983 -->
-      <div id="monetag-ad-slot">
-        <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="12120983"
-          async
-          data-cfasync="false">
-        </script>
-      </div>
-<!-- Iklan Banner Adsterra 160x300 -->
+      <!-- ADSTERRA BANNER 160 x 300 -->
       <div id="adsterra-ad-slot">
-        <script>
+        <script type="text/javascript">
           atOptions = {
-            'key' : '50d34fd68fbf25f75c6f754743852dfe',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160,
-            'params' : {}
+            'key': '50d34fd68fbf25f75c6f754743852dfe',
+            'format': 'iframe',
+            'height': 300,
+            'width': 160,
+            'params': {}
           };
         </script>
-        <script src="https://bicea.org/22/50d34fd68fbf25f75c6f754743852dfe"></script>
+        <script
+          type="text/javascript"
+          src="https://bicea.org/22/50d34fd68fbf25f75c6f754743852dfe">
+        </script>
       </div>
+
     </aside>
 
   </div>
-
 </main>
 
 <footer class="site-footer">
@@ -681,14 +654,14 @@
     <a href="/#musik">Musik</a>
     <a href="/#chat">Ruang Chat</a>
     <a href="/tentang.html">Tentang</a>
-    <a href="/kontak.html">Kontak</a>
+    <a href="/saran.html">Saran</a>
     <a href="/privacy.html">Kebijakan Privasi</a>
     <a href="/ketentuan.html">Ketentuan Penggunaan</a>
   </div>
 </footer>
 
 <script>
-  // Tombol tutup kotak promosi
+  // Tombol menutup kotak promosi
   (function () {
     var box = document.getElementById("advertising-box");
     var closeButton = document.getElementById("advertising-close");
@@ -702,49 +675,12 @@
 
   // Tahun footer otomatis
   (function () {
-    var yearElements = document.querySelectorAll(".current-year");
-    var currentYear = new Date().getFullYear();
+    var elements = document.querySelectorAll(".current-year");
+    var year = new Date().getFullYear();
 
-    yearElements.forEach(function (element) {
-      element.textContent = currentYear;
+    elements.forEach(function (element) {
+      element.textContent = year;
     });
-  })();
-
-  // Pindahkan slot Monetag sesuai ukuran layar.
-  // Script iklan tidak disalin atau dijalankan ulang.
-  (function () {
-    var adSlot = document.getElementById("monetag-ad-slot");
-    var mobileAnchor = document.getElementById("monetag-mobile-anchor");
-    var sidebar = document.getElementById("advertising-sidebar");
-    var advertisingBox = document.getElementById("advertising-box");
-
-    if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
-      return;
-    }
-
-    var mobileQuery = window.matchMedia("(max-width: 600px)");
-
-    function positionMonetag() {
-      if (mobileQuery.matches) {
-        // HP: setelah tanggal artikel, sebelum gambar artikel.
-        if (mobileAnchor.nextElementSibling !== adSlot) {
-          mobileAnchor.insertAdjacentElement("afterend", adSlot);
-        }
-      } else {
-        // PC: sidebar kanan, di bawah kotak promosi.
-        if (advertisingBox.nextElementSibling !== adSlot) {
-          advertisingBox.insertAdjacentElement("afterend", adSlot);
-        }
-      }
-    }
-
-    positionMonetag();
-
-    if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener("change", positionMonetag);
-    } else {
-      mobileQuery.addListener(positionMonetag);
-    }
   })();
 </script>
 
