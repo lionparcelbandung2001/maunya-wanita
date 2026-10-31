@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "ingin pipi terlihat merah merona? cek ya",
+    deskripsi: "cara agar terlihat pipi merah merona",
+    tanggal: "31 oktober 2026",
+    gambar: "images/pipi-merona.jpeg",
+    link: "pipi-merona.html"
+  }, 
+    {
     judul: "sinopsis dr x 1 november 2026",
     deskripsi: "SINOPSIS DR X 1 SEPTEMBER 2026",
     tanggal: "31 oktober 2026",
