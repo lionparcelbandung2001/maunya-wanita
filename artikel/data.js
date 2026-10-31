@@ -10,7 +10,7 @@ const artikelData = [
     judul: "cara merawat payudara?",
     deskripsi: "cara-merawat-payudara",
     tanggal: "31 oktober 2026",
-    gambar: "images/cara-merawat-payudara.html.jpeg",
+    gambar: "images/cara-merawat-payudara.jpeg",
     link: "cara-merawat-payudara.html"
   }, 
     {
