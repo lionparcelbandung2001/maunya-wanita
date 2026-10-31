@@ -17,8 +17,10 @@
   <meta property="og:description" content="[DESKRIPSI_ARTIKEL]">
   <meta property="og:url" content="https://cewekpedia.com/artikel/[SLUG_URL].html">
   <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
-  <!-- MONETAG -->
-  <script src="https://quge5.com/88/tag.min.js" data-zone="12120983" async data-cfasync="false"></script>
+  <!-- MONETAG VERIFICATION - JANGAN DIHAPUS -->
+  <meta name="monetag" content="909d0dd158478b3b3f09219cc829a568">
+  <!-- MONETAG VIGNETTE - UDAH DIBENERIN BIAR MUNCUL -->
+  <script src="https://quge5.com/88/tag.min.js" data-zone="12120984" async data-cfasync="false"></script>
   <script type="application/ld+json" id="article-schema">
   {"@context":"https://schema.org","@type":"BlogPosting","headline":"[JUDUL_ARTIKEL]","description":"[DESKRIPSI_ARTIKEL]","image":"https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg","datePublished":"[TANGGAL_PUBLIKASI_ISO]","dateModified":"[TANGGAL_UPDATE_ISO]","inLanguage":"id-ID","author":{"@type":"Organization","name":"CewekPedia"}}
   </script>
@@ -58,7 +60,7 @@
       .layout-wrapper{flex-direction:column}
       .main-content,.sidebar-right{width:100%}
       .sidebar-right{position:static;display:contents}
-      #adsterra-ad-slot{display:none} /* di HP pakai bottom wrapper aja */
+      #adsterra-ad-slot{display:none}
     }
   </style>
 </head>
@@ -122,27 +124,24 @@
   var close = document.getElementById('adsterra-bottom-close');
   var STORAGE_KEY = 'adsterra_closed_time';
   
-  // Cek apakah baru saja ditutup (1 jam)
   var closedTime = localStorage.getItem(STORAGE_KEY);
   if(closedTime && (Date.now() - parseInt(closedTime)) < 3600000){
-    return; // jangan tampilkan jika baru ditutup
+    return;
   }
 
   var shown = false;
   function showAd(){
     if(shown) return;
-    if(window.innerWidth > 900) return; // hanya HP
+    if(window.innerWidth > 900) return;
     shown = true;
     bottom.classList.add('show');
   }
 
-  // Muncul setelah scroll 40%
   window.addEventListener('scroll', function(){
     var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
     if(scrollPercent > 40){ showAd(); }
   });
 
-  // Atau muncul setelah 6 detik (mana duluan)
   setTimeout(showAd, 6000);
 
   close.addEventListener('click', function(){
