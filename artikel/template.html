@@ -4,58 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#d65b99">
+
   <title>[JUDUL_ARTIKEL] | CewekPedia</title>
   <meta name="description" content="[DESKRIPSI_ARTIKEL]">
   <meta name="keywords" content="[KATA_KUNCI_ARTIKEL]">
   <meta name="robots" content="index, follow">
   <meta name="author" content="CewekPedia">
+
   <link rel="canonical" href="https://cewekpedia.com/artikel/[SLUG_URL].html">
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
+
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CewekPedia">
   <meta property="og:title" content="[JUDUL_ARTIKEL] | CewekPedia">
   <meta property="og:description" content="[DESKRIPSI_ARTIKEL]">
   <meta property="og:url" content="https://cewekpedia.com/artikel/[SLUG_URL].html">
   <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
+
   <!-- MONETAG VERIFICATION - JANGAN DIHAPUS -->
   <meta name="monetag" content="909d0dd158478b3b3f09219cc829a568">
-  <!-- MONETAG VIGNETTE - UDAH DIBENERIN BIAR MUNCUL -->
+
+  <!-- MONETAG VIGNETTE -->
   <script src="https://quge5.com/88/tag.min.js" data-zone="12120984" async data-cfasync="false"></script>
+
   <script type="application/ld+json" id="article-schema">
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"[JUDUL_ARTIKEL]","description":"[DESKRIPSI_ARTIKEL]","image":"https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg","datePublished":"[TANGGAL_PUBLIKASI_ISO]","dateModified":"[TANGGAL_UPDATE_ISO]","inLanguage":"id-ID","author":{"@type":"Organization","name":"CewekPedia"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[JUDUL_ARTIKEL]",
+    "description": "[DESKRIPSI_ARTIKEL]",
+    "image": "https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg",
+    "datePublished": "[TANGGAL_PUBLIKASI_ISO]",
+    "dateModified": "[TANGGAL_UPDATE_ISO]",
+    "inLanguage": "id-ID",
+    "author": {
+      "@type": "Organization",
+      "name": "CewekPedia"
+    }
+  }
   </script>
+
   <style>
-    *{box-sizing:border-box}:root{--pink:#d65b99;--pink-dark:#a83270;--pink-light:#fff0f6;--text:#443541;--muted:#806f7c;--white:#fff}
+    *{box-sizing:border-box}
+    :root{--pink:#d65b99;--pink-dark:#a83270;--pink-light:#fff0f6;--text:#443541;--muted:#806f7c;--white:#fff}
+
     body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#fffafd;color:var(--text);line-height:1.8}
+
     .site-header{padding:24px 16px;text-align:center;background:linear-gradient(135deg,#ffe2ef,#f4e8ff);border-bottom:1px solid #f5d8e8}
     .brand{color:var(--pink-dark);font-size:25px;font-weight:800;text-decoration:none}
     .tagline{margin:5px 0 0;color:#80677b;font-size:13px}
+
     .top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 20px;padding:12px;background:#fff;border-bottom:1px solid #f4e3ec}
     .top-nav a{color:var(--pink-dark);font-size:13px;font-weight:bold;text-decoration:none}
+
     .container{width:100%;max-width:1140px;margin:auto;padding:22px 16px}
     .layout-wrapper{display:flex;align-items:flex-start;gap:22px}
     .main-content{flex:1;min-width:0}
     .sidebar-right{width:240px;flex-shrink:0;position:sticky;top:20px}
+
     .back-link{display:inline-block;margin-bottom:16px;color:var(--pink-dark);text-decoration:none;font-weight:bold;font-size:14px}
+
     .article-card{padding:26px;background:var(--white);border:1px solid #f4e3ec;border-radius:18px;box-shadow:0 5px 20px rgba(173,87,132,.07);overflow-wrap:anywhere}
+
     .article-category{display:inline-block;padding:5px 12px;color:var(--pink-dark);background:var(--pink-light);border-radius:20px;font-size:12px;font-weight:bold}
+
     .article-title{margin:13px 0 10px;color:#663c58;font-size:30px;line-height:1.35}
+
     .article-date{margin-bottom:18px;color:var(--muted);font-size:12px}
+
     .article-image{display:block;width:100%;max-width:700px;height:auto;max-height:400px;object-fit:cover;margin:18px auto 24px;border-radius:14px;background:#fff7fb;border:1px solid #f2dbe6}
+
     .article-content h2{margin:28px 0 10px;color:var(--pink-dark);font-size:22px}
     .article-content p{margin:13px 0;font-size:16px}
     .article-content ul{padding-left:24px}
+
     .advertising-box{position:relative;padding:14px 12px;text-align:center;background:linear-gradient(145deg,#ff6ab2,#a855f7);border-radius:14px;color:#fff}
+
+    .advertising-box a{color:#fff;font-weight:bold;text-decoration:underline}
+
     .advertising-close{position:absolute;top:-7px;right:-7px;width:23px;height:23px;border:none;border-radius:50%;background:#fff;color:#725566;font-size:15px;font-weight:bold;cursor:pointer}
+
     /* ADSTERRA SIDEBAR */
     #adsterra-ad-slot{width:100%;max-width:160px;min-height:300px;margin:18px auto;text-align:center;position:sticky;top:20px}
+
     /* ADSTERRA TENGAH */
     #adsterra-ad-slot-middle{width:100%;max-width:300px;min-height:250px;margin:26px auto;text-align:center;background:#fff7fb;border:1px dashed #f2dbe6;border-radius:12px;padding:6px}
+
     /* WRAPPER BOTTOM HP - SEMBUNYI DI AWAL */
     #adsterra-bottom-wrapper{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;justify-content:center;padding:8px;background:rgba(255,255,255,0.95);box-shadow:0 -4px 20px rgba(0,0,0,0.15);border-top:1px solid #f4e3ec}
+
     #adsterra-bottom-wrapper.show{display:flex}
+
     #adsterra-bottom-close{position:absolute;top:-10px;right:10px;width:26px;height:26px;background:#fff;border:1px solid #f4e3ec;border-radius:50%;cursor:pointer;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,0.15)}
+
     .site-footer{margin-top:35px;padding:25px 15px;text-align:center;background:#fff0f6;color:#80677b;font-size:13px}
+
     @media(max-width:900px){
       .layout-wrapper{flex-direction:column}
       .main-content,.sidebar-right{width:100%}
@@ -64,91 +107,169 @@
     }
   </style>
 </head>
+
 <body>
-<header class="site-header"><a class="brand" href="/">CewekPedia ♡</a><p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p></header>
-<nav class="top-nav"><a href="/">Beranda</a><a href="/artikel/">Semua Artikel</a></nav>
+
+<header class="site-header">
+  <a class="brand" href="/">CewekPedia ♡</a>
+  <p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p>
+</header>
+
+<nav class="top-nav">
+  <a href="/">Beranda</a>
+  <a href="/artikel/">Semua Artikel</a>
+</nav>
+
 <main class="container">
+
   <a class="back-link" href="/artikel/">← Kembali ke Daftar Artikel</a>
+
   <div class="layout-wrapper">
+
     <div class="main-content">
+
       <article class="article-card">
+
         <span class="article-category">[NAMA_KATEGORI]</span>
+
         <h1 class="article-title">[JUDUL_ARTIKEL]</h1>
-        <div class="article-date">Dipublikasikan: [TANGGAL_PUBLIKASI_TAMPILAN]</div>
-        <img src="/artikel/images/[NAMA_GAMBAR].jpeg" alt="[DESKRIPSI_GAMBAR]" class="article-image" width="700" height="400">
+
+        <div class="article-date">
+          Dipublikasikan:
+          <time class="auto-date" datetime="[TANGGAL_PUBLIKASI_ISO]">[TANGGAL_PUBLIKASI_TAMPILAN]</time>
+        </div>
+
+        <img
+          src="/artikel/images/[NAMA_GAMBAR].jpeg"
+          alt="[DESKRIPSI_GAMBAR]"
+          class="article-image"
+          width="700"
+          height="400"
+        >
+
         <div class="article-content">
+
           <p>[PARAGRAF_PEMBUKA_ARTIKEL]</p>
+
           <h2>[SUBJUDUL_1]</h2>
+
           <p>[ISI_SUBJUDUL_1]</p>
-          <ul><li><strong>[POIN_1]:</strong> [PENJELASAN_POIN_1]</li><li><strong>[POIN_2]:</strong> [PENJELASAN_POIN_2]</li></ul>
+
+          <ul>
+            <li><strong>[POIN_1]:</strong> [PENJELASAN_POIN_1]</li>
+            <li><strong>[POIN_2]:</strong> [PENJELASAN_POIN_2]</li>
+          </ul>
 
           <!-- IKLAN TENGAH - PC & HP -->
           <div id="adsterra-ad-slot-middle">
-            <script type="text/javascript">atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':250,'width':300,'params':{}};</script>
+            <script type="text/javascript">
+              atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':250,'width':300,'params':{}};
+            </script>
             <script type="text/javascript" src="https://www.highperformanceformat.com/50d34fd68fbf25f75c6f754743852dfe/invoke.js"></script>
           </div>
 
           <h2>[SUBJUDUL_2]</h2>
+
           <p>[ISI_SUBJUDUL_2]</p>
+
           <h2>Penutup</h2>
+
           <p>[PARAGRAF_KESIMPULAN]</p>
+
         </div>
       </article>
     </div>
+
     <aside class="sidebar-right">
-      <div class="advertising-box">📢 Ingin Beriklan? Promosikan bisnismu di CewekPedia.</div>
+
+      <div class="advertising-box">
+        📢 Ingin Beriklan?
+        <a href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Iklan%20CewekPedia">
+          Promosikan bisnismu di CewekPedia
+        </a>.
+      </div>
+
       <!-- SIDEBAR PC -->
       <div id="adsterra-ad-slot">
-        <script type="text/javascript">atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':300,'width':160,'params':{}};</script>
+        <script type="text/javascript">
+          atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':300,'width':160,'params':{}};
+        </script>
         <script type="text/javascript" src="https://www.highperformanceformat.com/50d34fd68fbf25f75c6f754743852dfe/invoke.js"></script>
       </div>
+
     </aside>
+
   </div>
 </main>
 
 <!-- BOTTOM STICKY HP - MUNCUL SETELAH SCROLL -->
 <div id="adsterra-bottom-wrapper">
+
   <button id="adsterra-bottom-close" title="Tutup">×</button>
+
   <div id="adsterra-bottom-ad">
-    <script type="text/javascript">atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':250,'width':300,'params':{}};</script>
+    <script type="text/javascript">
+      atOptions={'key':'50d34fd68fbf25f75c6f754743852dfe','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
     <script type="text/javascript" src="https://www.highperformanceformat.com/50d34fd68fbf25f75c6f754743852dfe/invoke.js"></script>
   </div>
+
 </div>
 
-<footer class="site-footer">&copy; 2026 CewekPedia ♡</footer>
+<footer class="site-footer">
+  &copy; 2026 CewekPedia ♡
+</footer>
 
 <script>
 // LOGIKA IKLAN HP ANTI GANGGU
 (function(){
+
   var bottom = document.getElementById('adsterra-bottom-wrapper');
   var close = document.getElementById('adsterra-bottom-close');
   var STORAGE_KEY = 'adsterra_closed_time';
-  
+
   var closedTime = localStorage.getItem(STORAGE_KEY);
+
   if(closedTime && (Date.now() - parseInt(closedTime)) < 3600000){
     return;
   }
 
   var shown = false;
+
   function showAd(){
     if(shown) return;
     if(window.innerWidth > 900) return;
+
     shown = true;
     bottom.classList.add('show');
   }
 
   window.addEventListener('scroll', function(){
-    var scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if(scrollPercent > 40){ showAd(); }
+
+    var scrollPercent =
+      (window.scrollY /
+      (document.body.scrollHeight - window.innerHeight)) * 100;
+
+    if(scrollPercent > 40){
+      showAd();
+    }
+
   });
 
   setTimeout(showAd, 6000);
 
   close.addEventListener('click', function(){
+
     bottom.style.display = 'none';
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
+
   });
+
 })();
 </script>
+
+<!-- AUTO-DATE ARTIKEL -->
+<script src="/artikel/auto-date.js"></script>
+
 </body>
 </html>
