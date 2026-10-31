@@ -1,5 +1,68 @@
 const artikelData = [
 {
+    judul: "cara mencerahkan miss v?",
+    deskripsi: "cara mencerahkan area miss v",
+    tanggal: "31 oktober 2026",
+    gambar: "images/artikelcara-mencerahkan-miss-v.jpeg",
+    link: "artikelcara-mencerahkan-miss-v.html"
+  }, 
+    {
+    judul: "cara merawat payudara?",
+    deskripsi: "cara-merawat-payudara",
+    tanggal: "31 oktober 2026",
+    gambar: "images/cara-merawat-payudara.html.jpeg",
+    link: "cara-merawat-payudara.html"
+  }, 
+    {
+    judul: "list drama china oktober 2026",
+    deskripsi: "drama-china-oktober-2026",
+    tanggal: "31 oktober 2026",
+    gambar: "images/drama-china-oktober-2026.jpeg",
+    link: "drama-china-oktober-2026.html"
+  }, 
+    {
+    judul: "list drama korea oktober 2026",
+    deskripsi: "drama-korea-oktober-2026",
+    tanggal: "31 oktober 2026",
+    gambar: "images/drama-korea-oktober-2026.jpeg",
+    link: "drama-korea-oktober-2026.html"
+  }, 
+    {
+    judul: "list film indonesia oktober 2026",
+    deskripsi: "film-indonesia-oktober-2026",
+    tanggal: "31 oktober 2026",
+    gambar: "images/film-indonesia-oktober-2026.jpeg",
+    link: "film-indonesia-oktober-2026.html"
+  }, 
+    {
+    judul: "lagi sedih?tonton beberapa film ini ya sist",
+    deskripsi: "fil yang wajib di tonton saat sedih",
+    tanggal: "31 oktober 2026",
+    gambar: "images/film-yang-cocok-ditonton-saat-sedih.jpeg",
+    link: "film-yang-cocok-ditonton-saat-sedih.html"
+  }, 
+    {
+    judul: "pembahasan kesehatan mental bagi perempuan",
+    deskripsi: "mental health untuk para wanita",
+    tanggal: "31 oktober 2026",
+    gambar: "images/kesehatan-mental-perempuan.jpeg",
+    link: "kesehatan-mental-perempuan.html"
+  }, 
+    {
+    judul: "pink october 2026",
+    deskripsi: "pink october 2026 bertema kesahatan payudara",
+    tanggal: "31 oktober 2026",
+    gambar: "images/pink-october-2026.jpeg",
+    link: "pink-october-2026.html"
+  }, 
+    {
+    judul: "reuni yoo yeon seok seo hyun jin the-perfect-lie- drama vertikal",
+    deskripsi: "reuni-yoo-yeon-seok-seo-hyun-jin-the-perfect-lie-drama-vertikal",
+    tanggal: "31 oktober 2026",
+    gambar: "images/reuni-yoo-yeon-seok-seo-hyun-jin-the-perfect-lie-drama-vertikal.jpeg",
+    link: "reuni-yoo-yeon-seok-seo-hyun-jin-the-perfect-lie-drama-vertikal.html"
+  }, 
+    {
     judul: "drama korea 100 days of deception 2026",
     deskripsi: "100-days-of-deception",
     tanggal: "30 oktober 2026",
