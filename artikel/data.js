@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "sinopsis dr x 1 november 2026",
+    deskripsi: "SINOPSIS DR X 1 SEPTEMBER 2026",
+    tanggal: "31 oktober 2026",
+    gambar: "images/sinopsis-dr-x.jpeg",
+    link: "sinopsis-dr-x-1-november-2026.html"
+  }, 
+    {
     judul: "cara mencerahkan miss v?",
     deskripsi: "cara mencerahkan area miss v",
     tanggal: "31 oktober 2026",
