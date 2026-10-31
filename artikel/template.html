@@ -30,7 +30,8 @@
   <meta name="twitter:description" content="[DESKRIPSI_ARTIKEL]">
   <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
 
-  <!-- MONETAG: PASANG SATU KALI SAJA -->
+  <!-- MONETAG: SATU KALI SAJA -->
+  <!-- Pastikan ID zona cocok dengan dashboard Monetag -->
   <script
     src="https://quge5.com/88/tag.min.js"
     data-zone="12120983"
@@ -295,7 +296,7 @@
       background: var(--pink-dark);
     }
 
-    /* KOTAK PROMOSI */
+    /* KOTAK INGIN BERIKLAN */
     .advertising-box {
       position: relative;
       padding: 14px 12px;
@@ -365,7 +366,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,.2);
     }
 
-    /* SLOT ADSTERRA 160 x 300 */
+    /* ADSTERRA DESKTOP */
     #adsterra-ad-slot {
       width: 100%;
       max-width: 160px;
@@ -381,6 +382,7 @@
       margin: 0 auto;
     }
 
+    /* FOOTER */
     .site-footer {
       margin-top: 35px;
       padding: 25px 15px;
@@ -403,7 +405,7 @@
       text-decoration: none;
     }
 
-    /* TABLET DAN HP */
+    /* TABLET */
     @media (max-width: 900px) {
       .layout-wrapper {
         flex-direction: column;
@@ -414,22 +416,8 @@
         width: 100%;
       }
 
-      /* Sidebar diposisikan static agar ikut terscroll naik-turun bersama halaman */
       .sidebar-right {
         position: static;
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Mengatur urutan di HP: Kotak promosi di atas, Adsterra khusus dipindah ke posisi paling bawah */
-      .advertising-box {
-        order: 1;
-      }
-
-      #adsterra-ad-slot {
-        order: 2;
-        margin: 25px auto 10px auto;
-        position: static; /* Memastikan iklan ikut scroll naik-turun secara natural */
       }
 
       .advertising-actions {
@@ -441,8 +429,13 @@
       .advertising-button {
         flex: 1 1 120px;
       }
+
+      #adsterra-ad-slot {
+        margin: 20px auto;
+      }
     }
 
+    /* HP */
     @media (max-width: 600px) {
       .site-header {
         padding: 20px 12px;
@@ -471,6 +464,47 @@
 
       .advertising-box {
         width: 100%;
+      }
+
+      /*
+        Adsterra fixed hanya di HP.
+        Slot akan dipindahkan oleh JavaScript ke
+        lapisan bawah layar tanpa menjalankan
+        ulang kode iklan.
+      */
+      #adsterra-ad-slot.mobile-sticky-ad {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9990;
+
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        height: auto;
+        margin: 0;
+        padding: 8px 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid #f2dbe6;
+        box-shadow: 0 -3px 14px rgba(0, 0, 0, 0.12);
+
+        overflow: visible;
+      }
+
+      #adsterra-ad-slot.mobile-sticky-ad iframe {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      body.has-mobile-sticky-ad {
+        padding-bottom: 330px;
       }
     }
   </style>
@@ -621,6 +655,7 @@
       </div>
 
       <!-- ADSTERRA BANNER 160 x 300 -->
+      <!-- Pertahankan kode unit resmi dari dashboard -->
       <div id="adsterra-ad-slot">
         <script type="text/javascript">
           atOptions = {
@@ -681,6 +716,52 @@
     elements.forEach(function (element) {
       element.textContent = year;
     });
+  })();
+
+  // Adsterra: sticky di HP, sidebar biasa di layar besar.
+  // Elemen iklan dipindahkan, bukan kode iklannya
+  // disalin atau dimuat ulang.
+  (function () {
+    var ad = document.getElementById("adsterra-ad-slot");
+    var sidebar = document.querySelector(".sidebar-right");
+
+    if (!ad || !sidebar || !ad.parentNode) {
+      return;
+    }
+
+    // Placeholder menjaga posisi asli Adsterra di sidebar.
+    var placeholder = document.createComment(
+      "Posisi asli Adsterra"
+    );
+
+    ad.parentNode.insertBefore(placeholder, ad);
+
+    var mobile = window.matchMedia("(max-width: 600px)");
+
+    function updateAdPosition() {
+      if (mobile.matches) {
+        if (!ad.classList.contains("mobile-sticky-ad")) {
+          ad.classList.add("mobile-sticky-ad");
+          document.body.classList.add("has-mobile-sticky-ad");
+          document.body.appendChild(ad);
+        }
+      } else {
+        ad.classList.remove("mobile-sticky-ad");
+        document.body.classList.remove("has-mobile-sticky-ad");
+
+        if (placeholder.parentNode) {
+          placeholder.parentNode.insertBefore(ad, placeholder);
+        }
+      }
+    }
+
+    updateAdPosition();
+
+    if (mobile.addEventListener) {
+      mobile.addEventListener("change", updateAdPosition);
+    } else {
+      mobile.addListener(updateAdPosition);
+    }
   })();
 </script>
 
