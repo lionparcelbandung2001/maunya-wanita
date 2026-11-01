@@ -1,5 +1,61 @@
 const artikelData = [
 {
+    judul: "drama barat terbaik",
+    deskripsi: "daftar drama barat terbaik yang bisa di tonton bareng keluarga",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-barat-hollywood-terbaik-sepanjang-masa.jpeg",
+    link: "drama-barat-hollywood-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "drama china terbaik tahun 2026",
+    deskripsi: "drachin terbaik yang tayang di tahun 2026",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-china-terbaik-2026.jpeg",
+    link: "drama-china-terbaik-2026.html"
+  }, 
+    {
+    judul: "drachin terbaik sepanjang masa",
+    deskripsi: "drama china terbaik sepanjang masa",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-china-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "drama korea terbaik tahun 2026",
+    deskripsi: "drakor terbaik di tahun 2026",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-korea-terbaik-2026.jpeg",
+    link: "drama-korea-terbaik-2026.html"
+  }, 
+    {
+    judul: "drakor terbaik sepanjang masa",
+    deskripsi: "daftar drama korea terbaik sepanjang masa",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-korea-terbaik-sepanjang-masa.jpeg",
+    link: "drama-korea-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "film animasi terbaik sepanjang masa",
+    deskripsi: "dagtar film animasi yang cocok di tonton bareng keluarga dan anak-anak",
+    tanggal: "02 november 2026",
+    gambar: "images/film-animasi-barat-terbaik-untuk-anak.jpeg",
+    link: "film-animasi-barat-terbaik-untuk-anak.html"
+  }, 
+    {
+    judul: "film barat terbaik sepanjang masa",
+    deskripsi: "daftar film barat terbaik sepanjang masa yang harus di tonton minimal sekali seumur hidup",
+    tanggal: "02 november 2026",
+    gambar: "images/film-barat-hollywood-terbaik-sepanjang-masa.jpeg",
+    link: "film-barat-hollywood-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "film romantis barat terbaik sepanjang masa",
+    deskripsi: "daftar film barat romantis yang cocok di tonton bersama pasangan",
+    tanggal: "02 november 2026",
+    gambar: "images/film-romantis-hollywood-terbaik-untuk-pasangan.jpeg",
+    link: "film-romantis-hollywood-terbaik-untuk-pasangan.html"
+  }, 
+    {
     judul: "download kalender 2027",
     deskripsi: "download kalender 2027",
     tanggal: "01 november 2026",
