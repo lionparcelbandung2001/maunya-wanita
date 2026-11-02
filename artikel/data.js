@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "ramalan zodiak november 2026",
+    deskripsi: "ramalan-zodiak-november-2026",
+    tanggal: "02 november 2026",
+    gambar: "images/ramalan-zodiak-november-2026.jpeg",
+    link: "ramalan-zodiak-november-2026.html"
+  }, 
+    {
     judul: "drama china november 2026",
     deskripsi: "drama china yang akan tayang di bulan november 2026 yang wajib di tonton",
     tanggal: "02 november 2026",
