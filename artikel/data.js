@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "ciri-ciri wanita bernafsu/berlibido tinggi",
+    deskripsi: "sebagian tanda-tanda kecil jika pasanganmu mempunyai libido tinggi",
+    tanggal: "02 november 2026",
+    gambar: "images/tanda-tanda-nafsu-libido-tinggi.jpeg",
+    link: "tanda-tanda-nafsu-libido-tinggi.html"
+  }, 
+    {
+    judul: "tanda-tanda wanita sedang birahi/bernafsu",
+    deskripsi: "tanda-tanda istrimu lagi pengen,yuk cek disini",
+    tanggal: "02 november 2026",
+    gambar: "images/tanda-tanda-wanita-sedang-birahi.jpeg",
+    link: "tanda-tanda-wanita-sedang-birahi.html"
+  }, 
+    {
     judul: "ramalan zodiak november 2026",
     deskripsi: "ramalan-zodiak-november-2026",
     tanggal: "02 november 2026",
