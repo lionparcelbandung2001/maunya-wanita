@@ -93,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>
     `;
 
-    // 6. Desain navigasi panah yang mengikuti scroll
+    // 6. Desain navigasi panah di bagian atas layar
+    // Tetap mengikuti pembaca saat scroll
     if (!document.getElementById("artikel-panah-style")) {
       const style = document.createElement("style");
       style.id = "artikel-panah-style";
@@ -102,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
         #artikel-panah-navigasi {
           box-sizing: border-box;
           position: fixed;
-          top: 50%;
+          top: 8px;
           left: 0;
           right: 0;
-          transform: translateY(-50%);
+          transform: none;
           z-index: 999;
           width: 100%;
           max-width: 1200px;
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
           padding: 0 12px;
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-start;
           gap: 12px;
           pointer-events: none;
           font-family: inherit;
@@ -201,6 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         @media (max-width: 480px) {
           #artikel-panah-navigasi {
+            top: 6px;
             padding: 0 5px;
             gap: 6px;
           }
@@ -234,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Tambahkan navigasi ke halaman
-    // Posisi visualnya tetap mengikuti layar karena position: fixed
+    // Posisi visual tetap di atas layar saat scroll
     const topBar =
       document.querySelector(".site-header") ||
       document.querySelector(".topbar") ||
