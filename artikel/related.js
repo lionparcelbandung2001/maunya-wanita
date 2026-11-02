@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? pilihanPanah[1]
       : pilihanPanah[0];
 
-  // 5. Buat navigasi panah di dekat top bar
+  // 5. Buat navigasi panah
   if (!document.getElementById("artikel-panah-navigasi")) {
     const navigasi = document.createElement("nav");
     navigasi.id = "artikel-panah-navigasi";
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>
     `;
 
-    // 6. Tambahkan desain navigasi
+    // 6. Desain navigasi panah yang mengikuti scroll
     if (!document.getElementById("artikel-panah-style")) {
       const style = document.createElement("style");
       style.id = "artikel-panah-style";
@@ -101,12 +101,21 @@ document.addEventListener("DOMContentLoaded", function () {
       style.textContent = `
         #artikel-panah-navigasi {
           box-sizing: border-box;
-          width: calc(100% - 24px);
-          max-width: 1050px;
-          margin: 12px auto 18px;
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          position: fixed;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+          z-index: 999;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 12px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           gap: 12px;
+          pointer-events: none;
           font-family: inherit;
         }
 
@@ -120,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
           display: flex;
           align-items: center;
           gap: 9px;
+          width: 46%;
+          max-width: 300px;
           min-width: 0;
           min-height: 66px;
           padding: 10px 12px;
@@ -128,13 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
           background: linear-gradient(135deg, #fffafd, #ffedf5);
           color: #a83270;
           text-decoration: none;
-          box-shadow: 0 3px 12px rgba(190, 80, 130, .07);
-          transition: background .2s, transform .2s;
+          box-shadow: 0 3px 12px rgba(190, 80, 130, .12);
+          transition: background .2s, opacity .2s;
+          pointer-events: auto;
         }
 
         #artikel-panah-navigasi .panah-artikel:hover {
           background: #ffe1ee;
-          transform: translateY(-2px);
         }
 
         #artikel-panah-navigasi .panah-kiri {
@@ -190,31 +201,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         @media (max-width: 480px) {
           #artikel-panah-navigasi {
-            width: calc(100% - 20px);
-            gap: 7px;
-            margin: 9px auto 14px;
+            padding: 0 5px;
+            gap: 6px;
           }
 
           #artikel-panah-navigasi .panah-artikel {
-            gap: 6px;
-            min-height: 58px;
-            padding: 8px 7px;
+            gap: 5px;
+            width: 48%;
+            min-height: 52px;
+            padding: 7px 6px;
             border-radius: 11px;
           }
 
           #artikel-panah-navigasi .panah-simbol {
-            flex-basis: 27px;
-            width: 27px;
-            height: 27px;
-            font-size: 19px;
+            flex-basis: 25px;
+            width: 25px;
+            height: 25px;
+            font-size: 18px;
           }
 
           #artikel-panah-navigasi .panah-label {
-            font-size: 9px;
+            font-size: 8px;
           }
 
           #artikel-panah-navigasi .panah-judul {
-            font-size: 11px;
+            font-size: 10px;
           }
         }
       `;
@@ -222,8 +233,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.head.appendChild(style);
     }
 
-    // Prioritaskan lokasi tepat di bawah header/top bar.
-    // Jika tidak ada header, letakkan sebelum isi artikel.
+    // Tambahkan navigasi ke halaman
+    // Posisi visualnya tetap mengikuti layar karena position: fixed
     const topBar =
       document.querySelector(".site-header") ||
       document.querySelector(".topbar") ||
@@ -251,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 7. Rekomendasi artikel lama: maksimal 3 artikel acak
+  // 7. Rekomendasi maksimal 3 artikel acak
   const rekomendasi = acakArtikel(artikelLain).slice(0, 3);
 
   const relatedBox = document.createElement("section");
