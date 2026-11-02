@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "drama china november 2026",
+    deskripsi: "drama china yang akan tayang di bulan november 2026 yang wajib di tonton",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-china-november-2026.jpeg",
+    link: "drama-china-november-2026.html"
+  }, 
+    {
+    judul: "drama korea november 2026",
+    deskripsi: "drama korea bulan november 2026 yang wajib di tonton",
+    tanggal: "02 november 2026",
+    gambar: "images/drama-korea-november-2026.jpeg",
+    link: "drama-korea-november-2026.html"
+  }, 
+    {
     judul: "cara merawat wajah",
     deskripsi: "cara merawat wajah agar tidak mudah keriput",
     tanggal: "02 november 2026",
