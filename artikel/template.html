@@ -206,10 +206,6 @@
       font-size: 12px;
     }
 
-    #monetag-mobile-anchor {
-      display: none;
-    }
-
     .article-image {
       display: block;
       width: 100%;
@@ -382,12 +378,18 @@
       justify-content: center;
     }
 
-    /* SLOT MONETAG */
+    /* SLOT MONETAG: SATU IKLAN DI BAWAH FOTO */
     #monetag-ad-slot {
+      display: block;
       width: 100%;
+      max-width: 300px;
       min-width: 0;
-      margin-top: 12px;
+      min-height: 0;
+      margin: 0 auto 24px;
+      padding: 0;
+      overflow: hidden;
       overflow-wrap: anywhere;
+      text-align: center;
     }
 
     #monetag-ad-slot iframe,
@@ -425,11 +427,7 @@
       border: 0;
     }
 
-    /*
-      DUA SLOT IKLAN TENGAH:
-      Slot pertama dan kedua tetap vertikal.
-      Jarak antar-slot dibuat lebih besar.
-    */
+    /* DUA SLOT IKLAN TENGAH */
     .adsterra-middle-slot {
       display: block;
       width: 100%;
@@ -562,23 +560,12 @@
         font-size: 16px;
       }
 
-      #monetag-mobile-anchor {
-        display: block;
-        width: 100%;
-        min-height: 0;
-        margin: 10px 0 16px;
-        scroll-margin-top: 12px;
-      }
-
+      /* MONETAG TETAP DI BAWAH FOTO */
       #monetag-ad-slot {
-        position: static;
         width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        margin: 0;
-        padding: 0;
-        overflow: visible;
-        overflow-wrap: anywhere;
+        max-width: 300px;
+        margin: 0 auto 24px;
+        overflow: hidden;
       }
 
       #monetag-ad-slot iframe,
@@ -590,10 +577,6 @@
         width: 100%;
         max-width: 300px;
         margin: 16px auto 0;
-      }
-
-      #adsterra-ad-slot iframe {
-        max-width: 100%;
       }
 
       .adsterra-extra-slot {
@@ -686,9 +669,6 @@
             </time>
           </div>
 
-          <!-- SLOT MONETAG MOBILE -->
-          <div id="monetag-mobile-anchor"></div>
-
           <!-- GAMBAR UTAMA -->
           <img
             src="images/[gambar-artikel].jpeg"
@@ -699,7 +679,17 @@
             fetchpriority="high"
             decoding="async">
 
-          <!-- ADSTERRA 1: DI BAWAH FOTO -->
+          <!-- MONETAG: HANYA SATU SLOT, DI BAWAH FOTO -->
+          <div id="monetag-ad-slot">
+            <script
+              src="https://quge5.com/88/tag.min.js"
+              data-zone="12120983"
+              async
+              data-cfasync="false">
+            </script>
+          </div>
+
+          <!-- ADSTERRA: TEPAT DI BAWAH MONETAG -->
           <div class="adsterra-extra-slot" id="adsterra-below-image">
 
             <script>
@@ -827,7 +817,7 @@
 
         </article>
 
-        <!-- ADSTERRA 3: DI BAWAH ARTIKEL -->
+        <!-- ADSTERRA DI BAWAH ARTIKEL -->
         <div class="adsterra-extra-slot" id="adsterra-after-article">
 
           <script>
@@ -857,7 +847,7 @@
 
       </div>
 
-      <!-- SIDEBAR IKLAN -->
+      <!-- SIDEBAR PROMOSI DAN ADSTERRA -->
       <aside class="sidebar-right" id="advertising-sidebar">
 
         <!-- KOTAK PROMOSI -->
@@ -895,18 +885,6 @@
             </a>
 
           </div>
-        </div>
-
-        <!-- MONETAG -->
-        <div id="monetag-ad-slot">
-
-          <script
-            src="https://quge5.com/88/tag.min.js"
-            data-zone="12120983"
-            async
-            data-cfasync="false">
-          </script>
-
         </div>
 
         <!-- ADSTERRA SIDEBAR -->
@@ -974,41 +952,6 @@
       yearElements.forEach(function (element) {
         element.textContent = currentYear;
       });
-    })();
-
-    // PINDAHKAN MONETAG SESUAI UKURAN LAYAR.
-    // SLOT ADSTERRA TIDAK DIPINDAHKAN.
-    (function () {
-      var adSlot = document.getElementById("monetag-ad-slot");
-      var mobileAnchor = document.getElementById("monetag-mobile-anchor");
-      var sidebar = document.getElementById("advertising-sidebar");
-      var advertisingBox = document.getElementById("advertising-box");
-
-      if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
-        return;
-      }
-
-      var mobileQuery = window.matchMedia("(max-width: 600px)");
-
-      function positionMonetag() {
-        if (mobileQuery.matches) {
-          if (mobileAnchor.nextElementSibling !== adSlot) {
-            mobileAnchor.insertAdjacentElement("afterend", adSlot);
-          }
-        } else {
-          if (advertisingBox.nextElementSibling !== adSlot) {
-            advertisingBox.insertAdjacentElement("afterend", adSlot);
-          }
-        }
-      }
-
-      positionMonetag();
-
-      if (mobileQuery.addEventListener) {
-        mobileQuery.addEventListener("change", positionMonetag);
-      } else {
-        mobileQuery.addListener(positionMonetag);
-      }
     })();
   </script>
 
