@@ -12,9 +12,8 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="CewekPedia">
 
-  <!-- GANTI SLUG SESUAI NAMA FILE ARTIKEL -->
+  <!-- CANONICAL -->
   <link rel="canonical" href="https://cewekpedia.com/artikel/[slug-artikel].html">
-
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
 
@@ -33,7 +32,7 @@
   <meta name="twitter:description" content="[DESKRIPSI_ARTIKEL]">
   <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[gambar-artikel].jpeg">
 
-  <!-- STRUCTURED DATA: BLOGPOSTING -->
+  <!-- STRUCTURED DATA -->
   <script type="application/ld+json" id="article-schema">
   {
     "@context": "https://schema.org",
@@ -207,12 +206,10 @@
       font-size: 12px;
     }
 
-    /* SLOT IKLAN MOBILE */
     #monetag-mobile-anchor {
       display: none;
     }
 
-    /* GAMBAR UTAMA ARTIKEL */
     .article-image {
       display: block;
       width: 100%;
@@ -277,7 +274,6 @@
       margin-bottom: 0;
     }
 
-    /* CTA CHAT DAN MUSIK */
     .article-cta {
       margin: 28px 0 8px;
       padding: 20px;
@@ -399,11 +395,11 @@
       max-width: 100%;
     }
 
-    /* SLOT ADSTERRA */
+    /* SLOT ADSTERRA 300 x 250 */
     #adsterra-ad-slot {
       width: 100%;
-      max-width: 100%;
-      margin-top: 16px;
+      max-width: 300px;
+      margin: 16px auto 0;
       overflow: hidden;
       text-align: center;
     }
@@ -413,7 +409,6 @@
       border: 0;
     }
 
-    /* ARTIKEL TERKAIT */
     .related-section {
       margin-top: 28px;
       padding: 20px;
@@ -433,7 +428,6 @@
       overflow-wrap: anywhere;
     }
 
-    /* FOOTER */
     .site-footer {
       margin-top: 35px;
       padding: 25px 15px;
@@ -545,7 +539,9 @@
       }
 
       #adsterra-ad-slot {
-        margin-top: 14px;
+        width: 100%;
+        max-width: 300px;
+        margin: 16px auto 0;
       }
 
       #adsterra-ad-slot iframe {
@@ -618,7 +614,7 @@
             </time>
           </div>
 
-          <!-- SLOT MONETAG UNTUK VERSI MOBILE -->
+          <!-- SLOT MONETAG MOBILE -->
           <div id="monetag-mobile-anchor"></div>
 
           <!-- GAMBAR UTAMA -->
@@ -633,19 +629,6 @@
 
           <!-- ISI ARTIKEL -->
           <div class="article-content">
-
-            <!--
-              GANTI BAGIAN INI DENGAN ISI ARTIKEL BARU.
-
-              Gunakan:
-              <p> untuk paragraf.
-              <h2> untuk subjudul utama.
-              <h3> untuk subjudul tambahan.
-              <ul><li> untuk daftar.
-              <div class="tip-box"> untuk kotak tips.
-
-              Hapus semua petunjuk template sebelum artikel diterbitkan.
-            -->
 
             <p>
               [PARAGRAF_PEMBUKA_ARTIKEL]
@@ -698,12 +681,6 @@
               [KESIMPULAN_ARTIKEL]
             </p>
 
-            <!--
-              TAMBAHKAN SUMBER RUJUKAN JIKA DIPERLUKAN.
-              Pastikan sumber benar-benar mendukung isi artikel.
-              Untuk artikel kesehatan, utamakan sumber medis tepercaya.
-            -->
-
           </div>
 
           <!-- CTA MUSIK DAN CHAT -->
@@ -726,19 +703,14 @@
 
         </article>
 
-        <!--
-          WADAH ARTIKEL TERKAIT.
-          related.js harus menggunakan ID yang sesuai.
-          Jika script saat ini menggunakan ID lain,
-          samakan ID wadah ini dengan ID yang dibutuhkan script.
-        -->
+        <!-- ARTIKEL TERKAIT -->
         <section class="related-section"
                  aria-label="Artikel terkait">
 
           <h2>♡ Artikel Lainnya untuk Kamu</h2>
 
           <div id="related-articles">
-            <!-- related.js mengisi bagian ini jika mendukung ID tersebut. -->
+            <!-- related.js mengisi bagian ini -->
           </div>
 
         </section>
@@ -785,7 +757,7 @@
           </div>
         </div>
 
-        <!-- MONETAG: KODE ZONA ASLI -->
+        <!-- IKLAN 1: MONETAG -->
         <div id="monetag-ad-slot">
 
           <script
@@ -797,21 +769,21 @@
 
         </div>
 
-        <!-- ADSTERRA: BANNER 160 x 300 -->
+        <!-- IKLAN 2: ADSTERRA 300 x 250 -->
         <div id="adsterra-ad-slot">
 
           <script>
             atOptions = {
-              'key': '50d34fd68fbf25f75c6f754743852dfe',
+              'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
               'format': 'iframe',
-              'height': 300,
-              'width': 160,
+              'height': 250,
+              'width': 300,
               'params': {}
             };
           </script>
 
           <script
-            src="https://bicea.org/22/50d34fd68fbf25f75c6f754743852dfe">
+            src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe">
           </script>
 
         </div>
@@ -867,8 +839,8 @@
       });
     })();
 
-    // PINDAHKAN SLOT MONETAG BERDASARKAN UKURAN LAYAR.
-    // SCRIPT IKLAN TIDAK DISALIN ATAU DIJALANKAN ULANG.
+    // PINDAHKAN SLOT MONETAG SESUAI UKURAN LAYAR.
+    // KODE ADSTERRA TIDAK DIPINDAHKAN.
     (function () {
       var adSlot = document.getElementById("monetag-ad-slot");
       var mobileAnchor = document.getElementById("monetag-mobile-anchor");
