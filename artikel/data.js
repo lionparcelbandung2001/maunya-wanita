@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "cara merawat wajah",
+    deskripsi: "cara merawat wajah agar tidak mudah keriput",
+    tanggal: "02 november 2026",
+    gambar: "images/agar-wajah-tidak-mudah-keriput.jpeg",
+    link: "agar-wajah-tidak-mudah-keriput.html"
+  }, 
+    {
     judul: "drama barat terbaik",
     deskripsi: "daftar drama barat terbaik yang bisa di tonton bareng keluarga",
     tanggal: "02 november 2026",
