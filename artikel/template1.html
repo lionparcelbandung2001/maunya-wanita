@@ -5,61 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#d65b99">
 
-  <title>[JUDUL_TANYA_JAWAB] | CewekPedia</title>
-  <meta name="description" content="[DESKRIPSI_ARTIKEL_TANYA_JAWAB]">
-  <meta name="keywords" content="[KATA_KUNCI_QNA]">
+  <!-- SEO UTAMA -->
+  <title>[JUDUL_ARTIKEL] | CewekPedia</title>
+  <meta name="description" content="[DESKRIPSI_ARTIKEL]">
+  <meta name="keywords" content="[KATA_KUNCI_ARTIKEL]">
   <meta name="robots" content="index, follow">
   <meta name="author" content="CewekPedia">
 
-  <link rel="canonical" href="https://cewekpedia.com/artikel/[SLUG_URL].html">
+  <!-- GANTI SLUG SESUAI NAMA FILE ARTIKEL -->
+  <link rel="canonical" href="https://cewekpedia.com/artikel/[slug-artikel].html">
 
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
 
+  <!-- OPEN GRAPH -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CewekPedia">
-  <meta property="og:title" content="[JUDUL_TANYA_JAWAB] | CewekPedia">
-  <meta property="og:description" content="[DESKRIPSI_ARTIKEL_TANYA_JAWAB]">
-  <meta property="og:url" content="https://cewekpedia.com/artikel/[SLUG_URL].html">
-  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
+  <meta property="og:title" content="[JUDUL_ARTIKEL] | CewekPedia">
+  <meta property="og:description" content="[DESKRIPSI_ARTIKEL]">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/[slug-artikel].html">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/[gambar-artikel].jpeg">
   <meta property="og:locale" content="id_ID">
 
+  <!-- TWITTER CARD -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="[JUDUL_TANYA_JAWAB] | CewekPedia">
-  <meta name="twitter:description" content="[DESKRIPSI_ARTIKEL_TANYA_JAWAB]">
-  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[NAMA_GAMBAR].jpeg">
+  <meta name="twitter:title" content="[JUDUL_ARTIKEL] | CewekPedia">
+  <meta name="twitter:description" content="[DESKRIPSI_ARTIKEL]">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/[gambar-artikel].jpeg">
 
-  <!-- SCHEMA MARKUP KHUSUS FAQ / TANYA JAWAB AGAR MUNCUL DI GOOGLE -->
+  <!-- STRUCTURED DATA: BLOGPOSTING -->
   <script type="application/ld+json" id="article-schema">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "[PERTANYAAN_1]",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "[JAWABAN_SINGKAT_DAN_JELAS_UNTUK_PERTANYAAN_1]"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "[PERTANYAAN_2]",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "[JAWABAN_SINGKAT_DAN_JELAS_UNTUK_PERTANYAAN_2]"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "[PERTANYAAN_3]",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "[JAWABAN_SINGKAT_DAN_JELAS_UNTUK_PERTANYAAN_3]"
-        }
-      }
-    ]
+    "@type": "BlogPosting",
+    "headline": "[JUDUL_ARTIKEL]",
+    "description": "[DESKRIPSI_ARTIKEL]",
+    "image": "https://cewekpedia.com/artikel/images/[gambar-artikel].jpeg",
+    "datePublished": "[TANGGAL_PUBLIKASI_ISO]",
+    "dateModified": "[TANGGAL_UPDATE_ISO]",
+    "inLanguage": "id-ID",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cewekpedia.com/artikel/[slug-artikel].html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CewekPedia",
+      "url": "https://cewekpedia.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CewekPedia",
+      "url": "https://cewekpedia.com/"
+    }
   }
   </script>
 
@@ -78,6 +76,10 @@
       --white: #ffffff;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding-bottom: 20px;
@@ -85,6 +87,10 @@
       background: #fffafd;
       color: var(--text);
       line-height: 1.8;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     a {
@@ -128,6 +134,11 @@
       font-size: 13px;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    .top-nav a:hover,
+    .footer-links a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -196,6 +207,12 @@
       font-size: 12px;
     }
 
+    /* SLOT IKLAN MOBILE */
+    #monetag-mobile-anchor {
+      display: none;
+    }
+
+    /* GAMBAR UTAMA ARTIKEL */
     .article-image {
       display: block;
       width: 100%;
@@ -209,24 +226,22 @@
       border: 1px solid #f2dbe6;
     }
 
-    /* GAYA KHUSUS Q&A (TANYA JAWAB) */
-    .qa-box {
-      margin: 26px 0;
-      padding: 20px;
-      background: #fff9fc;
-      border: 1px solid #f5d8e8;
-      border-radius: 14px;
-    }
-
-    .question-title {
-      margin: 0 0 10px;
+    .article-content h2 {
+      margin: 28px 0 10px;
       color: var(--pink-dark);
-      font-size: 20px;
-      line-height: 1.4;
+      font-size: 22px;
+      line-height: 1.45;
     }
 
-    .answer-content p {
-      margin: 10px 0;
+    .article-content h3 {
+      margin: 22px 0 8px;
+      color: #754b68;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .article-content p {
+      margin: 13px 0;
       font-size: 16px;
     }
 
@@ -246,22 +261,23 @@
     }
 
     .tip-box {
-      margin: 20px 0;
-      padding: 16px;
+      margin: 24px 0;
+      padding: 18px;
       background: #fff2f8;
       border-left: 4px solid var(--pink);
       border-radius: 10px;
     }
 
-    .tip-box h4 {
-      margin: 0 0 6px;
+    .tip-box h3 {
+      margin-top: 0;
       color: var(--pink-dark);
     }
 
     .tip-box p {
-      margin: 0;
+      margin-bottom: 0;
     }
 
+    /* CTA CHAT DAN MUSIK */
     .article-cta {
       margin: 28px 0 8px;
       padding: 20px;
@@ -297,7 +313,7 @@
       background: var(--pink-dark);
     }
 
-    /* KOTAK INGIN BERIKLAN */
+    /* KOTAK PROMOSI */
     .advertising-box {
       position: relative;
       background: linear-gradient(145deg, #ff6ab2, #a855f7);
@@ -319,7 +335,7 @@
     .advertising-description {
       margin: 0 0 10px;
       font-size: 11px;
-      line-height: 1.35;
+      line-height: 1.5;
       color: #fff0f7;
     }
 
@@ -370,7 +386,7 @@
       justify-content: center;
     }
 
-    /* AREA MONETAG */
+    /* SLOT MONETAG */
     #monetag-ad-slot {
       width: 100%;
       min-width: 0;
@@ -383,10 +399,41 @@
       max-width: 100%;
     }
 
-    #monetag-mobile-anchor {
-      display: none;
+    /* SLOT ADSTERRA */
+    #adsterra-ad-slot {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 16px;
+      overflow: hidden;
+      text-align: center;
     }
 
+    #adsterra-ad-slot iframe {
+      max-width: 100%;
+      border: 0;
+    }
+
+    /* ARTIKEL TERKAIT */
+    .related-section {
+      margin-top: 28px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #f4e3ec;
+      border-radius: 16px;
+    }
+
+    .related-section h2 {
+      margin: 0 0 14px;
+      color: var(--pink-dark);
+      font-size: 21px;
+    }
+
+    #related-articles {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
     .site-footer {
       margin-top: 35px;
       padding: 25px 15px;
@@ -409,7 +456,7 @@
       text-decoration: none;
     }
 
-    /* TABLET DAN LAYAR KECIL */
+    /* TABLET DAN HP */
     @media (max-width: 900px) {
       .layout-wrapper {
         flex-direction: column;
@@ -433,9 +480,12 @@
         flex-wrap: wrap;
         justify-content: center;
       }
+
+      .advertising-button {
+        padding: 7px 10px;
+      }
     }
 
-    /* KHUSUS HP */
     @media (max-width: 600px) {
       .site-header {
         padding: 20px 12px;
@@ -458,6 +508,18 @@
         font-size: 24px;
       }
 
+      .article-content h2 {
+        font-size: 21px;
+      }
+
+      .article-content h3 {
+        font-size: 17px;
+      }
+
+      .article-content p {
+        font-size: 16px;
+      }
+
       #monetag-mobile-anchor {
         display: block;
         width: 100%;
@@ -477,14 +539,27 @@
         overflow-wrap: anywhere;
       }
 
-      .advertising-box {
-        position: relative;
-        width: 100%;
+      #monetag-ad-slot iframe,
+      #monetag-ad-slot img {
+        max-width: 100%;
       }
 
+      #adsterra-ad-slot {
+        margin-top: 14px;
+      }
+
+      #adsterra-ad-slot iframe {
+        max-width: 100%;
+      }
+
+      .advertising-box,
       .sidebar-right {
         position: static;
         width: 100%;
+      }
+
+      .related-section {
+        padding: 16px;
       }
     }
   </style>
@@ -492,261 +567,346 @@
 
 <body>
 
-<header class="site-header">
-  <a class="brand" href="/">CewekPedia ♡</a>
-  <p class="tagline">
-    Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.
-  </p>
-</header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="/">CewekPedia ♡</a>
+    <p class="tagline">
+      Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.
+    </p>
+  </header>
 
-<nav class="top-nav" aria-label="Navigasi utama">
-  <a href="/">Beranda</a>
-  <a href="/#musik">Musik</a>
-  <a href="/#chat">Ruang Chat</a>
-  <a href="/artikel/">Semua Artikel</a>
-</nav>
-
-<main class="container">
-
-  <a class="back-link" href="/artikel/">
-    ← Kembali ke Daftar Artikel
-  </a>
-
-  <div class="layout-wrapper">
-
-    <!-- KOLOM ARTIKEL -->
-    <main class="main-content">
-      <article class="article-card">
-
-        <span class="article-category">Tanya Jawab Cewek</span>
-
-        <h1 class="article-title">
-          [JUDUL_TANYA_JAWAB]
-        </h1>
-
-        <div class="article-date">
-          Dipublikasikan:
-          <time id="article-published-date" datetime="2026-10-28">28 Oktober 2026</time>
-          <span aria-hidden="true"> · </span>
-          Diperbarui:
-          <time id="article-updated-date" datetime="2026-10-28">28 Oktober 2026</time>
-        </div>
-
-        <!-- SLOT MONETAG KHUSUS HP -->
-        <div id="monetag-mobile-anchor"></div>
-
-        <img
-          src="images/[NAMA_GAMBAR].jpeg"
-          alt="[DESKRIPSI_GAMBAR]"
-          class="article-image"
-          width="700"
-          height="400"
-          fetchpriority="high"
-          decoding="async">
-
-        <div class="article-content">
-
-          <p>
-            [PARAGRAF_INTRO_MENYAMBUT_PEMBACA]
-          </p>
-
-          <!-- BLOK TANYA JAWAB 1 -->
-          <section class="qa-box">
-            <h2 class="question-title">1. [PERTANYAAN_1]?</h2>
-            <div class="answer-content">
-              <p>[JAWABAN_LENGKAP_UNTUK_PERTANYAAN_1]</p>
-            </div>
-          </section>
-
-          <!-- BLOK TANYA JAWAB 2 -->
-          <section class="qa-box">
-            <h2 class="question-title">2. [PERTANYAAN_2]?</h2>
-            <div class="answer-content">
-              <p>[JAWABAN_LENGKAP_UNTUK_PERTANYAAN_2]</p>
-            </div>
-          </section>
-
-          <aside class="tip-box">
-            <h4>♡ Catatan Penting</h4>
-            <p>[TEKS_TIPS_TAMBAHAN_UNTUK_PEMBACA]</p>
-          </aside>
-
-          <!-- BLOK TANYA JAWAB 3 -->
-          <section class="qa-box">
-            <h2 class="question-title">3. [PERTANYAAN_3]?</h2>
-            <div class="answer-content">
-              <p>[JAWABAN_LENGKAP_UNTUK_PERTANYAAN_3]</p>
-            </div>
-          </section>
-
-          <h2>Kesimpulan</h2>
-          <p>[PARAGRAF_PENUTUP_ATAU_KESIMPULAN]</p>
-
-        </div>
-
-        <section class="article-cta">
-          <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
-          <p>
-            Punya unek-unek atau ingin berbincang santai?
-            Kamu bisa mampir ke ruang chat atau mendengarkan musik.
-          </p>
-          <a class="cta-button" href="/#chat">
-            💬 Buka Ruang Chat
-          </a>
-          <a class="cta-button" href="/#musik">
-            ♫ Dengarkan Musik
-          </a>
-        </section>
-
-      </article>
-    </main>
-
-    <!-- SIDEBAR PC: INGIN BERIKLAN DAN MONETAG -->
-    <aside class="sidebar-right" id="advertising-sidebar">
-
-      <div class="advertising-box" id="advertising-box">
-
-        <button
-          class="advertising-close"
-          type="button"
-          id="advertising-close"
-          aria-label="Tutup kotak promosi"
-          title="Tutup">
-          ×
-        </button>
-
-        <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
-
-        <p class="advertising-description">
-          Promosikan bisnismu di CewekPedia.
-        </p>
-
-        <div class="advertising-actions">
-          <a
-            class="advertising-button advertising-whatsapp"
-            href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
-            target="_blank"
-            rel="noopener noreferrer">
-            💬 WhatsApp
-          </a>
-
-          <a
-            class="advertising-button advertising-email"
-            href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">
-            ✉️ Email
-          </a>
-        </div>
-
-      </div>
-
-      <!-- MONETAG ZONE 12120983 -->
-      <div id="monetag-ad-slot">
-        <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="12120983"
-          async
-          data-cfasync="false">
-        </script>
-      </div>
-<!-- Iklan Banner Adsterra 160x300 -->
-      <div id="adsterra-ad-slot">
-        <script>
-          atOptions = {
-            'key' : '50d34fd68fbf25f75c6f754743852dfe',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160,
-            'params' : {}
-          };
-        </script>
-        <script src="https://bicea.org/22/50d34fd68fbf25f75c6f754743852dfe"></script>
-      </div>
-    </aside>
-
-  </div>
-
-</main>
-
-<footer class="site-footer">
-  <p>
-    &copy; <span class="current-year">2026</span>
-    CewekPedia. Teman santai setiap hari ♡
-  </p>
-
-  <div class="footer-links">
+  <!-- NAVIGASI -->
+  <nav class="top-nav" aria-label="Navigasi utama">
     <a href="/">Beranda</a>
-    <a href="/artikel/">Artikel</a>
     <a href="/#musik">Musik</a>
     <a href="/#chat">Ruang Chat</a>
-    <a href="/tentang.html">Tentang</a>
-    <a href="/kontak.html">Kontak</a>
-    <a href="/privacy.html">Kebijakan Privasi</a>
-    <a href="/ketentuan.html">Ketentuan Penggunaan</a>
-  </div>
-</footer>
+    <a href="/artikel/">Semua Artikel</a>
+  </nav>
 
-<script>
-  // Tombol tutup kotak promosi
-  (function () {
-    var box = document.getElementById("advertising-box");
-    var closeButton = document.getElementById("advertising-close");
+  <main class="container">
 
-    if (box && closeButton) {
-      closeButton.addEventListener("click", function () {
-        box.style.display = "none";
+    <a class="back-link" href="/artikel/">
+      ← Kembali ke Daftar Artikel
+    </a>
+
+    <div class="layout-wrapper">
+
+      <!-- KONTEN UTAMA -->
+      <div class="main-content">
+
+        <article class="article-card">
+
+          <span class="article-category">[KATEGORI_ARTIKEL]</span>
+
+          <h1 class="article-title">
+            [JUDUL_ARTIKEL]
+          </h1>
+
+          <div class="article-date">
+            Dipublikasikan:
+            <time id="article-published-date"
+                  datetime="[TANGGAL_PUBLIKASI_YYYY-MM-DD]">
+              [TANGGAL_PUBLIKASI_FORMAT]
+            </time>
+
+            <span aria-hidden="true"> · </span>
+
+            Diperbarui:
+            <time id="article-updated-date"
+                  datetime="[TANGGAL_UPDATE_YYYY-MM-DD]">
+              [TANGGAL_UPDATE_FORMAT]
+            </time>
+          </div>
+
+          <!-- SLOT MONETAG UNTUK VERSI MOBILE -->
+          <div id="monetag-mobile-anchor"></div>
+
+          <!-- GAMBAR UTAMA -->
+          <img
+            src="images/[gambar-artikel].jpeg"
+            alt="[DESKRIPSI_GAMBAR_ARTIKEL]"
+            class="article-image"
+            width="700"
+            height="400"
+            fetchpriority="high"
+            decoding="async">
+
+          <!-- ISI ARTIKEL -->
+          <div class="article-content">
+
+            <!--
+              GANTI BAGIAN INI DENGAN ISI ARTIKEL BARU.
+
+              Gunakan:
+              <p> untuk paragraf.
+              <h2> untuk subjudul utama.
+              <h3> untuk subjudul tambahan.
+              <ul><li> untuk daftar.
+              <div class="tip-box"> untuk kotak tips.
+
+              Hapus semua petunjuk template sebelum artikel diterbitkan.
+            -->
+
+            <p>
+              [PARAGRAF_PEMBUKA_ARTIKEL]
+            </p>
+
+            <p>
+              [PARAGRAF_PENJELASAN_ARTIKEL]
+            </p>
+
+            <h2>[SUBJUDUL_1]</h2>
+
+            <p>
+              [ISI_BAGIAN_1]
+            </p>
+
+            <h3>[SUBJUDUL_TAMBAHAN_1]</h3>
+
+            <p>
+              [ISI_BAGIAN_TAMBAHAN_1]
+            </p>
+
+            <div class="tip-box">
+              <h3>♡ Tips CewekPedia</h3>
+              <p>
+                [TIPS_PENTING_YANG_RELEVAN_DENGAN_ARTIKEL]
+              </p>
+            </div>
+
+            <h2>[SUBJUDUL_2]</h2>
+
+            <p>
+              [ISI_BAGIAN_2]
+            </p>
+
+            <ul>
+              <li>[POIN_PENTING_1]</li>
+              <li>[POIN_PENTING_2]</li>
+              <li>[POIN_PENTING_3]</li>
+            </ul>
+
+            <h2>[SUBJUDUL_3]</h2>
+
+            <p>
+              [ISI_BAGIAN_3]
+            </p>
+
+            <h2>Penutup</h2>
+
+            <p>
+              [KESIMPULAN_ARTIKEL]
+            </p>
+
+            <!--
+              TAMBAHKAN SUMBER RUJUKAN JIKA DIPERLUKAN.
+              Pastikan sumber benar-benar mendukung isi artikel.
+              Untuk artikel kesehatan, utamakan sumber medis tepercaya.
+            -->
+
+          </div>
+
+          <!-- CTA MUSIK DAN CHAT -->
+          <section class="article-cta">
+            <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+
+            <p>
+              Sudah selesai membaca? Kamu bisa menikmati musik
+              atau bergabung dalam obrolan santai.
+            </p>
+
+            <a class="cta-button" href="/#chat">
+              💬 Buka Ruang Chat
+            </a>
+
+            <a class="cta-button" href="/#musik">
+              ♫ Dengarkan Musik
+            </a>
+          </section>
+
+        </article>
+
+        <!--
+          WADAH ARTIKEL TERKAIT.
+          related.js harus menggunakan ID yang sesuai.
+          Jika script saat ini menggunakan ID lain,
+          samakan ID wadah ini dengan ID yang dibutuhkan script.
+        -->
+        <section class="related-section"
+                 aria-label="Artikel terkait">
+
+          <h2>♡ Artikel Lainnya untuk Kamu</h2>
+
+          <div id="related-articles">
+            <!-- related.js mengisi bagian ini jika mendukung ID tersebut. -->
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR IKLAN -->
+      <aside class="sidebar-right" id="advertising-sidebar">
+
+        <!-- KOTAK PROMOSI -->
+        <div class="advertising-box" id="advertising-box">
+
+          <button
+            class="advertising-close"
+            type="button"
+            id="advertising-close"
+            aria-label="Tutup kotak promosi"
+            title="Tutup">
+            ×
+          </button>
+
+          <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+
+          <p class="advertising-description">
+            Promosikan bisnismu di CewekPedia.
+          </p>
+
+          <div class="advertising-actions">
+
+            <a
+              class="advertising-button advertising-whatsapp"
+              href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+              target="_blank"
+              rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+
+            <a
+              class="advertising-button advertising-email"
+              href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">
+              ✉️ Email
+            </a>
+
+          </div>
+        </div>
+
+        <!-- MONETAG: KODE ZONA ASLI -->
+        <div id="monetag-ad-slot">
+
+          <script
+            src="https://quge5.com/88/tag.min.js"
+            data-zone="12120983"
+            async
+            data-cfasync="false">
+          </script>
+
+        </div>
+
+        <!-- ADSTERRA: BANNER 160 x 300 -->
+        <div id="adsterra-ad-slot">
+
+          <script>
+            atOptions = {
+              'key': '50d34fd68fbf25f75c6f754743852dfe',
+              'format': 'iframe',
+              'height': 300,
+              'width': 160,
+              'params': {}
+            };
+          </script>
+
+          <script
+            src="https://bicea.org/22/50d34fd68fbf25f75c6f754743852dfe">
+          </script>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <p>
+      &copy; <span class="current-year">2026</span>
+      CewekPedia. Teman santai setiap hari ♡
+    </p>
+
+    <div class="footer-links">
+      <a href="/">Beranda</a>
+      <a href="/artikel/">Artikel</a>
+      <a href="/#musik">Musik</a>
+      <a href="/#chat">Ruang Chat</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/kontak.html">Kontak</a>
+      <a href="/privacy.html">Kebijakan Privasi</a>
+      <a href="/ketentuan.html">Ketentuan Penggunaan</a>
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // TOMBOL TUTUP KOTAK PROMOSI
+    (function () {
+      var box = document.getElementById("advertising-box");
+      var closeButton = document.getElementById("advertising-close");
+
+      if (box && closeButton) {
+        closeButton.addEventListener("click", function () {
+          box.style.display = "none";
+        });
+      }
+    })();
+
+    // TAHUN FOOTER OTOMATIS
+    (function () {
+      var yearElements = document.querySelectorAll(".current-year");
+      var currentYear = new Date().getFullYear();
+
+      yearElements.forEach(function (element) {
+        element.textContent = currentYear;
       });
-    }
-  })();
+    })();
 
-  // Tahun footer otomatis
-  (function () {
-    var yearElements = document.querySelectorAll(".current-year");
-    var currentYear = new Date().getFullYear();
+    // PINDAHKAN SLOT MONETAG BERDASARKAN UKURAN LAYAR.
+    // SCRIPT IKLAN TIDAK DISALIN ATAU DIJALANKAN ULANG.
+    (function () {
+      var adSlot = document.getElementById("monetag-ad-slot");
+      var mobileAnchor = document.getElementById("monetag-mobile-anchor");
+      var sidebar = document.getElementById("advertising-sidebar");
+      var advertisingBox = document.getElementById("advertising-box");
 
-    yearElements.forEach(function (element) {
-      element.textContent = currentYear;
-    });
-  })();
+      if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
+        return;
+      }
 
-  // Pindahkan slot Monetag sesuai ukuran layar
-  (function () {
-    var adSlot = document.getElementById("monetag-ad-slot");
-    var mobileAnchor = document.getElementById("monetag-mobile-anchor");
-    var sidebar = document.getElementById("advertising-sidebar");
-    var advertisingBox = document.getElementById("advertising-box");
+      var mobileQuery = window.matchMedia("(max-width: 600px)");
 
-    if (!adSlot || !mobileAnchor || !sidebar || !advertisingBox) {
-      return;
-    }
-
-    var mobileQuery = window.matchMedia("(max-width: 600px)");
-
-    function positionMonetag() {
-      if (mobileQuery.matches) {
-        if (mobileAnchor.nextElementSibling !== adSlot) {
-          mobileAnchor.insertAdjacentElement("afterend", adSlot);
-        }
-      } else {
-        if (advertisingBox.nextElementSibling !== adSlot) {
-          advertisingBox.insertAdjacentElement("afterend", adSlot);
+      function positionMonetag() {
+        if (mobileQuery.matches) {
+          if (mobileAnchor.nextElementSibling !== adSlot) {
+            mobileAnchor.insertAdjacentElement("afterend", adSlot);
+          }
+        } else {
+          if (advertisingBox.nextElementSibling !== adSlot) {
+            advertisingBox.insertAdjacentElement("afterend", adSlot);
+          }
         }
       }
-    }
 
-    positionMonetag();
+      positionMonetag();
 
-    if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener("change", positionMonetag);
-    } else {
-      mobileQuery.addListener(positionMonetag);
-    }
-  })();
-</script>
+      if (mobileQuery.addEventListener) {
+        mobileQuery.addEventListener("change", positionMonetag);
+      } else {
+        mobileQuery.addListener(positionMonetag);
+      }
+    })();
+  </script>
 
-<!-- SCRIPT PENDUKUNG ARTIKEL -->
-<script src="/artikel/data.js"></script>
-<script src="/artikel/related.js"></script>
-<script src="/artikel/auto-date.js"></script>
+  <!-- FILE PENDUKUNG ARTIKEL -->
+  <script src="/artikel/data.js"></script>
+  <script src="/artikel/related.js"></script>
+  <script src="/artikel/auto-date.js"></script>
 
 </body>
 </html>
