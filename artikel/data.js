@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "kalender 2027 imut dan lucu",
+    deskripsi: "kalender 2027 dengan tema cewek girly abiss",
+    tanggal: "03 november 2026",
+    gambar: "images/kalenderlucu2027.jpeg",
+    link: "kalenderlucu2027.html"
+  }, 
+    {
     judul: "ciri-ciri wanita bernafsu/berlibido tinggi",
     deskripsi: "sebagian tanda-tanda kecil jika pasanganmu mempunyai libido tinggi",
     tanggal: "02 november 2026",
