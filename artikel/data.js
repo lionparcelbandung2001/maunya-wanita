@@ -3,7 +3,7 @@ const artikelData = [
     judul: "kalender 2027 imut dan lucu",
     deskripsi: "kalender 2027 dengan tema cewek girly abiss",
     tanggal: "03 november 2026",
-    gambar: "images/kalenderlucu2027.jpeg",
+    gambar: "images/kalenderlucu2027.png",
     link: "kalenderlucu2027.html"
   }, 
     {
