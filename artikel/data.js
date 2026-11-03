@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "kalender 2027 gratis,free",
+    deskripsi: "kalender 2027 khusus wanita",
+    tanggal: "03 november 2026",
+    gambar: "images/kalender-2027-cewek.jpeg",
+    link: "kalender-2027-cewek.html"
+  }, 
+    {
     judul: "kalender 2027 imut dan lucu",
     deskripsi: "kalender 2027 dengan tema cewek girly abiss",
     tanggal: "03 november 2026",
