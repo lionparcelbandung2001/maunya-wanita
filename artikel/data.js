@@ -1,5 +1,33 @@
 const artikelData = [
 {
+    judul: "cara makeup cantik dan tidak menor",
+    deskripsi: "cara-make-up-terlihat-cantik-dan-tidak-menor",
+    tanggal: "04 november 2026",
+    gambar: "images/cara-make-up-terlihat-cantik-dan-tidak-menor.jpeg",
+    link: "cara-make-up-terlihat-cantik-dan-tidak-menor.html"
+  }, 
+    {
+    judul: "drama china terbaik 2025",
+    deskripsi: "drachin terbaik tahun 2025",
+    tanggal: "04 november 2026",
+    gambar: "images/drachin-terbaik-tahun-2025.jpeg",
+    link: "drachin-terbaik-tahun-2025.html"
+  }, 
+    {
+    judul: "drakor terbaik 2025",
+    deskripsi: "drama korea terbaik tahun 2025",
+    tanggal: "04 november 2026",
+    gambar: "images/drakor-terbaik-tahun-2025.jpeg",
+    link: "drakor-terbaik-tahun-2025.html"
+  }, 
+    {
+    judul: "urutan pemakaian skincare yang benar saat pagi dan malam ",
+    deskripsi: "urutan-skincare-pagi-dan-malam-untuk-pemula",
+    tanggal: "04 november 2026",
+    gambar: "images/urutan-skincare-pagi-dan-malam-untuk-pemula.jpeg",
+    link: "urutan-skincare-pagi-dan-malam-untuk-pemula.html"
+  }, 
+    {
     judul: "kalender 2027 gratis,free",
     deskripsi: "kalender 2027 khusus wanita",
     tanggal: "03 november 2026",
