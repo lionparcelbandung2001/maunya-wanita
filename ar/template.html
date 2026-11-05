@@ -317,7 +317,7 @@
       background: var(--pink-dark);
     }
 
-    /* صندوق الإعلان */
+    /* BOX IKLAN */
     .advertising-box {
       position: relative;
       background: linear-gradient(145deg, #ff6ab2, #a855f7);
@@ -390,22 +390,19 @@
       justify-content: center;
     }
 
-    /* MONETAG */
-    #monetag-ad-slot {
+    /* MONETAG DI TENGAH ARTIKEL */
+    .monetag-middle-slot {
       display: block;
       width: 100%;
       max-width: 300px;
-      min-width: 0;
       min-height: 0;
-      margin: 0 auto 24px;
-      padding: 0;
+      margin: 30px auto 45px;
       overflow: hidden;
-      overflow-wrap: anywhere;
       text-align: center;
     }
 
-    #monetag-ad-slot iframe,
-    #monetag-ad-slot img {
+    .monetag-middle-slot iframe,
+    .monetag-middle-slot img {
       max-width: 100%;
     }
 
@@ -572,15 +569,15 @@
         font-size: 16px;
       }
 
-      #monetag-ad-slot {
+      .monetag-middle-slot {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto 24px;
+        margin: 28px auto 40px;
         overflow: hidden;
       }
 
-      #monetag-ad-slot iframe,
-      #monetag-ad-slot img {
+      .monetag-middle-slot iframe,
+      .monetag-middle-slot img {
         max-width: 100%;
       }
 
@@ -689,14 +686,8 @@
             fetchpriority="high"
             decoding="async">
 
-          <!-- MONETAG -->
-          <div id="monetag-ad-slot">
-            <script>(function(s){s.dataset.zone='12197764',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-          </div>
-
           <!-- ADSTERRA BELOW IMAGE -->
           <div class="adsterra-extra-slot" id="adsterra-below-image">
-
             <script>
               atOptions = {
                 'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
@@ -706,9 +697,7 @@
                 'params': {}
               };
             </script>
-
             <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
           </div>
 
           <!-- ARTICLE CONTENT -->
@@ -741,9 +730,18 @@
               </p>
             </div>
 
+            <!-- MONETAG MIDDLE 1 -->
+            <div class="monetag-middle-slot">
+              <script>
+                (function(s){
+                  s.dataset.zone='12197764';
+                  s.src='https://nap5k.com/tag.min.js';
+                })(document.body.appendChild(document.createElement('script')));
+              </script>
+            </div>
+
             <!-- ADSTERRA MIDDLE 1 -->
             <div class="adsterra-middle-slot" id="adsterra-middle-1">
-
               <script>
                 atOptions = {
                   'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
@@ -753,9 +751,7 @@
                   'params': {}
                 };
               </script>
-
               <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
             </div>
 
             <!-- ARTICLE CONTINUATION -->
@@ -772,8 +768,13 @@
             </ul>
 
             <!-- MONETAG MIDDLE 2 -->
-            <div class="adsterra-middle-slot" id="adsterra-middle-2">
-              <script>(function(s){s.dataset.zone='12197764',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+            <div class="monetag-middle-slot">
+              <script>
+                (function(s){
+                  s.dataset.zone='12197764';
+                  s.src='https://nap5k.com/tag.min.js';
+                })(document.body.appendChild(document.createElement('script')));
+              </script>
             </div>
 
             <h2>[العنوان_الفرعي_الثالث]</h2>
@@ -781,6 +782,20 @@
             <p>
               [محتوى_القسم_الثالث]
             </p>
+
+            <!-- ADSTERRA MIDDLE 2 -->
+            <div class="adsterra-middle-slot" id="adsterra-middle-2">
+              <script>
+                atOptions = {
+                  'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+                  'format': 'iframe',
+                  'height': 250,
+                  'width': 300,
+                  'params': {}
+                };
+              </script>
+              <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+            </div>
 
             <h2>الخاتمة</h2>
 
@@ -812,7 +827,6 @@
 
         <!-- ADSTERRA AFTER ARTICLE -->
         <div class="adsterra-extra-slot" id="adsterra-after-article">
-
           <script>
             atOptions = {
               'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
@@ -822,20 +836,16 @@
               'params': {}
             };
           </script>
-
           <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
         </div>
 
         <!-- RELATED ARTICLES -->
         <section class="related-section" aria-label="مقالات ذات صلة">
-
           <h2>♡ مقالات أخرى لكِ</h2>
 
           <div id="related-articles">
             <!-- related.js يضيف المقالات هنا -->
           </div>
-
         </section>
 
       </div>
@@ -882,7 +892,6 @@
 
         <!-- ADSTERRA SIDEBAR -->
         <div id="adsterra-ad-slot">
-
           <script>
             atOptions = {
               'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
@@ -892,9 +901,7 @@
               'params': {}
             };
           </script>
-
           <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
         </div>
 
       </aside>
