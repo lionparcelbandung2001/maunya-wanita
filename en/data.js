@@ -1,26 +1,26 @@
 const artikelData = [
   {
-    judul: "Best Romantic Korean Dramas to Watch: Heartwarming Love Stories",
-    deskripsi: "Discover the best romantic Korean dramas featuring unforgettable love stories, emotional moments, and amazing chemistry between the lead characters.",
+    judul: "Best romantic kdrama",
+    deskripsi: "best korean romance drama",
     tanggal: "November 5, 2026",
-    gambar: "/en/images/best-romantic-kdramas.jpg",
-    link: "/en/kdrama/best-romantic-kdramas.html"
+    gambar: "/en/images/korean-romance-dramas.jpg",
+    link: "/en/kdrama/korean-romance-dramas.html"
   },
 
   {
-    judul: "Best Chinese Dramas to Watch: Must-See C-Dramas",
-    deskripsi: "Explore popular Chinese dramas featuring romance, historical adventures, fantasy worlds, and unforgettable characters.",
+    judul: "romantic chinese drama",
+    deskripsi: "best romance chinese drama",
     tanggal: "November 6, 2026",
-    gambar: "/en/images/best-chinese-dramas.jpg",
-    link: "/en/cdrama/best-chinese-dramas.html"
+    gambar: "/en/images/best-chinese-romance-dramas.jpg",
+    link: "/en/cdrama/best-chinese-romance-dramas.html"
   },
 
   {
-    judul: "Best Movies to Watch: Amazing Films Worth Your Time",
-    deskripsi: "Discover interesting movies across different genres, including romance, action, comedy, fantasy, and drama.",
+    judul: "romantic movie hollywood",
+    deskripsi: "best romantic movie.",
     tanggal: "November 7, 2026",
-    gambar: "/en/images/best-movies.jpg",
-    link: "/en/movies/best-movies-to-watch.html"
+    gambar: "/en/images/best-romantic-movies-of-all-time.jpg",
+    link: "/en/movies/best-romantic-movies-of-all-time.html"
   }
 
 ];
