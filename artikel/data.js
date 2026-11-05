@@ -1,5 +1,40 @@
 const artikelData = [
 {
+    judul: "drama china romantis sepanjang masa",
+    deskripsi: "drama china romantis yang cocok di tonton bareng pacar",
+    tanggal: "05 november 2026",
+    gambar: "images/drama-china-romantis-sepanjang-masa.jpeg",
+    link: "drama-china-romantis-sepanjang-masa.html"
+  }, 
+    {
+    judul: "drama korea romantis sepanjang masa",
+    deskripsi: "daftar drama korea romantis yang seru untuk di tonton bareng pacar",
+    tanggal: "05 november 2026",
+    gambar: "images/drama-korea-romantis-sepanjang-masa.jpeg",
+    link: "drama-korea-romantis-sepanjang-masa.html"
+  }, 
+    {
+    judul: "film barat romantis sepanjang masa",
+    deskripsi: "daftar film barat romantis cocok untuk ditonton bareng pasangan",
+    tanggal: "05 november 2026",
+    gambar: "images/film-barat-romantis-sepanjang-masa.jpeg",
+    link: "film-barat-romantis-sepanjang-masa.html"
+  }, 
+    {
+    judul: "film indonesia romantis sepanjang masa",
+    deskripsi: "daftar film romantis indoneia yang cocok di tonton bersama pasangan",
+    tanggal: "05 november 2026",
+    gambar: "images/film-indonesia-romantis-sepanjang-masa.jpeg",
+    link: "film-indonesia-romantis-sepanjang-masa.html"
+  }, 
+    {
+    judul: "film thailand romantis sepanjang masa",
+    deskripsi: "daftar film romanti thailand yang cocok di tonnton bersama pasangan",
+    tanggal: "05 november 2026",
+    gambar: "images/film-thailand-romantis-sepanjang-masa.jpeg",
+    link: "film-thailand-romantis-sepanjang-masa.html"
+  }, 
+    {
     judul: "cara makeup cantik dan tidak menor",
     deskripsi: "cara-make-up-terlihat-cantik-dan-tidak-menor",
     tanggal: "04 november 2026",
