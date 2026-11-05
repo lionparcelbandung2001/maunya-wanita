@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "cara mancungin hidung tanpa operasi",
+    deskripsi: "mau tau cara mancungin hidung tanpa operasi,yuk di baca",
+    tanggal: "05 november 2026",
+    gambar: "images/cara-mancungin-hidung.jpeg",
+    link: "cara-mancungin-hidung-tanpa-operasi.html"
+  }, 
+    {
     judul: "drama china romantis sepanjang masa",
     deskripsi: "drama china romantis yang cocok di tonton bareng pacar",
     tanggal: "05 november 2026",
