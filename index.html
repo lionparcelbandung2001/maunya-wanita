@@ -9,6 +9,39 @@
   <meta name="description" content="Dengarkan musik, ngobrol santai bersama komunitas, dan baca hiburan ringan di CewekPedia.">
   <link rel="canonical" href="https://cewekpedia.com/">
 
+  <!-- TAMBAHAN: HREFLANG - JANGAN DIHAPUS, BIAR NYAMBUNG KE /en/ DAN /ar/ -->
+  <link rel="alternate" hreflang="id" href="https://cewekpedia.com/" />
+  <link rel="alternate" hreflang="en" href="https://cewekpedia.com/en/" />
+  <link rel="alternate" hreflang="ar" href="https://cewekpedia.com/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://cewekpedia.com/" />
+
+  <!-- TAMBAHAN: OPEN GRAPH BIAR CANTIK PAS DI-SHARE KE WA / FB -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CewekPedia">
+  <meta property="og:title" content="CewekPedia ❤️ — Musik, Chat, dan Hiburan Santai">
+  <meta property="og:description" content="Musik, obrolan, dan bacaan santai dalam satu tempat. Tips merawat diri, drama Korea, drama China, dan film Hollywood.">
+  <meta property="og:url" content="https://cewekpedia.com/">
+  <meta property="og:image" content="https://cewekpedia.com/logo.jpeg">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CewekPedia ❤️ — Musik, Chat, dan Hiburan Santai">
+  <meta name="twitter:description" content="Musik, obrolan, dan bacaan santai dalam satu tempat.">
+  <meta name="twitter:image" content="https://cewekpedia.com/logo.jpeg">
+
+  <!-- TAMBAHAN: JSON-LD BIAR GOOGLE NGERTI INI WEB APA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CewekPedia",
+    "url": "https://cewekpedia.com/",
+    "inLanguage": ["id", "en", "ar"],
+    "description": "Musik, obrolan, dan bacaan santai. Tips merawat diri, drama Korea, drama China, dan film Hollywood."
+  }
+  </script>
+
   <!-- FAVICON -->
   <link rel="icon" type="image/jpeg" href="/logo.jpeg">
   <link rel="apple-touch-icon" href="/logo.jpeg">
@@ -108,6 +141,21 @@
       background: var(--pink);
       text-decoration: none;
     }
+
+    /* TAMBAHAN: SEO INTRO - CUMA 1 PARAGRAF, GAK NGERUBAH LAYOUT */
+    .seo-intro {
+      width: min(100% - 24px, 1050px);
+      margin: 0 auto 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.85);
+      border: 1.5px solid #f0d7e3;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      text-align: center;
+    }
+    .seo-intro strong { color: var(--pink-dark); }
 
     main {
       display: grid;
@@ -476,6 +524,11 @@
       <a class="language-link" href="/ar/" lang="ar" dir="rtl">🌙 العربية</a>
     </nav>
   </header>
+
+  <!-- TAMBAHAN: 1 PARAGRAF SEO, DI LUAR MAIN, JADI GAK NGANGGU MUSIK + CHAT -->
+  <p class="seo-intro">
+    <strong>CewekPedia</strong> adalah tempat santai buat cewek: dengerin musik, ngobrol bareng komunitas, baca tips merawat diri, drama Korea, drama China, dan film Hollywood terbaru. Tersedia juga dalam <a href="/en/" lang="en">English</a> dan <a href="/ar/" lang="ar" dir="rtl">العربية</a>.
+  </p>
 
   <main>
 
