@@ -7,11 +7,11 @@ var artikelData = [
     gambar: ""
   },
  {
-    judul: "أفكار ملهمة لتغيير الروتين وبدء حياة جديدة",
-    deskripsi: "خطوات صغيرة وأفكار إيجابية تساعدك على تجديد نشاطك واكتشاف اهتمامات جديدة في حياتك.",
-    tanggal: "31 أكتوبر 2026",
-    link: "./تغيير-الروتين.html",
-    gambar: ""
+    judul: "*أفضل 10 مسلسلات كورية في شهر نوفمبر 2026*",
+    deskripsi: "*أفضل 10 مسلسلات كورية في شهر نوفمبر 2026*.",
+    tanggal: "5 نوفمبر 2026",
+    link: "drama-korea-november-2026.html",
+    gambar: "artikel/images/drama-korea-november-2026.jpeg"
   }
 
 ];
