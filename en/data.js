@@ -1,4 +1,11 @@
 const artikelData = [
+{
+    judul: "8 Best Chinese War Movies of All Time: Stories, Cast, Release Dates &amp; Awards | CewekPedia",
+    deskripsi: "Explore 8 of the best Chinese war movies of all time, from Red Cliff to The Battle at Lake Changjin. Read each film&#x27;s synopsis, cast, release date, director and notable awards",
+    tanggal: "November 7, 2026",
+    gambar: "/en/images/chinese-war-movies.jpeg",
+    link: "/en/cdrama/best-chinese-war-movies-all-time.html"
+  },
  {
     judul: "Top 7 Best Medical K-Dramas to Watch: Heartwarming & Thrilling",
     deskripsi: "Discover the best medical K-dramas featuring intense surgeries, heartwarming romance, and touching stories. Check out full synopses, cast details, and release dates!",
