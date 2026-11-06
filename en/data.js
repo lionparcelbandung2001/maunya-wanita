@@ -1,5 +1,12 @@
 const artikelData = [
   {
+    judul: "movie hollywood in november-december 2026",
+    deskripsi: "best movie hollywood in novemver-december 2026",
+    tanggal: "November 6, 2026",
+    gambar: "/en/images/hollywood-movies-november-december-2026.jpeg",
+    link: "/en/movies/hollywood-movies-november-december-2026.html"
+  },
+  {
     judul: "Best romantic kdrama",
     deskripsi: "best korean romance drama",
     tanggal: "November 5, 2026",
