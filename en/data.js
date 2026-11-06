@@ -1,4 +1,11 @@
 const artikelData = [
+ {
+    judul: "Top 7 Best Medical K-Dramas to Watch: Heartwarming & Thrilling",
+    deskripsi: "Discover the best medical K-dramas featuring intense surgeries, heartwarming romance, and touching stories. Check out full synopses, cast details, and release dates!",
+    tanggal: "November 6, 2026",
+    gambar: "/en/images/drama-korea-kedokteran.jpeg",
+    link: "/en/kdrama/best-medical-kdramas-to-watch.html"
+  },
   {
     judul: "movie hollywood in november-december 2026",
     deskripsi: "best movie hollywood in novemver-december 2026",
