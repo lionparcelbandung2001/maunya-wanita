@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "film barat/hollywood yang akan tayang di bulan november-desember 2026",
+    deskripsi: "daftar film barat/hollywood yang akan tayang di bulan november-desember 2026",
+    tanggal: "06 november 2026",
+    gambar: "images/hollywood-movies-november-december-2026.jpeg",
+    link: "hollywood-movies-november-december-2026.html"
+  }, 
+    {
     judul: "cara mancungin hidung tanpa operasi",
     deskripsi: "mau tau cara mancungin hidung tanpa operasi,yuk di baca",
     tanggal: "05 november 2026",
