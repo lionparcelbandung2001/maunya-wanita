@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "8 Film Perang China Terbaik Sepanjang Masa: Sinopsis, Pemain, Tanggal Rilis &amp; Penghargaan | CewekPedia",
+    deskripsi: "Rekomendasi 8 film perang China terbaik sepanjang masa, dari Red Cliff hingga The Battle at Lake Changjin. Lengkap dengan sinopsis, pemain, tanggal rilis, sutradara, dan penghargaan.",
+    tanggal: "07 november 2026",
+    gambar: "images/chinese-war-movies.jpeg",
+    link: "film-perang-china-terbaik-sepanjang-masa.html"
+  }, 
+    {
     judul: "drama korea kedokteran terbaik",
     deskripsi: "daftar drama korea bertema kedokteran yang wajib di tonton",
     tanggal: "06 november 2026",
