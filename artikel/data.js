@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "drama korea kedokteran terbaik",
+    deskripsi: "daftar drama korea bertema kedokteran yang wajib di tonton",
+    tanggal: "06 november 2026",
+    gambar: "images/drama-korea-kedokteran.jpeg",
+    link: "drama-korea-kedokteran.html"
+  }, 
+    {
     judul: "film barat/hollywood yang akan tayang di bulan november-desember 2026",
     deskripsi: "daftar film barat/hollywood yang akan tayang di bulan november-desember 2026",
     tanggal: "06 november 2026",
