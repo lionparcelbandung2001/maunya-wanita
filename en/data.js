@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "6 Best Korean Historical War Dramas: Storylines, Cast &amp; Awards | CewekPedia",
+    deskripsi: "six Korean historical war dramas with story summaries, original premiere dates, episode counts, main cast members and verified awards.",
+    tanggal: "November 8, 2026",
+    gambar: "/en/images/korea-khitan-war.jpeg",
+    link: "/en/kdrama/best-korean-war-historical-dramas.html"
+  },
+    {
     judul: "8 Best Chinese War Movies of All Time: Stories, Cast, Release Dates &amp; Awards | CewekPedia",
     deskripsi: "Explore 8 of the best Chinese war movies of all time, from Red Cliff to The Battle at Lake Changjin. Read each film&#x27;s synopsis, cast, release date, director and notable awards",
     tanggal: "November 7, 2026",
