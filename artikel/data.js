@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "Drama Korea Peperangan Terbaik: 6 Serial dengan Kisah Perang Bersejarah | CewekPedia",
+    deskripsi: "Rekomendasi 6 drama Korea peperangan terbaik lengkap dengan sinopsis, tanggal tayang perdana, jumlah episode, pemain utama, dan penghargaan",
+    tanggal: "08 november 2026",
+    gambar: "images/korea-khitan-war.jpeg",
+    link: "drama-korea-peperangan-terbaik.html"
+  }, 
+    {
     judul: "8 Film Perang China Terbaik Sepanjang Masa: Sinopsis, Pemain, Tanggal Rilis &amp; Penghargaan | CewekPedia",
     deskripsi: "Rekomendasi 8 film perang China terbaik sepanjang masa, dari Red Cliff hingga The Battle at Lake Changjin. Lengkap dengan sinopsis, pemain, tanggal rilis, sutradara, dan penghargaan.",
     tanggal: "07 november 2026",
