@@ -1,5 +1,82 @@
 const artikelData = [
 {
+    judul: "Cara Makeup untuk Pipi Tembem Agar Terlihat Tirus | CewekPedia",
+    deskripsi: "Cara makeup pipi tembem agar terlihat tirus dan langsing. Trik contour, blush on, alis, dan hijab yang bikin wajah chubby kelihatan lebih tirus dalam 5 menit.",
+    tanggal: "10 november 2026",
+    gambar: "images/cara-makeup-pipi-tembem-agar-terlihat-tirus.jpeg",
+    link: "cara-makeup-pipi-tembem-agar-terlihat-tirus.html"
+  }, 
+    {
+    judul: "Outfit yang Cocok Dipakai Wanita Gemuk Agar Terlihat Langsing | CewekPedia",
+    deskripsi: "7 outfit wanita gemuk agar terlihat langsing dan elegan. Trik pilih warna, motif, tunik, outer, dan kulot yang bikin badan kelihatan lebih ramping",
+    tanggal: "10 november 2026",
+    gambar: "images/outfit-wanita-gemuk-terlihat-langsing.jpeg",
+    link: "outfit-wanita-gemuk-terlihat-langsing.html"
+  }, 
+    {
+    judul: "Tips untuk Cewek Pemula dalam Membuat CV / Surat Lamaran Kerja | CewekPedia",
+    deskripsi: "Tips membuat CV dan surat lamaran kerja untuk cewek pemula tanpa pengalaman. Contoh CV fresh graduate yang menarik HRD, dan cara menulis surat lamaran yang bikin dipanggil interview.",
+    tanggal: "10 november 2026",
+    gambar: "images/tips-surat-lamaran-kerja.jpeg",
+    link: "tips-surat-lamaran-kerja.html"
+  }, 
+    {
+    judul: "Cara Memilih Jilbab Bagi Pemula | CewekPedia",
+    deskripsi: "Cara memilih jilbab bagi pemula yang baru berhijab. Panduan pilih bahan, warna, bentuk pashmina vs segi empat, dan tips agar nyaman, tidak gerah, dan tidak mudah melorot.",
+    tanggal: "10 november 2026",
+    gambar: "images/cara-memilih-jilbab-bagi-pemula.jpeg",
+    link: "cara-memilih-jilbab-bagi-pemula.html"
+  }, 
+    {
+    judul: "Divisi Lamaran Kerja PT KAI yang Paling Banyak Nerima Perempuan | CewekPedia",
+    deskripsi: "Divisi lamaran kerja PT KAI yang paling banyak menerima perempuan. Dari Prami, Customer Service, Admin, sampai Ticketing. Syarat, gaji, dan tips lolos rekrutmen KAI untuk cewek.",
+    tanggal: "10 november 2026",
+    gambar: "images/divisi-lamaran-kerja-pt-kai-paling-banyak-nerima-perempuan.jpeg",
+    link: "divisi-lamaran-kerja-pt-kai-paling-banyak-nerima-perempuan.html"
+  }, 
+    {
+    judul: "Tips dan Trik untuk Wanita Agar Bisa Diterima di PT KAI | CewekPedia",
+    deskripsi: "Tips dan trik wanita agar bisa diterima di PT KAI. Syarat tinggi badan, usia, nilai, tahapan seleksi, psikotes, kesehatan, dan wawancara KAI khusus perempuan",
+    tanggal: "10 november 2026",
+    gambar: "images/tips-trik-wanita-agar-diterima-di-pt-kai.jpeg",
+    link: "tips-trik-wanita-agar-diterima-di-pt-kai.html"
+  }, 
+    {
+    judul: "Tips Agar Lolos Jadi Pegawai KAI untuk Perempuan: Panduan Lengkap dan Syarat Rekrutmen | CewekPedia",
+    deskripsi: "Ingin berkarir di PT Kereta Api Indonesia (Persero)? Simak tips lolos rekrutmen KAI khusus perempuan, mulai dari syarat fisik, kelengkapan berkas, tes kesehatan, hingga wawancara",
+    tanggal: "10 november 2026",
+    gambar: "images/tips-lolos-pegawai-kai-perempuan.jpeg",
+    link: "tips-lolos-jadi-pegawai-kai-untuk-perempuan.html"
+  }, 
+    {
+    judul: "Beberapa Contoh Penipuan tentang Lowongan PT KAI yang Patut Diwaspadai | CewekPedia",
+    deskripsi: "Waspada modus penipuan lowongan kerja PT KAI palsu! Simak ciri-ciri rekrutmen abal-abal, mulai dari pungutan biaya tiket, travel agent fiktif, hingga pengumuman hoax.",
+    tanggal: "10 november 2026",
+    gambar: "images/waspada-penipuan-loker-kai.jpeg",
+    link: "contoh-penipuan-lowongan-pt-kai-yang-patut-diwaspadai.html"
+  }, 
+    {
+    judul: "Beberapa Contoh Pertanyaan Saat Rekruitmen PT KAI dan Cara Menjawabnya | CewekPedia",
+    deskripsi: "Simak bocoran contoh pertanyaan wawancara rekrutmen PT KAI, mulai dari nilai Core Values BUMN AKHLAK, studi kasus operasional, hingga tips sukses menjawabnya.",
+    tanggal: "10 november 2026",
+    gambar: "images/pertanyaan-wawancara-pt-kai.jpeg",
+    link: "beberapa-contoh-pertanyaan-saat-rekruitmen-pt-kai.html"
+  }, 
+    {
+    judul: "Tahapan Seleksi Rekruitmen KAI: Dari Awal hingga Diterima Pegawai | CewekPedia",
+    deskripsi: "Simak alur dan tahapan seleksi rekrutmen PT KAI secara lengkap, mulai dari seleksi administrasi, psikotes, wawancara, hingga medical check-up (MCU) terakhir",
+    tanggal: "10 november 2026",
+    gambar: "images/tahapan-seleksi-rekrutmen-kai.jpeg",
+    link: "tahapan-seleksi-rekruitmen-kai-dari-awal-hingga-akhir.html"
+  }, 
+    {
+    judul: "Formasi di PT KAI yang Paling Banyak Menerima Perempuan dan Syaratnya | CewekPedia",
+    deskripsi: "Simak daftar formasi lowongan kerja PT KAI yang paling banyak membuka peluang untuk perempuan, mulai dari administrasi, kondektur, hingga layanan pelanggan (CS)",
+    tanggal: "10 november 2026",
+    gambar: "images/formasi-kai-untuk-perempuan.jpeg",
+    link: "formasi-di-pt-kai-yg-paling-banyak-menerima-perempuan.html"
+  }, 
+    {
     judul: "4 Film Perang Korea Terbaik Sepanjang Masa, Kisah Heroik dan Tragis | CewekPedia",
     deskripsi: "Rekomendasi 4 film perang Korea terbaik sepanjang masa. Lengkap dengan judul, tanggal tayang, pemain, sinopsis dan penghargaan film Korea bertema Perang Korea.",
     tanggal: "09 november 2026",
