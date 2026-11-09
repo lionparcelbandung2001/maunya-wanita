@@ -774,7 +774,7 @@ const artikelData = [
     deskripsi: "tips menghilangkan jerawat di kulit muka berminyak",
     tanggal: "25 oktober 2026",
     gambar: "images/cara-menghilangkan-jerawat-di-muka-berminyak.jpeg",
-    link: "cara-menghilangkan-jerawat-di-muka-berminyak.html"
+    link: "muka-berminyak.html"
   }, 
  {
     judul: "Tips memilih lipstik untuk wajah sawo matang-coklat",
