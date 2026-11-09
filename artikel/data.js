@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "4 Film Perang Korea Terbaik Sepanjang Masa, Kisah Heroik dan Tragis | CewekPedia",
+    deskripsi: "Rekomendasi 4 film perang Korea terbaik sepanjang masa. Lengkap dengan judul, tanggal tayang, pemain, sinopsis dan penghargaan film Korea bertema Perang Korea.",
+    tanggal: "09 november 2026",
+    gambar: "images/film-perang-korea.jpeg",
+    link: "film-perang-korea-terbaik-sepanjang-masa.html"
+  }, 
+    {
     judul: "Drama Korea Peperangan Terbaik: 6 Serial dengan Kisah Perang Bersejarah | CewekPedia",
     deskripsi: "Rekomendasi 6 drama Korea peperangan terbaik lengkap dengan sinopsis, tanggal tayang perdana, jumlah episode, pemain utama, dan penghargaan",
     tanggal: "08 november 2026",
