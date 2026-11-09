@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "4 Best Korean War Movies of All Time: Powerful Stories of Courage and Sacrifice | CewekPedia",
+    deskripsi: "the 4 best Korean War movies of all time, including Taegukgi, The Front Line, Welcome to Dongmakgol and 71: Into the Fire. Explore their release dates, cast, stories and awards.",
+    tanggal: "November 9, 2026",
+    gambar: "/en/images/film-perang-korea.jpeg",
+    link: "/en/movies/best-korean-war-movies-of-all-time.html"
+  },
+    {
     judul: "6 Best Korean Historical War Dramas: Storylines, Cast &amp; Awards | CewekPedia",
     deskripsi: "six Korean historical war dramas with story summaries, original premiere dates, episode counts, main cast members and verified awards.",
     tanggal: "November 8, 2026",
