@@ -24,7 +24,7 @@ var artikelData = [
     judul: "أفضل 7 مسلسلات طبية كورية يجب مشاهدتها: مليئة بالتشويق والمشاعر المؤثرة! ",
     deskripsi: "تعرف على أفضل الدرامات الطبية الكورية التي تتميز بعمليات جراحية مشوقة وقصص رومانسية وعاطفية مؤثرة. اكتشف القصة وأبطال الأعمال ومواعيد العرض!",
     tanggal: "6 نوفمبر 2026",
-    link: "artikel/best-medical-kdramas-ar.html",
+    link: "artikel/best-medical-kdramas.html",
     gambar: "artikel/images/drama-korea-kedokteran.jpeg"
   }, 
   {
