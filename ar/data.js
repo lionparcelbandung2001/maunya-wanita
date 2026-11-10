@@ -46,7 +46,7 @@ var artikelData = [
     deskripsi: "اكتشفي أفضل 10 مسلسلات كورية رومانسية على الإطلاق، مع ملخص القصة وأسماء الممثلين وأهم الجوائز، من Crash Landing on You إلى Queen of Tears",
     tanggal: "11 نوفمبر 2026",
     link: "/ar/artikel/best-korean-romantic-dramas-of-all-time.html",
-    gambar: "/ar/artikel/images/best-korean-romantic-dramas.jpeg"
+    gambar: "/ar/artikel/images/best-korean-romantic-dramas-of-all-time.jpeg"
   }, 
     {
     judul: "أفضل 8 مسلسلات كورية تاريخية وملكية على الإطلاق | CewekPedia ",
