@@ -1,5 +1,61 @@
 const artikelData = [
 {
+    judul: "Drama Korea Time Travel Terbaik Sepanjang Masa: 15 Drakor tentang Perjalanan Waktu | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea time travel terbaik sepanjang masa",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-time-travel-terbaik.jpeg",
+    link: "drama-korea-time-travel-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "15 Drama Korea Melo/Sedih Terbaik Sepanjang Masa yang Bikin Nangis | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea melodrama dan sedih terbaik sepanjang masa. Dari Autumn in My Heart, Moon Lovers, My Mister hingga When Life Gives You Tangerines",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-melo-sedih-terbaik.jpeg",
+    link: "drama-korea-melo-sedih-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "15 Drama Korea Komedi Terbaik Sepanjang Masa yang Bikin Ngakak | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea komedi terbaik sepanjang masa, dari Welcome to Waikiki, Mr. Queen, Reply 1988 hingga Business Proposal",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-komedi-terbaik.jpeg",
+    link: "drama-korea-komedi-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "15 Drama Korea Fantasy dan Science Fiction Terbaik Sepanjang Masa | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea fantasy dan science fiction terbaik sepanjang masa. Dari Goblin, Moving, Alchemy of Souls hingga The Silent Sea",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-fantasy-science-fiction.jpeg",
+    link: "drama-korea-fantasy-science-fiction-terbaik.html"
+  }, 
+    {
+    judul: "Drama Korea Action Terbaik Sepanjang Masa: 15 Drakor Penuh Aksi | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea action terbaik sepanjang masa, mulai dari Healer, Vagabond, City Hunter, Taxi Driver, Moving hingga Bloodhounds",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-action-terbaik.jpeg",
+    link: "drama-korea-action-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "18 Drama Korea Romantis Terbaik Sepanjang Masa yang Wajib Ditonton | CewekPedia",
+    deskripsi: "Rekomendasi 18 drama Korea romantis terbaik sepanjang masa, dari Winter Sonata, Goblin, Crash Landing on You hingga Lovely Runner dan Queen of Tears",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-romantis-terbaik.jpeg",
+    link: "drama-korea-romantis-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "15 Drama Korea Kerajaan Terbaik Sepanjang Masa, Kisah Raja dan Intrik Istana | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea kerajaan terbaik sepanjang masa. Dari Jewel in the Palace, Queen Seondeok, Empress Ki hingga The Red Sleeve",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-kerajaan-terbaik.jpeg",
+    link: "drama-korea-kerajaan-terbaik-sepanjang-masa.html"
+  }, 
+    {
+    judul: "15 Drama Korea Thriller Terbaik Sepanjang Masa, Penuh Misteri dan Plot Twist | CewekPedia",
+    deskripsi: "Rekomendasi 15 drama Korea thriller terbaik sepanjang masa. Dari Signal, Mouse, Beyond Evil hingga Flower of Evil, simak sinopsis dan alasan wajib menontonnya.",
+    tanggal: "12 november 2026",
+    gambar: "images/drama-korea-thriller-terbaik.jpeg",
+    link: "drama-korea-thriller-terbaik-sepanjang-masa.html"
+  }, 
+    {
     judul: "Cara Makeup untuk Pipi Tembem Agar Terlihat Tirus | CewekPedia",
     deskripsi: "Cara makeup pipi tembem agar terlihat tirus dan langsing. Trik contour, blush on, alis, dan hijab yang bikin wajah chubby kelihatan lebih tirus dalam 5 menit.",
     tanggal: "10 november 2026",
