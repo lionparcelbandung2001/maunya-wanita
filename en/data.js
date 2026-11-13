@@ -45,7 +45,7 @@ const artikelData = [
     judul: "15 Best Korean Fantasy & Sci-Fi Dramas of All Time | CewekPedia",
     deskripsi: "Discover 15 of the best Korean fantasy and sci-fi dramas of all time, featuring magic, time travel, parallel worlds, supernatural beings, aliens, and unforgettable stories",
     tanggal: "November 13, 2026",
-    gambar: "/en/images/korean-fantasy-sci-fi-dramas.jpeg",
+    gambar: "/en/images/korean-kdrama-sci-fi-dramas.jpeg",
     link: "/en/kdrama/best-korean-fantasy-sci-fi-dramas.html"
   },
     {
