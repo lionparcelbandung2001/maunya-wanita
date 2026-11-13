@@ -10,7 +10,7 @@ const artikelData = [
     judul: "15 Best Korean Thriller Dramas of All Time: Must-Watch K-Dramas | CewekPedia",
     deskripsi: "Discover 15 of the best Korean thriller dramas of all time, from Signal and Stranger to Beyond Evil, Flower of Evil, Kingdom, and The Glory",
     tanggal: "November 13, 2026",
-    gambar: "/en/images/best-korean-thriller-dramas.jpeg"",
+    gambar: "/en/images/best-korean-thriller-dramas.jpeg",
     link: "/en/kdrama/best-korean-thriller-dramas-of-all-time.html"
   },
     {
