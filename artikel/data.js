@@ -1,4 +1,11 @@
 const artikelData = [
+{
+    judul: "Kumpulan Cara Flexing Tanpa Ketahuan: 15 Trik Elegan Bikin Orang Terpesona | CewekPedia",
+    deskripsi: "Ingin terlihat berkelas tanpa terkesan suka pamer? Simak 15 cara flexing tanpa ketahuan",
+    tanggal: "14 november 2026",
+    gambar: "images/flexing-tanpa-ketahuan.jpeg",
+    link: "kumpulan-cara-flexing-tanpa-ketahuan.html"
+  },
   {
     judul: "Drama Korea Time Travel Terbaik Sepanjang Masa: 15 Drakor tentang Perjalanan Waktu | CewekPedia",
     deskripsi: "Rekomendasi 15 drama Korea time travel terbaik sepanjang masa dengan kisah perjalanan waktu, cinta, misteri, dan perubahan masa lalu yang menarik untuk ditonton.",
