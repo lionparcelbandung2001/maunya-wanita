@@ -61,576 +61,85 @@
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    :root {
-      --pink: #d65b99;
-      --pink-dark: #a83270;
-      --pink-light: #fff0f6;
-      --purple: #8663a8;
-      --text: #443541;
-      --muted: #806f7c;
-      --white: #ffffff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding-bottom: 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fffafd;
-      color: var(--text);
-      line-height: 1.8;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .site-header {
-      padding: 24px 16px;
-      text-align: center;
-      background: linear-gradient(135deg, #ffe2ef, #f4e8ff);
-      border-bottom: 1px solid #f5d8e8;
-    }
-
-    .brand {
-      display: inline-block;
-      color: var(--pink-dark);
-      font-size: 25px;
-      font-weight: 800;
-      text-decoration: none;
-      letter-spacing: 0.3px;
-    }
-
-    .tagline {
-      margin: 5px 0 0;
-      color: #80677b;
-      font-size: 13px;
-    }
-
-    .top-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-      padding: 12px;
-      background: #fff;
-      border-bottom: 1px solid #f4e3ec;
-    }
-
-    .top-nav a {
-      color: var(--pink-dark);
-      font-size: 13px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .top-nav a:hover,
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1140px;
-      margin: auto;
-      padding: 22px 16px;
-    }
-
-    .layout-wrapper {
-      display: flex;
-      gap: 22px;
-      align-items: flex-start;
-    }
-
-    .main-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .sidebar-right {
-      width: 240px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 20px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: var(--pink-dark);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .article-card {
-      padding: 26px;
-      background: var(--white);
-      border: 1px solid #f4e3ec;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(173, 87, 132, 0.07);
-      overflow-wrap: anywhere;
-    }
-
-    .article-category {
-      display: inline-block;
-      padding: 5px 12px;
-      color: var(--pink-dark);
-      background: var(--pink-light);
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .article-title {
-      margin: 13px 0 10px;
-      color: #663c58;
-      font-size: 30px;
-      line-height: 1.35;
-    }
-
-    .article-date {
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .article-image {
-      display: block;
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      max-height: 400px;
-      object-fit: cover;
-      margin: 18px auto 24px;
-      border-radius: 14px;
-      background: #fff7fb;
-      border: 1px solid #f2dbe6;
-    }
-
-    .article-content h2 {
-      margin: 28px 0 10px;
-      color: var(--pink-dark);
-      font-size: 22px;
-      line-height: 1.45;
-    }
-
-    .article-content h3 {
-      margin: 22px 0 8px;
-      color: #754b68;
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .article-content p {
-      margin: 13px 0;
-      font-size: 16px;
-    }
-
-    .article-content ul,
-    .article-content ol {
-      padding-left: 24px;
-    }
-
-    .article-content li {
-      margin-bottom: 8px;
-    }
-
-    .article-content a {
-      color: var(--pink-dark);
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    .tip-box {
-      margin: 24px 0;
-      padding: 18px;
-      background: #fff2f8;
-      border-left: 4px solid var(--pink);
-      border-radius: 10px;
-    }
-
-    .tip-box h3 {
-      margin-top: 0;
-      color: var(--pink-dark);
-    }
-
-    .tip-box p {
-      margin-bottom: 0;
-    }
-
-    .article-cta {
-      margin: 28px 0 8px;
-      padding: 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #fff0f6, #f5efff);
-      border: 1px solid #f1d9e9;
-      border-radius: 15px;
-    }
-
-    .article-cta h3 {
-      margin: 0 0 8px;
-      color: var(--pink-dark);
-    }
-
-    .article-cta p {
-      margin: 8px 0 14px;
-      font-size: 14px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 11px 20px;
-      color: #fff !important;
-      background: var(--pink);
-      border-radius: 30px;
-      text-decoration: none !important;
-      font-size: 14px;
-      font-weight: bold;
-      margin: 4px;
-    }
-
-    .cta-button:hover {
-      background: var(--pink-dark);
-    }
-
-    /* KOTAK PROMOSI */
-    .advertising-box {
-      position: relative;
-      background: linear-gradient(145deg, #ff6ab2, #a855f7);
-      border-radius: 14px;
-      padding: 14px 12px;
-      color: #fff;
-      box-shadow: 0 6px 18px rgba(214, 91, 153, 0.25);
-      border: 1.5px solid #fff;
-      text-align: center;
-    }
-
-    .advertising-title {
-      margin: 0 0 4px;
-      font-size: 14px;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .advertising-description {
-      margin: 0 0 10px;
-      font-size: 11px;
-      line-height: 1.5;
-      color: #fff0f7;
-    }
-
-    .advertising-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .advertising-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 7px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: bold;
-      text-decoration: none !important;
-    }
-
-    .advertising-whatsapp {
-      background: #25d366;
-      color: #fff !important;
-    }
-
-    .advertising-email {
-      background: #fff;
-      color: #a83270 !important;
-    }
-
-    .advertising-close {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      width: 22px;
-      height: 22px;
-      border: none;
-      border-radius: 50%;
-      background: #fff;
-      color: #725566;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* SLOT MONETAG */
-    #monetag-ad-slot {
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      min-width: 0;
-      min-height: 0;
-      margin: 0 auto 24px;
-      padding: 0;
-      overflow: hidden;
-      overflow-wrap: anywhere;
-      text-align: center;
-    }
-
-    #monetag-ad-slot iframe,
-    #monetag-ad-slot img {
-      max-width: 100%;
-    }
-
-    /* SLOT ADSTERRA SIDEBAR */
-    #adsterra-ad-slot {
-      width: 100%;
-      max-width: 300px;
-      margin: 16px auto 0;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    #adsterra-ad-slot iframe {
-      max-width: 100%;
-      border: 0;
-    }
-
-    /* SLOT TAMBAHAN ADSTERRA */
-    .adsterra-extra-slot {
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      min-height: 0;
-      margin: 24px auto;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .adsterra-extra-slot iframe {
-      max-width: 100%;
-      border: 0;
-    }
-
-    /* DUA SLOT IKLAN TENGAH */
-    .adsterra-middle-slot {
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      min-height: 0;
-      margin-left: auto;
-      margin-right: auto;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    #adsterra-middle-1 {
-      margin-top: 30px;
-      margin-bottom: 55px;
-    }
-
-    #adsterra-middle-2 {
-      margin-top: 55px;
-      margin-bottom: 35px;
-    }
-
-    .adsterra-middle-slot iframe {
-      max-width: 100%;
-      border: 0;
-    }
-
-    .related-section {
-      margin-top: 28px;
-      padding: 20px;
-      background: #fff;
-      border: 1px solid #f4e3ec;
-      border-radius: 16px;
-    }
-
-    .related-section h2 {
-      margin: 0 0 14px;
-      color: var(--pink-dark);
-      font-size: 21px;
-    }
-
-    #related-articles {
-      min-width: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .site-footer {
-      margin-top: 35px;
-      padding: 25px 15px;
-      text-align: center;
-      background: #fff0f6;
-      color: #80677b;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      margin-top: 10px;
-    }
-
-    .footer-links a {
-      color: var(--pink-dark);
-      text-decoration: none;
-    }
-
-    /* TABLET */
-    @media (max-width: 900px) {
-      .layout-wrapper {
-        flex-direction: column;
-      }
-
-      .main-content {
-        width: 100%;
-      }
-
-      .sidebar-right {
-        width: 100%;
-        position: static;
-      }
-
-      .advertising-box {
-        padding: 12px;
-      }
-
-      .advertising-actions {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .advertising-button {
-        padding: 7px 10px;
-      }
-    }
-
-    /* HP */
-    @media (max-width: 600px) {
-      .site-header {
-        padding: 20px 12px;
-      }
-
-      .brand {
-        font-size: 22px;
-      }
-
-      .container {
-        padding: 15px 10px;
-      }
-
-      .article-card {
-        padding: 17px;
-        border-radius: 14px;
-      }
-
-      .article-title {
-        font-size: 24px;
-      }
-
-      .article-content h2 {
-        font-size: 21px;
-      }
-
-      .article-content h3 {
-        font-size: 17px;
-      }
-
-      .article-content p {
-        font-size: 16px;
-      }
-
-      #monetag-ad-slot {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 24px;
-        overflow: hidden;
-      }
-
-      #monetag-ad-slot iframe,
-      #monetag-ad-slot img {
-        max-width: 100%;
-      }
-
-      #adsterra-ad-slot {
-        width: 100%;
-        max-width: 300px;
-        margin: 16px auto 0;
-      }
-
-      .adsterra-extra-slot {
-        width: 100%;
-        max-width: 300px;
-        margin: 24px auto;
-      }
-
-      #adsterra-middle-1 {
-        margin-top: 28px;
-        margin-bottom: 45px;
-      }
-
-      #adsterra-middle-2 {
-        margin-top: 45px;
-        margin-bottom: 30px;
-      }
-
-      .adsterra-middle-slot {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .advertising-box,
-      .sidebar-right {
-        position: static;
-        width: 100%;
-      }
-
-      .related-section {
-        padding: 16px;
-      }
-    }
+    * { box-sizing: border-box; }
+    :root { --pink: #d65b99; --pink-dark: #a83270; --pink-light: #fff0f6; --purple: #8663a8; --text: #443541; --muted: #806f7c; --white: #ffffff; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif; background: #fffafd; color: var(--text); line-height: 1.8; }
+    img { max-width: 100%; }
+    a { -webkit-tap-highlight-color: transparent; }
+    .site-header { padding: 24px 16px; text-align: center; background: linear-gradient(135deg, #ffe2ef, #f4e8ff); border-bottom: 1px solid #f5d8e8; }
+    .brand { display: inline-block; color: var(--pink-dark); font-size: 25px; font-weight: 800; text-decoration: none; letter-spacing: 0.3px; }
+    .tagline { margin: 5px 0 0; color: #80677b; font-size: 13px; }
+    .top-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 20px; padding: 12px; background: #fff; border-bottom: 1px solid #f4e3ec; }
+    .top-nav a { color: var(--pink-dark); font-size: 13px; font-weight: bold; text-decoration: none; }
+    .top-nav a:hover, .footer-links a:hover { text-decoration: underline; }
+    .container { width: 100%; max-width: 1140px; margin: auto; padding: 22px 16px; }
+    .layout-wrapper { display: flex; gap: 22px; align-items: flex-start; }
+    .main-content { flex: 1; min-width: 0; }
+    .sidebar-right { width: 240px; flex-shrink: 0; position: sticky; top: 20px; }
+    .back-link { display: inline-block; margin-bottom: 16px; color: var(--pink-dark); text-decoration: none; font-weight: bold; font-size: 14px; }
+    .article-card { padding: 26px; background: var(--white); border: 1px solid #f4e3ec; border-radius: 18px; box-shadow: 0 5px 20px rgba(173, 87, 132, 0.07); overflow-wrap: anywhere; }
+    .article-category { display: inline-block; padding: 5px 12px; color: var(--pink-dark); background: var(--pink-light); border-radius: 20px; font-size: 12px; font-weight: bold; }
+    .article-title { margin: 13px 0 10px; color: #663c58; font-size: 30px; line-height: 1.35; }
+    .article-date { margin-bottom: 18px; color: var(--muted); font-size: 12px; }
+    .article-image { display: block; width: 100%; max-width: 700px; height: auto; max-height: 400px; object-fit: cover; margin: 18px auto 24px; border-radius: 14px; background: #fff7fb; border: 1px solid #f2dbe6; }
+    .article-content h2 { margin: 28px 0 10px; color: var(--pink-dark); font-size: 22px; line-height: 1.45; }
+    .article-content h3 { margin: 22px 0 8px; color: #754b68; font-size: 18px; line-height: 1.5; }
+    .article-content p { margin: 13px 0; font-size: 16px; }
+    .article-content ul, .article-content ol { padding-left: 24px; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--pink-dark); font-weight: bold; text-decoration: underline; }
+    .tip-box { margin: 24px 0; padding: 18px; background: #fff2f8; border-left: 4px solid var(--pink); border-radius: 10px; }
+    .tip-box h3 { margin-top: 0; color: var(--pink-dark); }
+    .tip-box p { margin-bottom: 0; }
+    .contoh-box { margin: 16px 0; padding: 16px; background: #fffaf0; border: 1px dashed #e8b45a; border-radius: 12px; }
+    .contoh-box h4 { margin: 0 0 8px; color: #8a5a00; font-size: 15px; }
+    .contoh-box p { margin: 6px 0; font-size: 15px; font-style: italic; }
+    .article-cta { margin: 28px 0 8px; padding: 20px; text-align: center; background: linear-gradient(135deg, #fff0f6, #f5efff); border: 1px solid #f1d9e9; border-radius: 15px; }
+    .article-cta h3 { margin: 0 0 8px; color: var(--pink-dark); }
+    .article-cta p { margin: 8px 0 14px; font-size: 14px; }
+    .cta-button { display: inline-block; padding: 11px 20px; color: #fff !important; background: var(--pink); border-radius: 30px; text-decoration: none !important; font-size: 14px; font-weight: bold; margin: 4px; }
+    .cta-button:hover { background: var(--pink-dark); }
+    .advertising-box { position: relative; background: linear-gradient(145deg, #ff6ab2, #a855f7); border-radius: 14px; padding: 14px 12px; color: #fff; box-shadow: 0 6px 18px rgba(214, 91, 153, 0.25); border: 1.5px solid #fff; text-align: center; }
+    .advertising-title { margin: 0 0 4px; font-size: 14px; font-weight: 800; color: #fff; }
+    .advertising-description { margin: 0 0 10px; font-size: 11px; line-height: 1.5; color: #fff0f7; }
+    .advertising-actions { display: flex; flex-direction: column; gap: 6px; }
+    .advertising-button { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; text-decoration: none !important; }
+    .advertising-whatsapp { background: #25d366; color: #fff !important; }
+    .advertising-email { background: #fff; color: #a83270 !important; }
+    .advertising-close { position: absolute; top: -6px; right: -6px; width: 22px; height: 22px; border: none; border-radius: 50%; background: #fff; color: #725566; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center; }
+    #monetag-ad-slot { display: block; width: 100%; max-width: 300px; min-width: 0; min-height: 0; margin: 0 auto 24px; padding: 0; overflow: hidden; overflow-wrap: anywhere; text-align: center; }
+    #monetag-ad-slot iframe, #monetag-ad-slot img { max-width: 100%; }
+    #adsterra-ad-slot { width: 100%; max-width: 300px; margin: 16px auto 0; overflow: hidden; text-align: center; }
+    #adsterra-ad-slot iframe { max-width: 100%; border: 0; }
+    .adsterra-extra-slot { display: block; width: 100%; max-width: 300px; min-height: 0; margin: 24px auto; overflow: hidden; text-align: center; }
+    .adsterra-extra-slot iframe { max-width: 100%; border: 0; }
+    .adsterra-middle-slot { display: block; width: 100%; max-width: 300px; min-height: 0; margin-left: auto; margin-right: auto; overflow: hidden; text-align: center; }
+    #adsterra-middle-1 { margin-top: 30px; margin-bottom: 55px; }
+    #adsterra-middle-2 { margin-top: 55px; margin-bottom: 35px; }
+    .adsterra-middle-slot iframe { max-width: 100%; border: 0; }
+    .related-section { margin-top: 28px; padding: 20px; background: #fff; border: 1px solid #f4e3ec; border-radius: 16px; }
+    .related-section h2 { margin: 0 0 14px; color: var(--pink-dark); font-size: 21px; }
+    #related-articles { min-width: 0; overflow-wrap: anywhere; }
+    .site-footer { margin-top: 35px; padding: 25px 15px; text-align: center; background: #fff0f6; color: #80677b; font-size: 13px; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 18px; margin-top: 10px; }
+    .footer-links a { color: var(--pink-dark); text-decoration: none; }
+    @media (max-width: 900px) { .layout-wrapper { flex-direction: column; } .main-content { width: 100%; } .sidebar-right { width: 100%; position: static; } .advertising-box { padding: 12px; } .advertising-actions { flex-direction: row; flex-wrap: wrap; justify-content: center; } .advertising-button { padding: 7px 10px; } }
+    @media (max-width: 600px) { .site-header { padding: 20px 12px; } .brand { font-size: 22px; } .container { padding: 15px 10px; } .article-card { padding: 17px; border-radius: 14px; } .article-title { font-size: 24px; } .article-content h2 { font-size: 21px; } .article-content h3 { font-size: 17px; } .article-content p { font-size: 16px; } #monetag-ad-slot { width: 100%; max-width: 300px; margin: 0 auto 24px; overflow: hidden; } #monetag-ad-slot iframe, #monetag-ad-slot img { max-width: 100%; } #adsterra-ad-slot { width: 100%; max-width: 300px; margin: 16px auto 0; } .adsterra-extra-slot { width: 100%; max-width: 300px; margin: 24px auto; } #adsterra-middle-1 { margin-top: 28px; margin-bottom: 45px; } #adsterra-middle-2 { margin-top: 45px; margin-bottom: 30px; } .adsterra-middle-slot { width: 100%; max-width: 300px; } .advertising-box, .sidebar-right { position: static; width: 100%; } .related-section { padding: 16px; } }
   </style>
 
-  <!-- KODE MONETAG -->
   <script>
-    (function(s){
-      s.dataset.zone='12197764';
-      s.src='https://nap5k.com/tag.min.js';
-    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+    (function(s){ s.dataset.zone='12197764'; s.src='https://nap5k.com/tag.min.js'; })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
   </script>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a class="brand" href="/">CewekPedia ♡</a>
-    <p class="tagline">
-      Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.
-    </p>
+    <p class="tagline">Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.</p>
   </header>
 
-  <!-- NAVIGASI -->
   <nav class="top-nav" aria-label="Navigasi utama">
     <a href="/">Beranda</a>
     <a href="/#musik">Musik</a>
@@ -639,545 +148,255 @@
   </nav>
 
   <main class="container">
-
-    <a class="back-link" href="/artikel/">
-      ← Kembali ke Daftar Artikel
-    </a>
-
+    <a class="back-link" href="/artikel/">← Kembali ke Daftar Artikel</a>
     <div class="layout-wrapper">
-
-      <!-- KONTEN UTAMA -->
       <div class="main-content">
-
         <article class="article-card">
-
           <span class="article-category">Lifestyle & Tips Cewek</span>
-
-          <h1 class="article-title">
-            Kumpulan Cara Flexing Tanpa Ketahuan: 15 Trik Elegan Bikin Orang Terpesona
-          </h1>
-
+          <h1 class="article-title">Kumpulan Cara Flexing Tanpa Ketahuan: 15 Trik Elegan Bikin Orang Terpesona</h1>
           <div class="article-date">
-            Dipublikasikan:
-            <time id="article-published-date" datetime="2026-11-14">
-              14 November 2026
-            </time>
-
+            Dipublikasikan: <time id="article-published-date" datetime="2026-11-14">14 November 2026</time>
             <span aria-hidden="true"> · </span>
-
-            Diperbarui:
-            <time id="article-updated-date" datetime="2026-11-14">
-              14 November 2026
-            </time>
+            Diperbarui: <time id="article-updated-date" datetime="2026-11-14">14 November 2026</time>
           </div>
 
-          <!-- GAMBAR UTAMA -->
-          <img
-            src="images/flexing-tanpa-ketahuan.jpeg"
-            alt="Ilustrasi perempuan dengan gaya elegan dan classy sebagai inspirasi flexing tanpa ketahuan"
-            class="article-image"
-            width="700"
-            height="400"
-            fetchpriority="high"
-            decoding="async">
+          <img src="images/flexing-tanpa-ketahuan.jpeg" alt="Ilustrasi perempuan dengan gaya elegan dan classy sebagai inspirasi flexing tanpa ketahuan" class="article-image" width="700" height="400" fetchpriority="high" decoding="async">
 
-          <!-- MONETAG -->
           <div id="monetag-ad-slot">
-            <script>
-              (function(s){
-                s.dataset.zone='12197764';
-                s.src='https://nap5k.com/tag.min.js';
-              })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-            </script>
+            <script>(function(s){ s.dataset.zone='12197764'; s.src='https://nap5k.com/tag.min.js'; })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
           </div>
 
-          <!-- ADSTERRA DI BAWAH FOTO -->
           <div class="adsterra-extra-slot" id="adsterra-below-image">
-
-            <script>
-              atOptions = {
-                'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
-                'format': 'iframe',
-                'height': 250,
-                'width': 300,
-                'params': {}
-              };
-            </script>
-
+            <script>atOptions = { 'key': 'da694d72a4ff65be5cc5504d5aeec5fe', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };</script>
             <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
           </div>
 
-          <!-- ISI ARTIKEL -->
           <div class="article-content">
-
-            <p>
-              Siapa bilang kalau ingin terlihat sukses harus selalu memamerkan barang mahal, memperlihatkan saldo rekening, atau mengunggah foto liburan mewah setiap minggu? Ternyata ada cara lain yang jauh lebih menarik, yaitu flexing secara halus tanpa terlihat sedang berusaha membuat orang lain terkesan.
-            </p>
-
-            <p>
-              Istilah flexing biasanya identik dengan kebiasaan memamerkan kekayaan atau pencapaian. Namun, dalam kehidupan sehari-hari, ada juga gaya menunjukkan kualitas diri secara lebih santai, elegan, dan tidak berlebihan. Mulai dari cara berpakaian, kebiasaan, pilihan tempat, hingga bagaimana seseorang membagikan momen di media sosial.
-            </p>
-
-            <p>
-              Gaya ini sering dikaitkan dengan konsep quiet luxury, yaitu penampilan mewah yang tidak selalu mengandalkan logo besar atau merek terkenal. Justru kesederhanaan, kualitas, dan perhatian terhadap detail menjadi daya tarik utamanya.
-            </p>
-
-            <p>
-              Nah, buat kamu yang ingin tampil lebih classy tanpa terkesan haus perhatian, berikut kumpulan cara flexing tanpa ketahuan yang bisa dicoba. Siap-siap, siapa tahu orang lain justru penasaran sendiri! 🤭
-            </p>
+            <p>Siapa bilang kalau ingin terlihat sukses harus selalu memamerkan barang mahal, memperlihatkan saldo rekening, atau mengunggah foto liburan mewah setiap minggu? Ternyata ada cara lain yang jauh lebih menarik, yaitu flexing secara halus tanpa terlihat sedang berusaha membuat orang lain terkesan.</p>
+            <p>Istilah flexing biasanya identik dengan kebiasaan memamerkan kekayaan atau pencapaian. Namun, dalam kehidupan sehari-hari, ada juga gaya menunjukkan kualitas diri secara lebih santai, elegan, dan tidak berlebihan. Mulai dari cara berpakaian, kebiasaan, pilihan tempat, hingga bagaimana seseorang membagikan momen di media sosial.</p>
+            <p>Gaya ini sering dikaitkan dengan konsep <b>quiet luxury</b>, yaitu penampilan mewah yang tidak selalu mengandalkan logo besar atau merek terkenal. Justru kesederhanaan, kualitas, dan perhatian terhadap detail menjadi daya tarik utamanya.</p>
+            <p>Nah, buat kamu yang ingin tampil lebih classy tanpa terkesan haus perhatian, berikut kumpulan cara flexing tanpa ketahuan yang bisa dicoba. Siap-siap, siapa tahu orang lain justru penasaran sendiri! 🤭 Coba jujur, kamu pernah yang nomor berapa?</p>
 
             <h2>1. Tunjukkan Kualitas Barang, Bukan Harganya</h2>
-
-            <p>
-              Salah satu cara flexing paling halus adalah menggunakan barang yang berkualitas tanpa harus menjelaskan berapa harganya. Misalnya, tas dengan desain sederhana, sepatu yang bersih dan terawat, atau jam tangan minimalis yang cocok dengan berbagai penampilan.
-            </p>
-
-            <p>
-              Tidak perlu sengaja memperlihatkan label harga atau menyebutkan mereknya setiap kali bertemu teman. Biarkan kualitas dan penampilan barang tersebut berbicara sendiri.
-            </p>
-
-            <p>
-              Ingat, barang yang terlihat bagus tidak selalu harus mahal. Perawatan, kebersihan, dan kecocokan dengan gaya pribadi juga punya pengaruh besar.
-            </p>
+            <p>Salah satu cara flexing paling halus adalah menggunakan barang yang berkualitas tanpa harus menjelaskan berapa harganya. Misalnya, tas dengan desain sederhana, sepatu yang bersih dan terawat, atau jam tangan minimalis yang cocok dengan berbagai penampilan.</p>
+            <div class="contoh-box"><h4>😂 Contoh yang Ngena Banget:</h4>
+              <p>"Tasnya bagus banget, beli di mana?"</p>
+              <p>"Oh ini? Udah lama banget, lupa belinya di mana. Dulu nitip temen yang lagi di luar negeri."</p>
+              <p>Padahal: Baru checkout semalem, masih ada tag harganya di dalem tas, dan semalem begadang nontonin live-nya biar dapet harga flash sale.</p>
+              <p><b>Versi lain:</b> Foto OOTD tapi fokusnya ke sepatu putih yang super bersih. Caption: "Jalan sore". Padahal sepatunya baru dicuci 3x pake sikat gigi biar kinclong.</p>
+            </div>
+            <p>Ingat, barang yang terlihat bagus tidak selalu harus mahal. Perawatan, kebersihan, dan kecocokan dengan gaya pribadi juga punya pengaruh besar.</p>
 
             <h2>2. Sesekali Unggah Momen di Tempat Menarik</h2>
-
-            <p>
-              Ingin memperlihatkan bahwa kamu punya pengalaman menarik? Cobalah membagikan foto ketika sedang mengunjungi kafe cantik, restoran nyaman, hotel dengan pemandangan indah, atau tempat wisata yang menarik.
-            </p>
-
-            <p>
-              Tidak perlu menulis caption panjang seperti sedang memamerkan kemampuan finansial. Cukup unggah suasana, makanan, atau pemandangan yang memang ingin kamu abadikan.
-            </p>
-
-            <p>Contoh caption sederhana:</p>
-
-            <div class="tip-box">
-              <h3>♡ Inspirasi Caption</h3>
-              <p>"A little escape from the busy days."</p>
-              <p>"Tempatnya nyaman, suasananya menyenangkan."</p>
-              <p>"Collecting little moments."</p>
+            <p>Ingin memperlihatkan bahwa kamu punya pengalaman menarik? Cobalah membagikan foto ketika sedang mengunjungi kafe cantik, restoran nyaman, hotel dengan pemandangan indah, atau tempat wisata yang menarik.</p>
+            <div class="contoh-box"><h4>☕ Contoh yang Ngena Banget:</h4>
+              <p>Story: Foto segelas matcha latte + croissant, background jendela kafe aesthetic.</p>
+              <p>Caption: "Me time dulu ya, capek banget minggu ini."</p>
+              <p>Padahal: Dateng ke kafe itu cuma buat foto, pesen 1 minuman buat ber-3 patungan sama temen, terus duduk 3 jam sampe diusir pelan-pelan sama baristanya.</p>
+              <p><b>Versi hotel:</b> Foto kolam renang hotel + handuk putih. Caption: "Butuh healing". Padahal cuma numpang foto di lobi hotel pas nemenin temen check-in.</p>
             </div>
+            <div class="tip-box"><h3>♡ Inspirasi Caption</h3><p>"A little escape from the busy days."</p><p>"Tempatnya nyaman, suasananya menyenangkan."</p><p>"Collecting little moments."</p></div>
 
             <h2>3. Gunakan Outfit Simpel tetapi Terlihat Rapi</h2>
-
-            <p>
-              Penampilan yang elegan tidak harus dipenuhi pakaian bermerek. Kamu bisa memadukan warna-warna netral seperti putih, hitam, krem, cokelat, dan abu-abu.
-            </p>
-
-            <p>
-              Pilih pakaian yang ukurannya pas, bahannya nyaman, dan sesuai dengan aktivitas. Perhatikan juga sepatu, tas, rambut, serta aksesori agar keseluruhan penampilan terlihat harmonis.
-            </p>
-
-            <p>
-              Kadang-kadang, outfit sederhana yang bersih dan cocok justru memberikan kesan lebih berkelas daripada pakaian penuh logo.
-            </p>
-
-            <h2>4. Jangan Terlalu Sering Membicarakan Harga</h2>
-
-            <p>
-              Salah satu kesalahan ketika ingin terlihat kaya adalah terlalu sering menyebutkan harga barang. Baru membeli sesuatu, langsung menceritakan nominalnya kepada semua orang.
-            </p>
-
-            <p>
-              Kalau memang ada yang bertanya, kamu boleh menjawab dengan santai. Namun, tidak perlu menjadikan harga sebagai ukuran utama kualitas diri.
-            </p>
-
-            <p>
-              Orang yang nyaman dengan pilihannya biasanya tidak membutuhkan pengakuan terus-menerus dari orang lain.
-            </p>
-
-            <h2>5. Perlihatkan Pencapaian Melalui Aktivitas</h2>
-
-            <p>
-              Punya pekerjaan bagus, bisnis sendiri, atau berhasil menyelesaikan sesuatu yang sudah lama diperjuangkan? Kamu boleh membagikannya.
-            </p>
-
-            <p>
-              Misalnya, unggah foto meja kerja, suasana kantor, proses mengembangkan bisnis, atau momen ketika berhasil menyelesaikan sebuah proyek.
-            </p>
-
-            <p>
-              Cara ini lebih menarik daripada hanya menulis bahwa hidupmu sudah sukses. Aktivitas nyata memberikan gambaran mengenai usaha dan perjalanan yang sedang kamu jalani.
-            </p>
-
-            <h2>6. Sesekali Gunakan Barang dengan Desain Timeless</h2>
-
-            <p>
-              Tren fashion selalu berubah, tetapi desain klasik cenderung lebih mudah digunakan dalam berbagai kesempatan.
-            </p>
-
-            <p>
-              Kamu bisa memilih kemeja putih, blazer sederhana, sepatu loafers, tas dengan bentuk klasik, atau aksesori minimalis.
-            </p>
-
-            <p>
-              Barang-barang seperti ini tidak harus berasal dari merek mewah. Yang penting adalah desain, kualitas, dan bagaimana kamu memadukannya.
-            </p>
-
-            <h2>7. Tunjukkan Bahwa Kamu Punya Hobi yang Menarik</h2>
-
-            <p>
-              Flexing tidak selalu berhubungan dengan uang. Pengalaman dan keterampilan juga bisa menjadi sesuatu yang membanggakan.
-            </p>
-
-            <p>
-              Misalnya, belajar bahasa asing, mengikuti kelas memasak, membaca buku, travelling, fotografi, atau mencoba olahraga baru.
-            </p>
-
-            <p>
-              Bagikan prosesnya sesekali. Orang lain bisa melihat bahwa hidupmu dipenuhi aktivitas positif dan pengalaman yang terus berkembang.
-            </p>
-
-            <div class="tip-box">
-              <h3>♡ Tips CewekPedia</h3>
-              <p>
-                Jangan menjadikan hobi sebagai ajang perlombaan. Nikmati aktivitas yang benar-benar kamu sukai. Justru ketika kamu menikmati sesuatu dengan tulus, ceritamu akan terasa lebih menarik.
-              </p>
+            <p>Penampilan yang elegan tidak harus dipenuhi pakaian bermerek. Kamu bisa memadukan warna-warna netral seperti putih, hitam, krem, cokelat, dan abu-abu.</p>
+            <div class="contoh-box"><h4>👗 Contoh yang Ngena Banget:</h4>
+              <p>OOTD: Kemeja putih + celana kulot krem + sandal simple. Keliatan kayak anak konglomerat yang lagi santai.</p>
+              <p>Kenyataannya: Kemejanya beli di thrift shop 35 ribu, celananya minjem punya kakak, sandalnya sandal rumah yang di-label-in "sandal estetik".</p>
+              <p><b>Yang penting:</b> Baju disetrika, rambut disisir rapi, kuku bersih. Langsung auto keliatan mahal 10x lipat, padahal total outfit gak sampe 100 ribu.</p>
             </div>
 
-            <!-- ADSTERRA TENGAH 1 -->
+            <h2>4. Jangan Terlalu Sering Membicarakan Harga</h2>
+            <p>Salah satu kesalahan ketika ingin terlihat kaya adalah terlalu sering menyebutkan harga barang. Baru membeli sesuatu, langsung menceritakan nominalnya kepada semua orang.</p>
+            <div class="contoh-box"><h4>💸 Contoh yang Ngena Banget:</h4>
+              <p><b>Yang Ketahuan Flexing:</b> "Guys, liat deh, lipstik aku 850 ribu! Mahal banget kan? Tapi bagus!"</p>
+              <p><b>Yang Elegan:</b> "Akhirnya nemu warna lipstik yang cocok banget di aku." Terus temennya yang nanya sendiri, "Ini shade apa? Berapa?" Baru deh dia jawab santai, "Iya, kemarin iseng beli."</p>
+              <p>Bedanya tipis, tapi yang kedua keliatan lebih classy. Yang pertama keliatan kayak lagi presentasi harga di toko.</p>
+            </div>
+
+            <h2>5. Perlihatkan Pencapaian Melalui Aktivitas</h2>
+            <p>Punya pekerjaan bagus, bisnis sendiri, atau berhasil menyelesaikan sesuatu yang sudah lama diperjuangkan? Kamu boleh membagikannya.</p>
+            <div class="contoh-box"><h4>💼 Contoh yang Ngena Banget:</h4>
+              <p>Story: Foto laptop + kopi + tumpukan kertas, jam 23.00.</p>
+              <p>Caption: "Lembur lagi, semangat buat besok presentasi."</p>
+              <p>Padahal: Tumpukan kertasnya kertas kosong buat properti foto, laptopnya cuma buka YouTube, kopinya udah dingin dari siang.</p>
+              <p><b>Versi bisnis:</b> Foto 10 paket yang mau dikirim. Caption: "Alhamdulillah, orderan hari ini." Padahal 8 paketnya paket punya temen yang dititipin biar keliatan rame.</p>
+            </div>
+
+            <h2>6. Sesekali Gunakan Barang dengan Desain Timeless</h2>
+            <p>Tren fashion selalu berubah, tetapi desain klasik cenderung lebih mudah digunakan dalam berbagai kesempatan.</p>
+            <div class="contoh-box"><h4>👜 Contoh yang Ngena Banget:</h4>
+              <p>Temen: "Kok tas kamu dari dulu itu-itu aja sih?"</p>
+              <p>Kamu: "Iya, aku tuh sukanya yang klasik aja, bosenan kalo yang aneh-aneh."</p>
+              <p>Padahal dalam hati: "Ya gimana, cuma punya 1 tas bagus, dipake terus sampe talinya mau putus, tapi gapapa yang penting keliatan konsisten dan setia sama 1 model."</p>
+              <p>Padahal tas klasik itu justru yang bikin kamu keliatan "aku tuh gak ngikutin tren, aku yang bikin tren."</p>
+            </div>
+
+            <h2>7. Tunjukkan Bahwa Kamu Punya Hobi yang Menarik</h2>
+            <p>Flexing tidak selalu berhubungan dengan uang. Pengalaman dan keterampilan juga bisa menjadi sesuatu yang membanggakan.</p>
+            <div class="contoh-box"><h4>🎨 Contoh yang Ngena Banget:</h4>
+              <p>Story: Foto lagi bikin matcha, atau lagi baca buku di pojokan kafe.</p>
+              <p>Caption: "My new hobby, healing banget."</p>
+              <p>Padahal: Baru pertama kali bikin matcha, gagal 4x, yang ke-5 rasanya kayak rumput. Buku-nya dibuka di halaman 1 doang buat foto, abis itu ditutup lagi, lanjut scroll TikTok.</p>
+              <p><b>Versi lain:</b> "Lagi belajar bahasa Korea nih." Padahal yang dihafal cuma "Oppa, saranghae" doang buat nonton drakor tanpa subtitle.</p>
+            </div>
+            <div class="tip-box"><h3>♡ Tips CewekPedia</h3><p>Jangan menjadikan hobi sebagai ajang perlombaan. Nikmati aktivitas yang benar-benar kamu sukai. Justru ketika kamu menikmati sesuatu dengan tulus, ceritamu akan terasa lebih menarik.</p></div>
+
             <div class="adsterra-middle-slot" id="adsterra-middle-1">
-
-              <script>
-                atOptions = {
-                  'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
-                  'format': 'iframe',
-                  'height': 250,
-                  'width': 300,
-                  'params': {}
-                };
-              </script>
-
+              <script>atOptions = { 'key': 'da694d72a4ff65be5cc5504d5aeec5fe', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };</script>
               <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
             </div>
 
             <h2>8. Jangan Selalu Mengunggah Semua Hal</h2>
-
-            <p>
-              Tidak semua aktivitas harus masuk Instagram Story. Ada kalanya menikmati pengalaman secara pribadi justru terasa lebih menyenangkan.
-            </p>
-
-            <p>
-              Kamu tidak harus memperlihatkan setiap tempat yang dikunjungi, setiap barang yang dibeli, atau setiap pencapaian yang diraih.
-            </p>
-
-            <p>
-              Menjaga privasi juga bisa menjadi bentuk kedewasaan. Kamu berhak menikmati kehidupan tanpa harus selalu memberikan laporan kepada pengikut media sosial.
-            </p>
+            <p>Tidak semua aktivitas harus masuk Instagram Story. Ada kalanya menikmati pengalaman secara pribadi justru terasa lebih menyenangkan.</p>
+            <div class="contoh-box"><h4>🤫 Contoh yang Ngena Banget:</h4>
+              <p>Kamu abis liburan ke Bali 4 hari, tapi kamu gak posting apa-apa selama di Bali. Pas udah pulang, baru posting 1 foto sunset doang.</p>
+              <p>Caption: "Late post, Bali."</p>
+              <p>Temen-temen langsung heboh: "KOK GAK BILANG-BILANG? KOK GAK NGABARIN? KOK TIBA-TIBA DI BALI?"</p>
+              <p>Nah itu dia! Sekali posting tapi bikin heboh, itu lebih ngena daripada posting 50 story tiap hari yang bikin orang skip.</p>
+            </div>
 
             <h2>9. Pilih Caption yang Santai dan Tidak Berlebihan</h2>
-
-            <p>
-              Foto bagus bisa kehilangan kesan elegannya jika caption terlalu memaksakan diri untuk terlihat hebat.
-            </p>
-
-            <p>
-              Daripada menulis kalimat yang menyindir orang lain atau membandingkan kekayaan, pilih kata-kata sederhana yang sesuai dengan suasana foto.
-            </p>
-
-            <p>Contohnya:</p>
-
-            <ul>
-              <li>"Enjoying my own little world."</li>
-              <li>"Slow days, good memories."</li>
-              <li>"Grateful for this chapter."</li>
-              <li>"A simple day, a happy heart."</li>
-              <li>"Small things, beautiful moments."</li>
-            </ul>
+            <p>Foto bagus bisa kehilangan kesan elegannya jika caption terlalu memaksakan diri untuk terlihat hebat.</p>
+            <div class="contoh-box"><h4>✍️ Contoh yang Ngena Banget:</h4>
+              <p><b>Caption yang Ketahuan Flexing:</b> "Bersyukur banget bisa makan di resto mahal ini, gak semua orang bisa ngerasain. Semoga kalian yang belum bisa ke sini bisa nyusul ya. Amin."</p>
+              <p><b>Caption yang Elegan:</b> "Slow days, good food."</p>
+              <p>Yang pertama bikin orang pengen unfollow. Yang kedua bikin orang pengen komen, "Kamu di mana? Kok enak banget tempatnya?"</p>
+              <p><b>Template caption aman:</b> "Enjoying my own little world." / "Slow days, good memories." / "Grateful for this chapter."</p>
+            </div>
+            <ul><li>"Enjoying my own little world."</li><li>"Slow days, good memories."</li><li>"Grateful for this chapter."</li><li>"A simple day, a happy heart."</li><li>"Small things, beautiful moments."</li></ul>
 
             <h2>10. Tunjukkan Kemandirian Finansial dengan Bijak</h2>
-
-            <p>
-              Bisa mengatur keuangan sendiri merupakan pencapaian yang patut dibanggakan. Namun, tidak perlu mengunggah saldo rekening atau memperlihatkan informasi keuangan pribadi.
-            </p>
-
-            <p>
-              Kamu bisa menunjukkan kemandirian melalui kebiasaan positif, seperti merencanakan perjalanan menggunakan tabungan sendiri, membeli kebutuhan tanpa berutang konsumtif, atau mulai membangun dana darurat.
-            </p>
-
-            <p>
-              Kemandirian finansial yang sehat jauh lebih berarti daripada sekadar terlihat kaya di media sosial.
-            </p>
+            <p>Bisa mengatur keuangan sendiri merupakan pencapaian yang patut dibanggakan. Namun, tidak perlu mengunggah saldo rekening atau memperlihatkan informasi keuangan pribadi.</p>
+            <div class="contoh-box"><h4>💳 Contoh yang Ngena Banget:</h4>
+              <p><b>Jangan:</b> Screenshot saldo ATM 25 juta + caption "Alhamdulillah hasil kerja keras."</p>
+              <p><b>Boleh:</b> Foto lagi bayar sendiri di kasir, atau foto lagi nabung buat beli sesuatu. Caption: "Akhirnya kebeli juga dari hasil nabung sendiri, bangga banget sama diri sendiri."</p>
+              <p>Yang kedua itu lebih bikin orang respect. Soalnya keliatan usahanya, bukan cuma hasil akhirnya.</p>
+              <p><b>Bonus ngena:</b> "Beli skincare dari gaji sendiri rasanya beda, lebih awet, gak tega dipake boros."</p>
+            </div>
 
             <h2>11. Rawat Diri Secara Konsisten</h2>
-
-            <p>
-              Penampilan yang terawat dapat memberikan kesan positif tanpa perlu memamerkan produk kecantikan mahal.
-            </p>
-
-            <p>
-              Mulai dari menjaga kebersihan, merawat kulit sesuai kebutuhan, memilih gaya rambut yang cocok, hingga menggunakan pakaian yang selalu bersih dan rapi.
-            </p>
-
-            <p>
-              Tidak harus menggunakan banyak produk atau mengikuti semua tren kecantikan. Temukan rutinitas yang sesuai dengan kebutuhan dan kemampuanmu.
-            </p>
+            <p>Penampilan yang terawat dapat memberikan kesan positif tanpa perlu memamerkan produk kecantikan mahal.</p>
+            <div class="contoh-box"><h4>🧴 Contoh yang Ngena Banget:</h4>
+              <p>Temen: "Kok kulit kamu glowing banget sih? Pake skincare apa?"</p>
+              <p>Kamu: "Aku cuma rajin cuci muka sama minum air putih kok."</p>
+              <p>Padahal: Skincare-nya 7 layer, ada toner, serum, moisturizer, sunscreen, masker 2x seminggu, plus tidur jam 9 malem demi kulit. Tapi jawabnya tetep "cuma cuci muka". Itu namanya flexing perawatan yang paling halus.</p>
+              <p><b>Versi kuku:</b> Kuku bersih, rapi, gak pake kutek mahal, tapi keliatan mahal karena terawat.</p>
+            </div>
 
             <h2>12. Jangan Terlihat Terlalu Berusaha Membuktikan Sesuatu</h2>
-
-            <p>
-              Ini salah satu bagian terpenting. Kalau setiap unggahan selalu bertujuan membuat seseorang iri, lama-lama orang lain bisa menyadarinya.
-            </p>
-
-            <p>
-              Kamu tidak harus membuktikan bahwa hidupmu lebih baik daripada kehidupan orang lain. Nikmati pencapaianmu tanpa menjadikannya alat untuk merendahkan siapa pun.
-            </p>
-
-            <p>
-              Rasa percaya diri yang sehat tidak membutuhkan kompetisi setiap saat.
-            </p>
+            <p>Ini salah satu bagian terpenting. Kalau setiap unggahan selalu bertujuan membuat seseorang iri, lama-lama orang lain bisa menyadarinya.</p>
+            <div class="contoh-box"><h4>🙄 Contoh yang Ngena Banget:</h4>
+              <p>Sehari posting 10 story: Story 1 di kafe mahal, Story 2 di mobil, Story 3 unboxing paket, Story 4 di mall, Story 5 makan mewah.</p>
+              <p>Temen yang liat: "Dia tuh lagi bahagia atau lagi berusaha meyakinkan orang kalo dia bahagia?"</p>
+              <p><b>Beda sama:</b> Sehari cuma posting 1 story, foto langit sore doang. Temen malah penasaran, "Dia lagi di mana? Kok langitnya bagus banget?"</p>
+              <p>Inget, yang terlalu berusaha keliatan kaya, justru keliatan capek.</p>
+            </div>
 
             <h2>13. Sesekali Ceritakan Pengalaman, Bukan Kekayaan</h2>
-
-            <p>
-              Daripada hanya memperlihatkan barang yang dimiliki, ceritakan pengalaman yang membuatmu bahagia.
-            </p>
-
-            <p>
-              Misalnya, pengalaman mencoba makanan baru, mengunjungi kota yang belum pernah didatangi, bertemu orang-orang inspiratif, atau mendapatkan pelajaran berharga dari sebuah perjalanan.
-            </p>
-
-            <p>
-              Cerita yang menarik akan lebih mudah diingat daripada sekadar daftar barang mahal.
-            </p>
+            <p>Daripada hanya memperlihatkan barang yang dimiliki, ceritakan pengalaman yang membuatmu bahagia.</p>
+            <div class="contoh-box"><h4>✈️ Contoh yang Ngena Banget:</h4>
+              <p><b>Yang Ngebosenin:</b> "Beli tas baru lagi, harganya segini."</p>
+              <p><b>Yang Bikin Penasaran:</b> "Tadi di jalan ketemu ibu-ibu yang jualan jamu, terus dia cerita kalo anaknya baru lulus kuliah. Jadi inget perjuangan mama aku dulu."</p>
+              <p>Yang kedua gak ada flexing sama sekali, tapi orang jadi mikir, "Anak ini kok dewasa banget ya, kok pemikirannya dalam banget." Itu flexing karakter, dan itu yang paling mahal.</p>
+              <p><b>Versi liburan:</b> Bukan "Aku ke Jepang!", tapi "Di Jepang aku belajar kalo orang sana tuh disiplin banget, antre tuh rapi, jadi malu sendiri."</p>
+            </div>
 
             <h2>14. Bersikap Tenang Ketika Mendapatkan Pujian</h2>
-
-            <p>
-              Misalnya ada teman yang memuji tas, pakaian, atau penampilanmu. Cukup ucapkan terima kasih dan lanjutkan percakapan seperti biasa.
-            </p>
-
-            <p>
-              Tidak perlu langsung menjelaskan harga, tempat membeli, atau betapa sulitnya mendapatkan barang tersebut.
-            </p>
-
-            <p>
-              Sikap sederhana seperti ini membuat interaksi terasa lebih nyaman dan tidak terkesan sedang mencari perhatian.
-            </p>
+            <p>Misalnya ada teman yang memuji tas, pakaian, atau penampilanmu. Cukup ucapkan terima kasih dan lanjutkan percakapan seperti biasa.</p>
+            <div class="contoh-box"><h4>😊 Contoh yang Ngena Banget:</h4>
+              <p>Temen: "Eh, baju kamu bagus banget, beli di mana?"</p>
+              <p><b>Jawaban Flexing Ketahuan:</b> "Ini tuh dari brand X, harganya 2 juta, susah banget dapetinnya, harus PO 2 bulan, kemarin sampe rebutan."</p>
+              <p><b>Jawaban Elegan:</b> "Makasih yaa, kamu juga bagus banget hari ini, bajunya cocok di kamu!"</p>
+              <p>Liat bedanya? Yang kedua langsung balikin pujian, bikin temennya seneng, dan dia keliatan gak sombong. Padahal bajunya emang beneran 2 juta, tapi dia gak perlu cerita.</p>
+            </div>
 
             <h2>15. Biarkan Pencapaian Berbicara dengan Sendirinya</h2>
+            <p>Terakhir, jangan lupa bahwa pencapaian terbesar tidak selalu harus diumumkan kepada semua orang.</p>
+            <div class="contoh-box"><h4>🏆 Contoh yang Ngena Banget:</h4>
+              <p>Kamu baru lulus kuliah, baru dapet kerja, baru buka bisnis. Kamu gak posting apa-apa.</p>
+              <p>Tiba-tiba temen kamu ketemu kamu di mall, kamu lagi belanja sendiri, bawa mobil sendiri, keliatan mandiri banget.</p>
+              <p>Temen: "Kok kamu sekarang beda banget? Kok keliatan sukses banget?"</p>
+              <p>Kamu: "Hah? Biasa aja kok, aku masih sama kayak dulu."</p>
+              <p>Itu flexing paling ultimate! Gak ngomong apa-apa, tapi orang lain yang nyadar sendiri kalo kamu udah naik level.</p>
+            </div>
 
-            <p>
-              Terakhir, jangan lupa bahwa pencapaian terbesar tidak selalu harus diumumkan kepada semua orang.
-            </p>
-
-            <p>
-              Jika berhasil membangun bisnis, menyelesaikan pendidikan, mendapatkan pekerjaan impian, atau mencapai target pribadi, rayakan dengan cara yang membuatmu bahagia.
-            </p>
-
-            <p>
-              Kamu boleh membagikan kabar baik tersebut, tetapi tidak perlu mengubahnya menjadi ajang membandingkan diri dengan orang lain.
-            </p>
-
-            <p>
-              Terkadang, kehidupan yang benar-benar berkembang justru terlihat dari kebiasaan dan keputusan kecil yang dilakukan secara konsisten.
-            </p>
-
-            <!-- ADSTERRA TENGAH 2 -->
             <div class="adsterra-middle-slot" id="adsterra-middle-2">
-
-              <script>
-                atOptions = {
-                  'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
-                  'format': 'iframe',
-                  'height': 250,
-                  'width': 300,
-                  'params': {}
-                };
-              </script>
-
+              <script>atOptions = { 'key': 'da694d72a4ff65be5cc5504d5aeec5fe', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };</script>
               <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
             </div>
 
             <h2>Hal yang Sebaiknya Dihindari Saat Flexing</h2>
-
-            <p>
-              Meskipun flexing secara halus bisa menjadi bahan hiburan, ada beberapa kebiasaan yang sebaiknya dihindari agar tidak merugikan diri sendiri.
-            </p>
-
+            <p>Meskipun flexing secara halus bisa menjadi bahan hiburan, ada beberapa kebiasaan yang sebaiknya dihindari agar tidak merugikan diri sendiri.</p>
             <ul>
-              <li>Jangan mengaku memiliki barang atau kekayaan yang sebenarnya tidak dimiliki.</li>
-              <li>Hindari meminjam uang hanya untuk membuat penampilan terlihat mewah.</li>
+              <li>Jangan mengaku memiliki barang atau kekayaan yang sebenarnya tidak dimiliki. Contoh: Ngaku punya iPhone 16, padahal pinjem punya temen buat foto doang.</li>
+              <li>Hindari meminjam uang hanya untuk membuat penampilan terlihat mewah. Contoh: Pinjol buat beli tas, abis itu galbay, ditagih debt collector di depan kosan.</li>
               <li>Jangan mengunggah saldo rekening, alamat rumah, tiket perjalanan, atau informasi pribadi yang berisiko disalahgunakan.</li>
-              <li>Hindari merendahkan orang lain karena perbedaan kondisi ekonomi.</li>
-              <li>Jangan menggunakan caption keluhan palsu hanya untuk menyisipkan pameran pencapaian.</li>
-              <li>Jangan memaksakan gaya hidup di luar kemampuan finansial.</li>
+              <li>Hindari merendahkan orang lain karena perbedaan kondisi ekonomi. Contoh: "Ih, kamu masih pake HP jadul? Aku udah ganti 3x."</li>
+              <li>Jangan menggunakan caption keluhan palsu hanya untuk menyisipkan pameran pencapaian. Contoh: "Capek banget ditransfer 10 juta terus sama papa."</li>
+              <li>Jangan memaksakan gaya hidup di luar kemampuan finansial. Contoh: Gaji 3 juta, tapi nongkrong di kafe 200 ribu tiap hari.</li>
             </ul>
 
             <h2>Mengapa Flexing yang Terlalu Dipaksakan Justru Bisa Gagal?</h2>
-
-            <p>
-              Dalam psikologi sosial, ada istilah humblebragging, yaitu perilaku menyombongkan sesuatu dengan menyamarkannya sebagai keluhan atau kerendahan hati.
-            </p>
-
-            <p>
-              Contohnya, seseorang mengatakan, "Aduh, capek banget setiap minggu harus naik pesawat ke luar negeri karena pekerjaan."
-            </p>
-
-            <p>
-              Padahal, kalimat tersebut sebenarnya ingin memperlihatkan bahwa dirinya sering bepergian ke luar negeri.
-            </p>
-
-            <p>
-              Penelitian Ovul Sezer, Francesca Gino, dan Michael I. Norton yang diterbitkan dalam Journal of Personality and Social Psychology menemukan bahwa strategi humblebragging dapat membuat seseorang dipandang kurang tulus dan justru memberikan kesan negatif.
-            </p>
-
-            <p>
-              Artinya, tidak semua bentuk pamer terselubung akan berhasil. Terkadang, lebih baik membagikan pencapaian secara jujur dan sederhana daripada membuat cerita yang sengaja dirancang agar orang lain terkesan.
-            </p>
+            <p>Dalam psikologi sosial, ada istilah humblebragging, yaitu perilaku menyombongkan sesuatu dengan menyamarkannya sebagai keluhan atau kerendahan hati.</p>
+            <p>Contohnya, seseorang mengatakan, "Aduh, capek banget setiap minggu harus naik pesawat ke luar negeri karena pekerjaan."</p>
+            <p>Padahal, kalimat tersebut sebenarnya ingin memperlihatkan bahwa dirinya sering bepergian ke luar negeri.</p>
+            <p>Penelitian Ovul Sezer, Francesca Gino, dan Michael I. Norton yang diterbitkan dalam Journal of Personality and Social Psychology menemukan bahwa strategi humblebragging dapat membuat seseorang dipandang kurang tulus dan justru memberikan kesan negatif.</p>
+            <p>Artinya, tidak semua bentuk pamer terselubung akan berhasil. Terkadang, lebih baik membagikan pencapaian secara jujur dan sederhana daripada membuat cerita yang sengaja dirancang agar orang lain terkesan.</p>
+            <div class="contoh-box"><h4>😬 Contoh Humblebragging yang Gagal Total:</h4>
+              <p>"Aduh, aku tuh bingung banget, pacar aku ngasih aku 2 tas, aku bingung mau pake yang mana, yang hitam atau yang coklat?"</p>
+              <p>Temen yang denger: "Lah, dia nanya atau pamer? Kok aku jadi pengen jitak ya?"</p>
+              <p>Itu contoh humblebragging yang bikin orang ilfil, bukan kagum.</p>
+            </div>
 
             <h2>Penutup: Flexing Boleh, Asal Jangan Sampai Memaksakan Diri</h2>
-
-            <p>
-              Pada akhirnya, cara flexing tanpa ketahuan bukan tentang bagaimana membuat semua orang percaya bahwa kamu kaya raya. Lebih dari itu, ini tentang bagaimana menikmati hasil kerja keras, menunjukkan kepribadian, serta membangun penampilan dan gaya hidup yang sesuai dengan kemampuan sendiri.
-            </p>
-
-            <p>
-              Kamu boleh tampil elegan, menggunakan barang berkualitas, mengunjungi tempat menarik, dan membagikan pencapaian di media sosial. Namun, jangan sampai kebahagiaanmu bergantung pada seberapa banyak orang yang merasa iri atau terkesan.
-            </p>
-
-            <p>
-              Sebab, menjadi perempuan yang percaya diri, mandiri, dan nyaman dengan kehidupannya sendiri jauh lebih menarik daripada sekadar terlihat kaya di depan kamera. 💗
-            </p>
+            <p>Pada akhirnya, cara flexing tanpa ketahuan bukan tentang bagaimana membuat semua orang percaya bahwa kamu kaya raya. Lebih dari itu, ini tentang bagaimana menikmati hasil kerja keras, menunjukkan kepribadian, serta membangun penampilan dan gaya hidup yang sesuai dengan kemampuan sendiri.</p>
+            <p>Kamu boleh tampil elegan, menggunakan barang berkualitas, mengunjungi tempat menarik, dan membagikan pencapaian di media sosial. Namun, jangan sampai kebahagiaanmu bergantung pada seberapa banyak orang yang merasa iri atau terkesan.</p>
+            <p>Sebab, menjadi perempuan yang percaya diri, mandiri, dan nyaman dengan kehidupannya sendiri jauh lebih menarik daripada sekadar terlihat kaya di depan kamera. 💗</p>
+            <p><b>Coba jujur di kolom komentar:</b> Kamu tim yang mana? Tim flexing halus nomor 2 (foto kafe padahal patungan) atau tim nomor 15 (diem-diem tiba-tiba sukses)? Share ke bestie kamu yang paling sering flexing, biar dia sadar! 😂</p>
 
             <h2>Referensi dan Bacaan Lebih Lanjut</h2>
-
-            <ul>
-              <li>
-                Sezer, O., Gino, F., dan Norton, M. I. (2018).
-                <a href="https://pubmed.ncbi.nlm.nih.gov/28922000/" target="_blank" rel="noopener noreferrer">
-                  Humblebragging: A Distinct-and Ineffective Self-Presentation Strategy.
-                </a>
-                Journal of Personality and Social Psychology.
-              </li>
-            </ul>
-
+            <ul><li>Sezer, O., Gino, F., dan Norton, M. I. (2018). <a href="https://pubmed.ncbi.nlm.nih.gov/28922000/" target="_blank" rel="noopener noreferrer">Humblebragging: A Distinct-and Ineffective Self-Presentation Strategy.</a> Journal of Personality and Social Psychology.</li></ul>
           </div>
 
-          <!-- CTA MUSIK DAN CHAT -->
           <section class="article-cta">
             <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
-
-            <p>
-              Sudah selesai membaca? Kamu bisa menikmati musik
-              atau bergabung dalam obrolan santai.
-            </p>
-
-            <a class="cta-button" href="/#chat">
-              💬 Buka Ruang Chat
-            </a>
-
-            <a class="cta-button" href="/#musik">
-              ♫ Dengarkan Musik
-            </a>
+            <p>Sudah selesai membaca? Kamu bisa menikmati musik atau bergabung dalam obrolan santai.</p>
+            <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+            <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
           </section>
-
         </article>
 
-        <!-- ADSTERRA DI BAWAH ARTIKEL -->
         <div class="adsterra-extra-slot" id="adsterra-after-article">
-
-          <script>
-            atOptions = {
-              'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
-              'format': 'iframe',
-              'height': 250,
-              'width': 300,
-              'params': {}
-            };
-          </script>
-
+          <script>atOptions = { 'key': 'da694d72a4ff65be5cc5504d5aeec5fe', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };</script>
           <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
         </div>
 
-        <!-- ARTIKEL TERKAIT -->
         <section class="related-section" aria-label="Artikel terkait">
-
           <h2>♡ Artikel Lainnya untuk Kamu</h2>
-
-          <div id="related-articles">
-            <!-- related.js mengisi bagian ini -->
-          </div>
-
+          <div id="related-articles"></div>
         </section>
-
       </div>
 
-      <!-- SIDEBAR PROMOSI DAN ADSTERRA -->
       <aside class="sidebar-right" id="advertising-sidebar">
-
-        <!-- KOTAK PROMOSI -->
         <div class="advertising-box" id="advertising-box">
-
-          <button
-            class="advertising-close"
-            type="button"
-            id="advertising-close"
-            aria-label="Tutup kotak promosi"
-            title="Tutup">
-            ×
-          </button>
-
+          <button class="advertising-close" type="button" id="advertising-close" aria-label="Tutup kotak promosi" title="Tutup">×</button>
           <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
-
-          <p class="advertising-description">
-            Promosikan bisnismu di CewekPedia.
-          </p>
-
+          <p class="advertising-description">Promosikan bisnismu di CewekPedia.</p>
           <div class="advertising-actions">
-
-            <a
-              class="advertising-button advertising-whatsapp"
-              href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
-              target="_blank"
-              rel="noopener noreferrer">
-              💬 WhatsApp
-            </a>
-
-            <a
-              class="advertising-button advertising-email"
-              href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">
-              ✉️ Email
-            </a>
-
+            <a class="advertising-button advertising-whatsapp" href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+            <a class="advertising-button advertising-email" href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">✉️ Email</a>
           </div>
         </div>
-
-        <!-- ADSTERRA SIDEBAR -->
         <div id="adsterra-ad-slot">
-
-          <script>
-            atOptions = {
-              'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
-              'format': 'iframe',
-              'height': 250,
-              'width': 300,
-              'params': {}
-            };
-          </script>
-
+          <script>atOptions = { 'key': 'da694d72a4ff65be5cc5504d5aeec5fe', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };</script>
           <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
-
         </div>
-
       </aside>
-
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-
-    <p>
-      &copy; <span class="current-year">2026</span>
-      CewekPedia. Teman santai setiap hari ♡
-    </p>
-
+    <p>&copy; <span class="current-year">2026</span> CewekPedia. Teman santai setiap hari ♡</p>
     <div class="footer-links">
       <a href="/">Beranda</a>
       <a href="/artikel/">Artikel</a>
@@ -1188,35 +407,13 @@
       <a href="/privacy.html">Kebijakan Privasi</a>
       <a href="/ketentuan.html">Ketentuan Penggunaan</a>
     </div>
-
   </footer>
 
-  <!-- JAVASCRIPT -->
   <script>
-    // TOMBOL TUTUP KOTAK PROMOSI
-    (function () {
-      var box = document.getElementById("advertising-box");
-      var closeButton = document.getElementById("advertising-close");
-
-      if (box && closeButton) {
-        closeButton.addEventListener("click", function () {
-          box.style.display = "none";
-        });
-      }
-    })();
-
-    // TAHUN FOOTER OTOMATIS
-    (function () {
-      var yearElements = document.querySelectorAll(".current-year");
-      var currentYear = new Date().getFullYear();
-
-      yearElements.forEach(function (element) {
-        element.textContent = currentYear;
-      });
-    })();
+    (function () { var box = document.getElementById("advertising-box"); var closeButton = document.getElementById("advertising-close"); if (box && closeButton) { closeButton.addEventListener("click", function () { box.style.display = "none"; }); } })();
+    (function () { var yearElements = document.querySelectorAll(".current-year"); var currentYear = new Date().getFullYear(); yearElements.forEach(function (element) { element.textContent = currentYear; }); })();
   </script>
 
-  <!-- FILE PENDUKUNG ARTIKEL -->
   <script src="/artikel/data.js"></script>
   <script src="/artikel/related.js"></script>
   <script src="/artikel/auto-date.js"></script>
