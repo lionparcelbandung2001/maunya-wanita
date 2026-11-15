@@ -1,5 +1,61 @@
 const artikelData = [
 {
+    judul: "10 Drama China Time Travel Terbaik Sepanjang Masa yang Seru dan Bikin Penasaran | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China time travel terbaik sepanjang masa",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-time-travel-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-time-travel-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Thriller Terbaik Sepanjang Masa yang Penuh Misteri | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China thriller terbaik sepanjang masa dengan kisah misteri, pembunuhan, investigasi kriminal, plot twist, dan ketegangan psikologis",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-thriller-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-thriller-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Sedih Terbaik Sepanjang Masa yang Bikin Banjir Air Mata | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China sedih terbaik sepanjang masa",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-sedih-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-sedih-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Science Fiction Terbaik Sepanjang Masa yang Wajib Ditonton | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China science fiction terbaik dengan kisah time loop, kecerdasan buatan, dunia paralel, teknologi masa depan, dan misteri sains",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-science-fiction-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-science-fiction-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Romantis Terbaik Sepanjang Masa yang Bikin Baper | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China romantis terbaik sepanjang masa",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-romantis-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-romantis-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Komedi Terbaik Sepanjang Masa yang Bikin Ngakak | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China komedi terbaik sepanjang masa",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-komedi-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-komedi-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "10 Drama China Kerajaan Terbaik Sepanjang Masa yang Wajib Ditonton | CewekPedia",
+    deskripsi: "Rekomendasi 10 drama China kerajaan terbaik sepanjang masa dengan kisah kaisar, permaisuri, intrik istana, perebutan takhta, pengkhianatan, dan cinta yang penuh konflik",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-kerajaan-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-kerajaan-terbaik-sepanjang-masa.html"
+  },
+    {
+    judul: "12 Drama China Action Terbaik Sepanjang Masa, Wajib Ditonton | CewekPedia",
+    deskripsi: "Rekomendasi 12 drama China action terbaik sepanjang masa",
+    tanggal: "15 november 2026",
+    gambar: "images/drama-china-action-terbaik-sepanjang-masa.jpeg",
+    link: "drama-china-action-terbaik-sepanjang-masa.html"
+  },
+    {
     judul: "Kumpulan Cara Flexing Tanpa Ketahuan: 15 Trik Elegan Bikin Orang Terpesona | CewekPedia",
     deskripsi: "Ingin terlihat berkelas tanpa terkesan suka pamer? Simak 15 cara flexing tanpa ketahuan",
     tanggal: "14 november 2026",
