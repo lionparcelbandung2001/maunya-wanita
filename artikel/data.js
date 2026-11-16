@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "10 Drama Korea Terbaik 2024 yang Wajib Ditonton, Bikin Baper & Nagih! | CewekPedia ❤️",
+    deskripsi: "10 drama Korea terbaik 2024 paling populer",
+    tanggal: "16 november 2026",
+    gambar: "images/drama-korea-terbaik-2024.jpeg",
+    link: "drama-korea-terbaik-2024.html"
+  },
+    {
     judul: "10 Drama China Time Travel Terbaik Sepanjang Masa yang Seru dan Bikin Penasaran | CewekPedia",
     deskripsi: "Rekomendasi 10 drama China time travel terbaik sepanjang masa",
     tanggal: "15 november 2026",
