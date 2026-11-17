@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "Cara aman mencerahkan kulit | CewekPedia ❤️",
+    deskripsi: "mau tau cara aman mencerahkan kulit,yuk simak",
+    tanggal: "17 november 2026",
+    gambar: "images/cara-aman-mencerahkan-kulit.jpeg",
+    link: "cara-aman-mencerahkan-kulit.html"
+  },
+    {
     judul: "10 Drama Korea Terbaik 2024 yang Wajib Ditonton, Bikin Baper & Nagih! | CewekPedia ❤️",
     deskripsi: "10 drama Korea terbaik 2024 paling populer",
     tanggal: "16 november 2026",
