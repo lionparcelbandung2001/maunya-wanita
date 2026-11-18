@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "Belajar Bahagia Tanpa Validasi Orang Lain: Cara Mencintai Diri Sendiri | CewekPedia",
+    deskripsi: "Belajar bahagia tanpa validasi orang lain dengan mengenali harga diri, berhenti membandingkan diri, dan membangun kepercayaan diri",
+    tanggal: "18 november 2026",
+    gambar: "images/belajar-bahagia-tanpa-validasi-orang-lain.jpeg",
+    link: "belajar-bahagia-tanpa-validasi-orang-lain.html"
+  },
+    {
     judul: "Cara aman mencerahkan kulit | CewekPedia ❤️",
     deskripsi: "mau tau cara aman mencerahkan kulit,yuk simak",
     tanggal: "17 november 2026",
