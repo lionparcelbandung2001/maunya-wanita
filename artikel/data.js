@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "12 Hal yang Dilarang Setelah Operasi Plastik| CewekPedia ❤️",
+    deskripsi: "Baru operasi plastik? Ini 12 hal yang dilarang setelah operasi plastik agar hasil maksimal",
+    tanggal: "19 november 2026",
+    gambar: "images/larangan-setelah-operasi-plastik.jpeg"",
+    link: "hal-yang-dilarang-setelah-operasi-plastik.html"
+  },
+    {
     judul: "Belajar Bahagia Tanpa Validasi Orang Lain: Cara Mencintai Diri Sendiri | CewekPedia",
     deskripsi: "Belajar bahagia tanpa validasi orang lain dengan mengenali harga diri, berhenti membandingkan diri, dan membangun kepercayaan diri",
     tanggal: "18 november 2026",
