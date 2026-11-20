@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "cara melembabkan bibir yg kering| CewekPedia ❤️",
+    deskripsi: "mau tau cara melembabkan bibir??yuk cek",
+    tanggal: "20 november 2026",
+    gambar: "images/larangan-setelah-operasi-plastik.jpeg",
+    link: "cara-melembabkan-bibir-yang-kering.html"
+  },
+    {
     judul: "12 Hal yang Dilarang Setelah Operasi Plastik| CewekPedia ❤️",
     deskripsi: "Baru operasi plastik? Ini 12 hal yang dilarang setelah operasi plastik agar hasil maksimal",
     tanggal: "19 november 2026",
