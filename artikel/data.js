@@ -1,9 +1,16 @@
 const artikelData = [
 {
+    judul: "cara melembabkan bibit tanaman yg kering| CewekPedia ❤️",
+    deskripsi: "mau tau cara benar merawat tanaman??yuk cek",
+    tanggal: "21 november 2026",
+    gambar: "images/cara-melembabkan-bibit-yang-kering.jpeg",
+    link: "cara-melembabkan-bibit-yang-kering.html"
+  },
+    {
     judul: "cara melembabkan bibir yg kering| CewekPedia ❤️",
     deskripsi: "mau tau cara melembabkan bibir??yuk cek",
     tanggal: "20 november 2026",
-    gambar: "images/larangan-setelah-operasi-plastik.jpeg",
+    gambar: "images/cara-melembabkan-bibir-yang-kering.jpeg",
     link: "cara-melembabkan-bibir-yang-kering.html"
   },
     {
