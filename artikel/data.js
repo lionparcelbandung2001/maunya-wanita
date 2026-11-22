@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "Drama China yang Akan Tayang Desember 2026: Daftar C-Drama Terbaru | CewekPedia",
+    deskripsi: "Daftar drama China yang diperkirakan tayang Desember 2026??yuk cek",
+    tanggal: "22 november 2026",
+    gambar: "images/drama-china-desember-2026.jpeg",
+    link: "drama-china-desember-2026.html"
+  },
+    {
+    judul: "Drama Korea Tayang Desember 2026: Jadwal, Sinopsis, dan Pemain | CewekPedia",
+    deskripsi: "Daftar drama Korea terbaru yang tayang pada Desember 2026 ",
+    tanggal: "22 november 2026",
+    gambar: "images/drama-korea-tayang-desember-2026.jpeg",
+    link: "drama-korea-tayang-desember-2026.html"
+  },
+    {
     judul: "cara melembabkan bibit tanaman yg kering| CewekPedia ❤️",
     deskripsi: "mau tau cara benar merawat tanaman??yuk cek",
     tanggal: "21 november 2026",
