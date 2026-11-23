@@ -1,4 +1,18 @@
 var artikelData = [
+ {
+    judul: "الدراما الصينية في ديسمبر 2026: مسلسلات جديدة تستحق المتابعة | CewekPedia",
+    deskripsi: "تعرفي على أبرز المسلسلات الصينية المتوقعة في ديسمبر 2026، من الرومانسية إلى الدراما التاريخية والغموض، مع أسماء الممثلين والمعلومات المتاحة عن موعد العرض.",
+    tanggal: "23 نوفمبر 2026",
+    link: "/ar/artikel/drama-china-desember-2026.html",
+    gambar: "/ar/artikel/images/drama-china-desember-2026.jpeg"
+  },
+  {
+    judul: "أفضل الدراما الكورية الجديدة في ديسمبر 2026 | CewekPedia",
+    deskripsi: "تعرفي على أبرز الدراما الكورية الجديدة في ديسمبر 2026، من Gift وSacred Jewel إلى Tantara وYour Ground، مع مواعيد العرض والقصص وأبطال المسلسلات.",
+    tanggal: "23 نوفمبر 2026",
+    link: "/ar/artikel/drama-korea-desember-2026.html",
+    gambar: "/ar/artikel/images/drama-korea-desember-2026.jpeg"
+  },
   {
     judul: "أفضل المسلسلات الصينية الحزينة على الإطلاق: 8 أعمال درامية مؤثرة ستبكيكِ | CewekPedia",
     deskripsi: "اكتشفي أفضل 8 مسلسلات صينية حزينة ورومانسية، من Goodbye My Princess إلى One and Only وAshes of Love، مع قصص مؤثرة وشخصيات لا تُنسى.",
