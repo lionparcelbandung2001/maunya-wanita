@@ -1,4 +1,18 @@
 const artikelData = [
+ {
+    judul: "Chinese Dramas Airing in December 2026: Titles, Synopsis, Cast &amp; Release Dates | CewekPedia",
+    deskripsi: "Explore Chinese dramas scheduled for December 2026 ",
+    tanggal: "November 24, 2026",
+    gambar: "/en/images/chinese-dramas-december-2026.jpeg",
+    link: "/en/cdrama/chinese-dramas-airing-december-2026.html"
+  },
+  {
+    judul: "Korean Dramas Airing in December 2026: Titles, Synopsis, Cast &amp; Release Dates | CewekPedia",
+    deskripsi: "Check out the Korean dramas airing in December 2026 complete",
+    tanggal: "November 24, 2026",
+    gambar: "/en/images/korean-dramas-december-2026.jpeg",
+    link: "/en/kdrama/korean-dramas-airing-december-2026.html"
+  },
   {
     judul: "15 Best Korean Time-Travel Dramas of All Time: Must-Watch K-Dramas | CewekPedia",
     deskripsi: "Discover 15 of the best Korean time-travel dramas of all time, featuring unforgettable stories about time loops, changing the past, future journeys, romance, and unexpected twists.",
