@@ -1,5 +1,12 @@
 const artikelData = [
 {
+    judul: "Cara Aman Berhubungan Suami Istri Saat Hamil| CewekPedia",
+    deskripsi: "Simak tips posisi nyaman, hal yang perlu dihindari, dan tanda bahaya selama kehamilan",
+    tanggal: "25 november 2026",
+    gambar: "images/cara-aman-hubungan-suami-istri-saat-hamil.jpeg",
+    link: "cara-aman-hubungan-suami-istri-saat-hamil.html"
+  },
+    {
     judul: "Drama China yang Akan Tayang Desember 2026: Daftar C-Drama Terbaru | CewekPedia",
     deskripsi: "Daftar drama China yang diperkirakan tayang Desember 2026??yuk cek",
     tanggal: "22 november 2026",
