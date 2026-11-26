@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "9 Drama China Terbaik yang Tayang di November 2026| CewekPedia",
+    deskripsi: "Daftar drama China terbaik yang tayang di November 2026",
+    tanggal: "26 november 2026",
+    gambar: "images/drama-china-terbaik-november-2026.jpeg",
+    link: "drama-china-terbaik-yang-tayang-di-november-2026.html"
+  },
+    {
+    judul: "9 Drama Korea Terbaik yang Tayang di November 2026| CewekPedia",
+    deskripsi: "Daftar drama Korea terbaik yang tayang di November 2026",
+    tanggal: "26 november 2026",
+    gambar: "images/drama-korea-terbaik-november-2026.jpeg",
+    link: "drama-korea-terbaik-yang-tayang-di-november-2026.html"
+  },
+    {
     judul: "Cara Aman Berhubungan Suami Istri Saat Hamil| CewekPedia",
     deskripsi: "Simak tips posisi nyaman, hal yang perlu dihindari, dan tanda bahaya selama kehamilan",
     tanggal: "25 november 2026",
