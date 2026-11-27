@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "Formasi Lengkap CPNS 2026 Untuk Lulusan D3 dan S1, Daftar Jabatan & Cara Daftar | CewekPedia",
+    deskripsi: "Formasi lengkap CPNS 2026 untuk lulusan D3 dan S1!",
+    tanggal: "27 november 2026",
+    gambar: "images/cpns-2026-d3-s1.jpeg",
+    link: "formasi-lengkap-cpns-2026-untuk-lulusan-d3-dan-s1.html"
+  },
+    {
+    judul: "Formasi CPNS 2026 Untuk Lulusan SMA/SMK, Daftar Lengkap & Cara Daftar| CewekPedia",
+    deskripsi: "Formasi CPNS 2026 untuk lulusan SMA/SMK lengkap",
+    tanggal: "27 november 2026",
+    gambar: "images/cpns-2026-sma-smk.jpeg",
+    link: "formasi-cpns-2026-untuk-lulusan-sma-smk.html"
+  },
+    {
     judul: "Mengatasi Gagal Terus dalam Pendaftaran CPNS di SSCASN? Ini Solusinya| CewekPedia",
     deskripsi: "Pendaftaran CPNS di SSCASN gagal terus? Simak penyebabnya",
     tanggal: "27 november 2026",
