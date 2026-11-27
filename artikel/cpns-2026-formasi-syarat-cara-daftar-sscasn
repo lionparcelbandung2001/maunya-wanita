@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d65b99">
+
+  <!-- SEO UTAMA -->
+  <title>CPNS 2026 Dibuka! Cek Formasi, Syarat & Cara Daftar SSCASN | CewekPedia</title>
+  <meta name="description" content="Pendaftaran CPNS 2026 mulai 27 November! Simak informasi 154.052 formasi, syarat, dokumen, cara daftar SSCASN, tahapan seleksi, dan tips persiapan.">
+  <meta name="keywords" content="CPNS 2026, pendaftaran CPNS 2026, formasi CPNS 2026, syarat CPNS 2026, cara daftar CPNS, SSCASN 2026, seleksi CPNS, lowongan CPNS terbaru, jadwal CPNS 2026, ASN 2026">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CewekPedia">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://cewekpedia.com/artikel/cpns-2026-formasi-syarat-cara-daftar-sscasn.html">
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg">
+  <link rel="apple-touch-icon" href="/logo.jpeg">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CewekPedia">
+  <meta property="og:title" content="CPNS 2026 Dibuka! Cek Formasi, Syarat & Cara Daftar SSCASN">
+  <meta property="og:description" content="Pendaftaran CPNS 2026 mulai 27 November. Cek informasi formasi, persyaratan, dokumen, dan panduan pendaftaran resmi.">
+  <meta property="og:url" content="https://cewekpedia.com/artikel/cpns-2026-formasi-syarat-cara-daftar-sscasn.html">
+  <meta property="og:image" content="https://cewekpedia.com/artikel/images/cpns-2026.jpeg">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CPNS 2026 Dibuka! Cek Formasi, Syarat & Cara Daftar SSCASN">
+  <meta name="twitter:description" content="Informasi CPNS 2026: formasi, syarat, dokumen, cara daftar, dan tahapan seleksi.">
+  <meta name="twitter:image" content="https://cewekpedia.com/artikel/images/cpns-2026.jpeg">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json" id="article-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CPNS 2026 Dibuka! Cek Formasi, Syarat & Cara Daftar SSCASN",
+    "description": "Informasi pendaftaran CPNS 2026, total formasi, persyaratan, dokumen, cara mendaftar melalui SSCASN, serta tahapan seleksi.",
+    "image": "https://cewekpedia.com/artikel/images/cpns-2026.jpeg",
+    "datePublished": "2026-11-27",
+    "dateModified": "2026-11-27",
+    "inLanguage": "id-ID",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cewekpedia.com/artikel/cpns-2026-formasi-syarat-cara-daftar-sscasn.html"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CewekPedia",
+      "url": "https://cewekpedia.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CewekPedia",
+      "url": "https://cewekpedia.com/"
+    }
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --pink: #d65b99;
+      --pink-dark: #a83270;
+      --pink-light: #fff0f6;
+      --purple: #8663a8;
+      --text: #443541;
+      --muted: #806f7c;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      padding-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffafd;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    img { max-width: 100%; }
+    a { -webkit-tap-highlight-color: transparent; }
+
+    .site-header {
+      padding: 24px 16px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe2ef, #f4e8ff);
+      border-bottom: 1px solid #f5d8e8;
+    }
+
+    .brand {
+      display: inline-block;
+      color: var(--pink-dark);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: .3px;
+    }
+
+    .tagline {
+      margin: 5px 0 0;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 12px;
+      background: #fff;
+      border-bottom: 1px solid #f4e3ec;
+    }
+
+    .top-nav a {
+      color: var(--pink-dark);
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover, .footer-links a:hover { text-decoration: underline; }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+      padding: 22px 16px;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .main-content { flex: 1; min-width: 0; }
+
+    .sidebar-right {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--pink-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .article-card {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid #f4e3ec;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(173,87,132,.07);
+      overflow-wrap: anywhere;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 5px 12px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .article-title {
+      margin: 13px 0 10px;
+      color: #663c58;
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .article-date {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .article-image {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      margin: 18px auto 24px;
+      border-radius: 14px;
+      background: #fff7fb;
+      border: 1px solid #f2dbe6;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      color: var(--pink-dark);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+
+    .article-content h3 {
+      margin: 22px 0 8px;
+      color: #754b68;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .article-content p { margin: 13px 0; font-size: 16px; }
+
+    .article-content ul, .article-content ol { padding-left: 24px; }
+    .article-content li { margin-bottom: 8px; }
+
+    .article-content a {
+      color: var(--pink-dark);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .tip-box {
+      margin: 24px 0;
+      padding: 18px;
+      background: #fff2f8;
+      border-left: 4px solid var(--pink);
+      border-radius: 10px;
+    }
+
+    .tip-box h3 { margin-top: 0; color: var(--pink-dark); }
+    .tip-box p { margin-bottom: 0; }
+
+    .article-cta {
+      margin: 28px 0 8px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff0f6, #f5efff);
+      border: 1px solid #f1d9e9;
+      border-radius: 15px;
+    }
+
+    .article-cta h3 { margin: 0 0 8px; color: var(--pink-dark); }
+    .article-cta p { margin: 8px 0 14px; font-size: 14px; }
+
+    .cta-button {
+      display: inline-block;
+      padding: 11px 20px;
+      color: #fff !important;
+      background: var(--pink);
+      border-radius: 30px;
+      text-decoration: none !important;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px;
+    }
+
+    .cta-button:hover { background: var(--pink-dark); }
+
+    .advertising-box {
+      position: relative;
+      background: linear-gradient(145deg, #ff6ab2, #a855f7);
+      border-radius: 14px;
+      padding: 14px 12px;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(214,91,153,.25);
+      border: 1.5px solid #fff;
+      text-align: center;
+    }
+
+    .advertising-title {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .advertising-description {
+      margin: 0 0 10px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #fff0f7;
+    }
+
+    .advertising-actions { display: flex; flex-direction: column; gap: 6px; }
+
+    .advertising-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      text-decoration: none !important;
+    }
+
+    .advertising-whatsapp { background: #25d366; color: #fff !important; }
+    .advertising-email { background: #fff; color: #a83270 !important; }
+
+    .advertising-close {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: #725566;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #monetag-ad-slot {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      min-width: 0;
+      min-height: 0;
+      margin: 0 auto 24px;
+      padding: 0;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      text-align: center;
+    }
+
+    #monetag-ad-slot iframe, #monetag-ad-slot img { max-width: 100%; }
+
+    #adsterra-ad-slot {
+      width: 100%;
+      max-width: 300px;
+      margin: 16px auto 0;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #adsterra-ad-slot iframe { max-width: 100%; border: 0; }
+
+    .adsterra-extra-slot {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      min-height: 0;
+      margin: 24px auto;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .adsterra-extra-slot iframe { max-width: 100%; border: 0; }
+
+    .adsterra-middle-slot {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      min-height: 0;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #adsterra-middle-1 { margin-top: 30px; margin-bottom: 55px; }
+    #adsterra-middle-2 { margin-top: 55px; margin-bottom: 35px; }
+    .adsterra-middle-slot iframe { max-width: 100%; border: 0; }
+
+    .related-section {
+      margin-top: 28px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #f4e3ec;
+      border-radius: 16px;
+    }
+
+    .related-section h2 {
+      margin: 0 0 14px;
+      color: var(--pink-dark);
+      font-size: 21px;
+    }
+
+    #related-articles { min-width: 0; overflow-wrap: anywhere; }
+
+    .site-footer {
+      margin-top: 35px;
+      padding: 25px 15px;
+      text-align: center;
+      background: #fff0f6;
+      color: #80677b;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+    }
+
+    .footer-links a { color: var(--pink-dark); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .layout-wrapper { flex-direction: column; }
+      .main-content { width: 100%; }
+      .sidebar-right { width: 100%; position: static; }
+      .advertising-box { padding: 12px; }
+      .advertising-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .advertising-button { padding: 7px 10px; }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 20px 12px; }
+      .brand { font-size: 22px; }
+      .container { padding: 15px 10px; }
+      .article-card { padding: 17px; border-radius: 14px; }
+      .article-title { font-size: 24px; }
+      .article-content h2 { font-size: 21px; }
+      .article-content h3 { font-size: 17px; }
+      .article-content p { font-size: 16px; }
+
+      #monetag-ad-slot {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 24px;
+        overflow: hidden;
+      }
+
+      #monetag-ad-slot iframe, #monetag-ad-slot img { max-width: 100%; }
+      #adsterra-ad-slot { width: 100%; max-width: 300px; margin: 16px auto 0; }
+      .adsterra-extra-slot { width: 100%; max-width: 300px; margin: 24px auto; }
+      #adsterra-middle-1 { margin-top: 28px; margin-bottom: 45px; }
+      #adsterra-middle-2 { margin-top: 45px; margin-bottom: 30px; }
+      .adsterra-middle-slot { width: 100%; max-width: 300px; }
+      .advertising-box, .sidebar-right { position: static; width: 100%; }
+      .related-section { padding: 16px; }
+    }
+  </style>
+
+  <!-- MONETAG -->
+  <script>
+    (function(s){
+      s.dataset.zone='12197764';
+      s.src='https://nap5k.com/tag.min.js';
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="/">CewekPedia ♡</a>
+    <p class="tagline">
+      Ruang santai, cerita, hiburan, dan inspirasi untuk perempuan.
+    </p>
+  </header>
+
+  <!-- NAVIGASI -->
+  <nav class="top-nav" aria-label="Navigasi utama">
+    <a href="/">Beranda</a>
+    <a href="/#musik">Musik</a>
+    <a href="/#chat">Ruang Chat</a>
+    <a href="/artikel/">Semua Artikel</a>
+  </nav>
+
+  <main class="container">
+
+    <a class="back-link" href="/artikel/">
+      ← Kembali ke Daftar Artikel
+    </a>
+
+    <div class="layout-wrapper">
+
+      <!-- KONTEN UTAMA -->
+      <div class="main-content">
+
+        <article class="article-card">
+
+          <span class="article-category">Info Karier & Seleksi ASN</span>
+
+          <h1 class="article-title">
+            CPNS 2026 Dibuka! Cek Formasi, Syarat, dan Cara Daftar SSCASN
+          </h1>
+
+          <div class="article-date">
+            Dipublikasikan:
+            <time id="article-published-date" datetime="2026-11-27">
+              27 November 2026
+            </time>
+            <span aria-hidden="true"> · </span>
+            Diperbarui:
+            <time id="article-updated-date" datetime="2026-11-27">
+              27 November 2026
+            </time>
+          </div>
+
+          <!-- GAMBAR UTAMA -->
+          <img
+            src="images/cpns-2026.jpeg"
+            alt="Informasi pendaftaran CPNS 2026, formasi pegawai negeri sipil dan panduan seleksi SSCASN"
+            class="article-image"
+            width="700"
+            height="400"
+            fetchpriority="high"
+            decoding="async">
+
+          <!-- MONETAG -->
+          <div id="monetag-ad-slot">
+            <script>
+              (function(s){
+                s.dataset.zone='12197764';
+                s.src='https://nap5k.com/tag.min.js';
+              })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+            </script>
+          </div>
+
+          <!-- ADSTERRA DI BAWAH FOTO -->
+          <div class="adsterra-extra-slot" id="adsterra-below-image">
+            <script>
+              atOptions = {
+                'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+                'format': 'iframe',
+                'height': 250,
+                'width': 300,
+                'params': {}
+              };
+            </script>
+            <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+          </div>
+
+          <!-- ISI ARTIKEL -->
+          <div class="article-content">
+
+            <p>
+              Informasi mengenai <strong>pendaftaran CPNS 2026</strong> menjadi perhatian banyak masyarakat yang ingin berkarier sebagai Aparatur Sipil Negara (ASN). Kesempatan mengikuti seleksi Calon Pegawai Negeri Sipil (CPNS) kembali dibuka dengan kebutuhan formasi yang telah diumumkan pemerintah pada November 2026.
+            </p>
+
+            <p>
+              Pemerintah mengumumkan kebutuhan sebanyak <strong>154.052 formasi CPNS 2026</strong>. Pendaftaran dijadwalkan mulai Jumat, 27 November 2026 melalui portal resmi SSCASN. Kesempatan ini mencakup berbagai sektor prioritas, sehingga calon pelamar perlu memeriksa formasi, kualifikasi pendidikan, dan persyaratan setiap instansi sebelum mendaftar.
+            </p>
+
+            <p>
+              Bagi kamu yang sedang mencari informasi CPNS terbaru, artikel ini membahas jumlah formasi, cara melihat lowongan sesuai jurusan, persyaratan umum, dokumen yang perlu disiapkan, panduan pendaftaran, tahapan seleksi, serta tips agar tidak melakukan kesalahan saat mengisi akun dan berkas lamaran.
+            </p>
+
+            <h2>CPNS 2026 Resmi Dibuka, Berapa Jumlah Formasi yang Disediakan?</h2>
+
+            <p>
+              Berdasarkan pengumuman pemerintah, kebutuhan CPNS tahun 2026 mencapai <strong>154.052 formasi</strong>. Pengadaan ini diarahkan untuk memperkuat pelayanan publik dan mendukung berbagai program prioritas nasional, termasuk sektor pendidikan, kesehatan, kehutanan, pengawasan, serta sejumlah bidang strategis lainnya.
+            </p>
+
+            <p>
+              Formasi yang tersedia dapat berbeda antara satu instansi dengan instansi lainnya. Pelamar perlu memperhatikan nama jabatan, kualifikasi pendidikan, lokasi penempatan, serta persyaratan khusus yang tercantum dalam pengumuman resmi.
+            </p>
+
+            <h3>Bidang yang Menjadi Prioritas Rekrutmen CPNS 2026</h3>
+
+            <p>
+              Pengadaan CPNS tahun ini diarahkan untuk memenuhi kebutuhan tenaga pada berbagai bidang strategis. Beberapa bidang yang menjadi perhatian dalam alokasi kebutuhan antara lain:
+            </p>
+
+            <ul>
+              <li>Pendidikan, termasuk kebutuhan tenaga pengajar dan dosen.</li>
+              <li>Kesehatan dan pelayanan fasilitas kesehatan.</li>
+              <li>Kehutanan serta pengelolaan dan perlindungan lingkungan.</li>
+              <li>Audit dan pengawasan internal pemerintahan.</li>
+              <li>Pelayanan pemenuhan gizi dan program terkait.</li>
+              <li>Pengawasan koperasi serta pengembangan sektor ekonomi.</li>
+              <li>Hukum, hak asasi manusia, peradilan dan pemasyarakatan.</li>
+              <li>Statistik, data pembangunan, keuangan, keamanan siber, dan diplomasi.</li>
+            </ul>
+
+            <p>
+              Daftar tersebut merupakan gambaran sektor prioritas, bukan daftar lengkap lowongan. Jabatan, jumlah kebutuhan, dan kualifikasi pelamar harus diperiksa melalui pengumuman masing-masing instansi dan portal SSCASN.
+            </p>
+
+            <div class="tip-box">
+              <h3>♡ Tips CewekPedia</h3>
+              <p>
+                Jangan memilih formasi hanya karena jumlah lowongannya terlihat banyak. Pastikan jurusan kuliah, jenjang pendidikan, dan persyaratan lainnya benar-benar sesuai dengan kualifikasi yang diminta agar peluang lolos seleksi administrasi tidak terhambat.
+              </p>
+            </div>
+
+            <!-- ADSTERRA TENGAH 1 -->
+            <div class="adsterra-middle-slot" id="adsterra-middle-1">
+              <script>
+                atOptions = {
+                  'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+                  'format': 'iframe',
+                  'height': 250,
+                  'width': 300,
+                  'params': {}
+                };
+              </script>
+              <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+            </div>
+
+            <h2>Cara Cek Formasi CPNS 2026 Sesuai Jurusan dan Pendidikan</h2>
+
+            <p>
+              Salah satu hal paling penting sebelum mendaftar CPNS adalah mencari formasi yang sesuai dengan latar belakang pendidikan. Setiap jabatan memiliki kualifikasi yang berbeda. Ada jabatan yang menerima beberapa program studi, sementara jabatan lainnya hanya terbuka untuk jurusan tertentu.
+            </p>
+
+            <p>
+              Agar tidak salah memilih lowongan, lakukan pengecekan melalui portal resmi seleksi ASN. Berikut langkah yang bisa dilakukan:
+            </p>
+
+            <ol>
+              <li>Buka portal resmi SSCASN melalui alamat <a href="https://sscasn.bkn.go.id/" target="_blank" rel="noopener noreferrer">sscasn.bkn.go.id</a>.</li>
+              <li>Masuk ke bagian pencarian informasi atau daftar formasi yang tersedia.</li>
+              <li>Pilih instansi yang ingin kamu lamar.</li>
+              <li>Periksa nama jabatan dan kualifikasi pendidikan yang dibutuhkan.</li>
+              <li>Perhatikan lokasi penempatan, jenis kebutuhan, dan persyaratan tambahan.</li>
+              <li>Bandingkan beberapa formasi sebelum menentukan pilihan.</li>
+              <li>Pastikan informasi yang kamu gunakan berasal dari pengumuman resmi instansi.</li>
+            </ol>
+
+            <p>
+              Jika kamu lulusan SMA, SMK, D3, D4, S1, atau jenjang pendidikan lainnya, jangan langsung menganggap semua formasi bisa dilamar. Periksa ketentuan pendidikan secara spesifik, termasuk nama program studi dan akreditasi jika memang dipersyaratkan dalam pengumuman.
+            </p>
+
+            <h2>Syarat Umum Pendaftaran CPNS 2026</h2>
+
+            <p>
+              Persyaratan seleksi CPNS dapat mengikuti peraturan yang berlaku dan ketentuan masing-masing instansi. Calon peserta sebaiknya membaca pengumuman secara menyeluruh sebelum mengirimkan lamaran.
+            </p>
+
+            <p>Beberapa persyaratan umum yang biasanya perlu diperhatikan dalam seleksi CPNS meliputi:</p>
+
+            <ul>
+              <li>Memenuhi ketentuan kewarganegaraan yang dipersyaratkan.</li>
+              <li>Memenuhi batas usia sesuai ketentuan jabatan dan instansi.</li>
+              <li>Memiliki kualifikasi pendidikan sesuai formasi yang dilamar.</li>
+              <li>Memenuhi persyaratan kesehatan sesuai kebutuhan jabatan.</li>
+              <li>Memenuhi ketentuan terkait rekam jejak dan perilaku sesuai peraturan seleksi.</li>
+              <li>Tidak sedang dalam kondisi yang menyebabkan tidak dapat memenuhi ketentuan pengangkatan ASN.</li>
+              <li>Memenuhi persyaratan tambahan apabila melamar formasi khusus.</li>
+            </ul>
+
+            <p>
+              Persyaratan tersebut tidak boleh dianggap sebagai daftar final yang berlaku untuk semua jabatan. Ketentuan resmi dapat berbeda tergantung instansi, jenis jabatan, dan formasi yang tersedia. Gunakan pengumuman resmi sebagai acuan utama.
+            </p>
+
+            <h3>Apakah Semua Jurusan Bisa Mendaftar CPNS?</h3>
+
+            <p>
+              Tidak semua jurusan dapat melamar seluruh formasi CPNS. Kesempatan untuk setiap lulusan bergantung pada kebutuhan instansi dan kualifikasi pendidikan yang ditentukan. Beberapa lowongan dapat menerima jurusan yang lebih luas, sedangkan jabatan teknis tertentu membutuhkan pendidikan yang sangat spesifik.
+            </p>
+
+            <p>
+              Karena itu, pelamar perlu mencari formasi berdasarkan nama program studi yang tercantum pada ijazah. Jangan hanya menggunakan kategori umum seperti lulusan S1 atau D3, sebab kesesuaian jurusan juga menjadi bagian penting dalam seleksi administrasi.
+            </p>
+
+            <!-- ADSTERRA TENGAH 2 -->
+            <div class="adsterra-middle-slot" id="adsterra-middle-2">
+              <script>
+                atOptions = {
+                  'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+                  'format': 'iframe',
+                  'height': 250,
+                  'width': 300,
+                  'params': {}
+                };
+              </script>
+              <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+            </div>
+
+            <h2>Dokumen yang Perlu Disiapkan untuk Daftar CPNS</h2>
+
+            <p>
+              Menyiapkan dokumen sebelum proses pendaftaran dapat membantu mengurangi kesalahan ketika mengisi data di portal SSCASN. Pastikan semua dokumen mudah diakses, terbaca dengan jelas, dan sesuai ketentuan ukuran maupun format file yang diminta.
+            </p>
+
+            <p>Dokumen yang sebaiknya mulai dipersiapkan antara lain:</p>
+
+            <ul>
+              <li>Kartu identitas atau KTP yang masih berlaku.</li>
+              <li>Kartu Keluarga untuk keperluan pencocokan data jika diperlukan.</li>
+              <li>Ijazah sesuai kualifikasi pendidikan yang dipersyaratkan.</li>
+              <li>Transkrip nilai.</li>
+              <li>Pas foto sesuai ketentuan pendaftaran.</li>
+              <li>Surat lamaran dan surat pernyataan sesuai format instansi.</li>
+              <li>Dokumen pendukung tambahan untuk formasi tertentu.</li>
+              <li>Sertifikat atau bukti kompetensi apabila dipersyaratkan.</li>
+            </ul>
+
+            <p>
+              Tidak semua dokumen di atas selalu diwajibkan untuk setiap formasi. Perhatikan daftar dokumen yang diminta oleh instansi tujuan dan ketentuan terbaru dalam portal pendaftaran. Hindari mengunggah dokumen yang tidak sesuai atau menggunakan file yang sudah tidak terbaca.
+            </p>
+
+            <h3>Tips Menyiapkan File Dokumen agar Tidak Bermasalah</h3>
+
+            <ul>
+              <li>Gunakan hasil scan yang jelas, tidak buram, dan tidak terpotong.</li>
+              <li>Periksa kembali nama, nomor identitas, tanggal lahir, serta informasi pendidikan.</li>
+              <li>Pastikan ukuran file tidak melebihi batas yang ditentukan portal.</li>
+              <li>Gunakan format file sesuai instruksi, misalnya PDF atau JPG jika diminta.</li>
+              <li>Hindari mengedit dokumen resmi sehingga isi aslinya berubah.</li>
+              <li>Siapkan salinan cadangan di perangkat pribadi.</li>
+            </ul>
+
+            <div class="tip-box">
+              <h3>♡ Jangan Menunggu Hari Terakhir</h3>
+              <p>
+                Pendaftaran online bisa mengalami kepadatan akses menjelang batas waktu. Lebih baik memeriksa dokumen dan mengisi data sejak awal agar masih memiliki waktu untuk memperbaiki kesalahan.
+              </p>
+            </div>
+
+            <h2>Cara Daftar CPNS 2026 Melalui Portal SSCASN</h2>
+
+            <p>
+              Pendaftaran CPNS dilakukan secara online melalui portal resmi SSCASN BKN. Pastikan kamu menggunakan alamat situs yang benar dan tidak memasukkan data pribadi ke situs tiruan yang mengatasnamakan seleksi ASN.
+            </p>
+
+            <p>Berikut panduan umum proses pendaftaran CPNS melalui SSCASN:</p>
+
+            <ol>
+              <li>
+                <strong>Buka situs resmi SSCASN.</strong>
+                Akses <a href="https://sscasn.bkn.go.id/" target="_blank" rel="noopener noreferrer">https://sscasn.bkn.go.id/</a> melalui browser.
+              </li>
+              <li>
+                <strong>Buat akun atau login.</strong>
+                Ikuti petunjuk pembuatan akun dengan menggunakan data identitas yang benar. Jika sudah memiliki akun, gunakan akun tersebut sesuai petunjuk portal.
+              </li>
+              <li>
+                <strong>Lengkapi data diri.</strong>
+                Isi informasi pribadi, pendidikan, dan data lain yang diminta secara teliti.
+              </li>
+              <li>
+                <strong>Pilih instansi dan formasi.</strong>
+                Cari instansi, jabatan, serta formasi yang sesuai dengan kualifikasi pendidikan dan persyaratanmu.
+              </li>
+              <li>
+                <strong>Unggah dokumen persyaratan.</strong>
+                Masukkan file yang diminta sesuai format dan ketentuan ukuran.
+              </li>
+              <li>
+                <strong>Periksa ulang seluruh data.</strong>
+        Pastikan tidak ada kesalahan penulisan, pilihan formasi, maupun dokumen yang tertukar.
+              </li>
+              <li>
+                <strong>Submit pendaftaran.</strong>
+                Lakukan pengiriman final sesuai instruksi sistem dan simpan bukti pendaftaran jika tersedia.
+              </li>
+              <li>
+                <strong>Pantau status seleksi.</strong>
+                Periksa akun SSCASN dan pengumuman resmi instansi secara berkala untuk mengetahui perkembangan seleksi.
+              </li>
+            </ol>
+
+            <p>
+              Perlu diingat bahwa tampilan portal, menu, serta prosedur teknis dapat berubah mengikuti sistem pendaftaran tahun berjalan. Ikuti petunjuk yang tampil di SSCASN saat proses pendaftaran berlangsung.
+            </p>
+
+            <h2>Jadwal dan Tahapan Seleksi CPNS 2026</h2>
+
+            <p>
+              Seleksi CPNS terdiri dari beberapa tahapan yang perlu diikuti peserta secara berurutan. Setelah pendaftaran, pelamar akan menjalani pemeriksaan administrasi dan tahapan kompetensi sesuai ketentuan seleksi.
+            </p>
+
+            <h3>1. Pendaftaran Online</h3>
+            <p>
+              Peserta membuat akun, melengkapi data, memilih formasi, dan mengunggah dokumen sesuai ketentuan pendaftaran yang berlaku.
+            </p>
+
+            <h3>2. Seleksi Administrasi</h3>
+            <p>
+              Panitia memeriksa kesesuaian dokumen dan data pelamar dengan persyaratan formasi. Kesalahan data atau dokumen yang tidak sesuai dapat menyebabkan pelamar tidak lolos tahap administrasi.
+            </p>
+
+            <h3>3. Seleksi Kompetensi Dasar (SKD)</h3>
+            <p>
+              SKD merupakan tahapan tes untuk menilai kemampuan dasar peserta sesuai sistem seleksi yang ditetapkan. Pelaksanaan ujian dapat menggunakan sistem Computer Assisted Test (CAT).
+            </p>
+
+            <h3>4. Seleksi Kompetensi Bidang (SKB)</h3>
+            <p>
+              SKB bertujuan mengukur kemampuan yang relevan dengan jabatan yang dilamar. Bentuk dan materi seleksi dapat berbeda sesuai instansi serta jenis formasi.
+            </p>
+
+            <h3>5. Pengumuman Hasil Akhir</h3>
+            <p>
+              Hasil seleksi diumumkan melalui kanal resmi sesuai jadwal yang ditetapkan. Peserta perlu memantau informasi mengenai hasil, ketentuan sanggah apabila tersedia, dan tahapan pemberkasan selanjutnya.
+            </p>
+
+            <h2>Tips Persiapan Menghadapi Seleksi CPNS 2026</h2>
+
+            <p>
+              Persaingan seleksi CPNS dapat melibatkan banyak pelamar dengan latar belakang pendidikan dan kemampuan yang berbeda. Persiapan sejak dini akan membantu peserta lebih siap menghadapi setiap tahapan.
+            </p>
+
+            <ul>
+              <li><strong>Pelajari materi SKD secara rutin.</strong> Buat jadwal latihan yang konsisten dan evaluasi hasil latihan.</li>
+              <li><strong>Kenali jabatan yang dilamar.</strong> Pahami tugas dan kompetensi yang dibutuhkan pada formasi pilihanmu.</li>
+              <li><strong>Latihan soal dengan batas waktu.</strong> Biasakan mengerjakan soal dalam kondisi waktu yang terbatas.</li>
+              <li><strong>Jangan asal memilih instansi.</strong> Pertimbangkan kecocokan jurusan, persyaratan, dan lokasi penempatan.</li>
+              <li><strong>Pastikan data identitas sesuai.</strong> Hindari perbedaan informasi antara akun, ijazah, dan dokumen pendukung.</li>
+              <li><strong>Periksa pengumuman secara berkala.</strong> Jangan hanya mengandalkan informasi dari media sosial atau grup percakapan.</li>
+              <li><strong>Waspadai tawaran kelulusan.</strong> Tidak ada pihak yang dapat menjamin seseorang lolos CPNS dengan pembayaran tertentu.</li>
+            </ul>
+
+            <h2>Waspada Penipuan Mengatasnamakan Pendaftaran CPNS</h2>
+
+            <p>
+              Setiap kali pembukaan seleksi CPNS menjadi perhatian masyarakat, biasanya muncul pula informasi palsu, tautan pendaftaran tidak resmi, dan tawaran bantuan dari pihak yang mengaku memiliki koneksi dengan panitia.
+            </p>
+
+            <p>
+              Calon pelamar sebaiknya berhati-hati terhadap pihak yang menawarkan kelulusan, meminta uang untuk meloloskan seleksi, menjual formasi, atau meminta data pribadi melalui pesan pribadi. Proses seleksi CPNS dilakukan berdasarkan ketentuan resmi dan bukan melalui jalur pembayaran kepada perantara.
+            </p>
+
+            <p>Untuk menjaga keamanan selama pendaftaran:</p>
+
+            <ul>
+              <li>Gunakan portal resmi SSCASN BKN.</li>
+              <li>Jangan memberikan password dan kode OTP kepada orang lain.</li>
+              <li>Jangan percaya jaminan lolos CPNS dengan imbalan uang.</li>
+              <li>Periksa alamat website sebelum memasukkan data pribadi.</li>
+              <li>Jangan sembarangan mengunduh aplikasi atau file dari pesan yang tidak dikenal.</li>
+              <li>Verifikasi informasi melalui situs BKN, Kementerian PANRB, dan instansi terkait.</li>
+            </ul>
+
+            <h2>Link Resmi Pendaftaran dan Informasi CPNS 2026</h2>
+
+            <p>
+              Agar mendapatkan informasi yang benar mengenai formasi, jadwal, persyaratan, serta proses pendaftaran, gunakan kanal resmi pemerintah berikut:
+            </p>
+
+            <ul>
+              <li>
+                <a href="https://sscasn.bkn.go.id/" target="_blank" rel="noopener noreferrer">Portal SSCASN BKN</a> — portal utama pendaftaran dan informasi seleksi ASN.
+              </li>
+              <li>
+                <a href="https://www.bkn.go.id/" target="_blank" rel="noopener noreferrer">Website Badan Kepegawaian Negara (BKN)</a> — informasi dan pengumuman terkait seleksi ASN.
+              </li>
+              <li>
+                <a href="https://www.menpan.go.id/" target="_blank" rel="noopener noreferrer">Website Kementerian PANRB</a> — informasi kebijakan dan pengadaan ASN.
+              </li>
+            </ul>
+
+            <p>
+              Pastikan pengumuman yang kamu baca merupakan informasi terbaru. Jadwal, formasi, maupun ketentuan seleksi dapat berubah mengikuti keputusan resmi pemerintah dan masing-masing instansi.
+            </p>
+
+            <h2>FAQ CPNS 2026: Pertanyaan yang Sering Dicari</h2>
+
+            <h3>Apakah pendaftaran CPNS 2026 sudah dibuka?</h3>
+            <p>
+              Pendaftaran CPNS 2026 dijadwalkan mulai 27 November 2026 melalui portal resmi SSCASN. Pelamar sebaiknya memeriksa portal untuk memastikan tahapan pendaftaran sudah tersedia dan mengikuti instruksi terbaru.
+            </p>
+
+            <h3>Berapa jumlah formasi CPNS 2026?</h3>
+            <p>
+              Pemerintah mengumumkan total kebutuhan sebanyak 154.052 formasi CPNS 2026. Rincian jabatan, instansi, dan kualifikasi pendidikan dapat diperiksa melalui informasi resmi seleksi.
+            </p>
+
+            <h3>Di mana link resmi pendaftaran CPNS 2026?</h3>
+            <p>
+              Portal resmi pendaftaran seleksi ASN adalah SSCASN BKN yang dapat diakses melalui <a href="https://sscasn.bkn.go.id/" target="_blank" rel="noopener noreferrer">sscasn.bkn.go.id</a>.
+            </p>
+
+            <h3>Apakah lulusan SMA dan SMK bisa mendaftar CPNS?</h3>
+            <p>
+              Peluang formasi bagi lulusan SMA atau SMK bergantung pada jabatan dan persyaratan pendidikan yang diumumkan instansi. Pelamar harus memeriksa formasi yang menerima kualifikasi pendidikan tersebut.
+            </p>
+
+            <h3>Apakah lulusan S1 semua jurusan bisa ikut CPNS?</h3>
+            <p>
+              Tidak semua formasi menerima S1 semua jurusan. Sebagian jabatan memiliki persyaratan program studi tertentu, sehingga kesesuaian jurusan harus diperiksa sebelum memilih formasi.
+            </p>
+
+            <h3>Apakah daftar CPNS dipungut biaya?</h3>
+            <p>
+              Waspadai pihak yang meminta pembayaran dengan janji kelulusan atau menjual formasi. Gunakan informasi resmi pemerintah dan jangan memberikan uang kepada perantara yang mengaku dapat menjamin hasil seleksi.
+            </p>
+
+            <h3>Bagaimana cara mengetahui lolos seleksi administrasi?</h3>
+            <p>
+              Pantau akun SSCASN dan pengumuman resmi instansi yang kamu lamar. Informasi hasil seleksi administrasi, jadwal tahapan berikutnya, dan ketentuan sanggah disampaikan melalui kanal resmi sesuai jadwal.
+            </p>
+
+            <h2>Penutup</h2>
+
+            <p>
+              Pembukaan <strong>CPNS 2026</strong> menjadi kesempatan bagi masyarakat yang ingin mengembangkan karier di lingkungan pemerintahan. Dengan total kebutuhan 154.052 formasi, calon pelamar perlu memanfaatkan waktu untuk mencari jabatan yang sesuai dengan pendidikan, memahami persyaratan, dan menyiapkan dokumen secara teliti.
+            </p>
+
+            <p>
+              Jangan terburu-buru memilih formasi dan jangan mudah percaya pada informasi yang belum terverifikasi. Gunakan portal SSCASN dan pengumuman resmi pemerintah sebagai sumber utama. Persiapan yang baik, data yang benar, serta latihan yang konsisten dapat membantu kamu menjalani proses seleksi dengan lebih percaya diri.
+            </p>
+
+            <p>
+              Semoga informasi CPNS 2026 ini membantu kamu yang sedang mempersiapkan diri untuk mengikuti seleksi. Semangat berjuang, semoga mendapatkan formasi yang sesuai dan hasil terbaik! ♡
+            </p>
+
+          </div>
+
+          <!-- CTA MUSIK DAN CHAT -->
+          <section class="article-cta">
+            <h3>💗 Yuk, Lanjut Santai di CewekPedia!</h3>
+            <p>
+              Sudah selesai membaca? Kamu bisa menikmati musik
+              atau bergabung dalam obrolan santai.
+            </p>
+            <a class="cta-button" href="/#chat">💬 Buka Ruang Chat</a>
+            <a class="cta-button" href="/#musik">♫ Dengarkan Musik</a>
+          </section>
+
+        </article>
+
+        <!-- ADSTERRA DI BAWAH ARTIKEL -->
+        <div class="adsterra-extra-slot" id="adsterra-after-article">
+          <script>
+            atOptions = {
+              'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+              'format': 'iframe',
+              'height': 250,
+              'width': 300,
+              'params': {}
+            };
+          </script>
+          <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+        </div>
+
+        <!-- ARTIKEL TERKAIT -->
+        <section class="related-section" aria-label="Artikel terkait">
+          <h2>♡ Artikel Lainnya untuk Kamu</h2>
+          <div id="related-articles">
+            <!-- related.js mengisi bagian ini -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR PROMOSI DAN ADSTERRA -->
+      <aside class="sidebar-right" id="advertising-sidebar">
+
+        <!-- KOTAK PROMOSI -->
+        <div class="advertising-box" id="advertising-box">
+
+          <button
+            class="advertising-close"
+            type="button"
+            id="advertising-close"
+            aria-label="Tutup kotak promosi"
+            title="Tutup">
+            ×
+          </button>
+
+          <h3 class="advertising-title">📢 Ingin Beriklan?</h3>
+          <p class="advertising-description">
+            Promosikan bisnismu di CewekPedia.
+          </p>
+
+          <div class="advertising-actions">
+            <a
+              class="advertising-button advertising-whatsapp"
+              href="https://wa.me/6285183090486?text=Halo%20CewekPedia%2C%20saya%20ingin%20bertanya%20tentang%20pemasangan%20iklan."
+              target="_blank"
+              rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+
+            <a
+              class="advertising-button advertising-email"
+              href="mailto:iklancewekpedia@gmail.com?subject=Penawaran%20Pemasangan%20Iklan%20di%20CewekPedia">
+              ✉️ Email
+            </a>
+          </div>
+        </div>
+
+        <!-- ADSTERRA SIDEBAR -->
+        <div id="adsterra-ad-slot">
+          <script>
+            atOptions = {
+              'key': 'da694d72a4ff65be5cc5504d5aeec5fe',
+              'format': 'iframe',
+              'height': 250,
+              'width': 300,
+              'params': {}
+            };
+          </script>
+          <script src="https://bicea.org/22/da694d72a4ff65be5cc5504d5aeec5fe"></script>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      &copy; <span class="current-year">2026</span>
+      CewekPedia. Teman santai setiap hari ♡
+    </p>
+
+    <div class="footer-links">
+      <a href="/">Beranda</a>
+      <a href="/artikel/">Artikel</a>
+      <a href="/#musik">Musik</a>
+      <a href="/#chat">Ruang Chat</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/kontak.html">Kontak</a>
+      <a href="/privacy.html">Kebijakan Privasi</a>
+      <a href="/ketentuan.html">Ketentuan Penggunaan</a>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // TOMBOL TUTUP KOTAK PROMOSI
+    (function () {
+      var box = document.getElementById("advertising-box");
+      var closeButton = document.getElementById("advertising-close");
+
+      if (box && closeButton) {
+        closeButton.addEventListener("click", function () {
+          box.style.display = "none";
+        });
+      }
+    })();
+
+    // TAHUN FOOTER OTOMATIS
+    (function () {
+      var yearElements = document.querySelectorAll(".current-year");
+      var currentYear = new Date().getFullYear();
+
+      yearElements.forEach(function (element) {
+        element.textContent = currentYear;
+      });
+    })();
+  </script>
+
+  <!-- FILE PENDUKUNG ARTIKEL -->
+  <script src="/artikel/data.js"></script>
+  <script src="/artikel/related.js"></script>
+  <script src="/artikel/auto-date.js"></script>
+
+</body>
+</html>
