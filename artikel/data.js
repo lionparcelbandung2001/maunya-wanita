@@ -1,5 +1,40 @@
 const artikelData = [
 {
+    judul: "Mengatasi Gagal Terus dalam Pendaftaran CPNS di SSCASN? Ini Solusinya| CewekPedia",
+    deskripsi: "Pendaftaran CPNS di SSCASN gagal terus? Simak penyebabnya",
+    tanggal: "27 november 2026",
+    gambar: "images/mengatasi-gagal-pendaftaran-cpns-sscasn.jpeg",
+    link: "mengatasi-gagal-pendaftaran-cpns-sscasn.html"
+  },
+    {
+    judul: "Formasi CPNS untuk Lulusan SMA, D3, S1, dan S2: Pilihan Jabatan & Tips| CewekPedia",
+    deskripsi: "Cari tahu formasi CPNS untuk lulusan SMA, D3, S1 dan S2. Kenali contoh jabatan, peluang kerja pemerintah, syarat pendidikan, dan tips memilih formasi sesuai ijazah",
+    tanggal: "27 november 2026",
+    gambar: "images/formasi-cpns-sma-d3-s1-s2.jpeg",
+    link: "formasi-cpns-lulusan-sma-d3-s1-s2.html"
+  },
+    {
+    judul: "Panduan Step by Step Mengisi Pendaftaran SSCASN untuk Pemula| CewekPedia",
+    deskripsi: "Panduan lengkap cara mengisi pendaftaran SSCASN step by step mulai dari membuat akun, login, mengisi biodata, memilih instansi dan formasi, upload dokumen hingga menyelesaikan Resume pendaftaran",
+    tanggal: "27 november 2026",
+    gambar: "images/panduan-pendaftaran-sscasn.jpeg",
+    link: "panduan-step-by-step-mengisi-pendaftaran-sscasn.html"
+  },
+    {
+    judul: "Hal yang Perlu Disiapkan Sebelum Mengikuti Ujian CPNS: Panduan Lengkap | CewekPedia",
+    deskripsi: "Panduan persiapan ujian CPNS untuk pemula.",
+    tanggal: "27 november 2026",
+    gambar: "images/persiapan-ujian-cpns.jpeg",
+    link: "persiapan-sebelum-ujian-cpns.html"
+  },
+    {
+    judul: "CPNS 2026 Dibuka! Cek Formasi, Syarat & Cara Daftar SSCASN| CewekPedia",
+    deskripsi: "Pendaftaran CPNS 2026 mulai 27 November! Simak informasi 154.052 formasi, syarat, dokumen, cara daftar SSCASN, tahapan seleksi, dan tips persiapan.",
+    tanggal: "27 november 2026",
+    gambar: "images/cpns-2026.jpeg",
+    link: "cpns-2026-formasi-syarat-cara-daftar-sscasn.html"
+  },
+    {
     judul: "9 Drama China Terbaik yang Tayang di November 2026| CewekPedia",
     deskripsi: "Daftar drama China terbaik yang tayang di November 2026",
     tanggal: "26 november 2026",
