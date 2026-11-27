@@ -56,7 +56,7 @@ html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:t
 <div class="music-title">🎵 CEWEKPEDIA MUSIC 🎵</div>
 <div class="playlist">
 <button id="btnIndonesia" class="active" onclick="changeMusic('indonesia')">🇮🇩 Indo</button>
-<button id="btnKorea" onclick="changeMusic('korea')">🇰🇷 Korea</button>
+<button id="btnINDIA" onclick="changeMusic('INDIA')">🇰🇷 INDIA</button>
 <button id="btnBarat" onclick="changeMusic('barat')">🌎 Barat</button>
 </div>
 <div class="soundcloud-wrap">
@@ -74,11 +74,11 @@ const indonesiaPlaylists = [
 "https://soundcloud.com/ali-chemic/cek-sound-dangdut"
 ];
 const musicLinks = {
-korea: [
-"https://soundcloud.com/sanjit-maity-592120550/alka-yagnik-hit-songs-best-of-alka-yagnik-latest-bollywood-hindi-songs-golden-hits128k",
-"https://soundcloud.com/bd-monir/shreya-ghoshal-romantic-hindi",
-"https://soundcloud.com/salman-khan-414995729/best-of-udit-narayan-alka-yagnik-bollywood-hindi-songs-jukebox",
-"https://soundcloud.com/raghbir-singh-3/udit-narayan-alka-yagnik-kumar-sanus-90s-evergreen-bollywood-songs-golden-melodies"
+INDIA: [
+"https://soundcloud.com/tak-terlihat-175028165/lagu-bollywood-india",
+"https://soundcloud.com/tak-terlihat-175028165/lagu-bollywood-india",
+"https://soundcloud.com/tak-terlihat-175028165/lagu-bollywood-india",
+"https://soundcloud.com/tak-terlihat-175028165/lagu-bollywood-india"
 ],
 barat: [
 "https://soundcloud.com/user-707735355/2019-slow-rock-barat-terbaik-sepanjang-masa",
@@ -146,12 +146,12 @@ if(!scWidget){
 function changeMusic(type, forceAutoPlay = false){
 currentCategory = type; let selectedUrl;
 if(type==="indonesia"){selectedUrl=getRandomIndonesiaPlaylist();}
-if(type==="korea"){selectedUrl=getRandom(musicLinks.korea);}
+if(type==="INDIA"){selectedUrl=getRandom(musicLinks.INDIA);}
 if(type==="barat"){selectedUrl=getRandom(musicLinks.barat);}
 loadSoundCloud(selectedUrl, forceAutoPlay);
 document.querySelectorAll(".playlist button").forEach(function(button){button.classList.remove("active");});
 if(type==="indonesia"){document.getElementById("btnIndonesia").classList.add("active");}
-if(type==="korea"){document.getElementById("btnKorea").classList.add("active");}
+if(type==="INDIA"){document.getElementById("btnINDIA").classList.add("active");}
 if(type==="barat"){document.getElementById("btnBarat").classList.add("active");}
 }
 function loadDefaultIndonesia(){const randomIndonesia=getRandomIndonesiaPlaylist();loadSoundCloud(randomIndonesia);}
