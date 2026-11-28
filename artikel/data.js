@@ -1,5 +1,19 @@
 const artikelData = [
 {
+    judul: "Gaji CPNS 2026 + Tunjangan Per Golongan: Segini Yang Kamu Terima Setelah Dapat NIP | CewekPedia",
+    deskripsi: "Gaji CPNS 2026 berapa? Cek tabel gaji pokok CPNS 2026 per golongan I, II, III, IV!",
+    tanggal: "28 november 2026",
+    gambar: "images/gaji-cpns-2026-tunjangan-per-golongan.jpeg",
+    link: "gaji-cpns-2026-tunjangan-per-golongan.html"
+  },
+    {
+    judul: "CPNS 2026 : Jadwal Lengkap, Dari Pendaftaran Sampai Mendapat NIP | CewekPedia",
+    deskripsi: "CPNS 2026 resmi dibuka 27 November 2026! Cek jadwal lengkap 27 tahapan CPNS 2026!",
+    tanggal: "28 november 2026",
+    gambar: "images/cpns-2026-jadwal-lengkap-dari-pendaftaran-sampai-mendapat-nip.jpeg",
+    link: "cpns-2026-jadwal-lengkap-dari-pendaftaran-sampai-mendapat-nip.html"
+  },
+    {
     judul: "Formasi Lengkap CPNS 2026 Untuk Lulusan D3 dan S1, Daftar Jabatan & Cara Daftar | CewekPedia",
     deskripsi: "Formasi lengkap CPNS 2026 untuk lulusan D3 dan S1!",
     tanggal: "27 november 2026",
